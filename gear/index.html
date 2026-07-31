@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GearPick · FPS外设推荐</title>
+<style>
+:root {
+  --bg: #FAF9F5;
+  --accent: #CC785C;
+  --ink: #141413;
+  --ink-muted: #6C6A64;
+  --border: #E6DFD8;
+  --card-bg: #FFFFFF;
+  --green: #5C9A78;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans SC', -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+.header {
+  text-align: center;
+  padding: 48px 24px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.header h1 {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* Form */
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.form-card h2 {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+  margin-bottom: 14px;
+}
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group select, .form-group input {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.form-group select:focus, .form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236C6A64' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+  margin-top: 4px;
+}
+.submit-btn:hover { opacity: 0.88; }
+
+/* Results */
+.results { margin-bottom: 40px; }
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.result-card.best { border-color: var(--accent); border-width: 2px; }
+.result-card .rank {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+.rank.best { background: var(--accent); }
+.rank.alt { background: var(--ink-muted); }
+
+.result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+.result-name {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+.result-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.result-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.meta-tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+.reason {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+.caveat {
+  font-size: 11px;
+  color: var(--accent);
+  margin-top: 6px;
+}
+.pro-ref {
+  font-size: 11px;
+  color: var(--green);
+  margin-top: 4px;
+}
+.source-note {
+  font-size: 10px;
+  color: var(--ink-muted);
+  opacity: 0.7;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab:hover { color: var(--ink); }
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 0 40px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border);
+}
+.footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎯 GearPick</h1>
+  <div class="subtitle">FPS 外设推荐 · 基于职业选手数据 + 社区真实口碑</div>
+</div>
+
+<div class="container">
+
+<div class="form-card">
+  <h2>告诉我你的需求</h2>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="mouse">🖱 鼠标</button>
+    <button class="tab" data-tab="keyboard">⌨ 键盘</button>
+    <button class="tab" data-tab="mousepad">🗒 鼠标垫</button>
+    <button class="tab" data-tab="headset">🎧 耳机</button>
+  </div>
+
+  <!-- Mouse Form -->
+  <div id="form-mouse">
+    <div class="form-row">
+      <div class="form-group">
+        <label>预算范围</label>
+        <select id="m-budget">
+          <option value="">不限</option>
+          <option value="0-200">¥200以内</option>
+          <option value="200-500">¥200-500</option>
+          <option value="500-1000">¥500-1000</option>
+          <option value="1000-99999">¥1000以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>手长</label>
+        <select id="m-hand">
+          <option value="">不限</option>
+          <option value="小">&lt; 17cm（小手）</option>
+          <option value="中">17-19cm（中手）</option>
+          <option value="大">&gt; 19cm（大手）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>握法</label>
+        <select id="m-grip">
+          <option value="">不限</option>
+          <option value="趴握">趴握（手掌贴鼠标）</option>
+          <option value="抓握">抓握（指尖+掌心）</option>
+          <option value="指握">指握（纯指尖）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>偏好</label>
+        <select id="m-pref">
+          <option value="">综合推荐</option>
+          <option value="极致轻量">极致轻量</option>
+          <option value="人体工学">人体工学模具</option>
+          <option value="性价比">性价比优先</option>
+          <option value="无线长续航">无线长续航</option>
+          <option value="高回报率">高回报率(4K/8K)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Form -->
+  <div id="form-keyboard" style="display:none">
+    <div class="form-row">
+      <div class="form-group">
+        <label>预算范围</label>
+        <select id="k-budget">
+          <option value="">不限</option>
+          <option value="0-300">¥300以内</option>
+          <option value="300-600">¥300-600</option>
+          <option value="600-99999">¥600以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>键盘类型</label>
+        <select id="k-type">
+          <option value="">不限</option>
+          <option value="磁轴(RT)">磁轴（RT快触发，FPS竞技）</option>
+          <option value="机械">机械键盘（手感+码字）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>配列</label>
+        <select id="k-layout">
+          <option value="">不限</option>
+          <option value="65%">65%（紧凑，桌面空间小）</option>
+          <option value="75%">75%（有F区，最实用）</option>
+          <option value="100%">100%（全配列，办公必需）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>连接方式</label>
+        <select id="k-conn">
+          <option value="">不限</option>
+          <option value="有线">有线（低延迟竞技）</option>
+          <option value="三模">无线/三模（桌面整洁）</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mousepad Form -->
+  <div id="form-mousepad" style="display:none">
+    <div class="form-row">
+      <div class="form-group">
+        <label>预算范围</label>
+        <select id="mp-budget">
+          <option value="">不限</option>
+          <option value="0-150">¥150以内</option>
+          <option value="150-300">¥150-300</option>
+          <option value="300-99999">¥300以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>速度偏好</label>
+        <select id="mp-speed">
+          <option value="">不限</option>
+          <option value="控制型">控制型（CS/VAL，稳定瞄准）</option>
+          <option value="平衡型">平衡型（什么都玩）</option>
+          <option value="速度型">速度型（APEX/OW，快速跟枪）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>材质</label>
+        <select id="mp-material">
+          <option value="">不限</option>
+          <option value="布垫">布垫（传统，控制好）</option>
+          <option value="玻璃垫">玻璃垫（顺滑，易清洁）</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Headset Form -->
+  <div id="form-headset" style="display:none">
+    <div class="form-row">
+      <div class="form-group">
+        <label>预算范围</label>
+        <select id="h-budget">
+          <option value="">不限</option>
+          <option value="0-500">¥500以内</option>
+          <option value="500-1500">¥500-1500</option>
+          <option value="1500-99999">¥1500以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>连接方式</label>
+        <select id="h-conn">
+          <option value="">不限</option>
+          <option value="有线">有线（音质优先）</option>
+          <option value="无线">无线（自由方便）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>主要用途</label>
+        <select id="h-use">
+          <option value="">综合推荐</option>
+          <option value="FPS脚步声定位">FPS脚步声定位</option>
+          <option value="音乐+游戏">音乐+游戏兼顾</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="submit-btn" onclick="recommend()">🔍 帮我推荐</button>
+</div>
+
+<div id="results" class="results"></div>
+
+</div>
+
+<div class="footer">
+  GearPick · 数据来源：<a href="https://www.fireopen.cn/" target="_blank">fireopen.cn</a> 职业选手外设 + B站外设区UP主评测 + NGA/Reddit社区口碑<br>
+  产品推荐基于交叉验证，非商单驱动 · <a href="../index.html">← 返回作品集</a>
+</div>
+
+<script>
+let currentTab = 'mouse';
+let PRODUCTS = null;
+
+// Load product data
+fetch('products.json')
+  .then(r => r.json())
+  .then(d => { PRODUCTS = d; })
+  .catch(e => console.error('Failed to load products:', e));
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    currentTab = t.dataset.tab;
+    document.querySelectorAll('[id^="form-"]').forEach(f => f.style.display = 'none');
+    document.getElementById('form-' + currentTab).style.display = '';
+    document.getElementById('results').innerHTML = '';
+  });
+});
+
+function parseBudget(range) {
+  if (!range) return [0, Infinity];
+  const [min, max] = range.split('-').map(Number);
+  return [min, max];
+}
+
+function inBudget(price, range) {
+  if (!range) return true;
+  const [min, max] = parseBudget(range);
+  return price >= min && price <= max;
+}
+
+function recommend() {
+  if (!PRODUCTS) { document.getElementById('results').innerHTML = '<div class="empty">⏳ 数据加载中，请稍后重试...</div>'; return; }
+
+  let items = [];
+  let filters = {};
+
+  if (currentTab === 'mouse') {
+    items = PRODUCTS.mice;
+    filters = {
+      budget: document.getElementById('m-budget').value,
+      hand_size: document.getElementById('m-hand').value,
+      grip: document.getElementById('m-grip').value,
+      pref: document.getElementById('m-pref').value
+    };
+  } else if (currentTab === 'keyboard') {
+    items = PRODUCTS.keyboards;
+    filters = {
+      budget: document.getElementById('k-budget').value,
+      type: document.getElementById('k-type').value,
+      layout: document.getElementById('k-layout').value,
+      connection: document.getElementById('k-conn').value
+    };
+  } else if (currentTab === 'mousepad') {
+    items = PRODUCTS.mousepads;
+    filters = {
+      budget: document.getElementById('mp-budget').value,
+      speed: document.getElementById('mp-speed').value,
+      material: document.getElementById('mp-material').value
+    };
+  } else if (currentTab === 'headset') {
+    items = PRODUCTS.headsets;
+    filters = {
+      budget: document.getElementById('h-budget').value,
+      connection: document.getElementById('h-conn').value,
+      use: document.getElementById('h-use').value
+    };
+  }
+
+  // Filter
+  let filtered = items.filter(item => {
+    if (filters.budget && !inBudget(item.price, filters.budget)) return false;
+    if (filters.hand_size && item.hand_size && !item.hand_size.includes(filters.hand_size)) return false;
+    if (filters.grip && item.grip && !item.grip.includes(filters.grip)) return false;
+    if (filters.type && item.type && item.type !== filters.type) return false;
+    if (filters.layout && item.layout && !item.layout.includes(filters.layout)) return false;
+    if (filters.connection && item.connection && !item.connection.includes(filters.connection)) return false;
+    if (filters.speed && item.speed && item.speed !== filters.speed) return false;
+    if (filters.material && item.material && item.material !== filters.material) return false;
+    return true;
+  });
+
+  // Score adjustment for preference
+  if (filters.pref) {
+    filtered.forEach(item => {
+      const bestFor = (item.best_for || []).join(' ');
+      const caveat = item.caveat || '';
+      if (filters.pref === '极致轻量' && item.weight < 55) item.score += 0.5;
+      if (filters.pref === '人体工学' && item.shape === '右手人体工学') item.score += 0.5;
+      if (filters.pref === '性价比' && item.price < 200) item.score += 0.5;
+      if (filters.pref === '无线长续航' && (item.battery_life || '').includes('h')) {
+        const h = parseInt(item.battery_life);
+        if (h > 100) item.score += 0.5;
+      }
+      if (filters.pref === '高回报率' && item.polling_rate >= 4000) item.score += 0.5;
+    });
+  }
+
+  if (filters.use) {
+    filtered.forEach(item => {
+      const bestFor = (item.best_for || []).join(' ');
+      if (filters.use === 'FPS脚步声定位' && bestFor.includes('FPS')) item.score += 0.5;
+      if (filters.use === '音乐+游戏' && bestFor.includes('音乐')) item.score += 0.5;
+    });
+  }
+
+  // Sort by score descending
+  filtered.sort((a, b) => b.score - a.score);
+
+  // Top 3
+  const top3 = filtered.slice(0, 3);
+
+  if (top3.length === 0) {
+    document.getElementById('results').innerHTML = '<div class="empty">😔 没有完全匹配的产品，试试放宽预算或去掉一些筛选条件</div>';
+    return;
+  }
+
+  // Category labels
+  const catLabel = { mouse: '鼠标', keyboard: '键盘', mousepad: '鼠标垫', headset: '耳机' };
+
+  // Render
+  let html = '';
+  top3.forEach((item, i) => {
+    const isBest = i === 0;
+
+    // Build meta tags
+    let tags = [];
+    if (item.brand) tags.push(item.brand);
+    if (item.price) tags.push('¥' + item.price);
+    if (item.weight) tags.push(item.weight + 'g');
+    if (item.sensor) tags.push(item.sensor);
+    if (item.shape) tags.push(item.shape);
+    if (item.type) tags.push(item.type);
+    if (item.layout) tags.push(item.layout);
+    if (item.material) tags.push(item.material);
+    if (item.speed) tags.push(item.speed);
+    if (item.sound) tags.push(item.sound);
+    if (item.category) tags.push(item.category);
+
+    html += `
+    <div class="result-card ${isBest ? 'best' : ''}">
+      <div class="rank ${isBest ? 'best' : 'alt'}">${isBest ? '🥇 最佳推荐' : '🥈 备选 ' + i}</div>
+      <div class="result-header">
+        <div class="result-name">${item.name}</div>
+        <div class="result-price">¥${item.price}</div>
+      </div>
+      <div class="result-meta">${tags.map(t => '<span class="meta-tag">' + t + '</span>').join('')}</div>
+      <div class="reason">💡 <strong>推荐理由：</strong>${(item.best_for || []).join('、')}。${item.source ? '——' + item.source.split('+')[0].trim() : ''}</div>
+      ${item.caveat ? '<div class="caveat">⚠️ <strong>注意：</strong>' + item.caveat + '</div>' : ''}
+      ${item.pro_users && item.pro_users.length ? '<div class="pro-ref">🏆 职业选手同款：' + item.pro_users.join('、') + '</div>' : ''}
+      ${item.source ? '<div class="source-note">📊 数据来源：' + item.source + '</div>' : ''}
+    </div>`;
+  });
+
+  document.getElementById('results').innerHTML = html;
+}
+</script>
+</body>
+</html>

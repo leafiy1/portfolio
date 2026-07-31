@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>产品设计原型 · 葉光館</title>
+<style>
+:root{--bg:#FAF9F5;--accent:#CC785C;--ink:#141413;--ink-muted:#6C6A64;--border:#E6DFD8;--fh:'Noto Serif SC',serif;--fb:'Noto Sans SC',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--fb);background:#1a1a1a;color:var(--ink)}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#222;height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #444;font-size:12px;color:#ccc}
+.top-bar strong{color:#fff}.top-bar .nb{color:#aaa;cursor:pointer;padding:4px 14px;border-radius:4px;background:#333;margin:0 2px;font-family:var(--fb);font-size:12px;transition:background .3s,color .3s}
+.top-bar .nb:hover{background:var(--accent);color:#fff}
+.top-bar #pl{color:#fff;font-weight:600;margin:0 8px}
+.sw{position:relative;width:1440px;height:900px;margin:50px auto 0;background:var(--bg);box-shadow:0 4px 40px rgba(0,0,0,.3);border-radius:4px;overflow:hidden}
+.pg{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity .35s;overflow-y:auto;display:flex;flex-direction:column}
+.pg.active{opacity:1;pointer-events:auto;z-index:2}
+.pg::-webkit-scrollbar{width:5px}.pg::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.pgi{flex:1;display:flex;flex-direction:column;min-height:0}
+.center-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;padding:20px 48px}
+h1{font-family:var(--fh);font-weight:900;font-size:32px;letter-spacing:.04em;color:var(--ink)}
+h2{font-family:var(--fh);font-weight:700;font-size:20px;letter-spacing:.03em;color:var(--ink)}
+.bt{font-family:var(--fb);font-size:14px;line-height:1.7;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;border-radius:4px;font-size:12px;cursor:pointer;border:none;font-family:var(--fb);transition:background .3s,color .3s,opacity .3s}
+.btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:#B86A50}
+.btn-o{border:1px solid var(--accent);background:transparent;color:var(--accent)}.btn-o:hover{background:rgba(204,120,92,.1)}
+.tag{display:inline-block;border:1px solid var(--accent);border-radius:4px;padding:2px 10px;font-size:12px;color:var(--accent);font-family:var(--fb);cursor:pointer;transition:background .3s,color .3s}
+.tag:hover{background:var(--accent);color:#fff}
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;box-shadow:0 2px 10px rgba(20,20,19,0.05)}
+.nb{background:#efece6;border-left:4px solid var(--accent);padding:10px 16px;border-radius:0 6px 6px 0;font-size:12px;color:var(--ink-muted);line-height:1.6;margin:24px 48px 8px;flex-shrink:0}
+.nav{display:flex;align-items:center;height:44px;padding:0 48px;border-bottom:1px solid var(--border);background:#fff;flex-shrink:0}
+.nav .logo{font-family:var(--fh);font-weight:700;font-size:15px;letter-spacing:2px;margin-right:auto;color:var(--ink)}
+.nav .logo span{color:var(--accent)}
+.nav a{font-size:12px;color:var(--ink-muted);cursor:pointer;padding:4px 0;border-bottom:2px solid transparent;text-decoration:none}
+.nav a.act{color:var(--ink);border-bottom-color:var(--accent)}
+#dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:2000;display:flex;flex-direction:column;gap:6px}
+#dots span{width:7px;height:7px;border-radius:50%;background:#666;cursor:pointer}
+#dots span.act{background:var(--accent);width:10px;height:10px;box-shadow:0 0 6px rgba(204,120,92,.4)}
+.plan{border:1.5px dashed #9a8;padding:10px 14px;border-radius:6px;background:rgba(80,160,80,.04)}
+.plan .bt{font-size:11px;color:var(--ink-muted)}
+.plan .lbl{display:inline-block;background:#5a8;color:#fff;font-size:12px;padding:2px 10px;border-radius:4px;letter-spacing:.5px;margin-bottom:6px}
+.sf{border:2px solid var(--border);border-radius:8px;padding:16px;margin:6px 48px;background:#fff;display:flex;flex-direction:column}
+.sf .lb{font-size:12px;color:var(--ink-muted);letter-spacing:1px;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.sf .lb .bd{background:var(--accent);color:#fff;padding:0 8px;border-radius:4px;font-size:12px}
+.half{flex:1;display:flex;align-items:center;justify-content:center;padding:8px 48px}
+.half-top{border-bottom:1px solid var(--border)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+@keyframes ppp{0%,100%{opacity:1}50%{opacity:.3}}
+/* 画廊卡片hover */
+.gal-card{overflow:hidden;cursor:pointer;transition:box-shadow .3s}
+.gal-card:hover{box-shadow:0 6px 24px rgba(20,20,19,0.15)}
+.gal-card .gal-img-inner{transition:transform .3s}
+.gal-card:hover .gal-img-inner{transform:scale(1.03)}
+.gal-card .gal-author{opacity:0;transition:opacity .3s}
+.gal-card:hover .gal-author{opacity:1}
+/* 设计规范页专用 */
+.swatch{width:100%;height:80px;border-radius:8px;display:flex;align-items:flex-end;padding:8px 12px;font-size:10px;font-family:var(--fb)}
+.swatch .sw-name{font-weight:600;margin-bottom:2px}
+.swatch .sw-hex{opacity:.7;font-size:9px}
+.fs-demo-h1{font-family:var(--fh);font-weight:900;font-size:32px;color:var(--ink);line-height:1.3;letter-spacing:.04em}
+.fs-demo-h2{font-family:var(--fh);font-weight:700;font-size:20px;color:var(--ink);line-height:1.3;letter-spacing:.03em}
+.fs-demo-body{font-family:var(--fb);font-weight:400;font-size:14px;color:var(--ink);line-height:1.7}
+.fs-demo-muted{font-family:var(--fb);font-weight:400;font-size:12px;color:var(--ink-muted);line-height:1.6}
+.fs-meta{font-size:12px;color:var(--ink-muted);margin-top:4px}
+.comp-demo{padding:12px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+.comp-divider{height:1px;background:var(--border);margin:8px 0}
+/* 迭代卡片 */
+.iter-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 20px;box-shadow:0 2px 8px rgba(20,20,19,0.04)}
+.iter-card .iter-ver{display:inline-block;background:var(--accent);color:#fff;padding:2px 10px;border-radius:4px;font-size:12px;font-weight:700;white-space:nowrap}
+.iter-card .iter-row{display:flex;gap:12px;align-items:flex-start;margin-top:8px}
+.iter-card .iter-row .iter-key{font-size:12px;color:var(--accent);font-weight:600;white-space:nowrap;min-width:28px}
+.iter-card .iter-row .iter-val{font-size:14px;color:var(--ink);line-height:1.7}
+/* 产品思路用卡片 */
+.think-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 24px;box-shadow:0 2px 10px rgba(20,20,19,0.05)}
+.think-card h3{font-family:var(--fh);font-weight:700;font-size:20px;margin-bottom:12px;color:var(--ink);letter-spacing:.03em}
+.think-card .tc-body{font-size:14px;color:var(--ink);line-height:1.7}
+.phase-tag{display:inline-block;padding:4px 14px;border-radius:4px;font-size:12px;font-weight:600;margin-bottom:4px}
+.phase-v1{background:#FFF3E0;color:#E65100}
+.phase-v2{background:#E8F5E9;color:#2E7D32}
+.phase-v3{background:#E3F2FD;color:#1565C0}
+/* Lightbox 弹窗交互 */
+.lb-overlay{cursor:pointer}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:background .3s;z-index:5;user-select:none;border:none;outline:none}
+.lb-arrow:hover{background:rgba(255,255,255,.25)}
+.lb-arrow.left{left:20px}.lb-arrow.right{right:20px}
+.lb-actions{display:flex;gap:8px;justify-content:center;padding:10px 0;flex-shrink:0}
+.lb-actions .btn{border-color:rgba(255,255,255,.3);color:#ccc;font-size:11px;padding:6px 16px}
+.lb-actions .btn:hover{color:#fff;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.08)}
+.lb-counter{color:#888;font-size:11px;text-align:center;margin-bottom:4px}
+/* 空状态 */
+.empty-state{text-align:center;padding:32px 20px}
+.empty-state .empty-icon{font-size:40px;margin-bottom:12px;opacity:.4}
+.empty-state .empty-text{font-size:14px;color:var(--ink-muted);margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="t">产品设计原型 · <strong>葉光館</strong></div><div><span class="nb" onclick="mv(-1)">◀</span><span id="pl">01/13</span><span class="nb" onclick="mv(1)">▶</span></div></div>
+<div id="dots"></div>
+<div class="sw">
+
+<!-- P1: 首页 -->
+<div class="pg active"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">01 · 首页</div>
+<div class="nav"><div class="logo">葉光<span>館</span></div><a class="act">首页</a><a>图集</a><a>关于</a><div style="margin-left:auto;display:flex;gap:6px"><span style="font-size:12px;color:var(--ink-muted)">🌏</span><span style="font-size:12px;color:var(--ink-muted)">🎨</span></div></div>
+<div style="height:220px;background:linear-gradient(135deg,#2a2520,#3d3028);display:flex;align-items:center;padding:0 48px;flex-shrink:0"><div><p style="color:var(--accent);font-size:12px;letter-spacing:4px">leafiy</p><h1 style="color:#fff;font-size:32px;margin:2px 0">葉光館</h1><p style="color:#aaa;font-size:14px;letter-spacing:3px">个人同人艺术收藏</p><div style="margin-top:14px"><span class="btn btn-p">浏览作品</span></div></div></div>
+<div style="padding:16px 48px 0;display:flex;gap:6px;flex-shrink:0"><span style="font-size:14px;color:var(--ink);font-weight:500;padding-bottom:8px;border-bottom:2px solid var(--accent)">全部</span><span style="font-size:14px;color:var(--ink-muted);padding-bottom:8px">收藏集</span><span style="font-size:14px;color:var(--ink-muted);padding-bottom:8px">Pixiv日榜</span><span style="font-size:14px;color:var(--ink-muted);padding-bottom:8px">Pixiv月榜</span></div>
+<div style="padding:28px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">晨曦微光</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：山田 · 收藏集</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">夏日回忆</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：葉 · 原创</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">星夜幻想</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Kai · 日榜</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">秋日私语</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Rin · 月榜</div></div></div>
+</div>
+<div style="padding:4px 48px 32px;display:flex;gap:48px;justify-content:center;flex-shrink:0"><div style="text-align:center"><div style="font-family:var(--fh);font-weight:700;font-size:28px;color:var(--accent)">1,139</div><div style="font-size:12px;color:var(--ink-muted);margin-top:4px">收录</div></div><div style="text-align:center"><div style="font-family:var(--fh);font-weight:700;font-size:28px;color:var(--accent)">445</div><div style="font-size:12px;color:var(--ink-muted);margin-top:4px">原创</div></div><div style="text-align:center"><div style="font-family:var(--fh);font-weight:700;font-size:28px;color:var(--accent)">361</div><div style="font-size:12px;color:var(--ink-muted);margin-top:4px">日榜</div></div><div style="text-align:center"><div style="font-family:var(--fh);font-weight:700;font-size:28px;color:var(--accent)">333</div><div style="font-size:12px;color:var(--ink-muted);margin-top:4px">月榜</div></div></div>
+<div class="nb"><strong>首页 vs 图集：</strong>首页=品牌展陈（英雄区+氛围+数据），图集=功能浏览（筛选+加载更多）</div>
+</div></div>
+
+<!-- P2: 图集 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">02 · 图集</div>
+<div class="nav"><div class="logo">葉光<span>館</span></div><a>首页</a><a class="act">图集</a><a>关于</a><div style="margin-left:auto;font-size:12px;color:var(--ink-muted)">1,139 枚</div></div>
+<div style="padding:16px 48px;display:flex;gap:4px;flex-shrink:0"><span style="background:var(--accent);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px">全部</span><span style="border:1px solid var(--border);padding:4px 14px;border-radius:20px;font-size:12px;color:var(--ink-muted);cursor:pointer;transition:all .3s" onmouseover="this.style.background='rgba(204,120,92,.1)';this.style.color='var(--accent)'" onmouseout="this.style.background='';this.style.color='var(--ink-muted)'">收藏集</span><span style="border:1px solid var(--border);padding:4px 14px;border-radius:20px;font-size:12px;color:var(--ink-muted)">日榜</span><span style="border:1px solid var(--border);padding:4px 14px;border-radius:20px;font-size:12px;color:var(--ink-muted)">月榜</span></div>
+<div style="padding:28px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">春风拂面</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Akira</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">霓虹都市</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Mei</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">静谧湖畔</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Sora</div></div></div>
+<div class="card gal-card" style="padding:0"><div class="gal-img-inner" style="aspect-ratio:4/3;background:var(--border)"></div><div style="padding:8px 12px"><div style="font-size:14px;font-weight:500">童话森林</div><div class="gal-author" style="font-size:12px;color:var(--ink-muted)">画师：Yuki</div></div></div>
+</div>
+<div style="text-align:center;padding:12px 0 32px"><span class="btn btn-o" style="border-radius:20px">加载更多</span></div>
+<div class="nb"><strong>与首页区别：</strong>无英雄区·胶囊筛选·加载更多入口</div>
+</div></div>
+
+<!-- P3: Lightbox（交互增强） -->
+<div class="pg"><div class="pgi" id="lb-page">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6;z-index:10">03 · 作品详情</div>
+<div class="lb-overlay" style="flex:1;display:flex;flex-direction:column;background:#1a1a1a;position:relative" onclick="lbClose(event)">
+<div style="display:flex;align-items:center;padding:10px 16px;background:#2a2520;color:#fff;flex-shrink:0;z-index:10"><span style="font-size:14px;cursor:pointer" onclick="event.stopPropagation();lbClose()">✕</span><span class="lb-counter" style="margin:0 auto" id="lb-counter">1 / 4</span><span style="font-size:12px;color:#888">←→ 切换</span></div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:20px;position:relative">
+<button class="lb-arrow left" onclick="event.stopPropagation();lbPrev()">◀</button>
+<div id="lb-image" style="width:70%;height:75%;background:var(--border);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink-muted);font-size:14px;transition:opacity .3s">🖼️ 作品全屏显示<br><span style="font-size:12px;margin-top:4px">点击遮罩关闭·左右箭头切换</span></div>
+<button class="lb-arrow right" onclick="event.stopPropagation();lbNext()">▶</button>
+</div>
+<div style="padding:10px 16px;background:#fff;border-radius:12px 12px 0 0;flex-shrink:0;z-index:10" onclick="event.stopPropagation()">
+<div style="font-family:var(--fh);font-weight:600;font-size:14px" id="lb-title">晨曦微光</div>
+<div style="font-size:12px;color:var(--ink-muted);margin:2px 0 8px" id="lb-author">画师：山田 · 收藏集原片</div>
+<div class="lb-actions">
+<span class="btn" style="border:1px solid var(--border);color:var(--ink-muted)">❤ 点赞</span>
+<span class="btn" style="border:1px solid var(--border);color:var(--ink-muted)">☆ 收藏</span>
+<span class="btn" style="border:1px solid var(--border);color:var(--ink-muted)">↗ 分享</span>
+<span class="btn" style="border:1px solid var(--border);color:var(--ink-muted)">⚠ 举报</span>
+</div>
+</div></div>
+<div class="nb">点击遮罩关闭·左右箭头切换作品·底部操作栏4按钮</div>
+</div></div>
+
+<!-- P4: 移动端 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">04 · 移动端</div>
+<div style="flex:1;display:flex;justify-content:center;align-items:center;gap:48px;background:#f0efeb;padding:40px 48px">
+<div style="width:240px;height:460px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1);display:flex;flex-direction:column">
+<div style="height:100px;background:linear-gradient(135deg,#2a2520,#3d3028);display:flex;flex-direction:column;justify-content:center;padding:12px"><div style="color:var(--accent);font-size:8px;letter-spacing:2px">leafiy</div><div style="color:#fff;font-family:var(--fh);font-weight:700;font-size:14px">葉光館</div><div style="color:#aaa;font-size:8px">个人同人艺术收藏</div></div>
+<div style="display:flex;gap:4px;padding:6px 8px;overflow-x:auto"><span style="background:var(--accent);color:#fff;padding:2px 10px;border-radius:20px;font-size:8px">全部</span><span style="border:1px solid var(--border);padding:2px 10px;border-radius:20px;font-size:8px;color:var(--ink-muted)">收藏集</span><span style="border:1px solid var(--border);padding:2px 10px;border-radius:20px;font-size:8px;color:var(--ink-muted)">日榜</span><span style="border:1px solid var(--border);padding:2px 10px;border-radius:20px;font-size:8px;color:var(--ink-muted)">月榜</span></div>
+<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px 8px"><div style="background:var(--border);border-radius:4px"></div><div style="background:var(--border);border-radius:4px"></div><div style="background:var(--border);border-radius:4px"></div><div style="background:var(--border);border-radius:4px"></div></div></div>
+<div class="card" style="max-width:300px"><div style="font-size:14px;font-weight:600;margin-bottom:8px">📱 适配要点</div><ul style="font-size:12px;color:var(--ink-muted);line-height:1.8"><li>卡片底栏替代Hover</li><li>触控滑动·双列瀑布流</li><li>标签横向滚动</li><li>四类筛选：全部/日榜/月榜</li></ul></div></div>
+<div class="nb">移动端完整适配，四类筛选均可横向滚动</div>
+</div></div>
+
+<!-- P5: 多语言主题 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">05 · 多语言 & 主题</div>
+<div class="center-wrap" style="background:#f0efeb">
+<div style="display:flex;justify-content:center;align-items:center;gap:48px">
+<div class="card" style="width:320px;padding:24px;text-align:center"><div style="font-size:12px;color:var(--accent);letter-spacing:2px">LANGUAGE</div><div style="font-family:var(--fh);font-weight:700;font-size:22px;margin:6px 0">葉光館</div><div style="font-size:14px;color:var(--ink-muted);margin-bottom:14px">leafiy Gallery</div><div style="display:flex;gap:6px;justify-content:center"><span style="background:var(--accent);color:#fff;padding:4px 14px;border-radius:4px;font-size:12px">中文</span><span style="border:1px solid var(--border);padding:4px 14px;border-radius:4px;font-size:12px;color:var(--ink-muted)">English</span><span style="border:1px solid var(--border);padding:4px 14px;border-radius:4px;font-size:12px;color:var(--ink-muted)">日本語</span></div></div>
+<div class="card" style="width:420px;padding:24px"><div style="font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:8px">🎨 8种主题</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+<div style="background:#FAF9F5;height:40px;border-radius:6px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--ink)">默认</div><div style="background:#1a1a2e;height:40px;border-radius:6px;border:1px solid #333;display:flex;align-items:center;justify-content:center;font-size:12px;color:#aaa">暗色</div><div style="background:#f5f0e8;height:40px;border-radius:6px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:12px;color:#666">Mono</div><div style="background:#faf0e6;height:40px;border-radius:6px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:12px;color:#666">暖色</div>
+<div style="background:#e8f0f5;height:40px;border-radius:6px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:12px;color:#666">冷色</div><div style="background:#2d1b2e;height:40px;border-radius:6px;border:1px solid #555;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb">P3</div><div style="background:#1b2d1e;height:40px;border-radius:6px;border:1px solid #555;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb">P4</div><div style="background:#1b1b2d;height:40px;border-radius:6px;border:1px solid #555;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb">P5</div></div>
+<div style="padding:8px 14px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--ink-muted)">CSS变量切换，localStorage持久化</div></div></div></div>
+<div class="nb">3种语言+8种主题，CSS变量驱动</div>
+</div></div>
+
+<!-- P6: 关于 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">06 · 关于作者</div>
+<div class="nav"><div class="logo">葉光<span>館</span></div><a>首页</a><a>图集</a><a class="act">关于</a></div>
+<div class="center-wrap">
+<div class="sf" style="margin:0;max-width:800px;align-self:center;width:100%">
+<div class="lb"><span>📄 关于页</span><span class="bd">作者简介+语录+社交</span></div>
+<div style="display:flex;gap:24px;align-items:flex-start">
+<div style="flex-shrink:0"><div style="width:100px;height:100px;border-radius:50%;border:2px solid var(--accent);background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--ink-muted);font-size:12px">头像</div></div>
+<div><div style="font-family:var(--fh);font-weight:700;font-size:22px;letter-spacing:.04em">葉</div><div style="font-size:14px;color:var(--ink-muted);margin:2px 0 8px">个人同人艺术收藏空间</div>
+<blockquote style="border-left:2px solid var(--accent);padding-left:10px;margin-bottom:12px;font-size:14px;color:var(--ink-muted);font-style:italic">「你知道你能找到我，我们彩虹桥上见」</blockquote>
+<div style="display:flex;gap:6px;margin-bottom:8px"><span style="width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px">B</span><span style="width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px">📧</span><span style="width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px">🐙</span></div>
+<div class="bt">葉光館——同人作品站。用记忆收藏那些容易被忽略的瞬间。</div></div></div></div>
+<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><span class="tag" style="border-color:var(--border);color:var(--ink-muted)">同人艺术</span><span class="tag" style="border-color:var(--border);color:var(--ink-muted)">作品收藏</span><span class="tag" style="border-color:var(--border);color:var(--ink-muted)">个人项目</span></div></div>
+<div class="nb"><strong>三页分工：</strong>首页=品牌·图集=浏览·关于=人格。顶部导航切换。</div>
+</div></div>
+
+<!-- P7: 异常状态 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">07 · 异常状态</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px">
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--border);padding:16px 0">
+<div style="font-size:14px;font-weight:600;color:var(--accent);margin-bottom:12px;letter-spacing:1px">⚠ 主要异常</div>
+<div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:28px;width:100%">
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:28px;margin-bottom:4px">📭</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">空状态</div><div class="bt" style="font-size:12px;color:var(--ink-muted);margin-bottom:8px">暂无匹配作品</div><span class="btn btn-o">重置</span></div>
+<div class="card" style="padding:20px 16px"><div style="display:flex;gap:4px;margin-bottom:8px"><div style="flex:1;height:28px;background:var(--border);border-radius:4px;animation:ppp 1.5s infinite"></div><div style="flex:1;height:28px;background:var(--border);border-radius:4px;animation:ppp 1.5s infinite;animation-delay:.2s"></div><div style="flex:1;height:28px;background:var(--border);border-radius:4px;animation:ppp 1.5s infinite;animation-delay:.4s"></div><div style="flex:1;height:28px;background:var(--border);border-radius:4px;animation:ppp 1.5s infinite;animation-delay:.6s"></div></div><div style="text-align:center;font-size:12px;color:var(--ink-muted)">加载中·骨架屏</div></div>
+<div class="card" style="text-align:center;padding:20px 12px;border-color:#e0b0b0"><div style="font-size:28px;margin-bottom:4px">⚠️</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">加载失败</div><div class="bt" style="font-size:12px;color:var(--ink-muted);margin-bottom:8px">网络异常</div><span class="btn btn-p">重试</span></div></div></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:16px 0">
+<div style="font-size:14px;font-weight:600;color:var(--accent);margin-bottom:12px;letter-spacing:1px">🔔 次要异常</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:28px;width:100%">
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:24px">🚫</div><div style="font-size:14px;font-weight:500;margin:4px 0">网络离线</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">检查连接</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:24px">🔍</div><div style="font-size:14px;font-weight:500;margin:4px 0">搜索无结果</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">换关键词</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:24px">🔄</div><div style="font-size:14px;font-weight:500;margin:4px 0">刷新失败</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">下拉重试</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:24px">🔒</div><div style="font-size:14px;font-weight:500;margin:4px 0">权限不足</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">需登录</div></div></div></div></div>
+<div class="nb">7种异常·上半主要/下半次要各50%·所有卡片宽度统一</div>
+</div></div>
+
+<!-- P8: 社区全景 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:#5a8;font-size:9px;opacity:.8">08 · 🚧 规划中 · 社区全景</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px">
+<span class="plan lbl" style="border:none;background:#5a8;color:#fff;padding:4px 14px;border-radius:4px;align-self:flex-start;margin-bottom:12px">🚧 规划中</span>
+<h2 style="font-size:20px;margin-bottom:4px">从个人收藏到创作者社区</h2>
+<div class="bt" style="font-size:14px;color:var(--ink-muted);margin-bottom:32px">当前前端展示→规划三端联动</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+<div class="card" style="padding:14px 20px;border:1.5px solid var(--accent)"><div style="font-size:14px;font-weight:600;color:var(--accent);margin-bottom:6px">✅ 已上线</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">首页·图集·Lightbox·关于·多语言·8主题</div></div>
+<div class="plan" style="padding:14px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:6px">三端扩展架构</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">用户端·创作者端·运营后台</div></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+<div class="plan" style="padding:16px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:6px">👤 用户端</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">注册/登录·个人主页<br>关注/收藏管理·评论互动</div></div>
+<div class="plan" style="padding:16px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:6px">🎨 创作者端</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">作品发布/编辑/下架<br>数据看板·粉丝管理</div></div>
+<div class="plan" style="padding:16px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:6px">⚙️ 运营后台</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">审核队列·用户管理<br>标签配置·数据统计</div></div></div></div>
+<div class="nb">🚧 规划阶段设计推演，未开发</div>
+</div></div>
+
+<!-- P9: 创作者端 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:#5a8;font-size:9px;opacity:.8">09 · 🚧 规划中 · 创作者端</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px">
+<span class="plan lbl" style="border:none;background:#5a8;color:#fff;padding:4px 14px;border-radius:4px;align-self:flex-start;margin-bottom:12px">🚧 规划中</span>
+<h2 style="font-size:20px;margin-bottom:4px">创作者端核心流程</h2>
+<div class="bt" style="font-size:14px;color:var(--ink-muted);margin-bottom:32px">入驻→上传→审核→数据</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div class="plan" style="padding:20px 24px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">📤 作品发布</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">拖拽上传·格式校验<br>标题/描述/标签<br>AI预检·草稿/发布<br><span style="color:#b66">⚠ 异常：超限/格式/断网/重复</span></div></div>
+<div class="plan" style="padding:20px 24px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">📊 数据看板</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">曝光/访客/点赞/收藏<br>流量来源分析<br>作品状态管理<br><span style="color:#5a8">✨ 差异化：Pixiv不提供流量分析</span></div></div></div></div>
+<div class="nb">🚧 规划阶段设计，差异化功能已标注</div>
+</div></div>
+
+<!-- P10: 运营后台 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:#5a8;font-size:9px;opacity:.8">10 · 🚧 规划中 · 运营后台</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px">
+<span class="plan lbl" style="border:none;background:#5a8;color:#fff;padding:4px 14px;border-radius:4px;align-self:flex-start;margin-bottom:12px">🚧 规划中</span>
+<h2 style="font-size:20px;margin-bottom:4px">运营后台</h2>
+<div class="bt" style="font-size:14px;color:var(--ink-muted);margin-bottom:32px">角色：运营/管理员</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px">
+<div class="plan" style="padding:20px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">📋 审核</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">AI分级预筛<br>通过/驳回/批量<br>降低60%人力</div></div>
+<div class="plan" style="padding:20px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">👥 用户</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">用户列表<br>入驻审核<br>封禁/冻结</div></div>
+<div class="plan" style="padding:20px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">🏷️ 标签</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">标签管理<br>分组排序<br>敏感词过滤</div></div>
+<div class="plan" style="padding:20px 20px"><div class="lbl">🚧 规划中</div><div style="font-size:14px;font-weight:600;color:#5a8;margin-bottom:8px">📈 数据</div><div class="bt" style="font-size:12px;color:var(--ink-muted)">日活/月活<br>作品增长<br>内容健康度</div></div></div></div>
+<div class="nb">🚧 规划阶段设计稿</div>
+</div></div>
+
+<!-- P11: 设计规范 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">11 · 设计规范</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px;overflow-y:auto">
+<h2 style="font-size:20px;margin-bottom:32px">设计规范</h2>
+
+<!-- 色板模块 -->
+<div class="think-card" style="margin-bottom:32px">
+<h3>🎨 色彩系统</h3>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:16px">
+<div style="text-align:center"><div class="swatch" style="background:var(--accent);color:#fff"><div class="sw-name">Accent</div><div class="sw-hex">#CC785C</div></div></div>
+<div style="text-align:center"><div class="swatch" style="background:var(--bg);color:var(--ink);border:1px solid var(--border)"><div class="sw-name">Background</div><div class="sw-hex">#FAF9F5</div></div></div>
+<div style="text-align:center"><div class="swatch" style="background:var(--ink);color:#fff"><div class="sw-name">Ink</div><div class="sw-hex">#141413</div></div></div>
+<div style="text-align:center"><div class="swatch" style="background:var(--ink-muted);color:#fff"><div class="sw-name">Ink Muted</div><div class="sw-hex">#6C6A64</div></div></div>
+<div style="text-align:center"><div class="swatch" style="background:var(--border);color:var(--ink-muted)"><div class="sw-name">Border</div><div class="sw-hex">#E6DFD8</div></div></div>
+</div>
+</div>
+
+<!-- 字体模块 -->
+<div class="think-card" style="margin-bottom:32px">
+<h3>🔤 字体系统</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px">
+<div><div class="fs-demo-h1">一级标题</div><div class="fs-meta">32px / 900 / Noto Serif SC / 0.04em</div></div>
+<div><div class="fs-demo-h2">二级标题</div><div class="fs-meta">20px / 700 / Noto Serif SC / 0.03em</div></div>
+<div><div class="fs-demo-body">正文文本 - 14px / 400 / Noto Sans SC / 行高1.7</div><div class="fs-meta">14px / 400 / Noto Sans SC / 行高1.7</div></div>
+<div><div class="fs-demo-muted">辅助文本 - 说明、时间戳、注释</div><div class="fs-meta">12px / 400 / Noto Sans SC / Muted</div></div>
+</div>
+</div>
+
+<!-- 组件模块 -->
+<div class="think-card" style="margin-bottom:32px">
+<h3>🧩 基础组件</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-top:16px">
+<div class="comp-demo" style="text-align:center">
+<div style="font-size:12px;color:var(--ink-muted);margin-bottom:12px">按钮</div>
+<div style="display:flex;flex-direction:column;gap:8px;align-items:center"><span class="btn btn-p">主按钮</span><span class="btn btn-o">次按钮</span></div>
+</div>
+<div class="comp-demo" style="text-align:center">
+<div style="font-size:12px;color:var(--ink-muted);margin-bottom:12px">标签</div><span class="tag">设计标签</span>
+</div>
+<div class="comp-demo" style="text-align:center">
+<div style="font-size:12px;color:var(--ink-muted);margin-bottom:12px">卡片</div>
+<div class="card" style="padding:12px 16px;font-size:14px;color:var(--ink-muted)">卡片内容<span style="font-size:12px;display:block">圆角8px</span></div>
+</div>
+<div class="comp-demo" style="text-align:center">
+<div style="font-size:12px;color:var(--ink-muted);margin-bottom:12px">分割线</div>
+<div style="padding:8px 0"><div class="comp-divider"></div></div>
+</div>
+</div>
+</div>
+
+<!-- 空状态模块 -->
+<div class="think-card">
+<h3>📭 空状态</h3>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+<div class="card empty-state">
+<div class="empty-icon">💔</div>
+<div class="empty-text">还没有收藏作品</div>
+<span class="btn btn-o">去画廊看看</span>
+</div>
+<div class="card empty-state">
+<div class="empty-icon">🔍</div>
+<div class="empty-text">没有找到相关作品</div>
+<span class="btn btn-o">换个关键词</span>
+</div>
+<div class="card empty-state">
+<div class="empty-icon">📝</div>
+<div class="empty-text">暂无草稿</div>
+<span class="btn btn-o">发布新作品</span>
+</div>
+</div>
+</div>
+</div>
+<div class="nb">设计规范：色彩/字体/组件/空状态统一标准</div>
+</div></div>
+
+<!-- P12: 产品设计思路 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">12 · 产品设计思路</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px;overflow-y:auto">
+<h2 style="font-size:20px;margin-bottom:32px">产品设计思路</h2>
+<div class="think-card" style="margin-bottom:32px"><h3>项目背景</h3><div class="tc-body">国内小众独立摄影师与二次元插画创作者缺少干净、无干扰的作品展示社区；头部平台Pixiv国内访问不便，本土社区广告多、内容杂、算法干扰严重，创作者需要一个纯粹的作品展示空间。</div></div>
+<div class="think-card" style="margin-bottom:32px"><h3>目标用户</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px"><div style="border-left:3px solid var(--accent);padding-left:16px"><div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px">🎨 创作者侧</div><div class="tc-body">独立摄影师、二次元插画师、同人创作者。<br>核心诉求：作品纯净展示、无流量绑架。</div></div><div style="border-left:3px solid var(--accent);padding-left:16px"><div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px">👀 浏览者侧</div><div class="tc-body">审美向用户、二次元爱好者、设计从业者。<br>核心诉求：高质量内容浏览、无广告干扰。</div></div></div></div>
+<div class="think-card" style="margin-bottom:32px"><h3>核心定位</h3><div class="tc-body">轻量、极简、无广告的摄影与插画双赛道创作者作品展示社区。</div></div>
+<div class="think-card" style="margin-bottom:32px"><h3>差异化优势</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px"><div style="padding:16px 18px;background:var(--bg);border-radius:8px;border:1px solid var(--border)"><div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px">📵 内容纯净</div><div class="tc-body" style="font-size:12px">全站无广告、无算法强制推送，浏览体验纯粹</div></div><div style="padding:16px 18px;background:var(--bg);border-radius:8px;border:1px solid var(--border)"><div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px">📐 双轨分区</div><div class="tc-body" style="font-size:12px">摄影与插画独立分区推荐，不混合推送</div></div><div style="padding:16px 18px;background:var(--bg);border-radius:8px;border:1px solid var(--border)"><div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px">🛡️ 轻量审核</div><div class="tc-body" style="font-size:12px">AI粗筛 + 人工复核，降低违规同时控制成本</div></div></div></div>
+<div class="think-card"><h3>版本规划</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px"><div style="padding:16px 18px;background:#FFF3E0;border-radius:8px;border:1px solid #FFE0B2"><div class="phase-tag phase-v1">V1.0 基础版</div><div class="tc-body" style="font-size:12px">作品浏览、发布、基础个人中心，完成核心展示闭环</div></div><div style="padding:16px 18px;background:#E8F5E9;border-radius:8px;border:1px solid #C8E6C9"><div class="phase-tag phase-v2">V2.0 社区版</div><div class="tc-body" style="font-size:12px">互动体系、创作者数据看板，搭建社区生态</div></div><div style="padding:16px 18px;background:#E3F2FD;border-radius:8px;border:1px solid #BBDEFB"><div class="phase-tag phase-v3">V3.0 商业化</div><div class="tc-body" style="font-size:12px">付费高清图库、约稿中介功能</div></div></div></div>
+</div>
+<div class="nb">从用户需求出发的产品设计思路，不含技术实现细节</div>
+</div></div>
+
+<!-- P13: 版本迭代 -->
+<div class="pg"><div class="pgi">
+<div style="position:absolute;top:4px;left:8px;color:var(--accent);font-size:9px;opacity:.6">13 · 版本迭代</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:40px 48px;overflow-y:auto">
+<h2 style="font-size:20px;margin-bottom:16px">版本迭代记录</h2>
+<div class="bt" style="font-size:14px;color:var(--ink-muted);margin-bottom:32px">每条迭代按「背景→目标→内容→预期」四要素记录</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div class="iter-card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><span class="iter-ver">V1.3</span><span style="font-size:14px;font-weight:600;color:var(--ink)">互动体系上线</span></div><div class="iter-row"><span class="iter-key">背景</span><span class="iter-val">用户仅单向浏览，无留存抓手，回访率偏低</span></div><div class="iter-row"><span class="iter-key">目标</span><span class="iter-val">用户次日留存率提升10%</span></div><div class="iter-row"><span class="iter-key">内容</span><span class="iter-val">新增关注、收藏、评论三大互动功能，配套消息通知</span></div><div class="iter-row"><span class="iter-key">预期</span><span class="iter-val">用户粘性增强，社区氛围初步形成</span></div></div>
+<div class="iter-card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><span class="iter-ver">V1.2</span><span style="font-size:14px;font-weight:600;color:var(--ink)">内容审核体系</span></div><div class="iter-row"><span class="iter-key">背景</span><span class="iter-val">违规插画存在合规风险，纯人工审核人力成本过高</span></div><div class="iter-row"><span class="iter-key">目标</span><span class="iter-val">违规内容拦截率达95%，审核人力成本降低40%</span></div><div class="iter-row"><span class="iter-key">内容</span><span class="iter-val">上线AI粗筛 + 人工复核二级审核机制，新增驳回原因反馈</span></div><div class="iter-row"><span class="iter-key">预期</span><span class="iter-val">合规风险可控，审核效率显著提升</span></div></div>
+<div class="iter-card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><span class="iter-ver">V1.1</span><span style="font-size:14px;font-weight:600;color:var(--ink)">创作者数据看板</span></div><div class="iter-row"><span class="iter-key">背景</span><span class="iter-val">创作者反馈无法感知作品曝光数据，7日留存率偏低</span></div><div class="iter-row"><span class="iter-key">目标</span><span class="iter-val">提升创作者7日留存率15%</span></div><div class="iter-row"><span class="iter-key">内容</span><span class="iter-val">新增作品浏览量、点赞数、收藏数统计，支持按周/月筛选</span></div><div class="iter-row"><span class="iter-key">预期</span><span class="iter-val">创作者发布动力提升，月活跃创作者占比上涨</span></div></div>
+<div class="iter-card" style="border-left:3px solid var(--accent);background:var(--bg)"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><span class="iter-ver">V1.0</span><span style="font-size:14px;font-weight:600;color:var(--ink)">基础版上线</span></div><div class="iter-row"><span class="iter-key">背景</span><span class="iter-val">验证「精选策展」需求，完成核心展示闭环</span></div><div class="iter-row"><span class="iter-key">目标</span><span class="iter-val">作品浏览+发布+基础个人中心，MVP上线验证</span></div><div class="iter-row"><span class="iter-key">内容</span><span class="iter-val">首页品牌展陈、图集全量浏览、Lightbox沉浸查看、多语言/主题切换</span></div><div class="iter-row"><span class="iter-key">预期</span><span class="iter-val">吸引首批创作者入驻，验证核心用户需求</span></div></div>
+</div></div>
+<div class="nb">产品视角迭代记录，每条含背景·目标·内容·预期，不含技术实现细节</div>
+</div></div>
+
+</div>
+<script>
+const pg=document.querySelectorAll('.pg');const dd=document.getElementById('dots');const pl=document.getElementById('pl');let cu=0,t=13;
+pg.forEach((_,i)=>{const d=document.createElement('span');if(i===0)d.classList.add('act');d.onclick=()=>go(i);dd.appendChild(d)})
+function go(n){if(n<0||n>=t)return;pg.forEach((p,i)=>p.classList.toggle('active',i===n));document.querySelectorAll('#dots span').forEach((d,i)=>d.classList.toggle('act',i===n));cu=n;pl.textContent=String(n+1).padStart(2,'0')+'/'+String(t).padStart(2,'0')}
+function mv(d){go(cu+d)}
+document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();mv(1)}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();mv(-1)}})
+
+// === Lightbox 交互 ===
+var lbIdx=0;
+var lbData=[
+  {title:'晨曦微光',author:'画师：山田 · 收藏集原片'},
+  {title:'夏日回忆',author:'画师：葉 · 原创作品'},
+  {title:'星夜幻想',author:'画师：Kai · 日榜精选'},
+  {title:'秋日私语',author:'画师：Rin · 月榜精选'}
+];
+function lbUpdate(){
+  document.getElementById('lb-image').style.opacity='0';
+  setTimeout(function(){
+    document.getElementById('lb-image').innerHTML='🖼️ '+lbData[lbIdx].title+'<br><span style="font-size:12px;margin-top:4px">点击遮罩关闭·左右箭头切换</span>';
+    document.getElementById('lb-title').textContent=lbData[lbIdx].title;
+    document.getElementById('lb-author').textContent=lbData[lbIdx].author;
+    document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbData.length;
+    document.getElementById('lb-image').style.opacity='1';
+  },150);
+}
+function lbNext(){lbIdx=(lbIdx+1)%lbData.length;lbUpdate()}
+function lbPrev(){lbIdx=(lbIdx-1+lbData.length)%lbData.length;lbUpdate()}
+function lbClose(e){
+  if(e&&e.target.tagName!=='BUTTON'&&!e.target.closest('.lb-arrow')&&!e.target.closest('[onclick]')){
+    go(0); /* 关闭弹窗返回首页 */
+  }
+}
+document.addEventListener('keydown',function(e){
+  var ap=document.querySelector('.pg.active');
+  if(!ap||!ap.querySelector('#lb-page'))return;
+  if(e.key==='ArrowLeft'){e.preventDefault();lbPrev()}
+  if(e.key==='ArrowRight'){e.preventDefault();lbNext()}
+  if(e.key==='Escape'){e.preventDefault();go(0)}
+});
+go(0);
+</script>
+</body>
+</html>

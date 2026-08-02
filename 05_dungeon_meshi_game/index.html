@@ -3426,7 +3426,8 @@ let _musicFadeTimer = null;
 
 function musicOk(){
   // file:// 下音频会被 CORS 拦截，仅 HTTP 可用
-  return _musicOn && location.protocol === 'http:';
+  // file:// 下音频会被 CORS 拦截，仅 HTTP/HTTPS 可用（本地 http 与线上 https 都支持）
+  return _musicOn && (location.protocol === 'http:' || location.protocol === 'https:');
 }
 function fadeOutAudio(a, cb){
   try{

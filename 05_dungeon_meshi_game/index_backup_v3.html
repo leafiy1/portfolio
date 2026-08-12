@@ -3,601 +3,407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8D%B2%3C/text%3E%3C/svg%3E">
 <title>迷宫饭 · 冒险食堂手记</title>
 <style>
-/* ============================================================
- * 迷宫饭 · 冒险食堂手记 — v2.4.0 设计系统
- * 美学：暖中世纪奇幻食堂 / 冒险手账
- * 基础：暖米色羊皮纸 · 墨色文字 · 陶土橙单强调色
- * ============================================================ */
+/* ============ 基础与羊皮纸纹理 ============ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root{
-  /* —— 色板：羊皮纸中性色（60%）+ 陶土橙强调（10%）+ 金点缀 —— */
-  --paper-0:#faf2df; --paper-1:#f4e7c8; --paper-2:#ecd7ac; --paper-3:#dfc38e;
   --parch-1:#f6e7c5; --parch-2:#eed8a6; --parch-3:#e2c488;
-  --ink-deep:#33200f; --ink:#4a2c17; --ink-soft:#6f4a26; --ink-dim:#8a6a44;
-  --line:rgba(96,62,30,.16); --line-strong:rgba(96,62,30,.40);
-  --accent:#b4552d; --accent-deep:#8f3f20; --accent-soft:rgba(180,85,45,.13);
-  --accent-ink:#7c3518;
-  --gold-1:#f8e08e; --gold-2:#d4a017; --gold-3:#a67c00;
-  --gold-soft:rgba(212,160,23,.16);
+  --ink:#4a2c17; --ink-soft:#6b4423;
   --border:#5f3d1e; --border-dark:#3e2710;
-  --hp:#a03a2a; --hp-bg:#7c4a33; --full:#c98a2d; --full-bg:#7c5a33; --green:#5f7a33;
-  --ok:#4f6b1f; --warn:#c07a1c; --danger:#a03a2a;
-  /* —— 字体阶梯：展示 / 标题 / 正文 / 辅助 —— */
-  --font-display:'STZhongsong','华文中宋','SimSun','Songti SC','Noto Serif SC',serif;
-  --font-body:'Noto Serif SC','Source Han Serif SC','思源宋体','SimSun','Songti SC',serif;
-  --font-note:'KaiTi','楷体','STKaiti','Kaiti SC','Noto Serif SC',serif;
-  --fs-display:clamp(2.9rem,8vw,5.6rem);
-  --fs-h1:clamp(2rem,4.2vw,2.9rem);
-  --fs-title:1.375rem;   /* 面板标题 22px */
-  --fs-body:1rem;        /* 正文 16px */
-  --fs-sm:0.9375rem;     /* 小正文 15px */
-  --fs-micro:0.8125rem;  /* 辅助 13px */
-  /* —— 圆角 / 阴影 / 动效 —— */
-  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-pill:999px;
-  --shadow-sm:0 1px 2px rgba(64,34,12,.05), 0 2px 6px -2px rgba(64,34,12,.10);
-  --shadow-md:0 1px 2px rgba(64,34,12,.05), 0 6px 16px -6px rgba(64,34,12,.18), inset 0 0 0 1px rgba(255,255,255,.38), inset 0 0 28px rgba(120,80,30,.10);
-  --shadow-lg:0 2px 4px rgba(40,20,8,.08), 0 16px 40px -12px rgba(64,34,12,.35), inset 0 0 0 1px rgba(255,255,255,.30), inset 0 0 40px rgba(120,80,30,.14);
-  --shadow-btn:inset 0 1px 0 rgba(255,255,255,.55), 0 3px 6px rgba(64,34,12,.22);
-  --ease-out:cubic-bezier(.16,1,.3,1);
-  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --gold-1:#f8e08e; --gold-2:#d4a017; --gold-3:#a67c00;
+  --hp:#a03a2a; --hp-bg:#7c4a33;
+  --full:#c98a2d; --full-bg:#7c5a33;
+  --green:#5f7a33;
 }
-
 html,body{ min-height:100%; }
 body{
-  font-family: var(--font-body);
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', '思源宋体', 'SimSun', 'Songti SC', serif;
   color: var(--ink);
-  font-size: var(--fs-body);
-  line-height:1.65;
+  font-size:16px; line-height:1.6;
   background:
-    radial-gradient(ellipse at 18% 12%, rgba(255,250,224,.75), transparent 52%),
-    radial-gradient(ellipse at 82% 88%, rgba(164,110,52,.16), transparent 46%),
-    radial-gradient(ellipse at 58% 4%, rgba(140,90,34,.08), transparent 38%),
-    repeating-linear-gradient(0deg, rgba(120,80,30,.03) 0 2px, transparent 2px 6px),
-    repeating-linear-gradient(90deg, rgba(120,80,30,.02) 0 3px, transparent 3px 8px),
-    linear-gradient(158deg, var(--paper-0) 0%, var(--paper-1) 48%, var(--paper-3) 100%);
+    radial-gradient(ellipse at 15% 20%, rgba(255,248,220,.55), transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(150,105,50,.18), transparent 50%),
+    radial-gradient(ellipse at 60% 10%, rgba(120,80,30,.10), transparent 40%),
+    repeating-linear-gradient(0deg, rgba(120,80,30,.035) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(90deg, rgba(120,80,30,.025) 0 3px, transparent 3px 7px),
+    linear-gradient(160deg, var(--parch-1) 0%, var(--parch-2) 55%, var(--parch-3) 100%);
   background-attachment: fixed;
-  padding: 26px 16px 64px;
+  padding: 24px 16px 60px;
 }
 body::before{
   content:""; position: fixed; inset:0; pointer-events:none; z-index:0;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1YTFhIiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iMC4wNyI+PHBhdGggZD0iTTYwLDE1IEw5NSwyOCBMOTUsNjIgUTk1LDkyIDYwLDEwNSBRMjUsOTIgMjUsNjIgTDI1LDI4IFoiLz48cGF0aCBkPSJNNDUsMzUgTDQ1LDg1IE03NSwzNSBMNzUsODUgTTM4LDU1IEw4Miw1NSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNTAiIHI9IjgiLz48cGF0aCBkPSJNNjAsNDIgTDYwLDU4IE01Miw1MCBMNjgsNTAiLz48L2c+PC9zdmc+");
-  background-repeat: repeat; background-size: 132px 132px;
+  box-shadow: inset 0 0 160px rgba(90,55,15,.35);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1YTFhIiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iMC4xMCI+PHBhdGggZD0iTTYwLDE1IEw5NSwyOCBMOTUsNjIgUTk1LDkyIDYwLDEwNSBRMjUsOTIgMjUsNjIgTDI1LDI4IFoiLz48cGF0aCBkPSJNNDUsMzUgTDQ1LDg1IE03NSwzNSBMNzUsODUgTTM4LDU1IEw4Miw1NSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNTAiIHI9IjgiLz48cGF0aCBkPSJNNjAsNDIgTDYwLDU4IE01Miw1MCBMNjgsNTAiLz48L2c+PC9zdmc+");
+  background-repeat: repeat; background-size: 130px 130px;
 }
 body::after{
   content:""; position: fixed; inset:0; pointer-events:none; z-index:0;
-  box-shadow: inset 0 0 180px rgba(84,52,14,.32), inset 0 0 34px rgba(84,52,14,.14);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1YTFhIiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iMC4xMCI+PHBhdGggZD0iTTYwLDE1IEw5NSwyOCBMOTUsNjIgUTk1LDkyIDYwLDEwNSBRMjUsOTIgMjUsNjIgTDI1LDI4IFoiLz48cGF0aCBkPSJNNDUsMzUgTDQ1LDg1IE03NSwzNSBMNzUsODUgTTM4LDU1IEw4Miw1NSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNTAiIHI9IjgiLz48cGF0aCBkPSJNNjAsNDIgTDYwLDU4IE01Miw1MCBMNjgsNTAiLz48L2c+PC9zdmc+");
+  background-size: 90px 90px; background-position: 12px 12px;
+  background-repeat: repeat; opacity:.4;
 }
-#app{ position:relative; z-index:1; max-width:1120px; margin:0 auto; }
+#app{ position:relative; z-index:1; max-width:1080px; margin:0 auto; }
 
 /* ============ 通用羊皮纸面板 ============ */
 .panel{
-  background: linear-gradient(165deg, rgba(255,250,232,.94), rgba(241,224,178,.90) 62%, rgba(228,201,143,.93));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-md);
-  padding: 22px 24px;
-  margin-bottom: 22px;
-  position: relative;
-}
-.panel::before{
-  content:""; position:absolute; inset:5px; pointer-events:none;
-  border:1px solid rgba(255,255,255,.34); border-radius: calc(var(--r-lg) - 3px);
+  background: linear-gradient(165deg, rgba(255,250,230,.9), rgba(240,220,175,.85) 60%, rgba(228,200,140,.9));
+  border: 3px solid var(--border);
+  border-radius: 18px 12px 20px 14px / 14px 20px 12px 18px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.35),
+    inset 0 0 26px rgba(120,80,30,.18),
+    0 5px 14px rgba(60,30,10,.28);
+  padding: 18px 20px;
+  margin-bottom: 20px;
 }
 .panel-title{
-  font-size: var(--fs-title);
-  font-weight: 800;
-  letter-spacing: 5px;
-  color: var(--ink-soft);
-  text-align: center;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+  font-size: 20px; font-weight:bold; letter-spacing: 4px;
+  color: var(--ink-soft); margin-bottom: 12px;
+  text-align:center;
+  border-bottom: none;
+  padding-bottom: 8px;
   position: relative;
-  font-family: var(--font-display);
-}
-.panel-title::before{
-  content:"❦"; display:block; font-size:14px; color:var(--gold-2); letter-spacing:0;
-  margin-bottom:2px; opacity:.9;
 }
 .panel-title::after{
-  content:""; position:absolute; left:18%; right:18%; bottom:0; height:2px;
-  background: linear-gradient(90deg, transparent, var(--gold-3) 30%, var(--gold-2) 50%, var(--gold-3) 70%, transparent);
-  opacity:.65;
+  content:"";
+  position:absolute; left:10%; right:10%; bottom:0;
+  height:6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0,3 L8,3 M8,0 L8,6 M8,3 L16,3 M16,0 L16,6 M16,3 L24,3 M24,0 L24,6 M24,3 L32,3 M32,0 L32,6 M32,3 L40,3 M40,0 L40,6 M40,3 L48,3 M48,0 L48,6 M48,3 L56,3 M56,0 L56,6' stroke='%23a67c00' stroke-width='1.4' fill='none' opacity='0.7'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 60px 6px;
+  opacity:.6;
 }
+.panel-title::before, .panel-title::after{ content:" ❦ "; color: var(--gold-2); }
 
 /* ============ 按钮 ============ */
 .btn{
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
-  color: var(--ink-deep);
-  background: linear-gradient(180deg, #f6e6bd, #e8cf9a 70%, #dcbb82);
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-md);
-  padding: 9px 18px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  box-shadow: var(--shadow-btn);
-  transition: transform .14s var(--ease-out), box-shadow .14s var(--ease-out), filter .14s var(--ease-out);
+  font-family: inherit; font-size: 15px; color: var(--ink);
+  background: linear-gradient(180deg, #f4e0b0, #e3c68c 70%, #d9b577);
+  border: 2px solid var(--border);
+  border-radius: 9px 13px 10px 12px / 12px 10px 13px 9px;
+  padding: 8px 16px; cursor: pointer; letter-spacing: 2px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 3px 5px rgba(60,30,10,.30);
+  transition: transform .12s, box-shadow .12s, filter .12s;
   user-select: none;
 }
-.btn:hover{ transform: translateY(-2px); filter: brightness(1.04); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 7px 14px -4px rgba(64,34,12,.30); }
-.btn:active{ transform: translateY(0) scale(.98); box-shadow: inset 0 2px 8px rgba(64,34,12,.30); }
-.btn:disabled{ opacity:.42; cursor:not-allowed; transform:none; filter:grayscale(.55); }
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.05); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 5px 9px rgba(60,30,10,.35); }
+.btn:active{ transform: translateY(0); box-shadow: inset 0 2px 6px rgba(60,30,10,.35); }
+.btn:disabled{ opacity:.45; cursor:not-allowed; transform:none; filter:grayscale(.5); }
 .btn.primary{
-  background: linear-gradient(180deg, #c9633a, #b4552d 58%, #9a431f);
-  color:#fff8ea; border-color:#7c3518; font-weight:700; letter-spacing:3px;
-  text-shadow: 0 1px 1px rgba(60,20,5,.35);
+  background: linear-gradient(180deg, #f7dd8e, #dcab3a 65%, #c49222);
+  color:#3e2710; font-weight:bold; border-color: var(--gold-3);
 }
-.btn.primary:hover{ filter: brightness(1.07); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 8px 18px -6px rgba(143,63,32,.55); }
-.btn.danger{ background: linear-gradient(180deg, #e6bb9d, #d0926d 70%, #c07f56); border-color:#8f4a2c; color:#4c2311; }
-.btn.small{ font-size: var(--fs-micro); padding: 6px 12px; letter-spacing: 1px; border-radius: var(--r-sm); }
-.btn.big{ font-size: 1.15rem; padding: 13px 34px; border-radius: 14px; letter-spacing: 4px; }
-.btn:focus-visible, .tab-btn:focus-visible, .char-chip:focus-visible, .enemy-chip:focus-visible, .modal-item button:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--accent-soft);
-}
+.btn.danger{ background: linear-gradient(180deg, #eec3a8, #d99a6f); }
+.btn.small{ font-size: 13px; padding: 4px 10px; letter-spacing: 1px; }
+.btn.big{ font-size: 19px; padding: 12px 30px; }
 
-/* ============ 火把横幅 ============ */
+/* 火把横幅 */
 .torch-banner{
-  text-align:center; margin: 4px 0 18px; letter-spacing: 7px;
-  font-family: var(--font-display); color: var(--gold-3);
-  font-size: var(--fs-sm); display:flex; align-items:center; justify-content:center; gap:18px;
+  text-align:center; margin: 6px 0 4px; letter-spacing: 6px;
+  font-family:'STZhongsong','华文中宋',serif; color: var(--gold-3);
+  font-size: 15px; display:flex; align-items:center; justify-content:center; gap:16px;
 }
-.torch{ font-size:20px; animation: torchFlicker 1.7s ease-in-out infinite; filter: drop-shadow(0 0 6px rgba(232,160,60,.6)); }
-.torch:nth-child(3){ animation-delay:.45s; }
+.torch{ font-size:18px; animation: torchFlicker 1.6s ease-in-out infinite; }
+.torch:nth-child(3){ animation-delay: .4s; }
 @keyframes torchFlicker{
   0%,100%{ opacity:1; transform:scale(1) rotate(-2deg); }
-  25%{ opacity:.72; transform:scale(.94) rotate(2deg); }
+  25%{ opacity:.75; transform:scale(.95) rotate(2deg); }
   60%{ opacity:.9; transform:scale(1.05) rotate(-1deg); }
-  80%{ opacity:.8; transform:scale(.96) rotate(1deg); }
+  80%{ opacity:.8; transform:scale(.97) rotate(1deg); }
 }
-.banner-text{ letter-spacing:12px; position:relative; }
-.banner-text::before, .banner-text::after{ content:"·"; color:var(--accent); margin:0 10px; }
+.banner-text{ letter-spacing: 10px; }
 
-/* ============ 头部（游戏内） ============ */
-header{ text-align:center; margin-bottom: 24px; }
+/* ============ 头部 ============ */
+header{ text-align:center; margin-bottom: 22px; }
 header h1{
-  font-family: var(--font-display);
-  font-size: var(--fs-h1);
+  font-family: 'STZhongsong', '华文中宋', 'SimSun', 'Songti SC', serif;
   font-weight: 900;
-  letter-spacing: 12px;
-  background: linear-gradient(180deg, #fbe9a0 0%, #e8bc3a 45%, #a67c00 80%, #8a6400 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 2px 2px rgba(90,60,20,.45)) drop-shadow(0 6px 10px rgba(90,60,20,.22));
-  margin-bottom: 4px;
+  letter-spacing: 8px;
+  background: linear-gradient(180deg, #f8e08e 0%, #d4a017 45%, #a67c00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 6px rgba(120,80,20,.4));
   display:inline-block;
 }
-.subtitle{ font-family: var(--font-display); color: var(--ink-soft); letter-spacing: 10px; font-size: var(--fs-sm); margin-bottom: 16px; }
-.subtitle::before, .subtitle::after{ content:" ✦ "; color: var(--gold-2); font-size: 12px; vertical-align: 2px; }
+.subtitle{ font-family:'STZhongsong','华文中宋','SimSun',serif; }
+h1{
+  font-size: clamp(44px, 7vw, 74px); letter-spacing: 14px; font-weight: bold;
+  background: linear-gradient(180deg, #fbe9a0 0%, #e8bc3a 45%, #a67c00 80%, #8a6400 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(90,60,20,.45)) drop-shadow(0 5px 8px rgba(90,60,20,.25));
+  margin-bottom: 4px;
+}
+.subtitle{ color: var(--ink-soft); letter-spacing: 8px; font-size: 15px; margin-bottom: 14px; }
+.subtitle::before, .subtitle::after{ content:" ✦ "; color: var(--gold-2); }
 #header-bar{
-  display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap;
-  margin-top: 12px;
+  display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap;
+  margin-top: 10px;
 }
 .hb-item{
-  background: rgba(96,62,30,.08);
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  padding: 5px 16px;
-  font-size: var(--fs-sm);
-  letter-spacing: 1px;
-  color: var(--ink-soft);
-  font-variant-numeric: tabular-nums;
+  background: rgba(95,61,30,.10);
+  border: 1px solid rgba(95,61,30,.45);
+  border-radius: 20px; padding: 4px 14px;
+  font-size: 14px; letter-spacing: 1px;
 }
-.hb-item b{ color: var(--ink-deep); font-weight: 800; }
-#header-bar .btn{ box-shadow:none; }
-#h-buff{ background: var(--accent-soft); border-color: rgba(143,63,32,.45); color: var(--accent-ink); font-weight:700; }
 
-/* ============ 冒险小队 ============ */
-#party-panel{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+/* ============ 队伍卡片 ============ */
+#party-panel{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .member{
-  background: linear-gradient(170deg, rgba(255,249,228,.97), rgba(238,214,166,.92));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 16px 14px 14px; text-align:center; position:relative;
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
+  background: linear-gradient(170deg, rgba(255,248,225,.95), rgba(238,214,166,.9));
+  border: 3px solid var(--border);
+  border-radius: 14px 18px 13px 17px / 17px 13px 18px 14px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.4), inset 0 0 18px rgba(120,80,30,.15), 0 4px 10px rgba(60,30,10,.25);
+  padding: 12px 12px 10px; text-align:center; position:relative;
 }
-.member:hover{ transform: translateY(-3px); box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 12px 24px -10px rgba(64,34,12,.28); }
-.member.down{ filter: grayscale(.9) brightness(.82); }
+.member.down{ filter: grayscale(.9) brightness(.85); }
 .member .avatar{
-  width: 66px; height:66px; margin: 0 auto 8px; line-height:66px;
+  width: 64px; height:64px; margin: 0 auto 6px; font-size: 34px; line-height:64px;
   background: radial-gradient(circle at 35% 30%, #fdf3d3, #e8cd95);
-  border: 2px solid var(--line-strong); border-radius: 50%;
-  box-shadow: inset 0 2px 5px rgba(255,255,255,.65), 0 4px 8px rgba(64,34,12,.28);
-  overflow: hidden; display:flex; align-items:center; justify-content:center;
+  border: 2px solid var(--border); border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,.6), 0 3px 6px rgba(60,30,10,.3);
+  overflow: hidden; padding: 0; display:flex; align-items:center; justify-content:center;
+  box-sizing: border-box;
 }
-.member .avatar img{ width:66px; height:66px; object-fit:cover; border-radius:50%; display:block; flex-shrink:0; }
-.member .m-name{ font-size: 1.1rem; font-weight: 800; letter-spacing: 3px; color: var(--ink-deep); }
-.member .m-title{ font-size: var(--fs-micro); color: var(--ink-soft); letter-spacing: 2px; margin-bottom: 8px; }
-.member .m-skill{
-  display:inline-block; font-size: var(--fs-micro); color: var(--gold-3); letter-spacing: 1px;
-  background: var(--gold-soft); border:1px solid rgba(166,124,0,.35); border-radius: var(--r-pill);
-  padding: 2px 10px; margin-bottom: 8px;
+.member .avatar img{
+  width: 64px; height: 64px; object-fit: cover; border-radius: 50%;
+  display:block; box-shadow: none; flex-shrink: 0;
 }
-.member .m-exp{ font-size: var(--fs-micro); color: var(--ink-dim); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
-.bar{
-  height: 13px; border: 2px solid var(--line-strong); border-radius: var(--r-pill);
-  background: var(--hp-bg); margin: 5px 0 2px; overflow:hidden; position:relative;
-  box-shadow: inset 0 2px 4px rgba(30,15,5,.45);
-}
-.bar > i{ display:block; height:100%; border-radius: var(--r-pill); transition: width .45s var(--ease-out); }
+.member .m-name{ font-size:18px; font-weight:bold; letter-spacing:3px; }
+.member .m-title{ font-size:12px; color: var(--ink-soft); letter-spacing:2px; margin-bottom:6px; }
+.member .m-skill{ font-size:11px; color: var(--gold-3); letter-spacing:1px; margin-bottom:8px; }
+.bar{ height: 13px; border: 2px solid var(--border); border-radius: 7px; background: var(--hp-bg); margin: 5px 0 2px; overflow:hidden; position:relative; box-shadow: inset 0 2px 4px rgba(30,15,5,.5); }
+.bar > i{ display:block; height:100%; border-radius: 5px; transition: width .45s ease; }
 .bar.hp > i{ background: linear-gradient(180deg, #e88a6a, #b8432f 70%, #8e2f1e); }
 .bar.full > i{ background: linear-gradient(180deg, #f2c066, #d18f2c 70%, #a86a17); }
-.bar-label{ display:flex; justify-content:space-between; font-size: var(--fs-micro); color: var(--ink-soft); letter-spacing:1px; font-variant-numeric: tabular-nums; }
-.m-status{ margin-top:8px; font-size: var(--fs-micro); letter-spacing:1px; font-weight:700; }
-.st-ok{ color: var(--ok); } .st-hungry{ color: var(--warn); } .st-starving{ color: var(--danger); } .st-down{ color: #6d6d6d; }
+.bar-label{ display:flex; justify-content:space-between; font-size:11px; color: var(--ink-soft); letter-spacing:1px; }
+.m-status{ margin-top:6px; font-size:12px; letter-spacing:1px; }
+.st-ok{ color:#4f6b1f; } .st-hungry{ color:#c07a1c; } .st-starving{ color:#a03a2a; } .st-down{ color:#6d6d6d; }
+
 /* ============ 标签页 ============ */
-#tab-nav{ display:flex; justify-content:center; gap:14px; margin-bottom: 22px; flex-wrap:wrap; }
+#tab-nav{ display:flex; justify-content:center; gap:16px; margin-bottom: 20px; }
 .tab-btn{
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 5px;
-  padding: 11px 28px;
-  background: linear-gradient(180deg, #f2e0ae, #e2c68b);
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-md);
+  font-family:inherit; font-size:19px; letter-spacing:6px; padding:10px 30px;
+  background: linear-gradient(180deg, #f0dca8, #ddc084);
+  border: 3px solid var(--border); border-radius: 12px 16px 12px 16px;
   cursor:pointer; color: var(--ink-soft);
-  box-shadow: var(--shadow-sm);
-  transition: transform .14s var(--ease-out), box-shadow .14s var(--ease-out), background .2s;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 4px 8px rgba(60,30,10,.25);
 }
-.tab-btn:hover{ transform: translateY(-2px); }
 .tab-btn.active{
-  background: linear-gradient(180deg, #f9e39b, #e3b34f);
-  color: var(--ink-deep); font-weight: 800;
+  background: linear-gradient(180deg, #f8df95, #dfb04a); color:#3e2710; font-weight:bold;
   border-color: var(--gold-3);
-  box-shadow: 0 2px 3px rgba(64,34,12,.08), 0 8px 18px -8px rgba(166,124,0,.5), inset 0 1px 0 rgba(255,255,255,.5);
 }
 .view{ display:none; }
-.view.active{ display:block; animation: viewIn .3s var(--ease-out); }
-@keyframes viewIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+.view.active{ display:block; }
 
 /* ============ 迷宫探索 ============ */
-.floor-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:18px; }
+.floor-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap:16px; }
 .floor-card{
-  background: linear-gradient(172deg, rgba(255,249,228,.97), rgba(236,213,162,.94));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 18px 18px 16px;
-  position: relative;
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
-  display:flex; flex-direction:column;
+  background: linear-gradient(170deg, rgba(255,249,228,.95), rgba(235,212,160,.92));
+  border: 3px solid var(--border); border-radius: 16px 12px 18px 13px / 13px 18px 12px 16px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.4), inset 0 0 20px rgba(120,80,30,.15), 0 4px 10px rgba(60,30,10,.25);
+  padding: 16px; text-align:center;
 }
-.floor-card:hover{ transform: translateY(-3px); box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 12px 26px -10px rgba(64,34,12,.28); }
-.floor-card::before{ content:""; position:absolute; inset:5px; border:1px dashed rgba(96,62,30,.16); border-radius: calc(var(--r-lg) - 4px); pointer-events:none; }
-.floor-card h3{ font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 2px; color: var(--ink-deep); margin-bottom: 6px; }
-.floor-card .f-desc{ font-size: var(--fs-sm); color: var(--ink-soft); line-height:1.6; margin-bottom: 10px; }
-.floor-card .f-enemies{ font-size: var(--fs-micro); color: var(--ink-dim); margin: 6px 0 4px; letter-spacing:.5px; line-height:1.9; }
-.f-progress{ font-size: var(--fs-micro); color: var(--ink-dim); margin: 8px 0 4px; font-variant-numeric: tabular-nums; }
-.f-lock{ font-size: var(--fs-micro); color: #a0674a; margin-top: 2px; line-height:1.5; }
-.floor-card .bar{ height: 9px; margin-bottom: 12px; }
-.floor-card .btn{ align-self:center; margin-top:auto; }
-
+.floor-card h3{ letter-spacing:3px; font-size:19px; margin-bottom:6px; }
+.floor-card .f-desc{ font-size:13px; color: var(--ink-soft); min-height:60px; margin-bottom:8px; }
+.floor-card .f-enemies{ font-size:12px; color: var(--ink-soft); margin-bottom:12px; }
+.floor-card .f-enemies span{ margin: 0 2px; }
 .boss-card{
-  background: linear-gradient(170deg, rgba(255,244,220,.97), rgba(236,205,164,.94));
-  border: 2px solid rgba(143,63,32,.55);
-  border-radius: var(--r-lg);
-  box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 12px 28px -12px rgba(143,63,32,.35), inset 0 0 0 1px rgba(255,255,255,.4);
-  padding: 20px 22px;
-  margin-top: 18px;
-  text-align:center;
-  position: relative;
+  margin-top:16px; border-color: var(--gold-3);
+  background: linear-gradient(170deg, rgba(255,240,200,.95), rgba(230,190,120,.95));
+  text-align:center; padding:14px;
 }
-.boss-card::before{ content:"⚔"; position:absolute; top:6px; left:12px; color:var(--accent); opacity:.5; font-size:15px; }
-.boss-card::after{ content:"⚔"; position:absolute; top:6px; right:12px; color:var(--accent); opacity:.5; font-size:15px; }
-.boss-name{ font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; letter-spacing: 4px; color: var(--accent-ink); }
-.boss-desc{ font-size: var(--fs-sm); color: var(--ink-soft); margin: 8px 0 12px; line-height:1.65; }
-.boss-status{ color: var(--gold-3); font-weight: 800; letter-spacing: 3px; margin-bottom: 8px; }
+.boss-card .boss-name{ font-size:20px; letter-spacing:6px; color:#7a4a00; font-weight:bold; }
 
-/* ============ 烹饪食堂 ============ */
-.cook-grid{ display:grid; grid-template-columns: 300px 1fr; gap: 18px; align-items:start; }
-.cook-side{ display:flex; flex-direction:column; gap: 18px; }
+/* ============ 烹饪 ============ */
+.cook-grid{ display:grid; grid-template-columns: 300px 1fr; gap:16px; }
+.cook-side{ display:flex; flex-direction:column; gap:16px; }
 .ing-list{ display:flex; flex-wrap:wrap; gap:8px; }
 .ing-chip{
-  display:inline-flex; align-items:center; gap:6px;
-  background: rgba(255,250,232,.85);
-  border: 1px solid var(--line-strong);
-  border-radius: var(--r-pill);
-  padding: 5px 12px;
-  font-size: var(--fs-sm);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255,250,230,.8); border: 2px solid var(--border);
+  border-radius: 14px; padding: 4px 10px; font-size:13px; letter-spacing:1px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
 }
-.ing-chip b{ color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.ing-chip b{ color: var(--gold-3); }
 .dish-row{
-  display:flex; justify-content:space-between; align-items:center; gap:10px;
-  background: rgba(255,250,232,.75);
-  border: 1px dashed var(--line-strong);
-  border-radius: var(--r-md);
-  padding: 9px 14px;
-  margin-bottom: 8px;
-  font-size: var(--fs-sm);
+  display:flex; justify-content:space-between; align-items:center; gap:8px;
+  border-bottom: 1px dashed rgba(95,61,30,.35); padding: 6px 2px; font-size:14px;
 }
-.dish-row b{ color: var(--gold-3); font-variant-numeric: tabular-nums; }
-.grade-archive{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin: 0 0 14px; }
-.grade-archive span{
-  background: var(--paper-0);
-  border: 1px solid var(--line-strong);
-  border-radius: var(--r-sm);
-  padding: 5px 12px;
-  font-size: var(--fs-micro);
-  color: var(--ink-soft);
-  box-shadow: var(--shadow-sm);
-}
-.grade-archive b{ color: var(--accent-ink); letter-spacing: 2px; font-size: 1rem; }
-#discover-banner{
-  background: linear-gradient(90deg, rgba(255,240,190,.95), rgba(248,220,130,.9));
-  border: 1px solid var(--gold-3); border-left: 5px solid var(--gold-2);
-  border-radius: var(--r-md);
-  padding: 10px 16px;
-  margin-bottom: 14px;
-  color: #6b4a00; font-size: var(--fs-sm); letter-spacing: 1px;
-  box-shadow: var(--shadow-sm);
-  animation: bannerIn .4s var(--ease-out);
-}
-@keyframes bannerIn{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:none; } }
-.recipe-list{ display:flex; flex-direction:column; gap:12px; }
+.recipe-list{ display:flex; flex-direction:column; gap:10px; }
 .recipe{
-  display:flex; align-items:center; gap:14px;
-  background: linear-gradient(170deg, rgba(255,249,228,.92), rgba(240,220,174,.9));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 14px 16px;
-  position:relative;
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
+  display:flex; align-items:center; gap:12px;
+  background: linear-gradient(170deg, rgba(255,250,230,.85), rgba(240,220,175,.8));
+  border: 2px solid var(--border); border-radius: 12px 15px 11px 14px;
+  padding: 10px 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 5px rgba(60,30,10,.18);
 }
-.recipe:hover{ transform: translateY(-2px); box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 10px 22px -10px rgba(64,34,12,.26); }
-.recipe.locked{ opacity:.72; filter:grayscale(.35); }
-.recipe.cooked{ border-color: rgba(166,124,0,.55); box-shadow: inset 0 0 0 1px rgba(212,160,23,.18), var(--shadow-sm); }
-.r-emoji{
-  width: 58px; height: 58px; flex-shrink:0;
-  display:flex; align-items:center; justify-content:center;
-  font-size: 32px;
-  background: radial-gradient(circle at 35% 30%, #fdf3d3, #e6ca92);
-  border: 2px solid var(--line-strong); border-radius: var(--r-md);
-  box-shadow: inset 0 2px 4px rgba(255,255,255,.6), 0 3px 6px rgba(64,34,12,.2);
-}
-.recipe .r-main{ flex:1; text-align:left; min-width:0; }
-.r-name{ font-size: 1.05rem; font-weight: 800; letter-spacing: 2px; color: var(--ink-deep); }
-.r-name .cooked-mark{ color: var(--gold-3); font-size: var(--fs-micro); font-weight:700; }
-.r-info{ font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 3px; }
-.r-info b{ color: var(--accent-ink); font-variant-numeric: tabular-nums; }
-.r-effect{ font-size: var(--fs-sm); color: var(--ink-dim); margin-top: 3px; }
-.r-app{
-  font-family: var(--font-note);
-  font-size: var(--fs-sm);
-  color: #7a4a20;
-  font-style: italic;
-  margin-top: 5px;
-  padding-left: 10px;
-  border-left: 2px solid var(--gold-2);
-  line-height: 1.6;
-}
-.empty-note{ font-size: var(--fs-sm); color: var(--ink-dim); }
-
-/* ============ 商店 / 装备 ============ */
-#shop-list h3{ font-family: var(--font-display); color: var(--ink-soft); letter-spacing: 3px; font-size: 1.05rem; margin: 8px 0 10px; }
-.recipe.shop-item{ align-items:center; }
-.shop-desc{ font-size: var(--fs-sm); color: var(--ink-soft); }
-.owned-tag{ color: var(--gold-3); font-size: var(--fs-micro); font-weight: 700; letter-spacing: 1px; }
-#equip-list{ display:flex; flex-wrap:wrap; gap:12px; }
+.recipe.locked{ opacity:.55; filter: grayscale(.6); }
+.recipe.cooked{ border-color: var(--gold-3); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 2px 5px rgba(160,120,20,.3), inset 0 0 12px rgba(212,160,23,.18); }
+.recipe .r-emoji{ font-size: 30px; width:44px; text-align:center; }
+.recipe .r-main{ flex:1; }
+.recipe .r-name{ font-size:16px; font-weight:bold; letter-spacing:2px; }
+.recipe .r-info{ font-size:12px; color: var(--ink-soft); }
+.recipe .r-effect{ font-size:12px; color:#7a4a00; }
 
 /* ============ 图鉴 ============ */
-.codex-progress{ display:flex; flex-direction:column; gap:10px; padding: 4px 0; }
-.cp-row{ display:flex; align-items:center; gap:12px; }
-.cp-name{ width: 64px; font-size: var(--fs-sm); font-weight: 700; color: var(--ink-soft); letter-spacing: 2px; }
-.cp-bar{ flex:1; height: 12px; border-radius: var(--r-pill); background: rgba(96,62,30,.12); overflow:hidden; box-shadow: inset 0 1px 3px rgba(64,34,12,.18); }
-.cp-bar i{ display:block; height:100%; border-radius: var(--r-pill); background: linear-gradient(90deg, #c9a227, #e8c35a); box-shadow: 0 0 8px rgba(212,160,23,.4); transition: width .5s var(--ease-out); }
-.cp-row > span:last-child{ min-width: 64px; text-align:right; color: var(--ink-soft); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
-.codex-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 14px; }
+.codex-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
 .codex-card{
-  background: linear-gradient(170deg, rgba(255,249,228,.94), rgba(240,220,174,.9));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 16px 15px;
-  text-align:center;
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
+  background: linear-gradient(170deg, rgba(255,250,230,.9), rgba(238,216,170,.85));
+  border: 2px solid var(--border); border-radius: 12px 16px 11px 15px;
+  padding: 10px; text-align:center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 5px rgba(60,30,10,.18);
 }
-.codex-card:hover{ transform: translateY(-3px); box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 12px 24px -10px rgba(64,34,12,.28); }
-.codex-card.lit{ border-color: rgba(166,124,0,.5); }
-.codex-card.dim{ background: linear-gradient(170deg, rgba(238,228,206,.9), rgba(225,210,180,.88)); filter: saturate(.55); }
-.codex-card .c-emoji{ font-size: 40px; line-height:1.25; filter: drop-shadow(0 4px 5px rgba(64,34,12,.28)); }
-.codex-card .c-name{ font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; letter-spacing: 2px; color: var(--ink-deep); margin: 4px 0 2px; }
-.codex-card .c-info{ font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 2px; }
-.codex-card .c-desc{ font-size: var(--fs-sm); color: var(--ink-dim); margin-top: 6px; line-height:1.6; }
-.codex-card .c-note{
-  font-family: var(--font-note);
-  font-size: var(--fs-sm);
-  color: #6f4a26;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--line-strong);
-  line-height: 1.65;
-  text-align: left;
-}
+.codex-card.dim{ filter: grayscale(1); opacity:.5; }
+.codex-card.lit{ border-color: var(--gold-2); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 0 14px rgba(212,160,23,.35); }
+.codex-card .c-emoji{ font-size:34px; }
+.codex-card .c-name{ font-weight:bold; letter-spacing:2px; font-size:15px; }
+.codex-card .c-info{ font-size:11px; color: var(--ink-soft); }
+.codex-card .c-desc{ font-size:11px; color: var(--ink-soft); margin-top:4px; font-style: italic; }
+.codex-section{ margin-bottom: 22px; }
 
-/* ============ 成就徽章 ============ */
-.ach-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+/* ============ 属性元素 / 评级 / 隐藏菜谱 / 成就 ============ */
+.elem-badge{ font-size:14px; margin-left:4px; }
+.codex-progress{ display:flex; flex-direction:column; gap:10px; }
+.cp-row{ display:flex; align-items:center; gap:10px; font-size:13px; letter-spacing:1px; }
+.cp-row .cp-name{ width:90px; color:var(--ink-soft); }
+.cp-bar{ flex:1; height:14px; background: rgba(95,61,30,.15); border:1px solid rgba(95,61,30,.4); border-radius:8px; overflow:hidden; }
+.cp-bar i{ display:block; height:100%; background: linear-gradient(90deg, var(--gold-2), var(--gold-3)); border-radius:8px; transition: width .4s; }
+.cp-row .cp-num{ width:64px; text-align:right; font-weight:bold; color:var(--gold-3); }
+
+/* 厨神评级 */
+.grade-badge{
+  display:inline-block; padding:2px 12px; border-radius:12px; font-weight:bold; letter-spacing:2px;
+  border:2px solid; font-size:16px; margin:2px 0;
+}
+.grade-S{ color:#7a4a00; background:linear-gradient(170deg,#ffe9a8,#f0c050); border-color:#c89b1a; box-shadow:0 0 14px rgba(212,160,23,.6); }
+.grade-A{ color:#7a2c00; background:#ffd9b8; border-color:#c96a2a; }
+.grade-B{ color:#6b4423; background:#e8d9b0; border-color:#a08750; }
+.grade-C{ color:#555; background:#ddd5c0; border-color:#8a8a7a; }
+.star-row{ font-size:13px; letter-spacing:2px; color:var(--gold-3); }
+.grade-archive{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:10px 0 4px; }
+.grade-archive span{ font-size:13px; padding:2px 10px; border:2px solid rgba(95,61,30,.5); border-radius:10px; background:rgba(255,250,230,.7); }
+.buff-tag{ display:inline-block; margin-top:4px; padding:1px 8px; border:1px dashed #b3541e; border-radius:8px; font-size:12px; color:#b3541e; background:rgba(255,240,210,.6); }
+
+/* 隐藏菜谱 */
+.hidden-tag{ display:inline-block; margin-left:6px; padding:0 6px; font-size:11px; color:#fff; background:linear-gradient(90deg,#b3541e,#e08a2e); border-radius:8px; letter-spacing:1px; vertical-align:middle; }
+.discover-banner{
+  border:3px dashed var(--gold-3); border-radius:16px 11px 15px 12px / 12px 15px 11px 16px;
+  background: linear-gradient(170deg, rgba(255,240,190,.95), rgba(240,200,120,.9));
+  padding: 12px 16px; margin-bottom: 12px; text-align:center;
+  box-shadow: inset 0 0 22px rgba(212,160,23,.35), 0 3px 10px rgba(120,80,20,.3);
+  animation: discoverPulse 1.4s ease-in-out infinite;
+}
+@keyframes discoverPulse{
+  0%,100%{ box-shadow: inset 0 0 22px rgba(212,160,23,.35), 0 3px 10px rgba(120,80,20,.3); transform: scale(1); }
+  50%{ box-shadow: inset 0 0 34px rgba(255,200,60,.75), 0 3px 16px rgba(212,160,23,.55); transform: scale(1.012); }
+}
+.discover-banner .db-title{ font-size:17px; font-weight:bold; color:#7a4a00; letter-spacing:3px; margin-bottom:6px; }
+.discover-banner .db-item{ display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin:4px 0; font-size:13px; }
+.discover-banner .db-item .btn{ font-size:12px; padding:3px 10px; }
+
+/* 成就 */
+.ach-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
 .ach-card{
-  background: linear-gradient(170deg, rgba(244,232,205,.92), rgba(230,210,174,.9));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-md);
-  padding: 16px 12px 14px;
-  text-align:center;
-  box-shadow: var(--shadow-sm);
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
+  background: linear-gradient(170deg, rgba(255,250,230,.9), rgba(238,216,170,.85));
+  border: 2px solid var(--border); border-radius: 12px 16px 11px 15px;
+  padding: 12px 8px; text-align:center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 5px rgba(60,30,10,.18);
 }
-.ach-card:hover{ transform: translateY(-3px); }
-.ach-card.lit{
-  background: linear-gradient(165deg, rgba(255,244,206,.96), rgba(240,208,140,.94));
-  border-color: var(--gold-3);
-  box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 10px 22px -10px rgba(166,124,0,.45), inset 0 0 0 1px rgba(255,255,255,.5);
-  position: relative;
-}
-.ach-card.lit::before{ content:"★"; position:absolute; top:2px; right:8px; color:var(--gold-2); font-size:12px; }
-.ach-card.dim{ filter: saturate(.4) brightness(.97); }
-.ach-card .a-icon{
-  width: 54px; height: 54px; margin: 0 auto 8px;
-  display:flex; align-items:center; justify-content:center;
-  font-size: 26px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fdf3d3, #e2c68e);
-  border: 2px solid var(--line-strong);
-  box-shadow: inset 0 2px 4px rgba(255,255,255,.6), 0 3px 6px rgba(64,34,12,.22);
-}
-.ach-card.lit .a-icon{ border-color: var(--gold-3); box-shadow: inset 0 2px 4px rgba(255,255,255,.6), 0 0 12px rgba(212,160,23,.45); }
-.ach-card .a-name{ font-size: var(--fs-sm); font-weight: 800; letter-spacing: 1px; color: var(--ink-deep); }
-.ach-card .a-desc{ font-size: var(--fs-micro); color: var(--ink-soft); margin-top: 4px; line-height:1.5; }
+.ach-card.dim{ filter: grayscale(1); opacity:.5; }
+.ach-card.lit{ border-color: var(--gold-2); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 0 16px rgba(212,160,23,.45); }
+.ach-card .a-icon{ font-size:30px; margin-bottom:4px; }
+.ach-card .a-name{ font-weight:bold; letter-spacing:2px; font-size:14px; }
+.ach-card .a-desc{ font-size:11px; color: var(--ink-soft); margin-top:3px; }
+.ach-card .a-prog{ font-size:11px; color: var(--gold-3); margin-top:3px; }
+.ach-card.lit .a-desc{ color:#7a4a00; }
 
-/* 成就徽章弹窗 */
+/* 成就解锁弹窗 */
+#ach-toast{
+  position: fixed; top: 20px; left:50%; transform:translateX(-50%); z-index:120; display:none;
+  pointer-events:none;
+}
 .ach-toast-card{
-  position: fixed; top: 88px; left: 50%; transform: translateX(-50%);
-  z-index: 120;
-  min-width: 260px;
-  background: linear-gradient(170deg, #fdf0c8, #f0d69a 70%, #e3bc74);
-  border: 3px solid var(--gold-3);
-  border-radius: var(--r-lg);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.5), inset 0 0 30px rgba(212,160,23,.35), 0 14px 40px rgba(40,20,5,.5);
-  padding: 16px 30px; text-align:center;
-  animation: achPop .5s var(--ease-spring);
+  background: linear-gradient(165deg, #fff3c9, #f3d98e 55%, #e6b95c);
+  border: 3px solid var(--gold-3); border-radius: 16px 10px 18px 12px / 12px 18px 10px 16px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.45), inset 0 0 30px rgba(212,160,23,.4), 0 8px 28px rgba(40,20,5,.5);
+  padding: 14px 34px; text-align:center;
+  animation: achPop .5s cubic-bezier(.2,1.6,.4,1);
 }
 @keyframes achPop{
-  0%{ transform: translateX(-50%) scale(.3) rotate(-5deg); opacity:0; }
-  100%{ transform: translateX(-50%) scale(1) rotate(0); opacity:1; }
+  0%{ transform: scale(.3) rotate(-6deg); opacity:0; }
+  100%{ transform: scale(1) rotate(0); opacity:1; }
 }
-.ach-toast-card .at-ic{ font-size: 42px; line-height:1.2; margin: 2px 0; }
-.ach-toast-card .at-title{ font-size: var(--fs-micro); color: #8a5a00; letter-spacing: 7px; font-weight: 700; }
-.ach-toast-card .at-name{ font-size: 1.3rem; font-weight: 900; color: #6b3f00; letter-spacing: 3px; font-family: var(--font-display); }
-.ach-toast-card .at-desc{ font-size: var(--fs-sm); color: var(--ink-soft); }
-/* ============ 冒险日志 / 主线 ============ */
-.quest-bar{
-  display:flex; align-items:center; gap:10px;
-  background: linear-gradient(90deg, rgba(255,250,230,.96), rgba(240,220,175,.72));
-  border: 1px solid var(--line-strong); border-left: 6px solid var(--accent);
-  border-radius: var(--r-md);
-  padding: 12px 18px;
-  font-size: var(--fs-sm);
-  font-weight: 800;
-  color: #6b3f00;
-  letter-spacing: 1px;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 18px;
-}
-.quest-bar.quest-done{ border-left-color: var(--ok); color: var(--ok); background: linear-gradient(90deg, rgba(244,250,230,.95), rgba(226,238,206,.75)); }
+.ach-toast-card .at-ic{ font-size:44px; line-height:1.2; margin:2px 0; }
+.ach-toast-card .at-title{ font-size:13px; color:#8a5a00; letter-spacing:6px; }
+.ach-toast-card .at-name{ font-size:22px; font-weight:bold; color:#6b3f00; letter-spacing:3px; }
+.ach-toast-card .at-desc{ font-size:12px; color:var(--ink-soft); }
+
+
+/* ============ 日志 ============ */
 #log{
-  max-height: 200px; overflow-y:auto; padding: 12px 16px;
-  background: rgba(90,55,20,.06);
-  border: 2px dashed var(--line-strong); border-radius: var(--r-md);
-  font-size: var(--fs-sm);
+  max-height: 190px; overflow-y:auto; padding: 10px 14px;
+  background: rgba(90,55,20,.07);
+  border: 2px dashed rgba(95,61,30,.45); border-radius: 10px;
+  font-size: 13.5px;
 }
 #log::-webkit-scrollbar{ width:8px; }
-#log::-webkit-scrollbar-thumb{ background: rgba(96,62,30,.35); border-radius:4px; }
-.log-line{ padding: 3px 0; border-bottom: 1px dotted rgba(96,62,30,.16); line-height:1.6; }
-.log-line .t{ color: var(--gold-3); margin-right:8px; font-size: var(--fs-micro); font-variant-numeric: tabular-nums; }
+#log::-webkit-scrollbar-thumb{ background: rgba(95,61,30,.4); border-radius:4px; }
+.log-line{ padding: 2px 0; border-bottom: 1px dotted rgba(95,61,30,.18); }
+.log-line .t{ color: var(--gold-3); margin-right:6px; font-size:12px; }
 
 /* ============ 弹窗 ============ */
 #modal-overlay{
-  position: fixed; inset:0; z-index:100; display:none;
-  background: rgba(38,20,7,.58);
-  backdrop-filter: blur(3px);
+  position: fixed; inset:0; z-index:50; display:none;
+  background: rgba(40,22,8,.55);
+  backdrop-filter: blur(2px);
 }
 #modal-overlay.open{ display:flex; align-items:center; justify-content:center; }
 #modal{
-  max-width: 580px; width: 92%; max-height: 86vh; overflow-y:auto;
-  background: linear-gradient(165deg, #fbf0d2, #f1dcab 62%, #e6c892);
-  border: 3px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 30px 32px;
-  text-align:center;
-  position: relative;
-  animation: modalIn .34s var(--ease-spring);
+  max-width: 560px; width: 92%; max-height: 86vh; overflow-y:auto;
+  background: linear-gradient(165deg, #f9ecc9, #efd9a8 60%, #e4c68e);
+  border: 4px solid var(--border); border-radius: 20px 14px 22px 15px / 15px 22px 14px 20px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35), inset 0 0 40px rgba(120,80,30,.2), 0 12px 40px rgba(30,15,5,.55);
+  padding: 26px 28px; text-align:center;
 }
-@keyframes modalIn{ from{ opacity:0; transform:scale(.92) translateY(12px); } to{ opacity:1; transform:none; } }
-#modal::before{ content:""; position:absolute; inset:6px; border:1px dashed rgba(166,124,0,.3); border-radius: calc(var(--r-lg) - 4px); pointer-events:none; }
-#modal h2{ font-family: var(--font-display); letter-spacing:6px; color: var(--ink-soft); margin-bottom: 8px; }
-#modal .m-emoji{ font-size: 56px; margin: 10px 0; filter: drop-shadow(0 5px 6px rgba(64,34,12,.3)); }
-#modal .m-text{ font-size: var(--fs-sm); margin: 10px 0 20px; line-height:1.8; }
+#modal h2{ letter-spacing:5px; color: var(--ink-soft); margin-bottom: 6px; }
+#modal .m-emoji{ font-size: 54px; margin: 8px 0; }
+#modal .m-text{ font-size: 15.5px; margin: 10px 0 18px; }
 #modal-btns{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .modal-item{
-  background: rgba(255,250,230,.75); border: 2px solid var(--line-strong); border-radius: var(--r-md);
-  padding: 10px 14px; margin: 8px 0; display:flex; justify-content:space-between; align-items:center; gap:12px;
-  font-size: var(--fs-sm); text-align:left;
-  box-shadow: var(--shadow-sm);
+  background: rgba(255,250,230,.7); border: 2px solid rgba(95,61,30,.5); border-radius: 10px;
+  padding: 8px 12px; margin: 6px 0; display:flex; justify-content:space-between; align-items:center; gap:10px;
+  font-size:14px; text-align:left;
 }
-
-/* 厨神评级 · 墨印印章 */
-.grade-stamp{
-  display:inline-block;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 900;
-  letter-spacing: 6px;
-  color: var(--accent-ink);
-  border: 3px double var(--accent);
-  border-radius: var(--r-sm);
-  padding: 6px 18px;
-  transform: rotate(-3deg);
-  background: rgba(255,250,232,.5);
-  box-shadow: 0 0 0 3px rgba(255,250,232,.6), 0 0 0 4px var(--accent);
-  margin: 6px 0;
-  animation: stampIn .45s var(--ease-spring);
-}
-.grade-stamp.gold{ color:#8a5a00; border-color: var(--gold-3); box-shadow: 0 0 0 3px rgba(255,250,232,.6), 0 0 0 4px var(--gold-3); }
-@keyframes stampIn{ from{ transform: rotate(-8deg) scale(1.6); opacity:0; } to{ transform: rotate(-3deg) scale(1); opacity:1; } }
 
 /* ============ 战斗 ============ */
 #battle-screen{ display:none; }
-#battle-screen.open{ display:block; animation: viewIn .3s var(--ease-out); }
-.battle-layout{ display:grid; grid-template-columns: 280px 1fr; gap: 20px; }
-.monster-panel{
-  text-align:center;
-  background: radial-gradient(circle at 50% 34%, rgba(255,246,214,.98), rgba(236,210,162,.94) 72%, rgba(222,192,140,.95));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-md);
-  padding: 18px 14px 16px;
-  position: relative;
-  transition: transform .1s;
-}
-.monster-panel::before{ content:""; position:absolute; inset:5px; border:1px dashed rgba(96,62,30,.18); border-radius: calc(var(--r-lg) - 3px); pointer-events:none; }
-.monster-panel .m-emoji{ font-size: 92px; line-height:1.15; filter: drop-shadow(0 8px 9px rgba(64,34,12,.35)); }
-.monster-panel .m-name{ font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; letter-spacing: 5px; color: var(--ink-deep); margin-top: 2px; }
-.b-meta{ display:inline-flex; align-items:center; gap:6px; font-size: var(--fs-sm); letter-spacing: 1px; color: var(--ink-soft); margin-top: 6px; }
-.b-meta .e-chip{
-  background: rgba(96,62,30,.10); border: 1px solid var(--line); border-radius: var(--r-pill);
-  padding: 2px 10px; font-size: var(--fs-micro); color: var(--ink-soft);
-}
-.b-skill{ font-size: var(--fs-micro); color: var(--danger); margin: 6px 0 2px; letter-spacing: 1px; line-height:1.6; }
-.monster-panel .bar.hp{ margin-top: 12px; }
-.b-drop{ font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 10px; line-height:1.6; }
+#battle-screen.open{ display:block; }
+.battle-layout{ display:grid; grid-template-columns: 260px 1fr; gap:16px; }
+.monster-panel{ text-align:center; }
+.monster-panel .m-emoji{ font-size: 88px; line-height:1.2; filter: drop-shadow(0 6px 8px rgba(60,30,10,.35)); }
+.monster-panel .m-name{ font-size: 24px; font-weight:bold; letter-spacing:4px; }
 .battle-log{
-  height: 230px; overflow-y:auto; padding: 14px 18px;
-  background: rgba(90,55,20,.06);
-  border: 2px dashed var(--line-strong); border-radius: var(--r-md);
-  font-size: var(--fs-sm);
+  height: 200px; overflow-y:auto; padding: 10px 14px;
+  background: rgba(90,55,20,.07);
+  border: 2px dashed rgba(95,61,30,.45); border-radius: 10px;
+  font-size: 14px;
 }
 .battle-log::-webkit-scrollbar{ width:8px; }
-.battle-log::-webkit-scrollbar-thumb{ background: rgba(96,62,30,.35); border-radius:4px; }
-.battle-log .bl{ padding: 3px 0; border-bottom: 1px dotted rgba(96,62,30,.14); line-height:1.7; animation: blPop .22s var(--ease-out); }
-@keyframes blPop{ from{ opacity:0; transform:translateY(8px) scale(.97); } to{ opacity:1; transform:none; } }
-.bl.hurt{ color: var(--danger); }
-.bl.heal{ color: var(--ok); }
-.bl.info{ color: var(--ink-soft); }
-.bl.taunt{ color: #8a5a00; font-family: var(--font-note); font-style: italic; }
-.bl.ally{ color: var(--gold-3); font-weight: 700; }
-.bl.crit{ color: #c62828; font-size: 1.05rem; font-weight: 800; text-shadow: 0 0 10px rgba(198,40,40,.4); }
-.bl.super{ color: #2e7d32; font-weight: 700; }
-.bl.combo{ color: #e65100; font-weight: 700; }
-.bl.resist{ color: #8d6e63; }
-
-/* 敌人受击 */
-.monster-panel.shake{ animation: mShake .4s var(--ease-out); }
+.battle-log::-webkit-scrollbar-thumb{ background: rgba(95,61,30,.4); border-radius:4px; }
+.battle-log .bl{ padding: 2px 0; border-bottom: 1px dotted rgba(95,61,30,.18); }
+.bl.hurt{ color:#a03a2a; } .bl.heal{ color:#4f6b1f; } .bl.info{ color: var(--ink-soft); }
+/* ---- 战斗爽感：飘字 / 克制 / 暴击 / 连击 ---- */
+.battle-log .bl{ animation: blPop .22s ease; }
+@keyframes blPop{ from{ opacity:0; transform:translateY(8px) scale(.96); } to{ opacity:1; transform:none; } }
+.bl.ally{ color:#a67c00; font-weight:bold; }
+.bl.crit{ color:#c62828; font-size:16px; font-weight:bold; text-shadow:0 0 8px rgba(198,40,40,.45); }
+.bl.super{ color:#2e7d32; font-weight:bold; }
+.bl.combo{ color:#e65100; font-weight:bold; }
+.bl.resist{ color:#8d6e63; }
+/* ---- 敌人受击：抖动 + 血条红色闪烁 ---- */
+.monster-panel{ transition: transform .1s; }
+.monster-panel.shake{ animation: mShake .4s ease; }
 @keyframes mShake{
   0%,100%{ transform:translateX(0); }
   20%{ transform:translateX(-9px) rotate(-1deg); }
@@ -612,60 +418,112 @@ header h1{
   50%{ filter:none; }
   75%{ filter:brightness(1.8) saturate(2); box-shadow:0 0 10px rgba(232,80,60,.8); }
 }
-#action-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 12px; }
-#char-select{ display:grid; grid-template-columns: repeat(4,1fr); gap:12px; margin-bottom: 10px; }
+#action-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 8px; }
+#char-select{ display:grid; grid-template-columns: repeat(4,1fr); gap:10px; margin-bottom: 8px; }
 .char-chip{
-  border: 2px solid var(--line-strong); border-radius: var(--r-md);
-  padding: 10px 8px; text-align:center; cursor:pointer;
-  background: linear-gradient(170deg, rgba(255,250,230,.92), rgba(238,216,170,.88));
-  box-shadow: var(--shadow-sm);
-  transition: transform .14s var(--ease-out), box-shadow .14s var(--ease-out);
+  border: 2px solid var(--border); border-radius: 12px; padding: 8px; text-align:center; cursor:pointer;
+  background: linear-gradient(170deg, rgba(255,250,230,.9), rgba(238,216,170,.85));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 5px rgba(60,30,10,.2);
+  transition: transform .12s, box-shadow .12s;
 }
 .char-chip:hover{ transform: translateY(-2px); }
-.char-chip.sel{ border-color: var(--gold-2); box-shadow: 0 0 0 3px rgba(212,160,23,.35), 0 4px 10px rgba(64,34,12,.2); background: linear-gradient(170deg, rgba(255,247,216,.95), rgba(244,220,168,.92)); }
-.char-chip.down{ opacity:.42; filter: grayscale(.9); cursor:not-allowed; }
-.char-chip .cc-emoji{ font-size: 28px; }
-.char-chip .cc-name{ font-size: var(--fs-sm); font-weight: 700; letter-spacing: 2px; color: var(--ink-deep); }
-.cc-hp{ font-size: var(--fs-micro); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-#enemy-select{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top: 12px; }
+.char-chip.sel{ border-color: var(--gold-2); box-shadow: 0 0 0 2px rgba(212,160,23,.5), 0 3px 8px rgba(60,30,10,.3); }
+.char-chip.down{ opacity:.4; filter: grayscale(.9); cursor:not-allowed; }
+.char-chip .cc-emoji{ font-size:26px; }
+.char-chip .cc-name{ font-size:13px; letter-spacing:2px; }
+
+/* ============ 开始界面 ============ */
+#start-screen{ text-align:center; padding: 40px 20px; }
+#start-screen h1{
+  font-size: clamp(56px, 10vw, 96px);
+  font-family: 'STZhongsong', '华文中宋', 'SimSun', 'Songti SC', serif;
+  font-weight: 900;
+  letter-spacing: 10px;
+  color: #8a5a1a;
+  text-shadow:
+    0 1px 0 rgba(255,250,220,.6),
+    0 3px 0 #6b3f00,
+    0 6px 14px rgba(60,30,5,.5);
+  background: linear-gradient(180deg, #f8e08e 0%, #d4a017 45%, #a67c00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 10px rgba(120,80,20,.45));
+}
+#start-screen .story{ max-width:640px; margin: 26px auto; font-size:16px; letter-spacing:1px; color: var(--ink-soft); }
+#start-screen .story p{ margin: 12px 0; }
+
+/* ============ 底部 ============ */
+footer{ text-align:center; margin-top:26px; font-size:12px; color: var(--ink-soft); letter-spacing:2px; }
+
+/* 魔物卡片爪痕纹 + 菜谱餐盘纹 */
+.recipe{ position:relative; }
+.recipe::after{
+  content:"⚜"; position:absolute; top:4px; right:8px; font-size:11px; color:var(--gold-2); opacity:.5;
+}
+
+/* ============ 怪物SVG图标 / 多敌目标选择 ============ */
+.m-icon{ display:inline-block; vertical-align:middle; filter: drop-shadow(0 3px 4px rgba(60,30,10,.35)); }
+#enemy-select{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
 .enemy-chip{
-  border: 2px solid var(--line-strong); border-radius: var(--r-md);
-  padding: 8px 10px; text-align:center; cursor:pointer;
-  background: linear-gradient(170deg, rgba(255,250,230,.92), rgba(238,216,170,.88));
-  box-shadow: var(--shadow-sm);
-  font-size: var(--fs-micro);
-  min-width: 104px;
-  transition: transform .14s var(--ease-out), box-shadow .14s var(--ease-out);
+  border:2px solid var(--border); border-radius:10px; padding:6px 8px; text-align:center; cursor:pointer;
+  background: linear-gradient(170deg, rgba(255,250,230,.9), rgba(238,216,170,.85));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 5px rgba(60,30,10,.2);
+  font-size:12px; min-width:96px;
+  transition: transform .12s, box-shadow .12s;
 }
 .enemy-chip:hover{ transform: translateY(-2px); }
-.enemy-chip.sel{ border-color: var(--gold-2); box-shadow: 0 0 0 3px rgba(212,160,23,.35); }
-.enemy-chip .ec-hp{ font-size: var(--fs-micro); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-.b-hint{ text-align:center; font-size: var(--fs-micro); color: var(--ink-dim); margin-top: 10px; letter-spacing: 1px; }
-/* ============ 飘字 / 特效层 ============ */
-#fx-layer{ position:fixed; inset:0; pointer-events:none; z-index:90; overflow:hidden; }
-.fx-float{
-  position:absolute; font-size: 1.4rem; font-weight: 900; letter-spacing: 2px;
-  color: var(--gold-2);
-  text-shadow: 0 2px 3px rgba(64,34,12,.5), 0 0 10px rgba(248,224,142,.95);
-  animation: floatUp 1.15s var(--ease-out) forwards;
-  white-space:nowrap; pointer-events:none;
+.enemy-chip.sel{ border-color: var(--gold-2); box-shadow: 0 0 0 2px rgba(212,160,23,.5); }
+.enemy-chip .ec-hp{ font-size:11px; color: var(--ink-soft); }
+#b-skill{ font-size:12px; color:#a03a2a; margin:4px 0 2px; letter-spacing:1px; }
+
+/* ============ 音效开关按钮 ============ */
+#sound-toggle{
+  position:fixed; top:14px; right:14px; z-index:60;
+  width:48px; height:48px; font-size:22px; cursor:pointer;
+  font-family: inherit; line-height:1;
+  border:2px solid var(--border); border-radius:50%;
+  background: linear-gradient(180deg,#f4e0b0,#e3c68c);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 3px 7px rgba(60,30,10,.3);
+  transition: transform .12s, filter .12s;
 }
-.fx-dmg{ color: #fff1dc; text-shadow: 0 2px 3px rgba(80,20,5,.6), 0 0 10px rgba(232,120,80,.9); }
-.fx-crit{ color: #ffd9b0; font-size: 1.9rem; text-shadow: 0 2px 3px rgba(120,20,5,.65), 0 0 14px rgba(255,90,50,.95); }
-.fx-heal{ color: #d9f0b0; text-shadow: 0 2px 3px rgba(30,70,10,.6), 0 0 10px rgba(140,200,90,.9); }
-.fx-combo{ color: #ffd0a0; text-shadow: 0 2px 3px rgba(110,45,0,.6), 0 0 10px rgba(255,150,60,.9); }
-.fx-gold{ color: #ffe9a0; text-shadow: 0 2px 3px rgba(90,60,0,.6), 0 0 12px rgba(255,215,0,.95); }
+#sound-toggle:hover{ transform: translateY(-2px); }
+#sound-toggle.muted{ filter: grayscale(.85); opacity:.75; }
+
+/* ============ 动效：标题淡入 / 卡片浮动 ============ */
+@keyframes fadeInDown{ from{ opacity:0; transform:translateY(-16px);} to{ opacity:1; transform:translateY(0);} }
+header h1, #start-screen h1, .subtitle{ animation: fadeInDown .9s ease-out both; }
+.floor-card, .codex-card, .recipe, .member{ transition: transform .16s ease, box-shadow .16s ease; }
+.floor-card:hover, .codex-card:hover, .recipe:hover, .member:hover{ transform: translateY(-2px); }
+
+/* ============ 动效：飘字 / 全屏闪光 / 抖动 / 冲击波 ============ */
+#fx-layer{ position:fixed; inset:0; pointer-events:none; z-index:80; overflow:hidden; }
+.fx-float{
+  position:absolute; font-size:22px; font-weight:bold; letter-spacing:2px; color:#d4a017;
+  text-shadow: 0 1px 2px rgba(60,30,10,.45), 0 0 8px rgba(248,224,142,.9);
+  animation: floatUp 1.15s ease-out forwards; white-space:nowrap; pointer-events:none;
+}
 @keyframes floatUp{
-  0%{ opacity:0; transform:translate(-50%,8px) scale(.5); }
-  16%{ opacity:1; transform:translate(-50%,-10px) scale(1.12); }
-  100%{ opacity:0; transform:translate(-50%,-78px) scale(1); }
+  0%{ opacity:0; transform:translate(-50%,6px) scale(.55); }
+  18%{ opacity:1; transform:translate(-50%,-8px) scale(1.12); }
+  100%{ opacity:0; transform:translate(-50%,-72px) scale(1); }
 }
 #gold-flash{
-  position:fixed; inset:0; z-index:95; pointer-events:none; opacity:0;
+  position:fixed; inset:0; z-index:90; pointer-events:none; opacity:0;
   background: radial-gradient(circle at 50% 45%, rgba(255,238,160,.95) 0%, rgba(255,205,80,.55) 40%, rgba(255,190,60,0) 72%);
 }
 #gold-flash.on{ animation: goldFlash 1s ease-out forwards; }
 @keyframes goldFlash{ 0%{opacity:0;} 10%{opacity:1;} 100%{opacity:0;} }
+.monster-panel{ position:relative; }
+@keyframes shake{
+  0%,100%{ transform:translateX(0); }
+  15%{ transform:translateX(-7px) rotate(-2deg); }
+  30%{ transform:translateX(7px) rotate(2deg); }
+  45%{ transform:translateX(-5px); }
+  60%{ transform:translateX(5px); }
+  75%{ transform:translateX(-3px); }
+}
+.shake{ animation: shake .42s ease; }
 .shockwave{
   position:absolute; left:50%; top:56px; width:130px; height:130px;
   margin-left:-65px; margin-top:-65px; border-radius:50%;
@@ -676,105 +534,42 @@ header h1{
 .shockwave.on{ animation: shockwave .55s ease-out forwards; }
 @keyframes shockwave{ 0%{ transform:scale(.25); opacity:.95; } 100%{ transform:scale(2.1); opacity:0; } }
 
-/* ============ 开始界面（标题屏） ============ */
-#start-screen{ text-align:center; padding: 48px 32px 40px; overflow:hidden; }
-.crest-wrap{ display:flex; justify-content:center; margin-bottom: 8px; }
-.crest{
-  width: clamp(120px, 18vw, 170px); height:auto;
-  filter: drop-shadow(0 10px 14px rgba(64,34,12,.35));
-  animation: crestIn 1s var(--ease-out) both;
-}
-@keyframes crestIn{ from{ opacity:0; transform:translateY(-14px) scale(.85); } to{ opacity:1; transform:none; } }
-#start-screen h1{
-  font-size: var(--fs-display);
-  font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: 14px;
-  line-height: 1.12;
-  color: #8a5a1a;
-  background: linear-gradient(180deg, #fbe9a0 0%, #e8bc3a 42%, #b98a10 74%, #8a6400 100%);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 1px rgba(255,250,220,.7)) drop-shadow(0 4px 0 rgba(107,63,0,.55)) drop-shadow(0 9px 16px rgba(60,30,5,.45));
-  margin: 6px 0 2px;
-  animation: titleDrop 1.05s var(--ease-spring) both;
-}
-@keyframes titleDrop{ from{ opacity:0; transform:translateY(-26px) scale(1.06); } to{ opacity:1; transform:none; } }
-#start-screen .subtitle{ font-size: 1.05rem; letter-spacing: 14px; margin: 6px 0 4px; animation: fadeIn .8s .25s var(--ease-out) both; }
-@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
-.story-note{
-  max-width: 660px; margin: 26px auto 24px;
-  font-family: var(--font-note);
-  font-size: 1.02rem;
-  line-height: 2;
-  color: #5a3a1c;
-  background: linear-gradient(172deg, rgba(255,252,238,.94), rgba(246,232,196,.9));
-  border: 1px solid var(--line-strong);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-md);
-  padding: 20px 28px;
-  position: relative;
-  transform: rotate(-.4deg);
-  text-align: left;
-}
-.story-note::before{
-  content:"✎"; position:absolute; top:-11px; left:50%; transform:translateX(-50%) rotate(-4deg);
-  font-size: 20px; color: var(--gold-3);
-  background: var(--paper-1); border:1px solid var(--line-strong); border-radius: 50%;
-  width: 30px; height: 30px; line-height: 26px; text-align:center;
-  box-shadow: var(--shadow-sm);
-}
-.story-note p{ margin: 8px 0; }
-.story-note .quote{ color: var(--accent-ink); letter-spacing: 3px; text-align:center; font-weight: 700; }
-.start-char-row{ display:flex; justify-content:center; gap: 18px; flex-wrap:wrap; margin: 6px 0 24px; animation: fadeIn .9s .5s var(--ease-out) both; }
-.start-char{
-  width: 74px;
-  text-align:center;
-  background: linear-gradient(170deg, rgba(255,249,228,.9), rgba(236,212,164,.85));
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-md);
-  padding: 10px 6px 8px;
-  box-shadow: var(--shadow-sm);
-  transition: transform .16s var(--ease-out), box-shadow .16s var(--ease-out);
-}
-.start-char:hover{ transform: translateY(-4px) rotate(-1deg); box-shadow: 0 2px 4px rgba(64,34,12,.06), 0 10px 20px -8px rgba(64,34,12,.3); }
-.start-char .sc-emoji{ font-size: 34px; line-height: 1.2; }
-.start-char .sc-name{ font-size: var(--fs-micro); font-weight: 700; letter-spacing: 2px; color: var(--ink-deep); margin-top: 4px; }
-.start-char .sc-title{ font-size: 12px; color: var(--ink-soft); letter-spacing: 1px; }
-.btn-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; animation: fadeIn .9s .7s var(--ease-out) both; }
-.version-badge{
-  display:inline-block;
-  margin-top: 30px;
-  font-size: var(--fs-micro);
-  letter-spacing: 3px;
-  color: var(--ink-dim);
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  padding: 5px 16px;
-  background: rgba(255,250,232,.6);
-  animation: fadeIn 1s .9s var(--ease-out) both;
-}
-.version-badge b{ color: var(--accent-ink); }
-
-/* ============ 底部 ============ */
-footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: var(--ink-dim); letter-spacing: 2px; }
-
-/* ============ 配乐控制 ============ */
-#music-ctl button{ box-shadow: var(--shadow-sm); transition: transform .12s var(--ease-out), filter .12s; }
-#music-ctl button:hover{ transform: translateY(-2px); filter: brightness(1.06); }
-#vol-wrap{ border-radius: var(--r-md) !important; box-shadow: var(--shadow-md) !important; }
-
-/* ============ Toast ============ */
-#toast{ animation: toastIn .3s var(--ease-out); }
-@keyframes toastIn{ from{ opacity:0; transform:translate(-50%,10px); } to{ opacity:1; transform:translate(-50%,0); } }
-
-/* ============ 滚动条 / 选中 / 焦点 ============ */
-::selection{ background: rgba(180,85,45,.22); }
-#modal::-webkit-scrollbar, #battle-log::-webkit-scrollbar, #log::-webkit-scrollbar{ width: 8px; }
-#modal::-webkit-scrollbar-thumb, #battle-log::-webkit-scrollbar-thumb, #log::-webkit-scrollbar-thumb{ background: rgba(96,62,30,.35); border-radius: 4px; }
-
 /* ============ 新手引导 ============ */
-.tut-highlight{ outline: 4px solid #ffd700 !important; outline-offset: 2px; animation: tutPulse 1s ease-in-out infinite; border-radius: var(--r-md); }
-@keyframes tutPulse{ 0%,100%{ box-shadow: 0 0 0 0 rgba(255,215,0,.6);} 50%{ box-shadow: 0 0 0 12px rgba(255,215,0,0);} }
+#tut-overlay{
+  position:fixed; inset:0; z-index:45; display:none; pointer-events:none;
+  background: rgba(40,22,8,.42);
+}
+#tut-overlay.open{ display:block; }
+#tut-dialog{
+  position:fixed; left:50%; bottom:26px; transform:translateX(-50%); z-index:46;
+  max-width:430px; width:92%; pointer-events:auto;
+  background: linear-gradient(165deg, #f9ecc9, #efd9a8 60%, #e4c68e);
+  border: 4px solid var(--border); border-radius: 20px 14px 22px 15px / 15px 22px 14px 20px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35), inset 0 0 40px rgba(120,80,30,.2), 0 12px 40px rgba(30,15,5,.55);
+  padding: 18px 24px; text-align:center;
+}
+#tut-dialog h2{ letter-spacing:4px; color: var(--ink-soft); font-size:20px; }
+#tut-dialog .tut-emoji{ font-size: 42px; margin: 4px 0; }
+#tut-dialog .tut-text{ font-size: 14.5px; margin: 10px 0 14px; line-height: 1.9; color: var(--ink); }
+.tut-step-dots{ display:flex; justify-content:center; gap:8px; margin-bottom:8px; }
+.tut-dot{ width:9px; height:9px; border-radius:50%; background: rgba(95,61,30,.25); }
+.tut-dot.on{ background: var(--gold-2); box-shadow: 0 0 6px rgba(212,160,23,.7); }
+.tut-spot{
+  position:fixed; z-index:51; pointer-events:none; border-radius:10px;
+  border:3px solid var(--gold-2);
+  animation: tutPulse 1.1s ease-in-out infinite;
+}
+@keyframes tutPulse{
+  0%,100%{ box-shadow: 0 0 0 4px rgba(212,160,23,.25), 0 0 12px rgba(212,160,23,.5); }
+  50%{ box-shadow: 0 0 0 9px rgba(212,160,23,.5), 0 0 28px rgba(212,160,23,.95); }
+}
+.tut-arrow{
+  position:fixed; z-index:51; pointer-events:none;
+  font-size:32px; line-height:1; color:#d4a017;
+  filter: drop-shadow(0 2px 2px rgba(60,30,10,.45));
+  animation: tutBob 1s ease-in-out infinite;
+}
+@keyframes tutBob{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-7px); } }
 
 /* ============ 响应式 ============ */
 @media (max-width: 860px){
@@ -786,18 +581,19 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
   #char-select{ grid-template-columns: repeat(2,1fr); }
 }
 
-/* ============ 动效开关：尊重系统「减少动态效果」 ============ */
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{ animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-}
-
-/* 兼容旧类（保留以防遗漏） */
-.recipe::after{ content:""; }
-
-/* 补充类：界面提示 / 菜谱描述 */
-.panel-tip{ text-align:center; font-size:var(--fs-sm); color:var(--ink-soft); margin-bottom:14px; line-height:1.7; }
-.r-desc{ font-size:var(--fs-sm); color:var(--ink-dim); margin-top:3px; }
-
+/* 新手引导高亮 */
+.tut-highlight{ outline: 4px solid #ffd700 !important; outline-offset: 2px; animation: tutPulse 1s ease-in-out infinite; border-radius: 12px; }
+@keyframes tutPulse{ 0%,100%{ box-shadow: 0 0 0 0 rgba(255,215,0,.6);} 50%{ box-shadow: 0 0 0 12px rgba(255,215,0,0);} }
+/* 标题淡入 */
+@keyframes titleFade{ from{ opacity:0; transform:translateY(-14px);} to{ opacity:1; transform:translateY(0);} }
+/* 卡片浮动 */
+@keyframes cardFloat{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-3px);} }
+/* 受击抖动 */
+@keyframes shakeX{ 0%,100%{ transform:translateX(0);} 25%{ transform:translateX(-6px);} 75%{ transform:translateX(6px);} }
+.shake{ animation: shakeX .3s ease; }
+/* 金色飘字 */
+@keyframes floatUp{ 0%{ opacity:1; transform:translateY(0);} 100%{ opacity:0; transform:translateY(-46px);} }
+.fly-gold{ position:fixed; z-index:150; font-weight:bold; color:#d4a017; text-shadow:0 0 6px rgba(255,215,0,.6); pointer-events:none; animation:floatUp 1.1s ease forwards; font-size:22px; }
 </style>
 </head>
 <body>
@@ -805,7 +601,6 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
   <button id="btn-prev" onclick="musicPrev()" style="width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;background:linear-gradient(165deg,#f4e0b0,#e3c68c);border:2px solid var(--border);color:var(--ink-soft);line-height:1;padding:0;box-shadow:0 2px 5px rgba(60,30,10,.25);" title="上一曲">⏮</button>
   <button id="btn-music" onclick="toggleMusic()" style="width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--ink-soft);background:linear-gradient(165deg,#f4e0b0,#e3c68c);border:2px solid var(--border);box-shadow:0 2px 5px rgba(60,30,10,.25);display:flex;align-items:center;justify-content:center;line-height:1;padding:0;" title="配乐开关">🎵</button>
   <button id="btn-next" onclick="musicNext()" style="width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;background:linear-gradient(165deg,#f4e0b0,#e3c68c);border:2px solid var(--border);color:var(--ink-soft);line-height:1;padding:0;box-shadow:0 2px 5px rgba(60,30,10,.25);" title="下一曲">⏭</button>
-  <button id="btn-sfx" onclick="toggleSfx()" style="width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--ink-soft);background:linear-gradient(165deg,#f4e0b0,#e3c68c);border:2px solid var(--border);box-shadow:0 2px 5px rgba(60,30,10,.25);display:flex;align-items:center;justify-content:center;line-height:1;padding:0;" title="音效开关">🔊</button>
   <div id="vol-wrap" style="display:none;margin-top:8px;background:linear-gradient(165deg,#f6e8c0,#e8d0a0);border:2px solid var(--border);border-radius:14px;padding:10px 8px;box-shadow:0 4px 12px rgba(60,30,10,.3);">
     <input type="range" id="vol-slider" min="0" max="100" value="45" style="writing-mode:vertical-lr;direction:rtl;height:90px;width:22px;accent-color:#a67c00;cursor:pointer;" title="音量">
   </div>
@@ -1785,121 +1580,23 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
     <path class="ink2" d="M46,56 Q50,59 54,56"/>
   </symbol>
 
-
-<symbol id="m-goldsnail" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="beige" d="M22,62 Q22,44 42,44 L60,44 Q76,44 76,58 Q76,70 60,70 L26,70 Q22,70 22,62 z"/>
-    <path class="gold" d="M52,20 Q72,20 72,40 Q72,56 56,58 Q66,44 58,28 Q52,22 52,20 z"/>
-    <path class="gold-l" d="M57,30 Q67,30 66,40 Q65,48 59,48 Q62,42 61,35 z"/>
-    <circle class="dark" cx="34" cy="48" r="3"/>
-    <circle class="dark" cx="46" cy="48" r="3"/>
-    <path class="ink2" d="M38,55 Q43,58 48,55"/>
-  </symbol>
-<symbol id="m-banquetwraith" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="white" d="M38,28 Q38,20 44,20 Q45,14 50,14 Q55,14 56,20 Q62,20 62,28 Q66,28 67,32 L67,40 L33,40 L33,32 Q34,28 38,28 z"/>
-    <path class="beige" d="M36,42 L64,42 L66,74 L50,82 L34,74 z"/>
-    <path class="beige-l" d="M42,54 L58,54 L58,66 L50,70 L42,66 z"/>
-    <circle class="dark" cx="43" cy="52" r="3"/>
-    <circle class="dark" cx="57" cy="52" r="3"/>
-    <path class="ink2" d="M45,58 Q50,61 55,58"/>
-  </symbol>
-<symbol id="m-tastergolem" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="beige" d="M30,72 L30,44 Q30,24 50,24 Q70,24 70,44 L70,72 Q70,78 64,78 L36,78 Q30,78 30,72 z"/>
-    <path class="beige-d" d="M34,58 L66,58 L66,72 Q66,75 63,75 L37,75 Q34,75 34,72 z"/>
-    <path class="gold" d="M38,24 L42,24 L42,18 Q46,15 50,15 Q54,15 58,18 L58,24 L62,24 L62,32 L38,32 L38,24 z"/>
-    <path class="ink1" d="M44,26 L44,30 M50,26 L50,30 M56,26 L56,30"/>
-    <circle class="dot-red" cx="44" cy="44" r="3.4"/>
-    <circle class="dot-red" cx="56" cy="44" r="3.4"/>
-    <path class="ink2" d="M46,50 Q50,53 54,50"/>
-    <path class="gold" d="M40,63 q5,-3 10,0 q5,3 10,0"/>
-  </symbol>
-<symbol id="m-carvingknight" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="beige" d="M34,46 L34,24 Q34,18 50,18 Q66,18 66,24 L66,46 Q66,66 50,66 Q34,66 34,46 z"/>
-    <path class="beige-d" d="M38,50 L62,50 L62,58 Q50,66 38,58 z"/>
-    <path class="gold" d="M40,22 L60,22 L58,16 L42,16 z"/>
-    <path class="ink1" d="M44,16 L44,22 M50,16 L50,22 M56,16 L56,22"/>
-    <path class="ink2" d="M38,42 L62,42"/>
-    <path class="gold" d="M30,72 L34,66 L38,72 L34,84 z"/>
-    <path class="gold" d="M70,72 L66,66 L62,72 L66,84 z"/>
-  </symbol>
-<symbol id="m-cupwisp" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="gold" d="M38,24 L62,24 L58,58 L42,58 z"/>
-    <path class="gold-l" d="M42,30 L58,30 L56,54 L44,54 z"/>
-    <path class="gold" d="M38,58 Q34,62 36,66 L64,66 Q66,62 62,58 z"/>
-    <path class="gold" d="M44,66 L56,66 L56,76 L44,76 z"/>
-    <path class="gold" d="M40,76 L60,76 L60,78 L40,78 z"/>
-    <path class="red" d="M50,14 Q44,18 47,22 Q50,20 50,24 Q54,20 57,22 Q56,18 50,14 z"/>
-    <circle class="dark" cx="44" cy="40" r="2.4"/>
-    <circle class="dark" cx="56" cy="40" r="2.4"/>
-    <path class="ink2" d="M47,45 Q50,48 53,45"/>
-  </symbol>
-<symbol id="m-gluttonking" viewBox="0 0 100 100">
-    <g class="badge"><circle cx="50" cy="50" r="47" class="badge-bg"/><circle cx="50" cy="50" r="47" class="ink1"/></g>
-    <path class="beige" d="M34,52 L34,34 Q34,20 50,20 Q66,20 66,34 L66,52 Q66,70 50,70 Q34,70 34,52 z"/>
-    <path class="gold" d="M32,20 L40,28 L50,18 L60,28 L68,20 L66,26 L70,26 L68,30 L64,30 L64,34 L36,34 L36,30 L32,30 L30,26 L34,26 z"/>
-    <circle class="dark" cx="42" cy="38" r="3.2"/>
-    <circle class="dark" cx="58" cy="38" r="3.2"/>
-    <path class="ink-dark" d="M42,52 Q50,62 58,52 Q54,56 50,56 Q46,56 42,52 z"/>
-    <path class="red-l" d="M43,54 Q50,60 57,54 L55,57 L45,57 z"/>
-    <path class="white" d="M40,32 l2,3 l2,-3 z"/>
-    <path class="white" d="M56,32 l2,3 l2,-3 z"/>
-  </symbol>
 </svg>
 <div id="app">
 
   <!-- ======== 开始界面 ======== -->
   <div id="start-screen" class="panel">
-    <div class="crest-wrap">
-      <svg class="crest" viewBox="0 0 200 220" aria-hidden="true">
-        <defs>
-          <linearGradient id="crestGold" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#f8e08e"/>
-            <stop offset="1" stop-color="#a67c00"/>
-          </linearGradient>
-        </defs>
-        <g stroke="#5c4033" stroke-width="4.5" stroke-linecap="round" fill="none">
-          <path d="M80,50 L54,126"/>
-          <path d="M120,50 L146,126"/>
-        </g>
-        <g fill="#f5e9d0" stroke="#5c4033" stroke-width="3">
-          <path d="M74,46 L88,46 L88,54 L93,54 L93,70 L81,76 L69,70 L69,54 L74,54 Z"/>
-          <path d="M112,46 L126,46 L126,54 L131,54 L131,70 L119,76 L107,70 L107,54 L112,54 Z"/>
-        </g>
-        <path d="M100,26 L160,48 L160,112 Q160,164 100,186 Q40,164 40,112 L40,48 Z" fill="url(#crestGold)" stroke="#5c4033" stroke-width="5" stroke-linejoin="round"/>
-        <path d="M100,40 L150,58 L150,108 Q150,152 100,172 Q50,152 50,108 L50,58 Z" fill="#fbf4e2" stroke="#5c4033" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M74,96 Q74,84 100,84 Q126,84 126,96 L126,106 L74,106 Z" fill="#c9a227" stroke="#5c4033" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M70,106 L130,106 L126,124 Q126,128 120,128 L80,128 Q74,128 74,124 Z" fill="#8a5a1a" stroke="#5c4033" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="72" cy="100" r="5.5" fill="#f5e9d0" stroke="#5c4033" stroke-width="2.5"/>
-        <circle cx="128" cy="100" r="5.5" fill="#f5e9d0" stroke="#5c4033" stroke-width="2.5"/>
-        <g stroke="#8a6a44" stroke-width="3.2" stroke-linecap="round" fill="none" opacity=".8">
-          <path d="M90,80 q-4,-7 0,-14 q4,-7 0,-14"/>
-          <path d="M100,78 q-4,-7 0,-14 q4,-7 0,-14"/>
-          <path d="M110,80 q-4,-7 0,-14 q4,-7 0,-14"/>
-        </g>
-        <path d="M100,130 c-6,-4 -8,-12 -4,-18 c4,6 8,4 8,-2 c6,6 6,16 -4,20 z" fill="#b4552d" stroke="#5c4033" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M56,176 L64,160 L80,180 Z" fill="#b4552d" stroke="#5c4033" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M144,176 L136,160 L120,180 Z" fill="#b4552d" stroke="#5c4033" stroke-width="2.5" stroke-linejoin="round"/>
-        <text x="100" y="157" text-anchor="middle" font-size="14" fill="#7c3518" font-family="serif" font-weight="bold" letter-spacing="3">食堂</text>
-      </svg>
-    </div>
     <h1>迷宫饭</h1>
     <div class="subtitle">冒险食堂手记</div>
-    <div class="story-note">
-      <p>王国最深处，有一座无人敢深入的神秘迷宫。传闻迷宫里住着珍奇的魔物，也埋藏着数不尽的宝藏与美食。</p>
+    <div class="story">
+      <p>在王国的最深处，有一座无人敢深入的神秘迷宫。<br>传闻迷宫里住着珍奇的魔物，也埋藏着数不尽的宝藏与美食。</p>
       <p>为了寻找传说中失落的【黄金锅】，剑士莱欧斯与他的伙伴们踏上了冒险之旅。<br>饿了？那就把魔物做成料理吃掉吧！</p>
-      <p class="quote">—— 这是属于冒险者们的「迷宫饭」——</p>
+      <p style="color:#a67c00; letter-spacing:4px;">—— 这是属于冒险者们的「迷宫饭」——</p>
     </div>
-    <div class="start-char-row" id="start-party"></div>
-    <div class="btn-row">
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
       <button class="btn primary big" id="btn-start" onclick="startAdventure()">⚔️ 开始冒险</button>
       <button class="btn big" id="btn-continue" style="display:none;" onclick="loadGame()">📖 继续冒险</button>
       <button class="btn big" id="btn-fresh" style="display:none;" onclick="newGame()">🆕 新的冒险</button>
     </div>
-    <div class="version-badge">作品集子项目 · <b>v2.4.0</b> · 迷宫饭 × 冒险食堂手记</div>
   </div>
 
   <!-- ======== 主游戏界面 ======== -->
@@ -1914,8 +1611,8 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
       <div id="header-bar">
         <span class="hb-item">🪙 金币：<b id="h-gold">0</b></span>
         <span class="hb-item">🔄 周目：<b id="h-cycle">1</b></span>
-        <span class="hb-item">📕 图鉴：<b id="h-codex">0/67</b></span>
-        <span class="hb-item">🌶 食材种类：<b id="h-ing">0/36</b></span>
+        <span class="hb-item">📕 图鉴：<b id="h-codex">0/24</b></span>
+        <span class="hb-item">🌶 食材种类：<b id="h-ing">0/12</b></span>
         <span class="hb-item" id="h-buff" style="display:none;"></span>
         <span class="btn small" onclick="saveGame()">💾 保存</span>
         <span class="btn small" onclick="confirmReset()">🗑 重置存档</span>
@@ -1941,7 +1638,9 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
     <div class="view active" id="view-explore">
       <div class="panel">
         <div class="panel-title">迷宫地图</div>
-        <p class="panel-tip">探索会消耗队伍的体力与饱腹度，饥饿的冒险者可是打不动魔物的！</p>
+        <p style="text-align:center; font-size:13px; color:var(--ink-soft); margin-bottom:14px;">
+          探索会消耗队伍的体力与饱腹度，饥饿的冒险者可是打不动魔物的！
+        </p>
         <div class="floor-grid" id="floor-grid"></div>
         <div id="boss-area"></div>
       </div>
@@ -1962,7 +1661,10 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
         </div>
         <div class="panel">
           <div class="panel-title">菜谱大全</div>
-          <p class="panel-tip">新菜谱需要先烹饪前置菜谱，或集齐所需食材才会被记载！<br>某些传说中的隐藏菜谱，只有同时持有特定食材组合时才会现身……</p>
+          <p style="text-align:center; font-size:13px; color:var(--ink-soft); margin-bottom:12px;">
+            新菜谱需要先烹饪前置菜谱，或集齐所需食材才会被记载！<br>
+            某些传说中的隐藏菜谱，只有同时持有特定食材组合时才会现身……
+          </p>
           <div class="grade-archive" id="grade-archive"></div>
           <div id="discover-banner" style="display:none;"></div>
           <div id="recipe-list" class="recipe-list"></div>
@@ -1973,7 +1675,7 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
     <!-- 图鉴 -->
     <div class="view" id="view-shop">
       <div class="panel"><div class="panel-title">🛒 冒险商店</div>
-        <div class="panel-tip" style="text-align:left;margin-bottom:8px;">用金币强化队伍——装备全队共享，药水全体使用</div>
+        <div style="font-size:12px;color:var(--ink-soft);margin-bottom:8px;">用金币强化队伍——装备全队共享，药水全体使用</div>
         <div id="shop-list"></div>
       </div>
       <div class="panel"><div class="panel-title">⚔️ 队伍装备</div><div id="equip-list" style="display:flex;flex-wrap:wrap;gap:10px;"></div></div>
@@ -1997,14 +1699,16 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
     <div class="view" id="view-ach">
       <div class="panel">
         <div class="panel-title">成就徽章</div>
-        <p class="panel-tip">探索迷宫、击败魔物、烹饪美食——用一枚枚徽章，书写你的冒险传说！</p>
+        <p style="text-align:center; font-size:13px; color:var(--ink-soft); margin-bottom:12px;">
+          探索迷宫、击败魔物、烹饪美食——用一枚枚徽章，书写你的冒险传说！
+        </p>
         <div class="ach-grid" id="ach-grid"></div>
       </div>
     </div>
 
     <!-- 冒险日志 -->
     <div class="panel">
-      <div id="quest-bar" class="quest-bar">📜 主线：探索第一层，找到食材</div>
+      <div id="quest-bar" class="panel" style="padding:10px 18px;font-size:15px;font-weight:bold;color:#6b3f00;letter-spacing:1px;border-left:5px solid #c9a227;background:linear-gradient(90deg,rgba(255,250,230,.95),rgba(240,220,175,.7));">📜 主线：探索第一层，找到食材</div>
       <div class="panel-title">冒险日志</div>
       <div id="log"></div>
     </div>
@@ -2018,11 +1722,11 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
       <div class="monster-panel">
         <div class="m-emoji" id="b-m-emoji">👹</div>
         <div class="m-name" id="b-m-name">魔物</div>
-        <div class="b-meta" id="b-m-elem">属性：？</div>
+        <div style="font-size:13px; letter-spacing:2px; color:var(--ink-soft); margin-top:2px;" id="b-m-elem">属性：？</div>
         <div id="b-skill"></div>
         <div class="bar hp" style="margin-top:8px;"><i id="b-m-hp-bar" style="width:100%"></i></div>
         <div class="bar-label"><span>HP <b id="b-m-hp">0/0</b></span><span>攻击 <b id="b-m-atk">0</b></span></div>
-        <div class="b-drop" id="b-m-drop">战利品：？</div>
+        <div style="font-size:12px; color:var(--ink-soft); margin-top:6px;" id="b-m-drop">战利品：？</div>
         <div id="enemy-select"></div>
       </div>
       <div>
@@ -2037,7 +1741,7 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
         <button class="btn" id="btn-skill" onclick="actSkill()">✨ 技能</button>
         <button class="btn danger" onclick="actFlee()">🏃 逃跑</button>
       </div>
-      <p class="b-hint">每回合双方都会消耗少量饱腹度，饥饿状态攻击力下降 30%</p>
+      <p style="text-align:center; font-size:12px; color:var(--ink-soft); margin-top:8px;">每回合双方都会消耗少量饱腹度，饥饿状态攻击力下降 30%</p>
     </div>
   </div>
 
@@ -2050,9 +1754,6 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
       <div id="modal-btns"></div>
     </div>
   </div>
-
-  <div id="fx-layer"></div>
-  <div id="gold-flash"></div>
 
   <div id="toast" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); z-index:99; display:none; max-width:80%;"></div>
   <div id="ach-toast"></div>
@@ -2108,77 +1809,58 @@ const INGREDIENTS = {
   cheese_stone:{ name:'石像奶酪', emoji:'🧀' },
   cheese_crumbs:{ name:'奶酪碎', emoji:'🧀' },
   cheese_rind:{ name:'硬质奶酪皮', emoji:'🛡️' },
-  gold_snail_meat:{ name:'黄金蜗牛肉', emoji:'🐌' },
-  banquet_essence:{ name:'盛宴精华',   emoji:'✨' },
-  gravy_stone:    { name:'金汤石',     emoji:'🍲' },
-  silver_leaf:    { name:'银叶菜',     emoji:'🥬' },
-  golden_grape:   { name:'金葡萄',     emoji:'🍇' },
-  king_crown:     { name:'王冠糖霜',   emoji:'👑' },
 };
 const ING_IDS = Object.keys(INGREDIENTS);
 
 const MONSTERS = {
-  slime:    { floor:1, id:'slime',    name:'史莱姆',       emoji:'🟢', icon:'m-slime',    elem:'ice',      hp:42,  atk:9,  def:2,  gold:[8,16],   drops:{slime_jelly:[1,2]},     desc:'软绵绵的绿色团子，据说煮了会变成高汤。', note:'史莱姆会沿着潮湿的苔藓迁徙，留下的黏液带是寻路的好标记；冬天它们会聚成一团互相取暖。' },
-  bat:      { floor:1, id:'bat',      name:'巨型蝙蝠',     emoji:'🦇', icon:'m-bat',      elem:'dark',     hp:36,  atk:11, def:3,  gold:[10,18],  drops:{bat_wing:[1,2]},       desc:'倒挂迷宫顶的大蝙蝠，翅膀肉厚实。', note:'巨型蝙蝠靠回声定位在迷宫里飞行，据说翅膜烤过之后有股坚果香。' },
-  mushroom: { floor:1, id:'mushroom', name:'走路菇',       emoji:'🍄', icon:'m-mushroom', elem:'earth',    hp:30,  atk:8,  def:4,  gold:[8,14],   drops:{mushroom:[1,2]},       desc:'会走路的蘑菇，切开会散发浓郁香气。', note:'走路菇的菌盖会随心情变色——饿的时候偏橙，吃饱了偏褐。' },
-  mimic:    { floor:1, id:'mimic',    name:'宝箱怪',       emoji:'📦', icon:'m-mimic',    elem:'earth',    hp:48,  atk:13, def:6,  gold:[20,35],  drops:{mimic_meat:[1,1]},     desc:'伪装成宝箱的怪物，肉质弹牙。', note:'宝箱怪会模仿见过的宝箱款式，老练的冒险者习惯先踢一脚再开箱。' },
-  skeleton: { floor:2, id:'skeleton', name:'骷髅兵',       emoji:'💀', icon:'m-skeleton', elem:'dark',     hp:55,  atk:15, def:5,  gold:[15,25],  drops:{bone_powder:[1,1]},    undead:true, desc:'会动的白骨，骨头磨成粉是上等香料。', note:'骷髅兵的关节靠骨粉润滑，雨季时它们常常走两步就散架。' },
-  gargoyle: { floor:2, id:'gargoyle', name:'石像鬼',       emoji:'🗿', icon:'m-gargoyle', elem:'earth',    hp:70,  atk:16, def:10, gold:[20,30],  drops:{gargoyle_core:[1,1]},  desc:'走廊里的石像守卫，心脏是滚烫的岩核。', note:'石像鬼白天石化、夜晚苏醒，脖颈处有一圈细缝，是它们的呼吸口。' },
-  centipede:{ floor:2, id:'centipede',name:'巨型蜈蚣',     emoji:'🐛', elem:'earth',     hp:60,  atk:18, def:4,  gold:[18,28],  drops:{centipede_shell:[2,2]},desc:'几十条腿的巨虫，甲壳可以熬出鲜汤。', note:'巨型蜈蚣蜕下的壳层叠如铠甲，迷宫深处的石壁上常挂着整串旧壳。' },
-  flame:    { floor:2, id:'flame',    name:'炎魔',         emoji:'🔥', elem:'fire',      hp:65,  atk:20, def:6,  gold:[25,35],  drops:{fire_ember:[1,1]},    desc:'浑身是火的恶魔，火种能点燃最冷的锅。', note:'炎魔的体温高得惊人，靠近时连影子都会烤焦——但火种却是生火的至宝。' },
-  griffin:  { floor:3, id:'griffin',  name:'狮鹫',         emoji:'🦅', elem:'lightning', hp:85,  atk:22, def:8,  gold:[30,45],  drops:{griffin_feather:[1,1]},desc:'狮身鹰首的猛兽，羽毛是天然调味料。', note:'狮鹫在深渊的岩架上筑巢，羽毛会收集静电，雨天格外暴躁。' },
-  reddragon:{ floor:3, id:'reddragon',name:'红龙',         emoji:'🐉', icon:'m-dragon',   elem:'fire',      hp:130, atk:26, def:10, gold:[50,80],  drops:{dragon_meat:[1,1]},   desc:'迷宫深处的霸主，龙肉是传说级食材。', note:'红龙会把自己盘在矿脉上睡觉，鳞片缝隙里常年卡着几块融化的金矿石。' },
-  lich:     { floor:3, id:'lich',     name:'不死者之王',   emoji:'☠️', elem:'dark',      hp:100, atk:24, def:8,  gold:[40,60],  drops:{undead_essence:[1,1]},undead:true, desc:'掌控亡灵的法师，精华是紫色浓汤的秘方。', note:'不死者之王生前是位图书管理员，它的法术书页至今还在原地翻动。' },
-  boss:     { floor:3, id:'boss',     name:'迷宫之主',     emoji:'👑', elem:'dark',      hp:200, atk:30, def:12, gold:[120,180],drops:{mandrake_root:[2,2], dragon_meat:[1,1]}, desc:'迷宫的心脏，传说曼陀罗的守护者。击败它可开启通往更深处的大门！', note:'迷宫之主的王座长满了曼陀罗，据说它是迷宫最初一批迷路者的执念所化。', boss:true, skill:{ name:'亡者咆哮', desc:'震耳欲聋的咆哮重创全体队员，并召唤骷髅兵', type:'aoe', dmg:0.6, chance:0.3, summon:[{id:'skeleton', qty:[1,1]}] } },
-  spider:   { floor:2, id:'spider',   name:'巨型蜘蛛',     emoji:'🕷', icon:'m-spider',   elem:'dark',     hp:45,  atk:14, def:3,  gold:[12,20],  drops:{spider_silk:[1,2]},   desc:'盘踞在石厅角落的巨型蜘蛛，蛛丝黏韧异常。', note:'巨型蜘蛛会把吃剩的猎物裹成茧挂在梁上，像一排沉默的风铃。' },
-  werewolf: { floor:3, id:'werewolf', name:'狼人',         emoji:'🐺', icon:'m-werewolf', elem:'dark',     hp:95,  atk:23, def:7,  gold:[30,45],  drops:{wolf_meat:[1,1]},    desc:'月夜下化为人狼的猎手，狼肉筋道有嚼劲。', note:'狼人只在月圆之夜现出狼形，其余时候是位沉默寡言的守林人。' },
-  ghost:    { floor:3, id:'ghost',    name:'幽灵',         emoji:'👻', icon:'m-ghost',    elem:'dark',     hp:50,  atk:18, def:5,  gold:[20,30],  drops:{undead_essence:[1,1]}, undead:true, desc:'飘荡的亡魂，精华是紫色浓汤的秘方。', note:'幽灵喜欢待在它生前熟悉的地方，你若礼貌地打招呼，它会微微欠身。' },
-  hellhound:{ floor:4, id:'hellhound',name:'地狱犬',       emoji:'🔥', icon:'m-hellhound',elem:'fire',     hp:80,  atk:22, def:6,  gold:[25,40],  drops:{fire_ember:[1,2]},   desc:'浑身燃烧的地狱恶犬，火种能点燃最冷的锅。', note:'地狱犬的火焰不会烧伤自己，却会把走廊烤得滚烫——顺着焦痕走，就能找到它的巢。' },
-  scorpion: { floor:4, id:'scorpion', name:'巨型蝎子',     emoji:'🦂', icon:'m-scorpion', elem:'fire',     hp:75,  atk:21, def:8,  gold:[25,38],  drops:{lava_core:[1,1]},    desc:'潜伏在岩浆边的巨蝎，尾针里凝着熔岩核心。', note:'巨型蝎子在沙地里埋伏一整周也不动一下，尾针里凝着熔岩的余温。' },
-  sulfurdragon:{ floor:4, id:'sulfurdragon', name:'硫磺龙', emoji:'🐲', elem:'fire',      hp:320, atk:34, def:12, gold:[150,220], drops:{dragon_meat:[2,2], lava_core:[1,2]}, desc:'硫磺炼狱的霸主，吐息能把钢铁烧成灰烬。击败它才能深入深渊食堂！', note:'硫磺龙的吐息会留下金黄色的硫磺结晶，是炼金师们梦寐以求的材料。', boss:true, skill:{ name:'硫磺吐息', desc:'喷吐硫磺烈焰灼烧全体队员，并召唤炎魔', type:'aoe', dmg:0.75, chance:0.4, summon:[{id:'flame', qty:[1,1]}] } },
-  potgolem: { floor:5, id:'potgolem', name:'守锅巨像',     emoji:'🏺', elem:'earth',      hp:450, atk:36, def:14, gold:[250,350], drops:{dragon_meat:[2,3], lava_core:[1,2], mandrake_root:[1,2]}, desc:'看守黄金锅的远古巨像，迷宫最后的守护者。击败它，才能进入黄金盛宴厅！', note:'守锅巨像沉睡时怀抱黄金锅，它的鼾声会让锅里的汤自动翻滚。', boss:true, skill:{ name:'巨像践踏', desc:'撼动大地的践踏重创全体队员，并召唤锅铲小兵', type:'aoe', dmg:0.8, chance:0.35, summon:[{id:'potminion', qty:[2,2]}] } },
-  potminion:{ floor:5, id:'potminion',name:'锅铲小兵',     emoji:'🥄', elem:'earth',      hp:22,  atk:10, def:2,  gold:[3,6],    drops:{}, desc:'守锅巨像召唤出的锅铲小兵，源源不断。', note:'锅铲小兵是巨像用掉落的锅具拼成的小跟班，只会喊“开饭了”。' },
-  knightcrab:{ floor:2, id:'knightcrab', name:'骑士蟹', emoji:'🦀', elem:'earth', hp:70, atk:20, def:10, gold:[25,40], drops:{knight_crab_meat:[1,1], crab_shell:[1,1], crab_roe:[1,1]}, desc:'披银白甲胄的巨蟹，礼数周全，下手狠辣。', note:'骑士蟹会收集冒险者掉落的银餐具当战利品，礼数周全到会先鞠躬再出钳。' },
-  breadtree:{ floor:1, id:'breadtree', name:'面包树妖', emoji:'🍞', elem:'earth', hp:55, atk:15, def:6, gold:[18,30], drops:{bread_fruit:[1,2], bark_bread:[1,1], wheat_wood:[1,1]}, desc:'会走路的面包树，被摸会害羞地掉果子。', note:'面包树妖的果实成熟时会发出烤面包的香气，胆小的它总把果子藏在树叶后。' },
-  shakespirit:{ floor:2, id:'shakespirit', name:'奶昔幽灵', emoji:'🥤', elem:'ice', hp:50, atk:17, def:4, gold:[20,32], drops:{shake_essence:[1,1], cream_top:[1,1], cold_fog:[1,1]}, desc:'半透明的奶油幽灵，被夸好喝会害羞融化。', note:'奶昔幽灵害怕太烫的东西，冬天它们会挤在暖气管旁慢慢融化。' },
-  chili_goblin:{ floor:2, id:'chili_goblin', name:'辣椒哥布林', emoji:'🌶️', elem:'fire', hp:45, atk:18, def:3, gold:[15,25], drops:{chili_bomb:[1,2], goblin_tear:[1,1], spicy_jerky:[1,1]}, desc:'红皮肤小个子，一言不合扔辣椒炸弹。', note:'辣椒哥布林会把吃不完的辣椒串成项链，哭的时候眼泪是天然的盐。' },
-  cheesegolem:{ floor:3, id:'cheesegolem', name:'奶酪石像', emoji:'🧀', elem:'earth', hp:85, atk:19, def:12, gold:[30,45], drops:{cheese_stone:[1,1], cheese_crumbs:[1,2], cheese_rind:[1,1]}, desc:'陈年奶酪与岩石结合的巨像，硬得像石头香得像奶酪。', note:'奶酪石像的关节里渗着陈年芝士，切开它需要叉子而不是剑。' },
-  goldsnail:{ floor:6, id:'goldsnail', name:'黄金蜗牛', emoji:'🐌', icon:'m-goldsnail', elem:'earth', hp:95, atk:26, def:16, gold:[35,55], drops:{gold_snail_meat:[1,2]}, desc:'黄金盛宴厅里啃食金汤的巨蜗牛，肉质带着淡淡的甜香。', note:'黄金蜗牛爬过的地方会留下细碎的金粉，是盛宴厅地毯闪闪发光的原因。' },
-  banquetwraith:{ floor:6, id:'banquetwraith', name:'残宴幽灵', emoji:'👻', icon:'m-banquetwraith', elem:'ice', hp:90, atk:28, def:10, gold:[40,60], drops:{banquet_essence:[1,1], cold_fog:[1,1]}, desc:'千年宴席散场后仍不愿离去的幽灵，守着满桌残羹。', note:'残宴幽灵每晚都会重新布置一次空桌，然后对着空位说“请慢用”。', undead:true },
-  tastergolem:{ floor:6, id:'tastergolem', name:'品菜魔像', emoji:'🗿', icon:'m-tastergolem', elem:'earth', hp:115, atk:25, def:16, gold:[45,70], drops:{gravy_stone:[1,1], cheese_rind:[1,1]}, desc:'为饕宴王试菜的古老魔像，尝一口便知道火候不对。', note:'品菜魔像尝遍千年宴席，据说它最讨厌的是盐放多了。' },
-  carvingknight:{ floor:6, id:'carvingknight', name:'餐刀骑士', emoji:'🗡️', icon:'m-carvingknight', elem:'holy', hp:100, atk:30, def:12, gold:[50,75], drops:{silver_leaf:[1,2], crab_shell:[1,1]}, desc:'手持餐刀与银盘的骑士，把战斗当成一场盛宴。', note:'餐刀骑士每击败一位对手，都会在自己的银盘上刻一道优雅的花纹。' },
-  cupwisp:{ floor:6, id:'cupwisp', name:'金杯妖灵', emoji:'🍷', icon:'m-cupwisp', elem:'shadow', hp:80, atk:27, def:8, gold:[30,50], drops:{golden_grape:[1,2], shake_essence:[1,1]}, desc:'从金杯中诞生的醉醺醺的妖灵，干杯就是它的战斗礼仪。', note:'金杯妖灵从杯中升起时总是先打个酒嗝，然后用杯沿敲出三下“干杯”。' },
-  gluttonking:{ floor:6, id:'gluttonking', name:'饕宴王', emoji:'👑', icon:'m-gluttonking', elem:'dark', hp:600, atk:40, def:16, gold:[400,600], drops:{king_crown:[1,2], dragon_meat:[2,3], mandrake_root:[1,2]}, desc:'黄金盛宴厅的主人，千年未饱的暴食之王。击败它，迷宫才算真正走到尽头！', note:'饕宴王从不分享王座，却会把吃剩的骨头堆成一座小山——那是它唯一的收藏。', boss:true, skill:{ name:'饕餮盛宴', desc:'吞噬一切的王宴——全体重创，并召唤残宴幽灵赴宴', type:'aoe', dmg:0.9, chance:0.35, summon:[{id:'banquetwraith', qty:[1,2]}] } },
+  slime:    { floor:1, id:'slime',    name:'史莱姆',       emoji:'🟢', icon:'m-slime',    elem:'ice',      hp:42,  atk:9,  def:2,  gold:[8,16],   drops:{slime_jelly:[1,2]},     desc:'软绵绵的绿色团子，据说煮了会变成高汤。' },
+  bat:      { floor:1, id:'bat',      name:'巨型蝙蝠',     emoji:'🦇', icon:'m-bat',      elem:'dark',     hp:36,  atk:11, def:3,  gold:[10,18],  drops:{bat_wing:[1,2]},       desc:'倒挂迷宫顶的大蝙蝠，翅膀肉厚实。' },
+  mushroom: { floor:1, id:'mushroom', name:'走路菇',       emoji:'🍄', icon:'m-mushroom', elem:'earth',    hp:30,  atk:8,  def:4,  gold:[8,14],   drops:{mushroom:[1,2]},       desc:'会走路的蘑菇，切开会散发浓郁香气。' },
+  mimic:    { floor:1, id:'mimic',    name:'宝箱怪',       emoji:'📦', icon:'m-mimic',    elem:'earth',    hp:48,  atk:13, def:6,  gold:[20,35],  drops:{mimic_meat:[1,1]},     desc:'伪装成宝箱的怪物，肉质弹牙。' },
+  skeleton: { floor:2, id:'skeleton', name:'骷髅兵',       emoji:'💀', icon:'m-skeleton', elem:'dark',     hp:55,  atk:15, def:5,  gold:[15,25],  drops:{bone_powder:[1,1]},    desc:'会动的白骨，骨头磨成粉是上等香料。' },
+  gargoyle: { floor:2, id:'gargoyle', name:'石像鬼',       emoji:'🗿', icon:'m-gargoyle', elem:'earth',    hp:70,  atk:16, def:10, gold:[20,30],  drops:{gargoyle_core:[1,1]},  desc:'走廊里的石像守卫，心脏是滚烫的岩核。' },
+  centipede:{ floor:2, id:'centipede',name:'巨型蜈蚣',     emoji:'🐛', elem:'earth',     hp:60,  atk:18, def:4,  gold:[18,28],  drops:{centipede_shell:[2,2]},desc:'几十条腿的巨虫，甲壳可以熬出鲜汤。' },
+  flame:    { floor:2, id:'flame',    name:'炎魔',         emoji:'🔥', elem:'fire',      hp:65,  atk:20, def:6,  gold:[25,35],  drops:{fire_ember:[1,1]},    desc:'浑身是火的恶魔，火种能点燃最冷的锅。' },
+  griffin:  { floor:3, id:'griffin',  name:'狮鹫',         emoji:'🦅', elem:'lightning', hp:85,  atk:22, def:8,  gold:[30,45],  drops:{griffin_feather:[1,1]},desc:'狮身鹰首的猛兽，羽毛是天然调味料。' },
+  reddragon:{ floor:3, id:'reddragon',name:'红龙',         emoji:'🐉', icon:'m-dragon',   elem:'fire',      hp:130, atk:26, def:10, gold:[50,80],  drops:{dragon_meat:[1,1]},   desc:'迷宫深处的霸主，龙肉是传说级食材。' },
+  lich:     { floor:3, id:'lich',     name:'不死者之王',   emoji:'☠️', elem:'dark',      hp:100, atk:24, def:8,  gold:[40,60],  drops:{undead_essence:[1,1]},desc:'掌控亡灵的法师，精华是紫色浓汤的秘方。' },
+  boss:     { floor:3, id:'boss',     name:'迷宫之主',     emoji:'👑', elem:'dark',      hp:200, atk:30, def:12, gold:[120,180],drops:{mandrake_root:[2,2], dragon_meat:[1,1]}, desc:'迷宫的心脏，传说曼陀罗的守护者。击败它可开启通往更深处的大门！', boss:true, skill:{ name:'亡者咆哮', desc:'震耳欲聋的咆哮重创全体队员，并召唤骷髅兵', type:'aoe', dmg:0.6, chance:0.3, summon:[{id:'skeleton', qty:[1,1]}] } },
+  spider:   { floor:2, id:'spider',   name:'巨型蜘蛛',     emoji:'🕷', icon:'m-spider',   elem:'dark',     hp:45,  atk:14, def:3,  gold:[12,20],  drops:{spider_silk:[1,2]},   desc:'盘踞在石厅角落的巨型蜘蛛，蛛丝黏韧异常。' },
+  werewolf: { floor:3, id:'werewolf', name:'狼人',         emoji:'🐺', icon:'m-werewolf', elem:'dark',     hp:95,  atk:23, def:7,  gold:[30,45],  drops:{wolf_meat:[1,1]},    desc:'月夜下化为人狼的猎手，狼肉筋道有嚼劲。' },
+  ghost:    { floor:3, id:'ghost',    name:'幽灵',         emoji:'👻', icon:'m-ghost',    elem:'dark',     hp:50,  atk:18, def:5,  gold:[20,30],  drops:{undead_essence:[1,1]}, desc:'飘荡的亡魂，精华是紫色浓汤的秘方。' },
+  hellhound:{ floor:4, id:'hellhound',name:'地狱犬',       emoji:'🔥', icon:'m-hellhound',elem:'fire',     hp:80,  atk:22, def:6,  gold:[25,40],  drops:{fire_ember:[1,2]},   desc:'浑身燃烧的地狱恶犬，火种能点燃最冷的锅。' },
+  scorpion: { floor:4, id:'scorpion', name:'巨型蝎子',     emoji:'🦂', icon:'m-scorpion', elem:'fire',     hp:75,  atk:21, def:8,  gold:[25,38],  drops:{lava_core:[1,1]},    desc:'潜伏在岩浆边的巨蝎，尾针里凝着熔岩核心。' },
+  sulfurdragon:{ floor:4, id:'sulfurdragon', name:'硫磺龙', emoji:'🐲', elem:'fire',      hp:320, atk:34, def:12, gold:[150,220], drops:{dragon_meat:[2,2], lava_core:[1,2]}, desc:'硫磺炼狱的霸主，吐息能把钢铁烧成灰烬。击败它才能深入深渊食堂！', boss:true, skill:{ name:'硫磺吐息', desc:'喷吐硫磺烈焰灼烧全体队员，并召唤炎魔', type:'aoe', dmg:0.75, chance:0.4, summon:[{id:'flame', qty:[1,1]}] } },
+  potgolem: { floor:5, id:'potgolem', name:'守锅巨像',     emoji:'🏺', elem:'earth',      hp:450, atk:36, def:14, gold:[250,350], drops:{dragon_meat:[2,3], lava_core:[1,2], mandrake_root:[1,2]}, desc:'看守黄金锅的远古巨像，是迷宫最后的守护者。击败它即可通关！', boss:true, skill:{ name:'巨像践踏', desc:'撼动大地的践踏重创全体队员，并召唤锅铲小兵', type:'aoe', dmg:0.8, chance:0.35, summon:[{id:'potminion', qty:[2,2]}] } },
+  potminion:{ floor:5, id:'potminion',name:'锅铲小兵',     emoji:'🥄', elem:'earth',      hp:22,  atk:10, def:2,  gold:[3,6],    drops:{}, desc:'守锅巨像召唤出的锅铲小兵，源源不断。' },
+  knightcrab:{ floor:2, id:'knightcrab', name:'骑士蟹', emoji:'🦀', elem:'earth', hp:70, atk:20, def:10, gold:[25,40], drops:{knight_crab_meat:[1,1], crab_shell:[1,1], crab_roe:[1,1]}, desc:'披银白甲胄的巨蟹，礼数周全，下手狠辣。' },
+  breadtree:{ floor:1, id:'breadtree', name:'面包树妖', emoji:'🍞', elem:'earth', hp:55, atk:15, def:6, gold:[18,30], drops:{bread_fruit:[1,2], bark_bread:[1,1], wheat_wood:[1,1]}, desc:'会走路的面包树，被摸会害羞地掉果子。' },
+  shakespirit:{ floor:2, id:'shakespirit', name:'奶昔幽灵', emoji:'🥤', elem:'ice', hp:50, atk:17, def:4, gold:[20,32], drops:{shake_essence:[1,1], cream_top:[1,1], cold_fog:[1,1]}, desc:'半透明的奶油幽灵，被夸好喝会害羞融化。' },
+  chili_goblin:{ floor:2, id:'chili_goblin', name:'辣椒哥布林', emoji:'🌶️', elem:'fire', hp:45, atk:18, def:3, gold:[15,25], drops:{chili_bomb:[1,2], goblin_tear:[1,1], spicy_jerky:[1,1]}, desc:'红皮肤小个子，一言不合扔辣椒炸弹。' },
+  cheesegolem:{ floor:3, id:'cheesegolem', name:'奶酪石像', emoji:'🧀', elem:'earth', hp:85, atk:19, def:12, gold:[30,45], drops:{cheese_stone:[1,1], cheese_crumbs:[1,2], cheese_rind:[1,1]}, desc:'陈年奶酪与岩石结合的巨像，硬得像石头香得像奶酪。' },
 };
+
 const RECIPES = [
-  { id:'r1',  name:'史莱姆果冻',   emoji:'🍮', ingredients:{slime_jelly:1},                 effect:{hp:30, full:10},  require:null, desc:'弹弹嫩嫩的开胃菜，补充体力。', app:'勺子压下去，果冻颤巍巍地弹回来，入口是薄荷糖一样的凉。' },
-  { id:'r2',  name:'烤蝙蝠翅',     emoji:'🍗', ingredients:{bat_wing:2},                    effect:{hp:15, full:40},  require:'r1', desc:'炭火烤到滋滋冒油，最解饿。', app:'炭火把翅尖燎出油泡，咬下去咔地一声，满口焦香。' },
-  { id:'r3',  name:'蘑菇浓汤',     emoji:'🍲', ingredients:{mushroom:2},                    effect:{hp:40, full:25},  require:'r1', desc:'鲜掉眉毛的浓汤，暖胃又治愈。', app:'汤勺提起时拉出丝，鲜味顺着喉咙一路暖到胃里。' },
-  { id:'r4',  name:'宝箱怪烤肉',   emoji:'🥩', ingredients:{mimic_meat:1, slime_jelly:1},  effect:{hp:50, full:35},  require:'r2', desc:'肉质弹牙，配果冻酱汁更是一绝。', app:'肉在铁板上弹了两下，切开还是粉色的，汁水直冒。' },
-  { id:'r5',  name:'骨粉面包',     emoji:'🥖', ingredients:{bone_powder:1, mushroom:1},     effect:{hp:25, full:45},  require:'r3', desc:'用骨粉发酵的面包，越嚼越香。', app:'面包芯带着麦香和一点点奶味，撕开能听到酥皮裂开的细响。' },
-  { id:'r6',  name:'岩心炖菜',     emoji:'🍛', ingredients:{gargoyle_core:1, mushroom:1},  effect:{hp:60, full:40},  require:'r3', desc:'岩核文火慢炖，暖到骨头里。', app:'岩核在锅底咕嘟了一整天，蔬菜都炖成了琥珀色。' },
-  { id:'r7',  name:'火焰烤肉',     emoji:'🍢', ingredients:{fire_ember:1, bat_wing:1},      effect:{hp:45, full:50},  require:'r4', desc:'用炎魔火种烤制，外焦里嫩。', app:'火种把肉皮燎出金纹，咬下去先脆后嫩。' },
-  { id:'r8',  name:'甲壳鲜汤',     emoji:'🥘', ingredients:{centipede_shell:2, slime_jelly:1}, effect:{hp:55, full:45}, require:'r5', desc:'甲壳熬出乳白色的鲜汤，喝了浑身是劲。', app:'汤色奶白，甲壳熬出的胶质让嘴唇都黏在一起。' },
-  { id:'r9',  name:'狮鹫烤串',     emoji:'🍖', ingredients:{griffin_feather:1, mimic_meat:1}, effect:{hp:70, full:50},  require:'r6', desc:'狮鹫羽毛是天然调味料，香飘十里。', app:'羽毛的香辛味渗进肉里，竹签上的肉块还在滋滋作响。' },
-  { id:'r10', name:'龙肉排',       emoji:'🍽', ingredients:{dragon_meat:1, fire_ember:1},   effect:{hp:90, full:60},  require:'r7', desc:'一整块龙肉排，传说级的至高美味！', app:'刀切下去，肉汁沿刀背流下，火光里每一层都闪着油光。' },
-  { id:'r11', name:'不死者浓汤',   emoji:'🍵', ingredients:{undead_essence:1, bone_powder:1, mushroom:1}, effect:{hp:75, full:55}, require:'r8', desc:'紫色的神秘浓汤，喝下去灵魂都在颤抖。', app:'汤是神秘的紫色，喝一口，整个人像被点了穴又松开。' },
-  { id:'r12', name:'迷宫全席',     emoji:'🍱', ingredients:{mandrake_root:1, dragon_meat:1, slime_jelly:2}, effect:{hp:999, full:999}, require:'r9', desc:'集结迷宫全部食材的究极料理，吃一口就能征服迷宫！', app:'九碟九碗摆满一桌，每一口都是迷宫深处才有的味道。' },
-  { id:'r13', name:'蛛丝蜜饯',     emoji:'🍬', ingredients:{spider_silk:1, slime_jelly:1},                effect:{hp:50, full:30},  require:'r4', desc:'裹着蛛丝糖浆的蜜饯，甜丝丝的能提神。', app:'蜜糖拉出细细的丝，甜味在舌尖慢慢化开。' },
-  { id:'r14', name:'狼肉大串',     emoji:'🥓', ingredients:{wolf_meat:1, fire_ember:1},                  effect:{hp:70, full:55},  require:'r7', desc:'狼肉串在炎魔火种上烤得滋滋冒油，野性十足。', app:'狼肉串在火种上翻了个面，油脂滴进火里溅起一朵小火苗。' },
-  { id:'r15', name:'熔岩蛋羹',     emoji:'🥣', ingredients:{lava_core:1, mushroom:1, slime_jelly:1},     effect:{hp:85, full:60},  require:'r10', desc:'熔岩核心煨出的蛋羹，滚烫浓稠，暖透心脾。', app:'蛋羹还在碗里微微颤动，热气裹着鲜香扑了满脸。' },
-  { id:'r16', name:'骑士蟹浓汤', emoji:'🦀', ingredients:{knight_crab_meat:1, crab_roe:1}, effect:{hp:60, full:45}, require:'r8', desc:'蟹壳盾当锅熬出的浓汤，喝前记得敬个礼。', app:'蟹黄在汤里化成金黄的油花，喝前记得先向锅行个礼。' },
-  { id:'r17', name:'面包树披萨', emoji:'🍕', ingredients:{bread_fruit:1, cheese_crumbs:1}, effect:{hp:55, full:50}, require:'r5', desc:'面包果做饼底，奶酪拉丝到天边。', app:'拿起一片，奶酪拉出老长的丝，饼边烤得金黄鼓起。' },
-  { id:'r18', name:'奶昔浮云', emoji:'🥤', ingredients:{shake_essence:1, cold_fog:1, slime_jelly:1}, effect:{hp:45, full:40}, require:'r13', desc:'吃一口像咬下一片冰凉的云。', app:'勺子一碰就散，像咬了一口凉丝丝的云。' },
-  { id:'r19', name:'辣椒炖肉', emoji:'🌶️', ingredients:{chili_bomb:1, spicy_jerky:1}, effect:{hp:70, full:55}, require:'r14', desc:'辣得喷火，手边记得放牛奶。', app:'第一口是香，第二口是辣，第三口你已经在找水了。' },
-  { id:'r20', name:'奶酪熔岩面包', emoji:'🧀', ingredients:{cheese_stone:1, bread_fruit:1}, effect:{hp:85, full:60}, require:'r15', desc:'切开拉丝的熔岩奶酪，凉了会重新硬成石头。', app:'掰开面包，熔岩奶酪缓缓流出来，晾一会儿又硬回石头。' },
-  { id:'r21', name:'黄金蜗牛炖菜', emoji:'🍲', ingredients:{gold_snail_meat:1, mushroom:2}, effect:{hp:80, full:60}, require:'r15', desc:'黄金蜗牛肉与蘑菇同炖，汤汁浓稠如熔金。', app:'汤汁浓稠如熔金，蜗牛肉嚼起来带着淡淡的甜。' },
-  { id:'r22', name:'盛宴浓汤', emoji:'🍵', ingredients:{banquet_essence:1, bone_powder:1}, effect:{hp:95, full:70}, require:'r11', desc:'千年前盛宴留下的精华，喝下仿佛置身黄金厅堂。', app:'汤面上浮着细碎的金粉，像喝下了一千年前的灯火。' },
-  { id:'r23', name:'金汤石锅饭', emoji:'🍚', ingredients:{gravy_stone:1, bread_fruit:1, wheat_wood:1}, effect:{hp:90, full:80}, require:'r17', desc:'以金汤石为锅、麦香木生火，粒粒米饭吸饱金汤。', app:'石锅还滋滋作响，锅巴金黄酥脆，米饭吸饱了金汤。' },
-  { id:'r24', name:'银叶翡翠沙拉', emoji:'🥗', ingredients:{silver_leaf:2, shake_essence:1, slime_jelly:1}, effect:{hp:70, full:55}, require:'r18', desc:'月光下生长的银叶菜，拌上奶昔精华，清甜回甘。', app:'银叶在嘴里咔嚓一响，奶昔的清甜跟着漫上来。' },
-  { id:'r25', name:'王冠糖霜蛋糕', emoji:'🎂', ingredients:{king_crown:1, cheese_stone:1, dragon_meat:1}, effect:{hp:120, full:90}, require:'r20', desc:'用饕宴王的糖霜与龙肉做的蛋糕，吃一口宛如加冕。', app:'糖霜在舌尖化开，甜得克制，香得张扬，像一场加冕。' },
-  { id:'r26', name:'黄金全宴', emoji:'🏆', ingredients:{golden_grape:1, gold_snail_meat:1, dragon_meat:1, mandrake_root:1}, effect:{hp:999, full:999}, require:'r12', desc:'汇聚黄金盛宴厅全部珍馐的至高全宴，只有征服迷宫者才有资格享用！', app:'金盘银盏次第排开，这一顿，值得放下所有冒险的疲惫。' },
-  { id:'r27', name:'蜜糖烤翅',     emoji:'🍯', ingredients:{bat_wing:2, spider_silk:1},                 effect:{hp:55, full:45},  require:'r13', desc:'蜜糖挂翅，甜咸交错，是迷宫里难得的零嘴。', app:'翅尖微微焦脆，蜜汁拉丝——连骨头都想嗦干净。' },
-  { id:'r28', name:'石像鬼岩盐牛排', emoji:'🥩', ingredients:{gargoyle_core:1, wolf_meat:1, goblin_tear:1}, effect:{hp:85, full:60}, require:'r14', desc:'岩盐锁住肉汁，厚实得像一场战斗。', app:'岩盐在铁锅上跳舞，切开时肉汁沿着刀背流下来。' },
+  { id:'r1',  name:'史莱姆果冻',   emoji:'🍮', ingredients:{slime_jelly:1},                 effect:{hp:30, full:10},  require:null, desc:'弹弹嫩嫩的开胃菜，补充体力。' },
+  { id:'r2',  name:'烤蝙蝠翅',     emoji:'🍗', ingredients:{bat_wing:2},                    effect:{hp:15, full:40},  require:'r1', desc:'炭火烤到滋滋冒油，最解饿。' },
+  { id:'r3',  name:'蘑菇浓汤',     emoji:'🍲', ingredients:{mushroom:2},                    effect:{hp:40, full:25},  require:'r1', desc:'鲜掉眉毛的浓汤，暖胃又治愈。' },
+  { id:'r4',  name:'宝箱怪烤肉',   emoji:'🥩', ingredients:{mimic_meat:1, slime_jelly:1},  effect:{hp:50, full:35},  require:'r2', desc:'肉质弹牙，配果冻酱汁更是一绝。' },
+  { id:'r5',  name:'骨粉面包',     emoji:'🥖', ingredients:{bone_powder:1, mushroom:1},     effect:{hp:25, full:45},  require:'r3', desc:'用骨粉发酵的面包，越嚼越香。' },
+  { id:'r6',  name:'岩心炖菜',     emoji:'🍛', ingredients:{gargoyle_core:1, mushroom:1},  effect:{hp:60, full:40},  require:'r3', desc:'岩核文火慢炖，暖到骨头里。' },
+  { id:'r7',  name:'火焰烤肉',     emoji:'🍢', ingredients:{fire_ember:1, bat_wing:1},      effect:{hp:45, full:50},  require:'r4', desc:'用炎魔火种烤制，外焦里嫩。' },
+  { id:'r8',  name:'甲壳鲜汤',     emoji:'🥘', ingredients:{centipede_shell:2, slime_jelly:1}, effect:{hp:55, full:45}, require:'r5', desc:'甲壳熬出乳白色的鲜汤，喝了浑身是劲。' },
+  { id:'r9',  name:'狮鹫烤串',     emoji:'🍖', ingredients:{griffin_feather:1, mimic_meat:1}, effect:{hp:70, full:50},  require:'r6', desc:'狮鹫羽毛是天然调味料，香飘十里。' },
+  { id:'r10', name:'龙肉排',       emoji:'🍽', ingredients:{dragon_meat:1, fire_ember:1},   effect:{hp:90, full:60},  require:'r7', desc:'一整块龙肉排，传说级的至高美味！' },
+  { id:'r11', name:'不死者浓汤',   emoji:'🍵', ingredients:{undead_essence:1, bone_powder:1, mushroom:1}, effect:{hp:75, full:55}, require:'r8', desc:'紫色的神秘浓汤，喝下去灵魂都在颤抖。' },
+  { id:'r12', name:'迷宫全席',     emoji:'🍱', ingredients:{mandrake_root:1, dragon_meat:1, slime_jelly:2}, effect:{hp:999, full:999}, require:'r9', desc:'集结迷宫全部食材的究极料理，吃一口就能征服迷宫！' },
+  { id:'r13', name:'蛛丝蜜饯',     emoji:'🍬', ingredients:{spider_silk:1, slime_jelly:1},                effect:{hp:50, full:30},  require:'r4', desc:'裹着蛛丝糖浆的蜜饯，甜丝丝的能提神。' },
+  { id:'r14', name:'狼肉大串',     emoji:'🥓', ingredients:{wolf_meat:1, fire_ember:1},                  effect:{hp:70, full:55},  require:'r7', desc:'狼肉串在炎魔火种上烤得滋滋冒油，野性十足。' },
+  { id:'r15', name:'熔岩蛋羹',     emoji:'🥣', ingredients:{lava_core:1, mushroom:1, slime_jelly:1},     effect:{hp:85, full:60},  require:'r10', desc:'熔岩核心煨出的蛋羹，滚烫浓稠，暖透心脾。' },
+  { id:'r16', name:'骑士蟹浓汤', emoji:'🦀', ingredients:{knight_crab_meat:1, crab_roe:1}, effect:{hp:60, full:45}, require:'r8', desc:'蟹壳盾当锅熬出的浓汤，喝前记得敬个礼。' },
+  { id:'r17', name:'面包树披萨', emoji:'🍕', ingredients:{bread_fruit:1, cheese_crumbs:1}, effect:{hp:55, full:50}, require:'r5', desc:'面包果做饼底，奶酪拉丝到天边。' },
+  { id:'r18', name:'奶昔浮云', emoji:'🥤', ingredients:{shake_essence:1, cold_fog:1, slime_jelly:1}, effect:{hp:45, full:40}, require:'r13', desc:'吃一口像咬下一片冰凉的云。' },
+  { id:'r19', name:'辣椒炖肉', emoji:'🌶️', ingredients:{chili_bomb:1, spicy_jerky:1}, effect:{hp:70, full:55}, require:'r14', desc:'辣得喷火，手边记得放牛奶。' },
+  { id:'r20', name:'奶酪熔岩面包', emoji:'🧀', ingredients:{cheese_stone:1, bread_fruit:1}, effect:{hp:85, full:60}, require:'r15', desc:'切开拉丝的熔岩奶酪，凉了会重新硬成石头。' },
 ];
 const RECIPE_MAP = {}; RECIPES.forEach(r=>RECIPE_MAP[r.id]=r);
 
@@ -2198,12 +1880,6 @@ const MON_TAUNTS = {
   breadtree:{ start:'面包果……可甜了……但，不给！', win:'呼……只是被掰了根树枝，没被整棵烤了就好。' },
   shakespirit:{ start:'呜哇——来杯奶昔吗？现冻的！', win:'跑得真快——再慢点，就成我的冰棍啦！' },
   chili_goblin:{ start:'辣死你们！辣死你们！', win:'哈！辣哭你们！……别哭啊，给你牛奶！' },
-  goldsnail:{ start:'……嚼、嚼。别、别打扰我吃饭。', win:'啊——你打翻了我的汤！' },
-  banquetwraith:{ start:'呜……这桌菜……是给谁准备的……', win:'连残羹……都不给我留……' },
-  tastergolem:{ start:'这盘菜……味道不对。重做。', win:'勉强……及格。' },
-  carvingknight:{ start:'用餐礼仪第一课：刀叉不许乱挥。', win:'好刀法——不对，是好刀法！' },
-  cupwisp:{ start:'干杯！——嗝，这杯敬深渊。', win:'醉……醉了……再、再来……' },
-  gluttonking:{ start:'饿……太久了。你们，正好下饭。', win:'……好饱。这顿，算我请。' },
 };
 const PARTY_LINES = {
   paladin:{ atk:'以圣剑之名——以及平底锅之名，制裁你！', crit:'这一击，是替今天的午饭打的！', down:'唔……我还能……再吃一口……' },
@@ -2220,31 +1896,28 @@ function charTaunt(cid, kind){
 
 /* 隐藏菜谱：背包食材组合解锁（更强效果） */
 const HIDDEN_RECIPES = {
-  hr1: { name:'史莱姆菌菇烩',  emoji:'🍄', combos:[['slime_jelly','mushroom']],      effect:{hp:80,  full:60},  desc:'史莱姆+蘑菇的意外组合，鲜到掉眉毛！', app:'菌菇吸饱了史莱姆高汤，鲜得让人顾不上说话。' },
-  hr2: { name:'龙鳞焦糖布丁',  emoji:'🍮', combos:[['dragon_meat','fire_ember']],    effect:{hp:120, full:80},  desc:'传说用龙肉和火种做出的甜点，入口即化！', app:'焦糖脆壳一敲就碎，下面是龙奶般绵密的布丁。' },
-  hr3: { name:'蛛丝蜜糖脆',    emoji:'🍯', combos:[['spider_silk','bat_wing']],      effect:{hp:70,  full:70},  desc:'蛛丝裹着糖浆的脆片，嘎嘣脆！', app:'蛛丝在糖浆里炸得金黄，咬下去满口咔嚓。' },
-  hr4: { name:'熔岩温泉蛋',    emoji:'🥚', combos:[['lava_core','gargoyle_core']],   effect:{hp:100, full:50},  desc:'在熔岩里煮出的蛋，滚烫的溏心！', app:'蛋壳里是滚烫的溏心，温泉的硫磺香混着蛋香。' },
-  hr5: { name:'狼人月亮汤',    emoji:'🌕', combos:[['wolf_meat','mushroom']],        effect:{hp:90,  full:90},  desc:'月圆之夜炖的汤，喝了力气翻倍！', app:'汤色如满月，喝下去四肢都暖融融的。' },
-  hr6: { name:'不死精华冻',    emoji:'🧊', combos:[['undead_essence','slime_jelly']], effect:{hp:999, full:999},  desc:'神秘配方，据说能让人起死回生！', app:'透明得像一滴凝固的时间，据说喝下的人都会沉默很久。' },
-  hr7: { name:'幽灵舒芙蕾',    emoji:'👻', combos:[['undead_essence','bone_powder']], effect:{hp:60,  full:100}, desc:'轻盈得像幽灵一样的甜点，一碰就碎！', app:'端起来轻飘飘的，入口像什么都没吃，又像什么都吃了。' },
-  hr8: { name:'黄金锅全宴',    emoji:'👑', combos:[['mandrake_root','dragon_meat','lava_core']], effect:{hp:999, full:999}, desc:'传说中用黄金锅才能做出的终极盛宴！', app:'黄金锅的火候刚刚好，每一道菜都闪着光。' },
-  hr9: { name:'饕宴王的晚宴',    emoji:'👑', combos:[['king_crown','golden_grape','banquet_essence']], effect:{hp:999, full:999}, desc:'传说中饕宴王亲自设宴的菜单，吃过一次便此生无憾！', app:'饕宴王亲手布菜，吃一口，连王座都安静了。' },
-  hr10:{ name:'金汤蜗牛面',      emoji:'🍜', combos:[['gold_snail_meat','gravy_stone','wolf_meat']],     effect:{hp:130, full:90},  desc:'金汤做底、蜗牛肉做浇头，劲道十足的面条。', app:'面条裹满金汤，吸溜一口，汤鲜面滑。' },
-  hr11:{ name:'银叶蜗牛塔',      emoji:'🍰', combos:[['gold_snail_meat','silver_leaf','cream_top']],    effect:{hp:130, full:85},  desc:'银叶裹着黄金蜗牛与奶油，层层叠叠如王冠。', app:'叉子落下去，银叶应声而碎，奶油缓缓漫过蜗牛的甜香。' },
+  hr1: { name:'史莱姆菌菇烩',  emoji:'🍄', combos:[['slime_jelly','mushroom']],      effect:{hp:80,  full:60},  desc:'史莱姆+蘑菇的意外组合，鲜到掉眉毛！' },
+  hr2: { name:'龙鳞焦糖布丁',  emoji:'🍮', combos:[['dragon_meat','fire_ember']],    effect:{hp:120, full:80},  desc:'传说用龙肉和火种做出的甜点，入口即化！' },
+  hr3: { name:'蛛丝蜜糖脆',    emoji:'🍯', combos:[['spider_silk','bat_wing']],      effect:{hp:70,  full:70},  desc:'蛛丝裹着糖浆的脆片，嘎嘣脆！' },
+  hr4: { name:'熔岩温泉蛋',    emoji:'🥚', combos:[['lava_core','gargoyle_core']],   effect:{hp:100, full:50},  desc:'在熔岩里煮出的蛋，滚烫的溏心！' },
+  hr5: { name:'狼人月亮汤',    emoji:'🌕', combos:[['wolf_meat','mushroom']],        effect:{hp:90,  full:90},  desc:'月圆之夜炖的汤，喝了力气翻倍！' },
+  hr6: { name:'不死精华冻',    emoji:'🧊', combos:[['undead_essence','slime_jelly']], effect:{hp:999, full:999},  desc:'神秘配方，据说能让人起死回生！' },
+  hr7: { name:'幽灵舒芙蕾',    emoji:'👻', combos:[['undead_essence','bone_powder']], effect:{hp:60,  full:100}, desc:'轻盈得像幽灵一样的甜点，一碰就碎！' },
+  hr8: { name:'黄金锅全宴',    emoji:'👑', combos:[['mandrake_root','dragon_meat','lava_core']], effect:{hp:999, full:999}, desc:'传说中用黄金锅才能做出的终极盛宴！' },
 };
+
+
 const FLOORS = {
   1: { name:'第一层 · 苔藓回廊', emoji:'🌿', desc:'迷宫的入口，长满苔藓的回廊里出没着温顺的魔物。', enemies:['slime','bat','mushroom','mimic','breadtree'],
       weights:{ battle:45, chest:15, trap:15, merchant:10, event:15 }, fatigue:8 },
   2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin'],
       weights:{ battle:50, chest:12, trap:18, merchant:8, event:12 }, fatigue:11 },
   3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem'],
-      weights:{ battle:52, chest:10, trap:20, merchant:5, event:13 }, fatigue:14, boss:'boss' },
+      weights:{ battle:52, chest:10, trap:20, merchant:5, event:13 }, fatigue:14 },
   4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', enemies:['hellhound','scorpion','flame','reddragon'],
-      weights:{ battle:55, chest:8, trap:22, merchant:4, event:11 }, fatigue:17, boss:'sulfurdragon' },
+      weights:{ battle:55, chest:8, trap:22, merchant:4, event:11 }, fatigue:17 },
   5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', enemies:['ghost','mimic','lich','werewolf'],
-      weights:{ battle:50, chest:8, trap:18, merchant:6, event:18 }, fatigue:20, boss:'potgolem' },
-  6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp'],
-      weights:{ battle:55, chest:7, trap:20, merchant:3, event:15 }, fatigue:23, boss:'gluttonking' },
+      weights:{ battle:50, chest:8, trap:18, merchant:6, event:18 }, fatigue:20 },
 };
 
 const EVENTS = [
@@ -2452,78 +2125,6 @@ const EVENTS = [
       { icon:'🤔', text:'问摊主是谁', ok:{full:20}, log:'他沉默良久："曾经是御厨，现在是守夜人。只有午夜才有人想起吃饭。"' },
       { icon:'🥡', text:'打包带走', ok:{hp:30, full:30}, log:'摊主一愣又笑了："头一回有人打包。"多送一碗："路上凉，趁热。"' },
     ] },
-  { id:'ev31', title:'金葡萄藤', emoji:'🍇', desc:'黄金盛宴厅的廊柱上缠绕着一株结满金色果实的葡萄藤，果实像小灯笼一样在微光中摇晃。',
-    choices:[
-      { icon:'🍇', text:'摘一串尝尝', ok:{hp:20, full:15, ing:{golden_grape:1}}, log:'葡萄入口，甘甜的汁水在嘴里炸开——是千年陈酿的味道！' },
-      { icon:'🪴', text:'小心连根挖走', ok:{ing:{golden_grape:2}}, log:'你连根带土挖起一小株金葡萄藤，收获了两串金葡萄。' },
-      { icon:'🚶', text:'不打扰它', ok:{full:5}, log:'藤蔓轻轻晃动，仿佛在说谢谢。' },
-    ] },
-  { id:'ev32', title:'鎏金请柬', emoji:'💌', desc:'一只银盘上静静躺着一张鎏金请柬，署名是「饕宴王」。',
-    choices:[
-      { icon:'✉️', text:'收下请柬', ok:{gold:30}, log:'请柬入手，背后浮出一行小字："赴宴者，皆是我盘中餐。"——你默默把它收进怀里。' },
-      { icon:'🔥', text:'烧掉请柬', ok:{hp:10, full:10}, log:'请柬在火中化为灰烬，一股暖流涌过全身。(全体HP+10，饱腹+10)' },
-      { icon:'🚶', text:'转身离开', ok:{}, log:'你总觉得那张请柬在背后盯着你。' },
-    ] },
-  { id:'ev33', title:'醉醺醺的侍者', emoji:'🍷', desc:'一个穿着破旧燕尾服的侍者抱着酒瓶摇摇晃晃，看见你们便扑上来："再、再来一杯！"',
-    choices:[
-      { icon:'🍻', text:'陪他喝一杯', ok:{gold:25, full:-10}, log:'侍者喜极而泣，把藏了千年的小费罐塞给你：25金币！(饱腹-10)' },
-      { icon:'🪑', text:'扶他坐下休息', ok:{hp:15}, log:'侍者靠在椅子上打起呼噜，嘴里还念叨着"开席了"。(全体HP+15)' },
-      { icon:'🚶', text:'悄悄绕开', ok:{}, log:'你刚迈步，侍者就精准地扑向了你身后的柱子。' },
-    ] },
-  { id:'ev34', title:'黄金喷泉', emoji:'⛲', desc:'大厅中央的黄金喷泉仍在汩汩流淌，池底沉着亮晶晶的东西。',
-    choices:[
-      { icon:'🤿', text:'下水捞宝', ok:{gold:40}, battle:'goldsnail', battleChance:0.35, attackLog:'你刚把手伸进池水，一只黄金蜗牛猛地咬了上来！', log:'你从池底捞起 40 金币，喷泉咕噜噜冒了个泡。' },
-      { icon:'💧', text:'捧水洗把脸', ok:{hp:20}, log:'泉水拂过脸颊，疲劳一扫而空。(全体HP+20)' },
-      { icon:'🚶', text:'绕开喷泉', ok:{}, log:'喷泉在身后发出心满意足的咕噜声。' },
-    ] },
-  { id:'ev35', title:'试菜的幽灵', emoji:'👻', desc:'一只系着围裙的幽灵飘过来，严肃地递上餐刀："欢迎光临，请务必品尝这道……千年陈酿。"',
-    choices:[
-      { icon:'🍽', text:'郑重品尝', ok:{hp:-10, full:30, ing:{banquet_essence:1}}, log:'味道惊人地美味，但后劲十足，你有点上头。(全体HP-10，饱腹+30，获得盛宴精华)' },
-      { icon:'🙏', text:'婉言谢绝', ok:{full:10}, log:'幽灵失望地叹了口气，把餐刀收进围裙："那……下次吧。"' },
-      { icon:'📝', text:'请教菜谱', ok:{ing:{cheese_crumbs:1, slime_jelly:1}}, log:'幽灵滔滔不绝讲了三个时辰，还塞给你两份边角料当伴手礼。' },
-    ] },
-  { id:'ev36', title:'最后的甜点', emoji:'🍰', desc:'长桌尽头立着一座八层蛋糕，顶上插着一根仍在燃烧的蜡烛。',
-    choices:[
-      { icon:'🕯️', text:'吹蜡烛许愿', ok:{hp:30, full:20}, log:'蜡烛熄灭的瞬间，你听到一个满足的叹息声。(全体HP+30，饱腹+20)' },
-      { icon:'🔪', text:'切一块带走', ok:{ing:{golden_grape:1, cheese_crumbs:2}}, log:'蛋糕入口即化，你打包了满满一盒。(获得金葡萄×1、奶酪碎×2)' },
-      { icon:'🚶', text:'不敢乱碰', ok:{}, log:'那根蜡烛一直亮着，像在等谁回来吹灭它。' },
-    ] },
-  { id:'ev37', name:'小剧场 · 深夜的争论', emoji:'🗣️', skit:true,
-    text:'篝火噼啪作响，四人围坐。<br><b>莱欧斯</b>：“我研究过了，宝箱怪其实是一种大型贝类！清蒸一定很鲜。”<br><b>玛露希尔</b>：“你、你又来了！那是会咬人的箱子！”<br><b>奇尔查克</b>：“我只关心它会不会咬我钱包。”<br><b>森西</b>：“都别吵，明天抓到再说——先把火看好。”',
-    choices:[
-      { icon:'🗣️', text:'加入争论（饱腹-4）', effects:{ full:-4 }, log:'你刚开口，玛露希尔就递来一块面包堵住了你的嘴。' },
-      { icon:'🛌', text:'躺下装睡', effects:{ hp:10 }, log:'你闭眼假寐，听他们吵了半宿，偷偷笑醒三回。(全体HP+10)' },
-    ] },
-  { id:'ev38', name:'小剧场 · 玛露希尔的研究笔记', emoji:'📖', skit:true,
-    text:'玛露希尔举着羽毛笔：“等一下，我查过了——史莱姆的再生能力来自它的核心，不能直接煮！”<br><b>莱欧斯</b>：“所以要先去掉核心？那剩下的都能吃？”<br>玛露希尔沉默三秒：“……对，剩下的都能吃。”<br><b>森西</b>：“听明白了，火候我来。”',
-    choices:[
-      { icon:'🖋️', text:'借笔记抄两页', effects:{ randomIng:1 }, log:'你抄下两页魔物生态笔记，顺手带走一份标注过的神秘食材。' },
-      { icon:'🍵', text:'给她递杯热茶', effects:{ full:-3, hp:15 }, log:'玛露希尔捧着热茶叹气：“你们早晚把迷宫吃成自助餐。” (全体HP+15，饱腹-3)' },
-    ] },
-  { id:'ev39', name:'小剧场 · 奇尔查克的抱怨', emoji:'🗝️', skit:true,
-    text:'奇尔查克蹲在一扇锈门前：“又锁了。迷宫的锁匠一定领双份工钱。”<br><b>莱欧斯</b>：“能撬开吗？”<br><b>奇尔查克</b>：“能，但我要声明——这不是我欠你们小队的，是我欠这顿晚饭的。”',
-    choices:[
-      { icon:'🔓', text:'给他搭把手', effects:{ gold:20 }, log:'锁应声而开，门后躺着前人冒险者的遗物：20金币。奇尔查克抢在你前面收下：“劳务费。”' },
-      { icon:'🏃', text:'绕路走', effects:{ full:-8 }, log:'你们多绕了半层楼，奇尔查克全程念叨“早该撬锁”。(饱腹-8)' },
-    ] },
-  { id:'ev40', name:'小剧场 · 森西的烹饪课', emoji:'🍳', skit:true,
-    text:'森西举着锅铲开讲：“记住了，魔物肉要先焯水去腥，再文火慢炖——心急吃不了热魔物。”<br><b>玛露希尔</b>：“‘热魔物’这个词能不能换一个……”<br><b>森西</b>：“那换成‘热汤’？反正原理一样。”',
-    choices:[
-      { icon:'📝', text:'认真记笔记', effects:{ full:12 }, log:'你记下三条火候心得，当晚的汤确实比平时鲜。(全体饱腹+12)' },
-      { icon:'🤤', text:'偷偷咽口水', effects:{ hp:10 }, log:'森西满意地点头：“对，这个反应就对了。” (全体HP+10)' },
-    ] },
-  { id:'ev41', name:'小剧场 · 莱欧斯的幻想菜单', emoji:'🦖', skit:true,
-    text:'莱欧斯望着墙上的壁画出神：“我在想——如果能把红龙做成全龙宴，龙尾炖汤、龙脊炙烤、龙心切片……该有多幸福。”<br><b>玛露希尔</b>：“你先把口水擦一下。”<br><b>奇尔查克</b>：“账单谁来付？”<br><b>森西</b>：“食材我来处理，锅已经热好了。”',
-    choices:[
-      { icon:'🗡️', text:'拍板：那就去打龙！', effects:{ full:-6 }, log:'全队无奈跟上干劲十足的莱欧斯，今晚怕是要加班。(饱腹-6)' },
-      { icon:'🍲', text:'先吃饱再做梦', effects:{ hp:20 }, log:'森西端出一锅现成的炖菜，莱欧斯边吃边继续念叨。(全体HP+20)' },
-    ] },
-  { id:'ev42', name:'小剧场 · 篝火夜话', emoji:'🔥', skit:true,
-    text:'夜深了，火光照亮四张脸。<br><b>莱欧斯</b>：“我想吃遍这座迷宫。”<br><b>玛露希尔</b>：“我想早点毕业。”<br><b>奇尔查克</b>：“我想把工钱讨回来。”<br><b>森西</b>：“我想让每口锅都不白热。”<br>四人对视一眼——明天，继续出发。',
-    choices:[
-      { icon:'🛌', text:'安心入睡', effects:{ hp:25 }, log:'一夜无梦，晨光里大家都精神抖擞。(全体HP+25)' },
-      { icon:'🌙', text:'守夜到天亮', effects:{ gold:15 }, log:'你守了一夜，捡到一只夜游魔物掉落的钱袋：15金币。' },
-    ] },
 ];
 
 const EQUIP = [
@@ -2565,15 +2166,10 @@ function rand(a, b){ return Math.floor(Math.random() * (b - a + 1)) + a; }
 function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
 
 /* 怪物 SVG 图标（内联 sprite，file:// 下不受 CORS 影响） */
-const MON_ICONS = { slime:'m-slime', bat:'m-bat', skeleton:'m-skeleton', gargoyle:'m-gargoyle', mushroom:'m-mushroom', spider:'m-spider', ghost:'m-ghost', werewolf:'m-werewolf', reddragon:'m-dragon', mimic:'m-mimic', hellhound:'m-hellhound', scorpion:'m-scorpion', centipede:'m-centipede', flame:'m-flame', griffin:'m-griffin', reddragon2:'m-dragon2', lich:'m-lich', boss:'m-boss', sulfurdragon:'m-sulfurdragon', potgolem:'m-potgolem', potminion:'m-potminion', knightcrab:'m-knightcrab', breadtree:'m-breadtree', shakespirit:'m-shakespirit', chili_goblin:'m-chiligoblin', cheesegolem:'m-cheesegolem', goldsnail:'m-goldsnail', banquetwraith:'m-banquetwraith', tastergolem:'m-tastergolem', carvingknight:'m-carvingknight', cupwisp:'m-cupwisp', gluttonking:'m-gluttonking' };
+const MON_ICONS = { slime:'m-slime', bat:'m-bat', skeleton:'m-skeleton', gargoyle:'m-gargoyle', mushroom:'m-mushroom', spider:'m-spider', ghost:'m-ghost', werewolf:'m-werewolf', reddragon:'m-dragon', mimic:'m-mimic', hellhound:'m-hellhound', scorpion:'m-scorpion', centipede:'m-centipede', flame:'m-flame', griffin:'m-griffin', reddragon2:'m-dragon2', lich:'m-lich', boss:'m-boss', sulfurdragon:'m-sulfurdragon', potgolem:'m-potgolem', potminion:'m-potminion', knightcrab:'m-knightcrab', breadtree:'m-breadtree', shakespirit:'m-shakespirit', chili_goblin:'m-chiligoblin', cheesegolem:'m-cheesegolem' };
 function monIconHTML(m, size){
-  // 优先使用内联纹章风 SVG（同文档 <use>，file:// 与 HTTP 均可用），缺图时回退 emoji
-  const sym = m && MON_ICONS[m.id];
-  if (sym){
-    const px = Math.round(size);
-    return '<svg viewBox="0 0 100 100" width="' + px + '" height="' + px + '" style="vertical-align:middle;flex-shrink:0;display:inline-block;"><use href="#' + sym + '"/></svg>';
-  }
-  return '<span style="font-size:' + Math.round(size * 0.85) + 'px; line-height:1;">' + ((m && m.emoji) || '❓') + '</span>';
+  // 与菜谱图鉴一致的 emoji 图标风格（简洁贴合背景）
+  return '<span style="font-size:' + Math.round(size * 0.85) + 'px; line-height:1;">' + (m.emoji || '❓') + '</span>';
 }
 /* 角色头像：portraits.svg 内联 symbol */
 const CHAR_PORTRAITS = { laios:'p-paladin', marcille:'p-elf', chilchuck:'p-rogue', senshi:'p-priest' };
@@ -2664,7 +2260,7 @@ function toast(msg){
  * ================================================================ */
 function saveGame(){
   try{
-    localStorage.setItem(SAVE_KEY, JSON.stringify({ v:1, S:S, PARTY:PARTY, Q:MAIN_QUEST }));
+    localStorage.setItem(SAVE_KEY, JSON.stringify({ v:1, S:S, PARTY:PARTY }));
     toast('💾 存档成功！');
   }catch(e){ toast('⚠️ 存档失败：' + e.message); }
 }
@@ -2676,12 +2272,10 @@ function loadGame(){
     if(!raw){ toast('没有找到存档'); return; }
     const d = JSON.parse(raw);
     S = d.S; PARTY = d.PARTY;
-    if (d.Q) MAIN_QUEST = d.Q;
     S.cycle = S.cycle || 1;
     S.cleared = !!S.cleared;
     S.curse = !!S.curse;
-    S.ach_skits = S.ach_skits || 0;
-    S.floorProgress = Object.assign({1:0, 2:0, 3:0, 4:0, 5:0, 6:0}, S.floorProgress || {});
+    S.floorProgress = Object.assign({1:0, 2:0, 3:0, 4:0, 5:0}, S.floorProgress || {});
     PARTY.forEach(m=>{ m.cd = 0; });   // 读档后重置技能冷却
     $('start-screen').style.display = 'none';
     $('game').style.display = 'block';
@@ -2691,17 +2285,8 @@ function loadGame(){
   }catch(e){ toast('读取存档失败：' + e.message); }
 }
 function confirmReset(){
-  showModal('重置存档', '🗑', '确定要清空所有冒险进度吗？此操作无法撤销！（同时会清除教学记录）', [
-    { label:'😱 我确定，重置吧', cls:'danger', onClick:()=>{
-        try{ localStorage.removeItem(SAVE_KEY); localStorage.removeItem(TUT_KEY); localStorage.removeItem(TUT_REWARD_KEY); }catch(e){}
-        S = null; PARTY = null; B = null;
-        const g = $('game'); if (g) g.style.display = 'none';
-        const ss = $('start-screen'); if (ss) ss.style.display = 'block';
-        const bc = $('btn-continue'); if (bc) bc.style.display = 'none';
-        const bf = $('btn-fresh'); if (bf) bf.style.display = 'none';
-        const mo = $('modal-overlay'); if (mo) mo.classList.remove('open');
-        toast('存档已清除，重新开始一段新的冒险吧！');
-      } },
+  showModal('重置存档', '🗑', '确定要清空所有冒险进度吗？此操作无法撤销！', [
+    { label:'😱 我确定，重置吧', cls:'danger', onClick:()=>{ try{ localStorage.removeItem(SAVE_KEY); }catch(e){} toast('存档已清除'); } },
     { label:'还是算了', onClick:()=>{} },
   ]);
 }
@@ -2717,7 +2302,7 @@ function newGame(){
     cooked: [],        // 已烹饪的菜谱 id
     defeated: [],      // 已击败的魔物 id
     seen: {},          // 见过的食材 id -> true
-    floorProgress: {1:0, 2:0, 3:0, 4:0, 5:0, 6:0},
+    floorProgress: {1:0, 2:0, 3:0, 4:0, 5:0},
     bossDefeated: false,
     cleared: false,
     cycle: 1,
@@ -2732,7 +2317,6 @@ function newGame(){
     ach_combo: 0,
     ach_explore: 0,
     ach_grade: {},
-    ach_skits: 0,
     log: [],
   };
   PARTY = CHARACTERS.map(c=>({ id:c.id, hp:c.maxHp, full:c.maxFull, cd:0, lvl:1, exp:0, weapon:null, armor:null }));
@@ -2766,17 +2350,11 @@ function newGame(){
    * ================================================================ */
 function renderAll(){ renderHeader(); renderParty(); renderExplore(); renderCook(); renderCodex(); renderLog(); renderAchievements(); renderShop(); renderEquip(); }
 
-const TOTAL_ENTRIES = Object.keys(MONSTERS).length + RECIPES.length + Object.keys(HIDDEN_RECIPES).length;
 function renderHeader(){
   $('h-gold').textContent = S.gold;
-  $('h-codex').textContent = (S.defeated.length + S.cooked.length) + '/' + TOTAL_ENTRIES;
+  $('h-codex').textContent = (S.defeated.length + S.cooked.length) + '/' + (Object.keys(MONSTERS).length + RECIPES.length);
   $('h-ing').textContent = Object.keys(S.seen).length + '/' + ING_IDS.length;
   $('h-cycle').textContent = S.cycle || 1;
-  const buf = $('h-buff');
-  if (buf){
-    buf.style.display = S.curse ? 'inline-block' : 'none';
-    buf.textContent = S.curse ? '🧿 诅咒：攻击-20%' : '';
-  }
 }
 
 function renderParty(){
@@ -2795,7 +2373,7 @@ function renderParty(){
       + '<div class="m-name">' + c.name + '</div>'
       + '<div class="m-title">Lv.' + lvl + ' ' + c.title + (eqTxt?' ' + eqTxt:'') + '</div>'
       + '<div class="m-skill">✦ ' + c.skill.name + '</div>'
-      + '<div class="m-exp">经验 ' + (m.exp||0) + '/' + expNeed(lvl) + '</div>'
+      + '<div class="m-exp" style="font-size:10px;color:var(--ink-soft);">经验 ' + (m.exp||0) + '/' + expNeed(lvl) + '</div>'
       + '<div class="bar hp"><i style="width:' + hpPct + '%"></i></div>'
       + '<div class="bar-label"><span>HP</span><span>' + m.hp + '/' + c.maxHp + '</span></div>'
       + '<div class="bar full"><i style="width:' + fullPct + '%"></i></div>'
@@ -2817,10 +2395,10 @@ function renderExplore(){
       + '<h3>' + f.emoji + ' ' + f.name + (locked?' 🔒':'') + '</h3>'
       + '<div class="f-desc">' + f.desc + '</div>'
       + '<div class="f-enemies">出没魔物：' + f.enemies.map(id=>monIconHTML(MONSTERS[id],20) + ' ' + MONSTERS[id].name).join('　') + '</div>'
-      + '<div class="f-progress">探索进度 ' + p + '/' + need + '</div>'
+      + '<div style="font-size:11px; color:var(--ink-soft); margin:6px 0 2px;">探索进度 ' + p + '/' + need + '</div>'
       + '<div class="bar hp" style="height:8px;margin-bottom:10px;"><i style="width:' + pct + '%"></i></div>'
       + (locked
-          ? '<div class="f-lock">' + lockHint(+n) + '</div>'
+          ? '<div style="font-size:11px;color:#a0674a;">🔒 击败上一层 BOSS 解锁</div>'
           : '<button class="btn primary" onclick="explore(' + n + ')">🔦 探索这一层</button>')
       + '</div>';
   }).join('');
@@ -2835,48 +2413,32 @@ function renderExplore(){
   }
   if ((S.floorProgress[5] || 0) >= 3){
     if (S.defeated.includes('sulfurdragon')){
-      html += bossCard('potgolem', '深渊食堂的尽头，黄金锅前的守锅巨像缓缓睁开了眼睛……击败它，通往黄金盛宴厅的大门将缓缓开启！');
+      html += bossCard('potgolem', '深渊食堂的尽头，黄金锅前的守锅巨像缓缓睁开了眼睛……击败它即可通关迷宫！');
     } else {
       html += '<div class="boss-card">'
         + '<div class="boss-name">🏺 深渊食堂 · 守锅巨像</div>'
-        + '<p class="boss-desc">黄金锅的守护者仍在沉睡……必须先击败第四层的硫磺龙，才能挑战守锅巨像！</p>'
-        + '</div>';
-    }
-  }
-  if ((S.floorProgress[6] || 0) >= 3){
-    if (S.defeated.includes('potgolem')){
-      html += bossCard('gluttonking', '黄金盛宴厅的王座之前，饕宴王缓缓放下了餐刀……击败它，迷宫才真正走到尽头！');
-    } else {
-      html += '<div class="boss-card">'
-        + '<div class="boss-name">👑 黄金盛宴厅 · 饕宴王</div>'
-        + '<p class="boss-desc">黄金锅真正的主人仍在王座上等待……必须先击败第五层的守锅巨像，才能前往黄金盛宴厅挑战饕宴王！</p>'
+        + '<p style="font-size:13px; color:var(--ink-soft); margin:6px 0;">黄金锅的守护者仍在沉睡……必须先击败第四层的硫磺龙，才能挑战守锅巨像！</p>'
         + '</div>';
     }
   }
   boss.innerHTML = html;
 }
 
-function lockHint(n){
-  const prev = FLOORS[n-1];
-  const need = 3 + (+n);
-  if (prev && prev.boss) return '🔒 探索上一层 ' + need + ' 次并击败 ' + MONSTERS[prev.boss].name;
-  return '🔒 探索上一层 ' + need + ' 次解锁';
-}
 function bossCard(mid, desc){
   const m = MONSTERS[mid];
   const defeated = S.defeated.includes(mid);
   return '<div class="boss-card">'
     + '<div class="boss-name">' + monIconHTML(m, 30) + ' ' + m.name + '</div>'
-    + '<p class="boss-desc">' + desc + '</p>'
+    + '<p style="font-size:13px; color:var(--ink-soft); margin:6px 0;">' + desc + '</p>'
     + (defeated
-        ? '<div style="color:#a67c00; font-weight:bold; letter-spacing:3px; margin-bottom:6px;">★ ' + (mid==='gluttonking' ? '已通关！' : '已击败！') + ' ★</div>'
+        ? '<div style="color:#a67c00; font-weight:bold; letter-spacing:3px; margin-bottom:6px;">★ ' + (mid==='potgolem' ? '已通关！' : '已击败！') + ' ★</div>'
           + '<button class="btn danger" onclick="startBattle(\'' + mid + '\')">⚔️ 再次挑战</button>'
         : '<button class="btn danger big" onclick="startBattle(\'' + mid + '\')">⚔️ 挑战</button>')
     + '</div>';
 }
 
 function renderCook(){
-  // 隐藏菜谱发现检查：横幅持续提示 + 一次性弹窗
+  // 隐藏菜谱发现检查
   const found = [];
   Object.keys(HIDDEN_RECIPES).forEach(hid=>{
     if (S.cooked.includes(hid)) return;
@@ -2884,27 +2446,13 @@ function renderCook(){
     const hasAll = hr.combos.some(combo=>combo.every(ing=>(S.ingredients[ing]||0)>=1));
     if (hasAll) found.push(hr);
   });
-  const db = $('discover-banner');
-  if (db){
-    db.style.display = found.length ? 'block' : 'none';
-    db.innerHTML = found.length
-      ? '<strong>🌟 发现隐藏菜谱：</strong>' + found.map(f=>f.emoji + ' ' + f.name).join('、') + ' —— 前往下方菜谱列表即可烹饪！'
-      : '';
-  }
   if (found.length && !S._hiddenToastShown){
     S._hiddenToastShown = true;
     setTimeout(()=>{
-      showModal('🌟 发现新菜谱！', '📜', '<p>你的食材包里似乎能组合出全新的料理！</p><p style="font-weight:bold; color:#a67c00;">' + found.map(f=>f.name).join('、') + '</p><p style="font-size:12px; color:var(--ink-soft);">前往菜谱列表即可烹饪——隐藏菜谱同样会消耗对应食材。</p>', [
+      showModal('🌟 发现新菜谱！', '📜', '<p>你的食材包里似乎能组合出全新的料理！</p><p style="font-weight:bold; color:#a67c00;">' + found.map(f=>f.name).join('、') + '</p><p style="font-size:12px; color:var(--ink-soft);">前往菜谱列表解锁吧！</p>', [
         { label:'去烹饪！', cls:'primary', onClick:()=>{} },
       ]);
     }, 400);
-  }
-
-  // 厨神评级档案
-  const ga = $('grade-archive');
-  if (ga){
-    const g = S.ach_grade || {};
-    ga.innerHTML = ['S','A','B','C'].map(k=>'<span>厨神评级 <b>' + k + '</b>：' + (g[k]||0) + ' 次</span>').join('');
   }
 
   // 食材背包
@@ -2912,25 +2460,24 @@ function renderCook(){
   const owned = ING_IDS.filter(id=>(S.ingredients[id]||0)>0);
   ing.innerHTML = owned.length
     ? owned.map(id=>'<span class="ing-chip">' + INGREDIENTS[id].emoji + ' ' + INGREDIENTS[id].name + ' <b>×' + S.ingredients[id] + '</b></span>').join('')
-    : '<span class="empty-note">背包空空如也，去迷宫里打些魔物吧！</span>';
+    : '<span style="font-size:13px; color:var(--ink-soft);">背包空空如也，去迷宫里打些魔物吧！</span>';
 
   // 料理背包
   const dish = $('dish-list');
   const dishIds = Object.keys(S.dishes).filter(id=>(S.dishes[id]||0)>0);
   dish.innerHTML = dishIds.length
     ? dishIds.map(id=>{
-        const r = getRecipe(id);
+        const r = RECIPE_MAP[id];
         return '<div class="dish-row"><span>' + r.emoji + ' ' + r.name + ' <b>×' + S.dishes[id] + '</b></span>'
           + '<button class="btn small" onclick="eatDish(\'' + id + '\')">🍽 食用</button></div>';
       }).join('')
-    : '<span class="empty-note">还没有料理，去菜谱里做点什么吧！</span>';
+    : '<span style="font-size:13px; color:var(--ink-soft);">还没有料理，去菜谱里做点什么吧！</span>';
 
-  // 菜谱（含已解锁的隐藏菜谱）
+  // 菜谱
   const list = $('recipe-list');
-  const allRecipes = RECIPES.concat(Object.keys(HIDDEN_RECIPES).filter(rid=>hiddenRecipeVisible(rid)).map(hiddenRecipeEntry));
-  list.innerHTML = allRecipes.map(r=>{
+  list.innerHTML = RECIPES.map(r=>{
     const isCooked = S.cooked.includes(r.id);
-    const visible = r.hidden ? hiddenRecipeVisible(r.id) : recipeVisible(r);
+    const visible = recipeVisible(r);
     if (!visible){
       return '<div class="recipe locked"><div class="r-emoji">❓</div>'
         + '<div class="r-main"><div class="r-name">？？？</div>'
@@ -2944,9 +2491,7 @@ function renderCook(){
       + '<div class="r-main">'
       +   '<div class="r-name">' + r.name + (isCooked?' <span style="color:#a67c00;">✓ 已烹饪</span>':'') + '</div>'
       +   '<div class="r-info">食材：' + need + '</div>'
-      +   '<div class="r-effect">效果：' + eff + '</div>'
-      +   '<div class="r-desc">' + r.desc + '</div>'
-      +   (r.app ? '<div class="r-app">“' + r.app + '”</div>' : '')
+      +   '<div class="r-effect">效果：' + eff + '　' + r.desc + '</div>'
       + '</div>'
       + '<button class="btn small" ' + (canCook ? 'onclick="cook(\'' + r.id + '\')"' : 'disabled') + '>🍳 烹饪</button>'
       + '</div>';
@@ -2961,19 +2506,6 @@ function recipeVisible(r){
 }
 
 function renderCodex(){
-  const prog = $('codex-progress');
-  if (prog){
-    const mk = (label, got, total)=>{
-      const pct = total ? Math.min(100, Math.round(got/total*100)) : 0;
-      return '<div class="cp-row"><span class="cp-name">' + label + '</span>'
-        + '<div class="cp-bar"><i style="display:block;height:100%;width:' + pct + '%;background:linear-gradient(90deg,#c9a227,#e8c35a);border-radius:6px;"></i></div>'
-        + '<span style="min-width:60px;text-align:right;color:var(--ink-soft);">' + got + '/' + total + '</span></div>';
-    };
-    prog.innerHTML = mk('魔物', new Set(S.defeated).size, Object.keys(MONSTERS).length)
-      + mk('菜谱', S.cooked.filter(id=>RECIPE_MAP[id]||HIDDEN_RECIPES[id]).length, RECIPES.length + Object.keys(HIDDEN_RECIPES).length)
-      + mk('食材', Object.keys(S.seen).length, ING_IDS.length)
-      + mk('成就', S.ach_unlocked ? S.ach_unlocked.length : 0, ACHIEVEMENTS.length);
-  }
   const ms = $('codex-monsters');
   ms.innerHTML = Object.values(MONSTERS).map(m=>{
     const got = S.defeated.includes(m.id);
@@ -2984,22 +2516,18 @@ function renderCodex(){
       + '<div class="c-info">HP ' + m.hp + '　攻 ' + m.atk + '</div>'
       + '<div class="c-info">战利品：' + drop + '</div>'
       + '<div class="c-desc">' + (got ? m.desc : '？？？——尚未遭遇') + '</div>'
-      + (got && m.note ? '<div class="c-note">🌿 ' + m.note + '</div>' : '')
       + '</div>';
   }).join('');
 
   const rs = $('codex-recipes');
-  const codexRecipes = RECIPES.concat(Object.keys(HIDDEN_RECIPES).map(hiddenRecipeEntry));
-  rs.innerHTML = codexRecipes.map(r=>{
+  rs.innerHTML = RECIPES.map(r=>{
     const got = S.cooked.includes(r.id);
-    const visible = r.hidden ? hiddenRecipeVisible(r.id) : recipeVisible(r);
     const eff = 'HP+' + (r.effect.hp>=999?'全恢复':r.effect.hp) + '　饱腹+' + (r.effect.full>=999?'全恢复':r.effect.full);
     return '<div class="codex-card ' + (got?'lit':'dim') + '">'
       + '<div class="c-emoji">' + r.emoji + '</div>'
-      + '<div class="c-name">' + (visible ? r.name : '？？？') + '</div>'
-      + '<div class="c-info">' + (visible ? eff : '？？？') + '</div>'
-      + '<div class="c-desc">' + (got ? r.desc : (visible ? '尚未烹饪' : '？？？')) + '</div>'
-      + (got && r.app ? '<div class="c-note">🍽 ' + r.app + '</div>' : '')
+      + '<div class="c-name">' + (recipeVisible(r) ? r.name : '？？？') + '</div>'
+      + '<div class="c-info">' + eff + '</div>'
+      + '<div class="c-desc">' + (got ? r.desc : (recipeVisible(r) ? '尚未烹饪' : '？？？')) + '</div>'
       + '</div>';
   }).join('');
 }
@@ -3043,7 +2571,6 @@ function closeModal(){ $('modal-overlay').classList.remove('open'); }
 function gainIng(id, qty){
   S.ingredients[id] = (S.ingredients[id]||0) + qty;
   S.seen[id] = true;
-  checkAchievements();
 }
 function applyEffects(eff){
   if (!eff) return;
@@ -3053,10 +2580,7 @@ function applyEffects(eff){
   if (eff.full){
     PARTY.forEach(m=>{ m.full = cap(m.full + eff.full, 0, charDef(m.id).maxFull); });
   }
-  if (eff.gold){
-    S.gold = Math.max(0, S.gold + eff.gold);
-    if (eff.gold > 0) S.ach_gold = (S.ach_gold||0) + eff.gold;
-  }
+  if (eff.gold) S.gold = Math.max(0, S.gold + eff.gold);
   if (eff.randomIng){
     let n = eff.randomIng;
     while (n-- > 0) gainIng(pick(ING_IDS), 1);
@@ -3101,20 +2625,14 @@ function floorUnlocked(n){
   const prev = FLOORS[n-1];
   const prog = S.floorProgress[n-1] || 0;
   const need = 3 + n;
-  // 前层探索达标 + BOSS 击败（BOSS 由该层 FLOORS.boss 字段声明）
-  if (prev && prev.boss) return prog >= need && S.defeated.includes(prev.boss);
+  // 前层探索达标 + BOSS 击败（1层BOSS=迷宫之主，5层BOSS=守锅巨像）
+  if (n === 5) return prog >= need && S.defeated.includes('sulfurdragon');
+  if (prev.boss) return prog >= need && S.defeated.includes(prev.boss);
   return prog >= need;
 }
 function explore(n){
   if (!floorUnlocked(n)){
-    const prev = FLOORS[n-1];
-    let why = '该层尚未解锁';
-    if (prev && prev.boss){
-      why = '探索上一层「' + prev.name + '」' + (3+n) + ' 次并击败 ' + MONSTERS[prev.boss].name + ' 后解锁！';
-    } else if (prev){
-      why = '探索上一层「' + prev.name + '」' + (3+n) + ' 次后解锁！';
-    }
-    toast('🔒 ' + why);
+    toast('🔒 需要先探索上一层 ' + (FLOORS[n-1] ? FLOORS[n-1].name : '') + ' ' + (3+n) + ' 次并击败 BOSS！');
     return;
   }
   const f = FLOORS[n];
@@ -3138,7 +2656,6 @@ function explore(n){
   else if (roll < w.battle + w.chest + w.trap + w.merchant){ shopModal(); }
   else { runEvent(pick(EVENTS)); }
   checkQuestProgress();
-  checkAchievements();
   saveGame();
 }
 
@@ -3148,7 +2665,6 @@ function encounterBattle(floorNum){
   if (floorNum === 3 && Math.random() < 0.15){ mid = 'boss'; }
   else if (floorNum === 4 && Math.random() < 0.15){ mid = 'sulfurdragon'; }
   else if (floorNum === 5 && Math.random() < 0.15 && S.defeated.includes('sulfurdragon')){ mid = 'potgolem'; }
-  else if (floorNum === 6 && Math.random() < 0.15 && S.defeated.includes('potgolem')){ mid = 'gluttonking'; }
   else { mid = pick(f.enemies); }
   const m = MONSTERS[mid];
   showModal('遭遇魔物！', monIconHTML(m, 54), '<p>' + m.name + ' 挡在了队伍面前！</p><p style="font-size:13px; color:var(--ink-soft);">' + m.desc + '</p>', [
@@ -3206,13 +2722,20 @@ function shopModal(fromEncounter){
     { label:'🚶 离开', onClick:()=>addLog('你离开了地精商人的小车。') },
   ]);
 }
+function buyItem(id){
+  const it = SHOP.find(x=>x.id===id);
+  if (S.gold < it.price){ toast('金币不够啦！'); return; }
+  S.gold -= it.price;
+  applyEffects(it.effect);
+  addLog('🛒 购买了 ' + it.name + '！');
+  renderAll();
+  shopModal();
+}
+
 function runEvent(e){
   musicScene('event');
   setTimeout(()=>{ if (!B) musicScene('explore'); }, 4000);
   S.ach_events = (S.ach_events||0) + 1;
-  if (e.skit) S.ach_skits = (S.ach_skits||0) + 1;
-  const eName = e.name || e.title || '事件';
-  const eText = e.text || e.desc || '';
   const btns = e.choices.map(c=>({
     label: (c.icon||'') + ' ' + c.text,
     onClick: ()=>{
@@ -3229,7 +2752,7 @@ function runEvent(e){
       }
     }
   }));
-  showModal(eName, e.emoji, '<p>' + eText + '</p>', btns);
+  showModal(e.name, e.emoji, '<p>' + e.text + '</p>', btns);
 }
 
 /* ================================================================
@@ -3269,7 +2792,7 @@ function playerHitDmg(x, e, opts){
 function hitLogMsg(c, e, r, head){
   let msg = head + ' 对 ' + e.m.name + ' 造成 <b>' + r.dmg + '</b> 点伤害！';
   let cls = 'ally';
-  if (r.adv === 1){ msg = '⚡属性克制！伤害大幅提升！' + msg; cls = 'super'; }
+  if (r.adv === 1){ msg = '⚡属性克制！伤害翻倍！' + msg; cls = 'super'; }
   else if (r.adv === -1){ msg = '🛡属性被克制，伤害大减！' + msg; cls = 'resist'; }
   if (r.undeadBonus){ msg = '🍳厨具特攻！' + msg; cls = (cls === 'super' ? 'super' : 'combo'); }
   if (r.crit){ msg = '💥暴击！' + msg; cls = 'crit'; }
@@ -3280,32 +2803,11 @@ function comboHit(x, e){
   x.combo = (x.combo || 0) + 1;
   if (e.hp > 0 && x.combo >= 3){
     x.combo = 0;
-    S.ach_combo = (S.ach_combo||0)+1;
     const cd = Math.max(1, Math.round((atkOf(x) - e.def*0.5) * 0.8));
     e.hp -= cd;
     enemyHitFx();
-    fxFloat('-' + cd + ' 连击!', 'fx-combo', document.querySelector('.monster-panel'));
     bLog('🔥连击！' + charDef(x.id).name + ' 追加伤害 <b>' + cd + '</b> 点！', 'combo');
   }
-}
-
-/* 伤害飘字（玩法反馈）：在指定锚点上方飘出数字 */
-function fxFloat(text, cls, anchor){
-  const layer = document.getElementById('fx-layer');
-  if (!layer) return;
-  const el = document.createElement('div');
-  el.className = 'fx-float ' + (cls || 'fx-dmg');
-  el.textContent = text;
-  let x = window.innerWidth / 2, y = window.innerHeight / 3;
-  if (anchor && anchor.getBoundingClientRect){
-    const r = anchor.getBoundingClientRect();
-    x = r.left + r.width / 2 + rand(-36, 36);
-    y = r.top + 14;
-  }
-  el.style.left = Math.round(x) + 'px';
-  el.style.top = Math.round(y) + 'px';
-  layer.appendChild(el);
-  setTimeout(()=>{ if (el.parentNode) el.parentNode.removeChild(el); }, 1250);
 }
 /* 敌人受击动画：抖动 + 血条红色闪烁 */
 let _enemyHitTimer = null;
@@ -3372,7 +2874,7 @@ function renderBattle(){
     return '<div class="char-chip' + (x.hp<=0?' down':'') + (x.id===B.sel?' sel':'') + '" onclick="selChar(\'' + x.id + '\')">'
       + '<div class="cc-emoji">' + charAvatarHTML(x.id, 34) + '</div>'
       + '<div class="cc-name">' + c.name + '</div>'
-      + '<div class="cc-hp">HP ' + x.hp + '/' + c.maxHp + (x.cd>0?'　✨CD'+x.cd:'') + '</div>'
+      + '<div style="font-size:11px; color:var(--ink-soft);">HP ' + x.hp + '/' + c.maxHp + (x.cd>0?'　✨CD'+x.cd:'') + '</div>'
       + '</div>';
   }).join('');
 
@@ -3397,11 +2899,8 @@ function actAttack(){
   const e = curEnemy(); if (!e) return;
   const c = charDef(x.id);
   const r = playerHitDmg(x, e, {});
-  if (r.crit) S.ach_crit = (S.ach_crit||0)+1;
-  B.lastHitCounter = (r.adv === 1);
   e.hp -= r.dmg;
   enemyHitFx();
-  fxFloat('-' + r.dmg, r.crit ? 'fx-crit' : (r.adv === 1 ? 'fx-combo' : 'fx-dmg'), document.querySelector('.monster-panel'));
   const h = hitLogMsg(c, e, r, c.emoji + ' ' + c.name + ' 发动攻击');
   if (r.crit){ bLog('🗣️ ' + c.name + '：' + (charTaunt(x.id,'crit')||''), 'taunt'); }
   else { bLog('🗣️ ' + c.name + '：' + (charTaunt(x.id,'atk')||''), 'taunt'); }
@@ -3418,12 +2917,9 @@ function actSkill(){
   if (x.cd > 0){ toast('技能还在冷却中！'); return; }
   const e = curEnemy(); if (!e) return;
   const r = playerHitDmg(x, e, { skill:true });
-  if (r.crit) S.ach_crit = (S.ach_crit||0)+1;
-  B.lastHitCounter = (r.adv === 1);
   e.hp -= r.dmg;
   x.cd = c.skill.cd;
   enemyHitFx();
-  fxFloat('-' + r.dmg, r.crit ? 'fx-crit' : 'fx-dmg', document.querySelector('.monster-panel'));
   const h = hitLogMsg(c, e, r, '✨ ' + c.name + ' 使出【' + c.skill.name + '】');
   bLog(h.msg, h.cls);
   comboHit(x, e);
@@ -3477,8 +2973,7 @@ function killMinion(e){
     drops.push(INGREDIENTS[id].name + ' ×' + qty);
   });
   if (!S.defeated.includes(e.m.id)) S.defeated.push(e.m.id);
-  if (B.lastHitCounter){ S.ach_counter = (S.ach_counter||0)+1; B.lastHitCounter = false; }
-  S.ach_gold = (S.ach_gold||0) + gold;
+  if (B.lastHitCounter) S.ach_counter = (S.ach_counter||0)+1;
   S._lastKilled = e.m;   // 记录最后击杀的魔物，供 endBattle 使用
   bLog('💀 ' + e.m.name + ' 被击倒了！(金币+' + gold + (drops.length ? '，' + drops.join('、') : '') + ')', 'heal');
   const idx = B.enemies.indexOf(e);
@@ -3511,7 +3006,6 @@ function normalAttack(e){
   const c = charDef(target.id);
   const dmg = Math.max(1, Math.round(e.atk - c.def*0.6 + rand(0,4)));
   target.hp = Math.max(0, target.hp - dmg);
-  fxFloat('-' + dmg, 'fx-dmg');
   bLog(e.m.emoji + ' ' + e.m.name + ' 攻击了 ' + c.name + '，造成 <b>' + dmg + '</b> 点伤害！', 'hurt');
   if (target.hp <= 0) bLog(c.emoji + ' ' + c.name + ' 倒下了！', 'info');
 }
@@ -3527,11 +3021,10 @@ function useBossSkill(boss){
         t.hp = Math.max(0, t.hp - dmg);
       });
       bLog('💥 ' + boss.m.name + ' 使出【' + sk.name + '】！全体队员受到约 <b>' + base + '</b> 点重创！', 'hurt');
-      fxFloat('-' + base + '!', 'fx-crit');
       PARTY.forEach(x=>{ if (x.hp<=0) bLog(charDef(x.id).emoji + ' ' + charDef(x.id).name + ' 倒下了！', 'info'); });
     }
   }
-  if (Array.isArray(sk.summon)){
+  if (sk.summon){
     sk.summon.forEach(s=>{
       const qty = rand(s.qty[0], s.qty[1]);
       for (let i=0;i<qty;i++){
@@ -3605,16 +3098,9 @@ function endBattle(win){
       }, 400);
     }
     if (m.id === 'potgolem'){
-      setTimeout(()=>{
-        showModal('守锅巨像败北！', monIconHTML(m, 54), '<p>守锅巨像轰然倒塌，传说中黄金锅就静静躺在它身后……</p><p>而在更深处，一道鎏金大门缓缓亮起——<b>黄金盛宴厅</b>，正在等待真正的食客。</p><p style="color:#a67c00; font-weight:bold;">探索第六层「黄金盛宴厅」，挑战饕宴王！</p>', [
-          { label:'🗺 深入黄金盛宴厅', cls:'primary', onClick:()=>{} },
-        ]);
-      }, 400);
-    }
-    if (m.id === 'gluttonking'){
       S.cleared = true;
       setTimeout(()=>{
-        showModal('迷宫通关！', monIconHTML(m, 54), '<p>饕宴王缓缓放下餐刀，露出千年以来第一个满足的笑容。</p><p>「这顿……算我请。」</p><p>「迷宫饭」的冒险，圆满落幕！</p><p style="font-size:13px; color:var(--ink-soft);">当前周目：第 ' + (S.cycle||1) + ' 周目　·　通关后魔物将变得更强</p>', [
+        showModal('迷宫通关！', '🏺', '<p>守锅巨像轰然倒塌，传说中的【黄金锅】就在眼前！</p><p>「迷宫饭」的冒险，圆满落幕！</p><p style="font-size:13px; color:var(--ink-soft);">当前周目：第 ' + (S.cycle||1) + ' 周目　·　通关后魔物将变得更强</p>', [
           { label:'🔄 进入下一周目（魔物 HP/攻击 ×1.3）', cls:'primary', onClick:nextCycle },
           { label:'🍱 留在本周目继续探索', onClick:()=>{ addLog('队伍选择留在第 ' + (S.cycle||1) + ' 周目继续冒险。'); } },
         ]);
@@ -3636,12 +3122,10 @@ function nextCycle(){
   S.cleared = false;
   S.curse = false;
   S.bossDefeated = false;
-  S.floorProgress = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0};
+  S.floorProgress = {1:0, 2:0, 3:0, 4:0, 5:0};
   PARTY = CHARACTERS.map(c=>({ id:c.id, hp:c.maxHp, full:c.maxFull, cd:0, lvl:1, exp:0, weapon:null, armor:null }));
   const mult = Math.pow(1.3, S.cycle - 1);
-  setQuest('q1', '探索第一层，找到食材');
   addLog('🔄 进入第 ' + S.cycle + ' 周目！魔物变得更强了（HP/攻击 ×' + mult.toFixed(1) + '）');
-  checkAchievements();
   renderAll();
   saveGame();
 }
@@ -3664,28 +3148,8 @@ function closeBattle(){ $('battle-screen').classList.remove('open'); }
 /* ================================================================
  * 烹饪 / 食用
  * ================================================================ */
-/* ---- 隐藏菜谱支持：按「持有食材组合」解锁，可正常烹饪/食用/上图鉴 ---- */
-function hiddenCombo(hr){
-  for (const combo of hr.combos){ if (combo.every(ing=>(S.ingredients[ing]||0)>=1)) return combo; }
-  return hr.combos[0];
-}
-function hiddenRecipeVisible(rid){
-  if (S.cooked.includes(rid)) return true;
-  const hr = HIDDEN_RECIPES[rid];
-  if (!hr) return false;
-  return hr.combos.some(combo=>combo.every(ing=>(S.ingredients[ing]||0)>=1));
-}
-function hiddenRecipeEntry(rid){
-  const hr = HIDDEN_RECIPES[rid];
-  const combo = hiddenCombo(hr);
-  const ings = {};
-  combo.forEach(id=>{ ings[id] = 1; });
-  return { id:rid, name:hr.name, emoji:hr.emoji, ingredients:ings, effect:hr.effect, desc:hr.desc, app:hr.app, hidden:true };
-}
-function getRecipe(rid){ return RECIPE_MAP[rid] || (HIDDEN_RECIPES[rid] ? hiddenRecipeEntry(rid) : null); }
-
 function cook(rid){
-  const r = getRecipe(rid);
+  const r = RECIPE_MAP[rid];
   if (!r) return;
   for (const id of Object.keys(r.ingredients)){
     if ((S.ingredients[id]||0) < r.ingredients[id]){ toast('食材不够！'); return; }
@@ -3706,7 +3170,7 @@ function cook(rid){
   let gradeBonus = '';
   if (grade === 'S'){ S.gold += 15; gradeBonus = '　✨S级评级，获得 15 金币奖励！'; }
   setTimeout(()=>{
-    showModal('🍳 烹饪完成', r.emoji, '<p>' + r.name + ' 出锅了！</p><div class="grade-stamp' + (grade === 'S' ? ' gold' : '') + '">' + grade + ' 级 · ' + gradeName + '</div>' + (gradeBonus ? '<p class="panel-tip" style="margin-top:10px;">' + gradeBonus + '</p>' : ''), [
+    showModal('🍳 烹饪完成', r.emoji, '<p>' + r.name + ' 出锅了！</p><p style="font-size:15px; color:#a67c00; font-weight:bold;">评级：' + grade + '级 · ' + gradeName + '</p>' + gradeBonus, [
       { label:'开吃！', cls:'primary', onClick:()=>{} },
     ]);
     sfxCook();
@@ -3720,13 +3184,12 @@ function cook(rid){
   musicScene('cook');
   setTimeout(()=>{ if (!B) musicScene('explore'); }, 5000);
   checkQuestProgress();
-  checkAchievements();
   renderAll();
   saveGame();
 }
 
 function eatDish(rid){
-  const r = getRecipe(rid);
+  const r = RECIPE_MAP[rid];
   if (!r || !(S.dishes[rid]||0)) return;
   S.dishes[rid]--;
   const hp = r.effect.hp >= 999 ? 99999 : r.effect.hp;
@@ -3748,10 +3211,6 @@ function eatDish(rid){
  * 启动
  * ================================================================ */
 (function init(){
-  const sp = document.getElementById('start-party');
-  if (sp){
-    sp.innerHTML = CHARACTERS.map(c=>'<div class="start-char"><div class="sc-emoji">' + charAvatarHTML(c.id, 40) + '</div><div class="sc-name">' + c.name + '</div><div class="sc-title">' + c.title + '</div></div>').join('');
-  }
   if (hasSave()) $('btn-continue').style.display = 'inline-block';
   bindVolUI();
 })();
@@ -3766,7 +3225,7 @@ const ACHIEVEMENTS = [
   { id:'kill_boss2',   icon:'🍲', name:'守锅英雄',   desc:'击败守锅巨像',                          cond:()=>S.defeated.includes('potgolem') },
   { id:'floor1',       icon:'🌿', name:'第一步',     desc:'通关第一层',                            cond:()=>S.floorProgress[1]>=3 },
   { id:'floor5',       icon:'🌋', name:'深渊征服者', desc:'抵达第五层',                            cond:()=>S.floorProgress[5]>=1 },
-  { id:'all_recipes',  icon:'📖', name:'食神图鉴',   desc:'集齐全部菜谱（含隐藏）',              cond:()=>S.cooked.filter(id=>RECIPE_MAP[id]||HIDDEN_RECIPES[id]).length>=RECIPES.length+Object.keys(HIDDEN_RECIPES).length },
+  { id:'all_recipes',  icon:'📖', name:'食神图鉴',   desc:'集齐全部菜谱',                          cond:()=>S.cooked.length>=RECIPES.length },
   { id:'hidden_recipes',icon:'🌟', name:'秘方猎人',  desc:'发现全部隐藏菜谱',                       cond:()=>S.cooked.filter(id=>HIDDEN_RECIPES[id]).length>=Object.keys(HIDDEN_RECIPES).length },
   { id:'s_grade',      icon:'👨‍🍳', name:'厨神出世',   desc:'获得一次S级厨神评级',                   cond:()=>(S.ach_grade||{}).s>=1 },
   { id:'gold_1000',    icon:'💰', name:'小有积蓄',   desc:'累计获得1000金币',                       cond:()=>(S.ach_gold||0)>=1000 },
@@ -3780,18 +3239,8 @@ const ACHIEVEMENTS = [
   { id:'explore_100',  icon:'🗺️', name:'迷宫向导',   desc:'探索100次',                             cond:()=>(S.ach_explore||0)>=100 },
   { id:'cycle2',       icon:'🔄', name:'周而复始',   desc:'进入第二周目',                          cond:()=>(S.cycle||1)>=2 },
   { id:'cycle5',       icon:'♾️', name:'轮回老饕',   desc:'进入第五周目',                          cond:()=>(S.cycle||1)>=5 },
-  { id:'kill_boss3',    icon:'🍽', name:'饕餮征服者', desc:'击败饕宴王',                            cond:()=>S.defeated.includes('gluttonking') },
-  { id:'floor6',        icon:'🏆', name:'黄金大厅',   desc:'抵达第六层',                            cond:()=>(S.floorProgress[6]||0)>=1 },
-  { id:'all_floors',    icon:'🗺️', name:'迷宫征服者', desc:'抵达全部六层',                          cond:()=>[1,2,3,4,5,6].every(n=>(S.floorProgress[n]||0)>=1) },
-  { id:'ing_30',        icon:'🥕', name:'食材博士',   desc:'集齐30种食材',                          cond:()=>Object.keys(S.ingredients).length>=30 },
-  { id:'gold_5000',     icon:'💰', name:'金库大亨',   desc:'累计获得5000金币',                      cond:()=>(S.ach_gold||0)>=5000 },
-  { id:'explore_300',   icon:'🧭', name:'深渊向导',   desc:'探索300次',                             cond:()=>(S.ach_explore||0)>=300 },
-  { id:'cook_100',      icon:'👨‍🍳', name:'特级厨师',   desc:'烹饪100次',                             cond:()=>(S.ach_cook||0)>=100 },
-  { id:'events_30',     icon:'🎲', name:'传奇冒险家', desc:'遭遇30个随机事件',                      cond:()=>(S.ach_events||0)>=30 },
-  { id:'cycle3',        icon:'🔄', name:'三生有幸',   desc:'进入第三周目',                          cond:()=>(S.cycle||1)>=3 },
-  { id:'skit_1',        icon:'🎭', name:'围炉夜话',   desc:'经历一次小队夜谈小剧场',                  cond:()=>(S.ach_skits||0)>=1 },
-  { id:'recipes_12',     icon:'🥘', name:'百味通晓',   desc:'烹饪12种不同的菜谱',                      cond:()=>new Set(S.cooked.filter(id=>RECIPE_MAP[id]||HIDDEN_RECIPES[id])).size>=12 },
 ];
+
 function achStats(){ return { total:ACHIEVEMENTS.length, got:S.ach_unlocked?S.ach_unlocked.length:0 }; }
 
 function unlockAch(id){
@@ -3847,16 +3296,16 @@ function renderShop(){
     const owned = PARTY.some(m=> (e.slot==='weapon' && m.weapon===e.id) || (e.slot==='armor' && m.armor===e.id));
     return '<div class="recipe shop-item">'
       + '<div style="font-size:22px;">' + (e.slot==='weapon'?'⚔️':'🛡️') + '</div>'
-      + '<div style="flex:1;text-align:left;"><b>' + e.name + '</b><div class="shop-desc">' + e.desc + '</div></div>'
+      + '<div style="flex:1;text-align:left;"><b>' + e.name + '</b><div style="font-size:11px;color:var(--ink-soft);">' + e.desc + '</div></div>'
       + '<div style="color:#a67c00;font-weight:bold;">🪙' + e.price + '</div>'
-      + (owned ? '<span class="owned-tag">已装备</span>'
+      + (owned ? '<span style="color:var(--gold-2);font-size:12px;">已装备</span>'
         : '<button class="btn" onclick="buyEquip(\'' + e.id + '\')">购买</button>')
       + '</div>';
   }).join('');
   const potionHtml = SHOP.map(i=>{
     return '<div class="recipe shop-item">'
       + '<div style="font-size:22px;">' + i.emoji + '</div>'
-      + '<div style="flex:1;text-align:left;"><b>' + i.name + '</b><div class="shop-desc">' + i.desc + '</div></div>'
+      + '<div style="flex:1;text-align:left;"><b>' + i.name + '</b><div style="font-size:11px;color:var(--ink-soft);">' + i.desc + '</div></div>'
       + '<div style="color:#a67c00;font-weight:bold;">🪙' + i.price + '</div>'
       + '<button class="btn" onclick="buyItem(\'' + i.id + '\')">购买</button>'
       + '</div>';
@@ -3873,8 +3322,8 @@ function renderEquip(){
     return '<div class="char-chip">'
       + '<div class="cc-emoji">' + charAvatarHTML(m.id, 30) + '</div>'
       + '<div class="cc-name">' + c.name + ' Lv.' + (m.lvl||1) + '</div>'
-      + '<div class="cc-hp">攻击' + ps.atk + ' 防御' + ps.def + '</div>'
-      + '<div class="cc-hp" style="color:var(--gold-2);">' + (eq.weapon?eq.weapon.name:'无武器') + ' / ' + (eq.armor?eq.armor.name:'无防具') + '</div>'
+      + '<div style="font-size:11px;color:var(--ink-soft);">攻击' + ps.atk + ' 防御' + ps.def + '</div>'
+      + '<div style="font-size:11px;color:var(--gold-2);">' + (eq.weapon?eq.weapon.name:'无武器') + ' / ' + (eq.armor?eq.armor.name:'无防具') + '</div>'
       + '</div>';
   }).join('');
 }
@@ -3907,7 +3356,7 @@ const OST = {
   victory:'ost/光田康典,Mariam Abounnasr - 勝利の余韻.mp3',
 };
 let _musicOn = true;
-/* 全曲播放列表：手动切歌用（18首精选OST，随场景自动切换） */
+/* 全曲播放列表：手动切歌用（含全部77首的精选28首） */
 const OST_PLAYLIST = [
   'ost/光田康典 - ダンジョン飯　−メインテーマ−.mp3',
   'ost/光田康典,Mariam Abounnasr - 迷宮探索は世知辛い.mp3',
@@ -4169,11 +3618,10 @@ function completeQuest(){
 /* 探索进度推进主线 */
 function checkQuestProgress(){
   if (MAIN_QUEST.id === 'q1' && !MAIN_QUEST.done && (S.floorProgress[1]||0) >= 2){ completeQuest(); setQuest('q2','烹饪一道料理恢复队伍'); }
-  else if (MAIN_QUEST.id === 'q2' && !MAIN_QUEST.done && S.ach_cook >= 1){ completeQuest(); setQuest('q3','深入第三层，挑战迷宫之主'); }
+  else if (MAIN_QUEST.id === 'q2' && !MAIN_QUEST.done && S.ach_cook >= 1){ completeQuest(); setQuest('q3','探索第一层，寻找迷宫之主'); }
   else if (MAIN_QUEST.id === 'q3' && !MAIN_QUEST.done && S.defeated.includes('boss')){ completeQuest(); setQuest('q4','前往第四层，挑战硫磺龙'); }
-  else if (MAIN_QUEST.id === 'q4' && !MAIN_QUEST.done && S.defeated.includes('sulfurdragon')){ completeQuest(); setQuest('q5','击败守锅巨像，深入黄金盛宴厅'); }
-  else if (MAIN_QUEST.id === 'q5' && !MAIN_QUEST.done && S.defeated.includes('potgolem')){ completeQuest(); setQuest('q6','击败饕宴王，征服迷宫！'); }
-  else if (MAIN_QUEST.id === 'q6' && !MAIN_QUEST.done && S.defeated.includes('gluttonking')){ completeQuest(); setQuest('q7','通关！进入下一周目挑战自我'); }
+  else if (MAIN_QUEST.id === 'q4' && !MAIN_QUEST.done && S.defeated.includes('sulfurdragon')){ completeQuest(); setQuest('q5','击败守锅巨像，征服迷宫！'); }
+  else if (MAIN_QUEST.id === 'q5' && !MAIN_QUEST.done && S.defeated.includes('potgolem')){ completeQuest(); setQuest('q6','通关！进入下一周目挑战自我'); }
 }
 function startTutorial(){
   if (!shouldTut()) return;

@@ -3,737 +3,506 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>陈昊 · 产品经理作品集</title>
+<title>陈昊 · AI 产品经理作品集</title>
 <style>
-:root {
-  --bg: #FAF9F5;
-  --accent: #CC785C;
-  --ink: #141413;
-  --ink-muted: #6C6A64;
-  --border: #E6DFD8;
-  --card-bg: #FFFFFF;
+:root{
+  --bg:#F6F3ED; --surface:#FDFCF9; --surface2:#FBF9F4;
+  --ink:#23201B; --muted:#6E675C; --faint:#9A9285;
+  --line:#E5DED2; --line-strong:#D8CFBF;
+  --accent:#BC4F28; --accent-soft:#F5E6DA; --accent-deep:#8F3A1C;
+  --gold:#A9833F; --gold-soft:#F1E8D5;
+  --serif:'Noto Serif SC','Songti SC','STSong',Georgia,serif;
+  --sans:-apple-system,'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-padding-top: 68px; }
-body {
-  font-family: 'Noto Sans SC', -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
-  background-color: #FAF9F5;
-  background-image:
-    url("data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 2L42 22L22 42L2 22Z' fill='none' stroke='%23CC785C' stroke-width='0.8' opacity='0.045'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, #FAF9F5 0%, #F3EDE6 100%);
-  background-attachment: fixed;
-  color: var(--ink);
-  line-height: 1.6;
-}
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-}
-body::before {
-  width: 560px;
-  height: 560px;
-  border-radius: 50%;
-  border: 2px solid rgba(204, 120, 92, 0.09);
-  top: -200px;
-  right: -180px;
-}
-body::before {
-  box-shadow:
-    inset 0 0 0 34px rgba(204, 120, 92, 0.025),
-    inset 0 0 0 36px rgba(204, 120, 92, 0.05);
-}
-body::after {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(204, 120, 92, 0.07);
-  bottom: -120px;
-  left: -110px;
-}
-.header {
-  text-align: center;
-  padding: 64px 24px 40px;
-}
-.header h1 {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 40px;
-  font-weight: 900;
-  color: var(--ink);
-  letter-spacing: 4px;
-}
-.header .subtitle {
-  font-size: 16px;
-  color: var(--ink-muted);
-  margin-top: 10px;
-}
-.header .subtitle::after {
-  content: '';
-  display: block;
-  width: 56px;
-  height: 3px;
-  margin: 18px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), #E8B4A0);
-}
-.header .contact {
-  margin-top: 14px;
-  font-size: 13px;
-  color: var(--ink-muted);
-}
-.header .contact span { margin: 0 8px; }
-.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-.intro {
-  max-width: 720px;
-  margin: 28px auto 10px;
-  font-size: 14px;
-  color: var(--ink);
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.9;
-}
-.projects { padding: 28px 0 40px; }
-.project {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.project:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(20, 20, 19, 0.09);
-  border-color: #DCC8BC;
-}
-.project-top {
-  padding: 24px 28px 0;
-}
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.project-icon {
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
-}
-.project-icon.green { background: linear-gradient(135deg, #E8F5E9, #DCEDC8); }
-.project-icon.red { background: linear-gradient(135deg, #FFEBEE, #FFCDD2); }
-.project-icon.blue { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
-.project-icon.purple { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
-.project-name {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 18px;
-  font-weight: 700;
-  flex: 1;
-  padding-left: 13px;
-  position: relative;
-}
-.project-name::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 4px; bottom: 4px;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--accent);
-}
-.project-tag {
-  font-size: 11px;
-  padding: 3px 12px;
-  border-radius: 12px;
-  background: var(--bg);
-  color: var(--ink-muted);
-  border: 1px solid var(--border);
-}
-.project-desc {
-  font-size: 13.5px;
-  color: var(--ink-muted);
-  margin-top: 10px;
-  line-height: 1.7;
-}
-.project-body {
-  padding: 16px 28px 28px;
-}
-.highlights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px 24px;
-  margin-bottom: 20px;
-}
-.highlights li {
-  font-size: 13px;
-  color: var(--ink);
-  list-style: none;
-  padding-left: 14px;
-  position: relative;
-  line-height: 1.7;
-}
-.highlights li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-/* File blocks */
-.file-block {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.file-block:hover {
-  border-color: #DCC8BC;
-  box-shadow: 0 4px 12px rgba(204, 120, 92, 0.10);
-}
-.file-block:last-child { margin-bottom: 0; }
-.file-icon {
-  font-size: 28px;
-  width: 44px;
-  text-align: center;
-  flex-shrink: 0;
-}
-.file-info { flex: 1; }
-.file-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink);
-}
-.file-desc {
-  font-size: 12px;
-  color: var(--ink-muted);
-  margin-top: 2px;
-}
-.file-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12.5px;
-  padding: 7px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.15s;
-  flex-shrink: 0;
-}
-.file-btn.open {
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: #fff;
-}
-.file-btn.open:hover { opacity: 0.88; }
-.file-btn.link {
-  border: 1px solid var(--border);
-  color: var(--ink);
-}
-.file-btn.link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(204,120,92,0.06);
-}
-.links-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 14px 0 0;
-}
-.links-row a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  padding: 7px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  color: var(--ink);
-  text-decoration: none;
-  transition: all 0.15s;
-}
-.links-row a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(204,120,92,0.06);
-}
-.links-row a.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.links-row a.primary:hover { opacity: 0.88; }
-/* ===== 导航 ===== */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(250,249,245,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  height: 52px;
-  font-size: 13px;
-}
-.nav-brand { font-weight: 700; color: var(--accent); letter-spacing: 1px; }
-.nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
-.nav-links a {
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.15s;
-  position: relative;
-  padding: 4px 2px;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -2px;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-}
-.nav-links a:hover { color: var(--ink); }
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav-links a:hover { color: var(--accent); }
-/* ===== 数据横幅 ===== */
-.stats {
-  display: flex;
-  margin: 16px 28px 0;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--bg);
-}
-.stat { flex: 1; text-align: center; padding: 11px 6px; border-right: 1px solid var(--border); }
-.stat:last-child { border-right: none; }
-.stat-num {
-  font-size: 18px;
-  font-weight: 800;
-  font-family: 'Noto Serif SC', serif;
-  background: linear-gradient(120deg, #B9624A, var(--accent) 55%, #DF9B7E);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.stat-label { font-size: 10.5px; color: var(--ink-muted); margin-top: 2px; }
-/* ===== 关于我 ===== */
-.about {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  margin: 0 0 28px;
-  text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.about:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(20, 20, 19, 0.09);
-  border-color: #DCC8BC;
-}
-.about h2 {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 18px;
-  margin-bottom: 12px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-.about h2::before,
-.about h2::after {
-  content: '';
-  display: inline-block;
-  width: 30px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border));
-}
-.about h2::after {
-  background: linear-gradient(90deg, var(--border), transparent);
-}
-.about p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.9; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
-.skill-tags span {
-  font-size: 12px; padding: 5px 14px; border-radius: 14px;
-  background: var(--bg); border: 1px solid var(--border); color: var(--ink);
-}
-.about-contact { font-size: 13px; color: var(--ink-muted); text-align: center; }
-.about-contact a { color: var(--accent); text-decoration: none; }
-.footer {
-  text-align: center;
-  padding: 32px 0 40px;
-  font-size: 12px;
-  color: var(--ink-muted);
-  border-top: 1px solid var(--border);
-}
-@media (max-width: 640px) {
-  .highlights { grid-template-columns: 1fr; }
-  .project-top, .project-body { padding: 16px; }
-  .header h1 { font-size: 28px; }
-  .file-block { flex-wrap: wrap; }
-  .file-btn { width: 100%; justify-content: center; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-padding-top:64px;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px;background-image:radial-gradient(900px 420px at 12% -6%,rgba(188,79,40,.045),transparent 60%),radial-gradient(1000px 500px at 105% 8%,rgba(169,131,63,.05),transparent 55%)}
+.container{max-width:1120px;margin:0 auto;padding:0 32px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent-soft)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,243,237,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.02em}
+.brand .dot{color:var(--accent)}
+.nav .links{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--muted)}
+.nav .links a{transition:color .2s var(--ease)}
+.nav .links a:hover{color:var(--accent)}
+.nav .cta{font-size:13px;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:6px 14px;font-weight:600;transition:all .2s var(--ease)}
+.nav .cta:hover{background:var(--accent);color:#fff}
+
+/* ---------- hero ---------- */
+.hero{padding:84px 0 56px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:start}
+.eyebrow{font-size:12px;letter-spacing:.32em;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(56px,6.5vw,76px);letter-spacing:.005em;line-height:1.06;letter-spacing:.01em}
+.hero .sub{font-family:var(--serif);font-size:20px;color:var(--muted);margin:14px 0 26px}
+.hero .lead{max-width:600px;font-size:17px;color:#4A443A;line-height:1.9}
+.hero .lead b{color:var(--ink);font-weight:700}
+.hero .lead .hl{color:var(--accent);font-weight:700}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 0;margin-top:28px;font-size:13.5px;color:var(--muted)}
+.hero .meta span{display:flex;align-items:center}
+.hero .meta span+span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--faint);margin:0 12px}
+
+/* profile card (right) */
+.profile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;box-shadow:0 1px 2px rgba(35,32,27,.04),0 10px 30px -18px rgba(35,32,27,.12)}
+.profile .cap{font-size:12.5px;letter-spacing:.24em;color:var(--faint);text-transform:uppercase;margin-bottom:18px}
+.pstat{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.pstat:last-of-type{border-bottom:none}
+.pstat .n{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--accent);min-width:74px;font-variant-numeric:tabular-nums}
+.pstat .n small{font-size:16px}
+.pstat .l{font-size:13.5px;color:var(--muted);line-height:1.5}
+.pstat .l b{display:block;color:var(--ink);font-size:14px;font-weight:600}
+.profile .note{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint);line-height:1.7}
+
+/* ---------- sections ---------- */
+.section{padding:92px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:46px}
+.sec-head .idx{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.sec-head h2{font-family:var(--serif);font-size:36px;font-weight:700;letter-spacing:.01em}
+.sec-head .en{font-size:12.5px;letter-spacing:.28em;color:var(--faint);text-transform:uppercase}
+.sec-head .rule{flex:1;height:1px;background:var(--line);margin-left:4px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+.about-grid .lead{font-size:15.5px;color:#4A443A;line-height:2}
+.about-grid .lead b{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tag{font-size:12.5px;padding:5px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:#5C554A}
+.tl{position:relative;margin:4px 0 0 4px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1.5px;background:var(--line)}
+.tl .item{position:relative;padding:8px 0 26px}
+.tl .item::before{content:"";position:absolute;left:-28px;top:20px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:2.5px solid var(--accent)}
+.tl .time{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--accent)}
+.tl .txt{font-size:14px;color:#4A443A;line-height:1.8}
+.tl .txt small{display:block;color:var(--muted);font-size:12.5px}
+
+/* ---------- boundary ---------- */
+.boundary{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.bcard{padding:30px 32px 26px}
+.bcard.mine{border-right:1px solid var(--line)}
+.bcard h3{font-family:var(--serif);font-size:18px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.bcard.mine h3::before{content:"";width:18px;height:3px;background:var(--accent);border-radius:2px}
+.bcard.ai h3::before{content:"";width:18px;height:3px;background:var(--gold);border-radius:2px}
+.bcard ul{list-style:none}
+.bcard li{font-size:14px;color:#4A443A;padding:7px 0;padding-left:22px;position:relative}
+.bcard li::before{content:"";position:absolute;left:4px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--line-strong)}
+.bcard.mine li::before{background:var(--accent)}
+.bcard.ai li::before{background:var(--gold)}
+.note{margin-top:18px;font-size:14px;color:var(--muted);background:var(--surface2);border:1px dashed var(--line-strong);border-radius:12px;padding:16px 20px;line-height:1.8}
+.note b{color:var(--ink)}
+
+/* ---------- featured project ---------- */
+.feat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:44px;box-shadow:0 1px 2px rgba(35,32,27,.04),0 18px 44px -26px rgba(35,32,27,.18)}
+.feat .cover{position:relative;aspect-ratio:16/10;min-height:0;min-width:0;overflow:hidden;background:var(--surface2);display:flex;align-items:stretch}
+.feat .cover img{width:100%;height:100%;max-width:100%;object-fit:cover;object-position:top;display:block}
+.feat .f-body{padding:38px 38px 30px;display:flex;flex-direction:column}
+.feat .f-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.06em;margin-bottom:14px}
+.feat .f-tag::before{content:"";width:26px;height:1px;background:var(--accent)}
+.feat h3{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.feat .f-desc{font-size:14.5px;color:#4A443A;line-height:1.85;margin-bottom:18px}
+.fstats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}
+.fstat{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 10px;text-align:center}
+.fstat .n{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.fstat .l{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4}
+.fdeep{margin-bottom:20px}
+.fdeep .row{display:flex;gap:14px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.fdeep .row:first-child{border-top:none}
+.fdeep .k{flex:0 0 76px;font-weight:600;color:var(--faint);font-size:12.5px;padding-top:1px}
+.fdeep .v{color:#3F3A32;line-height:1.75}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;padding:9px 18px;border-radius:9px;border:1px solid var(--line-strong);color:#4A443A;transition:all .2s var(--ease)}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--accent-deep);color:#fff}
+
+/* ---------- project grid ---------- */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s var(--ease),transform .25s var(--ease)}
+.proj:hover{box-shadow:0 1px 2px rgba(35,32,27,.04),0 16px 40px -22px rgba(35,32,27,.22);transform:translateY(-2px);border-color:var(--line-strong)}
+.p-cover{position:relative;aspect-ratio:16/9.5;background:var(--surface2);border-bottom:1px solid var(--line);overflow:hidden;min-width:0}
+.p-cover img{width:100%;height:100%;max-width:100%;object-fit:cover;object-position:top;display:block}
+.p-cover .pnum{position:absolute;top:14px;left:16px;font-family:var(--serif);font-size:15px;font-weight:700;color:var(--accent);letter-spacing:.1em;z-index:2}
+.p-cover .pcat{position:absolute;top:14px;right:16px;font-size:12px;color:var(--faint);letter-spacing:.14em;z-index:2}
+.p-body{padding:22px 24px 22px;display:flex;flex-direction:column;flex:1}
+.p-body h3{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:6px;line-height:1.45}
+.p-body .p-desc{font-size:15px;color:#4A443A;line-height:1.8;margin-bottom:14px}
+.p-decision{font-size:14px;color:var(--muted);background:var(--surface2);border-left:2px solid var(--gold);padding:9px 14px;border-radius:0 8px 8px 0;margin-bottom:14px;line-height:1.7}
+.p-decision b{color:var(--ink);font-weight:600}
+.p-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.p-chip{font-size:13px;color:#5C554A;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.p-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.p-links .btn{font-size:12.5px;padding:7px 13px}
+
+/* CSS diagram covers */
+.cov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:34px;background:
+  radial-gradient(1200px 500px at 85% -20%, #F3E9DB 0%, transparent 55%),
+  linear-gradient(#F3EFE6 0%, #F8F5EF 100%)}
+.cov .frame{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(35,32,27,.05),0 14px 34px -20px rgba(35,32,27,.25);overflow:hidden;width:100%}
+.cov .fbar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+.cov .fbar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.cov .fbar i:first-child{background:#D98A72}
+.cov .fbar i:nth-child(2){background:#D9BC72}
+.cov .fbar i:nth-child(3){background:#8FBF9F}
+.cov .fbar span{margin-left:10px;font-size:12px;color:var(--faint);letter-spacing:.06em}
+
+/* agent pipeline */
+.flow{display:flex;align-items:center;gap:8px;padding:26px 20px}
+.flow .node{flex:1;text-align:center;background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:14px 6px}
+.flow .node .ic{font-size:16px;margin-bottom:4px}
+.flow .node .t{font-size:12.5px;font-weight:600;color:#3F3A32}
+.flow .node .s{font-size:12.5px;color:var(--faint);margin-top:2px}
+.flow .node.hot{border-color:var(--accent);background:var(--accent-soft)}
+.flow .node.hot .t{color:var(--accent-deep)}
+.flow .arr{color:var(--gold);font-weight:700;font-size:15px;flex:0 0 auto}
+
+/* claude two-mode */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:26px 22px;position:relative}
+.cmp .side{padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.cmp .side.a{border-right:none;border-radius:10px 0 0 10px;background:var(--surface2)}
+.cmp .side.b{border-radius:0 10px 10px 0;border-color:var(--accent);border-left:2px solid var(--accent);background:var(--accent-soft)}
+.cmp .side .h{font-size:13px;font-weight:700;margin-bottom:8px}
+.cmp .side.a .h{color:var(--faint)}
+.cmp .side.b .h{color:var(--accent-deep)}
+.cmp .side p{font-size:13px;color:var(--muted);line-height:1.6}
+.cmp .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--gold);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:3px solid var(--surface2);letter-spacing:.02em}
+
+/* xhs three-stage */
+.xhs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:26px 22px;width:100%}
+.xhs .st{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:center;position:relative}
+.xhs .st .no{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold)}
+.xhs .st .n{font-size:12.5px;font-weight:700;margin:4px 0 6px;color:#3F3A32}
+.xhs .st ul{list-style:none}
+.xhs .st li{font-size:12.5px;color:var(--muted);padding:2px 0;line-height:1.5}
+.xhs .st.hot{border-color:var(--accent);background:var(--accent-soft)}
+.xhs .st.hot .no{color:var(--accent)}
+
+/* feishu vs dingtalk */
+.fvd{display:grid;grid-template-columns:1fr auto 1fr;gap:0;padding:26px 22px;align-items:stretch;width:100%}
+.fvd .col{border:1px solid var(--line);border-radius:10px;padding:14px}
+.fvd .col .h{font-size:13px;font-weight:700;margin-bottom:10px}
+.fvd .col ul{list-style:none}
+.fvd .col li{font-size:12.5px;color:var(--muted);padding:3px 0;position:relative;padding-left:14px}
+.fvd .col li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.fvd .mid{display:flex;align-items:center;padding:0 12px;font-family:var(--serif);font-weight:700;color:var(--accent);font-size:15px}
+.fvd .col.hot{border-color:var(--accent)}
+.fvd .col.hot .h{color:var(--accent-deep)}
+
+/* ---------- resume section ---------- */
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 30px;display:flex;flex-direction:column;transition:all .25s var(--ease)}
+.rcard:hover{box-shadow:0 1px 2px rgba(35,32,27,.04),0 16px 40px -22px rgba(35,32,27,.22);transform:translateY(-2px)}
+.rcard .rt{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:10px;display:flex;align-items:baseline;gap:10px}
+.rcard .rt em{font-style:normal;font-size:11px;color:var(--gold);letter-spacing:.2em;font-weight:600}
+.rcard p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px;flex:1}
+.rcard .btn{align-self:flex-start}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);margin-top:72px;padding:26px 0 34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13.5px;color:var(--faint)}
+.footer b{color:var(--muted);font-weight:600}
+.footer .stamp{font-family:var(--serif);font-size:11px;letter-spacing:.18em;color:var(--gold);border:1px solid var(--gold);border-radius:4px;padding:4px 10px;transform:rotate(-1.5deg)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .feat{grid-template-columns:1fr}
+  .feat .cover{min-height:240px}
+  .pgrid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .boundary{grid-template-columns:1fr}
+  .bcard.mine{border-right:none;border-bottom:1px solid var(--line)}
+  .rgrid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-brand">陈昊 · PM</div>
-    <div class="nav-links">
-      <a href="#about">关于我</a>
-      <a href="#p1">葉光館</a>
-      <a href="#p2">Claude Computer Use</a>
-      <a href="#p3">小红书</a>
-      <a href="#p4">飞书 vs 钉钉</a>
-      <a href="#p5">GearPick</a>
-      <a href="#p6">迷宫饭</a>
-    </div>
+<div class="nav"><div class="container">
+  <div class="brand">陈昊<span class="dot">·</span>作品集</div>
+  <div class="links">
+    <a href="#about">关于</a><a href="#projects">项目</a><a href="#resume">简历</a>
+    <a class="cta" href="简历_陈昊_AI产品经理版_v2.pdf" target="_blank">下载简历 PDF</a>
   </div>
-</nav>
+</div></div>
 
-<div class="header">
-  <h1>陈昊</h1>
-  <div class="subtitle">产品经理 · 作品集</div>
-  <div class="contact">
-    <span>🎓 中国地质大学（武汉）</span>
-    <span>📧 2295350938@qq.com</span>
-    <span>🏠 湖北武汉</span>
+<header class="hero"><div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">AI Product Manager · Portfolio 2026</div>
+      <h1>陈昊</h1>
+      <div class="sub">AI 产品经理 · 从 0 到 1 的实践者</div>
+      <p class="lead">
+        211 工科本科，2025 年 7 月毕业后<b>全职投入 AI 产品自研</b>，一年内独立交付 <span class="hl">4 个已上线产品</span>。
+        专注 <span class="hl">AI 应用与智能体（Agent）</span>方向，具备「需求调研 → 方案设计 → 原型 → 开发 → 上线 → 数据迭代」全链路能力。
+        <b>AI 是我的执行团队，我是产品的决策者。</b>
+      </p>
+      <div class="meta">
+        <span>176 0897 0378</span>
+        <span>2295350938@qq.com</span>
+        <span>湖北武汉</span>
+        <span>中国地质大学（武汉）· 211</span>
+      </div>
+    </div>
+    <aside class="profile">
+      <div class="cap">Key Numbers</div>
+      <div class="pstat"><div class="n">4<small>个</small></div><div class="l"><b>已上线产品</b>独立从 0 到 1 交付</div></div>
+      <div class="pstat"><div class="n">66<small>款</small></div><div class="l"><b>外设数据产品库</b>三重信源交叉验证</div></div>
+      <div class="pstat"><div class="n">13<small>版</small></div><div class="l"><b>30 天迭代</b>葉光館 v1.0 → v5.2</div></div>
+      <div class="pstat"><div class="n">2700<small>+</small></div><div class="l"><b>自动管理作品</b>全自动管线合规筛选</div></div>
+      <div class="note">原则：AI 负责「把方案做出来」，我负责「决定做什么、为什么这么做、怎么算做好」。</div>
+    </aside>
   </div>
-</div>
+</div></header>
 
 <div class="container">
 
-<div class="about" id="about">
-  <h2>关于我</h2>
-  <p>
-    211理工科应届生，中国地质大学（武汉）本科毕业，专注于 AI 产品项目实践与产品系统学习，独立完成数个从 0 到 1 的 AI 项目并全部上线。
-    具备 vibecoding 能力与从 0 到 1 的产品全流程能力——需求调研、竞品分析、PRD 撰写、高保真原型、开发落地、数据迭代。
-    以下项目覆盖 AI产品 · C端产品 · 搜索策略 · B端竞品分析 · AI协作开发等方向。正在寻找产品经理相关岗位。
-  </p>
-  <div class="skill-tags">
-    <span>PRD 撰写</span><span>Axure 原型</span><span>用户调研</span><span>竞品分析</span>
-    <span>SQL</span><span>Prompt Engineering</span><span>Agent 工作流编排</span><span>AI 多智能体协作开发</span>
-  </div>
-  <div style="margin-top:14px;">
-    <div class="file-block">
-      <div class="file-icon">📄</div>
-      <div class="file-info">
-        <div class="file-name">个人简历 · 产品经理</div>
-        <div class="file-desc">一页纸完整版：教育背景、项目经历、技能清单。飞书在线查看。</div>
+<!-- 关于 -->
+<section id="about" class="section">
+  <div class="sec-head"><span class="idx">01</span><h2>关于我</h2><span class="en">About</span><span class="rule"></span></div>
+  <div class="about-grid">
+    <div>
+      <p class="lead">
+        土木工科训练了我的<b>逻辑、数据与风险控制</b>；主动转型产品后，用一年时间把「想法」变成「上线产品」。
+        我不把 AI 协作当噱头，而是把它当成<b>可管理、可验收、可复用</b>的产品能力——每个项目都有清晰的决策记录、数据口径与迭代轨迹。
+      </p>
+      <div class="tags">
+        <span class="tag">自驱 · 从 0 到 1</span><span class="tag">数据驱动</span>
+        <span class="tag">跨专业转型</span><span class="tag">工程化思维</span>
       </div>
-      <a href="https://ycnx20idwv23.feishu.cn/file/DL2zb9f2moYOCXxHAWvcKQcxnah" target="_blank" class="file-btn open">📄 查看简历</a>
+    </div>
+    <div class="tl">
+      <div class="item"><div class="time">2021 – 2025</div><div class="txt">中国地质大学（武汉）· 土木工程 · 本科<small>自学产品方法论、SQL、Python、大模型与 Agent 开发</small></div></div>
+      <div class="item"><div class="time">2025.07 – 至今</div><div class="txt">全职 AI 产品自研，独立交付并持续迭代<small>葉光館 / GearPick / 办公 Agent / 迷宫饭，另产出搜索方案与竞品分析</small></div></div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="projects">
-
-<!-- ========== 葉光館 ========== -->
-<div class="project" id="p1">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon green">🌿</div>
-      <div class="project-name">葉光館 · 同人艺术展示社区</div>
-      <span class="project-tag">C端 · 从0到1</span>
+<!-- 我的贡献 vs AI -->
+<section id="boundary" class="section">
+  <div class="sec-head"><span class="idx">02</span><h2>我的贡献 vs AI 的贡献</h2><span class="en">My Role</span><span class="rule"></span></div>
+  <div class="boundary">
+    <div class="bcard mine">
+      <h3>我 · 产品决策者</h3>
+      <ul>
+        <li>产品定义与定位（做什么 / 不做什么 / 给谁做）</li>
+        <li>用户研究与需求拆解（访谈、痛点、优先级）</li>
+        <li>信息架构、交互流程、高保真原型</li>
+        <li>验收标准与迭代策略（每版改什么、为什么）</li>
+        <li>数据口径与指标体系（成功怎么衡量）</li>
+      </ul>
     </div>
-    <div class="project-desc">
-      面向同人插画创作者的轻量作品展示社区。单人全栈，从竞品调研→信息架构→高保真原型→开发上线→迭代，完整走通产品全流程。已收录 2700+ 作品，每日自动同步 Pixiv 排行。
+    <div class="bcard ai">
+      <h3>AI · 执行团队</h3>
+      <ul>
+        <li>编码实现（Claude Code / Codex 驱动开发）</li>
+        <li>自动化管线（拉取 → 去重 → 合规 → 构建 → 部署）</li>
+        <li>AI 多智能体并行产出（策划 / 美术 / 剧情）</li>
+        <li>文本 / 代码生成与初步校验</li>
+      </ul>
     </div>
   </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">2700+</div><div class="stat-label">作品自动管理</div></div>
-    <div class="stat"><div class="stat-num">30天</div><div class="stat-label">v1.0 → v5.2</div></div>
-    <div class="stat"><div class="stat-num">13页</div><div class="stat-label">高保真原型</div></div>
-    <div class="stat"><div class="stat-num">3语8主题</div><div class="stat-label">国际化 & 视觉</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>竞品差异定位：零广告、零算法、零运维</li>
-      <li>13页高保真原型，覆盖全场景+异常兜底</li>
-      <li>AI全自动同步管线：拉取→去重→合规→构建→部署</li>
-      <li>三语（中/英/日）+ 8种CSS主题</li>
-      <li>版本迭代13次，数据零丢失</li>
-      <li>30天完成 v1.0 → v5.2</li>
-    </ul>
+  <div class="note">原则：<b>AI 负责「把方案做出来」，我负责「决定做什么、为什么这么做、怎么算做好」。</b>每个项目的核心决策与数据口径都是我的产品判断，欢迎面试时直接拷问。</div>
+</section>
 
-    <div class="file-block">
-      <div class="file-icon">📝</div>
-      <div class="file-info">
-        <div class="file-name">產品需求文檔（PRD · 飞书在线）</div>
-        <div class="file-desc">飞书文档，含需求概述、用户分析、业务方案、功能详述、验收标准、风险边界</div>
+<!-- 项目 -->
+<section id="projects" class="section">
+  <div class="sec-head"><span class="idx">03</span><h2>项目</h2><span class="en">Selected Work</span><span class="rule"></span></div>
+
+  <!-- Featured: GearPick -->
+  <div class="feat">
+    <div class="cover"><img src="shots/gear.png" alt="GearPick 工具界面"></div>
+    <div class="f-body">
+      <span class="f-tag">主打项目 · AI 产品 · 数据策略 · 已上线</span>
+      <h3>GearPick · FPS 外设智能推荐</h3>
+      <p class="f-desc">面向 FPS 玩家的外设推荐工具：三重信源交叉验证 + 规则引擎，每个推荐可解释、可溯源——刻意不用大模型黑盒。</p>
+      <div class="fstats">
+        <div class="fstat"><div class="n">66款</div><div class="l">产品数据库</div></div>
+        <div class="fstat"><div class="n">4类</div><div class="l">鼠标/键盘/垫/耳机</div></div>
+        <div class="fstat"><div class="n">1000+</div><div class="l">职业选手数据</div></div>
+        <div class="fstat"><div class="n">3重</div><div class="l">交叉验证信源</div></div>
       </div>
-      <a href="https://ycnx20idwv23.feishu.cn/wiki/D01jwqndDibH1Wk0Z96cjxMOnAc" target="_blank" class="file-btn open">📖 在线查看</a>
-    </div>
-
-    <div class="file-block">
-      <div class="file-icon">🎨</div>
-      <div class="file-info">
-        <div class="file-name">高保真交互原型（13页）</div>
-        <div class="file-desc">双击直接打开，可在原型内点击切换页面、查看交互效果</div>
+      <div class="fdeep">
+        <div class="row"><div class="k">我的角色</div><div class="v">独立产品负责人：产品定义、数据策略、推荐逻辑设计、信源质量把关。</div></div>
+        <div class="row"><div class="k">核心决策</div><div class="v">三重信源交叉验证（职业选手配置 + UP 主横评 + 社区口碑）；MVP 用「策展人模式」替代算法黑盒——可解释、可溯源、零推理成本；推荐结果附得分构成与信源链接。</div></div>
+        <div class="row"><div class="k">结果</div><div class="v">已上线可用，覆盖 66 款产品、4 品类，支持对比与导出。</div></div>
       </div>
-      <a href="01_yeguang_prototype.html" target="_blank" class="file-btn open">🔗 打开查看</a>
-    </div>
-
-    <div class="file-block">
-      <div class="file-icon">🌐</div>
-      <div class="file-info">
-        <div class="file-name">在线体验站点</div>
-        <div class="file-desc">已部署上线，可直接访问完整功能（需代理）</div>
+      <div class="btns">
+        <a class="btn solid" href="gear/index.html" target="_blank">使用在线工具</a>
+        <a class="btn" href="gear/README.md" target="_blank">数据口径</a>
+        <a class="btn" href="gear/CASE_STUDY.md" target="_blank">项目复盘</a>
       </div>
-      <a href="https://broad-bonus-9861.moyeryld.workers.dev" target="_blank" class="file-btn open">🚀 访问站点</a>
     </div>
   </div>
-</div>
 
-<!-- ========== Claude Computer Use 拆解 ========== -->
-<div class="project" id="p2">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon purple">🤖</div>
-      <div class="project-name">Claude Computer Use · AI 产品深度拆解</div>
-      <span class="project-tag">AI产品 · 深度拆解</span>
-    </div>
-    <div class="project-desc">
-      对 Anthropic Claude Computer Use 能力的系统性产品拆解。覆盖背景模式 vs 前台操控的核心产品决策、SOM 视觉定位策略、安全护栏设计、竞品矩阵对比，输出 AI PM 视角的关键洞察——Agent + GUI + 安全边界，才是 2026 年的 AI 产品经理能力分水岭。
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">6维</div><div class="stat-label">产品决策拆解</div></div>
-    <div class="stat"><div class="stat-num">3类</div><div class="stat-label">竞品矩阵</div></div>
-    <div class="stat"><div class="stat-num">2重</div><div class="stat-label">安全护栏</div></div>
-    <div class="stat"><div class="stat-num">1个</div><div class="stat-label">市场空窗</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>核心产品决策：背景模式 vs 前台操控、SOM定位 vs 像素坐标</li>
-      <li>安全护栏：硬编码拒绝列表 + 用户确认机制，防 UI 注入攻击</li>
-      <li>竞品矩阵：OpenAI Operator / Manus / Copilot Vision 差异化对比</li>
-      <li>产品哲学：「共存」而非「替代」的信任策略</li>
-      <li>国内桌面级 AI 操控市场空窗分析</li>
-      <li>Prompt Injection：桌面操控的独特安全威胁</li>
-    </ul>
+  <div class="pgrid">
 
-    <div class="file-block">
-      <div class="file-icon">📝</div>
-      <div class="file-info">
-        <div class="file-name">AI 产品深度拆解（飞书在线）</div>
-        <div class="file-desc">飞书文档，含产品概述、用户场景、核心产品决策拆解、竞品格局、安全设计、AI PM 关键洞察</div>
+    <!-- 办公Agent -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P1</span><span class="pcat">AI 应用 · 已落地</span>
+        <div class="cov"><div class="frame">
+          <div class="fbar"><i></i><i></i><i></i><span>meeting-agent · pipeline</span></div>
+          <div class="flow">
+            <div class="node"><div class="ic">录音</div><div class="t">会议录音</div><div class="s">输入源</div></div>
+            <div class="arr">→</div>
+            <div class="node"><div class="ic">转写</div><div class="t">语音转写</div><div class="s">ASR</div></div>
+            <div class="arr">→</div>
+            <div class="node hot"><div class="ic">摘要</div><div class="t">AI 摘要</div><div class="s">行动项</div></div>
+            <div class="arr">→</div>
+            <div class="node"><div class="ic">分发</div><div class="t">自动分发</div><div class="s">多端</div></div>
+          </div>
+        </div></div>
       </div>
-      <a href="https://ycnx20idwv23.feishu.cn/wiki/HjGCwhHLMinY0mkAO7CcuVVFnuf" target="_blank" class="file-btn open">📖 在线查看</a>
-    </div>
-  </div>
-</div>
-
-<!-- ========== 项目2：小红书搜索策略 ========== -->
-<div class="project" id="p3">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon red">🔍</div>
-      <div class="project-name">小红书 · 搜索体验优化方案</div>
-      <span class="project-tag">搜索策略 · PRD</span>
-    </div>
-    <div class="project-desc">
-      针对小红书搜索场景的系统性体验优化方案。从用户搜索动线出发，分析搜索前/搜索中/搜索后三段体验痛点，输出可落地的搜索策略 PRD。
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">5类</div><div class="stat-label">用户深度访谈</div></div>
-    <div class="stat"><div class="stat-num">3大</div><div class="stat-label">核心痛点</div></div>
-    <div class="stat"><div class="stat-num">3模块</div><div class="stat-label">功能设计</div></div>
-    <div class="stat"><div class="stat-num">3级</div><div class="stat-label">异常兜底</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>三段式搜索动线分析（搜索前引导 / 搜索中匹配 / 搜索后承接）</li>
-      <li>Query 分类体系 + 多路召回排序策略</li>
-      <li>无结果 / 歧义 / 低质结果的异常兜底方案</li>
-      <li>AB 测试框架 + 核心指标定义</li>
-    </ul>
-
-    <div class="file-block">
-      <div class="file-icon">📕</div>
-      <div class="file-info">
-        <div class="file-name">搜索体验优化 PRD（PDF）</div>
-        <div class="file-desc">完整文档，含搜索动线分析、Query分类、异常兜底、AB测试框架</div>
+      <div class="p-body">
+        <h3>办公自动化 Agent + 智能聊天机器人</h3>
+        <p class="p-desc">把「转写 → 摘要 → 分发」全链路做成可复用的 Agent 工作流，用 Hermes + Codex 编排。</p>
+        <div class="p-decision"><b>核心决策：</b>三段拆解、逐段可替换与兜底；摘要面向「会后行动项」而非全文复述；多轮助手支持记忆与多模型切换。</div>
+        <div class="p-meta"><span class="p-chip">2h→15min 单场会议</span><span class="p-chip">≈+80% 效率</span><span class="p-chip">3 段可替换管线</span></div>
+        <div class="p-links">
+          <a class="btn" href="https://ycnx20idwv23.feishu.cn/wiki/HjGCwhHLMinY0mkAO7CcuVVFnuf" target="_blank">方案（飞书）</a>
+        </div>
       </div>
-      <a href="03_xiaohongshu_search_PRD.pdf" target="_blank" class="file-btn open">📖 打开查看</a>
     </div>
 
-    <div class="file-block">
-      <div class="file-icon">📄</div>
-      <div class="file-info">
-        <div class="file-name">搜索体验优化 PRD（飞书在线）</div>
-        <div class="file-desc">飞书文档，排版更优，含搜索动线分析、Query分类、异常兜底、AB测试框架</div>
+    <!-- 葉光館 -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P2</span><span class="pcat">C 端 · 从 0 到 1 · 已上线</span>
+        <img src="shots/yeguang.png" alt="葉光館 高保真原型">
       </div>
-      <a href="https://ycnx20idwv23.feishu.cn/wiki/EBEbwiXgXiGtrDky02tcSn57nzd" target="_blank" class="file-btn open">📖 在线查看</a>
-    </div>
-  </div>
-</div>
-
-<!-- ========== 飞书vs钉钉竞品分析 ========== -->
-<div class="project" id="p4">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon blue">📊</div>
-      <div class="project-name">飞书 vs 钉钉 · 协同办公竞品分析</div>
-      <span class="project-tag">B端 · 竞品研究</span>
-    </div>
-    <div class="project-desc">
-      针对飞书和钉钉两款协同办公产品的系统性竞品分析报告。从战略层、功能层、体验层三个维度对比，输出差异化定位建议。
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">3层</div><div class="stat-label">战略/功能/体验</div></div>
-    <div class="stat"><div class="stat-num">4模块</div><div class="stat-label">逐项功能对比</div></div>
-    <div class="stat"><div class="stat-num">2款</div><div class="stat-label">头部产品</div></div>
-    <div class="stat"><div class="stat-num">1套</div><div class="stat-label">定位建议</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>战略层：产品定位、用户群、商业模式对比</li>
-      <li>功能层：消息 / 文档 / 会议 / OKR 四大模块逐项对比</li>
-      <li>体验层：信息架构、交互效率、学习成本评估</li>
-      <li>输出差异化定位建议 + 优先级路径图</li>
-    </ul>
-
-    <div class="file-block">
-      <div class="file-icon">📘</div>
-      <div class="file-info">
-        <div class="file-name">协同办公竞品分析报告（PDF）</div>
-        <div class="file-desc">含战略层/功能层/体验层三维对比、差异化建议、优先级路径图</div>
+      <div class="p-body">
+        <h3>葉光館 · 同人艺术展示社区</h3>
+        <p class="p-desc">面向同人插画创作者的轻量作品展示社区：单人走通竞品调研 → 信息架构 → 高保真原型 → 上线 → 迭代。</p>
+        <div class="p-decision"><b>核心决策：</b>差异化定位「零广告、零算法、零运维」；AI 全自动同步管线（拉取→去重→合规→构建→部署）替代人工运维。</div>
+        <div class="p-meta"><span class="p-chip">2700+ 自动管理作品</span><span class="p-chip">13 版 · 30 天迭代</span><span class="p-chip">3 语 8 主题</span></div>
+        <div class="p-links">
+          <a class="btn solid" href="https://broad-bonus-9861.moyeryld.workers.dev" target="_blank">在线站点</a>
+          <a class="btn" href="01_yeguang_prototype.html" target="_blank">高保真原型</a>
+          <a class="btn" href="https://ycnx20idwv23.feishu.cn/wiki/D01jwqndDibH1Wk0Z96cjxMOnAc" target="_blank">PRD（飞书）</a>
+        </div>
       </div>
-      <a href="04_feishu_vs_dingtalk_analysis.pdf" target="_blank" class="file-btn open">📖 打开查看</a>
     </div>
 
-    <div class="file-block">
-      <div class="file-icon">📄</div>
-      <div class="file-info">
-        <div class="file-name">协同办公竞品分析报告（飞书在线）</div>
-        <div class="file-desc">飞书文档，排版更优，含战略层/功能层/体验层三维对比、差异化建议、优先级路径图</div>
+    <!-- 迷宫饭 -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P3</span><span class="pcat">游戏策划 · AI 多智能体 · 可玩</span>
+        <img src="shots/game_title.png" alt="迷宫饭 标题画面">
       </div>
-      <a href="https://ycnx20idwv23.feishu.cn/wiki/ViL5wjVxtiPDBkkr34dcGvpZnwe" target="_blank" class="file-btn open">📖 在线查看</a>
-    </div>
-  </div>
-</div>
-
-<!-- ========== GearPick · FPS外设推荐 ========== -->
-<div class="project" id="p5">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon" style="background:#FFF3E0;">🎯</div>
-      <div class="project-name">GearPick · FPS 外设智能推荐</div>
-      <span class="project-tag">AI产品 · 数据工具</span>
-    </div>
-    <div class="project-desc">
-      面向 FPS 玩家的外设推荐工具。基于 1000+ 职业选手外设数据（fireopen.cn）、B站外设区 UP主横评、社区真实口碑，通过规则引擎匹配手长/握法/预算/游戏类型，输出最佳推荐 + 备选方案。产品决策核心：策展人模式替代算法黑盒，交叉验证替代单一信源。
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">60款</div><div class="stat-label">产品数据库</div></div>
-    <div class="stat"><div class="stat-num">4品类</div><div class="stat-label">鼠标/键盘/垫/耳机</div></div>
-    <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">职业选手数据</div></div>
-    <div class="stat"><div class="stat-num">3重</div><div class="stat-label">交叉验证信源</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>信息架构设计：fireopen 职业数据 + B站UP主评测 + NGA/Reddit社区三重交叉验证</li>
-      <li>产品决策：人工策展 vs 爬虫全量——MVP阶段策展人模式保证推荐质量</li>
-      <li>推荐引擎：规则匹配 + 偏好加权，非 AI 黑盒，每个推荐可追溯到具体信源</li>
-      <li>覆盖四品类：鼠标(30) / 键盘(16) / 鼠标垫(8) / 耳机(6)，共 60 款产品，数据来源可追溯</li>
-      <li>设计师视角：从信息获取→筛选→推荐理由→注意事项的完整推荐链路</li>
-      <li>定位差异化：不是电商筛选器，是「朋友推荐外设」的产品化</li>
-    </ul>
-
-    <div class="file-block">
-      <div class="file-icon">🎯</div>
-      <div class="file-info">
-        <div class="file-name">GearPick 在线工具</div>
-        <div class="file-desc">交互式外设推荐，选择品类→输入需求→获取推荐。数据来源可追溯，每款产品标注信源</div>
+      <div class="p-body">
+        <h3>迷宫饭 · 美食地下城网页游戏</h3>
+        <p class="p-desc">基于《迷宫饭》IP 的奇幻美食 RPG：以产品经理视角主导策划与验收，用 AI 多智能体协作完成开发。</p>
+        <div class="p-decision"><b>核心决策：</b>核心循环「探索→战斗→食材→烹饪→成长」；数值公式显式化；终局 BOSS 后移制造「终局感」；AI 多智能体并行开发，全程验收修复 15+ bug。</div>
+        <div class="p-meta"><span class="p-chip">6 层迷宫</span><span class="p-chip">31 魔物</span><span class="p-chip">39 菜谱</span><span class="p-chip">31 成就</span></div>
+        <div class="p-links">
+          <a class="btn solid" href="05_dungeon_meshi_game/index.html" target="_blank">打开试玩</a>
+          <a class="btn" href="05_dungeon_meshi_game/GDD.md" target="_blank">游戏设计文档</a>
+          <a class="btn" href="05_dungeon_meshi_game/CASE_STUDY.md" target="_blank">项目复盘</a>
+        </div>
       </div>
-      <a href="gear/index.html" target="_blank" class="file-btn open">🚀 使用工具</a>
     </div>
-  </div>
-</div>
 
-
-<!-- ========== 迷宫饭 · 美食地下城网页游戏 ========== -->
-<div class="project" id="p6">
-  <div class="project-top">
-    <div class="project-header">
-      <div class="project-icon purple">🎮</div>
-      <div class="project-name">迷宫饭 · 美食地下城网页游戏</div>
-      <span class="project-tag">C端 · 游戏产品 · AI协作开发</span>
-    </div>
-    <div class="project-desc">
-      基于《迷宫饭》IP 的奇幻美食 RPG 网页游戏。以产品经理视角主导策划与验收：设计核心循环（探索→战斗→食材→烹饪→成长）、数值曲线、层级解锁与周目系统；用 AI 多智能体协作完成开发，产出单文件可玩产品。
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">5层</div><div class="stat-label">迷宫</div></div>
-    <div class="stat"><div class="stat-num">25</div><div class="stat-label">魔物</div></div>
-    <div class="stat"><div class="stat-num">20</div><div class="stat-label">菜谱</div></div>
-    <div class="stat"><div class="stat-num">20</div><div class="stat-label">成就</div></div>
-  </div>
-  <div class="project-body">
-    <ul class="highlights">
-      <li>核心循环设计：探索→遭遇→战斗→食材→烹饪→恢复→深入，闭环可验证</li>
-      <li>数值曲线：魔物强度=周目×1.3×层数×1.18×BOSS加成，主角等级成长对冲</li>
-      <li>经济系统：金币→装备商店（8件装备+4消耗品），形成资源循环</li>
-      <li>层级解锁：前层探索达标+击败BOSS才能进入下一层，线性推进+开放探索</li>
-      <li>系统规模：5层迷宫 / 25魔物 / 20菜谱（含隐藏） / 30事件 / 20成就 / 周目循环</li>
-      <li>AI多智能体开发：策划/美术/剧情并行产出，全程验收修复 15+ bug</li>
-    </ul>
-
-    <div class="file-block">
-      <div class="file-icon">🎮</div>
-      <div class="file-info">
-        <div class="file-name">可玩游戏（单文件版）</div>
-        <div class="file-desc">点击即玩，含完整美术/音效/存档/周目系统</div>
+    <!-- Claude Computer Use -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P4</span><span class="pcat">AI 产品研究 · 深度拆解</span>
+        <div class="cov"><div class="frame">
+          <div class="fbar"><i></i><i></i><i></i><span>claude-computer-use · teardown</span></div>
+          <div class="cmp">
+            <div class="side a"><div class="h">前台操控</div><p>抢占光标与焦点，用户只能等；像素坐标，分辨率一变就崩</p></div>
+            <div class="vs">VS</div>
+            <div class="side b"><div class="h">背景模式</div><p>不抢焦点，可并行工作；SOM 视觉定位，跨分辨率稳定</p></div>
+          </div>
+        </div></div>
       </div>
-      <a href="05_dungeon_meshi_game/index.html" target="_blank" class="file-btn open">🎮 打开试玩</a>
+      <div class="p-body">
+        <h3>Claude Computer Use · AI 产品深度拆解</h3>
+        <p class="p-desc">对 Anthropic 桌面操控能力的系统性产品拆解：为什么这不是「更强的自动化」，而是交互范式迁移。</p>
+        <div class="p-decision"><b>核心洞察：</b>背景模式 vs 前台操控 = 「信任优先于便利」；SOM 定位 = 选最不容易出错的方案；信任才是转化瓶颈。</div>
+        <div class="p-meta"><span class="p-chip">6 维决策拆解</span><span class="p-chip">3 类竞品矩阵</span><span class="p-chip">2 重安全护栏</span></div>
+        <div class="p-links">
+          <a class="btn solid" href="https://ycnx20idwv23.feishu.cn/wiki/HjGCwhHLMinY0mkAO7CcuVVFnuf" target="_blank">深度拆解（飞书）</a>
+        </div>
+      </div>
     </div>
 
-    <div class="file-block">
-      <div class="file-icon">📜</div>
-      <div class="file-info">
-        <div class="file-name">项目文档（CHANGELOG）</div>
-        <div class="file-desc">版本迭代记录：v1.0基础版 → v2.1数值大改造</div>
+    <!-- 小红书 -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P5</span><span class="pcat">搜索策略 · PRD + 方案</span>
+        <div class="cov"><div class="frame">
+          <div class="fbar"><i></i><i></i><i></i><span>xiaohongshu · search-experience</span></div>
+          <div class="xhs">
+            <div class="st"><div class="no">前</div><div class="n">搜索前引导</div><ul><li>搜索联想</li><li>热门意图</li><li>意图澄清</li></ul></div>
+            <div class="st hot"><div class="no">中</div><div class="n">搜索中匹配</div><ul><li>内容/时间筛选</li><li>结果去重</li><li>类型聚合</li></ul></div>
+            <div class="st"><div class="no">后</div><div class="n">搜索后承接</div><ul><li>无结果兜底</li><li>歧义引导</li><li>低质提示</li></ul></div>
+          </div>
+        </div></div>
       </div>
-      <a href="05_dungeon_meshi_game/CHANGELOG.md" target="_blank" class="file-btn open">📜 查看文档</a>
+      <div class="p-body">
+        <h3>小红书 · 搜索体验优化</h3>
+        <p class="p-desc">面向小红书搜索场景的系统性体验优化方案：从用户搜索动线出发，覆盖搜索前/中/后三段痛点。</p>
+        <div class="p-decision"><b>核心决策：</b>三段式搜索动线 + 内容/时间筛选、结果去重、三级兜底；以「搜索成功率」为北极星指标并配套 A/B 验证框架。</div>
+        <div class="p-meta"><span class="p-chip">5 类用户深度访谈</span><span class="p-chip">3 大核心痛点</span><span class="p-chip">3 模块功能设计</span></div>
+        <div class="p-links">
+          <a class="btn solid" href="03_xiaohongshu_search_PRD.pdf" target="_blank">PRD（PDF）</a>
+          <a class="btn" href="https://ycnx20idwv23.feishu.cn/wiki/EBEbwiXgXiGtrDky02tcSn57nzd" target="_blank">PRD（飞书）</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 飞书 vs 钉钉 -->
+    <div class="proj">
+      <div class="p-cover">
+        <span class="pnum">P6</span><span class="pcat">B 端 · 竞品研究</span>
+        <div class="cov"><div class="frame">
+          <div class="fbar"><i></i><i></i><i></i><span>feishu-vs-dingtalk · analysis</span></div>
+          <div class="fvd">
+            <div class="col"><div class="h">飞书</div><ul><li>信息架构扁平</li><li>文档协同强</li><li>轻量灵活</li><li>AI 融合前沿</li></ul></div>
+            <div class="mid">VS</div>
+            <div class="col hot"><div class="h">钉钉</div><ul><li>管控/审批强</li><li>组织集成深</li><li>强制触达</li><li>生态完整</li></ul></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="p-body">
+        <h3>飞书 vs 钉钉 · 协同办公竞品分析</h3>
+        <p class="p-desc">从战略、功能、体验三层对比两款头部协同办公产品，结合工地真实场景输出差异化定位建议。</p>
+        <div class="p-decision"><b>核心决策：</b>把工地安全巡检场景还原为「管控效率 vs 用户体验」的核心矛盾，产出分级通知等改进方案。</div>
+        <div class="p-meta"><span class="p-chip">3 层对比</span><span class="p-chip">4 模块功能</span><span class="p-chip">1 套定位建议</span></div>
+        <div class="p-links">
+          <a class="btn solid" href="04_feishu_vs_dingtalk_analysis.pdf" target="_blank">分析报告（PDF）</a>
+          <a class="btn" href="https://ycnx20idwv23.feishu.cn/wiki/ViL5wjVxtiPDBkkr34dcGvpZnwe" target="_blank">报告（飞书）</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 简历 -->
+<section id="resume" class="section">
+  <div class="sec-head"><span class="idx">04</span><h2>简历</h2><span class="en">Resume</span><span class="rule"></span></div>
+  <div class="rgrid">
+    <div class="rcard">
+      <div class="rt">AI 产品经理版<em>PRIMARY</em></div>
+      <p>主攻方向：AI 应用 / Agent / 大模型落地。GearPick、办公 Agent 前置，突出产品决策与数据策略。</p>
+      <a class="btn solid" href="简历_陈昊_AI产品经理版_v2.pdf" target="_blank">下载 PDF</a>
+    </div>
+    <div class="rcard">
+      <div class="rt">产品经理版<em>ALTERNATIVE</em></div>
+      <p>备选方向：传统产品岗。葉光館、小红书前置，突出用户研究、PRD、竞品分析与全流程能力。</p>
+      <a class="btn" href="简历_陈昊_产品经理版_v2.pdf" target="_blank">下载 PDF</a>
     </div>
   </div>
-</div>
-
-
-</div>
-
-
-<!-- ========== Footer ========== -->
+</section>
 
 </div>
 
 <div class="footer">
-  陈昊 · 作品集 v4 · 2026年8月 · 邮箱：2295350938@qq.com
+  <div><b>陈昊</b> · 作品集 v7 · 2026 年 8 月 · 2295350938@qq.com</div>
+  <div class="stamp">策展人模式 · CURATED</div>
 </div>
 
 </body>

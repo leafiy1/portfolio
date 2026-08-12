@@ -3,573 +3,1509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GearPick · FPS外设推荐</title>
+<title>GearPick · FPS 外设策展档案（数据策略作品）</title>
 <style>
-:root {
-  --bg: #FAF9F5;
-  --accent: #CC785C;
-  --ink: #141413;
-  --ink-muted: #6C6A64;
-  --border: #E6DFD8;
-  --card-bg: #FFFFFF;
-  --green: #5C9A78;
+/* ============================================================
+   GearPick v3 · 策展人 / 数据档案馆 视觉系统
+   暖中性纸感底色 · 墨色文字 · 陶土橙单一强调色
+   字体阶梯：Serif 标题 / Sans 正文(≥15px) / Mono 档案数据
+   ============================================================ */
+:root{
+  --paper:#F5F0E6;          /* 米白暖纸底 */
+  --paper-2:#EDE5D6;        /* 深一档暖灰 */
+  --card:#FFFDF7;           /* 卡片纸面 */
+  --ink:#26211A;            /* 暖墨色正文 */
+  --ink-2:#463F35;          /* 次级文字 */
+  --muted:#7B7264;          /* 辅助文字 */
+  --line:rgba(66,55,40,.13);
+  --line-strong:rgba(66,55,40,.26);
+  --accent:#B4552D;         /* 陶土橙（唯一强调色） */
+  --accent-ink:#8F3D1C;
+  --accent-soft:#F4E3D7;
+  --amber:#966A1E;          /* 语义：待核实/提醒 */
+  --amber-soft:#F5EBD6;
+  --green:#4E7A5B;          /* 语义：已验证/成功 */
+  --green-soft:#E4EEE5;
+  --red:#B4443C;            /* 语义：危险/错误 */
+  --red-soft:#F6E3DF;
+  --serif:'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;
+  --sans:'Noto Sans SC','Source Han Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:ui-monospace,'Cascadia Mono','SF Mono','Consolas','Courier New',monospace;
+  --r-s:8px; --r-m:12px; --r-l:16px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(38,33,26,.05),0 2px 8px -3px rgba(38,33,26,.07);
+  --sh-2:0 1px 2px rgba(38,33,26,.05),0 12px 32px -18px rgba(38,33,26,.22);
+  --sh-3:0 1px 2px rgba(38,33,26,.05),0 22px 52px -22px rgba(140,61,28,.30),0 8px 20px -10px rgba(38,33,26,.16);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Noto Sans SC', -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans); background:var(--paper); color:var(--ink);
+  font-size:16px; line-height:1.72; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  font-optical-sizing:auto;
 }
-.header {
-  text-align: center;
-  padding: 48px 24px 28px;
-  border-bottom: 1px solid var(--border);
-}
-.header h1 {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-.header .subtitle {
-  font-size: 14px;
-  color: var(--ink-muted);
-  margin-top: 8px;
-}
-.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+::selection{background:var(--accent); color:#FFFDF7}
+a{color:var(--accent-ink)}
+:focus-visible{outline:none; box-shadow:0 0 0 3px rgba(180,85,45,.24); border-radius:var(--r-s)}
+.mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
 
-/* Form */
-.form-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px 28px;
-  margin: 28px 0;
+/* ---------- 顶部档案栏 ---------- */
+.topbar{
+  display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+  padding:9px 22px; font-size:12.5px; letter-spacing:.1em; color:var(--muted);
+  border-bottom:1px solid var(--line); background:rgba(255,253,247,.72);
 }
-.form-card h2 {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 18px;
-  margin-bottom: 20px;
+.ver-chip{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px;
+  padding:3px 11px; border-radius:var(--r-pill); border:1px solid var(--line);
+  background:var(--card); color:var(--accent-ink); letter-spacing:.04em; font-variant-numeric:tabular-nums;
 }
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 20px;
-  margin-bottom: 14px;
-}
-@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
-.form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-group label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.form-group select, .form-group input {
-  padding: 9px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 13px;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: inherit;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-.form-group select:focus, .form-group input:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-.form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236C6A64' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
-}
-.submit-btn {
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
-  transition: opacity 0.15s;
-  margin-top: 4px;
-}
-.submit-btn:hover { opacity: 0.88; }
+.ver-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
 
-/* Results */
-.results { margin-bottom: 40px; }
-.result-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 12px;
-  position: relative;
+/* ---------- Hero 刊头 ---------- */
+.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1100px 480px at 80% -140px, rgba(180,85,45,.16), transparent 62%),
+    radial-gradient(760px 380px at 4% 130px, rgba(150,106,30,.10), transparent 60%),
+    linear-gradient(180deg,#F9F5ED 0%, var(--paper) 100%);
 }
-.result-card.best { border-color: var(--accent); border-width: 2px; }
-.result-card .rank {
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 10px;
-  border-radius: 10px;
-  color: #fff;
+.hero::before{
+  content:""; position:absolute; inset:0; opacity:.55; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
-.rank.best { background: var(--accent); }
-.rank.alt { background: var(--ink-muted); }
+.hero-inner{position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:58px 22px 50px}
+.eyebrow{display:flex; align-items:center; gap:12px; font-size:12.5px; letter-spacing:.24em; color:var(--accent-ink); font-weight:700}
+.eyebrow::before{content:""; width:36px; height:2px; background:var(--accent); flex:none}
+.hero-title{
+  font-family:var(--serif); font-weight:900; font-size:clamp(42px,6.4vw,64px);
+  letter-spacing:.02em; line-height:1.08; margin:20px 0 4px; color:var(--ink);
+}
+.hero-cn{font-family:var(--serif); font-size:clamp(19px,2.6vw,25px); font-weight:700; color:var(--ink-2); letter-spacing:.14em}
+.hero-cn i{font-style:normal; color:var(--accent); padding:0 4px}
+.hero-sub{max-width:680px; font-size:16px; color:var(--ink-2); margin-top:16px}
+.hero-sub b{color:var(--ink)}
+.hero-sub .u{color:var(--accent-ink); font-weight:700}
+.hero-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px}
+.stat-plate{
+  background:rgba(255,253,247,.82); border:1px solid var(--line); border-radius:var(--r-m);
+  padding:16px 18px 15px; box-shadow:var(--sh-1); position:relative; overflow:hidden;
+}
+.stat-plate::after{
+  content:""; position:absolute; right:0; top:0; width:22px; height:22px;
+  background:linear-gradient(225deg, var(--paper) 0 50%, transparent 50% 100%);
+  border-left:1px solid var(--line); border-bottom:1px solid var(--line);
+}
+.stat-plate.warn::before{
+  content:"待补强"; position:absolute; top:10px; right:30px; font-size:9.5px; letter-spacing:.1em;
+  color:var(--amber); border:1px solid rgba(150,106,30,.4); background:var(--amber-soft); border-radius:8px; padding:1px 7px;
+}
+.stat-num{font-family:var(--mono); font-size:clamp(24px,3.4vw,31px); font-weight:700; color:var(--ink); line-height:1; font-variant-numeric:tabular-nums}
+.stat-num small{font-size:14px; color:var(--muted); font-weight:400; margin-left:2px}
+.stat-label{font-size:12.5px; color:var(--muted); margin-top:7px; letter-spacing:.05em}
+.src-vis{
+  margin-top:14px; background:rgba(255,253,247,.82); border:1px solid var(--line);
+  border-radius:var(--r-m); padding:20px 22px 18px; box-shadow:var(--sh-1);
+}
+.src-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+.src-head h3{font-family:var(--serif); font-size:16.5px; font-weight:800}
+.src-head .note{font-size:12.5px; color:var(--muted)}
+.src-rows{display:grid; gap:9px}
+.src-row-bar{display:grid; grid-template-columns:150px 1fr 92px; align-items:center; gap:12px}
+.src-row-bar .lbl{font-size:13px; color:var(--ink-2); font-weight:600; display:flex; align-items:center; gap:8px}
+.src-row-bar .lbl .k{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.05em}
+.track{height:8px; border-radius:6px; background:var(--paper-2); border:1px solid var(--line); overflow:hidden}
+.track i{display:block; height:100%; border-radius:6px; transition:width .8s var(--ease)}
+.track.t-a i{background:linear-gradient(90deg,var(--accent),#E08A5A)}
+.track.t-b i{background:linear-gradient(90deg,var(--amber),#C99B45)}
+.track.t-c i{background:linear-gradient(90deg,var(--green),#6E9A7D)}
+.src-row-bar .n{font-family:var(--mono); font-size:13px; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums}
+.coverage-stack{margin-top:16px; padding-top:14px; border-top:1px dashed var(--line)}
+.coverage-stack .cs-title{font-size:12.5px; color:var(--muted); margin-bottom:8px; letter-spacing:.05em}
+.stackbar{display:flex; height:12px; border-radius:8px; overflow:hidden; border:1px solid var(--line)}
+.stackbar i{display:block; height:100%}
+.stackbar .s1{background:var(--accent)}
+.stackbar .s2{background:var(--amber)}
+.stackbar .s3{background:var(--paper-2)}
+.legend{display:flex; gap:18px; flex-wrap:wrap; margin-top:9px; font-size:12.5px; color:var(--ink-2)}
+.legend span{display:inline-flex; align-items:center; gap:7px}
+.legend i{width:10px; height:10px; border-radius:3px; display:inline-block}
 
-.result-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 4px;
+/* ---------- 布局容器 ---------- */
+.container{max-width:1080px; margin:0 auto; padding:0 22px}
+
+/* ---------- 步骤条 ---------- */
+.stepper{
+  display:flex; gap:0; margin:26px 0 4px; padding:12px 16px; background:var(--card);
+  border:1px solid var(--line); border-radius:var(--r-m); box-shadow:var(--sh-1);
+  overflow-x:auto; scrollbar-width:none;
 }
-.result-name {
-  font-family: 'Noto Serif SC', 'STSong', serif;
-  font-size: 17px;
-  font-weight: 700;
+.stepper::-webkit-scrollbar{display:none}
+.step{flex:1; display:flex; align-items:center; gap:10px; min-width:138px; font-size:13.5px; color:var(--muted)}
+.step-num{
+  flex:none; width:24px; height:24px; border-radius:50%; border:1px solid var(--line); background:var(--paper);
+  display:grid; place-items:center; font-family:var(--mono); font-size:12px; font-weight:700; color:var(--muted);
 }
-.result-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--accent);
-  white-space: nowrap;
+.step.active{color:var(--ink); font-weight:700}
+.step.active .step-num{background:var(--accent); border-color:var(--accent); color:#FFFDF7}
+.step.done{color:var(--ink-2)}
+.step.done .step-num{background:var(--green); border-color:var(--green); color:#FFFDF7}
+.step + .step::before{content:""; flex:1; min-width:10px; height:1px; background:var(--line); margin:0 6px}
+
+/* ---------- 品类 Tab ---------- */
+.tabs{display:flex; gap:6px; margin:18px 0 0; overflow-x:auto; scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:none; display:inline-flex; align-items:center; gap:8px; padding:11px 18px; font-size:14px; font-weight:600;
+  color:var(--muted); cursor:pointer; background:var(--card); border:1px solid var(--line); border-radius:10px 10px 0 0;
+  transition:color .15s, box-shadow .15s; font-family:inherit; margin-bottom:-1px;
 }
-.result-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 10px 0;
+.tab:hover{color:var(--ink)}
+.tab.active{
+  color:var(--accent-ink); background:var(--card);
+  box-shadow:inset 0 3px 0 var(--accent);
 }
-.meta-tag {
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 10px;
-  background: var(--bg);
-  color: var(--ink-muted);
-  border: 1px solid var(--border);
+.tab svg{width:18px;height:18px;flex:none}
+.tab .count{font-family:var(--mono); font-size:11.5px; color:var(--muted); background:var(--paper); border-radius:var(--r-pill); padding:1px 8px; font-variant-numeric:tabular-nums}
+
+/* ---------- 表单 ---------- */
+.form-card{
+  background:var(--card); border:1px solid var(--line); border-radius:0 0 var(--r-l) var(--r-l);
+  padding:26px 28px 24px; margin-bottom:28px; box-shadow:var(--sh-2);
 }
-.reason {
-  font-size: 12px;
-  color: var(--ink-muted);
-  margin-top: 4px;
-  line-height: 1.6;
+.form-head{display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:20px}
+.form-head h2{font-family:var(--serif); font-size:22px; font-weight:800; letter-spacing:.01em; display:flex; align-items:center; gap:10px}
+.form-head h2 svg{width:22px;height:22px;color:var(--accent)}
+.form-hint{font-size:13px; color:var(--muted)}
+.form-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px 20px}
+.form-group{display:flex; flex-direction:column; gap:7px}
+.form-group label{font-size:13px; font-weight:600; color:var(--ink-2); letter-spacing:.05em}
+.form-group select{
+  padding:11px 36px 11px 13px; border:1px solid var(--line-strong); border-radius:var(--r-s);
+  font-size:14.5px; background:var(--card); color:var(--ink); font-family:inherit;
+  appearance:none; -webkit-appearance:none; cursor:pointer; width:100%;
+  transition:border-color .15s, box-shadow .15s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238F3D1C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 13px center;
 }
-.caveat {
-  font-size: 11px;
-  color: var(--accent);
-  margin-top: 6px;
+.form-group select:hover{border-color:var(--muted)}
+.form-group select:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(180,85,45,.16)}
+.form-actions{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+
+/* ---------- 按钮 ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:inherit;
+  border-radius:var(--r-s); cursor:pointer; font-weight:600;
+  transition:transform .12s var(--ease), box-shadow .18s, background .18s, border-color .18s;
 }
-.pro-ref {
-  font-size: 11px;
-  color: var(--green);
-  margin-top: 4px;
+.btn svg{width:17px;height:17px;flex:none}
+.btn-primary{
+  background:var(--accent); color:#FFFDF7; border:1px solid var(--accent);
+  padding:13px 24px; font-size:15px; letter-spacing:.04em;
+  box-shadow:0 8px 18px -10px rgba(140,61,28,.6);
 }
-.source-note {
-  font-size: 10px;
-  color: var(--ink-muted);
-  opacity: 0.7;
-  margin-top: 8px;
-  font-style: italic;
+.btn-primary:hover{background:var(--accent-ink); transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{
+  background:var(--card); color:var(--ink-2); border:1px solid var(--line-strong);
+  padding:12px 20px; font-size:14.5px;
+}
+.btn-ghost:hover{border-color:var(--ink-2); color:var(--ink)}
+
+/* ---------- 状态卡 ---------- */
+.state-card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r-l); padding:38px 22px;
+  margin-bottom:26px; text-align:center; color:var(--ink-2); font-size:15px; box-shadow:var(--sh-2);
+}
+.state-card .ic{width:46px;height:46px;margin:0 auto 14px;border-radius:14px;display:grid;place-items:center;
+  background:var(--accent-soft); color:var(--accent-ink); border:1px solid rgba(180,85,45,.25)}
+.state-card .ic svg{width:24px;height:24px}
+.state-card.error{border-color:rgba(180,68,60,.45)}
+.state-card.error .ic{background:var(--red-soft); color:var(--red); border-color:rgba(180,68,60,.3)}
+.state-card h3{font-family:var(--serif); font-size:17px; font-weight:800; margin-bottom:6px}
+.spinner{
+  width:28px; height:28px; margin:0 auto 12px; border-radius:50%;
+  border:3px solid var(--line); border-top-color:var(--accent); animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state-card .retry-btn{margin-top:14px}
+
+/* ---------- 结果区 ---------- */
+.section-title{
+  font-family:var(--serif); font-size:21px; margin:6px 0 14px; display:flex; align-items:center; gap:12px;
+  font-weight:800; letter-spacing:.01em;
+}
+.section-title .rule{flex:1; max-width:120px; height:1px; background:var(--line)}
+.section-title .note{font-size:13px; color:var(--muted); font-weight:400; font-family:var(--sans); letter-spacing:0}
+.summary-bar{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:var(--amber-soft);
+  border:1px solid rgba(150,106,30,.35); color:var(--amber); border-radius:var(--r-m);
+  padding:11px 16px; font-size:13.5px; margin-bottom:16px;
+}
+.summary-bar b{font-weight:700}
+
+/* ---------- 结果卡 ---------- */
+.result-card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r-l);
+  padding:22px 24px 16px; margin-bottom:18px; box-shadow:var(--sh-2); position:relative;
+  transition:border-color .2s, box-shadow .2s;
+}
+.result-card.best{border-color:rgba(180,85,45,.55); box-shadow:var(--sh-3)}
+.result-card.best::before{
+  content:""; position:absolute; left:0; top:20px; bottom:20px; width:3px;
+  border-radius:3px; background:var(--accent);
+}
+.rc-head{display:flex; gap:16px; align-items:flex-start}
+.rc-idx{
+  flex:none; width:56px; text-align:center; border:1px solid var(--line); border-radius:var(--r-s);
+  background:var(--paper); font-family:var(--mono); font-size:13px; font-weight:700; color:var(--ink-2);
+  padding:7px 4px 6px; letter-spacing:.04em; font-variant-numeric:tabular-nums;
+}
+.rc-idx .lbl{display:block; font-size:9.5px; letter-spacing:.16em; color:var(--muted); font-weight:700; margin-top:2px}
+.result-card.best .rc-idx{border-color:var(--accent); color:#FFFDF7; background:var(--accent)}
+.result-card.best .rc-idx .lbl{color:rgba(255,253,247,.85)}
+.rc-main{flex:1; min-width:0}
+.rc-name{font-family:var(--serif); font-size:19px; font-weight:800; letter-spacing:.01em; line-height:1.35}
+.rc-meta{font-size:12.5px; color:var(--muted); margin-top:4px; display:flex; gap:7px; flex-wrap:wrap; align-items:center}
+.rc-meta .mono{font-family:var(--mono); font-size:11.5px; color:var(--accent-ink); background:var(--accent-soft); padding:1px 8px; border-radius:6px}
+.rc-price{flex:none; text-align:right}
+.rc-price .cur{font-family:var(--mono); font-size:15px; color:var(--accent)}
+.rc-price .num{font-family:var(--mono); font-size:27px; font-weight:700; color:var(--accent-ink); font-variant-numeric:tabular-nums; line-height:1.1}
+.rc-price .note{display:block; font-size:11.5px; color:var(--muted); margin-top:2px; max-width:180px}
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin:15px 0 2px}
+.chip{
+  font-size:12.5px; padding:4px 11px; border-radius:var(--r-pill); border:1px solid var(--line);
+  background:var(--paper); color:var(--ink-2); display:inline-flex; align-items:center; gap:6px;
+}
+.chip .ck{font-weight:800; font-size:11px}
+.chip.ok{background:var(--green-soft); border-color:rgba(78,122,91,.35); color:var(--green)}
+.chip.ok .ck{color:var(--green)}
+.chip.soft{background:var(--amber-soft); border-color:rgba(150,106,30,.35); color:var(--amber)}
+.chip.drop{background:var(--amber-soft); border-color:rgba(150,106,30,.35); color:var(--amber)}
+.chip.drop .ck{color:var(--amber)}
+.rc-tags{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0}
+.tag{
+  font-family:var(--mono); font-size:11.5px; padding:3px 9px; border-radius:6px;
+  background:var(--paper); border:1px solid var(--line); color:var(--muted); font-variant-numeric:tabular-nums;
+}
+.rc-score{display:flex; align-items:center; gap:13px; margin:17px 0 2px}
+.score-label{font-size:12.5px; color:var(--muted); font-weight:700; letter-spacing:.08em; white-space:nowrap}
+.score-track{flex:1; height:8px; border-radius:6px; background:var(--paper-2); overflow:hidden; border:1px solid var(--line)}
+.score-track i{display:block; height:100%; border-radius:6px; background:linear-gradient(90deg,var(--accent),#E08A5A); transition:width .6s var(--ease)}
+.score-num{font-family:var(--mono); font-size:17px; font-weight:700; color:var(--accent-ink); font-variant-numeric:tabular-nums; min-width:36px; text-align:right}
+.rc-actions{display:flex; gap:9px; margin-top:13px; flex-wrap:wrap}
+.mini-btn{
+  display:inline-flex; align-items:center; gap:7px; font-size:13.5px; padding:8px 14px; border-radius:var(--r-s);
+  cursor:pointer; font-family:inherit; border:1px solid var(--line); background:var(--card); color:var(--ink-2);
+  transition:all .15s var(--ease);
+}
+.mini-btn svg{width:15px;height:15px;flex:none}
+.mini-btn:hover{color:var(--ink); border-color:var(--muted); transform:translateY(-1px)}
+.mini-btn.primary{background:var(--accent-soft); border-color:rgba(180,85,45,.35); color:var(--accent-ink); font-weight:700}
+.mini-btn.primary:hover{background:#EBD5C5}
+.mini-btn.toggled{background:var(--green); border-color:var(--green); color:#FFFDF7}
+.link-btn{
+  display:block; width:100%; padding:12px; margin:4px 0 22px; border:1px dashed var(--line-strong);
+  background:var(--card); color:var(--ink-2); border-radius:var(--r-m); font-size:13.5px; cursor:pointer;
+  font-family:inherit; transition:all .15s;
+}
+.link-btn:hover{color:var(--accent-ink); border-color:var(--accent)}
+
+/* ---------- 可解释区 ---------- */
+.explain{display:grid; grid-template-rows:0fr; transition:grid-template-rows .32s var(--ease)}
+.explain.open{grid-template-rows:1fr}
+.explain-inner{overflow:hidden}
+.explain-body{border-top:1px dashed var(--line-strong); margin-top:16px; padding-top:16px}
+.ex-block{margin-bottom:16px}
+.ex-block h4{font-family:var(--serif); font-size:15.5px; font-weight:800; color:var(--ink); margin-bottom:9px; display:flex; align-items:center; gap:9px}
+.ex-block h4 .dot{width:8px; height:8px; border-radius:2px; transform:rotate(45deg); flex:none}
+.ex-list{margin:0; padding-left:0; list-style:none; font-size:15px; color:var(--ink-2)}
+.ex-list li{position:relative; padding-left:19px; margin-bottom:5px}
+.ex-list li::before{content:""; position:absolute; left:2px; top:.72em; width:5px; height:5px; background:var(--accent); transform:rotate(45deg)}
+.score-parts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:4px}
+.spart{background:var(--paper); border:1px solid var(--line); border-radius:var(--r-m); padding:10px 13px 9px}
+.spart .t{font-size:12px; color:var(--muted); letter-spacing:.06em}
+.spart .v{font-family:var(--mono); font-size:19px; font-weight:700; margin-top:3px; color:var(--ink); font-variant-numeric:tabular-nums}
+.spart .bar{height:3px; border-radius:2px; background:var(--line); margin-top:7px; overflow:hidden}
+.spart .bar i{display:block; height:100%}
+.src-row{display:flex; align-items:center; gap:10px; padding:6px 0; font-size:14px; color:var(--ink-2); flex-wrap:wrap}
+.src-type{flex:none; width:66px; font-size:11.5px; text-align:center; border-radius:var(--r-pill); padding:3px 0; font-weight:700; letter-spacing:.02em}
+.src-type.pro{background:var(--accent-soft); color:var(--accent-ink)}
+.src-type.bilibili{background:var(--amber-soft); color:var(--amber)}
+.src-type.community{background:var(--green-soft); color:var(--green)}
+.src-type.official{background:var(--paper-2); color:var(--ink-2)}
+.src-row a{color:var(--accent-ink); text-decoration:none; word-break:break-all; border-bottom:1px dotted rgba(180,85,45,.45)}
+.src-row a:hover{border-bottom-style:solid}
+.coverage{display:flex; align-items:center; gap:10px; margin:8px 0 4px; font-size:14px; color:var(--ink-2); flex-wrap:wrap}
+.cov-dots{display:flex; gap:5px}
+.cov-dot{width:10px; height:10px; border-radius:50%; background:var(--paper-2); border:1px solid var(--line-strong)}
+.cov-dot.on{background:var(--green); border-color:var(--green)}
+.verify-badge{font-size:12px; padding:3px 11px; border-radius:var(--r-pill); background:var(--green-soft); color:var(--green); border:1px solid rgba(78,122,91,.35); font-weight:700}
+.verify-badge.single{background:var(--amber-soft); color:var(--amber); border-color:rgba(150,106,30,.4)}
+.rule-note{
+  margin-top:14px; padding:12px 15px; background:var(--paper); border:1px dashed var(--line-strong);
+  border-radius:var(--r-s); font-size:12.5px; color:var(--muted); font-family:var(--mono); line-height:1.9;
 }
 
-/* Tabs */
-.tabs {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0;
+/* ---------- 对比栏 / 弹窗 ---------- */
+.compare-bar{
+  position:sticky; bottom:14px; z-index:40; display:flex; align-items:center; justify-content:space-between;
+  gap:12px; background:#2A251D; color:#E8DFD0; border-radius:var(--r-l); padding:12px 18px; margin:12px 0 30px;
+  box-shadow:0 16px 40px -10px rgba(0,0,0,.45); flex-wrap:wrap;
 }
-.tab {
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-muted);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: all 0.15s;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  font-family: inherit;
+.compare-bar .info{font-size:13px; display:flex; align-items:center; gap:9px; flex-wrap:wrap}
+.cb-chip{display:inline-flex; align-items:center; gap:5px; background:rgba(255,253,247,.12); border-radius:var(--r-s); padding:3px 10px; font-size:12.5px}
+.cb-chip b{cursor:pointer; color:#E08A5A; font-weight:700; padding:0 2px}
+.compare-bar .acts{display:flex; gap:9px}
+.cb-btn{padding:8px 15px; border-radius:var(--r-s); font-size:13px; cursor:pointer; font-family:inherit; border:1px solid rgba(255,253,247,.28); background:transparent; color:#E8DFD0}
+.cb-btn:hover{background:rgba(255,253,247,.1)}
+.cb-btn.main{background:var(--accent); border-color:var(--accent); font-weight:700}
+.cb-btn.main:disabled{opacity:.4; cursor:not-allowed}
+.modal-mask{
+  position:fixed; inset:0; z-index:60; background:rgba(38,33,26,.55); display:flex; align-items:center;
+  justify-content:center; padding:18px; opacity:0; pointer-events:none; transition:opacity .2s;
 }
-.tab.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+.modal-mask.show{opacity:1; pointer-events:auto}
+.modal{
+  background:var(--card); border-radius:var(--r-l); max-width:960px; width:100%; max-height:86vh;
+  display:flex; flex-direction:column; box-shadow:0 30px 80px -20px rgba(0,0,0,.5);
+  transform:translateY(10px) scale(.99); transition:transform .25s var(--ease);
 }
-.tab:hover { color: var(--ink); }
+.modal-mask.show .modal{transform:translateY(0) scale(1)}
+.modal-head{display:flex; align-items:center; justify-content:space-between; padding:18px 22px; border-bottom:1px solid var(--line)}
+.modal-head h3{font-family:var(--serif); font-size:18px; font-weight:800; display:flex; align-items:center; gap:10px}
+.modal-head h3 svg{width:19px;height:19px;color:var(--accent)}
+.modal-close{border:1px solid var(--line); background:var(--paper); width:32px; height:32px; border-radius:var(--r-s); cursor:pointer; font-size:15px; color:var(--muted)}
+.modal-close:hover{color:var(--ink); border-color:var(--muted)}
+.modal-body{overflow:auto; padding:16px 22px 22px}
+.cmp-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r-m)}
+table.cmp{border-collapse:collapse; width:100%; min-width:640px; font-size:14px}
+table.cmp th, table.cmp td{border:1px solid var(--line); padding:10px 12px; vertical-align:top; text-align:left}
+table.cmp thead th{background:var(--paper-2); font-size:13.5px; font-family:var(--serif); font-weight:800}
+table.cmp thead th .rm{display:block; font-size:11.5px; color:var(--accent-ink); cursor:pointer; font-weight:600; font-family:var(--sans)}
+table.cmp td.k{background:var(--paper); color:var(--muted); width:96px; font-weight:600; white-space:nowrap; font-size:12.5px}
+table.cmp td.best{background:#FBEFE8}
+.cmp-foot{margin-top:12px; font-size:12.5px; color:var(--muted)}
 
-/* Empty state */
-.empty {
-  text-align: center;
-  padding: 40px;
-  color: var(--ink-muted);
-  font-size: 14px;
+/* ---------- 策展人手记（选购指南 + FAQ） ---------- */
+.guide{margin:50px 0 8px; padding-top:34px; border-top:1px solid var(--line)}
+.guide-head{margin-bottom:18px}
+.guide-head h2{font-family:var(--serif); font-size:23px; font-weight:900; letter-spacing:.01em; margin-top:10px}
+.guide-head .desc{font-size:14px; color:var(--muted); margin-top:6px}
+.guide-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+details.guide-card{background:var(--card); border:1px solid var(--line); border-radius:var(--r-l); box-shadow:var(--sh-1); overflow:hidden}
+details.guide-card summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px; padding:17px 20px; font-family:var(--serif); font-size:16.5px; font-weight:800}
+details.guide-card summary::-webkit-details-marker{display:none}
+details.guide-card summary .chev{margin-left:auto; color:var(--muted); font-size:15px; transition:transform .2s var(--ease)}
+details.guide-card[open] summary .chev{transform:rotate(180deg)}
+details.guide-card[open] summary{border-bottom:1px dashed var(--line)}
+.guide-num{font-family:var(--mono); font-size:12px; color:var(--accent-ink); background:var(--accent-soft); border-radius:var(--r-s); padding:4px 9px; flex:none; font-variant-numeric:tabular-nums}
+.guide-body{padding:6px 22px 20px; font-size:15px; color:var(--ink-2)}
+.guide-body h5{font-size:14px; font-weight:700; color:var(--ink); margin:14px 0 6px; letter-spacing:.03em}
+.guide-body ul{padding-left:20px; margin-bottom:6px}
+.guide-body li{margin-bottom:5px}
+.guide-body .t{color:var(--accent-ink); font-weight:700}
+details.faq-card{background:var(--card); border:1px solid var(--line); border-radius:var(--r-l); box-shadow:var(--sh-1); overflow:hidden; margin-top:14px}
+details.faq-card summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px; padding:17px 22px; font-size:15.5px; font-weight:700; color:var(--ink)}
+details.faq-card summary::-webkit-details-marker{display:none}
+details.faq-card summary .q{font-family:var(--serif); color:var(--accent); font-weight:900; font-size:15px}
+details.faq-card summary .chev{margin-left:auto; color:var(--muted); transition:transform .2s var(--ease)}
+details.faq-card[open] summary .chev{transform:rotate(180deg)}
+details.faq-card[open] summary{border-bottom:1px dashed var(--line)}
+.faq-body{padding:12px 22px 20px; font-size:15px; color:var(--ink-2); line-height:1.85}
+.faq-body b{color:var(--ink)}
+
+/* ---------- 页脚 ---------- */
+.colophon{margin-top:56px; background:#2A251D; color:#D8CFC0}
+.colophon-inner{max-width:1080px; margin:0 auto; padding:38px 22px 34px; font-size:14px; line-height:1.95}
+.colophon .mast{font-family:var(--serif); font-size:20px; font-weight:900; color:#F0E8DA; letter-spacing:.05em}
+.colophon .meth{margin-top:10px; color:#C9BFAD; font-size:13.5px}
+.colophon .meth b{color:#E8DFD0}
+.colophon .meth a{color:#E3B28F}
+.colophon .links{display:flex; gap:20px; flex-wrap:wrap; margin-top:16px}
+.colophon .links a{color:#E3B28F; text-decoration:none; border-bottom:1px dotted rgba(227,178,143,.5)}
+.colophon .links a:hover{border-bottom-style:solid}
+.ver-note{font-family:var(--mono); font-size:12.5px; color:#9C917F; margin-top:16px; border-top:1px solid rgba(255,253,247,.14); padding-top:12px; line-height:1.8}
+.red-line{font-family:var(--mono); font-size:12px; color:#A99D89; margin-top:10px; line-height:1.9}
+
+/* ---------- Toast ---------- */
+.toast{
+  position:fixed; left:50%; bottom:28px; transform:translate(-50%,18px); z-index:80;
+  background:#2A251D; color:#F0E8DA; padding:11px 22px; border-radius:var(--r-pill);
+  font-size:14px; box-shadow:0 14px 34px -12px rgba(0,0,0,.5);
+  opacity:0; pointer-events:none; transition:opacity .25s, transform .25s var(--ease);
+}
+.toast.show{opacity:1; transform:translate(-50%,0)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:920px){
+  .form-row{grid-template-columns:1fr 1fr}
+  .guide-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .src-row-bar{grid-template-columns:130px 1fr 70px}
+}
+@media (max-width:640px){
+  .form-row{grid-template-columns:1fr}
+  .rc-head{flex-wrap:wrap}
+  .rc-price{text-align:left; width:100%}
+  .score-parts{grid-template-columns:1fr}
+  .hero-inner{padding:44px 18px 40px}
+  .container{padding:0 16px}
+  .topbar{padding:9px 16px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .src-row-bar{grid-template-columns:1fr; gap:5px}
+  .src-row-bar .n{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; scroll-behavior:auto!important}
 }
 
-.footer {
-  text-align: center;
-  padding: 24px 0 40px;
-  font-size: 12px;
-  color: var(--ink-muted);
-  border-top: 1px solid var(--border);
-}
-.footer a { color: var(--accent); text-decoration: none; }
+
 </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>🎯 GearPick</h1>
-  <div class="subtitle">FPS 外设推荐 · 基于职业选手数据 + 社区真实口碑</div>
+<div class="topbar">
+  <span>作品集子项目 · 数据策略代表作</span>
+  <span class="ver-chip" id="verChip"><span class="dot"></span>数据版本 v3.0 · 核对中</span>
 </div>
 
-<div class="container">
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">FPS 外设 · 策展人模式 · 数据可溯源</p>
+    <h1 class="hero-title">GearPick</h1>
+    <p class="hero-cn">外设策展档案<i>·</i>智能推荐</p>
+    <p class="hero-sub">不靠算法黑盒，靠<b>策展人</b>：先硬过滤，再偏好加权，最后信源加分。<br>每个推荐都展开「为什么推荐它」——得分构成、注意事项、信源链接，<span class="u">逐条可溯源</span>。</p>
+    <div class="hero-stats" id="heroStats"></div>
+    <div class="src-vis" id="srcVis"></div>
+  </div>
+</header>
 
-<div class="form-card">
-  <h2>告诉我你的需求</h2>
+<main class="container">
 
-  <div class="tabs">
-    <button class="tab active" data-tab="mouse">🖱 鼠标</button>
-    <button class="tab" data-tab="keyboard">⌨ 键盘</button>
-    <button class="tab" data-tab="mousepad">🗒 鼠标垫</button>
-    <button class="tab" data-tab="headset">🎧 耳机</button>
+  <nav class="stepper" id="stepper" aria-label="操作步骤">
+    <div class="step active" data-step="1"><span class="step-num">1</span>选品类</div>
+    <div class="step" data-step="2"><span class="step-num">2</span>填需求</div>
+    <div class="step" data-step="3"><span class="step-num">3</span>看推荐</div>
+    <div class="step" data-step="4"><span class="step-num">4</span>理解理由</div>
+    <div class="step" data-step="5"><span class="step-num">5</span>对比导出</div>
+  </nav>
+
+  <div class="tabs" id="tabs" role="tablist"></div>
+
+  <section class="form-card">
+    <div class="form-head">
+      <h2 id="form-title"></h2>
+      <span class="form-hint" id="form-hint"></span>
+    </div>
+
+    <div id="form-mouse">
+      <div class="form-row">
+        <div class="form-group">
+          <label>预算范围</label>
+          <select id="m-budget">
+            <option value="">不限</option>
+            <option value="0-200">¥200 以内</option>
+            <option value="200-500">¥200–500</option>
+            <option value="500-1000">¥500–1000</option>
+            <option value="1000-99999">¥1000 以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>手长</label>
+          <select id="m-hand">
+            <option value="">不限</option>
+            <option value="小">&lt;17cm 小手</option>
+            <option value="中">17–19cm 中手</option>
+            <option value="大">&gt;19cm 大手</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>握法</label>
+          <select id="m-grip">
+            <option value="">不限</option>
+            <option value="趴握">趴握（手掌贴鼠）</option>
+            <option value="抓握">抓握（指尖+掌心）</option>
+            <option value="指握">指握（纯指尖）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>偏好</label>
+          <select id="m-pref">
+            <option value="">综合推荐</option>
+            <option value="极致轻量">极致轻量</option>
+            <option value="人体工学">人体工学模具</option>
+            <option value="性价比">性价比优先</option>
+            <option value="无线长续航">无线长续航</option>
+            <option value="高回报率">高回报率（4K/8K）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>常玩游戏</label>
+          <select id="m-game">
+            <option value="">不限</option>
+            <option value="通用FPS">通用 FPS</option>
+            <option value="CS2">CS2</option>
+            <option value="VALORANT">VALORANT</option>
+            <option value="APEX英雄">APEX 英雄</option>
+            <option value="守望先锋2">守望先锋2</option>
+            <option value="三角洲行动">三角洲行动</option>
+            <option value="办公·轻度游戏">办公 / 轻度游戏</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="form-keyboard" hidden>
+      <div class="form-row">
+        <div class="form-group">
+          <label>预算范围</label>
+          <select id="k-budget">
+            <option value="">不限</option>
+            <option value="0-300">¥300 以内</option>
+            <option value="300-600">¥300–600</option>
+            <option value="600-99999">¥600 以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>键盘类型</label>
+          <select id="k-type">
+            <option value="">不限</option>
+            <option value="磁轴(RT)">磁轴（RT 快触发）</option>
+            <option value="机械">机械键盘</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>配列</label>
+          <select id="k-layout">
+            <option value="">不限</option>
+            <option value="60%">60%（极紧凑）</option>
+            <option value="65%">65%（紧凑）</option>
+            <option value="75%">75%（有 F 区）</option>
+            <option value="80%">80%（TKL 常规）</option>
+            <option value="100%">100%（全配列）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>连接方式</label>
+          <select id="k-conn">
+            <option value="">不限</option>
+            <option value="有线">有线（低延迟）</option>
+            <option value="无线">无线 / 三模</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>常玩游戏</label>
+          <select id="k-game">
+            <option value="">不限</option>
+            <option value="CS2">CS2</option>
+            <option value="VALORANT">VALORANT</option>
+            <option value="三角洲行动">三角洲行动</option>
+            <option value="综合游戏·码字">综合游戏 / 码字</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="form-mousepad" hidden>
+      <div class="form-row">
+        <div class="form-group">
+          <label>预算范围</label>
+          <select id="mp-budget">
+            <option value="">不限</option>
+            <option value="0-150">¥150 以内</option>
+            <option value="150-300">¥150–300</option>
+            <option value="300-99999">¥300 以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>速度偏好</label>
+          <select id="mp-speed">
+            <option value="">不限</option>
+            <option value="控制型">控制型（CS/VAL 稳定瞄准）</option>
+            <option value="平衡型">平衡型（什么都玩）</option>
+            <option value="速度型">速度型（APEX/OW 跟枪）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>材质</label>
+          <select id="mp-material">
+            <option value="">不限</option>
+            <option value="布垫">布垫（传统）</option>
+            <option value="玻璃垫">玻璃垫（顺滑）</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="form-headset" hidden>
+      <div class="form-row">
+        <div class="form-group">
+          <label>预算范围</label>
+          <select id="h-budget">
+            <option value="">不限</option>
+            <option value="0-500">¥500 以内</option>
+            <option value="500-1500">¥500–1500</option>
+            <option value="1500-99999">¥1500 以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>连接方式</label>
+          <select id="h-conn">
+            <option value="">不限</option>
+            <option value="有线">有线（音质优先）</option>
+            <option value="无线">无线（自由方便）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>主要用途</label>
+          <select id="h-use">
+            <option value="">综合推荐</option>
+            <option value="FPS脚步声定位">FPS 脚步声定位</option>
+            <option value="音乐+游戏">音乐 + 游戏兼顾</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-primary" onclick="recommend()" id="submitBtn"></button>
+      <button class="btn btn-ghost" onclick="resetForm()" id="resetBtn"></button>
+    </div>
+  </section>
+
+  <div id="loading" class="state-card" hidden>
+    <div class="spinner"></div>
+    <h3>正在核对档案</h3>
+    <p>按「硬过滤 → 偏好加权 → 信源加分」计算匹配度…</p>
   </div>
 
-  <!-- Mouse Form -->
-  <div id="form-mouse">
-    <div class="form-row">
-      <div class="form-group">
-        <label>预算范围</label>
-        <select id="m-budget">
-          <option value="">不限</option>
-          <option value="0-200">¥200以内</option>
-          <option value="200-500">¥200-500</option>
-          <option value="500-1000">¥500-1000</option>
-          <option value="1000-99999">¥1000以上</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>手长</label>
-        <select id="m-hand">
-          <option value="">不限</option>
-          <option value="小">&lt; 17cm（小手）</option>
-          <option value="中">17-19cm（中手）</option>
-          <option value="大">&gt; 19cm（大手）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>握法</label>
-        <select id="m-grip">
-          <option value="">不限</option>
-          <option value="趴握">趴握（手掌贴鼠标）</option>
-          <option value="抓握">抓握（指尖+掌心）</option>
-          <option value="指握">指握（纯指尖）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>偏好</label>
-        <select id="m-pref">
-          <option value="">综合推荐</option>
-          <option value="极致轻量">极致轻量</option>
-          <option value="人体工学">人体工学模具</option>
-          <option value="性价比">性价比优先</option>
-          <option value="无线长续航">无线长续航</option>
-          <option value="高回报率">高回报率(4K/8K)</option>
-        </select>
-      </div>
+  <div id="errorState" class="state-card error" hidden>
+    <div class="ic" id="errIc"></div>
+    <h3>档案加载失败</h3>
+    <p>产品数据未能载入，无法推荐。</p>
+    <button class="btn btn-ghost retry-btn" onclick="location.reload()">重新加载</button>
+  </div>
+
+  <div id="emptyState" class="state-card">
+    <div class="ic" id="emptyIc"></div>
+    <h3>档案室已就绪</h3>
+    <p>选择品类与需求，点击「开始推荐」。<br>没有硬性偏好也可以直接推荐——策展人会按信源与收录序给出首选。</p>
+    <button class="btn btn-primary" style="margin-top:16px" onclick="recommend()">看一份默认策展档案</button>
+  </div>
+
+  <div id="results"></div>
+
+  <div id="compareBar" class="compare-bar" hidden>
+    <div class="info">
+      <span>对比备选：</span>
+      <span id="cmpChips"></span>
+      <span id="cmpCountText" style="opacity:.75"></span>
+    </div>
+    <div class="acts">
+      <button class="cb-btn" onclick="clearCompare()">清空</button>
+      <button class="cb-btn main" id="compareBtn" onclick="openCompare()" disabled>开始对比</button>
     </div>
   </div>
 
-  <!-- Keyboard Form -->
-  <div id="form-keyboard" style="display:none">
-    <div class="form-row">
-      <div class="form-group">
-        <label>预算范围</label>
-        <select id="k-budget">
-          <option value="">不限</option>
-          <option value="0-300">¥300以内</option>
-          <option value="300-600">¥300-600</option>
-          <option value="600-99999">¥600以上</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>键盘类型</label>
-        <select id="k-type">
-          <option value="">不限</option>
-          <option value="磁轴(RT)">磁轴（RT快触发，FPS竞技）</option>
-          <option value="机械">机械键盘（手感+码字）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>配列</label>
-        <select id="k-layout">
-          <option value="">不限</option>
-          <option value="65%">65%（紧凑，桌面空间小）</option>
-          <option value="75%">75%（有F区，最实用）</option>
-          <option value="100%">100%（全配列，办公必需）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>连接方式</label>
-        <select id="k-conn">
-          <option value="">不限</option>
-          <option value="有线">有线（低延迟竞技）</option>
-          <option value="三模">无线/三模（桌面整洁）</option>
-        </select>
-      </div>
+  <section class="guide" id="guide">
+    <div class="guide-head">
+      <p class="eyebrow">策展人手记</p>
+      <h2>怎么选外设：四品类速查 + 常见问题</h2>
+      <p class="desc">这是我做数据策略时沉淀的判断框架——先看需求决定取舍，再看信源验证口碑。展开阅读，面试官也可以从这里了解产品思考。</p>
     </div>
-  </div>
 
-  <!-- Mousepad Form -->
-  <div id="form-mousepad" style="display:none">
-    <div class="form-row">
-      <div class="form-group">
-        <label>预算范围</label>
-        <select id="mp-budget">
-          <option value="">不限</option>
-          <option value="0-150">¥150以内</option>
-          <option value="150-300">¥150-300</option>
-          <option value="300-99999">¥300以上</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>速度偏好</label>
-        <select id="mp-speed">
-          <option value="">不限</option>
-          <option value="控制型">控制型（CS/VAL，稳定瞄准）</option>
-          <option value="平衡型">平衡型（什么都玩）</option>
-          <option value="速度型">速度型（APEX/OW，快速跟枪）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>材质</label>
-        <select id="mp-material">
-          <option value="">不限</option>
-          <option value="布垫">布垫（传统，控制好）</option>
-          <option value="玻璃垫">玻璃垫（顺滑，易清洁）</option>
-        </select>
-      </div>
+    <div class="guide-grid">
+
+      <details class="guide-card">
+        <summary><span class="guide-num">01</span>鼠标：先手型握法，再谈参数<span class="chev">▾</span></summary>
+        <div class="guide-body">
+          <ul>
+            <li><span class="t">手长量法</span>：中指指尖到手腕第一条横纹，&lt;17cm 小手 / 17–19cm 中手 / &gt;19cm 大手。手型错了，再贵的传感器都白搭。</li>
+            <li><span class="t">握法决定模具</span>：趴握选人体工学（掌心有支撑），抓握/指握选对称或低背模具。职业选手配置里趴握+大手最常见。</li>
+            <li><span class="t">参数看四样</span>：重量（FPS 竞技普遍偏好 ≤60g）、传感器（PAW3395/3950 级别足够）、回报率（1000Hz 起步，4K/8K 是加分项）、微动寿命。</li>
+            <li><span class="t">无线不是玄学</span>：主流 2.4G 无线延迟已与有线无异，续航 100h+ 属正常水平。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="guide-card">
+        <summary><span class="guide-num">02</span>键盘：磁轴与机械是两种思路<span class="chev">▾</span></summary>
+        <div class="guide-body">
+          <ul>
+            <li><span class="t">磁轴（RT）</span>：触发行程 0.1–4.0mm 可调 + 快速触发（松键即断），急停、连跳、身法更跟手，FPS 竞技向首选。</li>
+            <li><span class="t">机械</span>：手感与声音可定制，码字/综合体验更好；选轴看触发力度与段落感，线性轴适合游戏。</li>
+            <li><span class="t">配列</span>：65%/75% 紧凑省桌面（FPS 主流），80% TKL 保留方向键，100% 全功能但占桌面。</li>
+            <li><span class="t">回报率与延迟</span>：磁轴普遍 8K 回报率；有线延迟最低，无线三模胜在整洁，重要比赛还是建议有线。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="guide-card">
+        <summary><span class="guide-num">03</span>鼠标垫：速度与控制是光谱两端<span class="chev">▾</span></summary>
+        <div class="guide-body">
+          <ul>
+            <li><span class="t">控制型</span>：CS2/VALORANT 需要稳定架枪，涩面+厚底提供急停手感。</li>
+            <li><span class="t">速度型</span>：APEX/OW 需要快速跟枪，顺滑表面减少启动摩擦。</li>
+            <li><span class="t">平衡型</span>：什么都玩选它，多数口粮垫都在这档。</li>
+            <li><span class="t">尺寸</span>：手臂流选 450×400 起；手腕流 350×300 也够。布垫锁边、橡胶底、防水涂层是三个易忽略的耐用点。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="guide-card">
+        <summary><span class="guide-num">04</span>耳机：定位优先，还是音乐优先<span class="chev">▾</span></summary>
+        <div class="guide-body">
+          <ul>
+            <li><span class="t">FPS 定位向</span>：关注声场与脚步声频段还原，7.1 虚拟环绕是锦上添花；建议配可拆卸麦克风。</li>
+            <li><span class="t">音乐+游戏兼顾</span>：看驱动单元尺寸与频响曲线，大单元（50mm+）+ 均衡调音更耐听。</li>
+            <li><span class="t">开放式 vs 封闭式</span>：封闭式隔音不漏音（宿舍/网吧友好），开放式声场自然但漏音。</li>
+            <li><span class="t">无线续航</span>：2.4G 无线延迟低，蓝牙仅适合非竞技场景；续航 30h+ 是及格线。</li>
+          </ul>
+        </div>
+      </details>
+
     </div>
-  </div>
 
-  <!-- Headset Form -->
-  <div id="form-headset" style="display:none">
-    <div class="form-row">
-      <div class="form-group">
-        <label>预算范围</label>
-        <select id="h-budget">
-          <option value="">不限</option>
-          <option value="0-500">¥500以内</option>
-          <option value="500-1500">¥500-1500</option>
-          <option value="1500-99999">¥1500以上</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>连接方式</label>
-        <select id="h-conn">
-          <option value="">不限</option>
-          <option value="有线">有线（音质优先）</option>
-          <option value="无线">无线（自由方便）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>主要用途</label>
-        <select id="h-use">
-          <option value="">综合推荐</option>
-          <option value="FPS脚步声定位">FPS脚步声定位</option>
-          <option value="音乐+游戏">音乐+游戏兼顾</option>
-        </select>
-      </div>
+    <details class="faq-card">
+      <summary><span class="q">Q</span>为什么同一条件每次推荐可能不一样？<span class="chev">▾</span></summary>
+      <div class="faq-body">规则是固定的：<b>得分 = 需求匹配 + 策展信源 + 偏好加分</b>，同分按价格升序、再按策展收录序。结果稳定；「自动放宽」只在严格过滤无结果时触发，并且会明确提示你放宽了哪条条件——绝不悄悄改规则。</div>
+    </details>
+    <details class="faq-card">
+      <summary><span class="q">Q</span>「单信源（待补强）」是什么意思？<span class="chev">▾</span></summary>
+      <div class="faq-body">每款产品都标注了信源覆盖：<b>职业选手数据 / UP 主评测 / 社区口碑</b>三类。只被一类信源覆盖的型号会如实标注「单信源（待补强）」，而不是假装全知。这类多为国产新型号，社区口碑尚未系统采集——这是已知局限，也是数据治理的一部分：<b>宁可少而准，不可多而虚</b>。</div>
+    </details>
+    <details class="faq-card">
+      <summary><span class="q">Q</span>价格为什么是「参考价」？<span class="chev">▾</span></summary>
+      <div class="faq-body">所有价格来自横评视频与电商行情，会随渠道、活动、汇率浮动。工具在页面和导出文件里都明确提示「以电商实时价格为准」。部分型号带 price_note 标注了口径（如海淘/官方价），杜绝把促销价当常态价。</div>
+    </details>
+    <details class="faq-card">
+      <summary><span class="q">Q</span>信源是怎么核实的？<span class="chev">▾</span></summary>
+      <div class="faq-body">三条路径交叉：<b>fireopen 职业选手配置</b>验证「顶级玩家真在用」（权威但可能受赞助影响）、<b>B 站 UP 主横评</b>验证「当下价格与购买建议」（时效好但有商单嫌疑）、<b>社区口碑</b>验证「长期使用的真实体验」（真实但有噪音）。三类重合度越高，策展信源分越高；无法核实的参数一律留空或标【待补充】。</div>
+    </details>
+    <details class="faq-card">
+      <summary><span class="q">Q</span>和电商「猜你喜欢」有什么区别？<span class="chev">▾</span></summary>
+      <div class="faq-body">电商推荐是黑盒，追求转化；GearPick 是策展人模式，追求<b>可解释、可溯源</b>——低频、高客单、强信任的外设决策，用户要的不是「更高的分」，而是「凭什么推荐它」。规则公开、信源透明、短板如实标注，这才是内容型推荐工具的护城河。</div>
+    </details>
+
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon-inner">
+    <div class="mast">GearPick · 外设策展档案</div>
+    <div class="meth">
+      推荐方法论：<b>策展人模式</b>——先按需求硬过滤，再按偏好加权，最后按<b>信源覆盖 / 职业背书</b>加分排序；每个结果展开「为什么推荐它」并逐条给出信源，不做算法黑盒。<br>
+      数据来源：<a href="https://www.fireopen.cn/" target="_blank" rel="noopener">fireopen.cn</a> 职业选手配置 · B 站外设区 UP 主横评 · NGA / Reddit 社区口碑
     </div>
+    <div class="links">
+      <a href="README.md">数据口径说明</a>
+      <a href="CASE_STUDY.md">项目案例复盘</a>
+      <a href="../index.html">← 返回作品集</a>
+    </div>
+    <div class="ver-note" id="verNote"></div>
+    <div class="red-line">数据治理红线：不虚构真实参数 · 新增型号必须带 sources · 改数据后必须重跑 embed_products.js</div>
   </div>
+</footer>
 
-  <button class="submit-btn" onclick="recommend()">🔍 帮我推荐</button>
+<div class="modal-mask" id="modalMask" onclick="if(event.target===this)closeCompare()">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">备选对比</h3>
+      <button class="modal-close" onclick="closeCompare()" aria-label="关闭">✕</button>
+    </div>
+    <div class="modal-body" id="cmpBody"></div>
+  </div>
 </div>
 
-<div id="results" class="results"></div>
+<div class="toast" id="toast"></div>
 
-</div>
 
-<div class="footer">
-  GearPick · 数据来源：<a href="https://www.fireopen.cn/" target="_blank">fireopen.cn</a> 职业选手外设 + B站外设区UP主评测 + NGA/Reddit社区口碑<br>
-  产品推荐基于交叉验证，非商单驱动 · <a href="../index.html">← 返回作品集</a>
-</div>
+
 
 <script>
-let currentTab = 'mouse';
-let PRODUCTS = null;
+/*__PRODUCTS_DATA_BEGIN__*/
+const PRODUCTS = {"meta":{"dataset_name":"GearPick 产品库 v3","version":"3.0","updated_at":"2026-08-13","maintainer":"陈昊（AI产品经理方向）","counts":{"mice":33,"keyboards":17,"mousepads":9,"headsets":7},"source_policy":"三重信源交叉验证：fireopen职业选手配置 / B站UP主横评 / 社区口碑（NGA·Reddit）。仅收录至少一个公开信源可核实的型号；不虚构参数。","price_policy":"全部为参考价，来自618横评视频/电商行情，随渠道与活动浮动，选购前请以电商实时价格为准。","link_policy":"信源链接优先使用稳定的官网首页/搜索入口；具体评测深链以【待补充】标注（由候选人核实后替换）。","changelog":["v3.0（2026-08-13）：视觉提质（策展人/数据档案馆风格）+ 数据核对：修正 5 处参数（mp-001/mp-002/m-029/kb-005/m-021），其中 4 款由单信源升级为双信源（新增可核实公开信源）。","v2.0（2026-08-13）：数据厚化 v1→v2，新增 6 款带信源型号，修正 3 处硬参数错误。"]},"mice":[{"id":"m-001","name":"迈从 G3 V2","brand":"迈从","price":67,"category":"入门","weight":65,"sensor":"PAW3311","polling_rate":1000,"switch":"环诺","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握"],"connection":"无线","battery_life":"120h","best_for":["百元内性价比之王","入门体验","办公+轻度游戏"],"caveat":"传感器性能有限","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门","suitable_games":["通用FPS","办公/轻度游戏"],"recommend_reason":["¥67 定位入门；策展点评：百元内性价比之王","65g · 无线，适配中、大手型（趴握）","核心参数：PAW3311 / 1000Hz / 续航120h"],"notes":["传感器性能有限"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-002","name":"罗技 G102","brand":"Logitech","price":75,"category":"入门","weight":85,"sensor":"Mercury","polling_rate":1000,"switch":"欧姆龙10M","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"有线","best_for":["入门经典款","小手FPS","办公游戏两用"],"caveat":"有线，重量偏重","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门","suitable_games":["通用FPS","办公/轻度游戏"],"recommend_reason":["¥75 定位入门；策展点评：入门经典款","85g · 有线，适配小、中手型（抓握、指握）","核心参数：Mercury / 1000Hz"],"notes":["有线，重量偏重"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=Logitech%20G102&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-003","name":"VXE 蜻蜓 R1 SE+","brand":"VXE","price":89,"category":"入门","weight":51,"sensor":"PAW3395SE","polling_rate":1000,"switch":"凯华","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"无线","best_for":["百元内轻量无线","小手抓握","FPS入门"],"caveat":"做工质感一般","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门","suitable_games":["通用FPS"],"recommend_reason":["¥89 定位入门；策展点评：百元内轻量无线","51g · 无线，适配小、中手型（抓握、指握）","核心参数：PAW3395SE / 1000Hz"],"notes":["做工质感一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-004","name":"ATK A9 SE","brand":"ATK","price":89,"category":"入门","weight":52,"sensor":"PAW3311","polling_rate":1000,"switch":"环诺","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"无线","best_for":["百元内轻量","小手FPS入门"],"caveat":"传感器性能一般","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门","suitable_games":["通用FPS"],"recommend_reason":["¥89 定位入门；策展点评：百元内轻量","52g · 无线，适配小、中手型（抓握、指握）","核心参数：PAW3311 / 1000Hz"],"notes":["传感器性能一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-005","name":"SKN 朱雀 碳纤维版","brand":"SKN","price":99,"category":"入门","weight":48,"sensor":"PAW3315","polling_rate":1000,"switch":"凯华","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"三模","best_for":["碳纤维外壳","极致轻量百元","抓握指握"],"caveat":"碳纤维手感特殊需适应","source":"B站UP主 痴恩 618推荐","budget_tier":"入门","suitable_games":["通用FPS"],"recommend_reason":["¥99 定位入门；策展点评：碳纤维外壳","48g · 三模，适配小、中手型（抓握、指握）","核心参数：PAW3315 / 1000Hz"],"notes":["碳纤维手感特殊需适应"],"sources":[{"type":"bilibili","label":"B站UP主评测：痴恩","url":"https://search.bilibili.com/all?keyword=%E7%97%B4%E6%81%A9%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-006","name":"狼图 M8 Pro","brand":"狼图","price":98,"category":"入门","weight":72,"sensor":"PAW3311","polling_rate":1000,"switch":"环诺","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握"],"connection":"无线","battery_life":"200h","best_for":["百元内大电池","大手趴握","办公优先"],"caveat":"不适合高强度竞技","source":"B站UP主 618推荐","budget_tier":"入门","suitable_games":["通用FPS","办公/轻度游戏"],"recommend_reason":["¥98 定位入门；策展点评：百元内大电池","72g · 无线，适配中、大手型（趴握）","核心参数：PAW3311 / 1000Hz / 续航200h"],"notes":["不适合高强度竞技"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-007","name":"雷蛇 蝰蛇标准版","brand":"Razer","price":98,"category":"入门","weight":96,"sensor":"PAW3328","polling_rate":1000,"switch":"雷蛇机械微动","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握"],"connection":"有线","best_for":["经典人体工学入门","大手趴握","雷蛇入门"],"caveat":"重量偏重，有线","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门","suitable_games":["通用FPS"],"recommend_reason":["¥98 定位入门；策展点评：经典人体工学入门","96g · 有线，适配中、大手型（趴握）","核心参数：PAW3328 / 1000Hz"],"notes":["重量偏重，有线"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=DeathAdder%20Essential&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-008","name":"前行者 S9 Pro","brand":"前行者","price":170,"category":"入门中端","weight":55,"sensor":"PAW3395","polling_rate":1000,"switch":"凯华","shape":"对称","hand_size":["中"],"grip":["抓握","趴握"],"connection":"无线","best_for":["类毒蝰模具","冰凝涂层","性价比"],"caveat":"品牌知名度低","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门中端","suitable_games":["通用FPS"],"recommend_reason":["¥170 定位入门中端；策展点评：类毒蝰模具","55g · 无线，适配中手型（抓握、趴握）","核心参数：PAW3395 / 1000Hz"],"notes":["品牌知名度低"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-009","name":"漫步者 G3M Pro 升级版","brand":"Edifier","price":199,"category":"中端","weight":63,"sensor":"PAW3395","polling_rate":1000,"switch":"凯华GM8.0","shape":"对称","hand_size":["中"],"grip":["抓握","指握"],"connection":"无线","best_for":["品牌信任","中手抓握","国产3950入门"],"caveat":"模具偏保守","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥199 定位中端；策展点评：品牌信任","63g · 无线，适配中手型（抓握、指握）","核心参数：PAW3395 / 1000Hz"],"notes":["模具偏保守"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-010","name":"雷柏 VT9 二代","brand":"Rapoo","price":198,"category":"中端","weight":65,"sensor":"PAW3398","polling_rate":8000,"switch":"欧姆龙20M","shape":"对称","hand_size":["中","大"],"grip":["抓握","趴握"],"connection":"无线","battery_life":"160h","best_for":["雷柏54L方案","长续航","性价比"],"caveat":"模具偏万金油不够极致","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥198 定位中端；策展点评：雷柏54L方案","65g · 无线，适配中、大手型（抓握、趴握）","核心参数：PAW3398 / 8000Hz / 续航160h"],"notes":["模具偏万金油不够极致"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-011","name":"雷柏 VT3S","brand":"Rapoo","price":199,"category":"中端","weight":65,"sensor":"PAW3395","polling_rate":8000,"switch":"欧姆龙20M","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握"],"connection":"无线","battery_life":"160h","best_for":["类EC模具平替","大手趴握","FPS竞技"],"caveat":"涂层耐磨性一般","source":"B站UP主 老张 618推荐 + 键眉鼠眼夏卷毛","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥199 定位中端；策展点评：类EC模具平替","65g · 无线，适配中、大手型（趴握）","核心参数：PAW3395 / 8000Hz / 续航160h"],"notes":["涂层耐磨性一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛、老张","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E8%80%81%E5%BC%A0%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-012","name":"ATK A9 Air 大师版","brand":"ATK","price":266,"category":"中端","weight":48,"sensor":"PAW3950","polling_rate":8000,"switch":"凯华GM8.0","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"无线","best_for":["极致轻量","小手FPS","3950性价比"],"caveat":"品控不稳定，售后网点少","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥266 定位中端；策展点评：极致轻量","48g · 无线，适配小、中手型（抓握、指握）","核心参数：PAW3950 / 8000Hz"],"notes":["品控不稳定，售后网点少"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-013","name":"迈从 A5 系列","brand":"迈从","price":203,"category":"中端","weight":59,"sensor":"PAW3395","polling_rate":1000,"switch":"凯华","shape":"对称","hand_size":["中"],"grip":["抓握","指握","趴握"],"connection":"无线","best_for":["万金油模具","中手全能","性价比"],"caveat":"没明显短板也没突出亮点","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥203 定位中端；策展点评：万金油模具","59g · 无线，适配中手型（抓握、指握、趴握）","核心参数：PAW3395 / 1000Hz"],"notes":["没明显短板也没突出亮点"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-014","name":"达摩鲨 M3S","brand":"Darmoshark","price":279,"category":"中端","weight":55,"sensor":"PAW3395","polling_rate":4000,"switch":"TTC金微动","shape":"对称","hand_size":["中"],"grip":["抓握","指握"],"connection":"无线","best_for":["达摩鲨经典模具","中手FPS","高回报率"],"caveat":"品牌小众售后一般","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥279 定位中端；策展点评：达摩鲨经典模具","55g · 无线，适配中手型（抓握、指握）","核心参数：PAW3395 / 4000Hz"],"notes":["品牌小众售后一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-015","name":"ATK 烈空 Z1","brand":"ATK","price":299,"category":"中端","weight":53,"sensor":"PAW3950","polling_rate":8000,"switch":"凯华GM8.0","shape":"右手人体工学","hand_size":["中"],"grip":["趴握","抓握"],"connection":"无线","best_for":["国产人体工学","3950+54L","FPS竞技"],"caveat":"人体工学模具不如卓威成熟","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥299 定位中端；策展点评：国产人体工学","53g · 无线，适配中手型（趴握、抓握）","核心参数：PAW3950 / 8000Hz"],"notes":["人体工学模具不如卓威成熟"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-016","name":"ATK ZERO 白透","brand":"ATK","price":339,"category":"中高端","weight":39,"sensor":"PAW3950 Ultra","polling_rate":8000,"switch":"凯华GM8.0","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"无线","best_for":["夏卷毛最推荐","颜值+性能","39g极致轻量","3950U+54L"],"caveat":"54H版溢价过高不推荐，买54L版即可","source":"键眉鼠眼夏卷毛 重点推荐","budget_tier":"中高端","suitable_games":["通用FPS"],"recommend_reason":["¥339 定位中高端；策展点评：夏卷毛最推荐","39g · 无线，适配小、中手型（抓握、指握）","核心参数：PAW3950 Ultra / 8000Hz"],"notes":["54H版溢价过高不推荐，买54L版即可"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-017","name":"迈从 A7 V3 Ultra+","brand":"迈从","price":319,"category":"中高端","weight":56,"sensor":"PAW3950","polling_rate":8000,"switch":"凯华GM8.0","shape":"对称","hand_size":["中","大"],"grip":["抓握","指握"],"connection":"三模","battery_life":"500mAh","best_for":["GPXS平替完全体","磁吸充电","网页驱动"],"caveat":"模具保守，缺乏个性","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中高端","suitable_games":["通用FPS"],"recommend_reason":["¥319 定位中高端；策展点评：GPXS平替完全体","56g · 三模，适配中、大手型（抓握、指握）","核心参数：PAW3950 / 8000Hz / 续航500mAh"],"notes":["模具保守，缺乏个性"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-018","name":"雷柏 VT7 V2","brand":"Rapoo","price":299,"category":"中端","weight":59,"sensor":"PAW3955","polling_rate":8000,"switch":"欧姆龙","shape":"对称","hand_size":["中"],"grip":["抓握","指握"],"connection":"无线","battery_life":"800mAh","best_for":["雷柏54L全系","类毒蝰模具","超大电池"],"caveat":"雷柏命名混乱注意区分","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥299 定位中端；策展点评：雷柏54L全系","59g · 无线，适配中手型（抓握、指握）","核心参数：PAW3955 / 8000Hz / 续航800mAh"],"notes":["雷柏命名混乱注意区分"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-019","name":"ROG 龙鳞 Ace Mini 有线版","brand":"ROG","price":179,"category":"入门中端","weight":49,"sensor":"AIMPoint","polling_rate":1000,"switch":"ROG微动","shape":"对称小","hand_size":["小"],"grip":["抓握","指握"],"connection":"有线","best_for":["ROG信仰入门","极致小手","有线低延迟"],"caveat":"有线，仅适合小手","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"入门中端","suitable_games":["通用FPS"],"recommend_reason":["¥179 定位入门中端；策展点评：ROG信仰入门","49g · 有线，适配小手型（抓握、指握）","核心参数：AIMPoint / 1000Hz"],"notes":["有线，仅适合小手"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=ROG%20Ace%20Mini&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-020","name":"罗技 G Pro X Superlight 2","brand":"Logitech","price":849,"category":"旗舰","weight":60,"sensor":"Hero 2","polling_rate":4000,"switch":"Lightforce混合微动","shape":"对称","hand_size":["中"],"grip":["抓握","指握","趴握"],"connection":"无线","battery_life":"95h","best_for":["全能型","职业选手最多","多种握法"],"caveat":"滚轮编码器中长期回滚风险","pro_users":["ropz","ZywOo"],"source":"fireopen职业选手数据 + 多个B站UP主","budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥849 定位旗舰；策展点评：全能型","60g · 无线，适配中手型（抓握、指握、趴握）","核心参数：Hero 2 / 4000Hz / 续航95h","职业选手同款：ropz、ZywOo"],"notes":["滚轮编码器中长期回滚风险"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=G%20Pro%20X%20Superlight%202&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"m-021","name":"ROG 龙鳞2 ACE","brand":"ROG","price":886,"category":"旗舰","weight":48,"sensor":"ROG AimPoint Pro (42K)","polling_rate":8000,"switch":"ROG微动","shape":"半对称","hand_size":["中","大"],"grip":["抓握","指握"],"connection":"无线","best_for":["48g旗舰轻量","AimPoint Pro(42K)","中大手万金油"],"caveat":"价格较高","source":"B站UP主 618推荐","budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥886 定位旗舰；策展点评：48g 旗舰轻量","48g · 无线，适配中、大手型（抓握、指握）","核心参数：AimPoint Pro(42K) / 8000Hz","官方模具：半对称式双手通用（V 型收腰），由职业选手参与调校"],"notes":["价格较高","官方定位抓握/指握为主（V 型收腰设计）"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=ROG%20Harpe%20II%20Ace&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-022","name":"ROG 月刃2 ACE","brand":"ROG","price":755,"category":"旗舰","weight":54,"sensor":"3950","polling_rate":8000,"switch":"ROG微动热插拔","shape":"右手人体工学","hand_size":["小","中"],"grip":["趴握"],"connection":"无线","best_for":["右手人体工学旗舰","微动热插拔","中小手趴握"],"caveat":"仅适合趴握","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥755 定位旗舰；策展点评：右手人体工学旗舰","54g · 无线，适配小、中手型（趴握）","核心参数：3950 / 8000Hz"],"notes":["仅适合趴握"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=ROG%20Keris%20II%20Ace&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-023","name":"达摩鲨 M9","brand":"Darmoshark","price":429,"category":"中高端","weight":65,"sensor":"PAW3950","polling_rate":8000,"switch":"TTC金微动","shape":"对称","hand_size":["大"],"grip":["抓握","指握","趴握"],"connection":"无线","best_for":["超大手专用","21cm+手长","罕见超大模具"],"caveat":"仅适合大手，小手勿入","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中高端","suitable_games":["通用FPS"],"recommend_reason":["¥429 定位中高端；策展点评：超大手专用","65g · 无线，适配大手型（抓握、指握、趴握）","核心参数：PAW3950 / 8000Hz"],"notes":["仅适合大手，小手勿入"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-024","name":"兰族 荆棘 V2","brand":"Lamzu","price":799,"category":"旗舰","weight":55,"sensor":"PAW Next I定制","polling_rate":8000,"switch":"凯华","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握","抓握"],"connection":"无线","best_for":["国产旗舰标杆","独占传感器","S1Mon参与研发","光学滚轮"],"caveat":"价格高，购买渠道有限","pro_users":["S1Mon(Valorant世界冠军)"],"source":"键眉鼠眼夏卷毛 重点推荐","budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥799 定位旗舰；策展点评：国产旗舰标杆","55g · 无线，适配中、大手型（趴握、抓握）","核心参数：PAW Next I定制 / 8000Hz","职业选手同款：S1Mon(Valorant世界冠军)"],"notes":["价格高，购买渠道有限"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=Lamzu&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-025","name":"雷蛇 炼狱蝰蛇V4 Pro","brand":"Razer","price":1162,"category":"顶级旗舰","weight":56,"sensor":"Focus Pro 45K（二代）","polling_rate":8000,"switch":"雷蛇光微动三代","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握","抓握"],"connection":"无线","best_for":["右手工学终点站","56g旗舰轻量","Focus Pro 45K(二代)","非对称中止"],"caveat":"价格最高档，仅适合预算充裕","pro_users":["NiKo","m0NESY"],"source":"fireopen + 键眉鼠眼夏卷毛","budget_tier":"顶级旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥1162 定位顶级旗舰；策展点评：右手工学终点站","56g · 无线，适配中、大手型（趴握、抓握）","核心参数：Focus Pro 45K(二代) / 8000Hz","职业选手同款：NiKo、m0NESY"],"notes":["价格最高档，仅适合预算充裕"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=DeathAdder%20V4%20Pro&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"m-026","name":"雷蛇 毒蝰V4 Pro","brand":"Razer","price":1299,"category":"顶级旗舰","weight":49,"sensor":"Focus Pro 50K","polling_rate":8000,"switch":"雷蛇光微动三代","shape":"对称","hand_size":["中","大"],"grip":["抓握","指握"],"connection":"无线","best_for":["对称鼠天花板","Faker参与调校","\u003c50g旗舰","性能终点站"],"caveat":"价格最高档","pro_users":["ZmjjKK","s1mple"],"source":"fireopen + 键眉鼠眼夏卷毛","budget_tier":"顶级旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥1299 定位顶级旗舰；策展点评：对称鼠天花板","49g · 无线，适配中、大手型（抓握、指握）","核心参数：Focus Pro 50K / 8000Hz","职业选手同款：ZmjjKK、s1mple"],"notes":["价格最高档"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=Viper%20V4%20Pro&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"m-027","name":"罗技 G304","brand":"Logitech","price":149,"category":"入门","weight":99,"sensor":"Hero","polling_rate":1000,"switch":"欧姆龙10M","shape":"对称小","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"无线","battery_life":"250h(AA电池)","best_for":["入门无线经典","小手FPS","办公游戏两用"],"caveat":"重量偏重需改电池减重，侧裙防滑一般","source":"B站外设区经典入门推荐","budget_tier":"入门","suitable_games":["通用FPS","办公/轻度游戏"],"recommend_reason":["¥149 定位入门；策展点评：入门无线经典","99g · 无线，适配小、中手型（抓握、指握）","核心参数：Hero / 1000Hz / 续航250h(AA电池)"],"notes":["重量偏重需改电池减重，侧裙防滑一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=G304&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-028","name":"雷蛇 巴塞利斯蛇V3","brand":"Razer","price":254,"category":"中端","weight":101,"sensor":"Focus+","polling_rate":1000,"switch":"雷蛇光微动二代","shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握"],"connection":"有线","best_for":["多功能","狙击键","滚轮阻尼可调","非纯FPS"],"caveat":"重量重，有线，不适合极致竞技","source":"键眉鼠眼夏卷毛 618推荐","budget_tier":"中端","suitable_games":["通用FPS"],"recommend_reason":["¥254 定位中端；策展点评：多功能","101g · 有线，适配中、大手型（趴握）","核心参数：Focus+ / 1000Hz"],"notes":["重量重，有线，不适合极致竞技"],"sources":[{"type":"bilibili","label":"B站UP主评测：键眉鼠眼夏卷毛","url":"https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=Basilisk%20V3&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"m-029","name":"唯卓 OGM Cloud 云","brand":"Viltrox","price":399,"category":"入门中端","weight":55,"sensor":"PAW3395","polling_rate":1000,"switch":"华诺蓝头粉点","shape":"对称","hand_size":["中","大"],"grip":["抓握","趴握"],"connection":"无线","best_for":["3395特价","扎实手感","限时性价比"],"caveat":"品牌外设线较新，长期口碑待验证","source":"B站UP主 痴恩 618推荐","budget_tier":"入门中端","suitable_games":["通用FPS"],"recommend_reason":["¥399 定位入门中端；策展点评：3395 特价（PAW3395 方案）","55g · 无线，适配中、大手型（抓握、趴握）","核心参数：PAW3395 / 1000Hz"],"notes":["品牌外设线较新，长期口碑待验证"],"sources":[{"type":"bilibili","label":"B站UP主评测：痴恩","url":"https://search.bilibili.com/all?keyword=%E7%97%B4%E6%81%A9%20%E6%8E%A8%E8%8D%90"},{"type":"official","label":"太平洋产品报价：唯卓 OGM Cloud 云参数页（55g / ¥399）","url":"https://g.pconline.com.cn/product/mouse/waizowl/2746299_price.html"}],"verification_status":"双信源交叉验证","price_note":"官方参考价 ¥399（电商常见 ¥399–499 区间，以实时为准）"},{"id":"m-030","name":"黑爵 T520 AI版","brand":"黑爵","price":169,"category":"入门中端","weight":53,"sensor":"PAW3395","polling_rate":1000,"switch":"凯华","shape":"对称","hand_size":["小","中"],"grip":["抓握","指握"],"connection":"星闪三模","best_for":["星闪连接","碳纤维外壳","AI功能"],"caveat":"AI功能实用性存疑","source":"B站UP主 618推荐","budget_tier":"入门中端","suitable_games":["通用FPS"],"recommend_reason":["¥169 定位入门中端；策展点评：星闪连接","53g · 星闪三模，适配小、中手型（抓握、指握）","核心参数：PAW3395 / 1000Hz"],"notes":["AI功能实用性存疑"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"m-031","name":"卓威 EC2-CW（无线）","brand":"ZOWIE","price":999,"price_note":"参考价，随渠道/活动浮动（海内外价差较大）","category":"旗舰","weight":77,"sensor":"PAW3370","polling_rate":1000,"shape":"右手人体工学","hand_size":["中"],"grip":["趴握"],"connection":"无线","best_for":["CS2职业选手最主流模具之一","中手趴握","稳定瞄准","无线自由"],"caveat":"重量非极致轻量；模具偏传统；价格高于同规格国产","pro_users":["大量CS2职业选手"],"source":"fireopen职业选手数据 + ZOWIE官网 + B站评测","sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"official","label":"ZOWIE 官网（EC 系列）","url":"https://zowie.benq.com/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=ZOWIE%20EC2-CW%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=ZOWIE%20EC2-CW&restrict_sr=1"}],"budget_tier":"旗舰","suitable_games":["CS2"],"recommend_reason":["¥999 定位旗舰；策展点评：CS2职业选手最主流模具之一","77g · 无线，适配中手型（趴握）","核心参数：PAW3370 / 1000Hz","职业选手同款：大量CS2职业选手"],"notes":["重量非极致轻量；模具偏传统；价格高于同规格国产"],"verification_status":"三重信源交叉验证"},{"id":"m-032","name":"罗技 G Pro Wireless（GPX 一代）","brand":"Logitech","price":599,"price_note":"参考价（已停产换代，库存价随渠道浮动）","category":"旗舰","weight":63,"sensor":"HERO 25K","polling_rate":1000,"switch":"欧姆龙","shape":"对称","hand_size":["中"],"grip":["抓握","指握","趴握"],"connection":"无线","battery_life":"约70h","best_for":["史上职业选手使用率最高的鼠标之一","对称万金油","轻量化无线标杆"],"caveat":"原生1000Hz（无4K/8K）；滚轮编码器长期使用有回滚概率","pro_users":["大量CS/VAL职业选手（历史数据）"],"source":"fireopen职业选手数据 + Logitech官网 + RTINGS评测","sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"official","label":"Logitech G 官网","url":"https://www.logitechg.com/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20GPW%20GPX%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=G%20Pro%20Wireless&restrict_sr=1"}],"budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥599 定位旗舰；策展点评：史上职业选手使用率最高的鼠标之一","63g · 无线，适配中手型（抓握、指握、趴握）","核心参数：HERO 25K / 1000Hz / 续航约70h","职业选手同款：大量CS/VAL职业选手（历史数据）"],"notes":["原生1000Hz（无4K/8K）；滚轮编码器长期使用有回滚概率"],"verification_status":"三重信源交叉验证"},{"id":"m-033","name":"雷蛇 炼狱蝰蛇V3 Pro","brand":"Razer","price":999,"price_note":"参考价，随渠道/活动浮动","category":"旗舰","weight":63,"sensor":"Focus Pro 30K","polling_rate":1000,"shape":"右手人体工学","hand_size":["中","大"],"grip":["趴握","抓握"],"connection":"无线","best_for":["右手人体工学旗舰","63g轻量化","Focus Pro 30K","职业选手大量使用"],"caveat":"原生1000Hz，8K需另购HyperPolling接收器；价格偏高","pro_users":["大量CS/VAL职业选手"],"source":"fireopen职业选手数据 + Razer官网 + B站评测","sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"official","label":"Razer 官网","url":"https://www.razer.com/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=%E7%82%BC%E7%8B%B1%E8%9D%B0%E8%9B%87V3%20Pro%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/MouseReview）","url":"https://www.reddit.com/r/MouseReview/search/?q=DeathAdder%20V3%20Pro&restrict_sr=1"}],"budget_tier":"旗舰","suitable_games":["通用FPS"],"recommend_reason":["¥999 定位旗舰；策展点评：右手人体工学旗舰","63g · 无线，适配中、大手型（趴握、抓握）","核心参数：Focus Pro 30K / 1000Hz","职业选手同款：大量CS/VAL职业选手"],"notes":["原生1000Hz，8K需另购HyperPolling接收器；价格偏高"],"verification_status":"三重信源交叉验证"}],"keyboards":[{"id":"kb-001","name":"美加狮 MAD 68 Pro","brand":"Mad Catz","price":288,"category":"入门磁轴","type":"磁轴(RT)","layout":"65%","switch":"磁轴","actuation":"0.01mm可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["磁轴入门首选","瓦洛兰特/三角洲","68配列桌面空间小"],"caveat":"仅68键无F区","source":"B站UP主 2026年618磁轴推荐 实拍锐评30把","budget_tier":"入门","suitable_games":["VALORANT","三角洲行动","CS2"],"recommend_reason":["¥288 定位入门磁轴；策展点评：磁轴入门首选","磁轴(RT) · 65% 配列 · 磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["仅68键无F区"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-002","name":"狼蛛 Hero68HE","brand":"AULA","price":299,"category":"入门磁轴","type":"磁轴(RT)","layout":"65%","switch":"玉皇磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["磁轴入门","瓦洛兰特","兼容混轴","128K扫描率"],"caveat":"驱动简陋，做工一般","source":"B站UP主 618磁轴推荐","budget_tier":"入门","suitable_games":["VALORANT","CS2","三角洲行动"],"recommend_reason":["¥299 定位入门磁轴；策展点评：磁轴入门","磁轴(RT) · 65% 配列 · 玉皇磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["驱动简陋，做工一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-003","name":"西部猎人 CK98","brand":"WestHunter","price":359,"category":"入门磁轴","type":"磁轴(RT)","layout":"100%","switch":"紫樱磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["低价位全尺寸磁轴","办公+电竞兼顾","需要数字区"],"caveat":"品牌知名度低，驱动待完善","source":"B站UP主 618磁轴推荐","budget_tier":"入门","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥359 定位入门磁轴；策展点评：低价位全尺寸磁轴","磁轴(RT) · 100% 配列 · 紫樱磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["品牌知名度低，驱动待完善"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-004","name":"VK MAG75","brand":"VK","price":399,"category":"性价比磁轴","type":"磁轴(RT)","layout":"75%","switch":"磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["需要F区","白菜价旗舰磁轴性能","瓦洛兰特/CS"],"caveat":"品牌知名度低，售后网络有限","source":"B站UP主 老张 618推荐","budget_tier":"中端","suitable_games":["VALORANT","CS2","三角洲行动"],"recommend_reason":["¥399 定位性价比磁轴；策展点评：需要F区","磁轴(RT) · 75% 配列 · 磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["品牌知名度低，售后网络有限"],"sources":[{"type":"bilibili","label":"B站UP主评测：老张","url":"https://search.bilibili.com/all?keyword=%E8%80%81%E5%BC%A0%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-005","name":"飞智 FS68","brand":"Flydigi","price":599,"category":"中高端磁轴","type":"磁轴(RT)","layout":"65%","switch":"飞智自研磁轴","actuation":"0.1-3.3mm可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["职业级磁轴","自研多霍尔轴心","先稳轴","航空级铝合金上盖"],"caveat":"65%无F区，有线","source":"B站UP主 老张 2026磁轴推荐","budget_tier":"中高端","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥599 定位中高端磁轴；策展点评：职业级磁轴","磁轴(RT) · 65% 配列（68 键）· 飞智自研磁轴","连接/性能：有线 / 8000Hz / 触发行程 0.1–3.3mm 可调","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["65% 无 F 区，有线","官方触发行程 0.1–3.3mm（总行程 3.4±0.2mm）"],"sources":[{"type":"bilibili","label":"B站UP主评测：老张","url":"https://search.bilibili.com/all?keyword=%E8%80%81%E5%BC%A0%20%E6%8E%A8%E8%8D%90"},{"type":"official","label":"IT之家：飞智 FS68 发布报道（官方规格 0.1–3.3mm）","url":"https://www.ithome.com/0/947/971.htm"}],"verification_status":"双信源交叉验证"},{"id":"kb-006","name":"重力星球 瓦75","brand":"Gravastar","price":649,"category":"中高端磁轴","type":"磁轴(RT)","layout":"75%","switch":"磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["机甲外观","锌合金压铸外壳","颜值党","软件微调断点"],"caveat":"重量较重，便携性差","source":"B站UP主 618磁轴推荐","budget_tier":"中高端","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥649 定位中高端磁轴；策展点评：机甲外观","磁轴(RT) · 75% 配列 · 磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["重量较重，便携性差"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-007","name":"MelGeek 蜜氪 MADE68 PRO+","brand":"MelGeek","price":679,"category":"中高端磁轴","type":"磁轴(RT)","layout":"65%","switch":"磁轴 高精度调校","actuation":"可视化调节","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["高精度磁轴调校","撞色设计","驱动可视化","客制化品质"],"caveat":"65%无F区","source":"B站UP主 618磁轴推荐","budget_tier":"中高端","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥679 定位中高端磁轴；策展点评：高精度磁轴调校","磁轴(RT) · 65% 配列 · 磁轴 高精度调校","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["65%无F区"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-008","name":"罗技 PRO X TKL","brand":"Logitech","price":719,"category":"高端磁轴","type":"磁轴(RT)","layout":"80%","switch":"罗技磁轴","actuation":"可调","rapid_trigger":true,"connection":"LIGHTSPEED无线","polling_rate":1000,"best_for":["无线磁轴","PBT双色键帽","传统布局低学习成本","罗技生态"],"caveat":"轮询率不如有线竞品","source":"B站UP主 618磁轴推荐","budget_tier":"高端","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥719 定位高端磁轴；策展点评：无线磁轴","磁轴(RT) · 80% 配列 · 罗技磁轴","连接/性能：LIGHTSPEED无线 / 1000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["轮询率不如有线竞品"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MechanicalKeyboards）","url":"https://www.reddit.com/r/MechanicalKeyboards/search/?q=Logitech%20Pro%20X%20TKL&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-009","name":"ROG 魔导士 Ace HFX","brand":"ROG","price":925,"category":"高端磁轴","type":"磁轴(RT)","layout":"65%","switch":"ROG磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["ROG信仰","侧边多功能触控条","自带保护盖","65%紧凑"],"caveat":"价格高，65%无F区","source":"B站UP主 618磁轴推荐","budget_tier":"高端","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥925 定位高端磁轴；策展点评：ROG信仰","磁轴(RT) · 65% 配列 · ROG磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["价格高，65%无F区"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MechanicalKeyboards）","url":"https://www.reddit.com/r/MechanicalKeyboards/search/?q=ROG%20Falchion%20Ace%20HFX&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-010","name":"IQUNIX EV63","brand":"IQUNIX","price":1189,"category":"顶级磁轴","type":"磁轴(RT)","layout":"60%","switch":"磁轴","actuation":"可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["CNC全铝外壳","高密度硅胶消音","客制化顶级品质"],"caveat":"60%极紧凑，价格最高档","source":"B站UP主 618磁轴推荐","budget_tier":"顶级","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥1189 定位顶级磁轴；策展点评：CNC全铝外壳","磁轴(RT) · 60% 配列 · 磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["60%极紧凑，价格最高档"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MechanicalKeyboards）","url":"https://www.reddit.com/r/MechanicalKeyboards/search/?q=IQUNIX%20EV63&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-011","name":"CHERRY 双魔无线","brand":"CHERRY","price":1187,"category":"顶级磁轴","type":"磁轴(RT)","layout":"80%","switch":"樱桃磁轴+机械轴混插","actuation":"可调","rapid_trigger":true,"connection":"三模无线","best_for":["磁轴+机械轴混插","三模无线","铝合金材质","樱桃品质"],"caveat":"价格高","source":"B站UP主 618磁轴推荐","budget_tier":"顶级","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥1187 定位顶级磁轴；策展点评：磁轴+机械轴混插","磁轴(RT) · 80% 配列 · 樱桃磁轴+机械轴混插","连接/性能：三模无线","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）"],"notes":["价格高"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MechanicalKeyboards）","url":"https://www.reddit.com/r/MechanicalKeyboards/search/?q=CHERRY%20MX&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-012","name":"迈从 G87 V2","brand":"迈从","price":179,"category":"入门机械","type":"机械","layout":"80%","switch":"自研线性轴","connection":"三模","best_for":["机械键盘入门神价","Gasket结构","HiFi麻将音","87配列"],"caveat":"轴体手感偏入门","source":"B站UP主 618机械键盘推荐","budget_tier":"入门","suitable_games":["综合游戏","码字办公"],"recommend_reason":["¥179 定位入门机械；策展点评：机械键盘入门神价","机械 · 80% 配列 · 自研线性轴","连接/性能：三模"],"notes":["轴体手感偏入门"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-013","name":"首席玩家 NEO108","brand":"1stPlayer","price":199,"category":"入门机械","type":"机械","layout":"100%","switch":"自研轴体","connection":"三模","battery_life":"8000mAh","best_for":["108键全尺寸","8000mAh超大电池","三模Gasket","百元级全配列"],"caveat":"轴体手感一般","source":"B站UP主 618推荐","budget_tier":"入门","suitable_games":["综合游戏","码字办公"],"recommend_reason":["¥199 定位入门机械；策展点评：108键全尺寸","机械 · 100% 配列 · 自研轴体","连接/性能：三模 / 电池8000mAh"],"notes":["轴体手感一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-014","name":"狼蛛 F87 Pro V2","brand":"AULA","price":251,"category":"中端机械","type":"机械","layout":"80%","switch":"凯华精调线性轴","connection":"三模","best_for":["木鱼音HiFi","凯华轴体","三模87配列","质感好"],"caveat":"87配列无数字区","source":"B站UP主 618推荐","budget_tier":"中端","suitable_games":["综合游戏","码字办公"],"recommend_reason":["¥251 定位中端机械；策展点评：木鱼音HiFi","机械 · 80% 配列 · 凯华精调线性轴","连接/性能：三模"],"notes":["87配列无数字区"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"kb-015","name":"Rainy75","brand":"Rainy","price":499,"category":"中端机械","type":"机械","layout":"75%","switch":"HMX/凯华可选","connection":"三模","best_for":["铝坨坨质感","客制化入门","码字+游戏兼顾","颜值高"],"caveat":"重量较重不便携","source":"B站UP主 外设碎碎念 年度推荐","budget_tier":"中端","suitable_games":["综合游戏","码字办公"],"recommend_reason":["¥499 定位中端机械；策展点评：铝坨坨质感","机械 · 75% 配列 · HMX/凯华可选","连接/性能：三模"],"notes":["重量较重不便携"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设碎碎念","url":"https://search.bilibili.com/all?keyword=%E5%A4%96%E8%AE%BE%E7%A2%8E%E7%A2%8E%E5%BF%B5%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/BudgetKeebs）","url":"https://www.reddit.com/r/BudgetKeebs/search/?q=Rainy75&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-016","name":"ROG 游侠2 RX","brand":"ROG","price":589,"category":"中高端机械","type":"机械","layout":"100%","switch":"ROG光轴","connection":"有线","best_for":["光轴防尘防水IP57","神光同步联动","ROG信仰全配列"],"caveat":"有线，光轴手感和传统机械不同","source":"B站UP主 618推荐","budget_tier":"中高端","suitable_games":["综合游戏","码字办公"],"recommend_reason":["¥589 定位中高端机械；策展点评：光轴防尘防水IP57","机械 · 100% 配列 · ROG光轴","连接/性能：有线"],"notes":["有线，光轴手感和传统机械不同"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MechanicalKeyboards）","url":"https://www.reddit.com/r/MechanicalKeyboards/search/?q=ROG%20Strix%20Scope%20II%20RX&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"kb-017","name":"Wooting 60HE","brand":"Wooting","price":1999,"price_note":"进口参考价（官方$175，国内需海淘/代购）","category":"顶级磁轴","type":"磁轴(RT)","layout":"60%","switch":"Lekker 磁轴","actuation":"0.1-4.0mm 可调","rapid_trigger":true,"connection":"有线","polling_rate":8000,"best_for":["Rapid Trigger 鼻祖","职业级磁轴","Web驱动可玩性高","磁轴标杆"],"caveat":"60%无F区；国内无官方保修需海淘；价格高","pro_users":["部分VALORANT/CS职业选手"],"source":"Wooting官网 + B站评测 + Reddit r/Wooting","sources":[{"type":"official","label":"Wooting 官网（60HE）","url":"https://wooting.io/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=Wooting%2060HE%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/Wooting）","url":"https://www.reddit.com/r/Wooting/search/?q=60HE&restrict_sr=1"}],"budget_tier":"顶级","suitable_games":["CS2","VALORANT","三角洲行动"],"recommend_reason":["¥1999 定位顶级磁轴；策展点评：Rapid Trigger 鼻祖","磁轴(RT) · 60% 配列 · Lekker 磁轴","连接/性能：有线 / 8000Hz","支持 Rapid Trigger 快速触发（FPS 急停/身法优势）","职业选手同款：部分VALORANT/CS职业选手"],"notes":["60%无F区；国内无官方保修需海淘；价格高"],"verification_status":"双信源交叉验证"}],"mousepads":[{"id":"mp-001","name":"首席玩家 双子星","brand":"1stPlayer","price":49,"material":"布垫","speed":"平衡型","size":"450×400×4mm","stitching":"下沉式锁边","base":"橡胶","best_for":["百元内万金油","二次元图案","高密度微绒表面"],"caveat":"图案选择看个人审美","source":"B站UP主 618推荐","budget_tier":"入门","suitable_games":["综合FPS"],"recommend_reason":["¥49（大号）· 布垫 · 平衡型","尺寸450×400×4mm（另有 350×300×4mm 小号）/ 锁边：下沉式锁边 / 橡胶底","策展点评：百元内万金油"],"notes":["图案选择看个人审美"],"sources":[{"type":"bilibili","label":"B站UP主：2025年6月全价位竞技鼠标垫推荐","url":"https://m.bilibili.com/opus/1079341490718638081"},{"type":"community","label":"社区口碑（什么值得买 首席玩家双子星评测）","url":"https://post.smzdm.com/p/akon994r/"}],"verification_status":"双信源交叉验证","price_note":"大号 450×400×4mm 参考价 ¥49；另有小号 350×300×4mm 约 ¥39"},{"id":"mp-002","name":"飓鸦 幻","brand":"飓鸦","price":49,"material":"布垫","speed":"平衡型","size":"490×420×4mm","stitching":"有","base":"橡胶","best_for":["极致性价比","乱纹提花编织","防水涂层","好看好用"],"caveat":"品牌小，大尺寸可选有限","source":"B站UP主 618推荐","budget_tier":"入门","suitable_games":["综合FPS"],"recommend_reason":["¥49 · 布垫 · 平衡型","尺寸490×420×4mm / 锁边：精细包边 / 橡胶底（Soft 软度）","策展点评：极致性价比（乱纹提花 + 防水涂层）"],"notes":["品牌小，大尺寸可选有限"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=%E9%A3%93%E9%B8%A6%20%E5%B9%BB%20%E9%BC%A0%E6%A0%87%E5%9E%AB"},{"type":"community","label":"社区口碑（什么值得买 飓鸦 幻 评测）","url":"https://post.smzdm.com/p/a0xlkgl0/"}],"verification_status":"双信源交叉验证","price_note":"490×420×4mm 参考价 ¥49（2025-01 评测）"},{"id":"mp-003","name":"VAXEE PD","brand":"VAXEE","price":299,"material":"布垫","speed":"控制型","size":"490×420×4mm","stitching":"下陷缝合","base":"天然橡胶","best_for":["CS/VAL首选","稳定瞄准","低灵敏度手臂流","职业选手最常用"],"caveat":"控制垫阻力大，不适合快节奏跟枪","pro_users":["大量CS职业选手"],"source":"fireopen职业选手数据 + 外设碎碎念年度推荐","budget_tier":"中端","suitable_games":["VALORANT","CS2"],"recommend_reason":["¥299 · 布垫 · 控制型","尺寸490×420×4mm / 锁边：下陷缝合 / 天然橡胶底","策展点评：CS/VAL首选","职业选手同款：大量CS职业选手"],"notes":["控制垫阻力大，不适合快节奏跟枪"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：外设碎碎念","url":"https://search.bilibili.com/all?keyword=%E5%A4%96%E8%AE%BE%E7%A2%8E%E7%A2%8E%E5%BF%B5%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=VAXEE%20PD&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"mp-004","name":"QcK Heavy","brand":"SteelSeries","price":199,"material":"布垫","speed":"控制型","size":"450×400×6mm","stitching":"无边","base":"天然橡胶","best_for":["CS经典款","6mm厚度缓冲","手臂流","史上使用人数最多"],"caveat":"不防水，潮湿天气手感变化大","pro_users":["历史上最多职业选手使用"],"source":"fireopen职业选手数据","budget_tier":"中端","suitable_games":["CS2","VALORANT"],"recommend_reason":["¥199 · 布垫 · 控制型","尺寸450×400×6mm / 锁边：无边 / 天然橡胶底","策展点评：CS经典款","职业选手同款：历史上最多职业选手使用"],"notes":["不防水，潮湿天气手感变化大"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=QcK%20Heavy&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"mp-005","name":"雷蛇 凌甲虫","brand":"Razer","price":399,"material":"玻璃垫","speed":"速度型","size":"450×400×4mm","base":"全覆盖防滑","best_for":["极速跟枪","APEX/守望先锋","极致顺滑","易清洁"],"caveat":"玻璃垫需要适应，脚贴磨损快，冬天冰手","source":"B站UP主 外设碎碎念 + 618推荐","budget_tier":"高端","suitable_games":["APEX英雄","守望先锋2"],"recommend_reason":["¥399 · 玻璃垫 · 速度型","尺寸450×400×4mm / 全覆盖防滑底","策展点评：极速跟枪"],"notes":["玻璃垫需要适应，脚贴磨损快，冬天冰手"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设碎碎念","url":"https://search.bilibili.com/all?keyword=%E5%A4%96%E8%AE%BE%E7%A2%8E%E7%A2%8E%E5%BF%B5%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=Razer%20Strider&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"mp-006","name":"国产平替 类Otsu","brand":"ATK/达摩鲨等","price":99,"material":"布垫","speed":"平衡型","size":"480×400×4mm","stitching":"下陷/齐平","base":"聚氨酯","best_for":["万金油平替","什么都玩","预算有限"],"caveat":"品牌间差异大，建议看具体评测","source":"B站多个UP主 618推荐","budget_tier":"入门","suitable_games":["综合FPS"],"recommend_reason":["¥99 · 布垫 · 平衡型","尺寸480×400×4mm / 锁边：下陷/齐平 / 聚氨酯底","策展点评：万金油平替"],"notes":["品牌间差异大，建议看具体评测"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"mp-007","name":"Artisan 零","brand":"Artisan","price":450,"material":"布垫","speed":"平衡偏控制","size":"490×420×4mm","stitching":"齐平","base":"聚氨酯","best_for":["日本工匠品质","CS/VAL/APEX通吃","布垫天花板","职业选手大量使用"],"caveat":"价格高，国内购买需海淘或代购","pro_users":["众多职业选手"],"source":"fireopen + B站外设区公认顶级","budget_tier":"高端","suitable_games":["VALORANT","CS2","APEX英雄","综合FPS"],"recommend_reason":["¥450 · 布垫 · 平衡偏控制","尺寸490×420×4mm / 锁边：齐平 / 聚氨酯底","策展点评：日本工匠品质","职业选手同款：众多职业选手"],"notes":["价格高，国内购买需海淘或代购"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=Artisan%20Zero&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"mp-008","name":"Artisan 疾风","brand":"Artisan","price":450,"material":"布垫","speed":"速度型","size":"490×420×4mm","stitching":"齐平","base":"聚氨酯","best_for":["速度型天花板","跟枪流","APEX/OW","极致顺滑"],"caveat":"控制力不如控制垫，价格高需海淘","source":"B站外设区公认顶级速度垫","budget_tier":"高端","suitable_games":["APEX英雄","守望先锋2"],"recommend_reason":["¥450 · 布垫 · 速度型","尺寸490×420×4mm / 锁边：齐平 / 聚氨酯底","策展点评：速度型天花板"],"notes":["控制力不如控制垫，价格高需海淘"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=Artisan%20Hien&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"mp-009","name":"ZOWIE G-SR-SE","brand":"ZOWIE","price":299,"price_note":"参考价，随渠道/活动浮动","material":"布垫","speed":"平衡偏控制","size":"470×400mm","base":"橡胶","best_for":["CS2职业选手最常用布垫之一","启动/控制均衡","低敏手臂流"],"caveat":"表面易吸汗需定期清洁；无包边设计长期使用边缘易磨损","pro_users":["大量CS2职业选手"],"source":"fireopen职业选手数据 + ZOWIE官网 + B站评测","sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"official","label":"ZOWIE 官网（G-SR 系列）","url":"https://zowie.benq.com/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=ZOWIE%20G-SR-SE%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/MousepadReview）","url":"https://www.reddit.com/r/MousepadReview/search/?q=G-SR-SE&restrict_sr=1"}],"budget_tier":"中端","suitable_games":["CS2","VALORANT","综合FPS"],"recommend_reason":["¥299 · 布垫 · 平衡偏控制","尺寸470×400mm / 橡胶底","策展点评：CS2职业选手最常用布垫之一","职业选手同款：大量CS2职业选手"],"notes":["表面易吸汗需定期清洁；无包边设计长期使用边缘易磨损"],"verification_status":"三重信源交叉验证"}],"headsets":[{"id":"hs-001","name":"雷柏 VE3","brand":"Rapoo","price":199,"category":"入门","type":"无线四模","driver":"53mm","sound":"封闭式","mic":"不可拆卸","best_for":["电竞入门","极低预算","雷柏生态"],"caveat":"音质一般","source":"B站UP主 618推荐","budget_tier":"入门","suitable_games":["综合"],"recommend_reason":["¥199 定位入门 · 无线四模","53mm驱动单元 / 封闭式 / 麦克风不可拆卸","策展点评：电竞入门"],"notes":["音质一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"hs-002","name":"漫步者 G6 Pro","brand":"Edifier","price":599,"category":"中端","type":"无线双模","driver":"50mm","sound":"封闭式","mic":"不可拆卸","best_for":["入门FPS","听声辨位够用","漫步者品牌"],"caveat":"做工一般，麦克风不可拆卸","source":"B站UP主 618推荐","budget_tier":"中端","suitable_games":["CS2","VALORANT"],"recommend_reason":["¥599 定位中端 · 无线双模","50mm驱动单元 / 封闭式 / 麦克风不可拆卸","策展点评：入门FPS"],"notes":["做工一般，麦克风不可拆卸"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"}],"verification_status":"单信源（待补强）"},{"id":"hs-003","name":"乌龟海岸 刺客500","brand":"TurtleBeach","price":499,"category":"中端","type":"有线","driver":"50mm","sound":"封闭式","mic":"可拆卸","best_for":["中端电竞","FPS定位清晰","乌龟海岸品牌"],"caveat":"国内售后网点少","source":"B站UP主 618推荐","budget_tier":"中端","suitable_games":["CS2","VALORANT"],"recommend_reason":["¥499 定位中端 · 有线","50mm驱动单元 / 封闭式 / 麦克风可拆卸","策展点评：中端电竞"],"notes":["国内售后网点少"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/GamingHeadsets）","url":"https://www.reddit.com/r/GamingHeadsets/search/?q=Turtle%20Beach%20Atlas&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"hs-004","name":"HyperX Cloud III","brand":"HyperX","price":499,"category":"中端","type":"有线","driver":"53mm","sound":"封闭式","mic":"可拆卸","frequency":"10-21000Hz","impedance":"32Ω","best_for":["FPS入门首选","佩戴舒适","长期使用不累","游戏+语音"],"caveat":"声音偏暖，高频细节一般","pro_users":["大量CS/VAL职业选手曾使用"],"source":"fireopen职业选手数据 + B站经典推荐","budget_tier":"中端","suitable_games":["CS2","VALORANT"],"recommend_reason":["¥499 定位中端 · 有线","53mm驱动单元 / 封闭式 / 麦克风可拆卸","声学参数：频响 10-21000Hz / 阻抗 32Ω","策展点评：FPS入门首选","职业选手同款：大量CS/VAL职业选手曾使用"],"notes":["声音偏暖，高频细节一般"],"sources":[{"type":"pro","label":"fireopen 职业选手配置数据","url":"https://www.fireopen.cn/"},{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/GamingHeadsets）","url":"https://www.reddit.com/r/GamingHeadsets/search/?q=HyperX%20Cloud%20III&restrict_sr=1"}],"verification_status":"三重信源交叉验证"},{"id":"hs-005","name":"Arctic Nova Pro Wireless","brand":"SteelSeries","price":1499,"category":"高端","type":"无线","driver":"40mm","sound":"封闭式","mic":"伸缩","best_for":["无线旗舰","多平台","可换电池系统","无线自由"],"caveat":"价格高，ANC效果一般","pro_users":["部分职业选手"],"source":"B站UP主 外设总结推荐","budget_tier":"高端","suitable_games":["综合"],"recommend_reason":["¥1499 定位高端 · 无线","40mm驱动单元 / 封闭式 / 麦克风伸缩","策展点评：无线旗舰","职业选手同款：部分职业选手"],"notes":["价格高，ANC效果一般"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/GamingHeadsets）","url":"https://www.reddit.com/r/GamingHeadsets/search/?q=Arctis%20Nova%20Pro%20Wireless&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"hs-006","name":"拜雅 MMX300 Pro","brand":"Beyerdynamic","price":1999,"category":"高端","type":"有线","driver":"45mm","sound":"封闭式","mic":"可拆卸","frequency":"5-35000Hz","impedance":"48Ω","best_for":["FPS脚步声定位天花板","音乐+游戏","长期佩戴舒适","拜雅音质"],"caveat":"价格高，有线受限，需要一定推力","source":"B站UP主 年度外设推荐","budget_tier":"高端","suitable_games":["音乐","CS2","VALORANT","综合"],"recommend_reason":["¥1999 定位高端 · 有线","45mm驱动单元 / 封闭式 / 麦克风可拆卸","声学参数：频响 5-35000Hz / 阻抗 48Ω","策展点评：FPS脚步声定位天花板"],"notes":["价格高，有线受限，需要一定推力"],"sources":[{"type":"bilibili","label":"B站UP主评测：外设区横评","url":"https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"},{"type":"community","label":"社区口碑（Reddit r/HeadphoneAdvice）","url":"https://www.reddit.com/r/HeadphoneAdvice/search/?q=Beyerdynamic%20MMX%20300&restrict_sr=1"}],"verification_status":"双信源交叉验证"},{"id":"hs-007","name":"HyperX Cloud II","brand":"HyperX","price":499,"price_note":"参考价，随渠道/活动浮动","category":"中端","type":"有线","driver":"53mm","sound":"封闭式","mic":"可拆卸","frequency":"15-25000Hz","impedance":"60Ω","best_for":["经典FPS耳机","佩戴舒适","虚拟7.1","游戏+语音"],"caveat":"虚拟7.1对竞技听声辨位提升有限，建议游戏时关闭","pro_users":["历史上大量CS职业选手/主播使用"],"source":"HyperX官网 + B站评测 + Reddit","sources":[{"type":"official","label":"HyperX 官网（Cloud II）","url":"https://www.hyperxgaming.com/"},{"type":"bilibili","label":"B站UP主评测","url":"https://search.bilibili.com/all?keyword=HyperX%20Cloud%20II%20%E8%AF%84%E6%B5%8B"},{"type":"community","label":"社区口碑（Reddit r/GamingHeadsets）","url":"https://www.reddit.com/r/GamingHeadsets/search/?q=HyperX%20Cloud%20II&restrict_sr=1"}],"budget_tier":"中端","suitable_games":["CS2","VALORANT"],"recommend_reason":["¥499 定位中端 · 有线","53mm驱动单元 / 封闭式 / 麦克风可拆卸","声学参数：频响 15-25000Hz / 阻抗 60Ω","策展点评：经典FPS耳机","职业选手同款：历史上大量CS职业选手/主播使用"],"notes":["虚拟7.1对竞技听声辨位提升有限，建议游戏时关闭"],"verification_status":"双信源交叉验证"}]};
+/*__PRODUCTS_DATA_END__*/
+</script>
+<script>
+(function(){
+'use strict';
 
-// Load product data
-fetch('products.json')
-  .then(r => r.json())
-  .then(d => { PRODUCTS = d; })
-  .catch(e => console.error('Failed to load products:', e));
+/* ---------- 图标（内联 SVG，无外部依赖） ---------- */
+var S = ' fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+var ICONS = {
+  search: '<svg viewBox="0 0 24 24"' + S + '><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/><path d="M11 8.6v4.8M8.6 11h4.8"/></svg>',
+  reset:  '<svg viewBox="0 0 24 24"' + S + '><path d="M4 10a8 8 0 1 1 2.6 5.4"/><path d="M4 4v6h6"/></svg>',
+  mouse:  '<svg viewBox="0 0 24 24"' + S + '><path d="M9 3h6a3 3 0 0 1 3 3v6a6 6 0 0 1-12 0V6a3 3 0 0 1 3-3z"/><path d="M12 5v5"/></svg>',
+  keyboard:'<svg viewBox="0 0 24 24"' + S + '><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 13.5h.01M9.5 13.5h.01M13 13.5h.01M16.5 13.5h.01"/><path d="M7.5 13.5h9"/></svg>',
+  pad:    '<svg viewBox="0 0 24 24"' + S + '><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 12h18"/></svg>',
+  headset:'<svg viewBox="0 0 24 24"' + S + '><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg>',
+  why:    '<svg viewBox="0 0 24 24"' + S + '><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/><path d="M11 8.6v4.8M8.6 11h4.8"/></svg>',
+  cmp:    '<svg viewBox="0 0 24 24"' + S + '><path d="M4 5h5M4 12h9M4 19h5"/><path d="M14 8l4-3 4 3"/><path d="M18 5v14"/></svg>',
+  copy:   '<svg viewBox="0 0 24 24"' + S + '><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg>',
+  dl:     '<svg viewBox="0 0 24 24"' + S + '><path d="M12 4v10"/><path d="M8 10l4 4 4-4"/><path d="M5 19h14"/></svg>',
+  list:   '<svg viewBox="0 0 24 24"' + S + '><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg>',
+  box:    '<svg viewBox="0 0 24 24"' + S + '><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 13.5h4"/></svg>',
+  alert:  '<svg viewBox="0 0 24 24"' + S + '><path d="M12 3 21 20H3z"/><path d="M12 9v4.5"/><path d="M12 16.6h.01"/></svg>'
+};
 
-// Tab switching
-document.querySelectorAll('.tab').forEach(t => {
-  t.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-    t.classList.add('active');
-    currentTab = t.dataset.tab;
-    document.querySelectorAll('[id^="form-"]').forEach(f => f.style.display = 'none');
-    document.getElementById('form-' + currentTab).style.display = '';
-    document.getElementById('results').innerHTML = '';
+var CATS = {
+  mouse:    { key:'mice',      label:'鼠标',   icon:'mouse',    title:'鼠标 · 告诉我你的需求',
+              hint:'预算 / 手型 / 握法是硬过滤，偏好与常玩游戏做加权' },
+  keyboard: { key:'keyboards', label:'键盘',   icon:'keyboard', title:'键盘 · 告诉我你的需求',
+              hint:'磁轴（RT）面向 FPS 竞技，机械面向手感与码字' },
+  mousepad: { key:'mousepads', label:'鼠标垫', icon:'pad',      title:'鼠标垫 · 告诉我你的需求',
+              hint:'控制型适合稳定瞄准，速度型适合快速跟枪' },
+  headset:  { key:'headsets',  label:'耳机',   icon:'headset',  title:'耳机 · 告诉我你的需求',
+              hint:'用途决定取舍：定位优先 or 音乐游戏兼顾' }
+};
+
+var state = { tab:'mouse', compare:[], last:null };
+
+function $(id){ return document.getElementById(id); }
+function esc(s){
+  return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function setStep(n){
+  document.querySelectorAll('#stepper .step').forEach(function(el){
+    var s = parseInt(el.dataset.step,10);
+    el.classList.toggle('active', s===n);
+    el.classList.toggle('done', s<n);
   });
-});
+}
+function toast(msg){
+  var t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._h);
+  t._h = setTimeout(function(){ t.classList.remove('show'); }, 2300);
+}
+function inBudget(price, range){
+  if(!range) return true;
+  var p = range.split('-').map(Number);
+  return price>=p[0] && price<=p[1];
+}
+function fmtList(arr){ return Array.isArray(arr) ? arr.join('、') : (arr||'—'); }
 
-function parseBudget(range) {
-  if (!range) return [0, Infinity];
-  const [min, max] = range.split('-').map(Number);
-  return [min, max];
+/* ---------- 顶部数据可视化（真实数据，非装饰） ---------- */
+function renderHeroStats(){
+  if(!PRODUCTS) return;
+  var cats = ['mice','keyboards','mousepads','headsets'];
+  var total = 0, triple = 0, doub = 0, sing = 0;
+  var srcCount = { pro:0, bilibili:0, community:0 };
+  cats.forEach(function(k){
+    (PRODUCTS[k]||[]).forEach(function(it){
+      total++;
+      var st = it.verification_status || '';
+      if(st.indexOf('三重')>=0) triple++;
+      else if(st.indexOf('双信源')>=0) doub++;
+      else sing++;
+      var seen = {};
+      (it.sources||[]).forEach(function(s){ seen[s.type]=true; });
+      Object.keys(seen).forEach(function(t){ if(t in srcCount) srcCount[t]++; });
+    });
+  });
+  var pct = function(n){ return Math.round(n/total*100); };
+  var plates = [
+    ['0' + total, '<small>款</small>', '档案收录（4 品类）', false],
+    [String(triple), '<small>款</small>', '三重信源交叉验证', false],
+    [String(doub), '<small>款</small>', '双信源交叉验证', false],
+    [String(sing), '<small>款</small>', '单信源（待补强）', true]
+  ];
+  $('heroStats').innerHTML = plates.map(function(p){
+    return '<div class="stat-plate' + (p[3]?' warn':'') + '">' +
+      '<div class="stat-num">' + p[0] + p[1] + '</div>' +
+      '<div class="stat-label">' + p[2] + '</div></div>';
+  }).join('');
+
+  var rows = [
+    ['t-a', '职业数据', 'fireopen', srcCount.pro],
+    ['t-b', 'UP 主评测', 'B 站', srcCount.bilibili],
+    ['t-c', '社区口碑', 'NGA / Reddit', srcCount.community]
+  ];
+  var srcRows = rows.map(function(r){
+    return '<div class="src-row-bar">' +
+      '<span class="lbl"><span class="k">' + r[1] + '</span>' + r[2] + '</span>' +
+      '<span class="track ' + r[0] + '"><i style="width:' + pct(r[3]) + '%"></i></span>' +
+      '<span class="n">' + r[3] + ' 款</span></div>';
+  }).join('');
+  $('srcVis').innerHTML =
+    '<div class="src-head"><h3>信源可信度可视化</h3>' +
+    '<span class="note">每一款推荐都有据可查 · 覆盖度如实呈现</span></div>' +
+    '<div class="src-rows">' + srcRows + '</div>' +
+    '<div class="coverage-stack">' +
+      '<div class="cs-title">交叉验证结构（' + total + ' 款）</div>' +
+      '<div class="stackbar">' +
+        '<i class="s1" style="width:' + pct(triple) + '%" title="三重 ' + triple + ' 款"></i>' +
+        '<i class="s2" style="width:' + pct(doub) + '%" title="双源 ' + doub + ' 款"></i>' +
+        '<i class="s3" style="width:' + pct(sing) + '%" title="单源 ' + sing + ' 款"></i>' +
+      '</div>' +
+      '<div class="legend">' +
+        '<span><i style="background:var(--accent)"></i>三重 ' + triple + '</span>' +
+        '<span><i style="background:var(--amber)"></i>双源 ' + doub + '</span>' +
+        '<span><i style="background:var(--paper-2)"></i>单源 ' + sing + '</span>' +
+      '</div></div>';
 }
 
-function inBudget(price, range) {
-  if (!range) return true;
-  const [min, max] = parseBudget(range);
-  return price >= min && price <= max;
+/* ---------- 初始化 ---------- */
+function renderTabs(){
+  var box = $('tabs');
+  box.innerHTML = '';
+  Object.keys(CATS).forEach(function(k){
+    var c = CATS[k];
+    var n = (PRODUCTS && PRODUCTS[c.key]) ? PRODUCTS[c.key].length : 0;
+    var b = document.createElement('button');
+    b.className = 'tab' + (k===state.tab ? ' active' : '');
+    b.dataset.tab = k;
+    b.setAttribute('role','tab');
+    b.innerHTML = ICONS[c.icon] + ' ' + c.label + ' <span class="count">' + n + '</span>';
+    b.addEventListener('click', function(){ switchTab(k); });
+    box.appendChild(b);
+  });
 }
-
-function recommend() {
-  if (!PRODUCTS) { document.getElementById('results').innerHTML = '<div class="empty">⏳ 数据加载中，请稍后重试...</div>'; return; }
-
-  let items = [];
-  let filters = {};
-
-  if (currentTab === 'mouse') {
-    items = PRODUCTS.mice;
-    filters = {
-      budget: document.getElementById('m-budget').value,
-      hand_size: document.getElementById('m-hand').value,
-      grip: document.getElementById('m-grip').value,
-      pref: document.getElementById('m-pref').value
-    };
-  } else if (currentTab === 'keyboard') {
-    items = PRODUCTS.keyboards;
-    filters = {
-      budget: document.getElementById('k-budget').value,
-      type: document.getElementById('k-type').value,
-      layout: document.getElementById('k-layout').value,
-      connection: document.getElementById('k-conn').value
-    };
-  } else if (currentTab === 'mousepad') {
-    items = PRODUCTS.mousepads;
-    filters = {
-      budget: document.getElementById('mp-budget').value,
-      speed: document.getElementById('mp-speed').value,
-      material: document.getElementById('mp-material').value
-    };
-  } else if (currentTab === 'headset') {
-    items = PRODUCTS.headsets;
-    filters = {
-      budget: document.getElementById('h-budget').value,
-      connection: document.getElementById('h-conn').value,
-      use: document.getElementById('h-use').value
-    };
+function showEmptyState(){
+  $('emptyState').hidden = false;
+  $('results').innerHTML = '';
+  $('compareBar').hidden = true;
+}
+function init(){
+  try{
+    if(!PRODUCTS || !PRODUCTS.mice || !PRODUCTS.keyboards || !PRODUCTS.mousepads || !PRODUCTS.headsets){
+      throw new Error('bad data');
+    }
+    renderTabs();
+    renderHeroStats();
+    switchTab('mouse', true);
+    var v = PRODUCTS.meta || {};
+    var n = 0;
+    ['mice','keyboards','mousepads','headsets'].forEach(function(k){ n += (v.counts? v.counts[k] : (PRODUCTS[k]?PRODUCTS[k].length:0)); });
+    $('verNote').textContent = '数据版本 v' + (v.version||'3') + ' · ' + n + ' 款产品 · 更新于 ' + (v.updated_at||'2026-08') + ' · 价格为参考价，以电商实时为准';
+    $('verChip').textContent = '';
+    $('verChip').appendChild(document.createTextNode('数据版本 v' + (v.version||'3') + ' · ' + n + ' 款收录'));
+    $('submitBtn').innerHTML = ICONS.search + '开始推荐';
+    $('resetBtn').innerHTML = ICONS.reset + '重置';
+    $('emptyIc').innerHTML = ICONS.box;
+    $('errIc').innerHTML = ICONS.alert;
+    showEmptyState();
+  }catch(e){
+    $('errorState').hidden = false;
   }
+}
 
-  // Filter
-  let filtered = items.filter(item => {
-    if (filters.budget && !inBudget(item.price, filters.budget)) return false;
-    if (filters.hand_size && item.hand_size && !item.hand_size.includes(filters.hand_size)) return false;
-    if (filters.grip && item.grip && !item.grip.includes(filters.grip)) return false;
-    if (filters.type && item.type && item.type !== filters.type) return false;
-    if (filters.layout && item.layout && !item.layout.includes(filters.layout)) return false;
-    if (filters.connection && item.connection && !item.connection.includes(filters.connection)) return false;
-    if (filters.speed && item.speed && item.speed !== filters.speed) return false;
-    if (filters.material && item.material && item.material !== filters.material) return false;
-    return true;
+/* ---------- Tab / 表单 ---------- */
+function switchTab(k, silent){
+  state.tab = k;
+  if(!silent) setStep(2);
+  document.querySelectorAll('#tabs .tab').forEach(function(t){
+    t.classList.toggle('active', t.dataset.tab===k);
   });
+  ['mouse','keyboard','mousepad','headset'].forEach(function(f){
+    $('form-'+f).hidden = (f!==k);
+  });
+  $('form-title').textContent = CATS[k].title;
+  $('form-hint').textContent = CATS[k].hint;
+  if(!silent){
+    state.last = null;
+    showEmptyState();
+    clearCompare(true);
+  }
+}
+function resetForm(){
+  var ids = ['m-budget','m-hand','m-grip','m-pref','m-game','k-budget','k-type','k-layout','k-conn','k-game',
+             'mp-budget','mp-speed','mp-material','h-budget','h-conn','h-use'];
+  ids.forEach(function(i){ var el=$(i); if(el) el.value=''; });
+  state.last = null;
+  showEmptyState();
+  clearCompare(true);
+  toast('已重置全部条件');
+}
 
-  // Score adjustment for preference
-  if (filters.pref) {
-    filtered.forEach(item => {
-      const bestFor = (item.best_for || []).join(' ');
-      const caveat = item.caveat || '';
-      if (filters.pref === '极致轻量' && item.weight < 55) item.score += 0.5;
-      if (filters.pref === '人体工学' && item.shape === '右手人体工学') item.score += 0.5;
-      if (filters.pref === '性价比' && item.price < 200) item.score += 0.5;
-      if (filters.pref === '无线长续航' && (item.battery_life || '').includes('h')) {
-        const h = parseInt(item.battery_life);
-        if (h > 100) item.score += 0.5;
+/* ---------- 收集筛选条件 ---------- */
+function collectFilters(tab){
+  var f = { budget:'', hand:'', grip:'', pref:'', game:'', type:'', layout:'', conn:'', speed:'', material:'', use:'' };
+  if(tab==='mouse'){ f.budget=$('m-budget').value; f.hand=$('m-hand').value; f.grip=$('m-grip').value; f.pref=$('m-pref').value; f.game=$('m-game').value; }
+  else if(tab==='keyboard'){ f.budget=$('k-budget').value; f.type=$('k-type').value; f.layout=$('k-layout').value; f.conn=$('k-conn').value; f.game=$('k-game').value; }
+  else if(tab==='mousepad'){ f.budget=$('mp-budget').value; f.speed=$('mp-speed').value; f.material=$('mp-material').value; }
+  else if(tab==='headset'){ f.budget=$('h-budget').value; f.conn=$('h-conn').value; f.use=$('h-use').value; }
+  return f;
+}
+
+/* ---------- 匹配规则 ---------- */
+function matchesGame(item, g){
+  if(!g) return false;
+  var games = item.suitable_games || [];
+  if(g==='通用FPS') return games.some(function(x){ return ['码字办公','办公/轻度游戏','音乐','综合'].indexOf(x)<0; });
+  if(g==='办公·轻度游戏') return games.indexOf('办公/轻度游戏')>=0;
+  if(g==='综合游戏·码字') return games.indexOf('综合游戏')>=0 || games.indexOf('码字办公')>=0;
+  if(g==='综合') return games.indexOf('综合')>=0 || games.indexOf('综合游戏')>=0 || games.indexOf('音乐')>=0;
+  return games.indexOf(g)>=0 || games.indexOf('通用FPS')>=0 || games.indexOf('综合FPS')>=0;
+}
+function matchConn(item, want){
+  if(!want) return true;
+  if(want==='有线') return item.connection==='有线';
+  return item.connection!=='有线';
+}
+function matchSpeed(item, want){
+  if(!want) return true;
+  if(want==='平衡型') return item.speed==='平衡型' || item.speed==='平衡偏控制';
+  return item.speed===want;
+}
+function hardPass(item, f, tab){
+  if(f.budget && !inBudget(item.price, f.budget)) return false;
+  if(tab==='mouse'){
+    if(f.hand && item.hand_size && item.hand_size.indexOf(f.hand)<0) return false;
+    if(f.grip && item.grip && item.grip.indexOf(f.grip)<0) return false;
+  }else if(tab==='keyboard'){
+    if(f.type && item.type!==f.type) return false;
+    if(f.layout && item.layout && item.layout.indexOf(f.layout)<0) return false;
+    if(f.conn && !matchConn(item, f.conn)) return false;
+  }else if(tab==='mousepad'){
+    if(f.speed && !matchSpeed(item, f.speed)) return false;
+    if(f.material && item.material!==f.material) return false;
+  }else if(tab==='headset'){
+    if(f.conn && !matchConn(item, f.conn)) return false;
+  }
+  return true;
+}
+function useMatch(item, use){
+  if(!use) return false;
+  var bf = (item.best_for||[]).join(' ');
+  if(use==='FPS脚步声定位') return bf.indexOf('FPS')>=0 || bf.indexOf('定位')>=0;
+  if(use==='音乐+游戏') return bf.indexOf('音乐')>=0;
+  return false;
+}
+function prefBoost(item, pref){
+  if(!pref) return {label:'', pts:0};
+  var pts = 0, label = '';
+  if(pref==='极致轻量' && item.weight && item.weight<55){ pts+=10; label='极致轻量'; }
+  if(pref==='人体工学' && item.shape && item.shape.indexOf('人体工学')>=0){ pts+=10; label='人体工学'; }
+  if(pref==='性价比' && item.price && item.price<200){ pts+=10; label='性价比'; }
+  if(pref==='无线长续航' && item.battery_life){
+    var b = String(item.battery_life);
+    if(b.indexOf('mAh')<0){ var h = parseInt(b,10); if(h>100){ pts+=10; label='长续航'; } }
+  }
+  if(pref==='高回报率' && item.polling_rate>=4000){ pts+=10; label='高回报率'; }
+  return {label:label, pts:pts};
+}
+
+/* ---------- 描述匹配（用于 chips 与解释区） ---------- */
+function describeMatch(item, f, tab, dropped){
+  var chips = [];
+  function add(label, ok, soft, drop){
+    chips.push({label:label, ok:!!ok, soft:!!soft, drop:!!drop});
+  }
+  if(f.budget){
+    add('预算 ¥'+f.budget.replace('-99999','+'), inBudget(item.price, f.budget), false, dropped.indexOf('budget')>=0);
+  }
+  if(tab==='mouse'){
+    if(f.hand) add('手型 '+f.hand+'手', item.hand_size ? item.hand_size.indexOf(f.hand)>=0 : false, false, dropped.indexOf('hand')>=0);
+    if(f.grip) add('握法 '+f.grip, item.grip ? item.grip.indexOf(f.grip)>=0 : false, false, dropped.indexOf('grip')>=0);
+  }else if(tab==='keyboard'){
+    if(f.type) add('类型 '+f.type, item.type===f.type, false, dropped.indexOf('type')>=0);
+    if(f.layout) add('配列 '+f.layout, item.layout ? item.layout.indexOf(f.layout)>=0 : false, false, dropped.indexOf('layout')>=0);
+    if(f.conn) add('连接 '+f.conn, matchConn(item, f.conn), false, dropped.indexOf('conn')>=0);
+  }else if(tab==='mousepad'){
+    if(f.speed) add('速度 '+f.speed, matchSpeed(item, f.speed), false, dropped.indexOf('speed')>=0);
+    if(f.material) add('材质 '+f.material, item.material===f.material, false, dropped.indexOf('material')>=0);
+  }else if(tab==='headset'){
+    if(f.conn) add('连接 '+f.conn, matchConn(item, f.conn), false, dropped.indexOf('conn')>=0);
+  }
+  if(f.game){
+    var okG = matchesGame(item, f.game);
+    add('常玩 '+f.game, okG, true, false);
+  }
+  if(f.use){
+    add('用途 '+f.use, useMatch(item, f.use), true, false);
+  }
+  if(f.pref){
+    var pb = prefBoost(item, f.pref);
+    add('偏好 '+f.pref, pb.pts>0, true, false);
+  }
+  return chips;
+}
+
+/* ---------- 评分（透明，规则公开） ---------- */
+function scoreItem(item, f, tab, dropped){
+  var chips = describeMatch(item, f, tab, dropped);
+  var need = chips.filter(function(c){ return !c.soft && !c.drop && c.ok; }).length * 10;
+  var types = {};
+  (item.sources||[]).forEach(function(s){ types[s.type]=true; });
+  var srcN = Object.keys(types).length;
+  var curator = Math.min(srcN*8, 24) + ((item.pro_users && item.pro_users.length)?10:0) + Math.min((item.recommend_reason||[]).length*2, 6);
+  var pref = chips.filter(function(c){ return c.soft && c.ok; }).length * 10;
+  return {
+    total: need + curator + pref,
+    parts: { need:need, curator:curator, pref:pref },
+    chips: chips
+  };
+}
+
+/* ---------- 推荐主流程 ---------- */
+var DROP = {
+  mouse:['grip','hand','budget'],
+  keyboard:['conn','layout','type','budget'],
+  mousepad:['speed','material','budget'],
+  headset:['conn','budget']
+};
+function recommend(){
+  if(!PRODUCTS){ $('errorState').hidden = false; return; }
+  setStep(3);
+  $('emptyState').hidden = true;
+  $('loading').hidden = false;
+  $('results').innerHTML = '';
+  $('errorState').hidden = true;
+  setTimeout(function(){
+    var tab = state.tab;
+    var f = collectFilters(tab);
+    var items = PRODUCTS[CATS[tab].key];
+    var dropped = [];
+    var list = items.filter(function(it){ return hardPass(it, f, tab); });
+
+    var order = DROP[tab] || [];
+    var k = 0;
+    while(list.length===0 && k<order.length){
+      var key = order[k++];
+      if(f[key]!==undefined && f[key]!==''){
+        f[key]=''; dropped.push(key);
+        list = items.filter(function(it){ return hardPass(it, f, tab); });
       }
-      if (filters.pref === '高回报率' && item.polling_rate >= 4000) item.score += 0.5;
+    }
+
+    var scored = list.map(function(it){
+      return { item:it, score:scoreItem(it, f, tab, dropped) };
     });
-  }
-
-  if (filters.use) {
-    filtered.forEach(item => {
-      const bestFor = (item.best_for || []).join(' ');
-      if (filters.use === 'FPS脚步声定位' && bestFor.includes('FPS')) item.score += 0.5;
-      if (filters.use === '音乐+游戏' && bestFor.includes('音乐')) item.score += 0.5;
+    scored.sort(function(a,b){
+      if(b.score.total!==a.score.total) return b.score.total-a.score.total;
+      if(a.item.price!==b.item.price) return a.item.price-b.item.price;
+      return 0;
     });
-  }
+    var top = scored.slice(0,3);
 
-  // Sort by score descending
-  filtered.sort((a, b) => b.score - a.score);
-
-  // Top 3
-  const top3 = filtered.slice(0, 3);
-
-  if (top3.length === 0) {
-    document.getElementById('results').innerHTML = '<div class="empty">😔 没有完全匹配的产品，试试放宽预算或去掉一些筛选条件</div>';
-    return;
-  }
-
-  // Category labels
-  const catLabel = { mouse: '鼠标', keyboard: '键盘', mousepad: '鼠标垫', headset: '耳机' };
-
-  // Render
-  let html = '';
-  top3.forEach((item, i) => {
-    const isBest = i === 0;
-
-    // Build meta tags
-    let tags = [];
-    if (item.brand) tags.push(item.brand);
-    if (item.price) tags.push('¥' + item.price);
-    if (item.weight) tags.push(item.weight + 'g');
-    if (item.sensor) tags.push(item.sensor);
-    if (item.shape) tags.push(item.shape);
-    if (item.type) tags.push(item.type);
-    if (item.layout) tags.push(item.layout);
-    if (item.material) tags.push(item.material);
-    if (item.speed) tags.push(item.speed);
-    if (item.sound) tags.push(item.sound);
-    if (item.category) tags.push(item.category);
-
-    html += `
-    <div class="result-card ${isBest ? 'best' : ''}">
-      <div class="rank ${isBest ? 'best' : 'alt'}">${isBest ? '🥇 最佳推荐' : '🥈 备选 ' + i}</div>
-      <div class="result-header">
-        <div class="result-name">${item.name}</div>
-        <div class="result-price">¥${item.price}</div>
-      </div>
-      <div class="result-meta">${tags.map(t => '<span class="meta-tag">' + t + '</span>').join('')}</div>
-      <div class="reason">💡 <strong>推荐理由：</strong>${(item.best_for || []).join('、')}。${item.source ? '——' + item.source.split('+')[0].trim() : ''}</div>
-      ${item.caveat ? '<div class="caveat">⚠️ <strong>注意：</strong>' + item.caveat + '</div>' : ''}
-      ${item.pro_users && item.pro_users.length ? '<div class="pro-ref">🏆 职业选手同款：' + item.pro_users.join('、') + '</div>' : ''}
-      ${item.source ? '<div class="source-note">📊 数据来源：' + item.source + '</div>' : ''}
-    </div>`;
-  });
-
-  document.getElementById('results').innerHTML = html;
+    $('loading').hidden = true;
+    state.last = { tab:tab, filters:f, dropped:dropped, all:list, top:top, full:items };
+    renderResults(state.last);
+    setStep(4);
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 300);
 }
+
+/* ---------- 渲染 ---------- */
+function srcTypeMeta(t){
+  var m = {
+    pro:{c:'pro', t:'职业数据'},
+    bilibili:{c:'bilibili', t:'UP主评测'},
+    community:{c:'community', t:'社区口碑'},
+    official:{c:'official', t:'官方'}
+  };
+  return m[t] || {c:'official', t:'信源'};
+}
+function coverageDots(item){
+  var types = {};
+  (item.sources||[]).forEach(function(s){ types[s.type]=true; });
+  var names = {pro:'职业数据', bilibili:'UP主评测', community:'社区口碑'};
+  var trio = ['pro','bilibili','community'];
+  return trio.map(function(t){
+    return '<span class="cov-dot' + (types[t]?' on':'') + '" title="' + names[t] + '"></span>';
+  }).join('');
+}
+function cardHTML(item, i, isBest, ctx, preScored){
+  var sc = preScored || scoreItem(item, ctx.filters, ctx.tab, ctx.dropped);
+  var tags = [];
+  if(item.weight) tags.push(item.weight+'g');
+  if(item.sensor) tags.push(item.sensor);
+  if(item.shape) tags.push(item.shape);
+  if(item.type) tags.push(item.type);
+  if(item.layout) tags.push(item.layout);
+  if(item.material) tags.push(item.material);
+  if(item.speed) tags.push(item.speed);
+  if(item.sound) tags.push(item.sound);
+  if(item.driver) tags.push(item.driver);
+  if(item.polling_rate) tags.push(item.polling_rate+'Hz');
+  if(item.battery_life) tags.push('续航'+item.battery_life);
+  if(item.category) tags.push(item.category);
+  var inCmp = state.compare.indexOf(item.id)>=0;
+  var chipsHtml = sc.chips.map(function(c){
+    var cls = c.drop ? 'chip drop' : (c.soft ? 'chip soft' : (c.ok ? 'chip ok' : 'chip'));
+    var mark = c.drop ? '放宽' : (c.ok ? '✓' : '·');
+    return '<span class="' + cls + '"><span class="ck">' + mark + '</span> ' + esc(c.label) + '</span>';
+  }).join('');
+  var html = '';
+  html += '<article class="result-card' + (isBest?' best':'') + '" id="rc-' + item.id + '">';
+  html += '<div class="rc-head">';
+  html += '<div class="rc-idx">№ ' + (i+1<10?'0':'') + (i+1) + '<span class="lbl">' + (isBest?'最佳推荐':'备选') + '</span></div>';
+  html += '<div class="rc-main"><h3 class="rc-name">' + esc(item.name) + '</h3>';
+  html += '<div class="rc-meta">' + esc(item.brand||'') + ' · ' + esc(item.budget_tier||'') + '档<span class="mono">' + esc(item.id) + '</span></div></div>';
+  html += '<div class="rc-price"><span class="cur">¥</span><span class="num">' + esc(item.price) + '</span>';
+  html += (item.price_note?'<span class="note">' + esc(item.price_note) + '</span>':'<span class="note">参考价</span>');
+  html += '</div></div>';
+  html += '<div class="chips">' + chipsHtml + '</div>';
+  if(tags.length){
+    html += '<div class="rc-tags">' + tags.map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>';
+  }
+  html += '<div class="rc-score"><span class="score-label">策展评分</span><span class="score-track"><i style="width:' + Math.min(100, sc.total) + '%"></i></span><span class="score-num">' + sc.total + '</span></div>';
+  html += '<div class="rc-actions">';
+  html += '<button class="mini-btn primary" onclick="toggleExplain(\'' + item.id + '\', this)">' + ICONS.why + '<span>为什么推荐它</span></button>';
+  html += '<button class="mini-btn' + (inCmp?' toggled':'') + '" onclick="toggleCompare(\'' + item.id + '\', this)">' + ICONS.cmp + '<span>' + (inCmp?'已加入对比':'加入对比') + '</span></button>';
+  html += '</div>';
+  html += '<div class="explain" id="expl-' + item.id + '"><div class="explain-inner"><div class="explain-body">' + explainHTML(item, sc) + '</div></div></div>';
+  html += '</article>';
+  return html;
+}
+function explainHTML(item, sc){
+  var srcN = (item.sources||[]).length;
+  var verify = item.verification_status || '';
+  var coverageNote = (verify.indexOf('三重')>=0)
+    ? '职业 + 评测 + 社区三类信源已交叉验证'
+    : (verify.indexOf('双信源')>=0 ? '已有两类信源交叉验证，建议补充社区口碑' : '当前仅单一信源，购买前建议再参考社区反馈');
+  var srcRows = (item.sources||[]).map(function(s){
+    var m = srcTypeMeta(s.type);
+    var href = s.url ? ' <a href="' + esc(s.url) + '" target="_blank" rel="noopener">[查看]</a>' : '';
+    return '<div class="src-row"><span class="src-type ' + m.c + '">' + m.t + '</span><span>' + esc(s.label) + href + '</span></div>';
+  }).join('');
+  var total = Math.max(sc.total, 1);
+  var parts = [
+    ['需求匹配', sc.parts.need, 'var(--accent)'],
+    ['策展信源', sc.parts.curator, 'var(--amber)'],
+    ['偏好加分', sc.parts.pref, 'var(--green)']
+  ];
+  var html = '';
+  html += '<div class="ex-block"><h4><span class="dot" style="background:var(--accent)"></span>得分构成（规则公开）</h4>';
+  html += '<div class="score-parts">' + parts.map(function(p){
+    return '<div class="spart"><div class="t">' + p[0] + '</div><div class="v">' + p[1] + '</div>' +
+      '<div class="bar"><i style="width:' + Math.round(p[1]/total*100) + '%;background:' + p[2] + '"></i></div></div>';
+  }).join('') + '</div></div>';
+  html += '<div class="ex-block"><h4><span class="dot" style="background:var(--amber)"></span>策展人推荐理由</h4>';
+  html += '<ul class="ex-list">' + (item.recommend_reason||[]).map(function(r){ return '<li>' + esc(r) + '</li>'; }).join('') + '</ul></div>';
+  if(item.notes && item.notes.length){
+    html += '<div class="ex-block"><h4><span class="dot" style="background:var(--red)"></span>注意事项</h4><ul class="ex-list">';
+    html += item.notes.map(function(n){ return '<li>⚠ ' + esc(n) + '</li>'; }).join('');
+    html += '</ul></div>';
+  }
+  html += '<div class="ex-block"><h4><span class="dot" style="background:var(--green)"></span>信源溯源（' + srcN + ' 条）</h4>';
+  html += '<div class="coverage">' + coverageDots(item) + '<span class="verify-badge' + (verify.indexOf('三重')<0 && verify.indexOf('双信源')<0 ? ' single':'') + '">' + esc(verify) + '</span><span>' + coverageNote + '</span></div>';
+  html += srcRows + '</div>';
+  html += '<div class="rule-note">计分规则：需求匹配 = 命中硬条件 ×10 ｜ 策展信源 = 信源类型数 ×8（上限 24）+ 职业背书 +10 + 点评厚度 ≤6 ｜ 偏好加分 = 命中软偏好 ×10</div>';
+  return html;
+}
+function renderResults(ctx){
+  var catLabel = CATS[ctx.tab].label;
+  var droppedTxt = ctx.dropped.length ? '已自动放宽条件：' + ctx.dropped.map(function(k){
+    return {budget:'预算',hand:'手型',grip:'握法',game:'常玩游戏',use:'用途',conn:'连接',layout:'配列',type:'类型',material:'材质',speed:'速度'}[k]||k;
+  }).join('、') : '严格按你的条件筛选';
+  var html = '';
+  html += '<div class="section-title">' + catLabel + '推荐结果<span class="rule"></span><span class="note">命中 ' + ctx.all.length + ' 款 · 展示前 3 款</span></div>';
+  html += '<div class="summary-bar">' + droppedTxt + ' · 排序：偏好加权 + 信源加分（规则公开，非黑盒）</div>';
+  ctx.top.forEach(function(r, i){
+    html += cardHTML(r.item, i, i===0, ctx, r.score);
+  });
+  html += '<div class="rc-actions">';
+  html += '<button class="mini-btn" onclick="copyResults()">' + ICONS.copy + '<span>复制推荐结果</span></button>';
+  html += '<button class="mini-btn" onclick="downloadResults()">' + ICONS.dl + '<span>导出 Markdown</span></button>';
+  html += '</div>';
+  html += '<button class="link-btn" onclick="showAll(\'' + ctx.tab + '\')">' + ICONS.list + ' 查看全部 ' + ctx.all.length + ' 款' + catLabel + '（按策展序）</button>';
+  html += '<div id="allList"></div>';
+  $('results').innerHTML = html;
+}
+function showAll(tab){
+  var ctx = state.last;
+  if(!ctx) return;
+  var rest = ctx.all.slice(3);
+  var html = '';
+  rest.forEach(function(it, idx){
+    var sc = scoreItem(it, ctx.filters, tab, ctx.dropped);
+    html += cardHTML(it, idx+3, false, ctx, sc);
+  });
+  $('allList').innerHTML = html;
+  $('allList').scrollIntoView({behavior:'smooth'});
+}
+
+/* ---------- 解释区展开 ---------- */
+function toggleExplain(id, btn){
+  var el = $('expl-' + id);
+  if(!el) return;
+  el.classList.toggle('open');
+  if(btn){
+    var open = el.classList.contains('open');
+    btn.innerHTML = ICONS.why + '<span>' + (open ? '收起解释' : '为什么推荐它') + '</span>';
+  }
+}
+
+/* ---------- 对比 ---------- */
+function toggleCompare(id, btn){
+  var idx = state.compare.indexOf(id);
+  if(idx>=0){
+    state.compare.splice(idx,1);
+    if(btn){ btn.innerHTML = ICONS.cmp + '<span>加入对比</span>'; btn.classList.remove('toggled'); }
+  }else{
+    if(state.compare.length>=3){ toast('最多同时对比 3 款'); return; }
+    state.compare.push(id);
+    if(btn){ btn.innerHTML = ICONS.cmp + '<span>已加入对比</span>'; btn.classList.add('toggled'); }
+  }
+  renderCompareBar();
+}
+function renderCompareBar(){
+  var bar = $('compareBar');
+  if(state.compare.length===0){ bar.hidden = true; return; }
+  bar.hidden = false;
+  $('cmpChips').innerHTML = state.compare.map(function(id){
+    var it = findItem(id);
+    return '<span class="cb-chip">' + esc(it?it.name:id) + ' <b onclick="toggleCompare(\'' + id + '\')">✕</b></span>';
+  }).join('');
+  $('cmpCountText').textContent = state.compare.length + '/3';
+  $('compareBtn').disabled = state.compare.length<2;
+}
+function clearCompare(silent){
+  state.compare = [];
+  renderCompareBar();
+  if(!silent) toast('已清空对比');
+}
+function findItem(id){
+  var tab = state.tab;
+  return (PRODUCTS[CATS[tab].key]||[]).filter(function(x){ return x.id===id; })[0] || null;
+}
+var CMP_FIELDS = {
+  mouse: [
+    ['价格','price','p'],['重量','weight','g'],['传感器','sensor'],['回报率','polling_rate','Hz'],
+    ['连接','connection'],['续航','battery_life'],['形状','shape'],['手型','hand_size','arr'],
+    ['握法','grip','arr'],['定位','budget_tier'],['适合游戏','suitable_games','arr'],
+    ['推荐理由','recommend_reason','arr'],['注意事项','notes','arr']
+  ],
+  keyboard: [
+    ['价格','price','p'],['类型','type'],['配列','layout'],['轴体','switch'],['触发','actuation'],
+    ['连接','connection'],['回报率','polling_rate','Hz'],['电池','battery_life'],['定位','budget_tier'],
+    ['适合游戏','suitable_games','arr'],['推荐理由','recommend_reason','arr'],['注意事项','notes','arr']
+  ],
+  mousepad: [
+    ['价格','price','p'],['材质','material'],['速度','speed'],['尺寸','size'],['锁边','stitching'],
+    ['底材','base'],['定位','budget_tier'],['适合游戏','suitable_games','arr'],
+    ['推荐理由','recommend_reason','arr'],['注意事项','notes','arr']
+  ],
+  headset: [
+    ['价格','price','p'],['类型','type'],['驱动单元','driver'],['声学','sound'],['麦克风','mic'],
+    ['频响','frequency'],['阻抗','impedance'],['定位','budget_tier'],['适合游戏','suitable_games','arr'],
+    ['推荐理由','recommend_reason','arr'],['注意事项','notes','arr']
+  ]
+};
+function fmtVal(it, field, kind){
+  var v = it[field];
+  if(v==null || v==='') return '—';
+  if(kind==='arr') return fmtList(v);
+  if(kind==='p') return '¥' + v;
+  if(kind==='g') return v + 'g';
+  if(kind==='Hz') return v + 'Hz';
+  return String(v);
+}
+function openCompare(){
+  if(state.compare.length<2){ toast('至少选择 2 款才能对比'); return; }
+  var tab = state.tab;
+  var items = state.compare.map(function(id){ return findItem(id); }).filter(Boolean);
+  var fields = CMP_FIELDS[tab] || [];
+  var html = '<div class="cmp-wrap"><table class="cmp"><thead><tr><th></th>';
+  items.forEach(function(it, idx){
+    html += '<th' + (idx===0?' class="best"':'') + '>' + esc(it.name) +
+      '<span class="rm" onclick="removeFromCompare(\'' + it.id + '\', this)">移除</span></th>';
+  });
+  html += '</tr></thead><tbody>';
+  fields.forEach(function(f){
+    html += '<tr><td class="k">' + f[0] + '</td>';
+    items.forEach(function(it, idx){
+      html += '<td' + (idx===0?' class="best"':'') + '>' + esc(fmtVal(it, f[1], f[2])) + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table></div>';
+  html += '<p class="cmp-foot">首列为「最佳推荐」对照基准 · 价格为参考价，以电商实时为准</p>';
+  $('cmpBody').innerHTML = html;
+  $('modalTitle').innerHTML = ICONS.cmp + '备选对比';
+  $('modalMask').classList.add('show');
+}
+function removeFromCompare(id){
+  toggleCompare(id);
+  if(state.compare.length<2) closeCompare();
+  else openCompare();
+}
+function closeCompare(){ $('modalMask').classList.remove('show'); }
+
+/* ---------- 导出 ---------- */
+function exportText(){
+  var ctx = state.last;
+  if(!ctx || !ctx.top || !ctx.top.length) return null;
+  var catLabel = CATS[ctx.tab].label;
+  var lines = [];
+  lines.push('# GearPick · ' + catLabel + '推荐结果');
+  lines.push('');
+  lines.push('> 生成时间：' + new Date().toLocaleString('zh-CN') + ' · 价格为参考价，以电商实时为准');
+  lines.push('> 方法：策展人模式（硬过滤 → 偏好加权 → 信源加分），非算法黑盒');
+  lines.push('');
+  ctx.top.forEach(function(r, i){
+    var it = r.item;
+    lines.push('## ' + (i===0?'【最佳推荐】':'【备选 ' + (i+1) + '】') + '：' + it.name + '（¥' + it.price + '）');
+    lines.push('');
+    lines.push('**策展人推荐理由**');
+    (it.recommend_reason||[]).forEach(function(x){ lines.push('- ' + x); });
+    lines.push('');
+    if(it.notes && it.notes.length){
+      lines.push('**注意事项**');
+      it.notes.forEach(function(x){ lines.push('- ⚠ ' + x); });
+      lines.push('');
+    }
+    lines.push('**信源溯源（' + (it.sources||[]).length + ' 条）**');
+    (it.sources||[]).forEach(function(s){
+      lines.push('- [' + s.label + ']' + (s.url ? '(' + s.url + ')' : ''));
+    });
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+  });
+  return lines.join('\n');
+}
+function copyResults(){
+  var txt = exportText();
+  if(!txt){ toast('请先点击「开始推荐」'); return; }
+  function done(){ toast('✅ 推荐结果已复制'); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(txt, done); });
+  }else{
+    fallbackCopy(txt, done);
+  }
+}
+function fallbackCopy(txt, done){
+  var ta = document.createElement('textarea');
+  ta.value = txt; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); done(); }catch(e){ toast('复制失败，请手动复制'); }
+  document.body.removeChild(ta);
+}
+function downloadResults(){
+  var txt = exportText();
+  if(!txt){ toast('请先点击「开始推荐」'); return; }
+  var blob = new Blob([txt], {type:'text/markdown;charset=utf-8'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'GearPick_' + CATS[state.tab].label + '推荐.md';
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); document.body.removeChild(a); }, 400);
+  toast('📥 已导出 Markdown 文件');
+}
+
+/* ---------- 全局挂载 ---------- */
+window.recommend = recommend;
+window.resetForm = resetForm;
+window.toggleExplain = toggleExplain;
+window.toggleCompare = toggleCompare;
+window.clearCompare = clearCompare;
+window.openCompare = openCompare;
+window.closeCompare = closeCompare;
+window.removeFromCompare = removeFromCompare;
+window.showAll = showAll;
+window.copyResults = copyResults;
+window.downloadResults = downloadResults;
+
+window.addEventListener('DOMContentLoaded', init);
+if(document.readyState !== 'loading') init();
+})();
+
+
 </script>
 </body>
 </html>

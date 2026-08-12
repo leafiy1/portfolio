@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈昊 · 产品经理作品集</title>
+<style>
+:root {
+  --bg: #FAF9F5;
+  --accent: #CC785C;
+  --ink: #141413;
+  --ink-muted: #6C6A64;
+  --border: #E6DFD8;
+  --card-bg: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-padding-top: 68px; }
+body {
+  font-family: 'Noto Sans SC', -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  background-color: #FAF9F5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 2L42 22L22 42L2 22Z' fill='none' stroke='%23CC785C' stroke-width='0.8' opacity='0.045'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #FAF9F5 0%, #F3EDE6 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  line-height: 1.6;
+}
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before {
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  border: 2px solid rgba(204, 120, 92, 0.09);
+  top: -200px;
+  right: -180px;
+}
+body::before {
+  box-shadow:
+    inset 0 0 0 34px rgba(204, 120, 92, 0.025),
+    inset 0 0 0 36px rgba(204, 120, 92, 0.05);
+}
+body::after {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(204, 120, 92, 0.07);
+  bottom: -120px;
+  left: -110px;
+}
+.header {
+  text-align: center;
+  padding: 64px 24px 40px;
+}
+.header h1 {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: 4px;
+}
+.header .subtitle {
+  font-size: 16px;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+.header .subtitle::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #E8B4A0);
+}
+.header .contact {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.header .contact span { margin: 0 8px; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.intro {
+  max-width: 720px;
+  margin: 28px auto 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.9;
+}
+.projects { padding: 28px 0 40px; }
+.project {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(20, 20, 19, 0.09);
+  border-color: #DCC8BC;
+}
+.project-top {
+  padding: 24px 28px 0;
+}
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.project-icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+.project-icon.green { background: linear-gradient(135deg, #E8F5E9, #DCEDC8); }
+.project-icon.red { background: linear-gradient(135deg, #FFEBEE, #FFCDD2); }
+.project-icon.blue { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+.project-icon.purple { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
+.project-name {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+  padding-left: 13px;
+  position: relative;
+}
+.project-name::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 4px; bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.project-tag {
+  font-size: 11px;
+  padding: 3px 12px;
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+.project-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  margin-top: 10px;
+  line-height: 1.7;
+}
+.project-body {
+  padding: 16px 28px 28px;
+}
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 24px;
+  margin-bottom: 20px;
+}
+.highlights li {
+  font-size: 13px;
+  color: var(--ink);
+  list-style: none;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.7;
+}
+.highlights li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+/* File blocks */
+.file-block {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.file-block:hover {
+  border-color: #DCC8BC;
+  box-shadow: 0 4px 12px rgba(204, 120, 92, 0.10);
+}
+.file-block:last-child { margin-bottom: 0; }
+.file-icon {
+  font-size: 28px;
+  width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.file-info { flex: 1; }
+.file-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.file-desc {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.file-btn.open {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+}
+.file-btn.open:hover { opacity: 0.88; }
+.file-btn.link {
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
+.file-btn.link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(204,120,92,0.06);
+}
+.links-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0 0;
+}
+.links-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.links-row a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(204,120,92,0.06);
+}
+.links-row a.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.links-row a.primary:hover { opacity: 0.88; }
+/* ===== 导航 ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,249,245,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 52px;
+  font-size: 13px;
+}
+.nav-brand { font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  position: relative;
+  padding: 4px 2px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover { color: var(--accent); }
+/* ===== 数据横幅 ===== */
+.stats {
+  display: flex;
+  margin: 16px 28px 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.stat { flex: 1; text-align: center; padding: 11px 6px; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Noto Serif SC', serif;
+  background: linear-gradient(120deg, #B9624A, var(--accent) 55%, #DF9B7E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-label { font-size: 10.5px; color: var(--ink-muted); margin-top: 2px; }
+/* ===== 关于我 ===== */
+.about {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 0 0 28px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.about:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(20, 20, 19, 0.09);
+  border-color: #DCC8BC;
+}
+.about h2 {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.about h2::before,
+.about h2::after {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border));
+}
+.about h2::after {
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+.about p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.9; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
+.skill-tags span {
+  font-size: 12px; padding: 5px 14px; border-radius: 14px;
+  background: var(--bg); border: 1px solid var(--border); color: var(--ink);
+}
+.about-contact { font-size: 13px; color: var(--ink-muted); text-align: center; }
+.about-contact a { color: var(--accent); text-decoration: none; }
+.footer {
+  text-align: center;
+  padding: 32px 0 40px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 640px) {
+  .highlights { grid-template-columns: 1fr; }
+  .project-top, .project-body { padding: 16px; }
+  .header h1 { font-size: 28px; }
+  .file-block { flex-wrap: wrap; }
+  .file-btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">陈昊 · PM</div>
+    <div class="nav-links">
+      <a href="#about">关于我</a>
+      <a href="#p1">葉光館</a>
+      <a href="#p2">Claude Computer Use</a>
+      <a href="#p3">小红书</a>
+      <a href="#p4">飞书 vs 钉钉</a>
+      <a href="#p5">GearPick</a>
+      <a href="#p6">迷宫饭</a>
+    </div>
+  </div>
+</nav>
+
+<div class="header">
+  <h1>陈昊</h1>
+  <div class="subtitle">产品经理 · 作品集</div>
+  <div class="contact">
+    <span>🎓 中国地质大学（武汉）</span>
+    <span>📧 2295350938@qq.com</span>
+    <span>🏠 湖北武汉</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="about" id="about">
+  <h2>关于我</h2>
+  <p>
+    211理工科应届生，中国地质大学（武汉）本科毕业，专注于 AI 产品项目实践与产品系统学习，独立完成数个从 0 到 1 的 AI 项目并全部上线。
+    具备 vibecoding 能力与从 0 到 1 的产品全流程能力——需求调研、竞品分析、PRD 撰写、高保真原型、开发落地、数据迭代。
+    以下项目覆盖 AI产品 · C端产品 · 搜索策略 · B端竞品分析 · AI协作开发等方向。正在寻找产品经理相关岗位。
+  </p>
+  <div class="skill-tags">
+    <span>PRD 撰写</span><span>Axure 原型</span><span>用户调研</span><span>竞品分析</span>
+    <span>SQL</span><span>Prompt Engineering</span><span>Agent 工作流编排</span><span>AI 多智能体协作开发</span>
+  </div>
+  <div style="margin-top:14px;">
+    <div class="file-block">
+      <div class="file-icon">📄</div>
+      <div class="file-info">
+        <div class="file-name">个人简历 · 产品经理</div>
+        <div class="file-desc">一页纸完整版：教育背景、项目经历、技能清单。飞书在线查看。</div>
+      </div>
+      <a href="https://ycnx20idwv23.feishu.cn/file/DL2zb9f2moYOCXxHAWvcKQcxnah" target="_blank" class="file-btn open">📄 查看简历</a>
+    </div>
+  </div>
+</div>
+
+<div class="projects">
+
+<!-- ========== 葉光館 ========== -->
+<div class="project" id="p1">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon green">🌿</div>
+      <div class="project-name">葉光館 · 同人艺术展示社区</div>
+      <span class="project-tag">C端 · 从0到1</span>
+    </div>
+    <div class="project-desc">
+      面向同人插画创作者的轻量作品展示社区。单人全栈，从竞品调研→信息架构→高保真原型→开发上线→迭代，完整走通产品全流程。已收录 2700+ 作品，每日自动同步 Pixiv 排行。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">2700+</div><div class="stat-label">作品自动管理</div></div>
+    <div class="stat"><div class="stat-num">30天</div><div class="stat-label">v1.0 → v5.2</div></div>
+    <div class="stat"><div class="stat-num">13页</div><div class="stat-label">高保真原型</div></div>
+    <div class="stat"><div class="stat-num">3语8主题</div><div class="stat-label">国际化 & 视觉</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>竞品差异定位：零广告、零算法、零运维</li>
+      <li>13页高保真原型，覆盖全场景+异常兜底</li>
+      <li>AI全自动同步管线：拉取→去重→合规→构建→部署</li>
+      <li>三语（中/英/日）+ 8种CSS主题</li>
+      <li>版本迭代13次，数据零丢失</li>
+      <li>30天完成 v1.0 → v5.2</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">📝</div>
+      <div class="file-info">
+        <div class="file-name">產品需求文檔（PRD · 飞书在线）</div>
+        <div class="file-desc">飞书文档，含需求概述、用户分析、业务方案、功能详述、验收标准、风险边界</div>
+      </div>
+      <a href="https://ycnx20idwv23.feishu.cn/wiki/D01jwqndDibH1Wk0Z96cjxMOnAc" target="_blank" class="file-btn open">📖 在线查看</a>
+    </div>
+
+    <div class="file-block">
+      <div class="file-icon">🎨</div>
+      <div class="file-info">
+        <div class="file-name">高保真交互原型（13页）</div>
+        <div class="file-desc">双击直接打开，可在原型内点击切换页面、查看交互效果</div>
+      </div>
+      <a href="01_yeguang_prototype.html" target="_blank" class="file-btn open">🔗 打开查看</a>
+    </div>
+
+    <div class="file-block">
+      <div class="file-icon">🌐</div>
+      <div class="file-info">
+        <div class="file-name">在线体验站点</div>
+        <div class="file-desc">已部署上线，可直接访问完整功能（需代理）</div>
+      </div>
+      <a href="https://broad-bonus-9861.moyeryld.workers.dev" target="_blank" class="file-btn open">🚀 访问站点</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Claude Computer Use 拆解 ========== -->
+<div class="project" id="p2">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon purple">🤖</div>
+      <div class="project-name">Claude Computer Use · AI 产品深度拆解</div>
+      <span class="project-tag">AI产品 · 深度拆解</span>
+    </div>
+    <div class="project-desc">
+      对 Anthropic Claude Computer Use 能力的系统性产品拆解。覆盖背景模式 vs 前台操控的核心产品决策、SOM 视觉定位策略、安全护栏设计、竞品矩阵对比，输出 AI PM 视角的关键洞察——Agent + GUI + 安全边界，才是 2026 年的 AI 产品经理能力分水岭。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">6维</div><div class="stat-label">产品决策拆解</div></div>
+    <div class="stat"><div class="stat-num">3类</div><div class="stat-label">竞品矩阵</div></div>
+    <div class="stat"><div class="stat-num">2重</div><div class="stat-label">安全护栏</div></div>
+    <div class="stat"><div class="stat-num">1个</div><div class="stat-label">市场空窗</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>核心产品决策：背景模式 vs 前台操控、SOM定位 vs 像素坐标</li>
+      <li>安全护栏：硬编码拒绝列表 + 用户确认机制，防 UI 注入攻击</li>
+      <li>竞品矩阵：OpenAI Operator / Manus / Copilot Vision 差异化对比</li>
+      <li>产品哲学：「共存」而非「替代」的信任策略</li>
+      <li>国内桌面级 AI 操控市场空窗分析</li>
+      <li>Prompt Injection：桌面操控的独特安全威胁</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">📝</div>
+      <div class="file-info">
+        <div class="file-name">AI 产品深度拆解（飞书在线）</div>
+        <div class="file-desc">飞书文档，含产品概述、用户场景、核心产品决策拆解、竞品格局、安全设计、AI PM 关键洞察</div>
+      </div>
+      <a href="https://ycnx20idwv23.feishu.cn/wiki/HjGCwhHLMinY0mkAO7CcuVVFnuf" target="_blank" class="file-btn open">📖 在线查看</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 项目2：小红书搜索策略 ========== -->
+<div class="project" id="p3">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon red">🔍</div>
+      <div class="project-name">小红书 · 搜索体验优化方案</div>
+      <span class="project-tag">搜索策略 · PRD</span>
+    </div>
+    <div class="project-desc">
+      针对小红书搜索场景的系统性体验优化方案。从用户搜索动线出发，分析搜索前/搜索中/搜索后三段体验痛点，输出可落地的搜索策略 PRD。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">5类</div><div class="stat-label">用户深度访谈</div></div>
+    <div class="stat"><div class="stat-num">3大</div><div class="stat-label">核心痛点</div></div>
+    <div class="stat"><div class="stat-num">3模块</div><div class="stat-label">功能设计</div></div>
+    <div class="stat"><div class="stat-num">3级</div><div class="stat-label">异常兜底</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>三段式搜索动线分析（搜索前引导 / 搜索中匹配 / 搜索后承接）</li>
+      <li>Query 分类体系 + 多路召回排序策略</li>
+      <li>无结果 / 歧义 / 低质结果的异常兜底方案</li>
+      <li>AB 测试框架 + 核心指标定义</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">📕</div>
+      <div class="file-info">
+        <div class="file-name">搜索体验优化 PRD（PDF）</div>
+        <div class="file-desc">完整文档，含搜索动线分析、Query分类、异常兜底、AB测试框架</div>
+      </div>
+      <a href="03_xiaohongshu_search_PRD.pdf" target="_blank" class="file-btn open">📖 打开查看</a>
+    </div>
+
+    <div class="file-block">
+      <div class="file-icon">📄</div>
+      <div class="file-info">
+        <div class="file-name">搜索体验优化 PRD（飞书在线）</div>
+        <div class="file-desc">飞书文档，排版更优，含搜索动线分析、Query分类、异常兜底、AB测试框架</div>
+      </div>
+      <a href="https://ycnx20idwv23.feishu.cn/wiki/EBEbwiXgXiGtrDky02tcSn57nzd" target="_blank" class="file-btn open">📖 在线查看</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 飞书vs钉钉竞品分析 ========== -->
+<div class="project" id="p4">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon blue">📊</div>
+      <div class="project-name">飞书 vs 钉钉 · 协同办公竞品分析</div>
+      <span class="project-tag">B端 · 竞品研究</span>
+    </div>
+    <div class="project-desc">
+      针对飞书和钉钉两款协同办公产品的系统性竞品分析报告。从战略层、功能层、体验层三个维度对比，输出差异化定位建议。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">3层</div><div class="stat-label">战略/功能/体验</div></div>
+    <div class="stat"><div class="stat-num">4模块</div><div class="stat-label">逐项功能对比</div></div>
+    <div class="stat"><div class="stat-num">2款</div><div class="stat-label">头部产品</div></div>
+    <div class="stat"><div class="stat-num">1套</div><div class="stat-label">定位建议</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>战略层：产品定位、用户群、商业模式对比</li>
+      <li>功能层：消息 / 文档 / 会议 / OKR 四大模块逐项对比</li>
+      <li>体验层：信息架构、交互效率、学习成本评估</li>
+      <li>输出差异化定位建议 + 优先级路径图</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">📘</div>
+      <div class="file-info">
+        <div class="file-name">协同办公竞品分析报告（PDF）</div>
+        <div class="file-desc">含战略层/功能层/体验层三维对比、差异化建议、优先级路径图</div>
+      </div>
+      <a href="04_feishu_vs_dingtalk_analysis.pdf" target="_blank" class="file-btn open">📖 打开查看</a>
+    </div>
+
+    <div class="file-block">
+      <div class="file-icon">📄</div>
+      <div class="file-info">
+        <div class="file-name">协同办公竞品分析报告（飞书在线）</div>
+        <div class="file-desc">飞书文档，排版更优，含战略层/功能层/体验层三维对比、差异化建议、优先级路径图</div>
+      </div>
+      <a href="https://ycnx20idwv23.feishu.cn/wiki/ViL5wjVxtiPDBkkr34dcGvpZnwe" target="_blank" class="file-btn open">📖 在线查看</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== GearPick · FPS外设推荐 ========== -->
+<div class="project" id="p5">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon" style="background:#FFF3E0;">🎯</div>
+      <div class="project-name">GearPick · FPS 外设智能推荐</div>
+      <span class="project-tag">AI产品 · 数据工具</span>
+    </div>
+    <div class="project-desc">
+      面向 FPS 玩家的外设推荐工具。基于 1000+ 职业选手外设数据（fireopen.cn）、B站外设区 UP主横评、社区真实口碑，通过规则引擎匹配手长/握法/预算/游戏类型，输出最佳推荐 + 备选方案。产品决策核心：策展人模式替代算法黑盒，交叉验证替代单一信源。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">60款</div><div class="stat-label">产品数据库</div></div>
+    <div class="stat"><div class="stat-num">4品类</div><div class="stat-label">鼠标/键盘/垫/耳机</div></div>
+    <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">职业选手数据</div></div>
+    <div class="stat"><div class="stat-num">3重</div><div class="stat-label">交叉验证信源</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>信息架构设计：fireopen 职业数据 + B站UP主评测 + NGA/Reddit社区三重交叉验证</li>
+      <li>产品决策：人工策展 vs 爬虫全量——MVP阶段策展人模式保证推荐质量</li>
+      <li>推荐引擎：规则匹配 + 偏好加权，非 AI 黑盒，每个推荐可追溯到具体信源</li>
+      <li>覆盖四品类：鼠标(30) / 键盘(16) / 鼠标垫(8) / 耳机(6)，共 60 款产品，数据来源可追溯</li>
+      <li>设计师视角：从信息获取→筛选→推荐理由→注意事项的完整推荐链路</li>
+      <li>定位差异化：不是电商筛选器，是「朋友推荐外设」的产品化</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">🎯</div>
+      <div class="file-info">
+        <div class="file-name">GearPick 在线工具</div>
+        <div class="file-desc">交互式外设推荐，选择品类→输入需求→获取推荐。数据来源可追溯，每款产品标注信源</div>
+      </div>
+      <a href="gear/index.html" target="_blank" class="file-btn open">🚀 使用工具</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== 迷宫饭 · 美食地下城网页游戏 ========== -->
+<div class="project" id="p6">
+  <div class="project-top">
+    <div class="project-header">
+      <div class="project-icon purple">🎮</div>
+      <div class="project-name">迷宫饭 · 美食地下城网页游戏</div>
+      <span class="project-tag">C端 · 游戏产品 · AI协作开发</span>
+    </div>
+    <div class="project-desc">
+      基于《迷宫饭》IP 的奇幻美食 RPG 网页游戏。以产品经理视角主导策划与验收：设计核心循环（探索→战斗→食材→烹饪→成长）、数值曲线、层级解锁与周目系统；用 AI 多智能体协作完成开发，产出单文件可玩产品。
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">5层</div><div class="stat-label">迷宫</div></div>
+    <div class="stat"><div class="stat-num">25</div><div class="stat-label">魔物</div></div>
+    <div class="stat"><div class="stat-num">20</div><div class="stat-label">菜谱</div></div>
+    <div class="stat"><div class="stat-num">20</div><div class="stat-label">成就</div></div>
+  </div>
+  <div class="project-body">
+    <ul class="highlights">
+      <li>核心循环设计：探索→遭遇→战斗→食材→烹饪→恢复→深入，闭环可验证</li>
+      <li>数值曲线：魔物强度=周目×1.3×层数×1.18×BOSS加成，主角等级成长对冲</li>
+      <li>经济系统：金币→装备商店（8件装备+4消耗品），形成资源循环</li>
+      <li>层级解锁：前层探索达标+击败BOSS才能进入下一层，线性推进+开放探索</li>
+      <li>系统规模：5层迷宫 / 25魔物 / 20菜谱（含隐藏） / 30事件 / 20成就 / 周目循环</li>
+      <li>AI多智能体开发：策划/美术/剧情并行产出，全程验收修复 15+ bug</li>
+    </ul>
+
+    <div class="file-block">
+      <div class="file-icon">🎮</div>
+      <div class="file-info">
+        <div class="file-name">可玩游戏（单文件版）</div>
+        <div class="file-desc">点击即玩，含完整美术/音效/存档/周目系统</div>
+      </div>
+      <a href="05_dungeon_meshi_game/index.html" target="_blank" class="file-btn open">🎮 打开试玩</a>
+    </div>
+
+    <div class="file-block">
+      <div class="file-icon">📜</div>
+      <div class="file-info">
+        <div class="file-name">项目文档（CHANGELOG）</div>
+        <div class="file-desc">版本迭代记录：v1.0基础版 → v2.1数值大改造</div>
+      </div>
+      <a href="05_dungeon_meshi_game/CHANGELOG.md" target="_blank" class="file-btn open">📜 查看文档</a>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<!-- ========== Footer ========== -->
+
+</div>
+
+<div class="footer">
+  陈昊 · 作品集 v4 · 2026年8月 · 邮箱：2295350938@qq.com
+</div>
+
+</body>
+</html>

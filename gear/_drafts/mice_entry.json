@@ -1,0 +1,1613 @@
+[
+ {
+  "id": "m-034",
+  "name": "Darmoshark N7 MAX 虎鲨",
+  "brand": "达摩鲨",
+  "category": "中端",
+  "weight": 49,
+  "sensor": "PAW3950",
+  "polling_rate": 8000,
+  "switch": "华诺80M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "8K高回报率竞技",
+   "FPS高玩",
+   "中大型手"
+  ],
+  "caveat": "N7 MAX 为国际版命名，国内渠道以官方店为准",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 N7 MAX",
+    "url": "https://darmoshark.com/products/darmoshark-n7-max-tiger-shark-trio-mode-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 N7 MAX",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20N7%20MAX"
+   }
+  ]
+ },
+ {
+  "id": "m-035",
+  "name": "达摩鲨 M3 V2 麒麟",
+  "brand": "达摩鲨",
+  "category": "入门中端",
+  "weight": 58,
+  "sensor": "PAW3395",
+  "polling_rate": 8000,
+  "switch": "华诺80M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "8K回报率入门",
+   "FPS",
+   "中大型手"
+  ],
+  "caveat": "重量为官网±2g口径",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 M3V2",
+    "url": "https://darmoshark.com/products/darmoshark-m3v2-kiran-trio-mode-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M3V2",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3V2"
+   }
+  ]
+ },
+ {
+  "id": "m-036",
+  "name": "达摩鲨 M3 Pro 麒麟",
+  "brand": "达摩鲨",
+  "category": "入门中端",
+  "sensor": "PAW3395",
+  "switch": "TTC 60M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "3395主力鼠",
+   "FPS",
+   "中大型手"
+  ],
+  "caveat": "重量未在官网规格中单独标出，故省略",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 M3 Pro",
+    "url": "https://darmoshark.com/products/darmoshark-m3-pro-kiran-trio-mode-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M3 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-037",
+  "name": "达摩鲨 M3XS Pro 幽灵猫",
+  "brand": "达摩鲨",
+  "category": "中端",
+  "weight": 45,
+  "sensor": "PAW3950",
+  "polling_rate": 8000,
+  "switch": "TTC 60M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "3950双8K",
+   "FPS进阶",
+   "轻量化"
+  ],
+  "caveat": "国际版命名 M3XS PRO ghostCat",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 M3XS Pro",
+    "url": "https://darmoshark.com/products/darmoshark-m3xs-pro-ghostcat-trio-mode-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M3XS Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3XS%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-038",
+  "name": "达摩鲨 N3 角鲨",
+  "brand": "达摩鲨",
+  "category": "入门",
+  "weight": 64,
+  "sensor": "PAW3395",
+  "switch": "TTC 60M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "低价3395",
+   "入门FPS",
+   "办公游戏两用"
+  ],
+  "caveat": "经典入门款",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 N3",
+    "url": "https://darmoshark.com/products/darmoshark-n3-horn-shark-trio-mode-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 N3",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20N3"
+   }
+  ]
+ },
+ {
+  "id": "m-039",
+  "name": "达摩鲨 M2 Pro 达罗 镁合金",
+  "brand": "达摩鲨",
+  "category": "中高端",
+  "weight": 40,
+  "sensor": "PAW3950",
+  "polling_rate": 8000,
+  "switch": "TTC 60M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "全镁合金",
+   "极致轻量化",
+   "双8K竞技"
+  ],
+  "caveat": "镁合金外壳，价格偏高",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 M2 Pro",
+    "url": "https://darmoshark.com/products/darmoshark-m2-pro-daero-trio-mode-magnesium-alloy-game-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M2 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M2%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-040",
+  "name": "达摩鲨 M5 Air 鱼头 碳纤维",
+  "brand": "达摩鲨",
+  "category": "中高端",
+  "weight": 31,
+  "sensor": "PAW3950",
+  "polling_rate": 8000,
+  "switch": "TTC 60M",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "31g碳纤维",
+   "极致轻量",
+   "8K竞技"
+  ],
+  "caveat": "碳纤维版价格偏高",
+  "source": "达摩鲨官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "达摩鲨官网 M5 Air",
+    "url": "https://darmoshark.com/products/darmoshark-m5-air-mp-fish-head-trio-mode-game-mouse-with-carbon-fiber-material"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M5 Air",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M5%20Air"
+   }
+  ]
+ },
+ {
+  "id": "m-041",
+  "name": "达摩鲨 M3 Ultra",
+  "brand": "达摩鲨",
+  "price": 269,
+  "price_note": "B站UP主评测报价，随渠道活动浮动",
+  "category": "中端",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "类Finalmouse模具",
+   "中大手FPS",
+   "性价比进阶"
+  ],
+  "caveat": "传感器/重量未核实到官网参数，故省略",
+  "source": "B站UP主评测：269元类Finalmouse模具中大手鼠标",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达摩鲨 M3 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-042",
+  "name": "ZOWIE U2-DW 4K",
+  "brand": "卓威",
+  "category": "中高端",
+  "weight": 60,
+  "polling_rate": 4000,
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "battery_life": "80h(1KHz)/30h(2KHz)/24h(4KHz)",
+  "best_for": [
+   "职业级FPS",
+   "低延迟无线",
+   "竞技标准"
+  ],
+  "caveat": "回报率支持125/500/1000/2000/4000Hz；传感器型号官网未公布",
+  "pro_users": "欧美职业选手广泛使用（具体战队以官方公布为准）",
+  "source": "卓威中国官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ZOWIE官网 U2-DW",
+    "url": "https://zowie.benq.com.cn/zh-cn/mouse/u2-dw.html"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：卓威 U2-DW",
+    "url": "https://search.bilibili.com/all?keyword=%E5%8D%93%E5%A8%81%20U2-DW"
+   }
+  ]
+ },
+ {
+  "id": "m-043",
+  "name": "ZOWIE EC2-DW 4K",
+  "brand": "卓威",
+  "category": "中高端",
+  "weight": 60,
+  "polling_rate": 4000,
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "趴握"
+  ],
+  "connection": "无线",
+  "battery_life": "80h(1KHz)/30h(2KHz)/24h(4KHz)",
+  "best_for": [
+   "右手趴握FPS",
+   "CS/VALORANT",
+   "职业级"
+  ],
+  "caveat": "回报率最高4000Hz；传感器型号官网未公布",
+  "source": "卓威中国官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ZOWIE官网 EC2-DW",
+    "url": "https://zowie.benq.com.cn/zh-cn/mouse/ec2-dw.html"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：卓威 EC2-DW",
+    "url": "https://search.bilibili.com/all?keyword=%E5%8D%93%E5%A8%81%20EC2-DW"
+   }
+  ]
+ },
+ {
+  "id": "m-044",
+  "name": "ZOWIE ZA13-DW 4K",
+  "brand": "卓威",
+  "category": "中高端",
+  "weight": 65,
+  "polling_rate": 4000,
+  "shape": "对称",
+  "hand_size": [
+   "小"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "battery_life": "80h(1KHz)/30h(2KHz)/24h(4KHz)",
+  "best_for": [
+   "高背对称",
+   "拉枪定位",
+   "小手FPS"
+  ],
+  "caveat": "高背设计，适合抬鼠；传感器型号官网未公布",
+  "source": "卓威中国官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ZOWIE官网 ZA13-DW",
+    "url": "https://zowie.benq.com.cn/zh-cn/mouse/za13-dw.html"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：卓威 ZA13-DW",
+    "url": "https://search.bilibili.com/all?keyword=%E5%8D%93%E5%A8%81%20ZA13-DW"
+   }
+  ]
+ },
+ {
+  "id": "m-045",
+  "name": "ZOWIE FK2-DW 4K",
+  "brand": "卓威",
+  "category": "中高端",
+  "weight": 65,
+  "polling_rate": 4000,
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握"
+  ],
+  "connection": "无线",
+  "battery_life": "80h(1KHz)/30h(2KHz)/24h(4KHz)",
+  "best_for": [
+   "低背对称",
+   "抓握FPS",
+   "职业级"
+  ],
+  "caveat": "低背设计，微调瞄准更迅速；传感器型号官网未公布",
+  "source": "卓威中国官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ZOWIE官网 FK2-DW",
+    "url": "https://zowie.benq.com.cn/zh-cn/mouse/fk2-dw.html"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：卓威 FK2-DW",
+    "url": "https://search.bilibili.com/all?keyword=%E5%8D%93%E5%A8%81%20FK2-DW"
+   }
+  ]
+ },
+ {
+  "id": "m-046",
+  "name": "ZOWIE EC2-C",
+  "brand": "卓威",
+  "category": "中端",
+  "weight": 73,
+  "sensor": "3360",
+  "polling_rate": 1000,
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "趴握"
+  ],
+  "connection": "有线",
+  "best_for": [
+   "经典右手工学",
+   "CS老玩家",
+   "有线稳定"
+  ],
+  "caveat": "有线经典款；3360传感器",
+  "source": "卓威中国官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ZOWIE官网 EC2-C",
+    "url": "https://zowie.benq.com.cn/zh-cn/mouse/ec2-c.html"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：卓威 EC2-C",
+    "url": "https://search.bilibili.com/all?keyword=%E5%8D%93%E5%A8%81%20EC2-C"
+   }
+  ]
+ },
+ {
+  "id": "m-047",
+  "name": "雷柏 VT7 Ultra 星闪双8K版",
+  "brand": "雷柏",
+  "category": "中端",
+  "sensor": "原相3950 Ultimate",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "星闪双8K",
+   "大手FPS",
+   "低延迟"
+  ],
+  "caveat": "双8K=有线+无线均8000Hz；重量未在官网规格页单独标出",
+  "source": "雷柏官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网 VT7 Ultra",
+    "url": "https://www.rapoo.cn/product/895"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT7 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT7%20Ultra%20%E6%98%9F%E9%97%AA"
+   }
+  ]
+ },
+ {
+  "id": "m-048",
+  "name": "雷柏 VT9s MAX 大师版V2 双8K",
+  "brand": "雷柏",
+  "category": "中端",
+  "sensor": "原相3955 Ultimate",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "3955双8K",
+   "中小手FPS",
+   "进阶玩家"
+  ],
+  "caveat": "双8K=有线+无线均8000Hz；重量未标出",
+  "source": "雷柏官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网 VT9s MAX",
+    "url": "https://www.rapoo.cn/product/942"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT9s MAX",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT9s%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2"
+   }
+  ]
+ },
+ {
+  "id": "m-049",
+  "name": "雷柏 VT9 MAX 大师版V2 双8K",
+  "brand": "雷柏",
+  "category": "中端",
+  "sensor": "原相3955 Ultimate",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "3955双8K",
+   "中大手FPS",
+   "进阶玩家"
+  ],
+  "caveat": "双8K=有线+无线均8000Hz；重量未标出",
+  "source": "雷柏官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网 VT9 MAX",
+    "url": "https://www.rapoo.cn/product/940"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT9 MAX",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT9%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2"
+   }
+  ]
+ },
+ {
+  "id": "m-050",
+  "name": "雷柏 VT3 MAX 大师版V2 双8K",
+  "brand": "雷柏",
+  "category": "中端",
+  "sensor": "原相3955 Ultimate",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "3955双8K",
+   "大手FPS",
+   "进阶玩家"
+  ],
+  "caveat": "双8K=有线+无线均8000Hz；重量未标出",
+  "source": "雷柏官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网 VT3 MAX",
+    "url": "https://www.rapoo.cn/product/921"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT3 MAX",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT3%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2"
+   }
+  ]
+ },
+ {
+  "id": "m-051",
+  "name": "雷柏 VT3s MAX 大师版V2 双8K",
+  "brand": "雷柏",
+  "category": "中端",
+  "sensor": "原相3955 Ultimate",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "3955双8K",
+   "中小手FPS",
+   "进阶玩家"
+  ],
+  "caveat": "双8K=有线+无线均8000Hz；重量未标出",
+  "source": "雷柏官网产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网 VT3s MAX",
+    "url": "https://www.rapoo.cn/product/920"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT3s MAX",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT3s%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2"
+   }
+  ]
+ },
+ {
+  "id": "m-052",
+  "name": "雷柏 VT3s V2",
+  "brand": "雷柏",
+  "price": 178,
+  "price_note": "B站好价播报限时价，随活动浮动",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "百元工学电竞",
+   "中小手FPS",
+   "性价比"
+  ],
+  "caveat": "传感器/回报率未核实到官网规格，故省略",
+  "source": "雷柏官网+ B站好价播报",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网",
+    "url": "https://www.rapoo.cn/"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT3s V2",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT3s%20V2"
+   }
+  ]
+ },
+ {
+  "id": "m-053",
+  "name": "雷柏 VT9 Air",
+  "brand": "雷柏",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "轻量化入门",
+   "中大手FPS",
+   "性价比"
+  ],
+  "caveat": "参数以官网/电商页为准，重量未核实",
+  "source": "雷柏官网+B站评测",
+  "sources": [
+   {
+    "type": "official",
+    "label": "雷柏官网",
+    "url": "https://www.rapoo.cn/"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷柏 VT9 Air",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VT9%20Air"
+   }
+  ]
+ },
+ {
+  "id": "m-054",
+  "name": "ATK 烈空 X1 V2",
+  "brand": "ATK",
+  "category": "中端",
+  "weight": 55,
+  "sensor": "PAW3950 Ultra",
+  "polling_rate": 8000,
+  "switch": "ATK Lightblade",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "三模",
+  "battery_life": "800h(1000Hz)",
+  "best_for": [
+   "8K无线竞技",
+   "中大手抓握",
+   "长续航"
+  ],
+  "caveat": "800mAh电池；重量为官网55±3g口径",
+  "source": "ATK官方商城产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ATK商城 X1 V2",
+    "url": "https://www.atk.store/products/atk-blazing-sky-x1-v2-series-esports-wireless-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：ATK 烈空 X1 V2",
+    "url": "https://search.bilibili.com/all?keyword=ATK%20%E7%83%88%E7%A9%BA%20X1%20V2"
+   }
+  ]
+ },
+ {
+  "id": "m-055",
+  "name": "ATK 烈空 X1 Air（FIERCE X）",
+  "brand": "ATK",
+  "category": "中端",
+  "weight": 42,
+  "sensor": "PAW3950 Ultra",
+  "polling_rate": 8000,
+  "switch": "欧姆龙光微动",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握"
+  ],
+  "connection": "三模",
+  "battery_life": "70h(1000Hz)",
+  "best_for": [
+   "镁铝合金镂空",
+   "42g轻量",
+   "中小手抓握"
+  ],
+  "caveat": "镁合金镂空外壳；230mAh电池",
+  "source": "ATK官方商城产品页",
+  "sources": [
+   {
+    "type": "official",
+    "label": "ATK商城 FIERCE X",
+    "url": "https://www.atk.store/products/atk-fierce-x-lightweight-wireless-gaming-mouse"
+   },
+   {
+    "type": "bilibili",
+    "label": "B站搜索：ATK 烈空 X1 Air",
+    "url": "https://search.bilibili.com/all?keyword=ATK%20%E7%83%88%E7%A9%BA%20X1%20Air"
+   }
+  ]
+ },
+ {
+  "id": "m-056",
+  "name": "ATK 烈空 Z1 Ultra",
+  "brand": "ATK",
+  "category": "中端",
+  "sensor": "PAW3950 Ultra",
+  "polling_rate": 8000,
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "右手工学8K",
+   "中大手FPS",
+   "高回报率"
+  ],
+  "caveat": "重量/电池未核实，故省略",
+  "source": "B站拆解评测：3950Ultra标配8K接收器",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：ATK 烈空 Z1 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=ATK%20%E7%83%88%E7%A9%BA%20Z1%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-057",
+  "name": "ATK A9 大师版+",
+  "brand": "ATK",
+  "price": 190,
+  "price_note": "B站好价播报限时价，随活动浮动",
+  "category": "入门中端",
+  "sensor": "PAW3955",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "低价3955",
+   "入门高回报率",
+   "性价比FPS"
+  ],
+  "caveat": "重量/回报率未核实，故省略",
+  "source": "B站好价播报：最低190元3955鼠标ATK A9",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：ATK A9 大师版+",
+    "url": "https://search.bilibili.com/all?keyword=ATK%20A9%20%E5%A4%A7%E5%B8%88%E7%89%88%2B"
+   }
+  ]
+ },
+ {
+  "id": "m-058",
+  "name": "VXE MAD R Major",
+  "brand": "VXE",
+  "category": "中端",
+  "weight": 38,
+  "sensor": "PAW3950",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "38g无孔轻量",
+   "双8K",
+   "FPS竞技"
+  ],
+  "caveat": "B站拆解标题口径：3950双8K+38g无孔轻量化",
+  "source": "B站拆解评测",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：VXE MAD R Major",
+    "url": "https://search.bilibili.com/all?keyword=VXE%20MAD%20R%20Major"
+   }
+  ]
+ },
+ {
+  "id": "m-059",
+  "name": "VXE MAD R",
+  "brand": "VXE",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "高性价比无线",
+   "FPS入门",
+   "国产卷王"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：VXE MAD R",
+    "url": "https://search.bilibili.com/all?keyword=VXE%20MAD%20R"
+   }
+  ]
+ },
+ {
+  "id": "m-060",
+  "name": "VGN 蜻蜓F1 Pro",
+  "brand": "VGN",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "经典性价比鼠",
+   "FPS入门",
+   "轻量化"
+  ],
+  "caveat": "2023经典款；参数以官网为准，此处省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：VGN 蜻蜓F1 Pro",
+    "url": "https://search.bilibili.com/all?keyword=VGN%20%E8%9C%BB%E8%9C%93F1%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-061",
+  "name": "VGN 蜻蜓F1 V5",
+  "brand": "VGN",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "F1系列迭代",
+   "FPS入门",
+   "性价比"
+  ],
+  "caveat": "V5为2025迭代款；参数未核实省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：VGN 蜻蜓F1 V5",
+    "url": "https://search.bilibili.com/all?keyword=VGN%20%E8%9C%BB%E8%9C%93F1%20V5"
+   }
+  ]
+ },
+ {
+  "id": "m-062",
+  "name": "迈从 A7 Pro",
+  "brand": "迈从",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "狗屁王平替",
+   "中大手FPS",
+   "性价比"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：迈从 A7 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BF%88%E4%BB%8E%20A7%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-063",
+  "name": "迈从 A5 V2 Ultra",
+  "brand": "迈从",
+  "category": "中端",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "中小手鼠皇",
+   "FPS",
+   "三模"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：迈从 A5 V2 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BF%88%E4%BB%8E%20A5%20V2%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-064",
+  "name": "迈从 A5 V3 Ultra+",
+  "brand": "迈从",
+  "category": "中端",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "A5系列顶配",
+   "中小手FPS",
+   "进阶"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：迈从 A5 V3 Ultra+",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BF%88%E4%BB%8E%20A5%20V3%20Ultra%2B"
+   }
+  ]
+ },
+ {
+  "id": "m-065",
+  "name": "ROG 战刃3 无线 AP36K",
+  "brand": "ROG",
+  "category": "中高端",
+  "sensor": "AimPoint 36K",
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "ROG旗舰手感",
+   "无线三模",
+   "中大手"
+  ],
+  "caveat": "重量/回报率未核实省略",
+  "source": "B站拆解评测确认",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：ROG 战刃3",
+    "url": "https://search.bilibili.com/all?keyword=ROG%20%E6%88%98%E5%88%833"
+   }
+  ]
+ },
+ {
+  "id": "m-066",
+  "name": "罗技 G309 LIGHTSPEED",
+  "brand": "Logitech",
+  "category": "中端",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "PowerPlay兼容",
+   "大厂无线",
+   "FPS"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：罗技 G309",
+    "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G309"
+   }
+  ]
+ },
+ {
+  "id": "m-067",
+  "name": "罗技 GPW4 鹰眼（GPX2 DEX）",
+  "brand": "Logitech",
+  "category": "中高端",
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "右手工学旗舰",
+   "职业级FPS",
+   "轻量化"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：罗技 GPW4 鹰眼",
+    "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20GPW4%20%E9%B9%B0%E7%9C%BC"
+   }
+  ]
+ },
+ {
+  "id": "m-068",
+  "name": "雷蛇 毒蝰V3 Pro",
+  "brand": "Razer",
+  "category": "中高端",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "职业级对称",
+   "FPS旗舰",
+   "轻量化"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：雷蛇 毒蝰V3 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20%E6%AF%92%E8%9D%B0V3%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-069",
+  "name": "兰族 Maya X",
+  "brand": "Lamzu",
+  "category": "中高端",
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "职业选手同款",
+   "中手抓握",
+   "FPS竞技"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：兰族 Maya X",
+    "url": "https://search.bilibili.com/all?keyword=%E5%85%B0%E6%97%8F%20Maya%20X"
+   }
+  ]
+ },
+ {
+  "id": "m-070",
+  "name": "VAXEE E1",
+  "brand": "VAXEE",
+  "category": "中高端",
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "EC类终极形态",
+   "右手趴握",
+   "职业向"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：VAXEE E1",
+    "url": "https://search.bilibili.com/all?keyword=VAXEE%20E1"
+   }
+  ]
+ },
+ {
+  "id": "m-071",
+  "name": "狼蛛 SC880 Ultra",
+  "brand": "狼蛛",
+  "price": 399,
+  "price_note": "B站首发评测价，随活动浮动",
+  "category": "中端",
+  "sensor": "PAW3955",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "双模",
+  "best_for": [
+   "镁合金3955",
+   "双8K",
+   "中小手FPS"
+  ],
+  "caveat": "镁合金镂空外壳；首发399元",
+  "source": "B站评测：镁合金PAW3955双8K",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：狼蛛 SC880 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=%E7%8B%BC%E8%9B%9B%20SC880%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-072",
+  "name": "狼蛛 SC880",
+  "brand": "狼蛛",
+  "category": "中端",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "镁合金镂空",
+   "中小手",
+   "性价比"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：狼蛛 SC880",
+    "url": "https://search.bilibili.com/all?keyword=%E7%8B%BC%E8%9B%9B%20SC880"
+   }
+  ]
+ },
+ {
+  "id": "m-073",
+  "name": "英菲克 IN9 Pro",
+  "brand": "英菲克",
+  "price": 99,
+  "price_note": "B站评测报价，随渠道活动浮动",
+  "category": "入门中端",
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "99元人体工学",
+   "可DBC/DC",
+   "入门游戏"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：英菲克 IN9 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-074",
+  "name": "多彩 M900 Pro",
+  "brand": "多彩",
+  "category": "入门中端",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "8K回报率入门",
+   "中大手",
+   "性价比"
+  ],
+  "caveat": "B站反馈存在8K回报率断连个例，购买前注意",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：多彩 M900 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E5%A4%9A%E5%BD%A9%20M900%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-075",
+  "name": "多彩 M800 mini Pro",
+  "brand": "多彩",
+  "price": 199,
+  "price_note": "B站评测口径：200元内",
+  "category": "入门中端",
+  "shape": "对称",
+  "hand_size": [
+   "小",
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "指握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "毒蝰mini平替",
+   "中小手",
+   "200元内"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：多彩 M800 mini Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E5%A4%9A%E5%BD%A9%20M800%20mini%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-076",
+  "name": "达尔优 A950 三模",
+  "brand": "达尔优",
+  "category": "入门中端",
+  "shape": "右手人体工学",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "趴握",
+   "抓握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "三模办公游戏",
+   "中大手",
+   "性价比"
+  ],
+  "caveat": "经典款；参数未核实省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达尔优 A950",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A950"
+   }
+  ]
+ },
+ {
+  "id": "m-077",
+  "name": "达尔优 A980 Pro 星闪版",
+  "brand": "达尔优",
+  "category": "中端",
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "星闪低延迟",
+   "FPS",
+   "国产旗舰芯片"
+  ],
+  "caveat": "B站反馈星闪连接偶发不跟手，建议有线/2.4G使用",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：达尔优 A980 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A980%20Pro%20%E6%98%9F%E9%97%AA"
+   }
+  ]
+ },
+ {
+  "id": "m-078",
+  "name": "黑爵 AJ139 Pro 4K版",
+  "brand": "黑爵",
+  "category": "入门中端",
+  "sensor": "PAW3395",
+  "polling_rate": 4000,
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "3395 4K",
+   "国产狗屁王",
+   "中手FPS"
+  ],
+  "caveat": "B站评测标题口径：3395+诺迪克52840主控",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：黑爵 AJ139 Pro",
+    "url": "https://search.bilibili.com/all?keyword=%E9%BB%91%E7%88%B5%20AJ139%20Pro"
+   }
+  ]
+ },
+ {
+  "id": "m-079",
+  "name": "黑爵 AJ139P NL V3 Ultra 星闪",
+  "brand": "黑爵",
+  "category": "中端",
+  "sensor": "PAW3950",
+  "shape": "对称",
+  "hand_size": [
+   "中"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "三模",
+  "best_for": [
+   "3950星闪",
+   "三模",
+   "中手FPS"
+  ],
+  "caveat": "B站标题口径：星闪三模PAW3950；回报率未核实省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：黑爵 AJ139P NL V3 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=%E9%BB%91%E7%88%B5%20AJ139P%20NL%20V3%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-080",
+  "name": "SKN 青龙4.0 Ultra",
+  "brand": "SKN",
+  "category": "中端",
+  "polling_rate": 8000,
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "无线",
+  "best_for": [
+   "双8K",
+   "超长续航",
+   "游戏办公通吃"
+  ],
+  "caveat": "传感器/重量未核实省略",
+  "source": "B站评测确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：SKN 青龙4.0 Ultra",
+    "url": "https://search.bilibili.com/all?keyword=SKN%20%E9%9D%92%E9%BE%994.0%20Ultra"
+   }
+  ]
+ },
+ {
+  "id": "m-081",
+  "name": "血手幽灵 J90",
+  "brand": "血手幽灵",
+  "category": "入门",
+  "shape": "对称",
+  "hand_size": [
+   "中",
+   "大"
+  ],
+  "grip": [
+   "抓握",
+   "趴握"
+  ],
+  "connection": "有线",
+  "best_for": [
+   "入门FPS",
+   "宏功能",
+   "低价"
+  ],
+  "caveat": "参数未核实到官网规格，故省略",
+  "source": "B站开箱确认存在",
+  "sources": [
+   {
+    "type": "bilibili",
+    "label": "B站搜索：血手幽灵 J90",
+    "url": "https://search.bilibili.com/all?keyword=%E8%A1%80%E6%89%8B%E5%B9%BD%E7%81%B5%20J90"
+   }
+  ]
+ }
+]

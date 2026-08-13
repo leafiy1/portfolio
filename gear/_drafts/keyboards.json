@@ -1,0 +1,1693 @@
+[
+  {
+    "name": "ATK 68",
+    "brand": "艾泰克 ATK",
+    "price": 329,
+    "price_note": "参考价：电商常见区间（首发约299元起）",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "65%（68键）",
+    "switch": "佳达隆二代磁轴（可选ATK二代红磁轴）",
+    "actuation": "0.1-4.0mm 全自定义触发点（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "RT入门首选",
+      "CS2/瓦罗兰特",
+      "65%紧凑配列"
+    ],
+    "caveat": "有线单模，需V HUB驱动设置",
+    "source": "ATK官网产品页核实（佳达隆二代磁轴/RT/0.1-4.0mm）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.atkgear.com.cn/keyboard/atk-68"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ATK68 磁轴",
+        "url": "https://search.bilibili.com/all?keyword=ATK68%20%E7%A3%81%E8%BD%B4"
+      }
+    ],
+    "id": "kb-018"
+  },
+  {
+    "name": "ATK 68 RX",
+    "brand": "艾泰克 ATK",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "65%（68键）",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "best_for": [
+      "65%磁轴进阶",
+      "RT电竞"
+    ],
+    "caveat": "2025年新品，具体参数以官方页为准",
+    "source": "ATK官网产品页核实存在（atk68-rx）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.atkgear.com.cn/keyboard/atk68-rx"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ATK68 RX",
+        "url": "https://search.bilibili.com/all?keyword=ATK68%20RX"
+      }
+    ],
+    "id": "kb-019"
+  },
+  {
+    "name": "ATK 87",
+    "brand": "艾泰克 ATK",
+    "price": 459,
+    "price_note": "参考价，随渠道浮动",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "87磁轴性价比",
+      "RT",
+      "TKL电竞"
+    ],
+    "caveat": "有线单模",
+    "source": "ATK官网/电商在售核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.atkgear.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ATK87 磁轴",
+        "url": "https://search.bilibili.com/all?keyword=ATK87%20%E7%A3%81%E8%BD%B4"
+      }
+    ],
+    "id": "kb-020"
+  },
+  {
+    "name": "ATK RS7",
+    "brand": "艾泰克 ATK",
+    "price": 849,
+    "price_note": "8KHz单模有线版起售价（媒体发布报道）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "8K回报率",
+      "87磁轴",
+      "RT"
+    ],
+    "caveat": "单模有线，高回报率需官方驱动开启",
+    "source": "it之家/B站报道：8KHz回报率、849元起",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.atkgear.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ATK RS7 磁轴",
+        "url": "https://search.bilibili.com/all?keyword=ATK%20RS7%20%E7%A3%81%E8%BD%B4"
+      }
+    ],
+    "id": "kb-021"
+  },
+  {
+    "name": "VTER ATO87",
+    "brand": "VTER",
+    "price": 99,
+    "price_note": "起售价（B站开箱报道）",
+    "category": "入门磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "百元磁轴",
+      "RT入门",
+      "87配列"
+    ],
+    "caveat": "入门级做工，主打极致性价比",
+    "source": "B站开箱测评：99元起/8K回报率/RT可调",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VTER ATO87 磁轴",
+        "url": "https://search.bilibili.com/all?keyword=VTER%20ATO87%20%E7%A3%81%E8%BD%B4"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：VTER ATO87",
+        "url": "https://search.jd.com/Search?keyword=VTER%20ATO87&enc=utf-8"
+      }
+    ],
+    "id": "kb-022"
+  },
+  {
+    "name": "达尔优 A75HE",
+    "brand": "达尔优 Dareu",
+    "category": "入门磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "磁轴（全铝CNC外壳）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "75%磁轴",
+      "8K回报率",
+      "RT"
+    ],
+    "caveat": "官方页未标注无线，按电竞有线款理解",
+    "source": "达尔优官网产品页：真8KHz轮询率/0.125ms延迟",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.dareu.com/?m=home&c=View&a=index&aid=1049"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 A75HE",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A75HE"
+      }
+    ],
+    "id": "kb-023"
+  },
+  {
+    "name": "达尔优 Ultra 75",
+    "brand": "达尔优 Dareu",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "鲁班HiFi磁轴",
+    "rapid_trigger": true,
+    "connection": "无线三模",
+    "polling_rate": 8000,
+    "best_for": [
+      "三模磁轴",
+      "快拆客制",
+      "RT"
+    ],
+    "caveat": "3秒快拆设计，手感/声音可自定义",
+    "source": "达尔优官网产品页：三模快拆/双8K回报率",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.dareu.com/?m=home&c=View&a=index&aid=1071"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 Ultra 75",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20Ultra%2075"
+      }
+    ],
+    "id": "kb-024"
+  },
+  {
+    "name": "达尔优 COOL68",
+    "brand": "达尔优 Dareu",
+    "category": "入门磁轴",
+    "type": "磁轴(RT)",
+    "layout": "65%（68键）",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "68键磁轴",
+      "RT",
+      "8K"
+    ],
+    "caveat": "电商在售款，价格随活动波动",
+    "source": "淘宝官方店铺在售（磁轴RT/8K/双驱动）",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 COOL68",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20COOL68"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：达尔优 COOL68",
+        "url": "https://search.jd.com/Search?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20COOL68&enc=utf-8"
+      }
+    ],
+    "id": "kb-025"
+  },
+  {
+    "name": "达尔优 EK75RT",
+    "brand": "达尔优 Dareu",
+    "category": "入门磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "best_for": [
+      "75%磁轴",
+      "RT入门"
+    ],
+    "caveat": "部分参数未核实，以官方为准",
+    "source": "什么值得买测评（磁轴RT）",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 EK75RT",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20EK75RT"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：达尔优 EK75RT",
+        "url": "https://search.jd.com/Search?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20EK75RT&enc=utf-8"
+      }
+    ],
+    "id": "kb-026"
+  },
+  {
+    "name": "Wooting 80HE",
+    "brand": "Wooting",
+    "price": 1499,
+    "price_note": "按海外官方价约$199换算的参考价，国内售价随渠道浮动",
+    "category": "顶级磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%（80%配列）",
+    "switch": "Lekker 磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "RT标杆",
+      "CS2/瓦罗兰特",
+      "职业级"
+    ],
+    "caveat": "价格高；国内无官方售后，需官网直邮",
+    "source": "Wooting官网产品页：80%配列/8kHz回报率/RT/Rappy Snappy",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://wooting.io/wooting-80he"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Wooting 80HE",
+        "url": "https://search.bilibili.com/all?keyword=Wooting%2080HE"
+      }
+    ],
+    "id": "kb-027"
+  },
+  {
+    "name": "Wooting 60HE+",
+    "brand": "Wooting",
+    "category": "顶级磁轴",
+    "type": "磁轴(RT)",
+    "layout": "60%",
+    "switch": "Lekker 磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "60%职业向",
+      "RT",
+      "小桌面"
+    ],
+    "caveat": "官网中国区直邮，价格较高",
+    "source": "Wooting官网在售（60HE+，RT）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://wooting.io/zh-CN"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Wooting 60HE+",
+        "url": "https://search.bilibili.com/all?keyword=Wooting%2060HE%2B"
+      }
+    ],
+    "id": "kb-028"
+  },
+  {
+    "name": "Wooting Two HE",
+    "brand": "Wooting",
+    "category": "高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87（TKL）",
+    "switch": "Lekker 磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "TKL磁轴",
+      "RT",
+      "全尺寸功能键"
+    ],
+    "caveat": "较早型号，回报率1000Hz",
+    "source": "Wooting官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://wooting.io/zh-CN"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Wooting Two HE",
+        "url": "https://search.bilibili.com/all?keyword=Wooting%20Two%20HE"
+      }
+    ],
+    "id": "kb-029"
+  },
+  {
+    "name": "美加狮 MAD 60HE",
+    "brand": "Mad Catz 美加狮",
+    "category": "入门磁轴",
+    "type": "磁轴(RT)",
+    "layout": "60%",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "best_for": [
+      "60%磁轴入门",
+      "RT"
+    ],
+    "caveat": "品牌国内渠道较少",
+    "source": "美加狮官方渠道在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.madcatz.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Mad Catz MAD 60HE",
+        "url": "https://search.bilibili.com/all?keyword=Mad%20Catz%20MAD%2060HE"
+      }
+    ],
+    "id": "kb-030"
+  },
+  {
+    "name": "美加狮 MAD 68HE",
+    "brand": "Mad Catz 美加狮",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "65%（68键）",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "best_for": [
+      "65%磁轴",
+      "RT"
+    ],
+    "caveat": "定位低于旗舰MAD 68 Pro",
+    "source": "美加狮官方渠道在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.madcatz.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Mad Catz MAD 68HE",
+        "url": "https://search.bilibili.com/all?keyword=Mad%20Catz%20MAD%2068HE"
+      }
+    ],
+    "id": "kb-031"
+  },
+  {
+    "name": "Razer Huntsman V3 Pro TKL（猎魂光蛛V3专业竞技版）",
+    "brand": "雷蛇 Razer",
+    "price": 1199,
+    "price_note": "参考价（电商浮动）",
+    "category": "高端磁轴",
+    "type": "光轴(RT)",
+    "layout": "87",
+    "switch": "雷蛇模拟光轴（Analog Optical）",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "职业RT",
+      "TKL",
+      "CS2"
+    ],
+    "caveat": "实为模拟光轴+RT（非霍尔磁轴）；8K版本另有售",
+    "source": "雷蛇中文官网产品页核实（87键/RT）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.razerzone.com/gaming-keyboards/razer-huntsman-v3-pro-tenkeyless"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Razer Huntsman V3 Pro TKL",
+        "url": "https://search.bilibili.com/all?keyword=Razer%20Huntsman%20V3%20Pro%20TKL"
+      }
+    ],
+    "id": "kb-032"
+  },
+  {
+    "name": "Razer Huntsman V3 Pro Mini（猎魂光蛛V3专业迷你版）",
+    "brand": "雷蛇 Razer",
+    "price": 1099,
+    "price_note": "参考价",
+    "category": "高端磁轴",
+    "type": "光轴(RT)",
+    "layout": "60%",
+    "switch": "雷蛇模拟光轴（Analog Optical）",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "60%RT",
+      "职业",
+      "小桌面"
+    ],
+    "caveat": "光轴方案（非磁轴）",
+    "source": "雷蛇官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.razerzone.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Razer Huntsman V3 Pro Mini",
+        "url": "https://search.bilibili.com/all?keyword=Razer%20Huntsman%20V3%20Pro%20Mini"
+      }
+    ],
+    "id": "kb-033"
+  },
+  {
+    "name": "Razer Huntsman V3 Pro（猎魂光蛛V3专业全尺寸版）",
+    "brand": "雷蛇 Razer",
+    "price": 1399,
+    "price_note": "参考价",
+    "category": "高端磁轴",
+    "type": "光轴(RT)",
+    "layout": "104",
+    "switch": "雷蛇模拟光轴（Analog Optical）",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "全尺寸RT",
+      "办公+游戏"
+    ],
+    "caveat": "体积大；光轴方案（非磁轴）",
+    "source": "雷蛇官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.razerzone.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Razer Huntsman V3 Pro 全尺寸",
+        "url": "https://search.bilibili.com/all?keyword=Razer%20Huntsman%20V3%20Pro%20%E5%85%A8%E5%B0%BA%E5%AF%B8"
+      }
+    ],
+    "id": "kb-034"
+  },
+  {
+    "name": "SteelSeries Apex Pro Gen 3 TKL",
+    "brand": "赛睿 SteelSeries",
+    "price": 1799,
+    "price_note": "参考价（海外约$249）",
+    "category": "顶级磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "OmniPoint 3.0 磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "顶级RT",
+      "TKL",
+      "职业"
+    ],
+    "caveat": "价格高",
+    "source": "赛睿官网（2024年发布，8K/RT）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "http://cn.steelseries.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：SteelSeries Apex Pro Gen 3",
+        "url": "https://search.bilibili.com/all?keyword=SteelSeries%20Apex%20Pro%20Gen%203"
+      }
+    ],
+    "id": "kb-035"
+  },
+  {
+    "name": "SteelSeries Apex Pro Gen 3（全尺寸）",
+    "brand": "赛睿 SteelSeries",
+    "price": 1899,
+    "price_note": "参考价",
+    "category": "顶级磁轴",
+    "type": "磁轴(RT)",
+    "layout": "104",
+    "switch": "OmniPoint 3.0 磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "全尺寸RT",
+      "多场景"
+    ],
+    "caveat": "体积大",
+    "source": "赛睿官网（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "http://cn.steelseries.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：SteelSeries Apex Pro Gen 3 全尺寸",
+        "url": "https://search.bilibili.com/all?keyword=SteelSeries%20Apex%20Pro%20Gen%203%20%E5%85%A8%E5%B0%BA%E5%AF%B8"
+      }
+    ],
+    "id": "kb-036"
+  },
+  {
+    "name": "SteelSeries Apex Pro Mini Wireless",
+    "brand": "赛睿 SteelSeries",
+    "price": 1299,
+    "price_note": "参考价",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "60%",
+    "switch": "OmniPoint 2.0 磁轴",
+    "actuation": "0.2-3.8mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "无线三模",
+    "best_for": [
+      "60%无线磁轴",
+      "便携"
+    ],
+    "caveat": "无线模式下回报率低于有线",
+    "source": "赛睿官网在售（2023年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "http://cn.steelseries.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：SteelSeries Apex Pro Mini Wireless",
+        "url": "https://search.bilibili.com/all?keyword=SteelSeries%20Apex%20Pro%20Mini%20Wireless"
+      }
+    ],
+    "id": "kb-037"
+  },
+  {
+    "name": "SteelSeries Apex Pro TKL（2023款）",
+    "brand": "赛睿 SteelSeries",
+    "price": 1299,
+    "price_note": "参考价",
+    "category": "高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "OmniPoint 2.0 磁轴",
+    "actuation": "0.2-3.8mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "TKL磁轴",
+      "RT"
+    ],
+    "caveat": "2023年款",
+    "source": "赛睿官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "http://cn.steelseries.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：SteelSeries Apex Pro TKL 2023",
+        "url": "https://search.bilibili.com/all?keyword=SteelSeries%20Apex%20Pro%20TKL%202023"
+      }
+    ],
+    "id": "kb-038"
+  },
+  {
+    "name": "Corsair K70 PRO TKL MGX",
+    "brand": "美商海盗船 CORSAIR",
+    "price": 999,
+    "price_note": "参考价",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "CORSAIR MGX 磁轴",
+    "actuation": "0.4-3.6mm 可调（动态触发）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "TKL磁轴",
+      "RT"
+    ],
+    "caveat": "RT需在iCUE中开启",
+    "source": "海盗船官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.corsair.com/cn/zh"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Corsair K70 PRO TKL MGX",
+        "url": "https://search.bilibili.com/all?keyword=Corsair%20K70%20PRO%20TKL%20MGX"
+      }
+    ],
+    "id": "kb-039"
+  },
+  {
+    "name": "Keychron Q1 HE",
+    "brand": "Keychron",
+    "price": 1199,
+    "price_note": "参考价（海外约$199）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "佳达隆双轨磁轴（Gateron Double-Rail）",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "75%磁轴",
+      "铝坨坨",
+      "RT"
+    ],
+    "caveat": "有线单模",
+    "source": "Keychron官网在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Keychron Q1 HE",
+        "url": "https://search.bilibili.com/all?keyword=Keychron%20Q1%20HE"
+      }
+    ],
+    "id": "kb-040"
+  },
+  {
+    "name": "Keychron Q2 HE",
+    "brand": "Keychron",
+    "price": 1099,
+    "price_note": "参考价（海外约$179）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "65%",
+    "switch": "佳达隆双轨磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "65%磁轴",
+      "RT"
+    ],
+    "caveat": "有线单模",
+    "source": "Keychron官网在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Keychron Q2 HE",
+        "url": "https://search.bilibili.com/all?keyword=Keychron%20Q2%20HE"
+      }
+    ],
+    "id": "kb-041"
+  },
+  {
+    "name": "Keychron Q3 HE",
+    "brand": "Keychron",
+    "price": 1299,
+    "price_note": "参考价（海外约$219）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "佳达隆双轨磁轴",
+    "actuation": "0.1-4.0mm 可调（RT）",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "TKL磁轴",
+      "RT"
+    ],
+    "caveat": "有线单模",
+    "source": "Keychron官网在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Keychron Q3 HE",
+        "url": "https://search.bilibili.com/all?keyword=Keychron%20Q3%20HE"
+      }
+    ],
+    "id": "kb-042"
+  },
+  {
+    "name": "Keychron K2 HE",
+    "brand": "Keychron",
+    "price": 799,
+    "price_note": "参考价（海外约$119）",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "佳达隆磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "best_for": [
+      "75%磁轴",
+      "RT入门"
+    ],
+    "caveat": "2025年新品，有线",
+    "source": "Keychron官网（2025年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Keychron K2 HE",
+        "url": "https://search.bilibili.com/all?keyword=Keychron%20K2%20HE"
+      }
+    ],
+    "id": "kb-043"
+  },
+  {
+    "name": "Lemokey P1 HE",
+    "brand": "Lemokey（Keychron子品牌）",
+    "price": 899,
+    "price_note": "参考价（海外约$139）",
+    "category": "性价比磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "best_for": [
+      "75%磁轴",
+      "RT"
+    ],
+    "caveat": "Keychron子品牌Lemokey出品",
+    "source": "Keychron/Lemokey官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Lemokey P1 HE",
+        "url": "https://search.bilibili.com/all?keyword=Lemokey%20P1%20HE"
+      }
+    ],
+    "id": "kb-044"
+  },
+  {
+    "name": "NuPhy Field75 HE V2",
+    "brand": "NuPhy",
+    "price": 899,
+    "price_note": "参考价（海外约$119-139）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "磁轴",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "75%磁轴",
+      "8K",
+      "RT"
+    ],
+    "caveat": "2025年V2版，有线8K",
+    "source": "NuPhy官网产品页（8K有线磁轴）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://nuphy.com/products/nuphy-field75-he-v2-1"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：NuPhy Field75 HE V2",
+        "url": "https://search.bilibili.com/all?keyword=NuPhy%20Field75%20HE%20V2"
+      }
+    ],
+    "id": "kb-045"
+  },
+  {
+    "name": "NuPhy Air75 HE",
+    "brand": "NuPhy",
+    "price": 899,
+    "price_note": "参考价（海外定价）",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "75%",
+    "switch": "低矮磁轴",
+    "rapid_trigger": true,
+    "connection": "无线三模",
+    "best_for": [
+      "无线磁轴",
+      "矮轴",
+      "RT"
+    ],
+    "caveat": "低剖面设计，键程较浅",
+    "source": "NuPhy官网在售（无线磁轴键盘）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://nuphy.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：NuPhy Air75 HE",
+        "url": "https://search.bilibili.com/all?keyword=NuPhy%20Air75%20HE"
+      }
+    ],
+    "id": "kb-046"
+  },
+  {
+    "name": "Turtle Beach Vulcan II TKL Pro",
+    "brand": "乌龟海岸 Turtle Beach",
+    "price": 899,
+    "price_note": "参考价",
+    "category": "中高端磁轴",
+    "type": "磁轴(RT)",
+    "layout": "87",
+    "switch": "霍尔效应磁轴（Hall Effect）",
+    "actuation": "0.4-3.6mm 可调",
+    "rapid_trigger": true,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "TKL磁轴",
+      "RT"
+    ],
+    "caveat": "国内渠道较少",
+    "source": "乌龟海岸官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.turtlebeach.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Turtle Beach Vulcan II TKL Pro",
+        "url": "https://search.bilibili.com/all?keyword=Turtle%20Beach%20Vulcan%20II%20TKL%20Pro"
+      }
+    ],
+    "id": "kb-047"
+  },
+  {
+    "name": "ROG Azoth Extreme",
+    "brand": "ROG 玩家国度",
+    "price": 1999,
+    "price_note": "参考价",
+    "category": "高端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "ROG NX 机械轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "best_for": [
+      "75%旗舰",
+      "客制化",
+      "FPS"
+    ],
+    "caveat": "价格昂贵",
+    "source": "ROG官网（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://rog.asus.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG Azoth Extreme",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20Azoth%20Extreme"
+      }
+    ],
+    "id": "kb-048"
+  },
+  {
+    "name": "ROG Azoth",
+    "brand": "ROG 玩家国度",
+    "price": 1099,
+    "price_note": "参考价",
+    "category": "高端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "ROG NX 机械轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "best_for": [
+      "75%客制",
+      "OLED小屏"
+    ],
+    "caveat": "OLED屏需Armoury Crate驱动",
+    "source": "ROG官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://rog.asus.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG Azoth",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20Azoth"
+      }
+    ],
+    "id": "kb-049"
+  },
+  {
+    "name": "ROG Strix Scope II 96 Wireless",
+    "brand": "ROG 玩家国度",
+    "price": 899,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "96%",
+    "switch": "ROG NX 机械轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "96配列",
+      "无线",
+      "FPS"
+    ],
+    "caveat": "SpeedNova无线技术",
+    "source": "ROG官网（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://rog.asus.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG Strix Scope II 96",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20Strix%20Scope%20II%2096"
+      }
+    ],
+    "id": "kb-050"
+  },
+  {
+    "name": "Razer BlackWidow V4 75%（黑寡妇V4 75%）",
+    "brand": "雷蛇 Razer",
+    "price": 999,
+    "price_note": "参考价",
+    "category": "高端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "雷蛇橙轴（支持热插拔）",
+    "rapid_trigger": false,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "75%电竞",
+      "热插拔客制",
+      "8000Hz"
+    ],
+    "caveat": "有线单模",
+    "source": "雷蛇官网在售（2023年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.razerzone.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Razer BlackWidow V4 75%",
+        "url": "https://search.bilibili.com/all?keyword=Razer%20BlackWidow%20V4%2075%25"
+      }
+    ],
+    "id": "kb-051"
+  },
+  {
+    "name": "Corsair K70 PRO MINI WIRELESS",
+    "brand": "美商海盗船 CORSAIR",
+    "price": 999,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "60%",
+    "switch": "CHERRY MX 红轴/银轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 8000,
+    "best_for": [
+      "60%无线",
+      "8000Hz"
+    ],
+    "caveat": "60%配列需组合键",
+    "source": "海盗船官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.corsair.com/cn/zh"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Corsair K70 PRO MINI WIRELESS",
+        "url": "https://search.bilibili.com/all?keyword=Corsair%20K70%20PRO%20MINI%20WIRELESS"
+      }
+    ],
+    "id": "kb-052"
+  },
+  {
+    "name": "Logitech G PRO X TKL",
+    "brand": "罗技 Logitech",
+    "price": 699,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "87",
+    "switch": "GX 机械轴（热插拔）",
+    "rapid_trigger": false,
+    "connection": "有线",
+    "polling_rate": 1000,
+    "best_for": [
+      "TKL职业经典",
+      "热插拔"
+    ],
+    "caveat": "2021年老款经典，持续在售",
+    "source": "罗技官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.logitechg.com/zh-cn"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Logitech G PRO X TKL",
+        "url": "https://search.bilibili.com/all?keyword=Logitech%20G%20PRO%20X%20TKL"
+      }
+    ],
+    "id": "kb-053"
+  },
+  {
+    "name": "Logitech G515 LIGHTSPEED TKL",
+    "brand": "罗技 Logitech",
+    "price": 699,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "87",
+    "switch": "GL 矮轴（线性/段落）",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "矮轴TKL",
+      "无线",
+      "FPS"
+    ],
+    "caveat": "矮轴手感需适应",
+    "source": "罗技官网（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.logitechg.com/zh-cn"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Logitech G515 LIGHTSPEED",
+        "url": "https://search.bilibili.com/all?keyword=Logitech%20G515%20LIGHTSPEED"
+      }
+    ],
+    "id": "kb-054"
+  },
+  {
+    "name": "HyperX Alloy Rise 75",
+    "brand": "HyperX",
+    "price": 999,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "佳达隆红轴（热插拔）",
+    "rapid_trigger": false,
+    "connection": "有线",
+    "polling_rate": 8000,
+    "best_for": [
+      "75%电竞",
+      "8000Hz"
+    ],
+    "caveat": "有线单模",
+    "source": "HyperX官网在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://row.hyperx.com/zh-hans"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：HyperX Alloy Rise 75",
+        "url": "https://search.bilibili.com/all?keyword=HyperX%20Alloy%20Rise%2075"
+      }
+    ],
+    "id": "kb-055"
+  },
+  {
+    "name": "CHERRY MX 8.2",
+    "brand": "CHERRY 樱桃",
+    "price": 699,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "87",
+    "switch": "CHERRY MX 红轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "best_for": [
+      "TKL无线",
+      "樱桃轴"
+    ],
+    "caveat": "价格偏高",
+    "source": "CHERRY官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.cherry.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：CHERRY MX 8.2",
+        "url": "https://search.bilibili.com/all?keyword=CHERRY%20MX%208.2"
+      }
+    ],
+    "id": "kb-056"
+  },
+  {
+    "name": "Keychron V1 Max",
+    "brand": "Keychron",
+    "price": 599,
+    "price_note": "参考价（海外约$94）",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "佳达隆轴（可选）",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "best_for": [
+      "75%三模",
+      "QMK/VIA客制"
+    ],
+    "caveat": "非电竞特化",
+    "source": "Keychron官网在售（2024年发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.keychron.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Keychron V1 Max",
+        "url": "https://search.bilibili.com/all?keyword=Keychron%20V1%20Max"
+      }
+    ],
+    "id": "kb-057"
+  },
+  {
+    "name": "NuPhy Halo75 V2",
+    "brand": "NuPhy",
+    "price": 599,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "佳达隆轴（可选）",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "best_for": [
+      "75%三模",
+      "客制"
+    ],
+    "caveat": "偏客制手感",
+    "source": "NuPhy官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://nuphy.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：NuPhy Halo75 V2",
+        "url": "https://search.bilibili.com/all?keyword=NuPhy%20Halo75%20V2"
+      }
+    ],
+    "id": "kb-058"
+  },
+  {
+    "name": "VGN VXE75 V2",
+    "brand": "VGN",
+    "price": 299,
+    "price_note": "参考价（首发约269-299元）",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "75%",
+    "switch": "阿尼亚轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "75%铝坨坨",
+      "三模性价比"
+    ],
+    "caveat": "铝坨坨机身较重",
+    "source": "VGN官网产品页（阿尼亚轴/三模）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.vgnlab.com.cn/web/sku-1066"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VGN VXE75 V2",
+        "url": "https://search.bilibili.com/all?keyword=VGN%20VXE75%20V2"
+      }
+    ],
+    "id": "kb-059"
+  },
+  {
+    "name": "VGN S99",
+    "brand": "VGN",
+    "price": 349,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "99",
+    "switch": "阿尼亚轴/蒸汽波轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "99配列",
+      "三模",
+      "办公+游戏"
+    ],
+    "caveat": "2022年经典款，持续在售",
+    "source": "VGN官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.vgnlab.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VGN S99",
+        "url": "https://search.bilibili.com/all?keyword=VGN%20S99"
+      }
+    ],
+    "id": "kb-060"
+  },
+  {
+    "name": "VGN F87 Pro",
+    "brand": "VGN",
+    "price": 199,
+    "price_note": "参考价",
+    "category": "入门机械",
+    "type": "机械",
+    "layout": "87",
+    "switch": "动力银轴",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "87配列入门",
+      "三模"
+    ],
+    "caveat": "入门价位",
+    "source": "VGN官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.vgnlab.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VGN F87 Pro",
+        "url": "https://search.bilibili.com/all?keyword=VGN%20F87%20Pro"
+      }
+    ],
+    "id": "kb-061"
+  },
+  {
+    "name": "迈从 GX87 V2",
+    "brand": "迈从 MCHOSE",
+    "price": 299,
+    "price_note": "首发价299元（it之家报道）",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "87",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "87铝坨坨",
+      "三模"
+    ],
+    "caveat": "Gasket结构",
+    "source": "it之家报道+迈从官网",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.maicong.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：迈从 GX87 V2",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BF%88%E4%BB%8E%20GX87%20V2"
+      }
+    ],
+    "id": "kb-062"
+  },
+  {
+    "name": "狼途 LT84",
+    "brand": "狼途 LANGTU",
+    "price": 119,
+    "price_note": "参考价（百元级）",
+    "category": "入门机械",
+    "type": "机械",
+    "layout": "84",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "84配列百元",
+      "办公+轻游戏"
+    ],
+    "caveat": "非电竞特化",
+    "source": "狼途官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.langtucn.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：狼途 LT84",
+        "url": "https://search.bilibili.com/all?keyword=%E7%8B%BC%E9%80%94%20LT84"
+      }
+    ],
+    "id": "kb-063"
+  },
+  {
+    "name": "珂芝 K75",
+    "brand": "珂芝 KZZI",
+    "price": 299,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "75%",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "75%三模",
+      "客制"
+    ],
+    "source": "珂芝官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "http://en.kzzi.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：珂芝 K75",
+        "url": "https://search.bilibili.com/all?keyword=%E7%8F%82%E8%8A%9D%20K75"
+      }
+    ],
+    "id": "kb-064"
+  },
+  {
+    "name": "珂芝 Z98",
+    "brand": "珂芝 KZZI",
+    "price": 329,
+    "price_note": "参考价（京东在售）",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "98",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "98配列",
+      "三模",
+      "办公+游戏"
+    ],
+    "source": "京东自营在售核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://item.jd.com/100073580700.html"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：珂芝 Z98",
+        "url": "https://search.bilibili.com/all?keyword=%E7%8F%82%E8%8A%9D%20Z98"
+      }
+    ],
+    "id": "kb-065"
+  },
+  {
+    "name": "黑爵 AK820 Pro",
+    "brand": "黑爵 AJAZZ",
+    "price": 199,
+    "price_note": "参考价",
+    "category": "入门机械",
+    "type": "机械",
+    "layout": "75%（82键）",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "75%入门",
+      "旋钮"
+    ],
+    "caveat": "配列为82键",
+    "source": "黑爵官方渠道在售",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：黑爵 AK820 Pro",
+        "url": "https://search.bilibili.com/all?keyword=%E9%BB%91%E7%88%B5%20AK820%20Pro"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：黑爵 AK820 Pro",
+        "url": "https://search.jd.com/Search?keyword=%E9%BB%91%E7%88%B5%20AK820%20Pro&enc=utf-8"
+      }
+    ],
+    "id": "kb-066"
+  },
+  {
+    "name": "达尔优 A98 Pro",
+    "brand": "达尔优 Dareu",
+    "price": 399,
+    "price_note": "参考价",
+    "category": "中高端机械",
+    "type": "机械",
+    "layout": "98",
+    "switch": "天空轴V3",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "98配列",
+      "天空轴手感"
+    ],
+    "source": "达尔优官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.dareu.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 A98 Pro",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A98%20Pro"
+      }
+    ],
+    "id": "kb-067"
+  },
+  {
+    "name": "达尔优 A87 Pro",
+    "brand": "达尔优 Dareu",
+    "price": 299,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "87",
+    "switch": "天空轴V3",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "87配列",
+      "三模"
+    ],
+    "source": "达尔优官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://cn.dareu.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：达尔优 A87 Pro",
+        "url": "https://search.bilibili.com/all?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A87%20Pro"
+      }
+    ],
+    "id": "kb-068"
+  },
+  {
+    "name": "ATK Z87 Pro",
+    "brand": "艾泰克 ATK",
+    "price": 279,
+    "price_note": "三模版起售价279元（媒体报道）",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "87",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "87三模",
+      "半铝"
+    ],
+    "caveat": "半铝机身",
+    "source": "it之家报道（279元起）+ATK官网",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.atkgear.com.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ATK Z87 Pro",
+        "url": "https://search.bilibili.com/all?keyword=ATK%20Z87%20Pro"
+      }
+    ],
+    "id": "kb-069"
+  },
+  {
+    "name": "御斧 AL71",
+    "brand": "御斧 YUNZII",
+    "price": 269,
+    "price_note": "参考价",
+    "category": "中端机械",
+    "type": "机械",
+    "layout": "71",
+    "rapid_trigger": false,
+    "connection": "无线三模",
+    "polling_rate": 1000,
+    "best_for": [
+      "71键小配列",
+      "三模"
+    ],
+    "caveat": "配列较特殊",
+    "source": "御斧（Yunzii）官网在售",
+    "sources": [
+      {
+        "type": "official",
+        "label": "品牌官网",
+        "url": "https://www.yunzii.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：御斧 AL71",
+        "url": "https://search.bilibili.com/all?keyword=%E5%BE%A1%E6%96%A7%20AL71"
+      }
+    ],
+    "id": "kb-070"
+  }
+]

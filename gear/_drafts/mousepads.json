@@ -1,0 +1,981 @@
+[
+  {
+    "id": "mp-010",
+    "name": "Artisan NINJA FX KEY-83",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网约 ¥7,300 日元起（约合 ¥340，不含国际运费/代购加价）",
+    "material": "布垫",
+    "speed": "平衡型",
+    "size": "XL 490×420×4mm（MID 硬度 3mm；另有 L/XXL 等 5 档尺寸）",
+    "stitching": "无锁边",
+    "base": "聚氨酯（XSOFT/SOFT/MID 三档硬度可选）",
+    "best_for": [
+      "CS2/VALORANT 平衡向",
+      "细腻织物面",
+      "2025 新品"
+    ],
+    "caveat": "官网日元定价不含国际运费，国内需海淘/代购",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Key83 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-key83"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Key83",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Key83"
+      }
+    ]
+  },
+  {
+    "id": "mp-011",
+    "name": "Artisan NINJA FX HAYATE-OTSU V2",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网日元定价约 ¥7,000-7,300（约合 ¥320-340，不含运费）",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "跟枪/压枪均衡",
+      "瓦罗兰 APEX 通用",
+      "2025 新品"
+    ],
+    "caveat": "官网日元定价不含国际运费，国内需海淘/代购",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Hayate-Otsu V2 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-hayate-otsu-v2"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Hayate Otsu V2",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Hayate%20Otsu%20V2"
+      }
+    ]
+  },
+  {
+    "id": "mp-012",
+    "name": "Artisan NINJA FX SHIDENKAI V2",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网日元定价约 ¥7,000-7,300（约合 ¥320-340，不含运费）",
+    "material": "混合",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "极速跟枪",
+      "APEX/守望先锋",
+      "玻璃纤维混纺表面"
+    ],
+    "caveat": "速度垫控制力弱，玻璃混纺表面长期磨损后滑度会变化",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Shidenkai V2 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-shidenkai-v2"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Shidenkai V2",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Shidenkai%20V2"
+      }
+    ]
+  },
+  {
+    "id": "mp-013",
+    "name": "Artisan NINJA FX TYPE-99",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网日元定价约 ¥7,000-7,300（约合 ¥320-340，不含运费）",
+    "material": "布垫",
+    "speed": "控制型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "CS2 低敏控制",
+      "停止力强",
+      "2025 新品"
+    ],
+    "caveat": "控制垫起滑偏重，高敏玩家需适应",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Type99 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-type99"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Type99",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Type99"
+      }
+    ]
+  },
+  {
+    "id": "mp-014",
+    "name": "Artisan NINJA FX HAYATE-KOU",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网日元定价约 ¥7,000-7,300（约合 ¥320-340，不含运费）",
+    "material": "布垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "高速滑行",
+      "APEX 跟枪流",
+      "2025 新品"
+    ],
+    "caveat": "速度垫控制力偏弱",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Hayate-Kou 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-hayate-kou"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Hayate Kou",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Hayate%20Kou"
+      }
+    ]
+  },
+  {
+    "id": "mp-015",
+    "name": "Artisan NINJA FX RAIDEN",
+    "brand": "Artisan",
+    "price": 340,
+    "price_note": "Artisan 官网日元定价约 ¥7,000-7,300（约合 ¥320-340，不含运费）",
+    "material": "布垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "最顺滑布垫之一",
+      "极低摩擦",
+      "高 DPI 高速流"
+    ],
+    "caveat": "控制力弱，不适合低敏定位流",
+    "source": "Artisan 官网 Ninja FX 系列产品页",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Artisan 官网 FX-Raiden 产品页",
+        "url": "https://artisan-jp.com/global/products/ninja-fx/fx-raiden"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Artisan Raiden",
+        "url": "https://search.bilibili.com/all?keyword=Artisan%20Raiden"
+      }
+    ]
+  },
+  {
+    "id": "mp-016",
+    "name": "ZOWIE G-SR III",
+    "brand": "ZOWIE",
+    "price": 399,
+    "price_note": "京东/天猫参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "控制型",
+    "size": "470×390×3.5mm",
+    "stitching": "无锁边",
+    "base": "橡胶",
+    "best_for": [
+      "CS2/VALORANT 低敏控制",
+      "2024 新一代",
+      "职业级停止力"
+    ],
+    "caveat": "表面易吸汗，需定期清洁；无包边长期使用边缘易磨损",
+    "source": "ZOWIE 官网产品页（尺寸/厚度官网标注）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "ZOWIE 中国官网 G-SR III 产品页",
+        "url": "https://zowie.benq.com.cn/zh-cn/mouse-pad/g-sr-iii.html"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ZOWIE G-SR III",
+        "url": "https://search.bilibili.com/all?keyword=ZOWIE%20G-SR%20III"
+      }
+    ]
+  },
+  {
+    "id": "mp-017",
+    "name": "VAXEE PB",
+    "brand": "VAXEE",
+    "price": 329,
+    "price_note": "参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "控制型",
+    "stitching": "无锁边",
+    "best_for": [
+      "CS2 低敏控制",
+      "停止力强",
+      "VAXEE 2024 新品"
+    ],
+    "caveat": "控制垫起滑偏重，需适应",
+    "source": "VAXEE 官方（vaxee.cn）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "VAXEE 中国官网",
+        "url": "https://www.vaxee.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VAXEE PB",
+        "url": "https://search.bilibili.com/all?keyword=VAXEE%20PB%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-018",
+    "name": "VAXEE PC",
+    "brand": "VAXEE",
+    "price": 299,
+    "price_note": "参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "无锁边",
+    "best_for": [
+      "万金油平衡",
+      "FPS 通用",
+      "VAXEE 2023 上市"
+    ],
+    "caveat": "平衡定位，无突出单项优势",
+    "source": "VAXEE 官方（vaxee.cn）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "VAXEE 中国官网",
+        "url": "https://www.vaxee.cn/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：VAXEE PC",
+        "url": "https://search.bilibili.com/all?keyword=VAXEE%20PC%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-019",
+    "name": "Pulsar Superglide",
+    "brand": "Pulsar",
+    "price": 599,
+    "price_note": "海外官网约 $99.99，国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "极速跟枪",
+      "APEX/守望先锋",
+      "玻璃垫入门标杆"
+    ],
+    "caveat": "玻璃垫需换更耐磨脚贴，冬天冰手，需适应期",
+    "source": "Pulsar 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Pulsar 官网 Superglide 产品页",
+        "url": "https://www.pulsar.gg/products/superglide"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Pulsar Superglide",
+        "url": "https://search.bilibili.com/all?keyword=Pulsar%20Superglide%20%E7%8E%BB%E7%92%83%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-020",
+    "name": "Pulsar Superglide 3",
+    "brand": "Pulsar",
+    "price": 499,
+    "price_note": "海外官网 $49.95-$104.95（按 Type/尺寸档），国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "size": "M/L/XL/XLE 四档（官网规格）",
+    "stitching": "无锁边",
+    "best_for": [
+      "2025/2026 新一代玻璃垫",
+      "多尺寸可选",
+      "Type S 表面"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，价格随尺寸差异大",
+    "source": "Pulsar 官网 Superglide3 产品页（JSON 接口核实规格与价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Pulsar 官网 Superglide3 产品页",
+        "url": "https://www.pulsar.gg/products/superglide3-glass-mousepad-l-size"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Pulsar Superglide 3",
+        "url": "https://search.bilibili.com/all?keyword=Pulsar%20Superglide%203"
+      }
+    ]
+  },
+  {
+    "id": "mp-021",
+    "name": "LGG Saturn Pro",
+    "brand": "Lethal Gaming Gear",
+    "price": 350,
+    "price_note": "海外官网 $29.99-$69.99（按尺寸/硬度档）",
+    "material": "布垫",
+    "speed": "控制型",
+    "size": "XL 490×420mm（另有 500×500 / 1000×500mm）",
+    "stitching": "无锁边",
+    "base": "聚氨酯（Firm/Soft/Xsoft 三档）",
+    "best_for": [
+      "顺滑控制垫",
+      "CS2/VALORANT",
+      "Xsoft 版高停止力"
+    ],
+    "caveat": "海外购买需转运，运费较高",
+    "source": "LGG 官网产品 JSON 接口核实（尺寸/硬度/价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "LGG 官网 Saturn Pro 产品页",
+        "url": "https://www.lethalgaminggear.com/products/saturn-pro"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：LGG Saturn Pro",
+        "url": "https://search.bilibili.com/all?keyword=LGG%20Saturn%20Pro"
+      }
+    ]
+  },
+  {
+    "id": "mp-022",
+    "name": "LGG MIU Glass Mousepad",
+    "brand": "Lethal Gaming Gear",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "2025/2026 玻璃垫新品",
+      "高速滑行",
+      "LGG 官网在售"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，海外转运成本高",
+    "source": "LGG 官网在售产品列表（JSON 接口核实）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "LGG 官网 MIU Glass Mousepad 产品页",
+        "url": "https://www.lethalgaminggear.com/products/miu-glass-mousepad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：LGG MIU 玻璃垫",
+        "url": "https://search.bilibili.com/all?keyword=LGG%20MIU%20%E7%8E%BB%E7%92%83%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-023",
+    "name": "Wallhack SP-004A",
+    "brand": "Wallhack",
+    "price": 780,
+    "price_note": "海外官网 $109，国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "速度型玻璃垫",
+      "APEX/瓦罗兰",
+      "2025 新款 SP-004 系列"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，冬天冰手",
+    "source": "Wallhack 官网产品 JSON 接口核实（价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Wallhack 官网 SP-004A 产品页",
+        "url": "https://wallhack.com/products/sp-004a-black"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Wallhack SP-004",
+        "url": "https://search.bilibili.com/all?keyword=Wallhack%20SP-004"
+      }
+    ]
+  },
+  {
+    "id": "mp-024",
+    "name": "Wallhack SP-005",
+    "brand": "Wallhack",
+    "price": 920,
+    "price_note": "海外官网 $129，国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "2025/2026 旗舰玻璃垫",
+      "高速滑行",
+      "SP-005 新一代"
+    ],
+    "caveat": "价格高，玻璃垫需换耐磨脚贴",
+    "source": "Wallhack 官网产品 JSON 接口核实（价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Wallhack 官网 SP-005 产品页",
+        "url": "https://wallhack.com/products/sp-005-black"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Wallhack SP-005",
+        "url": "https://search.bilibili.com/all?keyword=Wallhack%20SP-005"
+      }
+    ]
+  },
+  {
+    "id": "mp-025",
+    "name": "罗技 G640",
+    "brand": "Logitech",
+    "price": 199,
+    "price_note": "京东/天猫参考价",
+    "material": "布垫",
+    "speed": "控制型",
+    "size": "460×400×3mm",
+    "stitching": "无锁边",
+    "base": "橡胶",
+    "best_for": [
+      "经典控制布垫",
+      "CS 低敏流",
+      "入门职业同款"
+    ],
+    "caveat": "表面易吸汗，湿度大时手感变化",
+    "source": "Logitech G 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Logitech G 官网 G640 产品页",
+        "url": "https://www.logitechg.com/en-us/shop/p/g640-cloth-gaming-mouse-pad.943-000797"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G640",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G640%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-026",
+    "name": "罗技 G840",
+    "brand": "Logitech",
+    "price": 499,
+    "price_note": "京东/天猫参考价",
+    "material": "布垫",
+    "speed": "平衡型",
+    "size": "900×400×3mm",
+    "stitching": "无锁边",
+    "base": "橡胶",
+    "best_for": [
+      "超大桌垫",
+      "键鼠共用",
+      "平衡顺滑"
+    ],
+    "caveat": "桌面占用大，收纳不便",
+    "source": "Logitech G 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Logitech G 官网 G840 产品页",
+        "url": "https://www.logitechg.com/en-us/shop/p/g840-cloth-xl-gaming-mouse-pad.943-000776"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G840",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G840%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-027",
+    "name": "罗技 G440",
+    "brand": "Logitech",
+    "price": 199,
+    "price_note": "京东/天猫参考价",
+    "material": "混合",
+    "speed": "速度型",
+    "size": "340×280×3mm",
+    "stitching": "无锁边",
+    "base": "橡胶",
+    "best_for": [
+      "硬质高速面",
+      "极速滑行",
+      "硬垫手感"
+    ],
+    "caveat": "硬质表面磨脚贴快，需适应",
+    "source": "Logitech G 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Logitech G 官网 G440 产品页",
+        "url": "https://www.logitechg.com/en-us/shop/p/g440-hard-gaming-mouse-pad.943-000790"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G440",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G440%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-028",
+    "name": "赛睿 QcK Performance",
+    "brand": "SteelSeries",
+    "price": 289,
+    "price_note": "海外约 $39.99，国内参考价",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "锁边",
+    "base": "橡胶",
+    "best_for": [
+      "2024 新款 QcK",
+      "智能编织表面",
+      "万金油平衡"
+    ],
+    "caveat": "新品参数需以官网为准，国内铺货较少",
+    "source": "SteelSeries 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "SteelSeries 官网 QcK Performance 产品页",
+        "url": "https://steelseries.com/gaming-mousepads/qck-performance"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：QcK Performance",
+        "url": "https://search.bilibili.com/all?keyword=QcK%20Performance%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-029",
+    "name": "赛睿 QcK Edge",
+    "brand": "SteelSeries",
+    "price": 199,
+    "price_note": "京东/天猫参考价",
+    "material": "布垫",
+    "speed": "控制型",
+    "size": "450×400mm",
+    "stitching": "锁边",
+    "base": "橡胶",
+    "best_for": [
+      "经典控制布垫",
+      "锁边耐用",
+      "CS 低敏流"
+    ],
+    "caveat": "厚度较薄，桌面硬时手感偏硬",
+    "source": "SteelSeries 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "SteelSeries 官网 QcK Edge 产品页",
+        "url": "https://steelseries.com/gaming-mousepads/qck-edge"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：QcK Edge",
+        "url": "https://search.bilibili.com/all?keyword=QcK%20Edge%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-030",
+    "name": "Lamzu Energon Pro",
+    "brand": "Lamzu",
+    "price": 350,
+    "price_note": "海外官网 $49.99",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "2025 升级款 Energon",
+      "平衡顺滑",
+      "聚氨酯底"
+    ],
+    "caveat": "国内购买需海淘/代购",
+    "source": "Lamzu 官网产品 JSON 接口核实（名称/价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Lamzu 官网 Energon Pro 产品页",
+        "url": "https://lamzu.com/products/lamzu-energon-pro-mouse-pad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Lamzu Energon Pro",
+        "url": "https://search.bilibili.com/all?keyword=Lamzu%20Energon%20Pro"
+      }
+    ]
+  },
+  {
+    "id": "mp-031",
+    "name": "Lamzu Maya 布垫",
+    "brand": "Lamzu",
+    "price": 350,
+    "price_note": "海外官网 $49.99",
+    "material": "布垫",
+    "speed": "平衡型",
+    "size": "490×420×3mm",
+    "best_for": [
+      "3mm 薄款平衡垫",
+      "FPS 通用",
+      "2024 上市"
+    ],
+    "caveat": "薄垫对桌面平整度敏感",
+    "source": "Lamzu 官网产品 JSON 接口核实（尺寸/价格）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Lamzu 官网 Maya 布垫产品页",
+        "url": "https://lamzu.com/products/lamzu-maya-mouse-pad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Lamzu Maya 鼠标垫",
+        "url": "https://search.bilibili.com/all?keyword=Lamzu%20Maya%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-032",
+    "name": "Lamzu Energon",
+    "brand": "Lamzu",
+    "price": 299,
+    "price_note": "参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "平衡型",
+    "size": "490×420×4mm",
+    "stitching": "无锁边",
+    "base": "聚氨酯",
+    "best_for": [
+      "Xsoft 软底缓冲",
+      "平衡顺滑",
+      "2023 上市经典款"
+    ],
+    "caveat": "软底高速滑动时容易压实，需适应",
+    "source": "Lamzu 官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Lamzu 官网 Energon 产品页",
+        "url": "https://lamzu.com/products/lamzu-energon-mouse-pad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Lamzu Energon",
+        "url": "https://search.bilibili.com/all?keyword=Lamzu%20Energon%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-033",
+    "name": "雷蛇 帝王蝶 Atlas",
+    "brand": "Razer",
+    "price": 899,
+    "price_note": "雷蛇官方商城/电商参考价",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "size": "500×420×4.6mm",
+    "stitching": "无锁边",
+    "best_for": [
+      "极速跟枪",
+      "APEX/守望先锋",
+      "玻璃垫+防碎涂层"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，冬天冰手",
+    "source": "雷蛇中国官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇中国官网 Atlas 产品页",
+        "url": "https://cn.razerzone.com/gaming-mouse-mats/razer-atlas"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 帝王蝶 Atlas",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20%E5%B8%9D%E7%8E%8B%E8%9D%B6%20Atlas%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-034",
+    "name": "雷蛇 烈焰神虫 V2 Pro",
+    "brand": "Razer",
+    "price": 699,
+    "price_note": "雷蛇官方商城/电商参考价",
+    "material": "混合",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "2025 新品硬垫",
+      "RGB 灯效",
+      "硬质高速表面"
+    ],
+    "caveat": "硬垫磨脚贴快，RGB 需要接线使用",
+    "source": "雷蛇中国官网产品页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇中国官网 Firefly V2 Pro 产品页",
+        "url": "https://cn.razerzone.com/gaming-mouse-mats/razer-firefly-v2-pro"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 烈焰神虫 V2 Pro",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20%E7%83%88%E7%84%B0%E7%A5%9E%E8%99%AB%20V2%20Pro"
+      }
+    ]
+  },
+  {
+    "id": "mp-035",
+    "name": "Xraypad AC+",
+    "brand": "Xraypad",
+    "price": 129,
+    "price_note": "天猫/京东参考价",
+    "material": "混合",
+    "speed": "平衡型",
+    "size": "450×400×4mm",
+    "base": "橡胶",
+    "best_for": [
+      "万金油平替",
+      "混合编织表面",
+      "预算友好"
+    ],
+    "caveat": "批次间手感差异需看具体评测",
+    "source": "Xraypad 官网产品页 + B站评测",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Xraypad 官网 AC+ 产品页",
+        "url": "https://www.xraypad.com/products/acplus"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Xraypad AC+",
+        "url": "https://search.bilibili.com/all?keyword=Xraypad%20AC%2B%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-036",
+    "name": "Xraypad Obsidian Pro",
+    "brand": "Xraypad",
+    "price": 249,
+    "price_note": "参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "控制型",
+    "best_for": [
+      "2024 新款控制垫",
+      "黑曜石系列",
+      "停止力强"
+    ],
+    "caveat": "控制垫起滑偏重，需适应",
+    "source": "Xraypad 官网产品页 + B站评测",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Xraypad 官网 Obsidian Pro 产品页",
+        "url": "https://www.xraypad.com/products/obsidian-pro"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Xraypad Obsidian Pro",
+        "url": "https://search.bilibili.com/all?keyword=Xraypad%20Obsidian%20Pro"
+      }
+    ]
+  },
+  {
+    "id": "mp-037",
+    "name": "Glorious GMP 2 Edgeless Cloth",
+    "brand": "Glorious",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "无锁边",
+    "best_for": [
+      "2025/2026 新品",
+      "无边布垫",
+      "FPS 通用"
+    ],
+    "caveat": "无锁边边缘耐久性一般",
+    "source": "Glorious 官网在售产品列表（JSON 接口核实）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Glorious 官网 GMP 2 Edgeless 产品页",
+        "url": "https://www.gloriousgaming.com/products/gmp-2-edgeless-cloth-gaming-mouse-pad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Glorious GMP 2",
+        "url": "https://search.bilibili.com/all?keyword=Glorious%20GMP%202%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-038",
+    "name": "Glorious GMP 2 Stitched Cloth",
+    "brand": "Glorious",
+    "material": "布垫",
+    "speed": "平衡型",
+    "stitching": "锁边",
+    "best_for": [
+      "2025/2026 新品",
+      "锁边耐用",
+      "FPS 通用"
+    ],
+    "caveat": "新品国内铺货较少",
+    "source": "Glorious 官网在售产品列表（JSON 接口核实）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Glorious 官网 GMP 2 Stitched 产品页",
+        "url": "https://www.gloriousgaming.com/products/gmp-2-stitched-cloth-mouse-pad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Glorious GMP 2",
+        "url": "https://search.bilibili.com/all?keyword=Glorious%20GMP%202%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-039",
+    "name": "Endgame Gear MPC-450",
+    "brand": "Endgame Gear",
+    "price": 249,
+    "price_note": "参考价，随渠道与活动浮动",
+    "material": "布垫",
+    "speed": "速度型",
+    "size": "450×400×3mm",
+    "base": "橡胶",
+    "best_for": [
+      "Cordura 面料",
+      "耐磨防水",
+      "速度型"
+    ],
+    "caveat": "Cordura 面较硬，手腕贴合度一般",
+    "source": "Endgame Gear 官网在售产品列表（JSON 接口核实）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Endgame Gear 官网 MPC450 产品页",
+        "url": "https://www.endgamegear.com/products/mpc450-cordura%C2%AE-gaming-mousepad"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Endgame Gear MPC450",
+        "url": "https://search.bilibili.com/all?keyword=Endgame%20Gear%20MPC450"
+      }
+    ]
+  },
+  {
+    "id": "mp-040",
+    "name": "HyperX FURY S Pro",
+    "brand": "HyperX",
+    "price": 199,
+    "price_note": "京东/天猫参考价",
+    "material": "布垫",
+    "speed": "控制型",
+    "stitching": "无锁边",
+    "base": "橡胶",
+    "best_for": [
+      "经典控制布垫",
+      "CS/VAL 通用",
+      "入门首选"
+    ],
+    "caveat": "表面易吸汗，需定期清洁",
+    "source": "HyperX 官网鼠标垫类目页核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "HyperX 官网鼠标垫类目页",
+        "url": "https://www.hyperxgaming.com/us/mousepads"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：HyperX FURY S Pro",
+        "url": "https://search.bilibili.com/all?keyword=HyperX%20FURY%20S%20Pro%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-041",
+    "name": "Skypad 3.0",
+    "brand": "Skypad",
+    "price": 699,
+    "price_note": "海外约 $99.99，国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "size": "500×400×3mm",
+    "stitching": "无锁边",
+    "best_for": [
+      "瑞典玻璃垫",
+      "极速滑行",
+      "玻璃垫经典标杆"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，冬天冰手；官方站点暂不可直连",
+    "source": "Skypad 官网暂不可达，以 B站评测+京东在售核实",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Skypad 3.0",
+        "url": "https://search.bilibili.com/all?keyword=Skypad%203.0%20%E7%8E%BB%E7%92%83%E5%9E%AB"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：Skypad 3.0",
+        "url": "https://search.jd.com/Search?keyword=Skypad%203.0%20%E7%8E%BB%E7%92%83%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  },
+  {
+    "id": "mp-042",
+    "name": "Vancer Ice",
+    "brand": "Vancer",
+    "price": 599,
+    "price_note": "海外约 $79.99，国内到手价随渠道浮动",
+    "material": "玻璃垫",
+    "speed": "速度型",
+    "stitching": "无锁边",
+    "best_for": [
+      "2024 玻璃垫",
+      "高速滑行",
+      "玻璃垫入门"
+    ],
+    "caveat": "玻璃垫需换耐磨脚贴，官方站点暂不可直连",
+    "source": "Vancer 官方站点暂不可达，以 B站评测+京东在售核实",
+    "sources": [
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Vancer Ice",
+        "url": "https://search.bilibili.com/all?keyword=Vancer%20Ice%20%E7%8E%BB%E7%92%83%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      },
+      {
+        "type": "jd",
+        "label": "京东搜索：Vancer Ice",
+        "url": "https://search.jd.com/Search?keyword=Vancer%20Ice%20%E7%8E%BB%E7%92%83%E9%BC%A0%E6%A0%87%E5%9E%AB"
+      }
+    ]
+  }
+]

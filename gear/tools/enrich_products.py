@@ -105,8 +105,9 @@ def enrich_mouse(it):
     hand = "、".join(it.get("hand_size", []))
     grip = "、".join(it.get("grip", []))
     conn = it.get("connection", "")
+    price_txt = f"¥{it['price']}" if it.get("price") else "价格待核实"
     reasons = [
-        f"¥{it['price']} 定位{it.get('category','')}；策展点评：{bf[0] if bf else '综合表现均衡'}",
+        f"{price_txt} 定位{it.get('category','')}；策展点评：{bf[0] if bf else '综合表现均衡'}",
         f"{it.get('weight','?')}g · {conn}，适配{hand or '多'}手型{'（'+grip+'）' if grip else ''}",
     ]
     extra = []
@@ -132,8 +133,9 @@ def enrich_keyboard(it):
     bf = it.get("best_for", [])
     src = it.get("source", "")
     rt = it.get("rapid_trigger", False)
+    price_txt = f"¥{it['price']}" if it.get("price") else "价格待核实"
     reasons = [
-        f"¥{it['price']} 定位{it.get('category','')}；策展点评：{bf[0] if bf else '综合表现均衡'}",
+        f"{price_txt} 定位{it.get('category','')}；策展点评：{bf[0] if bf else '综合表现均衡'}",
         f"{it.get('type','')} · {it.get('layout','')} 配列 · {it.get('switch','')}",
     ]
     extra = []
@@ -163,7 +165,8 @@ def enrich_keyboard(it):
 def enrich_mousepad(it):
     bf = it.get("best_for", [])
     src = it.get("source", "")
-    reasons = [f"¥{it['price']} · {it.get('material','')} · {it.get('speed','')}"]
+    price_txt = f"¥{it['price']}" if it.get("price") else "价格待核实"
+    reasons = [f"{price_txt} · {it.get('material','')} · {it.get('speed','')}"]
     dims = []
     if it.get("size"): dims.append("尺寸" + it["size"])
     if it.get("stitching"): dims.append("锁边：" + it["stitching"])
@@ -179,8 +182,11 @@ def enrich_mousepad(it):
     elif speed == "平衡偏控制": base = ["CS2", "VALORANT", "综合FPS"]
     else: base = ["综合FPS"]
     games = dedupe(games_from_text(*bf, src) + base)
-    price = it.get("price", 0)
-    it["budget_tier"] = "入门" if price < 100 else ("中端" if price < 300 else "高端")
+    price = it.get("price")
+    if price is None:
+        it["budget_tier"] = "待核实"
+    else:
+        it["budget_tier"] = "入门" if price < 100 else ("中端" if price < 300 else "高端")
     it["suitable_games"] = games
     it["recommend_reason"] = reasons
     it["notes"] = notes
@@ -191,7 +197,8 @@ def enrich_mousepad(it):
 def enrich_headset(it):
     bf = it.get("best_for", [])
     src = it.get("source", "")
-    reasons = [f"¥{it['price']} 定位{it.get('category','')} · {it.get('type','')}"]
+    price_txt = f"¥{it['price']}" if it.get("price") else "价格待核实"
+    reasons = [f"{price_txt} 定位{it.get('category','')} · {it.get('type','')}"]
     extra = []
     if it.get("driver"): extra.append(it["driver"] + "驱动单元")
     if it.get("sound"): extra.append(it["sound"])

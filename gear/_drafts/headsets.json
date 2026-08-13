@@ -1,0 +1,1085 @@
+[
+  {
+    "name": "雷蛇 BlackShark V2 Pro（2023 无线版）",
+    "brand": "Razer",
+    "price": 1499,
+    "category": "高端",
+    "type": "无线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "impedance": "32Ω",
+    "best_for": [
+      "FPS听声辨位",
+      "职业赛场同款",
+      "无线低延迟",
+      "佩戴轻量"
+    ],
+    "caveat": "无线续航约 70 小时但充电口需专用接收器；价格偏高",
+    "pro_users": "VALORANT/CS 职业圈常见型号（雷蛇多支电竞战队合作）",
+    "source": "雷蛇官网产品页抓取核实（50mm 驱动、32Ω、无线）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇官网产品页",
+        "url": "https://www.razer.com/gaming-headsets/razer-blackshark-v2-pro"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 BlackShark V2 Pro",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20BlackShark%20V2%20Pro"
+      }
+    ],
+    "id": "hs-008",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "雷蛇 BlackShark V2 X",
+    "brand": "Razer",
+    "price": 299,
+    "category": "入门",
+    "type": "有线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "impedance": "32Ω",
+    "best_for": [
+      "入门FPS",
+      "低预算电竞",
+      "7.1虚拟环绕"
+    ],
+    "caveat": "无 USB 声卡需另购；音质偏均衡无突出亮点",
+    "source": "雷蛇官网产品页抓取核实（50mm 驱动、32Ω、可拆卸麦克风）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇官网产品页",
+        "url": "https://www.razer.com/gaming-headsets/razer-blackshark-v2-x"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 BlackShark V2 X",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20BlackShark%20V2%20X"
+      }
+    ],
+    "id": "hs-009",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "雷蛇 Kraken V4（2024）",
+    "brand": "Razer",
+    "price": 1199,
+    "category": "中高端",
+    "type": "有线",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "impedance": "32Ω",
+    "best_for": [
+      "FPS竞技",
+      "USB-C即插即用",
+      "THX空间音效",
+      "RGB灯效"
+    ],
+    "caveat": "有线束缚移动；麦克风为内置不可拆卸",
+    "source": "雷蛇官网产品页抓取核实（40mm 驱动、32Ω、有线）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇官网产品页",
+        "url": "https://www.razer.com/gaming-headsets/razer-kraken-v4"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 Kraken V4",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20Kraken%20V4"
+      }
+    ],
+    "id": "hs-010",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "雷蛇 战锤狂鲨 Pro HyperSpeed",
+    "brand": "Razer",
+    "price": 1099,
+    "category": "高端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "低延迟2.4G",
+      "主动降噪",
+      "多设备"
+    ],
+    "caveat": "入耳式声场小；充电盒便携但单次续航一般",
+    "source": "型号为在售电竞TWS，雷蛇官网/B站/京东可核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇中国官网",
+        "url": "https://cn.razerzone.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 战锤狂鲨 Pro HyperSpeed",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20%E6%88%98%E9%94%A4%E7%8B%82%E9%B2%A8%20Pro%20HyperSpeed"
+      }
+    ],
+    "id": "hs-011",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "雷蛇 战锤狂鲨 HyperSpeed",
+    "brand": "Razer",
+    "price": 799,
+    "category": "中高端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "低延迟2.4G",
+      "便携充电盒"
+    ],
+    "caveat": "无主动降噪；入耳式声场有限",
+    "source": "型号为在售电竞TWS，雷蛇官网/B站/京东可核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷蛇中国官网",
+        "url": "https://cn.razerzone.com/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷蛇 战锤狂鲨 HyperSpeed",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E8%9B%87%20%E6%88%98%E9%94%A4%E7%8B%82%E9%B2%A8%20HyperSpeed"
+      }
+    ],
+    "id": "hs-012",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "HyperX Cloud III 无线版",
+    "brand": "HyperX",
+    "price": 999,
+    "category": "中高端",
+    "type": "无线",
+    "driver": "53mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "无线FPS",
+      "长续航(约120h)",
+      "佩戴舒适",
+      "职业选手同款"
+    ],
+    "caveat": "低频量感偏多，高频细节一般",
+    "pro_users": "Cloud 系列历史上有大量 CS/VAL 职业选手使用",
+    "source": "HyperX 中国官方商城（惠普商城）在售可核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "HyperX 中国官方商城（惠普）",
+        "url": "https://www.hpstore.cn/hyperx-gaming"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：HyperX Cloud III Wireless",
+        "url": "https://search.bilibili.com/all?keyword=HyperX%20Cloud%20III%20Wireless"
+      }
+    ],
+    "id": "hs-013",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "HyperX Cloud Alpha Wireless",
+    "brand": "HyperX",
+    "price": 1299,
+    "category": "中高端",
+    "type": "无线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "超长续航(约300h)",
+      "无线FPS",
+      "佩戴舒适"
+    ],
+    "caveat": "重量略大；需专用无线接收器",
+    "source": "HyperX 中国官方商城（惠普商城）在售可核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "HyperX 中国官方商城（惠普）",
+        "url": "https://www.hpstore.cn/hyperx-gaming"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：HyperX Cloud Alpha Wireless",
+        "url": "https://search.bilibili.com/all?keyword=HyperX%20Cloud%20Alpha%20Wireless"
+      }
+    ],
+    "id": "hs-014",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "HyperX Cloud Stinger 2",
+    "brand": "HyperX",
+    "price": 349,
+    "category": "入门",
+    "type": "有线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入门FPS",
+      "低预算",
+      "轻量佩戴",
+      "游戏+语音"
+    ],
+    "caveat": "麦克风不可拆卸；塑料感较强",
+    "source": "京东在售 + B站评测可核实",
+    "sources": [
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：HyperX Cloud Stinger 2 耳机",
+        "url": "https://search.jd.com/Search?keyword=HyperX%20Cloud%20Stinger%202%20%E8%80%B3%E6%9C%BA"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：HyperX Cloud Stinger 2",
+        "url": "https://search.bilibili.com/all?keyword=HyperX%20Cloud%20Stinger%202"
+      }
+    ],
+    "id": "hs-015",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "罗技 G PRO X 2 LIGHTSPEED",
+    "brand": "Logitech G",
+    "price": 1499,
+    "category": "高端",
+    "type": "双模",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "frequency": "20-20000Hz",
+    "best_for": [
+      "CS2职业级听声辨位",
+      "石墨烯单元",
+      "无线+蓝牙双模",
+      "职业选手同款"
+    ],
+    "caveat": "价格高；EQ需驱动软件调节",
+    "pro_users": "CS2 职业选手主流无线耳机之一",
+    "source": "罗技 G 官方渠道 + B站评测可核实（50mm 石墨烯、20-20000Hz）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "罗技 G 中国官网",
+        "url": "https://www.logitechg.com/zh-cn"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G PRO X 2 LIGHTSPEED",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G%20PRO%20X%202%20LIGHTSPEED"
+      }
+    ],
+    "id": "hs-016",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "罗技 G PRO X",
+    "brand": "Logitech G",
+    "price": 799,
+    "category": "中高端",
+    "type": "有线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "frequency": "20-20000Hz",
+    "impedance": "35Ω",
+    "best_for": [
+      "有线电竞",
+      "职业级听声辨位",
+      "Blue麦克风",
+      "多平台"
+    ],
+    "caveat": "有线束缚；耳罩偏小夹头因人而异",
+    "source": "罗技 G 官方渠道 + B站评测可核实（50mm、20-20000Hz、35Ω）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "罗技 G 中国官网",
+        "url": "https://www.logitechg.com/zh-cn"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G PRO X 耳机",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G%20PRO%20X%20%E8%80%B3%E6%9C%BA"
+      }
+    ],
+    "id": "hs-017",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "罗技 G435 LIGHTSPEED",
+    "brand": "Logitech G",
+    "price": 449,
+    "category": "入门",
+    "type": "双模",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "frequency": "20-20000Hz",
+    "best_for": [
+      "入门无线",
+      "轻量(165g)",
+      "蓝牙+2.4G",
+      "多设备"
+    ],
+    "caveat": "麦克风收音一般；无音量滚轮",
+    "source": "罗技 G 官方渠道 + B站评测可核实（40mm、20-20000Hz）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "罗技 G 中国官网",
+        "url": "https://www.logitechg.com/zh-cn"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：罗技 G435",
+        "url": "https://search.bilibili.com/all?keyword=%E7%BD%97%E6%8A%80%20G435"
+      }
+    ],
+    "id": "hs-018",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "赛睿 Arctis Nova 5 无线（2024）",
+    "brand": "SteelSeries",
+    "price": 999,
+    "category": "中高端",
+    "type": "双模",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "双模无线",
+      "多平台",
+      "60h长续航",
+      "游戏音效预设"
+    ],
+    "caveat": "伸缩麦不可拆卸；塑料结构",
+    "source": "赛睿官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "赛睿官网",
+        "url": "https://steelseries.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：赛睿 Arctis Nova 5 无线",
+        "url": "https://search.bilibili.com/all?keyword=%E8%B5%9B%E7%9D%BF%20Arctis%20Nova%205%20%E6%97%A0%E7%BA%BF"
+      }
+    ],
+    "id": "hs-019",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "赛睿 Arctis Nova 7 无线",
+    "brand": "SteelSeries",
+    "price": 1199,
+    "category": "中高端",
+    "type": "双模",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "双模无线",
+      "PC/主机多平台",
+      "38h续航",
+      "耳罩舒适"
+    ],
+    "caveat": "价格偏高；伸缩麦不可拆卸",
+    "source": "赛睿官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "赛睿官网",
+        "url": "https://steelseries.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：赛睿 Arctis Nova 7",
+        "url": "https://search.bilibili.com/all?keyword=%E8%B5%9B%E7%9D%BF%20Arctis%20Nova%207"
+      }
+    ],
+    "id": "hs-020",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "赛睿 Arctis Nova 3（2024）",
+    "brand": "SteelSeries",
+    "price": 549,
+    "category": "中端",
+    "type": "有线",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "有线电竞",
+      "性价比",
+      "USB-C多平台",
+      "RGB"
+    ],
+    "caveat": "无蓝牙；麦克风不可拆卸",
+    "source": "赛睿官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "赛睿官网",
+        "url": "https://steelseries.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：赛睿 Arctis Nova 3",
+        "url": "https://search.bilibili.com/all?keyword=%E8%B5%9B%E7%9D%BF%20Arctis%20Nova%203"
+      }
+    ],
+    "id": "hs-021",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "赛睿 Arctis Nova 1",
+    "brand": "SteelSeries",
+    "price": 349,
+    "category": "入门",
+    "type": "有线",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入门电竞",
+      "轻量",
+      "多平台3.5mm"
+    ],
+    "caveat": "无USB声卡；塑料感较强",
+    "source": "赛睿官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "赛睿官网",
+        "url": "https://steelseries.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：赛睿 Arctis Nova 1",
+        "url": "https://search.bilibili.com/all?keyword=%E8%B5%9B%E7%9D%BF%20Arctis%20Nova%201"
+      }
+    ],
+    "id": "hs-022",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "ROG 棱镜 II（Delta II，2024）",
+    "brand": "ASUS ROG",
+    "price": 1299,
+    "category": "中高端",
+    "type": "有线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "FPS电竞",
+      "USB-C+ESS DAC",
+      "50mm大单元",
+      "多平台"
+    ],
+    "caveat": "有线束缚；驱动软件仅Windows",
+    "source": "ROG 官网/B站评测可核实（50mm 驱动、USB-C）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "ROG 官网耳机专区",
+        "url": "https://rog.asus.com/headsets/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG 棱镜 II 耳机",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20%E6%A3%B1%E9%95%9C%20II%20%E8%80%B3%E6%9C%BA"
+      }
+    ],
+    "id": "hs-023",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "ROG 降临 SpeedNova（Cetra Speednova）",
+    "brand": "ASUS ROG",
+    "price": 799,
+    "category": "中高端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "低延迟2.4G",
+      "主动降噪",
+      "Type-C"
+    ],
+    "caveat": "入耳式声场小；电池盒便携性一般",
+    "source": "ROG 官网/B站评测可核实（2.4G+蓝牙双模）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "ROG 官网耳机专区",
+        "url": "https://rog.asus.com/headsets/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG 降临 SpeedNova",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20%E9%99%8D%E4%B8%B4%20SpeedNova"
+      }
+    ],
+    "id": "hs-024",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "ROG 降临 II（Cetra II）",
+    "brand": "ASUS ROG",
+    "price": 549,
+    "category": "中端",
+    "type": "有线",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "USB-C",
+      "主动降噪"
+    ],
+    "caveat": "有线束缚；入耳式声场有限",
+    "source": "ROG 官网/B站评测可核实（USB-C 入耳式）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "ROG 官网耳机专区",
+        "url": "https://rog.asus.com/headsets/"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：ROG 降临 II 耳机",
+        "url": "https://search.bilibili.com/all?keyword=ROG%20%E9%99%8D%E4%B8%B4%20II%20%E8%80%B3%E6%9C%BA"
+      }
+    ],
+    "id": "hs-025",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "海盗船 Virtuoso Max（2024）",
+    "brand": "Corsair",
+    "price": 2299,
+    "category": "旗舰",
+    "type": "双模",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "旗舰无线",
+      "高解析50mm",
+      "双模连接",
+      "杜比全景声"
+    ],
+    "caveat": "价格高；重量约352g偏重",
+    "source": "海盗船官网/B站评测可核实（50mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "海盗船官网",
+        "url": "https://www.corsair.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：海盗船 Virtuoso Max",
+        "url": "https://search.bilibili.com/all?keyword=%E6%B5%B7%E7%9B%97%E8%88%B9%20Virtuoso%20Max"
+      }
+    ],
+    "id": "hs-026",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "海盗船 HS80 RGB 无线",
+    "brand": "Corsair",
+    "price": 849,
+    "category": "中高端",
+    "type": "无线",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "无线FPS",
+      "杜比全景声",
+      "50mm单元",
+      "轻量舒适"
+    ],
+    "caveat": "续航约20h偏短；麦克风为翻转式不可拆卸",
+    "source": "海盗船官网/B站评测可核实（50mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "海盗船官网",
+        "url": "https://www.corsair.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：海盗船 HS80 无线",
+        "url": "https://search.bilibili.com/all?keyword=%E6%B5%B7%E7%9B%97%E8%88%B9%20HS80%20%E6%97%A0%E7%BA%BF"
+      }
+    ],
+    "id": "hs-027",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "乌龟海岸 Stealth 700 Gen 3（2024）",
+    "brand": "Turtle Beach",
+    "price": 1499,
+    "category": "高端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "三平台无线",
+      "双模连接",
+      "AI降噪麦克风",
+      "长续航"
+    ],
+    "caveat": "国内售后网点少；价格偏高",
+    "source": "乌龟海岸官网/B站评测可核实（2024 新品）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "乌龟海岸官网",
+        "url": "https://www.turtlebeach.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：乌龟海岸 Stealth 700 Gen 3",
+        "url": "https://search.bilibili.com/all?keyword=%E4%B9%8C%E9%BE%9F%E6%B5%B7%E5%B2%B8%20Stealth%20700%20Gen%203"
+      }
+    ],
+    "id": "hs-028",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "乌龟海岸 Atlas Air（开放式）",
+    "brand": "Turtle Beach",
+    "price": 999,
+    "category": "中高端",
+    "type": "双模",
+    "sound": "开放式",
+    "mic": "可拆卸",
+    "best_for": [
+      "开放式声场",
+      "听声辨位",
+      "无线双模",
+      "佩戴透气"
+    ],
+    "caveat": "开放式漏音；隔音差",
+    "source": "乌龟海岸官网/B站评测可核实（开放式无线）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "乌龟海岸官网",
+        "url": "https://www.turtlebeach.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：乌龟海岸 Atlas Air",
+        "url": "https://search.bilibili.com/all?keyword=%E4%B9%8C%E9%BE%9F%E6%B5%B7%E5%B2%B8%20Atlas%20Air"
+      }
+    ],
+    "id": "hs-029",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "EPOS H6PRO（封闭式）",
+    "brand": "EPOS",
+    "price": 999,
+    "category": "中高端",
+    "type": "有线",
+    "driver": "42mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "frequency": "20-20000Hz",
+    "best_for": [
+      "FPS定位",
+      "佩戴舒适",
+      "可拆卸麦",
+      "多平台3.5mm"
+    ],
+    "caveat": "品牌已停止运营需注意售后；低频克制",
+    "source": "EPOS 官网/B站评测可核实（42mm、20-20000Hz）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "EPOS 官网",
+        "url": "https://www.eposaudio.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：EPOS H6PRO 评测",
+        "url": "https://search.bilibili.com/all?keyword=EPOS%20H6PRO%20%E8%AF%84%E6%B5%8B"
+      }
+    ],
+    "id": "hs-030",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "索尼 INZONE H9",
+    "brand": "Sony",
+    "price": 1999,
+    "category": "高端",
+    "type": "无线",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "无线FPS",
+      "主动降噪",
+      "空间音效",
+      "索尼生态"
+    ],
+    "caveat": "价格高；需USB无线接收器",
+    "source": "索尼官网/B站评测可核实（40mm 驱动、降噪）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "索尼官网 INZONE 专区",
+        "url": "https://www.sony.com/electronics/gaming-headsets"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：索尼 INZONE H9",
+        "url": "https://search.bilibili.com/all?keyword=%E7%B4%A2%E5%B0%BC%20INZONE%20H9"
+      }
+    ],
+    "id": "hs-031",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "索尼 INZONE H5",
+    "brand": "Sony",
+    "price": 1299,
+    "category": "中高端",
+    "type": "无线",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "无线FPS",
+      "2.4G低延迟",
+      "轻量(约265g)",
+      "多平台"
+    ],
+    "caveat": "无主动降噪；塑料结构",
+    "source": "索尼官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "索尼官网 INZONE 专区",
+        "url": "https://www.sony.com/electronics/gaming-headsets"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：索尼 INZONE H5",
+        "url": "https://search.bilibili.com/all?keyword=%E7%B4%A2%E5%B0%BC%20INZONE%20H5"
+      }
+    ],
+    "id": "hs-032",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "索尼 INZONE Buds（入耳式）",
+    "brand": "Sony",
+    "price": 1399,
+    "category": "高端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "低延迟2.4G",
+      "主动降噪",
+      "便携"
+    ],
+    "caveat": "入耳式声场小；需专用接收器",
+    "source": "索尼官网/B站评测可核实（2023 发布）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "索尼官网 INZONE 专区",
+        "url": "https://www.sony.com/electronics/gaming-headsets"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：索尼 INZONE Buds",
+        "url": "https://search.bilibili.com/all?keyword=%E7%B4%A2%E5%B0%BC%20INZONE%20Buds"
+      }
+    ],
+    "id": "hs-033",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "拜雅 MMX 200 Wireless",
+    "brand": "Beyerdynamic",
+    "price": 1499,
+    "category": "高端",
+    "type": "双模",
+    "driver": "40mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "无线电竞",
+      "拜雅调音",
+      "双模连接",
+      "低延迟"
+    ],
+    "caveat": "价格高；低频相对克制",
+    "source": "拜雅官网/B站评测可核实（40mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "拜雅官网",
+        "url": "https://www.beyerdynamic.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：拜雅 MMX 200",
+        "url": "https://search.bilibili.com/all?keyword=%E6%8B%9C%E9%9B%85%20MMX%20200"
+      }
+    ],
+    "id": "hs-034",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "Audeze Maxwell（无线平板）",
+    "brand": "Audeze",
+    "price": 2999,
+    "category": "旗舰",
+    "type": "双模",
+    "driver": "90mm 平面磁",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "旗舰音质",
+      "90mm平板单元",
+      "听声辨位",
+      "双模+USB"
+    ],
+    "caveat": "重约490g偏重；价格高",
+    "pro_users": "部分 FPS 主播/职业选手使用",
+    "source": "Audeze 官网/B站评测可核实（90mm 平板单元）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "Audeze 官网",
+        "url": "https://www.audeze.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：Audeze Maxwell 评测",
+        "url": "https://search.bilibili.com/all?keyword=Audeze%20Maxwell%20%E8%AF%84%E6%B5%8B"
+      }
+    ],
+    "id": "hs-035",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "JBL Quantum 910X 无线",
+    "brand": "JBL",
+    "price": 1699,
+    "category": "高端",
+    "type": "双模",
+    "driver": "50mm",
+    "sound": "封闭式",
+    "mic": "可拆卸",
+    "best_for": [
+      "无线FPS",
+      "主动降噪",
+      "50mm单元",
+      "多平台"
+    ],
+    "caveat": "价格高；头梁偏紧因人而异",
+    "source": "JBL 官网/B站评测可核实（50mm 驱动）",
+    "sources": [
+      {
+        "type": "official",
+        "label": "JBL 官网",
+        "url": "https://www.jbl.com"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：JBL Quantum 910X",
+        "url": "https://search.bilibili.com/all?keyword=JBL%20Quantum%20910X"
+      }
+    ],
+    "id": "hs-036",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "漫步者 HECATE GX05（入耳式）",
+    "brand": "漫步者电竞 HECATE",
+    "price": 499,
+    "category": "中端",
+    "type": "双模",
+    "sound": "封闭式",
+    "mic": "不可拆卸",
+    "best_for": [
+      "入耳式电竞",
+      "2.4G低延迟",
+      "充电盒便携",
+      "性价比"
+    ],
+    "caveat": "入耳式声场小；佩戴因人而异",
+    "source": "漫步者电竞官方店/京东在售可核实（2023 发布）",
+    "sources": [
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：漫步者 HECATE GX05",
+        "url": "https://search.jd.com/Search?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20HECATE%20GX05"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：漫步者 HECATE GX05",
+        "url": "https://search.bilibili.com/all?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20HECATE%20GX05"
+      }
+    ],
+    "id": "hs-037",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "漫步者 HECATE G4S",
+    "brand": "漫步者电竞 HECATE",
+    "price": 349,
+    "category": "中端",
+    "type": "无线",
+    "sound": "封闭式",
+    "best_for": [
+      "无线电竞",
+      "2.4G低延迟",
+      "性价比",
+      "多平台"
+    ],
+    "caveat": "做工一般；麦克风表现中规中矩",
+    "source": "漫步者电竞官方店/京东在售可核实",
+    "sources": [
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：漫步者 HECATE G4S",
+        "url": "https://search.jd.com/Search?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20HECATE%20G4S"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：漫步者 HECATE G4S",
+        "url": "https://search.bilibili.com/all?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20HECATE%20G4S"
+      }
+    ],
+    "id": "hs-038",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "西伯利亚 S21",
+    "brand": "西伯利亚",
+    "price": 399,
+    "category": "中端",
+    "type": "有线",
+    "sound": "封闭式",
+    "best_for": [
+      "经典FPS耳机",
+      "听声辨位",
+      "高性价比",
+      "7.1虚拟环绕"
+    ],
+    "caveat": "塑料质感；麦克风表现一般",
+    "source": "京东在售 + B站横评可核实（国产经典FPS型号）",
+    "sources": [
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：西伯利亚 S21 电竞耳机",
+        "url": "https://search.jd.com/Search?keyword=%E8%A5%BF%E4%BC%AF%E5%88%A9%E4%BA%9A%20S21%20%E7%94%B5%E7%AB%9E%E8%80%B3%E6%9C%BA"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：西伯利亚 S21",
+        "url": "https://search.bilibili.com/all?keyword=%E8%A5%BF%E4%BC%AF%E5%88%A9%E4%BA%9A%20S21"
+      }
+    ],
+    "id": "hs-039",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "西伯利亚 S11",
+    "brand": "西伯利亚",
+    "price": 249,
+    "category": "入门",
+    "type": "有线",
+    "sound": "封闭式",
+    "best_for": [
+      "入门FPS",
+      "低预算",
+      "轻量佩戴"
+    ],
+    "caveat": "音质一般；细节做工粗糙",
+    "source": "京东在售 + B站评测可核实",
+    "sources": [
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：西伯利亚 S11 电竞耳机",
+        "url": "https://search.jd.com/Search?keyword=%E8%A5%BF%E4%BC%AF%E5%88%A9%E4%BA%9A%20S11%20%E7%94%B5%E7%AB%9E%E8%80%B3%E6%9C%BA"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：西伯利亚 S11",
+        "url": "https://search.bilibili.com/all?keyword=%E8%A5%BF%E4%BC%AF%E5%88%A9%E4%BA%9A%20S11"
+      }
+    ],
+    "id": "hs-040",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  },
+  {
+    "name": "雷柏 VH800 无线双模",
+    "brand": "雷柏 Rapoo",
+    "price": 299,
+    "category": "入门",
+    "type": "双模",
+    "sound": "封闭式",
+    "best_for": [
+      "入门无线",
+      "2.4G+蓝牙",
+      "性价比",
+      "长续航"
+    ],
+    "caveat": "音质一般；塑料感较强",
+    "source": "雷柏官方店/京东在售可核实",
+    "sources": [
+      {
+        "type": "official",
+        "label": "雷柏官网",
+        "url": "https://www.rapoo.com.cn"
+      },
+      {
+        "type": "ecommerce",
+        "label": "京东搜索：雷柏 VH800",
+        "url": "https://search.jd.com/Search?keyword=%E9%9B%B7%E6%9F%8F%20VH800"
+      },
+      {
+        "type": "bilibili",
+        "label": "B站搜索：雷柏 VH800",
+        "url": "https://search.bilibili.com/all?keyword=%E9%9B%B7%E6%9F%8F%20VH800"
+      }
+    ],
+    "id": "hs-041",
+    "price_note": "参考价，随渠道/活动浮动，以电商实时价为准"
+  }
+]

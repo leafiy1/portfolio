@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+gear/tools/__pycache__/
+gear/products.json.bak-*

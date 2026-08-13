@@ -43,7 +43,7 @@
 ## 2026-08-14 设计增强资源
 
 - 已安装：`frontend-design`（审美 / 排版 / 设计系统规则）、`visualize`（交互预览）、`imagegen`（生成位图素材）、`screenshot`（截图）、`playwright`（浏览器 CLI 截图 / 视觉 QA）、`playwright-interactive`（持久浏览器调试 / 视觉验收）。
-- `playwright-interactive` 需要 `js_repl` 功能；当前 `C:\Users\Moyery\.codex\config.toml` 未开启，新会话优先用 `playwright` 技能即可，确实需要交互调试时再开启 `js_repl`。
+- `playwright-interactive` 需要 `js_repl` 功能；已开启 `C:\Users\Moyery\.codex\config.toml` 的 `[features] js_repl = true`，备份为 `config.toml.bak-js-repl-20260814`。新会话/完全重启 Codex 后生效。
 - 如用 Figma，可装 `figma-use`、`figma-generate-design`、`figma-implement-design`、`figma-create-design-system-rules`。
 - 当前 MCP 设计资源：未发现；视觉验收以浏览器截图 + 本地图片查看为主。
 - 本地基线：`1ce9cf1`（GearPick v4.1 + 主站统计 + 交接文档）、`a4c9239`（设计增强资源）；均未推送，线上未变化。

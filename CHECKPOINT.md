@@ -40,6 +40,13 @@
 - 葉光館真源码仍在 `D:\桌面desktop\项目档案\赫尔墨斯\03_葉光館\图`（含 .git），作品集目录里只有原型/PRD。
 - 结论：当前最新作品集改动只在本地，未上线；要上线需要先确认 GitHub 网络/代理可用，再 commit + push。
 
+## 2026-08-14 设计增强资源
+
+- 已安装：`frontend-design`（审美 / 排版 / 设计系统规则）、`visualize`（交互预览）、`imagegen`（生成位图素材）、`screenshot`（截图）。
+- 可安装：`playwright`、`playwright-interactive`（浏览器截图 / 视觉 QA）；如用 Figma，可装 `figma-use`、`figma-generate-design`、`figma-implement-design`、`figma-create-design-system-rules`。
+- 当前 MCP 设计资源：未发现；视觉验收以浏览器截图 + 本地图片查看为主。
+- 新线程首句：`继续作品集内在改造，先读 C:\Users\Moyery\Desktop\作品集_陈昊\CHECKPOINT.md 和当前产物，按先项目后排版顺序执行，并用 frontend-design skill + playwright 做视觉验收。`
+
 ## Codex 运行规则（2026-08-13 补充）
 
 - 固定 `deepseek-v4-flash`，不发图片，不 resume 旧巨线程，不跑 `python -c` 内联路径脚本。

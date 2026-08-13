@@ -42,10 +42,15 @@
 
 ## 2026-08-14 设计增强资源
 
-- 已安装：`frontend-design`（审美 / 排版 / 设计系统规则）、`visualize`（交互预览）、`imagegen`（生成位图素材）、`screenshot`（截图）。
-- 可安装：`playwright`、`playwright-interactive`（浏览器截图 / 视觉 QA）；如用 Figma，可装 `figma-use`、`figma-generate-design`、`figma-implement-design`、`figma-create-design-system-rules`。
+- 已安装：`frontend-design`（审美 / 排版 / 设计系统规则）、`visualize`（交互预览）、`imagegen`（生成位图素材）、`screenshot`（截图）、`playwright`（浏览器 CLI 截图 / 视觉 QA）、`playwright-interactive`（持久浏览器调试 / 视觉验收）。
+- `playwright-interactive` 需要 `js_repl` 功能；当前 `C:\Users\Moyery\.codex\config.toml` 未开启，新会话优先用 `playwright` 技能即可，确实需要交互调试时再开启 `js_repl`。
+- 如用 Figma，可装 `figma-use`、`figma-generate-design`、`figma-implement-design`、`figma-create-design-system-rules`。
 - 当前 MCP 设计资源：未发现；视觉验收以浏览器截图 + 本地图片查看为主。
-- 新线程首句：`继续作品集内在改造，先读 C:\Users\Moyery\Desktop\作品集_陈昊\CHECKPOINT.md 和当前产物，按先项目后排版顺序执行，并用 frontend-design skill + playwright 做视觉验收。`
+- 本地基线：`1ce9cf1`（GearPick v4.1 + 主站统计 + 交接文档）、`a4c9239`（设计增强资源）；均未推送，线上未变化。
+
+## 2026-08-14 新对话开场话（可直接复制）
+
+`继续作品集内在改造。先读 C:\Users\Moyery\Desktop\作品集_陈昊\CHECKPOINT.md、README.md、文件地图.md 和当前产物；当前 GearPick v4.1 与主站统计已提交成本地基线，但还没有推送上线。本轮先做项目内在，不先改排版。建议顺序：先修 GearPick 11 条异常文案并跑验证，再做办公 Agent 可运行闭环、葉光館证据与统计、迷宫饭试玩反馈；每轮完成一个闭环后提交，验证通过再决定是否合并推送。设计上用 frontend-design 技能，视觉验收用 playwright 和截图。不要假设旧对话内容。`
 
 ## Codex 运行规则（2026-08-13 补充）
 

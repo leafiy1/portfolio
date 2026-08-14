@@ -51,7 +51,7 @@
 
 ## 2026-08-14 新对话开场话（可直接复制）
 
-`继续作品集内在改造。先读 C:\Users\Moyery\Desktop\作品集_陈昊\CHECKPOINT.md、README.md、文件地图.md 和当前产物；当前 GearPick v4.1 与主站统计已提交成本地基线，但还没有推送上线。本轮先做项目内在，不先改排版。建议顺序：先修 GearPick 11 条异常文案并跑验证，再做办公 Agent 可运行闭环、葉光館证据与统计、迷宫饭试玩反馈；每轮完成一个闭环后提交，验证通过再决定是否合并推送。设计上用 frontend-design 技能，视觉验收用 playwright 截图 + GLM-4V 看图链路。不要假设旧对话内容。`
+`继续作品集内在改造。先读 C:\Users\Moyery\Desktop\作品集_陈昊\CHECKPOINT.md、README.md、文件地图.md 和当前产物；当前 GearPick v4.1 与主站统计已提交成本地基线，但还没有推送上线。本轮先做项目内在，不先改排版。建议顺序：先用 Subagent 并行跑 GearPick 审计、办公 Agent 方案、葉光館证据、迷宫饭试玩反馈四组只读盘点；主线程检查合并后，再按闭环依次实现；每轮完成一个闭环后提交，验证通过再决定是否合并推送。设计上用 frontend-design 技能，视觉验收用 playwright 截图 + GLM-4V 看图链路。不要假设旧对话内容。`
 
 ## Codex 运行规则（2026-08-13 补充）
 

@@ -113,7 +113,7 @@
 - `C:\Users\Moyery\Documents\Default Project\AGENTS.md` 是 OpenCode 工作区规则，不是 Codex 当前主规则；里面有 GLM-4V 识图脚本与简历工作流说明。
 - 联网实测：百度 200、GitHub API 200、Google 000（不可达）；普通联网正常。
 - GitHub git 连接之前失败，原因是作品集仓库 `.git/config` 写死 `http.proxy = http://127.0.0.1:7890`，而 7890 端口没有代理监听。
-- 已移除该失效代理，`git ls-remote origin` 实测通过；远端 `master` = `7db0093`，本地仍领先 3 个提交未推送。
+- 已移除该失效代理，`git ls-remote origin` 实测通过；远端 `master` = `7db0093`，本地仍领先 9 个提交未推送。
 
 ## 当前状态（2026-08-13）
 

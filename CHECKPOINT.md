@@ -107,6 +107,14 @@
 - 不适合并行：同一个 `index.html` 排版、同一个产品数据文件多人同时写、简历与作品集口径高耦合修改。
 - 主线程负责检查合并、跑验证、更新 `CHECKPOINT.md`，不让子代理直接决定整体方向。
 
+## 2026-08-15 AGENTS.md 与联网状态确认
+
+- `C:\Users\Moyery\.codex\AGENTS.md` 已写入 Subagents 规则：复杂任务允许主代理在需要时使用 Subagents 并行处理独立子任务；子任务必须边界清楚、写集不重叠，完成后统一汇总。
+- `C:\Users\Moyery\Documents\Default Project\AGENTS.md` 是 OpenCode 工作区规则，不是 Codex 当前主规则；里面有 GLM-4V 识图脚本与简历工作流说明。
+- 联网实测：百度 200、GitHub API 200、Google 000（不可达）；普通联网正常。
+- GitHub git 连接之前失败，原因是作品集仓库 `.git/config` 写死 `http.proxy = http://127.0.0.1:7890`，而 7890 端口没有代理监听。
+- 已移除该失效代理，`git ls-remote origin` 实测通过；远端 `master` = `7db0093`，本地仍领先 3 个提交未推送。
+
 ## 当前状态（2026-08-13）
 
 - 说明：GearPick 扩库这个卡点已解决；作品集整体改造尚未收尾。

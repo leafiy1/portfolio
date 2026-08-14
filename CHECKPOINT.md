@@ -43,7 +43,7 @@
 ## 2026-08-14 设计增强资源
 
 - 已安装：`frontend-design`（审美 / 排版 / 设计系统规则）、`visualize`（交互预览）、`imagegen`（生成位图素材）、`screenshot`（截图）、`playwright`（浏览器 CLI 截图 / 视觉验收）。
-- `playwright-interactive` 已归档到 `C:\Users\Moyery\.codex\skills_archive\playwright-interactive-20260815`；`js_repl` 未开启，不占用运行成本。
+- `playwright-interactive` 已删除，`js_repl` 未开启，不占用运行成本。
 - 看图链路：GLM-4V 负责看懂截图/图片，Playwright 只负责截网页图，两者互补，不重复。
 - 如用 Figma，可装 `figma-use`、`figma-generate-design`、`figma-implement-design`、`figma-create-design-system-rules`。
 - 当前 MCP 设计资源：未发现；视觉验收以浏览器截图 + 本地图片查看为主。
@@ -91,6 +91,21 @@
 新对话可以直接说：
 
 `继续作品集整体改造。先读 CHECKPOINT.md，先给一版子代理分工计划，再用子代理并行处理。每个子代理只负责独立文件，完成后由你检查并更新 CHECKPOINT.md。`
+
+## 2026-08-15 Subagent 具体任务包
+
+- 第一批只读盘点可并行：
+  1. GearPick 审计：输入 `gear/products.json` + `gear/index.html`，输出 11 条异常文案清单、12 款缺价清单、可用性风险点；只读，不改文件。
+  2. 办公 Agent 方案：输入飞书存档与交接文档，输出「本地可运行管线 + 需要哪些凭证 + 20 条摘要评测方案」；不改作品集文件。
+  3. 葉光館证据：输入 PRD、原型和线上站点信息，输出访问统计方案、真实反馈采集模板、复盘大纲；不改真源码。
+  4. 迷宫饭试玩：输入 GDD/CASE_STUDY/当前游戏，输出试玩反馈表与录屏验收清单；只读或只写独立 `_feedback` 文档。
+- 第二批写不同文件的改造可并行：
+  - GearPick 修文案：只改 `gear/products.json`，改后跑 `node tools/embed_products.js`。
+  - 办公 Agent：新建独立 `office_agent/` 目录，不与主站文件重叠。
+  - 葉光館复盘：新建独立文档，不改 `D:\桌面desktop\项目档案\赫尔墨斯\03_葉光館\图` 源码。
+  - 迷宫饭反馈：新建独立文档，不改游戏本体。
+- 不适合并行：同一个 `index.html` 排版、同一个产品数据文件多人同时写、简历与作品集口径高耦合修改。
+- 主线程负责检查合并、跑验证、更新 `CHECKPOINT.md`，不让子代理直接决定整体方向。
 
 ## 当前状态（2026-08-13）
 

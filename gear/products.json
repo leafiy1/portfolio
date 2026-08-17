@@ -1,7 +1,7 @@
 {
   "meta": {
-    "dataset_name": "GearPick 产品库 v4.2",
-    "version": "4.2",
+    "dataset_name": "GearPick 产品库 v4.3",
+    "version": "4.3",
     "updated_at": "2026-08-17",
     "maintainer": "陈昊（AI产品经理方向）",
     "counts": {
@@ -14,6 +14,7 @@
     "price_policy": "全部为参考价，来自官网/电商行情/公开搜索快照，随渠道与活动浮动，选购前请以电商实时价格为准。已核实价格的条目附“price_verified_at”与“price_sources”。",
     "link_policy": "信源链接优先使用稳定的官网首页/搜索入口；具体评测深链以【待补充】标注（由候选人核实后替换）。",
     "changelog": [
+      "v4.3（2026-08-17）：公开核价 11 款，补齐参考价与来源；Wooting Two HE 官网仅配置器报价，继续标注待核实。",
       "v4.2（2026-08-17）：基于只读审计修复 64 处推荐文案异常（价格待核实空格/截断/拆字）、补齐 42 款鼠标垫 category，并统一 README/CASE_STUDY 信源口径。",
       "v4.1（2026-08-13）：对 42 款缺价型号进行公开价格核实，为每条附价格来源与核实日期，余下 12 款继续标注“待核实”；GearPick 内置本地使用日志，可导出访问/推荐/对比/复制/导出事件。",
       "v4.0（2026-08-13）：数据扩库——新增近两年新品 168 条（含品牌/型号/参数/信源），总库 234 条。",
@@ -1939,7 +1940,21 @@
         "重量未在官网规格中单独标出，故省略"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null
+      "price": 219,
+      "price_note": "公开搜索快照参考价（中关村在线/什么值得买），活动价可能浮动",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "label": "360搜索：达摩鲨 M3 PRO 219 元快照",
+          "url": "https://www.so.com/s?q=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3%20Pro%20%E9%BA%92%E9%BA%9F%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        },
+        {
+          "type": "official",
+          "label": "Darmoshark 官方产品页",
+          "url": "https://darmoshark.com/products/darmoshark-m3-pro-kiran-trio-mode-game-mouse"
+        }
+      ]
     },
     {
       "id": "m-037",
@@ -2176,7 +2191,21 @@
         "碳纤维版价格偏高"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null
+      "price": 699,
+      "price_note": "公开搜索快照参考价（中关村在线/什么值得买），活动价可能浮动",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "label": "360搜索：达摩鲨 M5 Air 低至 699 元快照",
+          "url": "https://www.so.com/s?q=%E8%BE%BE%E6%91%A9%E9%B2%A8%20M5%20Air%20%E9%B1%BC%E5%A4%B4%20%E7%A2%B3%E7%BA%A4%E7%BB%B4%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        },
+        {
+          "type": "official",
+          "label": "Darmoshark 官方产品页",
+          "url": "https://darmoshark.com/products/darmoshark-m5-air-mp-fish-head-trio-mode-game-mouse-with-carbon-fiber-material"
+        }
+      ]
     },
     {
       "id": "m-041",
@@ -2272,7 +2301,21 @@
         "回报率支持125/500/1000/2000/4000Hz；传感器型号官网未公布"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null
+      "price": 1079,
+      "price_note": "第三方渠道公开快照参考价，官方渠道可能不同",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "label": "移动搜狗商品快照：ZOWIE U2-DW ¥1079",
+          "url": "https://wap.sogou.com/web/searchList.jsp?keyword=%E5%8D%93%E5%A8%81%20U2-DW%204K%20%E9%BC%A0%E6%A0%87"
+        },
+        {
+          "type": "official",
+          "label": "ZOWIE 中国官网产品页",
+          "url": "https://zowie.benq.com.cn/zh-cn/mouse/u2-dw.html"
+        }
+      ]
     },
     {
       "id": "m-043",
@@ -2620,7 +2663,21 @@
         "双8K=有线+无线均8000Hz；重量未标出"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null
+      "price": 399,
+      "price_note": "雷柏官方旗舰店公开快照参考价，活动价可能浮动",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "label": "移动搜狗商品快照：雷柏旗舰店 ¥399",
+          "url": "https://wap.sogou.com/web/searchList.jsp?keyword=%E9%9B%B7%E6%9F%8F%20VT9s%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2%20%E5%8F%8C8K%20%E9%BC%A0%E6%A0%87"
+        },
+        {
+          "type": "official",
+          "label": "雷柏官网产品页",
+          "url": "https://www.rapoo.cn/product/942"
+        }
+      ]
     },
     {
       "id": "m-049",
@@ -3542,7 +3599,21 @@
         "重量/回报率未核实省略"
       ],
       "verification_status": "单信源（待补强）",
-      "price": null
+      "price": 529,
+      "price_note": "第三方渠道公开快照参考价（479-529 元区间）",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "label": "移动搜狗商品快照：ROG 战刃3 无线 ¥529",
+          "url": "https://wap.sogou.com/web/searchList.jsp?keyword=ROG%20%E6%88%98%E5%88%833%20%E6%97%A0%E7%BA%BF%20AP36K%20%E9%BC%A0%E6%A0%87"
+        },
+        {
+          "type": "ecommerce",
+          "label": "360搜索：ROG 战刃3 无线 AimPoint 36K",
+          "url": "https://www.so.com/s?q=ROG%20%E6%88%98%E5%88%833%20%E6%97%A0%E7%BA%BF%20AP36K%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        }
+      ]
     },
     {
       "id": "m-066",
@@ -3637,7 +3708,21 @@
         "参数未核实到官网规格，故省略"
       ],
       "verification_status": "单信源（待补强）",
-      "price": null
+      "price": 1199,
+      "price_note": "IT之家/ZOL 公开开售报道参考价",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "news",
+          "label": "360搜索：罗技 GPW4 鹰眼 1199 元开售",
+          "url": "https://www.so.com/s?q=%E7%BD%97%E6%8A%80%20GPW4%20%E9%B9%B0%E7%9C%BC%20GPX2%20DEX%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        },
+        {
+          "type": "official",
+          "label": "Logitech 官方产品搜索入口",
+          "url": "https://www.logitechg.com/zh-cn"
+        }
+      ]
     },
     {
       "id": "m-068",
@@ -4076,7 +4161,21 @@
         "经典款；参数未核实省略"
       ],
       "verification_status": "单信源（待补强）",
-      "price": null
+      "price": 179,
+      "price_note": "中关村在线公开快照到手价，活动价可能浮动",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "news",
+          "label": "360搜索：达尔优 A950 三模 179 元快照",
+          "url": "https://www.so.com/s?q=%E8%BE%BE%E5%B0%94%E4%BC%98%20A950%20%E4%B8%89%E6%A8%A1%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        },
+        {
+          "type": "official",
+          "label": "Dareu 官方产品页",
+          "url": "https://dareu.com/products/dareu-a950-wireless-gaming-mouse"
+        }
+      ]
     },
     {
       "id": "m-077",
@@ -4172,7 +4271,21 @@
         "B站评测标题口径：3395+诺迪克52840主控"
       ],
       "verification_status": "单信源（待补强）",
-      "price": null
+      "price": 179,
+      "price_note": "中关村在线/什么值得买公开快照到手价，活动价可能浮动",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "news",
+          "label": "360搜索：黑爵 AJ139 Pro 179 元快照",
+          "url": "https://www.so.com/s?q=%E9%BB%91%E7%88%B5%20AJ139%20Pro%204K%E7%89%88%20%E9%BC%A0%E6%A0%87%20%E4%BB%B7%E6%A0%BC"
+        },
+        {
+          "type": "ecommerce",
+          "label": "移动搜狗商品快照：黑爵 AJ139 Pro",
+          "url": "https://wap.sogou.com/web/searchList.jsp?keyword=%E9%BB%91%E7%88%B5%20AJ139%20Pro%204K%E7%89%88"
+        }
+      ]
     },
     {
       "id": "m-079",
@@ -5753,7 +5866,21 @@
         "较早型号，回报率1000Hz"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null
+      "price": null,
+      "price_note": "官网配置器在售，价格随配置浮动，未取得统一基准价；待核实",
+      "price_verified_at": "待核实",
+      "price_sources": [
+        {
+          "type": "official",
+          "label": "Wooting Two HE 配置器",
+          "url": "https://wooting.io/configurator/wooting-two-he"
+        },
+        {
+          "type": "official",
+          "label": "Wooting 官方产品页",
+          "url": "https://wooting.io/wooting-two-he"
+        }
+      ]
     },
     {
       "name": "美加狮 MAD 60HE",
@@ -8696,7 +8823,7 @@
           "url": "https://search.bilibili.com/all?keyword=LGG%20MIU%20%E7%8E%BB%E7%92%83%E9%BC%A0%E6%A0%87%E5%9E%AB"
         }
       ],
-      "budget_tier": "待核实",
+      "budget_tier": "高端",
       "suitable_games": [
         "APEX英雄",
         "守望先锋2"
@@ -8710,8 +8837,17 @@
         "玻璃垫需换耐磨脚贴，海外转运成本高"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null,
-      "category": "待核实"
+      "price": 753,
+      "category": "高端",
+      "price_note": "LGG 官网 CNY 在售价",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "official",
+          "label": "LGG 官网 MIU Glass Mousepad",
+          "url": "https://www.lethalgaminggear.com/products/miu-glass-mousepad"
+        }
+      ]
     },
     {
       "id": "mp-023",
@@ -9361,7 +9497,7 @@
           "url": "https://search.bilibili.com/all?keyword=Glorious%20GMP%202%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
         }
       ],
-      "budget_tier": "待核实",
+      "budget_tier": "中端",
       "suitable_games": [
         "综合FPS"
       ],
@@ -9374,8 +9510,17 @@
         "无锁边边缘耐久性一般"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null,
-      "category": "待核实"
+      "price": 169,
+      "category": "中端",
+      "price_note": "Glorious 官网 USD $24.99 起，按 2026-08-17 汇率约 ¥169；实际以官方结算价为准",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "official",
+          "label": "Glorious 官网 GMP 2 Edgeless Cloth",
+          "url": "https://www.gloriousgaming.com/products/gmp-2-edgeless-cloth-gaming-mouse-pad"
+        }
+      ]
     },
     {
       "id": "mp-038",
@@ -9403,7 +9548,7 @@
           "url": "https://search.bilibili.com/all?keyword=Glorious%20GMP%202%20%E9%BC%A0%E6%A0%87%E5%9E%AB"
         }
       ],
-      "budget_tier": "待核实",
+      "budget_tier": "中端",
       "suitable_games": [
         "综合FPS"
       ],
@@ -9416,8 +9561,17 @@
         "新品国内铺货较少"
       ],
       "verification_status": "双信源交叉验证",
-      "price": null,
-      "category": "待核实"
+      "price": 169,
+      "category": "中端",
+      "price_note": "Glorious 官网 USD $24.99 起，按 2026-08-17 汇率约 ¥169；实际以官方结算价为准",
+      "price_verified_at": "2026-08-17",
+      "price_sources": [
+        {
+          "type": "official",
+          "label": "Glorious 官网 GMP 2 Stitched Cloth",
+          "url": "https://www.gloriousgaming.com/products/gmp-2-stitched-cloth-mouse-pad"
+        }
+      ]
     },
     {
       "id": "mp-039",

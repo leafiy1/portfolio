@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+<title>V8-A 证据账本 · 陈昊作品集原型</title>
+<style>
+:root{
+  --bg:oklch(.986 .004 92);
+  --surface:oklch(.968 .006 96);
+  --surface-2:oklch(.94 .008 96);
+  --ink:oklch(.25 .025 155);
+  --ink-2:oklch(.44 .02 155);
+  --muted:oklch(.62 .015 155);
+  --line:oklch(.82 .012 96);
+  --line-strong:oklch(.70 .015 96);
+  --accent:oklch(.55 .15 38);
+  --green:oklch(.46 .10 150);
+  --amber:oklch(.66 .12 75);
+  --danger:oklch(.55 .17 28);
+  --serif:'Noto Serif SC','Songti SC','STSong',Georgia,serif;
+  --sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:ui-monospace,'Cascadia Mono','SF Mono',Consolas,monospace;
+  --shadow:0 1px 2px oklch(.20 .02 155/.05),0 12px 32px -18px oklch(.20 .02 155/.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:15px}
+a{color:inherit;text-decoration:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--line);background:color-mix(in oklch,var(--bg) 88%,white);position:sticky;top:0;z-index:10}
+.brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.05em}
+.brand small{display:block;font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.top-links{display:flex;gap:14px;font-size:13px;color:var(--ink-2)}
+.shell{display:grid;grid-template-columns:280px minmax(0,1fr);gap:0;max-width:1360px;margin:0 auto}
+.rail{position:sticky;top:70px;align-self:start;padding:28px 24px;border-right:1px solid var(--line)}
+.rail .name{font-family:var(--serif);font-size:32px;font-weight:700;letter-spacing:.04em;line-height:1.1}
+.rail .role{color:var(--accent);font-weight:700;margin:6px 0 16px}
+.rail .contact{font-size:12px;color:var(--muted);display:grid;gap:6px}
+.rail .cta{display:block;margin-top:22px;padding:10px 14px;border:1px solid var(--ink);border-radius:8px;font-weight:700;text-align:center}
+.rail .nav{margin-top:34px;display:grid;gap:8px;font-size:13px}
+.rail .nav b{color:var(--ink-2)}
+.content{padding:40px 44px 72px}
+.hero{border-bottom:1px solid var(--line-strong);padding-bottom:34px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+h1{font-family:var(--serif);font-size:44px;line-height:1.12;letter-spacing:-.01em;margin:10px 0 14px;max-width:760px}
+.hero p{max-width:680px;color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--surface);box-shadow:var(--shadow)}
+.stat b{font-family:var(--mono);font-size:22px;display:block;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.section{margin-top:44px}
+.section h2{font-family:var(--serif);font-size:24px;display:flex;align-items:center;gap:10px}
+.section h2::before{content:"";width:4px;height:18px;background:var(--accent);border-radius:2px}
+.ledger{display:grid;gap:14px;margin-top:18px}
+.row{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:18px;display:grid;grid-template-columns:1.2fr .8fr .9fr;gap:16px;align-items:start;box-shadow:var(--shadow)}
+.row h3{font-family:var(--serif);font-size:18px}
+.row .tag{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:999px;margin:8px 0 4px;border:1px solid var(--line-strong)}
+.tag.online{color:var(--green);border-color:color-mix(in oklch,var(--green) 35%,white)}
+.tag.run{color:var(--amber);border-color:color-mix(in oklch,var(--amber) 35%,white)}
+.tag.plan{color:var(--muted)}
+.tag.warn{color:var(--danger);border-color:color-mix(in oklch,var(--danger) 35%,white)}
+.row p{font-size:13px;color:var(--ink-2)}
+.evidence h4{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.evidence ul{list-style:none;display:grid;gap:6px;font-size:12px}
+.evidence li{position:relative;padding-left:14px;color:var(--ink-2)}
+.evidence li::before{content:"↳";position:absolute;left:0;color:var(--accent)}
+.status h4{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.status strong{font-size:13px}
+.status small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+@media(max-width:980px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .rail .nav{display:none}
+  .content{padding:28px 20px 56px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr;gap:10px}
+}
+@media(max-width:560px){
+  h1{font-size:32px}
+  .topbar{padding:12px 16px}
+  .stats{grid-template-columns:1fr 1fr}
+  .rail{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">陈昊<small>AI Product Portfolio · v8 原型 A</small></div>
+  <nav class="top-links"><a href="#projects">项目</a><a href="#evidence">证据</a><a href="简历_陈昊_AI产品经理版_v2.pdf">简历 PDF</a></nav>
+</header>
+<main class="shell">
+  <aside class="rail">
+    <div>
+      <div class="name">陈昊</div>
+      <div class="role">AI 产品经理 · 从 0 到 1 的实践者</div>
+      <div class="contact"><span>176 0897 0378</span><span>2295350938@qq.com</span><span>湖北武汉</span></div>
+      <a class="cta" href="简历_陈昊_AI产品经理版_v2.pdf">查看简历</a>
+    </div>
+    <div class="nav">
+      <b>面试官 30 秒路径</b>
+      <span>身份 → 证据标签 → 项目结果 → 待补数据</span>
+    </div>
+  </aside>
+  <section class="content">
+    <div class="hero">
+      <div class="eyebrow">Evidence Ledger / 2026</div>
+      <h1>4 个项目，一页证据链，不靠口号证明。</h1>
+      <p>每个项目都标清「已上线 / 可运行 / 方案 / 待真实数据」。面试官可以快速追问：数据从哪来、怎么验证、下一步补什么。</p>
+      <div class="stats">
+        <div class="stat"><b>234</b><span>GearPick 外设产品库</span></div>
+        <div class="stat"><b>3,358</b><span>葉光館自动管理作品</span></div>
+        <div class="stat"><b>70</b><span>迷宫饭图鉴条目</span></div>
+        <div class="stat"><b>20</b><span>办公 Agent 评测样本</span></div>
+      </div>
+    </div>
+    <section class="section" id="projects">
+      <h2>项目证据账本</h2>
+      <div class="ledger">
+        <article class="row">
+          <div><span class="tag online">已上线</span><h3>GearPick · FPS 外设智能推荐</h3><p>234 款产品、三重信源交叉验证、可解释规则推荐、对比与导出。数据版本 v4.3，233 款有公开参考价。</p></div>
+          <div class="evidence"><h4>可核验证据</h4><ul><li>gear/products.json</li><li>11 款价格来源已补</li><li>真实浏览器 0 错误</li></ul></div>
+          <div class="status"><h4>验证状态</h4><strong>已上线 / 数据闭环完成</strong><small>待补：真实使用日志与 FPS 玩家反馈</small></div>
+        </article>
+        <article class="row">
+          <div><span class="tag run">本地可运行</span><h3>办公 Agent · 会议摘要与行动项</h3><p>文本转写稿 → 结构化摘要 → 行动项 Markdown。无需真实凭证即可复跑，20 条评测格式与行动项通过。</p></div>
+          <div class="evidence"><h4>可核验证据</h4><ul><li>office_agent/ 源码</li><li>20 条 golden 样本</li><li>eval/run_eval.py</li></ul></div>
+          <div class="status"><h4>验证状态</h4><strong>本地管线可复现</strong><small>待补：真实录音、飞书分发、真实会议耗时</small></div>
+        </article>
+        <article class="row">
+          <div><span class="tag online">已上线</span><h3>葉光館 · 同人艺术展示社区</h3><p>自动同步 3,358 件作品，13 页高保真原型，三语 8 主题。统计与线上可用性待部署方复核。</p></div>
+          <div class="evidence"><h4>可核验证据</h4><ul><li>photos.json 3,358</li><li>证据链与复盘文档</li><li>反馈问卷模板</li></ul></div>
+          <div class="status"><h4>验证状态</h4><strong>待真实数据</strong><small>待补：UV/PV、5-10 位画师反馈、演示录屏</small></div>
+        </article>
+        <article class="row">
+          <div><span class="tag run">可玩</span><h3>迷宫饭 · 美食地下城网页游戏</h3><p>6 层、31 魔物、39 菜谱、31 成就、周目循环。图鉴 70 条目，试玩反馈模板已建。</p></div>
+          <div class="evidence"><h4>可核验证据</h4><ul><li>GDD / CHANGELOG</li><li>录屏验收清单</li><li>浏览器 0 错误</li></ul></div>
+          <div class="status"><h4>验证状态</h4><strong>可玩 / 待试玩证据</strong><small>待补：5 位真实玩家、游戏时长、录屏</small></div>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="evidence">
+      <h2>口径说明</h2>
+      <div class="ledger">
+        <article class="row">
+          <div><h3>对外数字</h3><p>GearPick 234、葉光館 3,358、办公 Agent 20 条评测、迷宫饭 70 图鉴。</p></div>
+          <div class="evidence"><h4>来源</h4><ul><li>products.json</li><li>photos.json</li><li>office_agent eval</li><li>game 源码计数</li></ul></div>
+          <div class="status"><h4>原则</h4><strong>无证据不写，写了能定位</strong><small>旧口径已集中到作品集口径统一.md</small></div>
+        </article>
+      </div>
+    </section>
+    <footer class="foot"><span>陈昊 · AI 产品经理 · 湖北武汉</span><span>原型 A：证据账本</span></footer>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+<title>V8-B 产品运营舱 · 陈昊作品集原型</title>
+<style>
+:root{
+  --bg:oklch(.14 .018 250);
+  --surface:oklch(.18 .018 250);
+  --surface-2:oklch(.22 .018 250);
+  --ink:oklch(.93 .008 250);
+  --muted:oklch(.68 .015 250);
+  --line:oklch(.29 .018 250);
+  --amber:oklch(.78 .13 75);
+  --cyan:oklch(.72 .10 195);
+  --green:oklch(.70 .12 150);
+  --danger:oklch(.64 .17 25);
+  --sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:ui-monospace,'Cascadia Mono','SF Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:14px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line);background:var(--surface)}
+.logo{font-family:var(--mono);font-weight:700;letter-spacing:.08em;font-size:16px}
+.logo span{color:var(--amber)}
+.top-actions{display:flex;gap:10px;align-items:center}
+.btn{border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:12px;background:var(--surface-2);color:var(--ink)}
+.btn.main{background:var(--amber);color:oklch(.20 .02 75);border-color:transparent;font-weight:700}
+.wrap{max-width:1280px;margin:0 auto;padding:24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{font-family:var(--mono);font-size:12px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.tab.active{background:var(--surface-2);color:var(--cyan);border-color:color-mix(in oklch,var(--cyan) 45%,transparent)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+.metric b{font-family:var(--mono);font-size:26px;display:block;font-variant-numeric:tabular-nums;color:var(--amber)}
+.metric span{font-size:11px;color:var(--muted)}
+.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.pipe{background:var(--surface);border-top:3px solid var(--line);border-radius:8px;padding:14px}
+.pipe.done{border-color:var(--green)}
+.pipe.run{border-color:var(--amber)}
+.pipe.wait{border-color:var(--danger)}
+.pipe h3{font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.pipe p{font-size:12px;color:var(--muted);margin-top:6px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:20px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+.panel-head h2{font-size:14px}
+.panel-head small{color:var(--muted);font-family:var(--mono)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:12px}
+.table th{color:var(--muted);font-family:var(--mono);font-weight:500}
+.table td:first-child{font-weight:700}
+.state{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px}
+.state::before{content:"";width:7px;height:7px;border-radius:50%}
+.state.online::before{background:var(--green)}
+.state.run::before{background:var(--amber)}
+.state.wait::before{background:var(--danger)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.footer{display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:11px;padding:16px 0}
+@media(max-width:960px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .pipeline{grid-template-columns:repeat(2,1fr)}
+  .table-wrap{overflow-x:auto}
+  .table{min-width:760px}
+}
+@media(max-width:560px){
+  .grid,.pipeline{grid-template-columns:1fr}
+  .wrap{padding:16px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">CHEN HAO <span>//</span> AI PM OPS</div>
+  <div class="top-actions"><span class="btn">简历 PDF</span><span class="btn main">联系我</span></div>
+</header>
+<main class="wrap">
+  <nav class="tabs">
+    <span class="tab active">Overview</span>
+    <span class="tab">Projects</span>
+    <span class="tab">Evidence</span>
+    <span class="tab">Resume</span>
+  </nav>
+  <section class="grid">
+    <div class="metric"><b>4</b><span>自研项目</span></div>
+    <div class="metric"><b>234</b><span>GearPick 产品库</span></div>
+    <div class="metric"><b>3,358</b><span>葉光館作品数</span></div>
+    <div class="metric"><b>20</b><span>Agent 评测样本</span></div>
+  </section>
+  <section class="pipeline">
+    <div class="pipe done"><h3>01 / 已上线</h3><p>GearPick 工具页可访问，数据闭环完成。</p></div>
+    <div class="pipe run"><h3>02 / 可运行</h3><p>办公 Agent 本地管线可复跑。</p></div>
+    <div class="pipe run"><h3>03 / 可玩</h3><p>迷宫饭完整玩法闭环。</p></div>
+    <div class="pipe wait"><h3>04 / 待真实数据</h3><p>葉光館统计、真实反馈、试玩录屏。</p></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>项目状态表</h2><small>LAST SYNC 2026-08-17</small></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>项目</th><th>状态</th><th>核心证据</th><th>待补</th></tr></thead>
+        <tbody>
+          <tr><td>GearPick</td><td><span class="state online">已上线</span></td><td class="num">233/234 款有价</td><td>真实使用日志</td></tr>
+          <tr><td>办公 Agent</td><td><span class="state run">本地可运行</span></td><td class="num">20/20 评测通过</td><td>真实会议耗时</td></tr>
+          <tr><td>葉光館</td><td><span class="state online">已上线</span></td><td class="num">3,358 作品</td><td>UV/PV + 5-10 人反馈</td></tr>
+          <tr><td>迷宫饭</td><td><span class="state run">可玩</span></td><td class="num">70 图鉴</td><td>5 位玩家录屏</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>数据口径检查</h2><small>NO UNVERIFIED NUMBERS</small></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>字段</th><th>口径</th><th>来源</th></tr></thead>
+        <tbody>
+          <tr><td>GearPick 产品数</td><td class="num">234</td><td>gear/products.json</td></tr>
+          <tr><td>葉光館作品数</td><td class="num">3,358</td><td>photos.json</td></tr>
+          <tr><td>迷宫饭图鉴</td><td class="num">70</td><td>31 魔物 + 28 常规 + 11 隐藏</td></tr>
+          <tr><td>办公 Agent</td><td class="num">20 条样本</td><td>office_agent/eval</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <footer class="footer"><span>陈昊 · AI 产品经理</span><span>原型 B：产品运营舱</span></footer>
+</main>
+</body>
+</html>

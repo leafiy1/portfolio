@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+<title>陈昊 · 做的东西</title>
+<style>
+:root{
+  --paper:#F6F3ED;
+  --paper-2:#EDE7DC;
+  --card:#FFFCF7;
+  --ink:#26211A;
+  --ink-2:#4A443A;
+  --muted:#7C7367;
+  --line:rgba(66,55,40,.14);
+  --accent:#B4552D;
+  --accent-soft:#F4E3D7;
+  --serif:'Noto Serif SC','Songti SC','STSong','SimSun',serif;
+  --sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:ui-monospace,'Cascadia Mono','SF Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;background:rgba(246,243,237,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .inner{max-width:1180px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.brand{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.05em}
+.nav .links{display:flex;gap:26px;font-size:13px;color:var(--ink-2)}
+.nav .links a:hover{color:var(--accent)}
+.hero{max-width:1180px;margin:0 auto;padding:96px 24px 72px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+h1{font-family:var(--serif);font-size:clamp(52px,7vw,86px);font-weight:700;letter-spacing:.01em;line-height:1.02;margin:12px 0 10px}
+.sub{font-family:var(--serif);font-size:22px;color:var(--ink-2);margin-bottom:18px}
+.lead{max-width:620px;color:var(--ink-2);font-size:17px}
+.lead b{color:var(--ink)}
+.lead .hl{color:var(--accent)}
+.works{max-width:1180px;margin:0 auto;padding:72px 24px 90px}
+.works-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.works-head h2{font-family:var(--serif);font-size:30px}
+.works-head span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em}
+.featured{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);margin-bottom:22px}
+.featured .shot{min-height:340px;background:var(--paper-2)}
+.featured .shot img{width:100%;height:100%;min-height:340px;object-fit:cover;object-position:top}
+.featured .body{padding:36px}
+.featured .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent)}
+.featured h3{font-family:var(--serif);font-size:34px;margin:10px 0 12px}
+.featured p{color:var(--ink-2);max-width:520px}
+.row-nums{display:flex;flex-wrap:wrap;gap:22px;margin:24px 0}
+.num b{font-family:var(--serif);font-size:26px;display:block;color:var(--accent)}
+.num span{font-size:12px;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border:1px solid var(--ink);border-radius:8px;font-size:13px;font-weight:600}
+.btn.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:8px;background:var(--card);overflow:hidden;display:flex;flex-direction:column}
+.card .shot{aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+.card .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--accent)}
+.card h3{font-family:var(--serif);font-size:21px}
+.card p{font-size:13px;color:var(--ink-2);flex:1}
+.card .btns{margin-top:8px}
+.footer{max-width:1180px;margin:0 auto;padding:26px 24px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+@media(max-width:960px){
+  .featured{grid-template-columns:1fr}
+  .featured .shot,.featured .shot img{min-height:260px}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .hero{padding:56px 20px 44px}
+  .works{padding:48px 20px 60px}
+  .grid{grid-template-columns:1fr}
+  .nav .links{display:none}
+  .featured .body{padding:24px}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <div class="brand">陈昊</div>
+  <div class="links"><a href="#gearpick">GearPick</a><a href="#game">迷宫饭</a><a href="#yeguang">葉光館</a><a href="#agent">办公 Agent</a></div>
+</div></nav>
+<header class="hero">
+  <div class="eyebrow">Products, tools, games</div>
+  <h1>陈昊</h1>
+  <div class="sub">做几个能用的东西。</div>
+  <p class="lead">从数据工具到网页游戏，从社区产品到本地 Agent。每个东西都能打开、能玩、能继续长。</p>
+</header>
+<main class="works">
+  <div class="works-head"><h2>做的东西</h2><span>SELECTED WORKS</span></div>
+  <section class="featured" id="gearpick">
+    <div class="shot"><img src="../shots/gear.png" alt="GearPick 工具界面" width="880" height="600"></div>
+    <div class="body">
+      <div class="kicker">GEARPICK / 外设策展档案</div>
+      <h3>GearPick</h3>
+      <p>面向 FPS 玩家的外设推荐工具。234 款产品，鼠标、键盘、鼠标垫、耳机四类，支持筛选、解释、对比和导出。</p>
+      <div class="row-nums">
+        <div class="num"><b>234</b><span>款产品</span></div>
+        <div class="num"><b>4</b><span>个品类</span></div>
+        <div class="num"><b>v4.3</b><span>数据版本</span></div>
+      </div>
+      <div class="btns"><a class="btn solid" href="../gear/index.html">打开工具</a><a class="btn" href="../gear/README.md">看数据说明</a></div>
+    </div>
+  </section>
+  <div class="grid">
+    <article class="card" id="game">
+      <div class="shot"><img src="../05_dungeon_meshi_game/assets/laios_avatar.png" alt="迷宫饭角色立绘" width="480" height="300"></div>
+      <div class="body">
+        <div class="kicker">DUNGEON MESHI / WEB GAME</div>
+        <h3>迷宫饭 · 冒险食堂手记</h3>
+        <p>探索、战斗、收集食材、烹饪回血。6 层地下城，31 种魔物，39 道菜谱，31 个成就。</p>
+        <div class="btns"><a class="btn solid" href="../05_dungeon_meshi_game/index.html">开始冒险</a></div>
+      </div>
+    </article>
+    <article class="card" id="yeguang">
+      <div class="shot"><img src="../shots/yeguang.png" alt="葉光館原型截图" width="480" height="300"></div>
+      <div class="body">
+        <div class="kicker">YEGUANG / COMMUNITY</div>
+        <h3>葉光館</h3>
+        <p>面向画师与创作者的个人作品展馆，自动同步和管理 3,358 件作品。</p>
+        <div class="btns"><a class="btn solid" href="../01_yeguang_prototype.html">看原型</a></div>
+      </div>
+    </article>
+    <article class="card" id="agent">
+      <div class="shot"><img src="../shots/feishu_analysis.png" alt="办公 Agent 相关截图" width="480" height="300"></div>
+      <div class="body">
+        <div class="kicker">OFFICE AGENT / LOCAL PIPELINE</div>
+        <h3>办公 Agent</h3>
+        <p>把会议转写稿变成摘要和行动项。本地运行，不依赖真实凭证，20 条样本可评测。</p>
+        <div class="btns"><a class="btn solid" href="../office_agent/README.md">看说明</a></div>
+      </div>
+    </article>
+  </div>
+</main>
+<footer class="footer"><span>陈昊 · 湖北武汉</span><span>176 0897 0378 · 2295350938@qq.com</span></footer>
+</body>
+</html>

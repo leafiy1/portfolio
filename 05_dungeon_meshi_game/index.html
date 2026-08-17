@@ -2893,13 +2893,13 @@ function renderExplore(){
 
   const boss = $('boss-area');
   let html = '';
-  if ((S.floorProgress[3] || 0) >= 3){
+  if ((S.floorProgress[3] || 0) >= floorNeed(3)){
     html += bossCard('boss', '你在龙之深渊深处发现了迷宫之主的巢穴！击败它，通往更深处的大门将缓缓开启。');
   }
-  if ((S.floorProgress[4] || 0) >= 3){
+  if ((S.floorProgress[4] || 0) >= floorNeed(4)){
     html += bossCard('sulfurdragon', '硫磺炼狱的最深处，岩浆之心上盘踞着硫磺龙！击败它才能深入深渊食堂。');
   }
-  if ((S.floorProgress[5] || 0) >= 3){
+  if ((S.floorProgress[5] || 0) >= floorNeed(5)){
     if (S.defeated.includes('sulfurdragon')){
       html += bossCard('potgolem', '深渊食堂的尽头，黄金锅前的守锅巨像缓缓睁开了眼睛……击败它，通往黄金盛宴厅的大门将缓缓开启！');
     } else {
@@ -2909,7 +2909,7 @@ function renderExplore(){
         + '</div>';
     }
   }
-  if ((S.floorProgress[6] || 0) >= 3){
+  if ((S.floorProgress[6] || 0) >= floorNeed(6)){
     if (S.defeated.includes('potgolem')){
       html += bossCard('gluttonking', '黄金盛宴厅的王座之前，饕宴王缓缓放下了餐刀……击败它，迷宫才真正走到尽头！');
     } else {
@@ -2929,12 +2929,21 @@ function lockHint(n){
   if (prev && prev.boss) return '🔒 探索上一层 ' + need + ' 次并击败 ' + MONSTERS[prev.boss].name;
   return '🔒 探索上一层 ' + need + ' 次解锁';
 }
+function bossLevel(mid){ return { boss:4, sulfurdragon:6, potgolem:8, gluttonking:10 }[mid] || 5; }
+function bossDropPreview(m){
+  const parts = Object.keys(m.drops).map(id=>INGREDIENTS[id].name + '×' + m.drops[id][0] + '~' + m.drops[id][1]);
+  if (m.equipDrop){ const eq = EQUIP.find(e=>e.id===m.equipDrop); if (eq) parts.push('装备：' + eq.name); }
+  return parts.join('、') || '无';
+}
 function bossCard(mid, desc){
   const m = MONSTERS[mid];
   const defeated = S.defeated.includes(mid);
+  const weak = elemWeakness(m.elem);
   return '<div class="boss-card">'
     + '<div class="boss-name">' + monIconHTML(m, 30) + ' ' + m.name + '</div>'
     + '<p class="boss-desc">' + desc + '</p>'
+    + '<div class="f-goal">🎯 弱点：' + (weak ? (ELEM_ICON[weak]||'') + (ELEM_CN[weak]||'') : '无明确弱点') + '　建议等级 Lv.' + bossLevel(mid) + '</div>'
+    + '<div class="f-enemies">掉落：' + bossDropPreview(m) + '</div>'
     + (defeated
         ? '<div style="color:#a67c00; font-weight:bold; letter-spacing:3px; margin-bottom:6px;">★ ' + (mid==='gluttonking' ? '已通关！' : '已击败！') + ' ★</div>'
           + '<button class="btn danger" onclick="startBattle(\'' + mid + '\')">⚔️ 再次挑战</button>'

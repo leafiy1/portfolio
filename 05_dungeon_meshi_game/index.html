@@ -271,6 +271,7 @@ header h1{
 .floor-card::before{ content:""; position:absolute; inset:5px; border:1px dashed rgba(96,62,30,.16); border-radius: calc(var(--r-lg) - 4px); pointer-events:none; }
 .floor-card h3{ font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 2px; color: var(--ink-deep); margin-bottom: 6px; }
 .floor-card .f-desc{ font-size: var(--fs-sm); color: var(--ink-soft); line-height:1.6; margin-bottom: 10px; }
+.floor-card .f-goal{ font-size: var(--fs-micro); color: var(--accent-ink); background: var(--accent-soft); border:1px solid rgba(180,85,45,.18); border-radius: var(--r-sm); padding:6px 9px; margin-bottom:10px; line-height:1.5; }
 .floor-card .f-enemies{ font-size: var(--fs-micro); color: var(--ink-dim); margin: 6px 0 4px; letter-spacing:.5px; line-height:1.9; }
 .f-progress{ font-size: var(--fs-micro); color: var(--ink-dim); margin: 8px 0 4px; font-variant-numeric: tabular-nums; }
 .f-lock{ font-size: var(--fs-micro); color: #a0674a; margin-top: 2px; line-height:1.5; }
@@ -2243,17 +2244,17 @@ const HIDDEN_RECIPES = {
   hr11:{ name:'银叶蜗牛塔',      emoji:'🍰', combos:[['gold_snail_meat','silver_leaf','cream_top']],    effect:{hp:130, full:85},  desc:'银叶裹着黄金蜗牛与奶油，层层叠叠如王冠。', app:'叉子落下去，银叶应声而碎，奶油缓缓漫过蜗牛的甜香。' },
 };
 const FLOORS = {
-  1: { name:'第一层 · 苔藓回廊', emoji:'🌿', desc:'迷宫的入口，长满苔藓的回廊里出没着温顺的魔物。', enemies:['slime','bat','mushroom','mimic','breadtree','mossling','corndeer'],
+  1: { name:'第一层 · 苔藓回廊', emoji:'🌿', desc:'迷宫的入口，长满苔藓的回廊里出没着温顺的魔物。', goal:'先探索 2 次，熟悉战斗和烹饪，再向深处走。', enemies:['slime','bat','mushroom','mimic','breadtree','mossling','corndeer'],
       weights:{ battle:45, chest:15, trap:15, merchant:10, event:15 }, fatigue:8 },
-  2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin','armor_rat','candle_wisp'],
+  2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', goal:'探索 3 次，击败守卫收集第一件装备。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin','armor_rat','candle_wisp'],
       weights:{ battle:50, chest:12, trap:18, merchant:8, event:12 }, fatigue:11 },
-  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem','bone_wing'],
+  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', goal:'探索 3 次后挑战迷宫之主，击败它开启第四层。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem','bone_wing'],
       weights:{ battle:52, chest:10, trap:20, merchant:5, event:13 }, fatigue:14, boss:'boss' },
-  4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', enemies:['hellhound','scorpion','flame','reddragon','lava_slug','ash_raven'],
+  4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', goal:'探索 4 次后挑战硫磺龙，击败它开启第五层。', enemies:['hellhound','scorpion','flame','reddragon','lava_slug','ash_raven'],
       weights:{ battle:55, chest:8, trap:22, merchant:4, event:11 }, fatigue:17, boss:'sulfurdragon' },
-  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', enemies:['ghost','mimic','lich','werewolf','stew_wraith'],
+  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', goal:'探索 4 次后挑战守锅巨像，击败它开启黄金盛宴厅。', enemies:['ghost','mimic','lich','werewolf','stew_wraith'],
       weights:{ battle:50, chest:8, trap:18, merchant:6, event:18 }, fatigue:20, boss:'potgolem' },
-  6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp','silver_guard','dessert_wraith'],
+  6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', goal:'探索 5 次后挑战饕宴王，击败它通关迷宫。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp','silver_guard','dessert_wraith'],
       weights:{ battle:55, chest:7, trap:20, merchant:3, event:15 }, fatigue:23, boss:'gluttonking' },
 };
 
@@ -2832,11 +2833,12 @@ function renderExplore(){
     const f = FLOORS[n];
     const p = S.floorProgress[n] || 0;
     const locked = !floorUnlocked(+n);
-    const need = 3 + (+n);
+    const need = floorNeed(+n);
     const pct = cap(Math.round(p / need * 100), 0, 100);
     return '<div class="floor-card' + (locked?' locked':'') + '"' + (locked?' style="opacity:.6;filter:grayscale(.4);"':'') + '>'
       + '<h3>' + f.emoji + ' ' + f.name + (locked?' 🔒':'') + '</h3>'
       + '<div class="f-desc">' + f.desc + '</div>'
+      + '<div class="f-goal">🎯 ' + f.goal + '</div>'
       + '<div class="f-enemies">出没魔物：' + f.enemies.map(id=>monIconHTML(MONSTERS[id],20) + ' ' + MONSTERS[id].name).join('　') + '</div>'
       + '<div class="f-progress">探索进度 ' + p + '/' + need + '</div>'
       + '<div class="bar hp" style="height:8px;margin-bottom:10px;"><i style="width:' + pct + '%"></i></div>'
@@ -2877,9 +2879,10 @@ function renderExplore(){
   boss.innerHTML = html;
 }
 
+function floorNeed(n){ return Math.min(2 + Math.floor(n / 2), 5); }
 function lockHint(n){
   const prev = FLOORS[n-1];
-  const need = 3 + (+n);
+  const need = floorNeed(n);
   if (prev && prev.boss) return '🔒 探索上一层 ' + need + ' 次并击败 ' + MONSTERS[prev.boss].name;
   return '🔒 探索上一层 ' + need + ' 次解锁';
 }
@@ -3121,7 +3124,7 @@ function floorUnlocked(n){
   if (n === 1) return true;
   const prev = FLOORS[n-1];
   const prog = S.floorProgress[n-1] || 0;
-  const need = 3 + n;
+  const need = floorNeed(n);
   // 前层探索达标 + BOSS 击败（BOSS 由该层 FLOORS.boss 字段声明）
   if (prev && prev.boss) return prog >= need && S.defeated.includes(prev.boss);
   return prog >= need;
@@ -3131,9 +3134,9 @@ function explore(n){
     const prev = FLOORS[n-1];
     let why = '该层尚未解锁';
     if (prev && prev.boss){
-      why = '探索上一层「' + prev.name + '」' + (3+n) + ' 次并击败 ' + MONSTERS[prev.boss].name + ' 后解锁！';
+      why = '探索上一层「' + prev.name + '」' + floorNeed(n) + ' 次并击败 ' + MONSTERS[prev.boss].name + ' 后解锁！';
     } else if (prev){
-      why = '探索上一层「' + prev.name + '」' + (3+n) + ' 次后解锁！';
+      why = '探索上一层「' + prev.name + '」' + floorNeed(n) + ' 次后解锁！';
     }
     toast('🔒 ' + why);
     return;

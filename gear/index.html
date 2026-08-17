@@ -863,6 +863,7 @@ var CATS = {
 };
 
 var state = { tab:'mouse', compare:[], last:null };
+var recommendTimer = null;
 
 function $(id){ return document.getElementById(id); }
 function esc(s){
@@ -970,6 +971,7 @@ function showEmptyState(){
   $('emptyState').hidden = false;
   $('results').innerHTML = '';
   $('compareBar').hidden = true;
+  $('loading').hidden = true;
 }
 function init(){
   try{
@@ -1009,6 +1011,7 @@ function switchTab(k, silent){
   $('form-title').textContent = CATS[k].title;
   $('form-hint').textContent = CATS[k].hint;
   if(!silent){
+    if(recommendTimer){ clearTimeout(recommendTimer); recommendTimer = null; }
     state.last = null;
     showEmptyState();
     clearCompare(true);
@@ -1018,6 +1021,7 @@ function resetForm(){
   var ids = ['m-budget','m-hand','m-grip','m-pref','m-game','k-budget','k-type','k-layout','k-conn','k-game',
              'mp-budget','mp-speed','mp-material','h-budget','h-conn','h-use'];
   ids.forEach(function(i){ var el=$(i); if(el) el.value=''; });
+  if(recommendTimer){ clearTimeout(recommendTimer); recommendTimer = null; }
   state.last = null;
   showEmptyState();
   clearCompare(true);
@@ -1153,12 +1157,14 @@ var DROP = {
 };
 function recommend(){
   if(!PRODUCTS){ $('errorState').hidden = false; return; }
+  if(recommendTimer) clearTimeout(recommendTimer);
   setStep(3);
   $('emptyState').hidden = true;
   $('loading').hidden = false;
   $('results').innerHTML = '';
   $('errorState').hidden = true;
-  setTimeout(function(){
+  recommendTimer = setTimeout(function(){
+    recommendTimer = null;
     var tab = state.tab;
     var f = collectFilters(tab);
     trackEvent('recommend_click', {tab: tab, filters: f});
@@ -1258,7 +1264,7 @@ function cardHTML(item, i, isBest, ctx, preScored){
   html += '<div class="rc-score"><span class="score-label">策展评分</span><span class="score-track"><i style="width:' + Math.min(100, sc.total) + '%"></i></span><span class="score-num">' + sc.total + '</span></div>';
   html += '<div class="rc-actions">';
   html += '<button class="mini-btn primary" onclick="toggleExplain(\'' + item.id + '\', this)">' + ICONS.why + '<span>为什么推荐它</span></button>';
-  html += '<button class="mini-btn' + (inCmp?' toggled':'') + '" onclick="toggleCompare(\'' + item.id + '\', this)">' + ICONS.cmp + '<span>' + (inCmp?'已加入对比':'加入对比') + '</span></button>';
+  html += '<button class="mini-btn' + (inCmp?' toggled':'') + '" data-compare-id="' + item.id + '" onclick="toggleCompare(\'' + item.id + '\', this)">' + ICONS.cmp + '<span>' + (inCmp?'已加入对比':'加入对比') + '</span></button>';
   html += '</div>';
   html += '<div class="explain" id="expl-' + item.id + '"><div class="explain-inner"><div class="explain-body">' + explainHTML(item, sc) + '</div></div></div>';
   html += '</article>';
@@ -1358,6 +1364,15 @@ function toggleCompare(id, btn){
     if(btn){ btn.innerHTML = ICONS.cmp + '<span>已加入对比</span>'; btn.classList.add('toggled'); }
   }
   renderCompareBar();
+  syncCompareButtons();
+}
+function syncCompareButtons(){
+  document.querySelectorAll('[data-compare-id]').forEach(function(btn){
+    var id = btn.getAttribute('data-compare-id');
+    var inCmp = state.compare.indexOf(id)>=0;
+    btn.innerHTML = ICONS.cmp + '<span>' + (inCmp?'已加入对比':'加入对比') + '</span>';
+    btn.classList.toggle('toggled', inCmp);
+  });
 }
 function renderCompareBar(){
   var bar = $('compareBar');
@@ -1373,6 +1388,7 @@ function renderCompareBar(){
 function clearCompare(silent){
   state.compare = [];
   renderCompareBar();
+  syncCompareButtons();
   if(!silent) toast('已清空对比');
 }
 function findItem(id){
@@ -1404,7 +1420,7 @@ var CMP_FIELDS = {
 };
 function fmtVal(it, field, kind){
   var v = it[field];
-  if(v==null || v==='') return '—';
+  if(v==null || v==='' || (Array.isArray(v) && v.length===0)) return '—';
   if(kind==='arr') return fmtList(v);
   if(kind==='p') return '¥' + v;
   if(kind==='g') return v + 'g';

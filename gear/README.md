@@ -201,6 +201,7 @@ node <作品集根>/verify_gear.cjs
 - 补齐 42 款鼠标垫 `category`，与 `budget_tier` 对齐，通用字段完整性达标；
 - 同步 README / CASE_STUDY 的单信源口径（30 → 57），并重跑 `tools/embed_products.js` 同步内嵌快照；
 - 补上 favicon data URI，修复本地 HTTP 验收时的 404 控制台错误；Playwright 实测加载、内嵌数据与控制台 0 错误。
+- 交互层修复：对比按钮状态统一同步、对比表空数组显示「—」、推荐定时器可取消，避免切换品类时旧结果回写；Playwright 交互回归通过。
 
 ### v4.1 价格核实记录（2026-08-13）
 

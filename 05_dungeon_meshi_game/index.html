@@ -2129,14 +2129,14 @@ const MONSTERS = {
   griffin:  { floor:3, id:'griffin',  name:'狮鹫',         emoji:'🦅', elem:'lightning', hp:85,  atk:22, def:8,  gold:[30,45],  drops:{griffin_feather:[1,1]},desc:'狮身鹰首的猛兽，羽毛是天然调味料。', note:'狮鹫在深渊的岩架上筑巢，羽毛会收集静电，雨天格外暴躁。' },
   reddragon:{ floor:3, id:'reddragon',name:'红龙',         emoji:'🐉', icon:'m-dragon',   elem:'fire',      hp:130, atk:26, def:10, gold:[50,80],  drops:{dragon_meat:[1,1]},   desc:'迷宫深处的霸主，龙肉是传说级食材。', note:'红龙会把自己盘在矿脉上睡觉，鳞片缝隙里常年卡着几块融化的金矿石。' },
   lich:     { floor:3, id:'lich',     name:'不死者之王',   emoji:'☠️', elem:'dark',      hp:100, atk:24, def:8,  gold:[40,60],  drops:{undead_essence:[1,1]},undead:true, desc:'掌控亡灵的法师，精华是紫色浓汤的秘方。', note:'不死者之王生前是位图书管理员，它的法术书页至今还在原地翻动。' },
-  boss:     { floor:3, id:'boss',     name:'迷宫之主',     emoji:'👑', elem:'dark',      hp:200, atk:30, def:12, gold:[120,180],drops:{mandrake_root:[2,2], dragon_meat:[1,1]}, desc:'迷宫的心脏，传说曼陀罗的守护者。击败它可开启通往更深处的大门！', note:'迷宫之主的王座长满了曼陀罗，据说它是迷宫最初一批迷路者的执念所化。', boss:true, skill:{ name:'亡者咆哮', desc:'震耳欲聋的咆哮重创全体队员，并召唤骷髅兵', type:'aoe', dmg:0.6, chance:0.3, summon:[{id:'skeleton', qty:[1,1]}] } },
+  boss:     { floor:3, id:'boss',     name:'迷宫之主',     emoji:'👑', elem:'dark',      hp:200, atk:30, def:12, gold:[120,180],drops:{mandrake_root:[2,2], dragon_meat:[1,1]}, desc:'迷宫的心脏，传说曼陀罗的守护者。击败它可开启通往更深处的大门！', note:'迷宫之主的王座长满了曼陀罗，据说它是迷宫最初一批迷路者的执念所化。', boss:true, equipDrop:'w_steel', skill:{ name:'亡者咆哮', desc:'震耳欲聋的咆哮重创全体队员，并召唤骷髅兵', type:'aoe', dmg:0.6, chance:0.3, summon:[{id:'skeleton', qty:[1,1]}] } },
   spider:   { floor:2, id:'spider',   name:'巨型蜘蛛',     emoji:'🕷', icon:'m-spider',   elem:'dark',     hp:45,  atk:14, def:3,  gold:[12,20],  drops:{spider_silk:[1,2]},   desc:'盘踞在石厅角落的巨型蜘蛛，蛛丝黏韧异常。', note:'巨型蜘蛛会把吃剩的猎物裹成茧挂在梁上，像一排沉默的风铃。' },
   werewolf: { floor:3, id:'werewolf', name:'狼人',         emoji:'🐺', icon:'m-werewolf', elem:'dark',     hp:95,  atk:23, def:7,  gold:[30,45],  drops:{wolf_meat:[1,1]},    desc:'月夜下化为人狼的猎手，狼肉筋道有嚼劲。', note:'狼人只在月圆之夜现出狼形，其余时候是位沉默寡言的守林人。' },
   ghost:    { floor:3, id:'ghost',    name:'幽灵',         emoji:'👻', icon:'m-ghost',    elem:'dark',     hp:50,  atk:18, def:5,  gold:[20,30],  drops:{undead_essence:[1,1]}, undead:true, desc:'飘荡的亡魂，精华是紫色浓汤的秘方。', note:'幽灵喜欢待在它生前熟悉的地方，你若礼貌地打招呼，它会微微欠身。' },
   hellhound:{ floor:4, id:'hellhound',name:'地狱犬',       emoji:'🔥', icon:'m-hellhound',elem:'fire',     hp:80,  atk:22, def:6,  gold:[25,40],  drops:{fire_ember:[1,2]},   desc:'浑身燃烧的地狱恶犬，火种能点燃最冷的锅。', note:'地狱犬的火焰不会烧伤自己，却会把走廊烤得滚烫——顺着焦痕走，就能找到它的巢。' },
   scorpion: { floor:4, id:'scorpion', name:'巨型蝎子',     emoji:'🦂', icon:'m-scorpion', elem:'fire',     hp:75,  atk:21, def:8,  gold:[25,38],  drops:{lava_core:[1,1]},    desc:'潜伏在岩浆边的巨蝎，尾针里凝着熔岩核心。', note:'巨型蝎子在沙地里埋伏一整周也不动一下，尾针里凝着熔岩的余温。' },
-  sulfurdragon:{ floor:4, id:'sulfurdragon', name:'硫磺龙', emoji:'🐲', elem:'fire',      hp:320, atk:34, def:12, gold:[150,220], drops:{dragon_meat:[2,2], lava_core:[1,2]}, desc:'硫磺炼狱的霸主，吐息能把钢铁烧成灰烬。击败它才能深入深渊食堂！', note:'硫磺龙的吐息会留下金黄色的硫磺结晶，是炼金师们梦寐以求的材料。', boss:true, skill:{ name:'硫磺吐息', desc:'喷吐硫磺烈焰灼烧全体队员，并召唤炎魔', type:'aoe', dmg:0.75, chance:0.4, summon:[{id:'flame', qty:[1,1]}] } },
-  potgolem: { floor:5, id:'potgolem', name:'守锅巨像',     emoji:'🏺', elem:'earth',      hp:450, atk:36, def:14, gold:[250,350], drops:{dragon_meat:[2,3], lava_core:[1,2], mandrake_root:[1,2]}, desc:'看守黄金锅的远古巨像，迷宫最后的守护者。击败它，才能进入黄金盛宴厅！', note:'守锅巨像沉睡时怀抱黄金锅，它的鼾声会让锅里的汤自动翻滚。', boss:true, skill:{ name:'巨像践踏', desc:'撼动大地的践踏重创全体队员，并召唤锅铲小兵', type:'aoe', dmg:0.8, chance:0.35, summon:[{id:'potminion', qty:[2,2]}] } },
+  sulfurdragon:{ floor:4, id:'sulfurdragon', name:'硫磺龙', emoji:'🐲', elem:'fire',      hp:320, atk:34, def:12, gold:[150,220], drops:{dragon_meat:[2,2], lava_core:[1,2]}, desc:'硫磺炼狱的霸主，吐息能把钢铁烧成灰烬。击败它才能深入深渊食堂！', note:'硫磺龙的吐息会留下金黄色的硫磺结晶，是炼金师们梦寐以求的材料。', boss:true, equipDrop:'a_chain', skill:{ name:'硫磺吐息', desc:'喷吐硫磺烈焰灼烧全体队员，并召唤炎魔', type:'aoe', dmg:0.75, chance:0.4, summon:[{id:'flame', qty:[1,1]}] } },
+  potgolem: { floor:5, id:'potgolem', name:'守锅巨像',     emoji:'🏺', elem:'earth',      hp:450, atk:36, def:14, gold:[250,350], drops:{dragon_meat:[2,3], lava_core:[1,2], mandrake_root:[1,2]}, desc:'看守黄金锅的远古巨像，迷宫最后的守护者。击败它，才能进入黄金盛宴厅！', note:'守锅巨像沉睡时怀抱黄金锅，它的鼾声会让锅里的汤自动翻滚。', boss:true, equipDrop:'w_magic', skill:{ name:'巨像践踏', desc:'撼动大地的践踏重创全体队员，并召唤锅铲小兵', type:'aoe', dmg:0.8, chance:0.35, summon:[{id:'potminion', qty:[2,2]}] } },
   potminion:{ floor:5, id:'potminion',name:'锅铲小兵',     emoji:'🥄', elem:'earth',      hp:22,  atk:10, def:2,  gold:[3,6],    drops:{}, desc:'守锅巨像召唤出的锅铲小兵，源源不断。', note:'锅铲小兵是巨像用掉落的锅具拼成的小跟班，只会喊“开饭了”。' },
   knightcrab:{ floor:2, id:'knightcrab', name:'骑士蟹', emoji:'🦀', elem:'earth', hp:70, atk:20, def:10, gold:[25,40], drops:{knight_crab_meat:[1,1], crab_shell:[1,1], crab_roe:[1,1]}, desc:'披银白甲胄的巨蟹，礼数周全，下手狠辣。', note:'骑士蟹会收集冒险者掉落的银餐具当战利品，礼数周全到会先鞠躬再出钳。' },
   breadtree:{ floor:1, id:'breadtree', name:'面包树妖', emoji:'🍞', elem:'earth', hp:55, atk:15, def:6, gold:[18,30], drops:{bread_fruit:[1,2], bark_bread:[1,1], wheat_wood:[1,1]}, desc:'会走路的面包树，被摸会害羞地掉果子。', note:'面包树妖的果实成熟时会发出烤面包的香气，胆小的它总把果子藏在树叶后。' },
@@ -2148,7 +2148,17 @@ const MONSTERS = {
   tastergolem:{ floor:6, id:'tastergolem', name:'品菜魔像', emoji:'🗿', icon:'m-tastergolem', elem:'earth', hp:115, atk:25, def:16, gold:[45,70], drops:{gravy_stone:[1,1], cheese_rind:[1,1]}, desc:'为饕宴王试菜的古老魔像，尝一口便知道火候不对。', note:'品菜魔像尝遍千年宴席，据说它最讨厌的是盐放多了。' },
   carvingknight:{ floor:6, id:'carvingknight', name:'餐刀骑士', emoji:'🗡️', icon:'m-carvingknight', elem:'holy', hp:100, atk:30, def:12, gold:[50,75], drops:{silver_leaf:[1,2], crab_shell:[1,1]}, desc:'手持餐刀与银盘的骑士，把战斗当成一场盛宴。', note:'餐刀骑士每击败一位对手，都会在自己的银盘上刻一道优雅的花纹。' },
   cupwisp:{ floor:6, id:'cupwisp', name:'金杯妖灵', emoji:'🍷', icon:'m-cupwisp', elem:'shadow', hp:80, atk:27, def:8, gold:[30,50], drops:{golden_grape:[1,2], shake_essence:[1,1]}, desc:'从金杯中诞生的醉醺醺的妖灵，干杯就是它的战斗礼仪。', note:'金杯妖灵从杯中升起时总是先打个酒嗝，然后用杯沿敲出三下“干杯”。' },
-  gluttonking:{ floor:6, id:'gluttonking', name:'饕宴王', emoji:'👑', icon:'m-gluttonking', elem:'dark', hp:600, atk:40, def:16, gold:[400,600], drops:{king_crown:[1,2], dragon_meat:[2,3], mandrake_root:[1,2]}, desc:'黄金盛宴厅的主人，千年未饱的暴食之王。击败它，迷宫才算真正走到尽头！', note:'饕宴王从不分享王座，却会把吃剩的骨头堆成一座小山——那是它唯一的收藏。', boss:true, skill:{ name:'饕餮盛宴', desc:'吞噬一切的王宴——全体重创，并召唤残宴幽灵赴宴', type:'aoe', dmg:0.9, chance:0.35, summon:[{id:'banquetwraith', qty:[1,2]}] } },
+  gluttonking:{ floor:6, id:'gluttonking', name:'饕宴王', emoji:'👑', icon:'m-gluttonking', elem:'dark', hp:600, atk:40, def:16, gold:[400,600], drops:{king_crown:[1,2], dragon_meat:[2,3], mandrake_root:[1,2]}, desc:'黄金盛宴厅的主人，千年未饱的暴食之王。击败它，迷宫才算真正走到尽头！', note:'饕宴王从不分享王座，却会把吃剩的骨头堆成一座小山——那是它唯一的收藏。', boss:true, equipDrop:'w_legend', skill:{ name:'饕餮盛宴', desc:'吞噬一切的王宴——全体重创，并召唤残宴幽灵赴宴', type:'aoe', dmg:0.9, chance:0.35, summon:[{id:'banquetwraith', qty:[1,2]}] } },
+  mossling:{ floor:1, id:'mossling', name:'苔藓蜗', emoji:'🐌', elem:'ice', hp:34, atk:9, def:2, gold:[8,15], drops:{slime_jelly:[1,1], mushroom:[1,1]}, desc:'浑身长满苔藓的小蜗牛，走得很慢，汤味却很鲜。', note:'苔藓蜗身上的苔藓会随着季节变色，据说在月光下收集会发亮。' },
+  corndeer:{ floor:1, id:'corndeer', name:'玉米鹿', emoji:'🦌', elem:'earth', hp:48, atk:12, def:4, gold:[15,25], drops:{mushroom:[1,2], wheat_wood:[1,1]}, desc:'角上结着玉米穗的鹿，奔跑时会洒落麦香木。', note:'玉米鹿只吃迷宫深处的银叶，角上的玉米穗一年只熟一季。' },
+  armor_rat:{ floor:2, id:'armor_rat', name:'铠鼠', emoji:'🐀', elem:'earth', hp:52, atk:16, def:8, gold:[20,32], drops:{cheese_rind:[1,1], cheese_crumbs:[1,2]}, desc:'披着奶酪甲壳的大老鼠，啃过的墙都带着奶香。', note:'铠鼠把吃剩的奶酪皮黏在背上，越老的铠鼠甲壳越硬。', equipDrop:'a_leather' },
+  candle_wisp:{ floor:2, id:'candle_wisp', name:'烛火妖', emoji:'🕯️', elem:'fire', hp:40, atk:14, def:3, gold:[15,28], drops:{fire_ember:[1,1], cold_fog:[1,1]}, desc:'从蜡烛里钻出来的小火妖，喜欢吹灭所有火。', note:'烛火妖怕风也怕水，但遇到更亮的火焰时会愣在原地。' },
+  bone_wing:{ floor:3, id:'bone_wing', name:'骨翼鸟', emoji:'🦴', elem:'dark', hp:70, atk:20, def:7, gold:[25,40], drops:{bat_wing:[2,2], bone_powder:[1,1]}, desc:'骨骼组成的巨鸟，翅膀扇动时会撒下骨粉。', note:'骨翼鸟不会进食，却会收集冒险者的旧头盔当巢。', undead:true, equipDrop:'w_steel' },
+  lava_slug:{ floor:4, id:'lava_slug', name:'熔岩蛞蝓', emoji:'🫠', elem:'fire', hp:85, atk:23, def:6, gold:[30,45], drops:{lava_core:[1,1], fire_ember:[1,1]}, desc:'从岩浆里爬出的蛞蝓，身后拖着一条熔岩路。', note:'熔岩蛞蝓走过的地方会留下滚烫的黏液，几小时后凝成黑曜石。', equipDrop:'a_chain' },
+  ash_raven:{ floor:4, id:'ash_raven', name:'灰烬鸦', emoji:'🐦‍⬛', elem:'lightning', hp:70, atk:22, def:5, gold:[30,45], drops:{griffin_feather:[1,1], fire_ember:[1,1]}, desc:'羽毛像烧焦纸张的乌鸦，喜欢偷走余烬。', note:'灰烬鸦会在硫磺湖边洗澡，羽毛因此带电，落在地上会留下细小的电弧。' },
+  stew_wraith:{ floor:5, id:'stew_wraith', name:'炖汤幽灵', emoji:'🥘', elem:'ice', hp:90, atk:27, def:9, gold:[45,70], drops:{banquet_essence:[1,1], gravy_stone:[1,1]}, desc:'守着千年炖锅的幽灵，闻到生米会生气。', note:'炖汤幽灵生前是食堂总管，死后仍每天检查锅底有没有糊。', undead:true, equipDrop:'w_magic' },
+  silver_guard:{ floor:6, id:'silver_guard', name:'银盘守卫', emoji:'🥈', elem:'holy', hp:110, atk:31, def:14, gold:[55,85], drops:{silver_leaf:[2,2], crab_shell:[1,1]}, desc:'手持银盘的机械守卫，只允许优雅的进食者通过。', note:'银盘守卫会要求每位访客先擦净手，再用餐刀轻敲三下银盘。', equipDrop:'a_plate' },
+  dessert_wraith:{ floor:6, id:'dessert_wraith', name:'甜品幽灵', emoji:'🍰', elem:'ice', hp:100, atk:28, def:9, gold:[45,70], drops:{cream_top:[1,2], shake_essence:[1,1]}, desc:'守在甜品台边的幽灵，尝不到味道也要摆盘。', note:'甜品幽灵每天午夜把甜品台重新摆满，天亮前又会消失。', undead:true, equipDrop:'w_legend', equipDropChance:0.5 },
 };
 const RECIPES = [
   { id:'r1',  name:'史莱姆果冻',   emoji:'🍮', ingredients:{slime_jelly:1},                 effect:{hp:30, full:10},  require:null, desc:'弹弹嫩嫩的开胃菜，补充体力。', app:'勺子压下去，果冻颤巍巍地弹回来，入口是薄荷糖一样的凉。' },
@@ -2233,17 +2243,17 @@ const HIDDEN_RECIPES = {
   hr11:{ name:'银叶蜗牛塔',      emoji:'🍰', combos:[['gold_snail_meat','silver_leaf','cream_top']],    effect:{hp:130, full:85},  desc:'银叶裹着黄金蜗牛与奶油，层层叠叠如王冠。', app:'叉子落下去，银叶应声而碎，奶油缓缓漫过蜗牛的甜香。' },
 };
 const FLOORS = {
-  1: { name:'第一层 · 苔藓回廊', emoji:'🌿', desc:'迷宫的入口，长满苔藓的回廊里出没着温顺的魔物。', enemies:['slime','bat','mushroom','mimic','breadtree'],
+  1: { name:'第一层 · 苔藓回廊', emoji:'🌿', desc:'迷宫的入口，长满苔藓的回廊里出没着温顺的魔物。', enemies:['slime','bat','mushroom','mimic','breadtree','mossling','corndeer'],
       weights:{ battle:45, chest:15, trap:15, merchant:10, event:15 }, fatigue:8 },
-  2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin'],
+  2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin','armor_rat','candle_wisp'],
       weights:{ battle:50, chest:12, trap:18, merchant:8, event:12 }, fatigue:11 },
-  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem'],
+  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem','bone_wing'],
       weights:{ battle:52, chest:10, trap:20, merchant:5, event:13 }, fatigue:14, boss:'boss' },
-  4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', enemies:['hellhound','scorpion','flame','reddragon'],
+  4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', enemies:['hellhound','scorpion','flame','reddragon','lava_slug','ash_raven'],
       weights:{ battle:55, chest:8, trap:22, merchant:4, event:11 }, fatigue:17, boss:'sulfurdragon' },
-  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', enemies:['ghost','mimic','lich','werewolf'],
+  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', enemies:['ghost','mimic','lich','werewolf','stew_wraith'],
       weights:{ battle:50, chest:8, trap:18, merchant:6, event:18 }, fatigue:20, boss:'potgolem' },
-  6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp'],
+  6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp','silver_guard','dessert_wraith'],
       weights:{ battle:55, chest:7, trap:20, merchant:3, event:15 }, fatigue:23, boss:'gluttonking' },
 };
 
@@ -2616,6 +2626,17 @@ function playerStats(m){
 }
 function getEquip(m){
   return { weapon: m.weapon ? EQUIP.find(e=>e.id===m.weapon) : null, armor: m.armor ? EQUIP.find(e=>e.id===m.armor) : null };
+}
+function gainEquipDrop(m){
+  const eid = m && m.equipDrop;
+  if (!eid) return null;
+  if (m.equipDropChance && Math.random() >= m.equipDropChance) return null;
+  const eq = EQUIP.find(e=>e.id===eid);
+  if (!eq) return null;
+  if (eq.slot === 'weapon') PARTY.forEach(x=>{ x.weapon = eid; });
+  else PARTY.forEach(x=>{ x.armor = eid; });
+  S.ach_equip = (S.ach_equip||0) + 1;
+  return eq;
 }
 /* 升级所需经验 */
 function expNeed(lvl){ return Math.round(20 * Math.pow(1.55, lvl - 1)); }
@@ -3352,7 +3373,8 @@ function renderBattle(){
   $('b-m-hp-bar').style.width = cap(Math.round(e.hp/e.maxhp*100),0,100) + '%';
   $('b-m-atk').textContent = e.atk;
   const dl = Object.keys(m.drops).map(id=>INGREDIENTS[id].name+'×'+m.drops[id][0]+'~'+m.drops[id][1]).join('、');
-  $('b-m-drop').textContent = '战利品：' + (dl||'无') + '　金币 ' + m.gold[0] + '~' + m.gold[1];
+  const eq = m.equipDrop ? (EQUIP.find(x=>x.id===m.equipDrop)||{}).name : '';
+  $('b-m-drop').textContent = '战利品：' + (dl||'无') + (eq ? '，装备：' + eq : '') + '　金币 ' + m.gold[0] + '~' + m.gold[1];
   const sk = $('b-skill');
   if (e.boss && m.skill){
     sk.style.display = 'block';
@@ -3476,6 +3498,8 @@ function killMinion(e){
     gainIng(id, qty);
     drops.push(INGREDIENTS[id].name + ' ×' + qty);
   });
+  const eqDrop = gainEquipDrop(e.m);
+  if (eqDrop){ drops.push('装备：' + eqDrop.name); bLog('🎁 获得了装备：' + eqDrop.name + '，队伍已自动装备！', 'heal'); }
   if (!S.defeated.includes(e.m.id)) S.defeated.push(e.m.id);
   if (B.lastHitCounter){ S.ach_counter = (S.ach_counter||0)+1; B.lastHitCounter = false; }
   S.ach_gold = (S.ach_gold||0) + gold;
@@ -3558,6 +3582,8 @@ function endBattle(win){
       gainIng(id, qty);
       drops.push(INGREDIENTS[id].name + ' ×' + qty);
     });
+    const eqDrop = gainEquipDrop(m);
+    if (eqDrop){ drops.push('装备：' + eqDrop.name); bLog('🎁 获得了装备：' + eqDrop.name + '，队伍已自动装备！', 'heal'); }
     if (!S.defeated.includes(m.id)) S.defeated.push(m.id);
     // 经验成长：全员获得经验，满级升级
     const xp = expGain(m);
@@ -4143,10 +4169,10 @@ function playIntro(){
 let MAIN_QUEST = { id:'q1', text:'探索第一层，找到食材', done:false };
 function questText(){
   const q = MAIN_QUEST;
-  return (q.done ? '✅ ' : '📜 ') + '主线：' + q.text;
+  return (q.done ? '✅ ' : '🎯 ') + '当前目标：' + q.text + (q.hint ? ' · ' + q.hint : '');
 }
-function setQuest(id, text){
-  MAIN_QUEST = { id, text, done:false };
+function setQuest(id, text, hint){
+  MAIN_QUEST = { id, text, hint: hint || '', done:false };
   const el = document.getElementById('quest-bar');
   if (el){ el.textContent = questText(); el.classList.remove('quest-done'); }
 }
@@ -4168,19 +4194,21 @@ function completeQuest(){
 }
 /* 探索进度推进主线 */
 function checkQuestProgress(){
-  if (MAIN_QUEST.id === 'q1' && !MAIN_QUEST.done && (S.floorProgress[1]||0) >= 2){ completeQuest(); setQuest('q2','烹饪一道料理恢复队伍'); }
-  else if (MAIN_QUEST.id === 'q2' && !MAIN_QUEST.done && S.ach_cook >= 1){ completeQuest(); setQuest('q3','深入第三层，挑战迷宫之主'); }
-  else if (MAIN_QUEST.id === 'q3' && !MAIN_QUEST.done && S.defeated.includes('boss')){ completeQuest(); setQuest('q4','前往第四层，挑战硫磺龙'); }
-  else if (MAIN_QUEST.id === 'q4' && !MAIN_QUEST.done && S.defeated.includes('sulfurdragon')){ completeQuest(); setQuest('q5','击败守锅巨像，深入黄金盛宴厅'); }
-  else if (MAIN_QUEST.id === 'q5' && !MAIN_QUEST.done && S.defeated.includes('potgolem')){ completeQuest(); setQuest('q6','击败饕宴王，征服迷宫！'); }
-  else if (MAIN_QUEST.id === 'q6' && !MAIN_QUEST.done && S.defeated.includes('gluttonking')){ completeQuest(); setQuest('q7','通关！进入下一周目挑战自我'); }
+  if (MAIN_QUEST.id === 'q1' && !MAIN_QUEST.done && (S.floorProgress[1]||0) >= 2){ completeQuest(); setQuest('q2','烹饪一道料理恢复队伍','去烹饪食堂，做一道能吃的菜'); }
+  else if (MAIN_QUEST.id === 'q2' && !MAIN_QUEST.done && S.ach_cook >= 1){ completeQuest(); setQuest('q3','深入第三层，挑战迷宫之主','先探索第一、二层，再前往第三层'); }
+  else if (MAIN_QUEST.id === 'q3' && !MAIN_QUEST.done && S.defeated.includes('boss')){ completeQuest(); setQuest('q4','前往第四层，挑战硫磺龙','探索第三层并击败迷宫之主'); }
+  else if (MAIN_QUEST.id === 'q4' && !MAIN_QUEST.done && S.defeated.includes('sulfurdragon')){ completeQuest(); setQuest('q5','击败守锅巨像，深入黄金盛宴厅','探索第四层，击败硫磺龙'); }
+  else if (MAIN_QUEST.id === 'q5' && !MAIN_QUEST.done && S.defeated.includes('potgolem')){ completeQuest(); setQuest('q6','击败饕宴王，征服迷宫！','探索第五层，击败守锅巨像'); }
+  else if (MAIN_QUEST.id === 'q6' && !MAIN_QUEST.done && S.defeated.includes('gluttonking')){ completeQuest(); setQuest('q7','通关！进入下一周目挑战自我','已通关，可从标题进入下一周目'); }
 }
 function startTutorial(){
   if (!shouldTut()) return;
   const steps = [
-    { tip:'🗺️ 第一步：探索迷宫', desc:'点「探索这一层」深入迷宫。饿了没关系——迷宫里到处都是食材！', btn:'下一步 →' },
-    { tip:'⚔️ 第二步：遭遇魔物', desc:'探索会遇到魔物！点「迎战」进入战斗，击败它就能获得食材。', btn:'下一步 →' },
-    { tip:'🍳 第三步：烹饪回血', desc:'拿到食材后，去「烹饪食堂」做成料理，吃了就能恢复队伍状态！', btn:'开始冒险！' },
+    { tip:'🗺️ 第一步：探索迷宫', desc:'点「探索这一层」深入迷宫。饿了没关系——迷宫里到处都是食材！', target:'button[onclick^="explore("]', btn:'下一步 →' },
+    { tip:'🎯 第二步：看当前目标', desc:'顶部任务栏会告诉你现在该做什么。先探索第一层，找到食材。', target:'#quest-bar', btn:'下一步 →' },
+    { tip:'🍳 第三步：烹饪回血', desc:'拿到食材后，去「烹饪食堂」做成料理，吃了就能恢复队伍状态！', target:'.tab-btn[data-view="cook"]', btn:'下一步 →' },
+    { tip:'🛒 第四步：商店与装备', desc:'商店可以购买装备和药水。击败魔物也可能直接掉落装备，队伍会自动装备。', target:'.tab-btn[data-view="shop"]', btn:'下一步 →' },
+    { tip:'⚔️ 第五步：战斗', desc:'探索遇到魔物时点「迎战」。击败魔物会获得金币、食材，也可能掉落装备。', btn:'开始冒险！' },
   ];
   let i = 0;
   const ov = document.createElement('div');

@@ -3328,13 +3328,22 @@ function runEvent(e){
  * ================================================================ */
 /* ---- 属性克制循环：fire→ice→lightning→earth→holy→shadow→fire ---- */
 const ELEM_CHAIN = { fire:'ice', ice:'lightning', lightning:'earth', earth:'holy', holy:'shadow', shadow:'fire' };
-const ELEM_ICON  = { fire:'🔥', ice:'❄️', lightning:'⚡', earth:'🪨', holy:'✨', shadow:'🌙' };
-const ELEM_CN    = { fire:'火', ice:'冰', lightning:'雷', earth:'土', holy:'圣', shadow:'暗' };
+const ELEM_ICON  = { fire:'🔥', ice:'❄️', lightning:'⚡', earth:'🪨', holy:'✨', shadow:'🌙', dark:'🌙' };
+const ELEM_CN    = { fire:'火', ice:'冰', lightning:'雷', earth:'土', holy:'圣', shadow:'暗', dark:'暗' };
 function elemAdv(att, def){
   if (!att || !def) return 0;
+  if (att === 'dark') att = 'shadow';
+  if (def === 'dark') def = 'shadow';
   if (ELEM_CHAIN[att] === def) return 1;   // 克制
   if (ELEM_CHAIN[def] === att) return -1;  // 被克制
   return 0;
+}
+function elemWeakness(def){
+  if (def === 'dark') def = 'shadow';
+  for (const att in ELEM_CHAIN){
+    if (ELEM_CHAIN[att] === def) return att;
+  }
+  return null;
 }
 /* 玩家攻击伤害结算：克制×1.8 / 被克×0.6，厨具对不死×2，暴击×2 */
 function playerHitDmg(x, e, opts){
@@ -3442,7 +3451,8 @@ function renderBattle(){
   const m = e.m;
   $('b-m-emoji').innerHTML = monIconHTML(m, 88);
   $('b-m-name').textContent = m.name;
-  $('b-m-elem').textContent = (ELEM_ICON[m.elem]||'') + ' ' + (ELEM_CN[m.elem]||'') + (m.undead ? '　🧟不死系' : '');
+  const weak = elemWeakness(m.elem);
+  $('b-m-elem').textContent = (ELEM_ICON[m.elem]||'') + ' ' + (ELEM_CN[m.elem]||'') + (m.undead ? '　🧟不死系' : '') + (weak ? '　弱点：' + (ELEM_ICON[weak]||'') + (ELEM_CN[weak]||'') : '');
   $('b-m-hp').textContent = Math.max(0,e.hp) + '/' + e.maxhp;
   $('b-m-hp-bar').style.width = cap(Math.round(e.hp/e.maxhp*100),0,100) + '%';
   $('b-m-atk').textContent = e.atk;
@@ -3589,7 +3599,12 @@ function monsterTurn(){
   if (!living.length){ endBattle(false); return; }
   const boss = B.enemies.find(e=>e.boss);
   if (boss){
-    if (boss.m.skill && Math.random() < boss.m.skill.chance){ useBossSkill(boss); }
+    if (!boss.enraged && boss.hp / boss.maxhp < 0.5){
+      boss.enraged = true;
+      boss.atk = Math.round(boss.atk * 1.25);
+      bLog('🔥 ' + boss.m.name + ' 进入狂暴状态，攻击提升 25%！', 'hurt');
+    }
+    if (boss.m.skill && Math.random() < (boss.m.skill.chance + (boss.enraged ? 0.2 : 0))){ useBossSkill(boss); }
     else { normalAttack(boss); }
   } else if (B.enemies.length){
     normalAttack(B.enemies[0]);

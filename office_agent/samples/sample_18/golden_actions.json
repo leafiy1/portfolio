@@ -1,0 +1,26 @@
+[
+  {
+    "action": "Alice, please send the English FAQ by Friday.",
+    "owner": "Alice",
+    "due": "by Friday",
+    "priority": "medium"
+  },
+  {
+    "action": "王工，麻烦明天前整理中文翻译稿。",
+    "owner": "王工",
+    "due": "明天前",
+    "priority": "medium"
+  },
+  {
+    "action": "Alice, please confirm the pricing page copy by end of day.",
+    "owner": "Alice",
+    "due": "by end of day",
+    "priority": "medium"
+  },
+  {
+    "action": "王工，请下周三前完成本地化测试清单。",
+    "owner": "王工",
+    "due": "下周三前",
+    "priority": "medium"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "action": "张工，请今天内提交采购清单。",
+    "owner": "张工",
+    "due": "今天内",
+    "priority": "medium"
+  },
+  {
+    "action": "刘工，麻烦明天前跟进供应商报价。",
+    "owner": "刘工",
+    "due": "明天前",
+    "priority": "medium"
+  },
+  {
+    "action": "赵工，请尽快整理设备台账。",
+    "owner": "赵工",
+    "due": null,
+    "priority": "high"
+  },
+  {
+    "action": "李经理，请周五前复核预算表。",
+    "owner": "李经理",
+    "due": "周五前",
+    "priority": "medium"
+  }
+]

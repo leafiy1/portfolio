@@ -1,0 +1,5 @@
+# Meeting: Release Planning
+# Attendees: Alice, Bob, Carol
+Alice, please confirm the deployment window by Friday.
+Bob, please prepare the rollback plan by tomorrow.
+Carol, please update the release notes by end of day.

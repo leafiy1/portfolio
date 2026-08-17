@@ -1,0 +1,20 @@
+[
+  {
+    "action": "Alice, please confirm the deployment window by Friday.",
+    "owner": "Alice",
+    "due": "by Friday",
+    "priority": "medium"
+  },
+  {
+    "action": "Bob, please prepare the rollback plan by tomorrow.",
+    "owner": "Bob",
+    "due": "by tomorrow",
+    "priority": "medium"
+  },
+  {
+    "action": "Carol, please update the release notes by end of day.",
+    "owner": "Carol",
+    "due": "by end of day",
+    "priority": "medium"
+  }
+]

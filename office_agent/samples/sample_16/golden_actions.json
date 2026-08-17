@@ -1,0 +1,32 @@
+[
+  {
+    "action": "Alice, please confirm the data dictionary by Friday.",
+    "owner": "Alice",
+    "due": "by Friday",
+    "priority": "medium"
+  },
+  {
+    "action": "Bob, please prepare the ETL validation plan by tomorrow.",
+    "owner": "Bob",
+    "due": "by tomorrow",
+    "priority": "medium"
+  },
+  {
+    "action": "Carol, please update the monitoring dashboard by end of day.",
+    "owner": "Carol",
+    "due": "by end of day",
+    "priority": "medium"
+  },
+  {
+    "action": "Dan, please send the incident summary by next Tuesday.",
+    "owner": "Dan",
+    "due": "by next Tuesday",
+    "priority": "medium"
+  },
+  {
+    "action": "Eve, please review the security checklist by Friday.",
+    "owner": "Eve",
+    "due": "by Friday",
+    "priority": "medium"
+  }
+]

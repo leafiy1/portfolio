@@ -1,0 +1,32 @@
+[
+  {
+    "action": "李工，请在周五前确认 MES 接口字段。",
+    "owner": "李工",
+    "due": "周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "周工，麻烦下周三前完成 OEE 报表口径。",
+    "owner": "周工",
+    "due": "下周三前",
+    "priority": "medium"
+  },
+  {
+    "action": "吴工，请明天前整理设备传感器清单。",
+    "owner": "吴工",
+    "due": "明天前",
+    "priority": "medium"
+  },
+  {
+    "action": "陈经理，请尽快提交 ERP 数据迁移计划。",
+    "owner": "陈经理",
+    "due": null,
+    "priority": "high"
+  },
+  {
+    "action": "王总，请本周五前评审 AI 质检试点方案。",
+    "owner": "王总",
+    "due": "本周五前",
+    "priority": "medium"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "action": "陈经理，请在周五前确认 ERP 切换窗口。",
+    "owner": "陈经理",
+    "due": "周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "李工，麻烦今天下班前发送数据字典。",
+    "owner": "李工",
+    "due": "今天下班前",
+    "priority": "medium"
+  },
+  {
+    "action": "周工，请下周一前完成用户权限梳理。",
+    "owner": "周工",
+    "due": "下周一前",
+    "priority": "medium"
+  },
+  {
+    "action": "王总，请在本周五前评审方案。",
+    "owner": "王总",
+    "due": "本周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "刘工，请明天前整理风险清单。",
+    "owner": "刘工",
+    "due": "明天前",
+    "priority": "medium"
+  }
+]

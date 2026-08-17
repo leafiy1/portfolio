@@ -1,0 +1,38 @@
+[
+  {
+    "action": "李工，请明天前整理设备台账。",
+    "owner": "李工",
+    "due": "明天前",
+    "priority": "medium"
+  },
+  {
+    "action": "周工，麻烦周五前完成报表口径。",
+    "owner": "周工",
+    "due": "周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "吴工，请下周二前统计故障次数。",
+    "owner": "吴工",
+    "due": "下周二前",
+    "priority": "medium"
+  },
+  {
+    "action": "陈经理，请尽快提交数据迁移计划。",
+    "owner": "陈经理",
+    "due": null,
+    "priority": "high"
+  },
+  {
+    "action": "王总，请本周五前评审试点方案。",
+    "owner": "王总",
+    "due": "本周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "赵工，请今天下班前更新看板原型。",
+    "owner": "赵工",
+    "due": "今天下班前",
+    "priority": "medium"
+  }
+]

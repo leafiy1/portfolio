@@ -1,0 +1,20 @@
+[
+  {
+    "action": "赵工，麻烦明天前核对库存口径。",
+    "owner": "赵工",
+    "due": "明天前",
+    "priority": "medium"
+  },
+  {
+    "action": "钱工，请周五前提交接口联调说明。",
+    "owner": "钱工",
+    "due": "周五前",
+    "priority": "medium"
+  },
+  {
+    "action": "孙工，请尽快整理异常库存清单。",
+    "owner": "孙工",
+    "due": null,
+    "priority": "high"
+  }
+]

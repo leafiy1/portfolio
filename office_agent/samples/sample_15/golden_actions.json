@@ -1,0 +1,26 @@
+[
+  {
+    "action": "Alice, please send the weekly report by Friday.",
+    "owner": "Alice",
+    "due": "by Friday",
+    "priority": "medium"
+  },
+  {
+    "action": "Bob, please verify the API response by tomorrow.",
+    "owner": "Bob",
+    "due": "by tomorrow",
+    "priority": "medium"
+  },
+  {
+    "action": "Carol, please document the known issues by next Monday.",
+    "owner": "Carol",
+    "due": "by next Monday",
+    "priority": "medium"
+  },
+  {
+    "action": "Dan, please coordinate with QA by end of day.",
+    "owner": "Dan",
+    "due": "by end of day",
+    "priority": "medium"
+  }
+]

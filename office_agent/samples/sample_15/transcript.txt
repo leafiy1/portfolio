@@ -1,0 +1,6 @@
+# Meeting: Weekly Operations
+# Attendees: Alice, Bob, Carol, Dan
+Alice, please send the weekly report by Friday.
+Bob, please verify the API response by tomorrow.
+Carol, please document the known issues by next Monday.
+Dan, please coordinate with QA by end of day.

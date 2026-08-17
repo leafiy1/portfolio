@@ -1,0 +1,7 @@
+# Meeting: Onboarding Rollout
+# Attendees: mixed
+The next action is to update the onboarding doc by Friday.
+Alice, please review the API spec by tomorrow.
+Bob, please send the status report by end of day.
+Carol, please prepare the migration plan by next Monday.
+Dan, please verify the rollout checklist by Friday.

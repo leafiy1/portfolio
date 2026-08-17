@@ -1,0 +1,3 @@
+# Meeting: QA Sync
+# Attendees: Alice, Bob
+Alice, please prepare the release checklist by tomorrow.

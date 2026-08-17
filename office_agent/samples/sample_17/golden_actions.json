@@ -1,0 +1,32 @@
+[
+  {
+    "action": "The next action is to update the onboarding doc by Friday.",
+    "owner": null,
+    "due": "by Friday",
+    "priority": "medium"
+  },
+  {
+    "action": "Alice, please review the API spec by tomorrow.",
+    "owner": "Alice",
+    "due": "by tomorrow",
+    "priority": "medium"
+  },
+  {
+    "action": "Bob, please send the status report by end of day.",
+    "owner": "Bob",
+    "due": "by end of day",
+    "priority": "medium"
+  },
+  {
+    "action": "Carol, please prepare the migration plan by next Monday.",
+    "owner": "Carol",
+    "due": "by next Monday",
+    "priority": "medium"
+  },
+  {
+    "action": "Dan, please verify the rollout checklist by Friday.",
+    "owner": "Dan",
+    "due": "by Friday",
+    "priority": "medium"
+  }
+]

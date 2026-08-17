@@ -1,0 +1,4 @@
+# Meeting: Standup
+# Attendees: Alice, Bob
+Alice, please send the daily status by 5pm.
+Bob, please update the test case list by Friday.

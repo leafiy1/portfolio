@@ -1,0 +1,7 @@
+# Meeting: Data Platform Review
+# Attendees: Alice, Bob, Carol, Dan, Eve
+Alice, please confirm the data dictionary by Friday.
+Bob, please prepare the ETL validation plan by tomorrow.
+Carol, please update the monitoring dashboard by end of day.
+Dan, please send the incident summary by next Tuesday.
+Eve, please review the security checklist by Friday.

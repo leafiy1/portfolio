@@ -17,6 +17,7 @@
 - GearPick v4.3 已公开核价 11 款，233/234 款有参考价；仅 kb-029（Wooting Two HE）因官网只有配置器报价而保留「待核实」。
 - 主站 v8 三方向原型已完成：`_v8_concepts/README.md` + `direction-a/b/c.html`；375px/1280px 无横向溢出、控制台 0 错误，未改线上 `index.html`。
 - 按用户反馈新增 D 作品主页原型：`_v8_concepts/direction-d.html`，去掉面试/证据/展示思考话术，保留原版气质；当前推荐 D。
+- 已按用户反馈做产品化改造：正式 `index.html` 重写为产品入口；GearPick 去掉“策展/作品集/面试”文案并替换为透明规则推荐；迷宫饭去掉“作品集子项目”徽标；GearPick README/CASE_STUDY 同步清理。
 - 下一轮待办：接入葉光館统计并采集一手反馈、迷宫饭招募 5 人试玩、Wooting Two HE 统一基准价、主站 v8 排版与口径统一。
 - 当前卡点：需要用户确认 D 作品主页是否可用作 v8 方向；未确认前不动线上 `index.html`。
 

@@ -2257,6 +2257,14 @@ const FLOORS = {
   6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', goal:'探索 5 次后挑战饕宴王，击败它通关迷宫。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp','silver_guard','dessert_wraith'],
       weights:{ battle:55, chest:7, trap:20, merchant:3, event:15 }, fatigue:23, boss:'gluttonking' },
 };
+const HIDDEN_ROUTES = {
+  1:{ id:'h1', name:'苔藓密道', floor:1, condition:'mossling', desc:'击败苔藓蜗后，墙角露出一条盖满苔藓的密道。', reward:{ gold:25, ings:{mushroom:2, slime_jelly:1} } },
+  2:{ id:'h2', name:'奶酪暗道', floor:2, condition:'armor_rat', desc:'铠鼠钻过的墙洞通向一间陈年奶酪窖。', reward:{ gold:40, ings:{cheese_rind:1, cheese_crumbs:2}, equip:'a_leather' } },
+  3:{ id:'h3', name:'龙骨捷径', floor:3, condition:'reddragon', desc:'红龙巢穴后有一条被龙骨压出的捷径。', reward:{ gold:70, ings:{dragon_meat:1, bone_powder:2}, equip:'w_steel' } },
+  4:{ id:'h4', name:'硫磺温泉', floor:4, condition:'lava_slug', desc:'熔岩蛞蝓爬过的地方出现一汪硫磺温泉。', reward:{ gold:55, heal:80, ings:{lava_core:1} } },
+  5:{ id:'h5', name:'后厨秘室', floor:5, condition:'stew_wraith', desc:'炖汤幽灵守着的小房间堆满了陈年香料。', reward:{ gold:90, ings:{gravy_stone:1, banquet_essence:1, mushroom:3}, equip:'w_magic' } },
+  6:{ id:'h6', name:'甜点酒窖', floor:6, condition:'dessert_wraith', desc:'甜品幽灵的冰窖里藏着最后的糖霜和冷雾。', reward:{ gold:110, ings:{cream_top:2, shake_essence:1, golden_grape:1}, equip:'a_myth' } },
+};
 
 const EVENTS = [
   { id:'e1', name:'迷路的旅人', emoji:'🧑‍🦯',
@@ -2735,6 +2743,7 @@ function loadGame(){
     S.cleared = !!S.cleared;
     S.curse = !!S.curse;
     S.ach_skits = S.ach_skits || 0;
+    S.hiddenRoutes = Object.assign({}, S.hiddenRoutes || {});
     S.floorProgress = Object.assign({1:0, 2:0, 3:0, 4:0, 5:0, 6:0}, S.floorProgress || {});
     PARTY.forEach(m=>{ m.cd = 0; });   // 读档后重置技能冷却
     $('start-screen').style.display = 'none';
@@ -2787,6 +2796,7 @@ function newGame(){
     ach_explore: 0,
     ach_grade: {},
     ach_skits: 0,
+    hiddenRoutes: {},
     log: [],
   };
   PARTY = CHARACTERS.map(c=>({ id:c.id, hp:c.maxHp, full:c.maxFull, cd:0, lvl:1, exp:0, weapon:null, armor:null }));
@@ -2875,8 +2885,9 @@ function renderExplore(){
       + '<div class="f-progress">探索进度 ' + p + '/' + need + '</div>'
       + '<div class="bar hp" style="height:8px;margin-bottom:10px;"><i style="width:' + pct + '%"></i></div>'
       + (locked
-          ? '<div class="f-lock">' + lockHint(+n) + '</div>'
-          : '<button class="btn primary" onclick="explore(' + n + ')">🔦 探索这一层</button>')
+          ? '<div class="f-lock">' + lockHint(+n) + (HIDDEN_ROUTES[n] ? '　🗝️ 隐藏路线：击败 ' + MONSTERS[HIDDEN_ROUTES[n].condition].name + ' 后出现' : '') + '</div>'
+          : '<button class="btn primary" onclick="explore(' + n + ')">🔦 探索这一层</button>'
+            + (hiddenRouteAvailable(+n) ? '<button class="btn" style="margin-left:8px;" onclick="claimHiddenRoute(' + n + ')">🗝️ ' + HIDDEN_ROUTES[n].name + '</button>' : (HIDDEN_ROUTES[n] && S.hiddenRoutes[n] ? '<div class="f-lock">🗝️ 已探索隐藏路线</div>' : '')))
       + '</div>';
   }).join('');
 
@@ -2929,6 +2940,30 @@ function bossCard(mid, desc){
           + '<button class="btn danger" onclick="startBattle(\'' + mid + '\')">⚔️ 再次挑战</button>'
         : '<button class="btn danger big" onclick="startBattle(\'' + mid + '\')">⚔️ 挑战</button>')
     + '</div>';
+}
+function hiddenRouteAvailable(n){
+  const r = HIDDEN_ROUTES[n];
+  return !!(r && !S.hiddenRoutes[n] && S.defeated.includes(r.condition));
+}
+function claimHiddenRoute(n){
+  const r = HIDDEN_ROUTES[n];
+  if (!r || S.hiddenRoutes[n] || !S.defeated.includes(r.condition)) return;
+  S.hiddenRoutes[n] = true;
+  const parts = [];
+  if (r.reward.gold){ S.gold += r.reward.gold; parts.push('金币+' + r.reward.gold); }
+  if (r.reward.ings) Object.keys(r.reward.ings).forEach(id=>{ gainIng(id, r.reward.ings[id]); parts.push(INGREDIENTS[id].name + '×' + r.reward.ings[id]); });
+  if (r.reward.equip){
+    const eq = EQUIP.find(e=>e.id===r.reward.equip);
+    if (eq){ if (eq.slot === 'weapon') PARTY.forEach(m=>{ m.weapon = eq.id; }); else PARTY.forEach(m=>{ m.armor = eq.id; }); parts.push('装备：' + eq.name); }
+  }
+  if (r.reward.heal){
+    PARTY.forEach(m=>{ const ps = playerStats(m); m.hp = Math.min(ps.maxHp, m.hp + r.reward.heal); });
+    parts.push('全体恢复 ' + r.reward.heal + ' HP');
+  }
+  addLog('🗝️ 发现隐藏路线「' + r.name + '」！' + parts.join('，'));
+  showModal('隐藏路线', '🗝️', '<p>' + r.desc + '</p><p style="font-weight:bold;">获得：' + parts.join('，') + '</p>', [
+    { label:'继续冒险', cls:'primary', onClick:()=>{ renderAll(); saveGame(); } }
+  ]);
 }
 
 function renderCook(){

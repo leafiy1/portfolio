@@ -7,7 +7,7 @@
 <title>迷宫饭 · 冒险食堂手记</title>
 <style>
 /* ============================================================
- * 迷宫饭 · 冒险食堂手记 — v2.4.0 设计系统
+ * 迷宫饭 · 冒险食堂手记 — v2.5.0 设计系统
  * 美学：暖中世纪奇幻食堂 / 冒险手账
  * 基础：暖米色羊皮纸 · 墨色文字 · 陶土橙单强调色
  * ============================================================ */
@@ -575,6 +575,8 @@ header h1{
   padding: 2px 10px; font-size: var(--fs-micro); color: var(--ink-soft);
 }
 .b-skill{ font-size: var(--fs-micro); color: var(--danger); margin: 6px 0 2px; letter-spacing: 1px; line-height:1.6; }
+.b-phase{ font-size: var(--fs-sm); color: var(--danger); font-weight:800; letter-spacing:2px; margin-top:8px; line-height:1.5; }
+.b-eq{ font-size: var(--fs-micro); color:#a67c00; margin:8px 0 2px; letter-spacing:1px; line-height:1.7; }
 .monster-panel .bar.hp{ margin-top: 12px; }
 .b-drop{ font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 10px; line-height:1.6; }
 .battle-log{
@@ -1900,7 +1902,7 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
       <button class="btn big" id="btn-continue" style="display:none;" onclick="loadGame()">📖 继续冒险</button>
       <button class="btn big" id="btn-fresh" style="display:none;" onclick="newGame()">🆕 新的冒险</button>
     </div>
-    <div class="version-badge">迷宫饭 · 冒险食堂手记 · <b>v2.4.0</b></div>
+    <div class="version-badge">迷宫饭 · 冒险食堂手记 · <b>v2.5.0</b></div>
   </div>
 
   <!-- ======== 主游戏界面 ======== -->
@@ -2019,6 +2021,7 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
       <div class="monster-panel">
         <div class="m-emoji" id="b-m-emoji">👹</div>
         <div class="m-name" id="b-m-name">魔物</div>
+        <div class="b-phase" id="b-phase"></div>
         <div class="b-meta" id="b-m-elem">属性：？</div>
         <div id="b-skill"></div>
         <div class="bar hp" style="margin-top:8px;"><i id="b-m-hp-bar" style="width:100%"></i></div>
@@ -2033,6 +2036,7 @@ footer{ text-align:center; margin-top: 30px; font-size: var(--fs-micro); color: 
     <div style="margin-top:14px;">
       <div class="panel-title">选择行动队员</div>
       <div id="char-select"></div>
+      <div class="b-eq" id="b-eq"></div>
       <div id="action-row">
         <button class="btn primary" onclick="actAttack()">⚔️ 攻击</button>
         <button class="btn" id="btn-skill" onclick="actSkill()">✨ 技能</button>
@@ -2161,6 +2165,26 @@ const MONSTERS = {
   silver_guard:{ floor:6, id:'silver_guard', name:'银盘守卫', emoji:'🥈', elem:'holy', hp:110, atk:31, def:14, gold:[55,85], drops:{silver_leaf:[2,2], crab_shell:[1,1]}, desc:'手持银盘的机械守卫，只允许优雅的进食者通过。', note:'银盘守卫会要求每位访客先擦净手，再用餐刀轻敲三下银盘。', equipDrop:'a_plate' },
   dessert_wraith:{ floor:6, id:'dessert_wraith', name:'甜品幽灵', emoji:'🍰', elem:'ice', hp:100, atk:28, def:9, gold:[45,70], drops:{cream_top:[1,2], shake_essence:[1,1]}, desc:'守在甜品台边的幽灵，尝不到味道也要摆盘。', note:'甜品幽灵每天午夜把甜品台重新摆满，天亮前又会消失。', undead:true, equipDrop:'w_legend', equipDropChance:0.5 },
 };
+const BOSS_PHASES = {
+  boss: [
+    { at:0.66, name:'亡者狂潮', atkMul:1.18, defAdd:2, desc:'王座周围的曼陀罗根疯狂生长，骷髅兵被一一唤起。', skill:{ name:'亡者狂啸', desc:'咆哮重创全体队员，并召唤更多骷髅兵', type:'aoe', dmg:0.7, chance:0.4, summon:[{id:'skeleton', qty:[1,2]}] }, taunt:'……还不够。都醒过来，吃。' },
+    { at:0.33, name:'执念苏醒', atkMul:1.3, defAdd:4, desc:'迷宫之主的执念彻底苏醒，攻击变得更加凶狠。', skill:{ name:'王座崩裂', desc:'王座崩裂，全体重创并召唤骷髅兵', type:'aoe', dmg:0.85, chance:0.5, summon:[{id:'skeleton', qty:[2,2]}] }, taunt:'把……我的迷宫……还给我……' },
+  ],
+  sulfurdragon: [
+    { at:0.66, name:'硫磺燃甲', atkMul:1.22, defAdd:3, desc:'鳞片缝隙喷出硫磺焰，防御与吐息同时增强。', skill:{ name:'燃甲吐息', desc:'喷吐硫磺烈焰灼烧全体队员，并召唤炎魔', type:'aoe', dmg:0.85, chance:0.45, summon:[{id:'flame', qty:[1,2]}] }, taunt:'热起来了……' },
+    { at:0.33, name:'岩浆核心', atkMul:1.38, defAdd:5, desc:'熔岩核心暴露在外，龙息温度骤然升高。', skill:{ name:'熔心爆裂', desc:'引爆熔岩核心，全体重创并召唤炎魔', type:'aoe', dmg:1.0, chance:0.55, summon:[{id:'flame', qty:[2,2]}] }, taunt:'这一口……要连骨头一起吞！' },
+  ],
+  potgolem: [
+    { at:0.66, name:'黄金锅守护', atkMul:1.25, defAdd:5, desc:'巨像把黄金锅举作盾牌，防御大幅提升。', skill:{ name:'锅盖格挡', desc:'黄金锅砸向队伍，全体重创并召唤锅铲小兵', type:'aoe', dmg:0.9, chance:0.45, summon:[{id:'potminion', qty:[2,3]}] }, taunt:'黄金锅……谁也不许碰。' },
+    { at:0.33, name:'千年灶火', atkMul:1.45, defAdd:7, desc:'千年灶火从巨像体内喷出，攻击与防御同时暴增。', skill:{ name:'灶火倾泻', desc:'千年灶火倾泻而下，全体重创并召唤锅铲小兵', type:'aoe', dmg:1.05, chance:0.6, summon:[{id:'potminion', qty:[3,3]}] }, taunt:'开饭了……还是开战了？' },
+  ],
+  gluttonking: [
+    { at:0.75, name:'饕餮开场', atkMul:1.15, defAdd:2, desc:'饕宴王开始认真进食，攻击与防御小幅提升。', skill:{ name:'王宴布菜', desc:'全体重创并召唤残宴幽灵赴宴', type:'aoe', dmg:0.95, chance:0.4, summon:[{id:'banquetwraith', qty:[1,1]}] }, taunt:'先上开胃菜。' },
+    { at:0.5, name:'暴食狂宴', atkMul:1.3, defAdd:4, desc:'饕宴王进入暴食状态，每回合都可能吞下更多。', skill:{ name:'吞天餐车', desc:'吞掉队伍一部分体力并召唤残宴幽灵', type:'aoe', dmg:1.1, chance:0.5, summon:[{id:'banquetwraith', qty:[2,2]}] }, taunt:'不够……还不够……' },
+    { at:0.25, name:'千年饥渴', atkMul:1.5, defAdd:6, desc:'千年饥渴彻底释放，饕宴王开始无差别吞噬。', skill:{ name:'无尽盛宴', desc:'全体重创并召唤残宴幽灵', type:'aoe', dmg:1.25, chance:0.65, summon:[{id:'banquetwraith', qty:[2,3]}] }, taunt:'全都……给我坐下！' },
+  ],
+};
+Object.keys(BOSS_PHASES).forEach(id=>{ if (MONSTERS[id]) MONSTERS[id].phases = BOSS_PHASES[id]; });
 const RECIPES = [
   { id:'r1',  name:'史莱姆果冻',   emoji:'🍮', ingredients:{slime_jelly:1},                 effect:{hp:30, full:10},  require:null, desc:'弹弹嫩嫩的开胃菜，补充体力。', app:'勺子压下去，果冻颤巍巍地弹回来，入口是薄荷糖一样的凉。' },
   { id:'r2',  name:'烤蝙蝠翅',     emoji:'🍗', ingredients:{bat_wing:2},                    effect:{hp:15, full:40},  require:'r1', desc:'炭火烤到滋滋冒油，最解饿。', app:'炭火把翅尖燎出油泡，咬下去咔地一声，满口焦香。' },
@@ -2570,14 +2594,14 @@ const EVENTS = [
 ];
 
 const EQUIP = [
-  { id:'w_iron',   name:'铁制短剑',   slot:'weapon', price:60,  atk:4,  desc:'平凡的制式武器，+4 攻击', passive:'基础武器' },
-  { id:'w_steel',  name:'精钢长剑',   slot:'weapon', price:140, atk:10, desc:'锻造精良，+10 攻击', passive:'破甲：攻击时无视部分防御' },
-  { id:'w_magic',  name:'秘银法杖',   slot:'weapon', price:220, atk:18, desc:'灌注魔力，+18 攻击', passive:'技能增幅：技能伤害 +30%' },
-  { id:'w_legend', name:'屠龙宝刀',   slot:'weapon', price:380, atk:30, desc:'传说级武器，+30 攻击', passive:'屠龙：对龙类魔物伤害 +50%' },
-  { id:'a_leather',name:'皮甲',       slot:'armor',  price:50,  def:3,  desc:'轻便护甲，+3 防御', passive:'基础护甲' },
-  { id:'a_chain',  name:'锁子甲',     slot:'armor',  price:120, def:7,  desc:'标准链甲，+7 防御', passive:'减伤 3' },
-  { id:'a_plate',  name:'全身板甲',   slot:'armor',  price:200, def:13, desc:'重装防护，+13 防御', passive:'减伤 6' },
-  { id:'a_myth',   name:'龙鳞甲',     slot:'armor',  price:350, def:22, desc:'巨龙鳞片制成，+22 防御', passive:'减伤 12' },
+  { id:'w_iron',   name:'铁制短剑',   emoji:'🗡️', slot:'weapon', price:60,  atk:4,  desc:'平凡的制式武器，+4 攻击', passive:'基础武器', special:{ name:'制式剑术', desc:'无视 2 点防御，15% 概率追加一次追击' } },
+  { id:'w_steel',  name:'精钢长剑',   emoji:'⚔️', slot:'weapon', price:140, atk:10, desc:'锻造精良，+10 攻击', passive:'破甲：攻击时无视部分防御', special:{ name:'裂甲斩', desc:'无视 6 点防御，破甲更彻底' } },
+  { id:'w_magic',  name:'秘银法杖',   emoji:'🔮', slot:'weapon', price:220, atk:18, desc:'灌注魔力，+18 攻击', passive:'技能增幅：技能伤害 +30%', special:{ name:'秘法回路', desc:'技能伤害 +40%，技能冷却 -1' } },
+  { id:'w_legend', name:'屠龙宝刀',   emoji:'🐉', slot:'weapon', price:380, atk:30, desc:'传说级武器，+30 攻击', passive:'屠龙：对龙类魔物伤害 +50%', special:{ name:'龙威', desc:'对龙类伤害 +60%，暴击率 +10%' } },
+  { id:'a_leather',name:'皮甲',       emoji:'🥋', slot:'armor',  price:50,  def:3,  desc:'轻便护甲，+3 防御', passive:'基础护甲', special:{ name:'轻装步法', desc:'受击时 12% 概率闪避' } },
+  { id:'a_chain',  name:'锁子甲',     emoji:'⛓️', slot:'armor',  price:120, def:7,  desc:'标准链甲，+7 防御', passive:'减伤 3', special:{ name:'链甲缓冲', desc:'减伤 3，受击后 15% 概率反伤' } },
+  { id:'a_plate',  name:'全身板甲',   emoji:'🛡️', slot:'armor',  price:200, def:13, desc:'重装防护，+13 防御', passive:'减伤 6', special:{ name:'重盾格挡', desc:'减伤 6，受击时 20% 概率只受 1 点伤害' } },
+  { id:'a_myth',   name:'龙鳞甲',     emoji:'🐲', slot:'armor',  price:350, def:22, desc:'巨龙鳞片制成，+22 防御', passive:'减伤 12', special:{ name:'龙鳞反震', desc:'减伤 12，受击后 30% 概率反伤' } },
 ];
 const SHOP = [
   { id:'potion',    name:'治愈药水', emoji:'🧪', price:30, desc:'全体恢复 20 HP',      effect:{hp:20} },
@@ -2667,6 +2691,73 @@ function armorReduction(m){
   if (eq.id === 'a_plate') return 6;
   if (eq.id === 'a_myth') return 12;
   return 0;
+}
+function equipSpecial(m){
+  const eq = getEquip(m);
+  const parts = [];
+  if (eq.weapon && eq.weapon.special) parts.push(eq.weapon.special);
+  if (eq.armor && eq.armor.special) parts.push(eq.armor.special);
+  return parts;
+}
+function skillCooldown(m){
+  const c = charDef(m.id);
+  const wp = getEquip(m).weapon;
+  return Math.max(1, c.skill.cd - (wp && wp.id === 'w_magic' ? 1 : 0));
+}
+function critChanceOf(x){
+  const c = charDef(x.id);
+  const wp = getEquip(x).weapon;
+  return (c.crit || 0.15) + (wp && wp.id === 'w_legend' ? 0.10 : 0);
+}
+function summonEnemies(specs){
+  if (!Array.isArray(specs)) return;
+  let added = false;
+  specs.forEach(s=>{
+    const qty = rand(s.qty[0], s.qty[1]);
+    for (let i=0;i<qty;i++){
+      if (B.enemies.length >= 6) break;
+      const m = MONSTERS[s.id];
+      if (!m) continue;
+      const st = monsterStats(m);
+      B.enemies.push({ m:m, maxhp:st.hp, hp:st.hp, atk:st.atk, def:st.def, boss:false });
+      added = true;
+    }
+  });
+  if (added) bLog('✨ ' + (B.enemies.find(e=>e.boss)||{}).m.name + ' 召唤出新的爪牙！', 'info');
+}
+function applyEnemyDamage(e, target, rawDmg, opts){
+  opts = opts || {};
+  const c = charDef(target.id);
+  let dmg = Math.max(1, rawDmg);
+  const armor = getEquip(target).armor;
+  let specialLog = '';
+  if (armor && armor.id === 'a_leather' && Math.random() < 0.12){
+    bLog('💨 ' + c.name + ' 的【轻装步法】闪开了 ' + e.m.name + ' 的攻击！', 'info');
+    fxFloat('闪避!', 'fx-combo');
+    return { dmg:0, avoided:true };
+  }
+  if (armor && armor.id === 'a_plate' && Math.random() < 0.20){
+    specialLog = '，但【重盾格挡】只受到 1 点伤害';
+    dmg = 1;
+  }
+  let reflected = 0;
+  if (armor && armor.id === 'a_chain' && Math.random() < 0.15){
+    reflected = Math.max(1, Math.round(dmg * 0.2));
+    specialLog += (specialLog ? '，' : '，') + '【链甲缓冲】反伤敌人 ' + reflected + ' 点';
+  } else if (armor && armor.id === 'a_myth' && Math.random() < 0.30){
+    reflected = Math.max(2, Math.round(dmg * 0.3));
+    specialLog += (specialLog ? '，' : '，') + '【龙鳞反震】震伤敌人 ' + reflected + ' 点';
+  }
+  if (reflected && e.hp > 0) e.hp = Math.max(0, e.hp - reflected);
+  target.hp = Math.max(0, target.hp - dmg);
+  if (!opts.silent) fxFloat('-' + dmg, 'fx-dmg');
+  if (!opts.silent){
+    bLog(e.m.emoji + ' ' + e.m.name + ' 攻击了 ' + c.name + '，造成 <b>' + dmg + '</b> 点伤害' + specialLog + '！', 'hurt');
+  } else if (specialLog){
+    bLog('💥 ' + c.name + specialLog + '！', 'hurt');
+  }
+  if (target.hp <= 0) bLog(c.emoji + ' ' + c.name + ' 倒下了！', 'info');
+  return { dmg:dmg, reflected:reflected };
 }
 function gainEquipDrop(m){
   const eid = m && m.equipDrop;
@@ -2941,10 +3032,11 @@ function bossCard(mid, desc){
   const m = MONSTERS[mid];
   const defeated = S.defeated.includes(mid);
   const weak = elemWeakness(m.elem);
+  const phaseTxt = Array.isArray(m.phases) && m.phases.length ? '　阶段 ' + (m.phases.length + 1) : '';
   return '<div class="boss-card">'
     + '<div class="boss-name">' + monIconHTML(m, 30) + ' ' + m.name + '</div>'
     + '<p class="boss-desc">' + desc + '</p>'
-    + '<div class="f-goal">🎯 弱点：' + (weak ? (ELEM_ICON[weak]||'') + (ELEM_CN[weak]||'') : '无明确弱点') + '　建议等级 Lv.' + bossLevel(mid) + '</div>'
+    + '<div class="f-goal">🎯 ' + phaseTxt + '弱点：' + (weak ? (ELEM_ICON[weak]||'') + (ELEM_CN[weak]||'') : '无明确弱点') + '　建议等级 Lv.' + bossLevel(mid) + '</div>'
     + '<div class="f-enemies">掉落：' + bossDropPreview(m) + '</div>'
     + (defeated
         ? '<div style="color:#a67c00; font-weight:bold; letter-spacing:3px; margin-bottom:6px;">★ ' + (mid==='gluttonking' ? '已通关！' : '已击败！') + ' ★</div>'
@@ -3367,17 +3459,18 @@ function playerHitDmg(x, e, opts){
     base = Math.max(1, Math.round((atkOf(x) - e.def*0.5 + rand(-2,6)) * 1.2));
   }
   const wp = getEquip(x).weapon;
-  if (wp && wp.id === 'w_magic' && opts.skill) base = Math.round(base * 1.3);
-  if (wp && wp.id === 'w_steel') base += Math.min(4, e.def);
+  if (wp && wp.id === 'w_magic' && opts.skill) base = Math.round(base * 1.4);
+  if (wp && wp.id === 'w_steel') base += Math.min(6, e.def);
+  if (wp && wp.id === 'w_iron') base += Math.min(2, e.def);
   let mult = 1;
   const adv = elemAdv(c.elem, e.m.elem);
   if (adv === 1) mult *= 1.8;
   else if (adv === -1) mult *= 0.6;
-  if (wp && wp.id === 'w_legend' && (e.m.id.indexOf('dragon') >= 0 || e.m.name.indexOf('龙') >= 0)) mult *= 1.5;
+  if (wp && wp.id === 'w_legend' && (e.m.id.indexOf('dragon') >= 0 || e.m.name.indexOf('龙') >= 0)) mult *= 1.6;
   let undeadBonus = false;
   if (c.cookware && e.m.undead){ mult *= 2; undeadBonus = true; }  // 厨具砍不死系
   let crit = false;
-  if (Math.random() < (c.crit || 0.15)){ crit = true; mult *= 2; }
+  if (Math.random() < critChanceOf(x)){ crit = true; mult *= 2; }
   return { dmg: Math.max(1, Math.round(base * mult)), crit: crit, adv: adv, undeadBonus: undeadBonus };
 }
 /* 组装己方攻击日志：金色 / 克制绿 / 暴击红大字 / 连击橙 */
@@ -3402,6 +3495,14 @@ function comboHit(x, e){
     fxFloat('-' + cd + ' 连击!', 'fx-combo', document.querySelector('.monster-panel'));
     bLog('🔥连击！' + charDef(x.id).name + ' 追加伤害 <b>' + cd + '</b> 点！', 'combo');
   }
+}
+function weaponFollowUp(x, e){
+  const wp = getEquip(x).weapon;
+  if (!wp || wp.id !== 'w_iron' || e.hp <= 0 || Math.random() >= 0.15) return;
+  const dmg = Math.max(1, Math.round(atkOf(x) * 0.55 - e.def * 0.25 + rand(0,3)));
+  e.hp = Math.max(0, e.hp - dmg);
+  bLog('⚔️ ' + charDef(x.id).name + ' 的【制式剑术】追加攻击，造成 <b>' + dmg + '</b> 点伤害！', 'combo');
+  fxFloat('-' + dmg, 'fx-combo', document.querySelector('.monster-panel'));
 }
 
 /* 伤害飘字（玩法反馈）：在指定锚点上方飘出数字 */
@@ -3438,7 +3539,7 @@ function enemyHitFx(){
 function startBattle(mid){
   const m = MONSTERS[mid];
   const st = monsterStats(m);   // 周目难度倍率
-  B = { enemies:[{ m:m, maxhp:st.hp, hp:st.hp, atk:st.atk, def:st.def, boss:!!m.boss }], log:[], sel:null, etarget:0, over:false };
+  B = { enemies:[{ m:m, maxhp:st.hp, hp:st.hp, atk:st.atk, def:st.def, baseAtk:st.atk, baseDef:st.def, phase:0, activeSkill:m.skill || null, boss:!!m.boss }], log:[], sel:null, etarget:0, over:false };
   const living = PARTY.filter(x=>x.hp>0);
   if (!living.length){ partyWipe('队伍全员倒下，被送回了营地。'); return; }
   B.sel = living[0].id;
@@ -3464,6 +3565,17 @@ function renderBattle(){
   $('b-m-name').textContent = m.name;
   const weak = elemWeakness(m.elem);
   $('b-m-elem').textContent = (ELEM_ICON[m.elem]||'') + ' ' + (ELEM_CN[m.elem]||'') + (m.undead ? '　🧟不死系' : '') + (weak ? '　弱点：' + (ELEM_ICON[weak]||'') + (ELEM_CN[weak]||'') : '');
+  const phaseEl = $('b-phase');
+  if (phaseEl){
+    if (e.boss && Array.isArray(m.phases) && m.phases.length){
+      const total = m.phases.length + 1;
+      const idx = cap(e.phase || 0, 0, total - 1);
+      phaseEl.style.display = 'block';
+      phaseEl.textContent = '⚔️ 阶段 ' + (idx + 1) + '/' + total + ' · ' + (idx === 0 ? '苏醒' : m.phases[idx - 1].name);
+    } else {
+      phaseEl.style.display = 'none';
+    }
+  }
   $('b-m-hp').textContent = Math.max(0,e.hp) + '/' + e.maxhp;
   $('b-m-hp-bar').style.width = cap(Math.round(e.hp/e.maxhp*100),0,100) + '%';
   $('b-m-atk').textContent = e.atk;
@@ -3471,9 +3583,10 @@ function renderBattle(){
   const eq = m.equipDrop ? (EQUIP.find(x=>x.id===m.equipDrop)||{}).name : '';
   $('b-m-drop').textContent = '战利品：' + (dl||'无') + (eq ? '，装备：' + eq : '') + '　金币 ' + m.gold[0] + '~' + m.gold[1];
   const sk = $('b-skill');
-  if (e.boss && m.skill){
+  if (e.boss && (e.activeSkill || m.skill)){
     sk.style.display = 'block';
-    sk.innerHTML = '✦ 特殊技能：【' + m.skill.name + '】' + m.skill.desc;
+    const active = e.activeSkill || m.skill;
+    sk.innerHTML = '✦ 特殊技能：【' + active.name + '】' + active.desc;
   } else {
     sk.style.display = 'none';
   }
@@ -3501,6 +3614,11 @@ function renderBattle(){
     skillBtn.innerHTML = '✨ ' + c.skill.name + (sel.cd>0 ? '（冷却'+sel.cd+'）' : '');
     skillBtn.disabled = sel.cd > 0;
   }
+  const eqBox = $('b-eq');
+  if (eqBox){
+    const specials = sel ? equipSpecial(sel) : [];
+    eqBox.innerHTML = specials.length ? '装备共鸣：' + specials.map(s=>'✦ ' + s.name + '：' + s.desc).join('<br>') : '';
+  }
   const lg = $('battle-log');
   lg.innerHTML = B.log.join('');
   lg.scrollTop = lg.scrollHeight;
@@ -3525,6 +3643,7 @@ function actAttack(){
   else { bLog('🗣️ ' + c.name + '：' + (charTaunt(x.id,'atk')||''), 'taunt'); }
   bLog(h.msg, h.cls);
   comboHit(x, e);
+  weaponFollowUp(x, e);
   afterPlayerAction();
 }
 
@@ -3539,12 +3658,13 @@ function actSkill(){
   if (r.crit) S.ach_crit = (S.ach_crit||0)+1;
   B.lastHitCounter = (r.adv === 1);
   e.hp -= r.dmg;
-  x.cd = c.skill.cd;
+  x.cd = skillCooldown(x);
   enemyHitFx();
   fxFloat('-' + r.dmg, r.crit ? 'fx-crit' : 'fx-dmg', document.querySelector('.monster-panel'));
   const h = hitLogMsg(c, e, r, '✨ ' + c.name + ' 使出【' + c.skill.name + '】');
   bLog(h.msg, h.cls);
   comboHit(x, e);
+  weaponFollowUp(x, e);
   afterPlayerAction();
 }
 
@@ -3606,17 +3726,37 @@ function killMinion(e){
   if (B.etarget >= B.enemies.length) B.etarget = Math.max(0, B.enemies.length - 1);
 }
 
+function checkBossPhase(boss){
+  const m = boss.m;
+  if (!m.boss || !Array.isArray(m.phases) || !m.phases.length) return;
+  const ratio = boss.hp / boss.maxhp;
+  let advanced = false;
+  for (let i=0; i<m.phases.length; i++){
+    const ph = m.phases[i];
+    const targetPhase = i + 1;
+    if (ratio <= ph.at && (boss.phase || 0) < targetPhase){
+      boss.phase = targetPhase;
+      boss.atk = Math.round(boss.baseAtk * (ph.atkMul || 1));
+      boss.def = boss.baseDef + (ph.defAdd || 0);
+      boss.activeSkill = ph.skill || boss.activeSkill || m.skill;
+      bLog('🔥 ' + m.name + ' 进入【' + ph.name + '】！' + (ph.desc || '') + '（攻击×' + (ph.atkMul || 1) + '，防御+' + (ph.defAdd || 0) + '）', 'hurt');
+      if (ph.taunt) bLog('💬 ' + m.name + '：' + ph.taunt, 'taunt');
+      const phaseSkill = ph.skill || boss.activeSkill;
+      if (phaseSkill && Array.isArray(phaseSkill.summon)) summonEnemies(phaseSkill.summon);
+      advanced = true;
+    }
+  }
+  if (advanced) renderBattle();
+}
+
 function monsterTurn(){
   const living = PARTY.filter(x=>x.hp>0);
   if (!living.length){ endBattle(false); return; }
   const boss = B.enemies.find(e=>e.boss);
   if (boss){
-    if (!boss.enraged && boss.hp / boss.maxhp < 0.5){
-      boss.enraged = true;
-      boss.atk = Math.round(boss.atk * 1.25);
-      bLog('🔥 ' + boss.m.name + ' 进入狂暴状态，攻击提升 25%！', 'hurt');
-    }
-    if (boss.m.skill && Math.random() < (boss.m.skill.chance + (boss.enraged ? 0.2 : 0))){ useBossSkill(boss); }
+    checkBossPhase(boss);
+    const active = boss.activeSkill || boss.m.skill;
+    if (active && Math.random() < (active.chance || 0.3)){ useBossSkill(boss); }
     else { normalAttack(boss); }
   }
   // 被召唤的小怪轮流攻击
@@ -3633,39 +3773,25 @@ function normalAttack(e){
   const target = pick(living);
   const c = charDef(target.id);
   const dmg = Math.max(1, Math.round(e.atk - c.def*0.6 - armorReduction(target) + rand(0,4)));
-  target.hp = Math.max(0, target.hp - dmg);
-  fxFloat('-' + dmg, 'fx-dmg');
-  bLog(e.m.emoji + ' ' + e.m.name + ' 攻击了 ' + c.name + '，造成 <b>' + dmg + '</b> 点伤害！', 'hurt');
-  if (target.hp <= 0) bLog(c.emoji + ' ' + c.name + ' 倒下了！', 'info');
+  applyEnemyDamage(e, target, dmg, {});
 }
 
 function useBossSkill(boss){
-  const sk = boss.m.skill;
+  const sk = boss.activeSkill || boss.m.skill;
+  if (!sk) return normalAttack(boss);
   if (sk.type === 'aoe'){
     const living = PARTY.filter(x=>x.hp>0);
     if (living.length){
       const base = Math.max(1, Math.round(boss.atk * sk.dmg + rand(0,3)));
-      living.forEach(t=>{
-        const dmg = Math.max(1, base - Math.round(charDef(t.id).def * 0.3) - armorReduction(t));
-        t.hp = Math.max(0, t.hp - dmg);
-      });
       bLog('💥 ' + boss.m.name + ' 使出【' + sk.name + '】！全体队员受到约 <b>' + base + '</b> 点重创！', 'hurt');
       fxFloat('-' + base + '!', 'fx-crit');
-      PARTY.forEach(x=>{ if (x.hp<=0) bLog(charDef(x.id).emoji + ' ' + charDef(x.id).name + ' 倒下了！', 'info'); });
+      living.forEach(t=>{
+        const dmg = Math.max(1, base - Math.round(charDef(t.id).def * 0.3) - armorReduction(t));
+        applyEnemyDamage(boss, t, dmg, { silent:true });
+      });
     }
   }
-  if (Array.isArray(sk.summon)){
-    sk.summon.forEach(s=>{
-      const qty = rand(s.qty[0], s.qty[1]);
-      for (let i=0;i<qty;i++){
-        if (B.enemies.length >= 6) break;
-        const m = MONSTERS[s.id];
-        const st = monsterStats(m);
-        B.enemies.push({ m:m, maxhp:st.hp, hp:st.hp, atk:st.atk, def:st.def, boss:false });
-      }
-    });
-    bLog('✨ ' + boss.m.name + ' 召唤出新的爪牙！', 'info');
-  }
+  if (Array.isArray(sk.summon)) summonEnemies(sk.summon);
 }
 
 function endBattle(win){
@@ -3974,8 +4100,8 @@ function renderShop(){
   const equipHtml = EQUIP.map(e=>{
     const owned = PARTY.some(m=> (e.slot==='weapon' && m.weapon===e.id) || (e.slot==='armor' && m.armor===e.id));
     return '<div class="recipe shop-item">'
-      + '<div style="font-size:22px;">' + (e.slot==='weapon'?'⚔️':'🛡️') + '</div>'
-      + '<div style="flex:1;text-align:left;"><b>' + e.name + '</b><div class="shop-desc">' + e.desc + '</div><div style="font-size:11px;color:#a67c00;">✦ ' + (e.passive||'') + '</div></div>'
+      + '<div style="font-size:22px;">' + (e.emoji || (e.slot==='weapon'?'⚔️':'🛡️')) + '</div>'
+      + '<div style="flex:1;text-align:left;"><b>' + e.name + '</b><div class="shop-desc">' + e.desc + '</div><div style="font-size:11px;color:#a67c00;line-height:1.6;">✦ ' + (e.passive||'') + (e.special ? '<br>★ ' + e.special.name + '：' + e.special.desc : '') + '</div></div>'
       + '<div style="color:#a67c00;font-weight:bold;">🪙' + e.price + '</div>'
       + (owned ? '<span class="owned-tag">已装备</span>'
         : '<button class="btn" onclick="buyEquip(\'' + e.id + '\')">购买</button>')
@@ -4003,7 +4129,7 @@ function renderEquip(){
       + '<div class="cc-name">' + c.name + ' Lv.' + (m.lvl||1) + '</div>'
       + '<div class="cc-hp">攻击' + ps.atk + ' 防御' + ps.def + '</div>'
       + '<div class="cc-hp" style="color:var(--gold-2);">' + (eq.weapon?eq.weapon.name:'无武器') + ' / ' + (eq.armor?eq.armor.name:'无防具') + '</div>'
-      + '<div class="cc-hp" style="color:#a67c00;font-size:11px;">' + (eq.weapon?'✦ '+eq.weapon.passive:'') + (eq.armor?'　✦ '+eq.armor.passive:'') + '</div>'
+      + '<div class="cc-hp" style="color:#a67c00;font-size:11px;line-height:1.6;">' + (eq.weapon?'✦ '+eq.weapon.passive + '｜★ ' + eq.weapon.special.name + '：' + eq.weapon.special.desc : '') + (eq.armor?'<br>✦ '+eq.armor.passive + '｜★ ' + eq.armor.special.name + '：' + eq.armor.special.desc : '') + '</div>'
       + '</div>';
   }).join('');
 }

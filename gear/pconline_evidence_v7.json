@@ -1,0 +1,716 @@
+{
+  "m-003": {
+    "id": "m-003",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-005": {
+    "id": "m-005",
+    "status": "no_match",
+    "query": "SKN 朱雀 碳纤维版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=SKN%20%E6%9C%B1%E9%9B%80%20%E7%A2%B3%E7%BA%A4%E7%BB%B4%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-006": {
+    "id": "m-006",
+    "status": "no_match",
+    "query": "狼图 M8 Pro",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%8B%BC%E5%9B%BE%20M8%20Pro",
+    "captured_at": "2026-08-19"
+  },
+  "m-007": {
+    "id": "m-007",
+    "status": "no_match",
+    "query": "Razer 雷蛇 蝰蛇标准版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Razer%20%E9%9B%B7%E8%9B%87%20%E8%9D%B0%E8%9B%87%E6%A0%87%E5%87%86%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-011": {
+    "id": "m-011",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-009": {
+    "id": "m-009",
+    "status": "no_match",
+    "query": "Edifier 漫步者 G3M Pro 升级版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Edifier%20%E6%BC%AB%E6%AD%A5%E8%80%85%20G3M%20Pro%20%E5%8D%87%E7%BA%A7%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-013": {
+    "id": "m-013",
+    "status": "no_match",
+    "query": "迈从 A5 系列",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%BF%88%E4%BB%8E%20A5%20%E7%B3%BB%E5%88%97",
+    "captured_at": "2026-08-19"
+  },
+  "m-014": {
+    "id": "m-014",
+    "status": "no_match",
+    "query": "Darmoshark 达摩鲨 M3S",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Darmoshark%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3S",
+    "captured_at": "2026-08-19"
+  },
+  "m-017": {
+    "id": "m-017",
+    "status": "no_match",
+    "query": "迈从 A7 V3 Ultra+",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%BF%88%E4%BB%8E%20A7%20V3%20Ultra%2B",
+    "captured_at": "2026-08-19"
+  },
+  "m-019": {
+    "id": "m-019",
+    "status": "no_match",
+    "query": "ROG 龙鳞 Ace Mini 有线版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=ROG%20%E9%BE%99%E9%B3%9E%20Ace%20Mini%20%E6%9C%89%E7%BA%BF%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-023": {
+    "id": "m-023",
+    "status": "no_match",
+    "query": "Darmoshark 达摩鲨 M9",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Darmoshark%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M9",
+    "captured_at": "2026-08-19"
+  },
+  "m-024": {
+    "id": "m-024",
+    "status": "no_match",
+    "query": "Lamzu 兰族 荆棘 V2",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Lamzu%20%E5%85%B0%E6%97%8F%20%E8%8D%86%E6%A3%98%20V2",
+    "captured_at": "2026-08-19"
+  },
+  "m-027": {
+    "id": "m-027",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-029": {
+    "id": "m-029",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-030": {
+    "id": "m-030",
+    "status": "no_match",
+    "query": "黑爵 T520 AI版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%BB%91%E7%88%B5%20T520%20AI%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-031": {
+    "id": "m-031",
+    "status": "no_match",
+    "query": "ZOWIE 卓威 EC2-CW（无线）",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=ZOWIE%20%E5%8D%93%E5%A8%81%20EC2-CW%EF%BC%88%E6%97%A0%E7%BA%BF%EF%BC%89",
+    "captured_at": "2026-08-19"
+  },
+  "m-032": {
+    "id": "m-032",
+    "status": "no_match",
+    "query": "Logitech 罗技 G Pro Wireless（GPX 一代）",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Logitech%20%E7%BD%97%E6%8A%80%20G%20Pro%20Wireless%EF%BC%88GPX%20%E4%B8%80%E4%BB%A3%EF%BC%89",
+    "captured_at": "2026-08-19"
+  },
+  "m-042": {
+    "id": "m-042",
+    "status": "no_match",
+    "query": "卓威 ZOWIE U2-DW 4K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20ZOWIE%20U2-DW%204K",
+    "captured_at": "2026-08-19"
+  },
+  "m-043": {
+    "id": "m-043",
+    "status": "no_match",
+    "query": "卓威 ZOWIE EC2-DW 4K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20ZOWIE%20EC2-DW%204K",
+    "captured_at": "2026-08-19"
+  },
+  "m-044": {
+    "id": "m-044",
+    "status": "no_match",
+    "query": "卓威 ZOWIE ZA13-DW 4K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20ZOWIE%20ZA13-DW%204K",
+    "captured_at": "2026-08-19"
+  },
+  "m-045": {
+    "id": "m-045",
+    "status": "no_match",
+    "query": "卓威 ZOWIE FK2-DW 4K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20ZOWIE%20FK2-DW%204K",
+    "captured_at": "2026-08-19"
+  },
+  "m-046": {
+    "id": "m-046",
+    "status": "no_match",
+    "query": "卓威 ZOWIE EC2-C",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20ZOWIE%20EC2-C",
+    "captured_at": "2026-08-19"
+  },
+  "m-047": {
+    "id": "m-047",
+    "status": "no_match",
+    "query": "雷柏 VT7 Ultra 星闪双8K版",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E6%9F%8F%20VT7%20Ultra%20%E6%98%9F%E9%97%AA%E5%8F%8C8K%E7%89%88",
+    "captured_at": "2026-08-19"
+  },
+  "m-048": {
+    "id": "m-048",
+    "status": "no_match",
+    "query": "雷柏 VT9s MAX 大师版V2 双8K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E6%9F%8F%20VT9s%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2%20%E5%8F%8C8K",
+    "captured_at": "2026-08-19"
+  },
+  "m-050": {
+    "id": "m-050",
+    "status": "no_match",
+    "query": "雷柏 VT3 MAX 大师版V2 双8K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E6%9F%8F%20VT3%20MAX%20%E5%A4%A7%E5%B8%88%E7%89%88V2%20%E5%8F%8C8K",
+    "captured_at": "2026-08-19"
+  },
+  "m-056": {
+    "id": "m-056",
+    "status": "no_match",
+    "query": "ATK 烈空 Z1 Ultra",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=ATK%20%E7%83%88%E7%A9%BA%20Z1%20Ultra",
+    "captured_at": "2026-08-19"
+  },
+  "m-057": {
+    "id": "m-057",
+    "status": "no_match",
+    "query": "ATK A9 大师版+",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=ATK%20A9%20%E5%A4%A7%E5%B8%88%E7%89%88%2B",
+    "captured_at": "2026-08-19"
+  },
+  "m-058": {
+    "id": "m-058",
+    "status": "matched",
+    "query": "VXE MAD R Major",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VXE%20MAD%20R%20Major",
+    "title": "VXE MAD R MAJOR",
+    "raw_price": "￥399",
+    "image": "//img4.pconline.com.cn/pconline/images/product/20240730/21655232_sn7.jpg",
+    "captured_at": "2026-08-19"
+  },
+  "m-059": {
+    "id": "m-059",
+    "status": "matched",
+    "query": "VXE MAD R",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VXE%20MAD%20R",
+    "title": "VXE MAD R",
+    "raw_price": "￥299",
+    "image": "//img4.pconline.com.cn/pconline/images/product/20240730/21655232_sn7.jpg",
+    "captured_at": "2026-08-19"
+  },
+  "m-066": {
+    "id": "m-066",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-067": {
+    "id": "m-067",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-068": {
+    "id": "m-068",
+    "status": "no_match",
+    "query": "Razer 雷蛇 毒蝰V3 Pro",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=Razer%20%E9%9B%B7%E8%9B%87%20%E6%AF%92%E8%9D%B0V3%20Pro",
+    "captured_at": "2026-08-19"
+  },
+  "m-070": {
+    "id": "m-070",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-071": {
+    "id": "m-071",
+    "status": "no_match",
+    "query": "狼蛛 SC880 Ultra",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%8B%BC%E8%9B%9B%20SC880%20Ultra",
+    "captured_at": "2026-08-19"
+  },
+  "m-073": {
+    "id": "m-073",
+    "status": "no_match",
+    "query": "英菲克 IN9 Pro",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9%20Pro",
+    "captured_at": "2026-08-19"
+  },
+  "m-075": {
+    "id": "m-075",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-077": {
+    "id": "m-077",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-078": {
+    "id": "m-078",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m-079": {
+    "id": "m-079",
+    "status": "no_match",
+    "query": "黑爵 AJ139P NL V3 Ultra 星闪",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%BB%91%E7%88%B5%20AJ139P%20NL%20V3%20Ultra%20%E6%98%9F%E9%97%AA",
+    "captured_at": "2026-08-19"
+  },
+  "m-080": {
+    "id": "m-080",
+    "status": "no_match",
+    "query": "SKN 青龙4.0 Ultra",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=SKN%20%E9%9D%92%E9%BE%994.0%20Ultra",
+    "captured_at": "2026-08-19"
+  },
+  "m-081": {
+    "id": "m-081",
+    "status": "no_match",
+    "query": "血手幽灵 J90",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%A1%80%E6%89%8B%E5%B9%BD%E7%81%B5%20J90",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0006": {
+    "id": "m2-0006",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0008": {
+    "id": "m2-0008",
+    "status": "no_match",
+    "query": "卓威 EC2-CW（无线）",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20EC2-CW%EF%BC%88%E6%97%A0%E7%BA%BF%EF%BC%89",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0009": {
+    "id": "m2-0009",
+    "status": "no_match",
+    "query": "罗技 G Pro Wireless（GPX 一代）",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G%20Pro%20Wireless%EF%BC%88GPX%20%E4%B8%80%E4%BB%A3%EF%BC%89",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0011": {
+    "id": "m2-0011",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0012": {
+    "id": "m2-0012",
+    "status": "no_match",
+    "query": "罗技 GPW4 鹰眼（GPX2 DEX）",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20GPW4%20%E9%B9%B0%E7%9C%BC%EF%BC%88GPX2%20DEX%EF%BC%89",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0014": {
+    "id": "m2-0014",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0015": {
+    "id": "m2-0015",
+    "status": "no_match",
+    "query": "罗技 G305 LIGHTSPEED",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G305%20LIGHTSPEED",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0022": {
+    "id": "m2-0022",
+    "status": "no_match",
+    "query": "罗技 G402 Hyperion Fury",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G402%20Hyperion%20Fury",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0023": {
+    "id": "m2-0023",
+    "status": "no_match",
+    "query": "罗技 G603 LIGHTSPEED",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G603%20LIGHTSPEED",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0024": {
+    "id": "m2-0024",
+    "status": "matched",
+    "query": "罗技 G604 LIGHTSPEED",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G604%20LIGHTSPEED",
+    "title": "罗技 G604 LIGHTSPEED",
+    "raw_price": "￥699",
+    "image": "//img.pconline.com.cn/images/product/1224/1224068/z_sn7.jpg",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0025": {
+    "id": "m2-0025",
+    "status": "no_match",
+    "query": "罗技 G600 MMO",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G600%20MMO",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0026": {
+    "id": "m2-0026",
+    "status": "no_match",
+    "query": "罗技 G PRO 2 LIGHTSPEED",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G%20PRO%202%20LIGHTSPEED",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0027": {
+    "id": "m2-0027",
+    "status": "no_match",
+    "query": "罗技 G705 Aurora",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G705%20Aurora",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0028": {
+    "id": "m2-0028",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0029": {
+    "id": "m2-0029",
+    "status": "no_match",
+    "query": "罗技 G703 HERO",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G703%20HERO",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0030": {
+    "id": "m2-0030",
+    "status": "matched",
+    "query": "罗技 G903 LIGHTSPEED",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G903%20LIGHTSPEED",
+    "title": "罗技 G903 LIGHTSPEED",
+    "raw_price": "￥899",
+    "image": "//img.pconline.com.cn/images/upload/upc/tx/pconline_product/1904/22/c3/143606426_1555866916865_sn7.jpg",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0031": {
+    "id": "m2-0031",
+    "status": "no_match",
+    "query": "罗技 G900 Chaos Spectrum",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20G900%20Chaos%20Spectrum",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0033": {
+    "id": "m2-0033",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0035": {
+    "id": "m2-0035",
+    "status": "no_match",
+    "query": "罗技 MX Master 4S",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20MX%20Master%204S",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0037": {
+    "id": "m2-0037",
+    "status": "no_match",
+    "query": "罗技 M720 Triathlon",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E7%BD%97%E6%8A%80%20M720%20Triathlon",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0038": {
+    "id": "m2-0038",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0039": {
+    "id": "m2-0039",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0040": {
+    "id": "m2-0040",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0043": {
+    "id": "m2-0043",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0046": {
+    "id": "m2-0046",
+    "status": "no_match",
+    "query": "雷蛇 DeathAdder V3 8K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20DeathAdder%20V3%208K",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0045": {
+    "id": "m2-0045",
+    "status": "no_match",
+    "query": "雷蛇 DeathAdder V3 HyperSpeed",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20DeathAdder%20V3%20HyperSpeed",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0050": {
+    "id": "m2-0050",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0047": {
+    "id": "m2-0047",
+    "status": "no_match",
+    "query": "雷蛇 Viper 8K",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Viper%208K",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0051": {
+    "id": "m2-0051",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0053": {
+    "id": "m2-0053",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0054": {
+    "id": "m2-0054",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0055": {
+    "id": "m2-0055",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0056": {
+    "id": "m2-0056",
+    "status": "no_match",
+    "query": "雷蛇 Basilisk Ultimate",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Basilisk%20Ultimate",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0057": {
+    "id": "m2-0057",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0058": {
+    "id": "m2-0058",
+    "status": "no_match",
+    "query": "雷蛇 Naga V2 Pro",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Naga%20V2%20Pro",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0059": {
+    "id": "m2-0059",
+    "status": "no_match",
+    "query": "雷蛇 Naga X",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Naga%20X",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0066": {
+    "id": "m2-0066",
+    "status": "no_match",
+    "query": "雷蛇 Mamba Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Mamba%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0065": {
+    "id": "m2-0065",
+    "status": "no_match",
+    "query": "雷蛇 Pro Click Mini",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E9%9B%B7%E8%9B%87%20Pro%20Click%20Mini",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0067": {
+    "id": "m2-0067",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0069": {
+    "id": "m2-0069",
+    "status": "no_match",
+    "query": "赛睿 Rival 3 Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Rival%203%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0072": {
+    "id": "m2-0072",
+    "status": "no_match",
+    "query": "赛睿 Rival 650 Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Rival%20650%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0076": {
+    "id": "m2-0076",
+    "status": "no_match",
+    "query": "赛睿 Sensei RAW",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Sensei%20RAW",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0080": {
+    "id": "m2-0080",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0079": {
+    "id": "m2-0079",
+    "status": "no_match",
+    "query": "赛睿 Prime Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Prime%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0084": {
+    "id": "m2-0084",
+    "status": "no_match",
+    "query": "赛睿 Aerox 3 Ghost",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Aerox%203%20Ghost",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0083": {
+    "id": "m2-0083",
+    "status": "no_match",
+    "query": "赛睿 Aerox 3 Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Aerox%203%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0088": {
+    "id": "m2-0088",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0086": {
+    "id": "m2-0086",
+    "status": "no_match",
+    "query": "赛睿 Aerox 5 Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E8%B5%9B%E7%9D%BF%20Aerox%205%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0089": {
+    "id": "m2-0089",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0092": {
+    "id": "m2-0092",
+    "status": "no_match",
+    "query": "卓威 EC1-CW",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20EC1-CW",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0095": {
+    "id": "m2-0095",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0096": {
+    "id": "m2-0096",
+    "status": "no_match",
+    "query": "卓威 FK2-C",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20FK2-C",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0099": {
+    "id": "m2-0099",
+    "status": "no_match",
+    "query": "卓威 S1-DW",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=%E5%8D%93%E5%A8%81%20S1-DW",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0104": {
+    "id": "m2-0104",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0107": {
+    "id": "m2-0107",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0108": {
+    "id": "m2-0108",
+    "status": "no_match",
+    "query": "VAXEE XE",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20XE",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0109": {
+    "id": "m2-0109",
+    "status": "no_match",
+    "query": "VAXEE XE Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20XE%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0110": {
+    "id": "m2-0110",
+    "status": "no_match",
+    "query": "VAXEE XE-S",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20XE-S",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0111": {
+    "id": "m2-0111",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0112": {
+    "id": "m2-0112",
+    "status": "no_match",
+    "query": "VAXEE NP-01S",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20NP-01S",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0113": {
+    "id": "m2-0113",
+    "status": "no_match",
+    "query": "VAXEE NP-01 Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20NP-01%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0114": {
+    "id": "m2-0114",
+    "status": "no_match",
+    "query": "VAXEE NP-01S Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20NP-01S%20Wireless",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0115": {
+    "id": "m2-0115",
+    "status": "no_match",
+    "query": "VAXEE Outset AX",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20Outset%20AX",
+    "captured_at": "2026-08-19"
+  },
+  "m2-0116": {
+    "id": "m2-0116",
+    "status": "no_match",
+    "query": "VAXEE Outset AX Wireless",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20Outset%20AX%20Wireless",
+    "captured_at": "2026-08-19"
+  }
+}

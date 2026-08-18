@@ -14,3 +14,4 @@
 - Codex 图片代理已启用：对话里直接上传图片即可，代理自动转 GLM-4V 描述并缓存；启动脚本 `D:\opencode-work\scripts\start_codex_vision_proxy.bat`。
 - 中断后先归档旧线程，再按本 README 开新会话接力。
 - 自查与排查：`D:\桌面desktop\Codex自查清单.md`、`Codex中断排查.md`、`Codex省token规则.md`。
+- **推送边界**：未经明确同意禁止 `git push`；`push` 不等于上线；上线需单独确认部署方式。GitHub Pages 若从 master 自动发布，push master 会同步公开网址。

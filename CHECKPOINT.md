@@ -6,7 +6,7 @@
 - 本轮为 `enrich_prices.cjs` 增加 `--extra-queries` 品类词查询，复跑剩余型号；升级 `cleanup_evidence.cjs` 覆盖耳机配件和显示器品牌误配。
 - 工具脚本新增：品类词查询、批处理 `--quiet` 参数、品牌别名表、耳机/显示器配件拦截；`products.json` → `index.html` 已重新内嵌。
 - 验证：`verify_gear.cjs` 10 项通过，桌面/移动端控制台 0 错误，375px 无横向溢出。
-- 工作区已改 `gear/products.json`、`price_evidence_v7.json`、清洗/核价脚本和文档；本轮本地提交见下文，仍未 push。
+- 工作区已改 `gear/products.json`、`price_evidence_v7.json`、清洗/核价脚本和文档；本轮本地提交为 `db794a4`，仍未 push。
 - 下一步：对剩余 1966 款缺价、1902 款缺图逐条人工/浏览器核价补图，优先显示器、电竞椅、外设配件；用户确认后按发布前检查清单 push。
 
 ## 2026-08-19 GearPick v7.0 核价/配图 + 迷宫饭验收口径

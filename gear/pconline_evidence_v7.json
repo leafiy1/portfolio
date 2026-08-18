@@ -721,20 +721,23 @@
   },
   "mon-0002": {
     "id": "mon-0002",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 24GN650",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2024GN650",
     "captured_at": "2026-08-19"
   },
   "mon-0004": {
     "id": "mon-0004",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GN600",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GN600",
     "captured_at": "2026-08-19"
   },
   "mon-0005": {
     "id": "mon-0005",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GN650",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GN650",
     "captured_at": "2026-08-19"
   },
   "mon-0003": {
@@ -746,20 +749,23 @@
   },
   "mon-0006": {
     "id": "mon-0006",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GN800",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GN800",
     "captured_at": "2026-08-19"
   },
   "mon-0007": {
     "id": "mon-0007",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GN850",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GN850",
     "captured_at": "2026-08-19"
   },
   "mon-0008": {
     "id": "mon-0008",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GP850",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GP850",
     "captured_at": "2026-08-19"
   },
   "mon-0009": {
@@ -776,8 +782,9 @@
   },
   "mon-0011": {
     "id": "mon-0011",
-    "status": "fail",
-    "reason": "HTTP 503",
+    "status": "no_match",
+    "query": "LG UltraGear 27GS75Q",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GS75Q",
     "captured_at": "2026-08-19"
   },
   "mon-0012": {
@@ -785,6 +792,59 @@
     "status": "no_match",
     "query": "LG UltraGear 27GS95QE",
     "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GS95QE",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0014": {
+    "id": "mon-0014",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0013": {
+    "id": "mon-0013",
+    "status": "no_match",
+    "query": "LG UltraGear 27GR95QE",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GR95QE",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0015": {
+    "id": "mon-0015",
+    "status": "no_match",
+    "query": "LG UltraGear 32GN650",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2032GN650",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0016": {
+    "id": "mon-0016",
+    "status": "no_match",
+    "query": "LG UltraGear 32GP850",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2032GP850",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0018": {
+    "id": "mon-0018",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0017": {
+    "id": "mon-0017",
+    "status": "no_match",
+    "query": "LG UltraGear 32GQ950",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2032GQ950",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0019": {
+    "id": "mon-0019",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0020": {
+    "id": "mon-0020",
+    "status": "no_match",
+    "query": "LG UltraGear 34GS95QE",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2034GS95QE",
     "captured_at": "2026-08-19"
   }
 }

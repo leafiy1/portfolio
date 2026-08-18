@@ -1,7 +1,7 @@
 {
   "meta": {
-  "dataset_name": "GearPick 外设推荐 v7.1",
-  "version": "7.1",
+  "dataset_name": "GearPick 外设推荐 v7.2",
+  "version": "7.2",
     "updated_at": "2026-08-19",
     "maintainer": "陈昊",
     "counts": {
@@ -14,9 +14,10 @@
       "accessories": 252
     },
     "source_policy": "三重信源交叉验证：fireopen职业选手配置 / B站UP主横评 / 社区口碑（NGA·Reddit）。仅收录至少一个公开信源可核实的型号；不虚构参数。",
-  "price_policy": "价格仅收录可核实的电商/官网参考价；未核实型号保留“价格待核实”，不估算。已核实价格记录 price_verified_at 与 price_sources。",
+    "price_policy": "价格仅收录可核实的电商/官网参考价；未核实型号保留“价格待核实”，不估算。已核实价格记录 price_verified_at 与 price_sources。",
     "link_policy": "信源链接优先使用稳定的官网首页/搜索入口；具体评测深链以【待补充】标注（由候选人核实后替换）。",
     "changelog": [
+    "v7.2（2026-08-19）：启用品类词查询复跑剩余型号，参考价 1051→1104、产品图 1116→1168、同时有价有图 924→977；进一步清洗耳机配件与显示器品牌误配。",
     "v7.1（2026-08-19）：全库复跑慢慢买核价并加强误配清洗，参考价 963→1051、产品图 1057→1116、同时有价有图 856→924；配件/品牌错配记录已回退。",
       "v6.0（2026-08-18）：新增显示器 306 款 / 电竞椅 116 款 / 外设配件 252 款，总库 3070 款；新品类沿用公开目录口径，价格与参数待核实。",
       "v5.0（2026-08-18）：公开目录扩充至数千款，新增鼠标/键盘/鼠标垫/耳机型号并统一标注“待核实”，价格与参数未硬编。",
@@ -822,7 +823,26 @@
           "url": "https://search.bilibili.com/all?keyword=%E9%94%AE%E7%9C%89%E9%BC%A0%E7%9C%BC%E5%A4%8F%E5%8D%B7%E6%AF%9B%20%E6%8E%A8%E8%8D%90"
         }
       ],
-      "verification_status": "单信源（待补强）"
+      "verification_status": "单信源（待补强）",
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Darmoshark%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3S&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/159511/27/39221/34991/64cdef9dF4897f797/07803398351cafde.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Darmoshark%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3S&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m-015",
@@ -1909,7 +1929,26 @@
           "url": "https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"
         }
       ],
-      "verification_status": "单信源（待补强）"
+      "verification_status": "单信源（待补强）",
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20T520%20AI%E7%89%88%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i3/369155151/O1CN010Sbn8B1nvDGjhk3wN_!!369155151.png_400x400.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20T520%20AI%E7%89%88%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m-031",
@@ -4535,7 +4574,7 @@
       "name": "狼蛛 SC880 Ultra",
       "brand": "狼蛛",
       "price": 399,
-      "price_note": "B站首发评测价，随活动浮动",
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
       "category": "中端",
       "sensor": "PAW3955",
       "polling_rate": 8000,
@@ -4575,7 +4614,25 @@
       "notes": [
         "镁合金镂空外壳；首发399元"
       ],
-      "verification_status": "单信源（待补强）"
+      "verification_status": "单信源（待补强）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8B%BC%E8%9B%9B%20%E7%8B%BC%E8%9B%9B%20SC880%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/504249/16/3849/259449/6a7f267bFeb0049ea/00835dc5dc86bf42.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8B%BC%E8%9B%9B%20%E7%8B%BC%E8%9B%9B%20SC880%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m-072",
@@ -4978,7 +5035,7 @@
         "通用FPS"
       ],
       "recommend_reason": [
-        "价格待核实；定位入门中端；推荐点评：3395 4K",
+        "★199元（抖音小店）；定位入门中端；推荐点评：3395 4K",
         "?g · 三模，适配中手型（抓握、趴握）",
         "核心参数：PAW3395 / 4000Hz"
       ],
@@ -4987,8 +5044,8 @@
       ],
       "verification_status": "单信源（待补强）",
       "price": 179,
-      "price_note": "中关村在线/什么值得买公开快照到手价，活动价可能浮动",
-      "price_verified_at": "2026-08-17",
+      "price_note": "电商参考价（抖音小店，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "price_sources": [
         {
           "type": "news",
@@ -4999,8 +5056,23 @@
           "type": "ecommerce",
           "label": "移动搜狗商品快照：黑爵 AJ139 Pro",
           "url": "https://wap.sogou.com/web/searchList.jsp?keyword=%E9%BB%91%E7%88%B5%20AJ139%20Pro%204K%E7%89%88"
+        },
+        {
+          "type": "ecommerce",
+          "platform": "抖音小店",
+          "label": "慢慢买全网比价·抖音小店",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20AJ139%20Pro%204K%E7%89%88%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
         }
-      ]
+      ],
+      "image": "https://p9-aio.ecombdimg.com/obj/ecom-shop-material/hQGUrDL_m_150b1b144d9ce30ec3db8177732ea7ee_sx_220138_www800-800",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "抖音小店",
+        "label": "商品图·抖音小店",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20AJ139%20Pro%204K%E7%89%88%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m-079",
@@ -6030,9 +6102,9 @@
       "id": "m2-0022",
       "name": "罗技 G402 Hyperion Fury",
       "brand": "罗技",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 179,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -6053,7 +6125,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "connection": "USB"
+      "connection": "USB",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G402%20Hyperion%20Fury%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/445509/14/8503/74519/6a1efaecFc315144e/0083320320380fda.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G402%20Hyperion%20Fury%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0023",
@@ -6348,9 +6437,9 @@
       "id": "m2-0031",
       "name": "罗技 G900 Chaos Spectrum",
       "brand": "罗技",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1856,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -6371,7 +6460,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G900%20Chaos%20Spectrum%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/492458/37/12670/35435/6a8099d6F37d6a0b3/0083320320a983bc.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G900%20Chaos%20Spectrum%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0032",
@@ -6890,9 +6996,9 @@
       "id": "m2-0045",
       "name": "雷蛇 DeathAdder V3 HyperSpeed",
       "brand": "雷蛇",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1456,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -6913,7 +7019,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20DeathAdder%20V3%20HyperSpeed%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/503244/1/6224/34786/6a849c59F4f20065c/00833203207eab3a.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20DeathAdder%20V3%20HyperSpeed%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0046",
@@ -7277,9 +7400,9 @@
       "id": "m2-0056",
       "name": "雷蛇 Basilisk Ultimate",
       "brand": "雷蛇",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 2330,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -7300,7 +7423,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Basilisk%20Ultimate%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i3/36263111/O1CN01Mi09trJEeQL1pIOu_!!36263111.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Basilisk%20Ultimate%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0057",
@@ -7335,9 +7475,9 @@
       "id": "m2-0058",
       "name": "雷蛇 Naga V2 Pro",
       "brand": "雷蛇",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 2544.45,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -7358,7 +7498,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Naga%20V2%20Pro%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/508546/21/1644/37672/6a834535Fd0ca8f88/008332032016775f.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Naga%20V2%20Pro%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0059",
@@ -8165,9 +8322,9 @@
       "id": "m2-0079",
       "name": "赛睿 Prime Wireless",
       "brand": "赛睿",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 149,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -8188,15 +8345,32 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Prime%20Wireless%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i2/1921949222/O1CN01nRwva2muwOB1chua_!!4611686018427387430-0-item_pic.jpg_400x400.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Prime%20Wireless%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0080",
       "name": "赛睿 Prime Mini Wireless",
       "brand": "赛睿",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 484.2,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -8217,7 +8391,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Prime%20Mini%20Wireless&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/382096/25/5447/31336/694cd38dFc292db30/d15219a01b9de3af.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Prime%20Mini%20Wireless&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0081",
@@ -8315,9 +8506,9 @@
       "id": "m2-0083",
       "name": "赛睿 Aerox 3 Wireless",
       "brand": "赛睿",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 699,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -8338,7 +8529,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Aerox%203%20Wireless&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/188738/32/37973/55988/65127c16Fdf4fb34b/946f3eaa10ec4f4d.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20Aerox%203%20Wireless&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0084",
@@ -12035,9 +12243,9 @@
       "id": "m2-0189",
       "name": "迈从 A5 Ultra",
       "brand": "迈从",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 286.15,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -12058,7 +12266,24 @@
       ],
       "verification_status": "待核实",
       "type": "三模",
-      "connection": "USB+2.4G+蓝牙"
+      "connection": "USB+2.4G+蓝牙",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20A5%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i3/2213920268321/O1CN01O2j8Fe2BL4oZlq5fR_!!2213920268321.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20A5%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0190",
@@ -12093,9 +12318,9 @@
       "id": "m2-0191",
       "name": "迈从 A7 Ultra",
       "brand": "迈从",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 339,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -12116,7 +12341,24 @@
       ],
       "verification_status": "待核实",
       "type": "三模",
-      "connection": "USB+2.4G+蓝牙"
+      "connection": "USB+2.4G+蓝牙",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20A7%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i3/2213920268321/O1CN01vd1U2I2BL4om3PC3r_!!2213920268321.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20A7%20Ultra%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0192",
@@ -17469,9 +17711,9 @@
       "id": "m2-0350",
       "name": "Ninjutso Sora V2",
       "brand": "Ninjutso",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 549,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -17492,7 +17734,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Ninjutso%20Sora%20V2&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/2694210204/O1CN01tDYO1K1DNTtK3kgdz_!!2694210204.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Ninjutso%20Sora%20V2&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0351",
@@ -18294,9 +18553,9 @@
       "id": "m2-0372",
       "name": "Attack Shark R1",
       "brand": "Attack Shark",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 189,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -18317,7 +18576,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Attack%20Shark%20Attack%20Shark%20R1%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t20280603/449267/11/3314/42055/6a21492aF2377825a/0a023203203c7d8f.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Attack%20Shark%20Attack%20Shark%20R1%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0373",
@@ -18761,7 +19037,15 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20M3&c=search",
           "captured_at": "2026-08-19"
         }
-      ]
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/348137/13/18232/22459/690316eaF4522dc0f/b1f5a1d77eb980c4.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20M3&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0388",
@@ -18796,9 +19080,9 @@
       "id": "m2-0389",
       "name": "Keychron M4",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 349,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -18819,7 +19103,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "connection": "USB"
+      "connection": "USB",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20M4&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/233756/28/8155/9288/65816b56F6ab69ee8/12565b0af2e5b58b.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20M4&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0390",
@@ -19737,9 +20038,9 @@
       "id": "m2-0415",
       "name": "Redragon M801",
       "brand": "Redragon",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 765.26,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -19760,7 +20061,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "connection": "USB"
+      "connection": "USB",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Redragon%20M801%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/493231/22/12562/83730/6a7df754F64c3affa/0083320320e22fa5.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Redragon%20M801%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0416",
@@ -19824,9 +20142,9 @@
       "id": "m2-0418",
       "name": "多彩 M800 Pro",
       "brand": "多彩",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 149,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -19847,7 +20165,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "connection": "2.4G"
+      "connection": "2.4G",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20%E5%A4%9A%E5%BD%A9%20M800%20Pro%20%E9%BC%A0%E6%A0%87&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/4130888545/O1CN01Vznre72Czf9mXkXn7_!!4130888545.png_400x400.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20%E5%A4%9A%E5%BD%A9%20M800%20Pro%20%E9%BC%A0%E6%A0%87&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "m2-0419",
@@ -21411,7 +21746,26 @@
           "url": "https://search.bilibili.com/all?keyword=FPS%E5%A4%96%E8%AE%BE%20%E6%8E%A8%E8%8D%90"
         }
       ],
-      "verification_status": "单信源（待补强）"
+      "verification_status": "单信源（待补强）",
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20%E8%BF%88%E4%BB%8E%20G87%20V2&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/2213920268321/O1CN01GMG11d2BL4oLWaK70_!!2213920268321.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20%E8%BF%88%E4%BB%8E%20G87%20V2&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb-013",
@@ -23155,7 +23509,7 @@
       "name": "Keychron Q3 HE",
       "brand": "Keychron",
       "price": 1299,
-      "price_note": "参考价（海外约$219）",
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
       "category": "中高端磁轴",
       "type": "磁轴(RT)",
       "layout": "87",
@@ -23198,7 +23552,25 @@
       "notes": [
         "有线单模"
       ],
-      "verification_status": "双信源交叉验证"
+      "verification_status": "双信源交叉验证",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q3%20HE&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/242110/25/26374/111899/674d7781Fda29f4e5/4be753aadd3f865a.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q3%20HE&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "name": "Keychron K2 HE",
@@ -24376,7 +24748,7 @@
       "name": "珂芝 K75",
       "brand": "珂芝 KZZI",
       "price": 299,
-      "price_note": "参考价",
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
       "category": "中端机械",
       "type": "机械",
       "layout": "75%",
@@ -24412,7 +24784,25 @@
         "连接/性能：无线三模 / 1000Hz"
       ],
       "notes": [],
-      "verification_status": "双信源交叉验证"
+      "verification_status": "双信源交叉验证",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20KZZI%20%E7%8F%82%E8%8A%9D%20K75%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/433109/20/17408/52382/6a0a897fF33e9a157/0083320320eb066a.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20KZZI%20%E7%8F%82%E8%8A%9D%20K75%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "name": "珂芝 Z98",
@@ -25786,9 +26176,9 @@
       "id": "kb2-0028",
       "name": "CHERRY MX 8.2",
       "brand": "CHERRY",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1176,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -25810,13 +26200,23 @@
       "verification_status": "待核实",
       "type": "机械",
       "layout": "87",
-      "image": "https://www.cherry.de/fileadmin/_processed_/d/0/csm_Category_Gaming_94743bb885.jpg",
+      "image": "https://img.alicdn.com/bao/uploaded/i2/1661941219/O1CN013QyNBx1KsLtclV5Km_!!1661941219.jpg",
       "image_source": {
-        "type": "official",
-        "label": "官网产品页",
-        "url": "https://www.cherrymx.de/en/",
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=CHERRY%20CHERRY%20MX%208.2&c=search",
         "captured_at": "2026-08-19"
-      }
+      },
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=CHERRY%20CHERRY%20MX%208.2&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ]
     },
     {
       "id": "kb2-0029",
@@ -25868,9 +26268,9 @@
       "id": "kb2-0030",
       "name": "狼途 LT84",
       "brand": "狼途",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 109,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -25891,7 +26291,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "84"
+      "layout": "84",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8B%BC%E9%80%94%20%E7%8B%BC%E9%80%94%20LT84&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/451954/19/8658/80729/6a2a7397F9197dbde/00833203206825ae.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8B%BC%E9%80%94%20%E7%8B%BC%E9%80%94%20LT84&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0031",
@@ -26639,9 +27056,9 @@
       "id": "kb2-0051",
       "name": "Keychron K7 Max",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 558,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -26662,7 +27079,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "65"
+      "layout": "65",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20K7%20Max&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/205675/39/42001/70462/671b3928F15b3e2f5/e2da30adbb069a74.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20K7%20Max&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0052",
@@ -26985,9 +27419,9 @@
       "id": "kb2-0060",
       "name": "Keychron K2 Pro",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 99,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -27008,7 +27442,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "75"
+      "layout": "75",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20K2%20Pro&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/427324/7/7541/63993/69f1d6aaFbd162e0f/00833203207a400d.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20K2%20Pro&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0061",
@@ -27273,9 +27724,9 @@
       "id": "kb2-0067",
       "name": "Keychron K9 Pro",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 738,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -27296,7 +27747,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "60"
+      "layout": "60",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20K9%20Pro&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/496251/29/12954/164771/6a842dc8F88ce2f98/008332032091773e.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20K9%20Pro&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0068",
@@ -28105,9 +28573,9 @@
       "id": "kb2-0091",
       "name": "Keychron Q5 Pro",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 698,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -28128,7 +28596,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "96"
+      "layout": "96",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q5%20Pro&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/494984/38/12103/152710/6a7ed87aFb31ce4c0/008332032047f390.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q5%20Pro&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0092",
@@ -28180,9 +28665,9 @@
       "id": "kb2-0093",
       "name": "Keychron Q5 HE",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1779,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -28203,7 +28688,24 @@
       ],
       "verification_status": "待核实",
       "type": "磁轴",
-      "layout": "96"
+      "layout": "96",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q5%20HE&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/249584/21/28170/92976/6753fae3F3de7b394/ee55a054f4be4130.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q5%20HE&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0094",
@@ -28284,9 +28786,9 @@
       "id": "kb2-0096",
       "name": "Keychron Q6 Max",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1569,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -28307,7 +28809,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "104"
+      "layout": "104",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q6%20Max&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/229655/12/12528/32838/65e7e808F758e4bc7/e0b65a5a25534ac7.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q6%20Max&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0097",
@@ -28521,9 +29040,9 @@
       "id": "kb2-0103",
       "name": "Keychron Q10 Max",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1639,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -28544,7 +29063,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "75"
+      "layout": "75",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q10%20Max&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/183332/24/43283/69200/65f16acdF1a2c506e/fd773bb0cdee0952.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q10%20Max&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0104",
@@ -28786,9 +29322,9 @@
       "id": "kb2-0111",
       "name": "Keychron Q65",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 4397,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -28809,7 +29345,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "65"
+      "layout": "65",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q65&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/508718/27/848/135788/6a82e3e6Ff784a96f/00833203204d6cc1.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q65&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0112",
@@ -29141,9 +29694,9 @@
       "id": "kb2-0120",
       "name": "Keychron V10 Max",
       "brand": "Keychron",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 749,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -29164,7 +29717,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "75"
+      "layout": "75",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20V10%20Max%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i2/2208307283070/O1CN01Xa1ZTR1YY6s8MSRVV_!!0-item_pic.jpg_400x400.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20V10%20Max%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0121",
@@ -32843,9 +33413,9 @@
       "id": "kb2-0238",
       "name": "Logitech K780",
       "brand": "罗技",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 265,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -32866,7 +33436,24 @@
       ],
       "verification_status": "待核实",
       "type": "薄膜",
-      "layout": "104"
+      "layout": "104",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K780&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/393675/28/648/86479/6978114bFe7fae540/008332032020cc40.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K780&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0239",
@@ -34764,9 +35351,9 @@
       "id": "kb2-0287",
       "name": "SteelSeries Apex 5",
       "brand": "赛睿",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 729,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -34787,7 +35374,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "104"
+      "layout": "104",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Apex%205%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/489027/21/15938/145460/6a7eaf93Fc4a95197/0083320320ff94f7.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Apex%205%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0288",
@@ -34868,9 +35472,9 @@
       "id": "kb2-0290",
       "name": "SteelSeries Apex 9 TKL",
       "brand": "赛睿",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1856,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -34891,7 +35495,24 @@
       ],
       "verification_status": "待核实",
       "type": "光轴",
-      "layout": "87"
+      "layout": "87",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Apex%209%20TKL%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/61632/14/21883/44640/63180958Ee4c5cd02/d5adfb9810f3e8c5.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Apex%209%20TKL%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0291",
@@ -37151,9 +37772,9 @@
       "id": "kb2-0366",
       "name": "Varmilo 海洋",
       "brand": "Varmilo",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 149,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -37173,7 +37794,24 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "机械"
+      "type": "机械",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Varmilo%20Varmilo%20%E6%B5%B7%E6%B4%8B%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/125521/22/34938/203168/64119229Fffadfca4/c2df7baad5ab7549.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Varmilo%20Varmilo%20%E6%B5%B7%E6%B4%8B%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0367",
@@ -39381,9 +40019,9 @@
       "id": "kb2-0435",
       "name": "RK68 Pro",
       "brand": "RK",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 239,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -39404,7 +40042,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "65"
+      "layout": "65",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK68%20Pro%20%E9%94%AE%E7%9B%98&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i3/2218040755321/O1CN011MjZ5jBgjMF1chua_!!2218040755321.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK68%20Pro%20%E9%94%AE%E7%9B%98&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0436",
@@ -43649,9 +44304,9 @@
       "id": "kb2-0559",
       "name": "AJAZZ AK980",
       "brand": "黑爵",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 359,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -43672,7 +44327,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "98"
+      "layout": "98",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJAZZ%20AK980&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/305594/38/4845/133415/68319065F43a16cda/0a4cf01c5968238f.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJAZZ%20AK980&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0560",
@@ -45139,9 +45811,9 @@
       "id": "kb2-0601",
       "name": "Epomaker F75 Ultra",
       "brand": "Epomaker",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 9299,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -45162,7 +45834,24 @@
       ],
       "verification_status": "待核实",
       "type": "机械",
-      "layout": "75"
+      "layout": "75",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Epomaker%20F75%20Ultra&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/412420/29/10814/379334/69ce18e2F89a1d0b8/0083c7fc7f6941db.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Epomaker%20F75%20Ultra&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "kb2-0602",
@@ -49778,7 +50467,26 @@
         }
       ],
       "verification_status": "三重信源交叉验证",
-      "category": "高端"
+      "category": "高端",
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Artisan%20Artisan%20%E9%9B%B6&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i2/2212289861878/O1CN01rAnlJb1PkAs9pC4qZ_!!2212289861878-0-scmitem176000.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Artisan%20Artisan%20%E9%9B%B6&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "mp-008",
@@ -55689,9 +56397,9 @@
       "id": "mp2-0122",
       "name": "Razer Goliathus Extended Chroma",
       "brand": "Razer",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 488,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -55711,7 +56419,24 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "布垫"
+      "type": "布垫",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Goliathus%20Extended%20Chroma%20%E9%BC%A0%E6%A0%87%E5%9E%AB&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/495113/28/2037/424855/6a6caef4F28262130/0083320320cdd876.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Goliathus%20Extended%20Chroma%20%E9%BC%A0%E6%A0%87%E5%9E%AB&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "mp2-0123",
@@ -58995,9 +59720,9 @@
       "id": "mp2-0222",
       "name": "ATK 99G系列 鼠标垫",
       "brand": "ATK",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 129,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -59017,7 +59742,24 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "布垫"
+      "type": "布垫",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=ATK%2099G%E7%B3%BB%E5%88%97%20%E9%BC%A0%E6%A0%87%E5%9E%AB%20%E9%BC%A0%E6%A0%87%E5%9E%AB&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/2216668025731/O1CN01YWW4Q11sCqt3eS5R3_!!2216668025731.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=ATK%2099G%E7%B3%BB%E5%88%97%20%E9%BC%A0%E6%A0%87%E5%9E%AB%20%E9%BC%A0%E6%A0%87%E5%9E%AB&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "mp2-0223",
@@ -63692,15 +64434,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20HyperX%20Cloud%20II&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/484230/1/13153/95700/6a72a037F02a9182f/008332032078039e.jpg",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20HyperX%20Cloud%20II&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "name": "雷蛇 BlackShark V2 Pro（2023 无线版）",
@@ -64861,7 +65595,7 @@
         }
       ],
       "id": "hs-030",
-      "price_note": "参考价，随渠道/活动浮动，以电商实时价为准",
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
       "budget_tier": "中高端",
       "suitable_games": [
         "CS2",
@@ -64876,7 +65610,25 @@
       "notes": [
         "品牌已停止运营需注意售后；低频克制"
       ],
-      "verification_status": "双信源交叉验证"
+      "verification_status": "双信源交叉验证",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=EPOS%20EPOS%20H6PRO%EF%BC%88%E5%B0%81%E9%97%AD%E5%BC%8F%EF%BC%89%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/98189/12/45376/75300/66041428F42a5af1e/1588b1dc953f5554.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=EPOS%20EPOS%20H6PRO%EF%BC%88%E5%B0%81%E9%97%AD%E5%BC%8F%EF%BC%89%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "name": "索尼 INZONE H9",
@@ -65614,15 +66366,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G432&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/389749/35/6409/14794/697422c1F4690f504/00833843846d2c11.jpg",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G432&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0006",
@@ -66453,9 +67197,9 @@
       "id": "hs2-0028",
       "name": "Logitech Zone Wireless 2",
       "brand": "Logitech",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1489,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -66476,7 +67220,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Zone%20Wireless%202&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/202671/8/41540/45210/6683a279Fb21507e3/eabbbb350771fcc1.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Zone%20Wireless%202&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0029",
@@ -67203,9 +67964,9 @@
       "id": "hs2-0048",
       "name": "Razer Kraken V3 HyperSense",
       "brand": "Razer",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1699,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -67226,7 +67987,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Kraken%20V3%20HyperSense%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/489083/2/10265/63999/6a7769c8Fe580c222/008332032024c689.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Kraken%20V3%20HyperSense%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0049",
@@ -67554,9 +68332,9 @@
       "id": "hs2-0056",
       "name": "Razer Barracuda X Chroma",
       "brand": "Razer",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1159,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -67577,7 +68355,24 @@
       ],
       "verification_status": "待核实",
       "type": "双模",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Barracuda%20X%20Chroma%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/490982/14/6945/371942/6a6cb031F12947f71/0083320320550777.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Barracuda%20X%20Chroma%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0057",
@@ -68091,9 +68886,9 @@
       "id": "hs2-0071",
       "name": "SteelSeries Arctis 5",
       "brand": "SteelSeries",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1809,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -68114,7 +68909,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%205&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t3133/130/4930544443/64308/6e59be97/585cdfe5Ndde93b8e.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%205&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0072",
@@ -68314,15 +69126,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%209X&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/500743/38/5604/97512/6a7f4615Fc2dc62a0/008332032063f2a4.png",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%209X&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0078",
@@ -68868,15 +69672,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%20Nova%20Pro&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/454886/28/14116/160209/6a71d4a3F3ca4562a/0083320320bbd259.jpg",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%20Nova%20Pro&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0093",
@@ -69228,9 +70024,9 @@
       "id": "hs2-0102",
       "name": "HyperX Cloud Stinger",
       "brand": "HyperX",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 199,
+      "price_note": "电商参考价（拼多多，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -69251,7 +70047,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "拼多多",
+          "label": "慢慢买全网比价·拼多多",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20Cloud%20Stinger%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.pddpic.com/gaudit-image/2026-03-06/adbcaf483e0aa6df75fafbf949ac1123.jpeg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "拼多多",
+        "label": "商品图·拼多多",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20Cloud%20Stinger%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0103",
@@ -71303,9 +72116,9 @@
       "id": "hs2-0163",
       "name": "Sony WF-C500",
       "brand": "Sony",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 857,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "入门",
       "budget_tier": "入门",
       "best_for": [],
@@ -71326,7 +72139,24 @@
       ],
       "verification_status": "待核实",
       "type": "TWS",
-      "sound": "入耳式"
+      "sound": "入耳式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20WF-C500&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/180432/11/43145/28192/6683dc32F2c165f57/62edb63317acbfba.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20WF-C500&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0164",
@@ -71378,9 +72208,9 @@
       "id": "hs2-0165",
       "name": "Sony WF-C700N",
       "brand": "Sony",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 424,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -71401,7 +72231,24 @@
       ],
       "verification_status": "待核实",
       "type": "TWS",
-      "sound": "入耳式"
+      "sound": "入耳式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20WF-C700N&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/408205913/O1CN01Kkf0wt1tYCxTWRH2o_!!408205913.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20WF-C700N&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0166",
@@ -71724,9 +72571,9 @@
       "id": "hs2-0174",
       "name": "Sony INZONE H5",
       "brand": "Sony",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1099,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中端",
       "budget_tier": "中端",
       "best_for": [],
@@ -71747,7 +72594,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20H5&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i4/2549841410/O1CN01AhcmAemp5wC1chua_!!2549841410-0-tmg_sticker.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20H5&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0175",
@@ -71785,15 +72649,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20H7&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/505894/10/2197/30956/6a7f4f64Ff3f29680/0083320320d8ed97.png",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20H7&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0176",
@@ -71877,15 +72733,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20Buds&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/433778/14/6383/93335/6a0280e0F8617e3ec/00833203202441e9.jpg",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20INZONE%20Buds&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0178",
@@ -72820,9 +73668,9 @@
       "id": "hs2-0203",
       "name": "Audeze LCD-MX4",
       "brand": "Audeze",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 25705.9,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -72843,7 +73691,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "sound": "开放式"
+      "sound": "开放式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20LCD-MX4%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i4/10036638/O1CN01uFiwW31yuFkCPfBMU_!!10036638.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20LCD-MX4%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0204",
@@ -72895,9 +73760,9 @@
       "id": "hs2-0205",
       "name": "Audeze MM-500",
       "brand": "Audeze",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 14800,
+      "price_note": "电商参考价（拼多多，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -72918,7 +73783,24 @@
       ],
       "verification_status": "待核实",
       "type": "有线",
-      "sound": "开放式"
+      "sound": "开放式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "拼多多",
+          "label": "慢慢买全网比价·拼多多",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20MM-500%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.pddpic.com/gaudit-image/2026-03-16/bbaaad68431554154026f76ad14d44ca.jpeg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "拼多多",
+        "label": "商品图·拼多多",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20MM-500%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0206",
@@ -75441,9 +76323,9 @@
       "id": "hs2-0267",
       "name": "Sennheiser Momentum 4 Wireless",
       "brand": "Sennheiser",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1917,
+      "price_note": "电商参考价（淘宝，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -75464,7 +76346,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "淘宝",
+          "label": "慢慢买全网比价·淘宝",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Sennheiser%20Momentum%204%20Wireless&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/300887089/O1CN01f0tGtC22EoZueue0q_!!300887089.png_400x400.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "淘宝",
+        "label": "商品图·淘宝",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Sennheiser%20Momentum%204%20Wireless&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0268",
@@ -77773,15 +78672,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20360X&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/507596/1/2902/33597/6a833bdeFcaf83da7/00833203205b1fc9.png",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20360X&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0335",
@@ -77819,15 +78710,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20360P&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/508531/33/1255/37497/6a833ab6F753aca14/0083320320c30b8d.png",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20360P&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0336",
@@ -82188,15 +83071,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20G2%20II&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t1/500208/34/8500/52622/6a833b9fFe8c2c98f/0083320320034d97.png",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20G2%20II&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0455",
@@ -82338,15 +83213,7 @@
           "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20G5&c=search",
           "captured_at": "2026-08-19"
         }
-      ],
-      "image": "https://img14.360buyimg.com/pop/jfs/t20280809/486617/16/13296/121800/6a793c99F64fa1072/0a02320320268a21.jpg",
-      "image_source": {
-        "type": "ecommerce",
-        "platform": "京东",
-        "label": "商品图·京东",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20G5&c=search",
-        "captured_at": "2026-08-19"
-      }
+      ]
     },
     {
       "id": "hs2-0459",
@@ -84287,9 +85154,9 @@
       "id": "hs2-0514",
       "name": "ROG Delta II",
       "brand": "ROG",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 4180,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -84310,7 +85177,24 @@
       ],
       "verification_status": "待核实",
       "type": "双模",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=ROG%20Delta%20II&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/452164/5/5607/21106/6a27d116Ff032a860/00833203206a937e.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=ROG%20Delta%20II&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0515",
@@ -86034,9 +86918,9 @@
       "id": "hs2-0559",
       "name": "Soundcore Liberty 4 Pro",
       "brand": "Soundcore",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 999,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -86057,7 +86941,24 @@
       ],
       "verification_status": "待核实",
       "type": "TWS",
-      "sound": "入耳式"
+      "sound": "入耳式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Soundcore%20Soundcore%20Liberty%204%20Pro&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/497893/2/5964/67479/6a796f5fFd8609e43/0083320320c524f2.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Soundcore%20Soundcore%20Liberty%204%20Pro&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0560",
@@ -86293,9 +87194,9 @@
       "id": "hs2-0565",
       "name": "1MORE EVO",
       "brand": "1MORE",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 138.9,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -86316,7 +87217,24 @@
       ],
       "verification_status": "待核实",
       "type": "TWS",
-      "sound": "入耳式"
+      "sound": "入耳式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=1MORE%201MORE%20EVO%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/486761/30/12958/156607/6a7055daFe7306b34/0083320320483ebf.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=1MORE%201MORE%20EVO%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0566",
@@ -86593,9 +87511,9 @@
       "id": "hs2-0573",
       "name": "Marshall Monitor II ANC",
       "brand": "Marshall",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 2999,
+      "price_note": "电商参考价（天猫，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -86616,7 +87534,24 @@
       ],
       "verification_status": "待核实",
       "type": "无线",
-      "sound": "封闭式"
+      "sound": "封闭式",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "天猫",
+          "label": "慢慢买全网比价·天猫",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Marshall%20Monitor%20II%20ANC%20%E8%80%B3%E6%9C%BA&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img.alicdn.com/bao/uploaded/i1/3311803109/O1CN01LQjr5M1YpyD84FQkS_!!3311803109.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "天猫",
+        "label": "商品图·天猫",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Marshall%20Monitor%20II%20ANC%20%E8%80%B3%E6%9C%BA&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "hs2-0574",
@@ -99444,9 +100379,9 @@
       "id": "chr-0017",
       "name": "Herman Miller Mirra 2",
       "brand": "Herman Miller",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 5499,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "高端",
       "budget_tier": "高端",
       "best_for": [],
@@ -99466,7 +100401,24 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "人体工学椅"
+      "type": "人体工学椅",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Herman%20Miller%20Herman%20Miller%20Mirra%202&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/395468/16/5855/80637/698af82cF4fac7127/00833203206c38c2.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Herman%20Miller%20Herman%20Miller%20Mirra%202&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "chr-0018",
@@ -103476,7 +104428,27 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "摄像头"
+      "type": "摄像头",
+      "price": 449,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C922&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/239095/3/34069/56083/68e76805F1f5811f0/d47042acd04370e6.jpg",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C922&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "acc-0035",
@@ -104934,9 +105906,9 @@
       "id": "acc-0078",
       "name": "Razer Mouse Dock Pro",
       "brand": "Razer",
-      "price": null,
-      "price_note": "价格待核实",
-      "price_verified_at": null,
+      "price": 1229,
+      "price_note": "电商参考价（京东，2026-08-19拓取，价格随渠道与活动浮动）",
+      "price_verified_at": "2026-08-19",
       "category": "中高端",
       "budget_tier": "中高端",
       "best_for": [],
@@ -104956,7 +105928,24 @@
         "型号来自公开目录/搜索入口，未逐一核实"
       ],
       "verification_status": "待核实",
-      "type": "鼠标充电底座"
+      "type": "鼠标充电底座",
+      "price_sources": [
+        {
+          "type": "ecommerce",
+          "platform": "京东",
+          "label": "慢慢买全网比价·京东",
+          "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Razer%20Mouse%20Dock%20Pro%20%E9%BC%A0%E6%A0%87%E5%85%85%E7%94%B5%E5%BA%95%E5%BA%A7&c=search",
+          "captured_at": "2026-08-19"
+        }
+      ],
+      "image": "https://img14.360buyimg.com/pop/jfs/t1/503846/35/5712/35014/6a8347e3Fb7d6535f/0083320320369f4d.png",
+      "image_source": {
+        "type": "ecommerce",
+        "platform": "京东",
+        "label": "商品图·京东",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Razer%20Mouse%20Dock%20Pro%20%E9%BC%A0%E6%A0%87%E5%85%85%E7%94%B5%E5%BA%95%E5%BA%A7&c=search",
+        "captured_at": "2026-08-19"
+      }
     },
     {
       "id": "acc-0079",

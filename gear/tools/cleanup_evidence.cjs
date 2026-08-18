@@ -118,7 +118,7 @@ function reasonsFor(rec, p) {
   const genericBad = /手机壳|手机膜|手机贴膜|橡皮|油烟机|自行车|T恤|牛奶|皂|座套|卧铺|卡车|货车|牛奶片|油烟|书包|文具|固态|U盘|SSD|贝尔金|BOYA|博雅|ASICS|亚瑟士|3M|特斯拉|中控|汽车|跑鞋|运动鞋|男鞋|女鞋|球鞋|惠威|HiVi|租赁|出租|租用/;
   if (genericBad.test(t)) reasons.push('unrelated listing');
 
-  if ((id.indexOf('acc-') === 0 || id.indexOf('chr-') === 0) && !brandPresent(p, t)) {
+  if ((id.indexOf('mon-') === 0 || id.indexOf('acc-') === 0 || id.indexOf('chr-') === 0) && !brandPresent(p, t)) {
     reasons.push('brand mismatch');
   }
 
@@ -141,7 +141,7 @@ function reasonsFor(rec, p) {
 
   if (id.indexOf('hs-') === 0 || id.indexOf('hs2-') === 0) {
     if (!/耳机|耳麦|头戴/.test(t)) reasons.push('not a headset');
-    const acc = /耳罩|耳机套|耳垫|耳包|海绵套|头梁|咪杆|数据线|充电线|音频线|耳机线|接收器|替换|配件|麦克风咪杆|麦克风配件|耳套|保护套|保护壳|外壳|防摔|电池|咪罩|耳机盒|充电盒|连接线|防喷|收纳|充电仓|软壳|线材|伞绳|耳塞套|耳帽/;
+    const acc = /耳罩|耳机套|耳垫|耳包|海绵套|头梁|咪杆|数据线|充电线|音频线|耳机线|接收器|替换|配件|麦克风咪杆|麦克风配件|耳套|保护套|保护壳|外壳|防摔|电池|咪罩|耳机盒|充电盒|连接线|防喷|收纳|充电仓|软壳|线材|伞绳|耳塞套|耳帽|适用于|适配|镀金OFC|原装麦克风/;
     if (acc.test(t)) reasons.push('headset accessory or other product');
   }
 

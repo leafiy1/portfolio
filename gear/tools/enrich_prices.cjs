@@ -27,6 +27,7 @@ const DELAY = parseInt(arg('--delay', '350'), 10);
 const WORKERS = Math.max(1, parseInt(arg('--workers', '2'), 10));
 const RETRY = arg('--retry', '0') === '1';
 const QUIET = arg('--quiet', '0') === '1';
+const EXTRA_QUERIES = arg('--extra-queries', '0') === '1';
 
 function norm(s) {
   return String(s || '')
@@ -162,16 +163,27 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
-function buildQueries(product) {
+function buildQueries(product, group) {
   const a = `${product.brand || ''} ${product.name || ''}`.trim();
   const b = `${product.name || ''}`.trim();
-  return [...new Set([a, b].filter(Boolean))];
+  const suffix = {
+    mice: '鼠标',
+    keyboards: '键盘',
+    mousepads: '鼠标垫',
+    headsets: '耳机',
+    monitors: '显示器',
+    chairs: '电竞椅',
+    accessories: product.type || ''
+  }[group] || '';
+  const c = `${a} ${suffix}`.trim();
+  const d = `${b} ${suffix}`.trim();
+  return [...new Set((EXTRA_QUERIES && suffix ? [a, b, c, d] : [a, b]).filter(Boolean))];
 }
 
-async function fetchMatch(product) {
+async function fetchMatch(product, group) {
   let lastMeta = null;
   const queries = [];
-  for (const query of buildQueries(product)) {
+  for (const query of buildQueries(product, group)) {
     const url = buildUrl(query);
     const res = await fetch(url, {
       headers: {
@@ -264,7 +276,7 @@ async function worker() {
     while (true) {
       const idx = cursor++;
       if (idx >= targets.length) return;
-      const { p } = targets[idx];
+      const { p, group } = targets[idx];
       const seq = idx + 1;
       const original = {
         price: p.price,
@@ -281,7 +293,7 @@ async function worker() {
         }
       }
       try {
-        const { best, meta, queries } = await fetchMatch(p);
+        const { best, meta, queries } = await fetchMatch(p, group);
         if (best) {
           applyMatch(p, best, meta);
           evidence[p.id] = {

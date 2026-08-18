@@ -6,7 +6,7 @@
 - 本轮全库复跑慢慢买核价，并升级 `cleanup_evidence.cjs`：品类相关 + 品牌可溯源 + 价格合理性三重清洗，撤掉 190+ 条配件/错误品牌误配。
 - 工具脚本新增：品牌别名表、批处理 `--quiet` 参数、配件标题拦截；`products.json` → `index.html` 已重新内嵌。
 - 验证：`verify_gear.cjs` 10 项通过，桌面/移动端控制台 0 错误，375px 无横向溢出。
-- 工作区已改 `gear/products.json`、`price_evidence_v7.json`、清洗/核价脚本和文档；本地提交状态见下文，仍未 push。
+- 工作区已改 `gear/products.json`、`price_evidence_v7.json`、清洗/核价脚本和文档；本轮本地提交为 `a398c6e`，仍未 push。
 - 下一步：对剩余 2019 款缺价、1954 款缺图逐条人工/浏览器核价补图，优先显示器、电竞椅、外设配件；用户确认后按发布前检查清单 push。
 
 ## 2026-08-19 GearPick v7.0 核价/配图 + 迷宫饭验收口径

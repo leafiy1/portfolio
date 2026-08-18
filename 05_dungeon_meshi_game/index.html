@@ -553,7 +553,7 @@ header h1{
 @keyframes stampIn{ from{ transform: rotate(-8deg) scale(1.6); opacity:0; } to{ transform: rotate(-3deg) scale(1); opacity:1; } }
 
 /* ============ 战斗 ============ */
-#battle-screen{ display:none; }
+#battle-screen{ position:fixed; inset:0; z-index:120; overflow:auto; display:none; margin:0; border-radius:0; background:radial-gradient(ellipse at 20% 10%, rgba(255,250,224,.8), transparent 52%), radial-gradient(ellipse at 82% 88%, rgba(164,110,52,.18), transparent 46%), linear-gradient(158deg, var(--paper-0) 0%, var(--paper-1) 48%, var(--paper-3) 100%); }
 #battle-screen.open{ display:block; animation: viewIn .3s var(--ease-out); }
 .battle-layout{ display:grid; grid-template-columns: 280px 1fr; gap: 20px; }
 .monster-panel{
@@ -2248,11 +2248,11 @@ const FLOORS = {
       weights:{ battle:45, chest:15, trap:15, merchant:10, event:15 }, fatigue:8 },
   2: { name:'第二层 · 石像大厅', emoji:'🏛', desc:'古老的石像大厅，沉睡的守卫们可不好惹。', goal:'探索 3 次，击败守卫收集第一件装备。', enemies:['skeleton','gargoyle','centipede','flame','spider','knightcrab','shakespirit','chili_goblin','armor_rat','candle_wisp'],
       weights:{ battle:50, chest:12, trap:18, merchant:8, event:12 }, fatigue:11 },
-  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', goal:'探索 3 次后挑战迷宫之主，击败它开启第四层。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem','bone_wing'],
+  3: { name:'第三层 · 龙之深渊', emoji:'🌋', desc:'炙热的深渊，红龙与不死者在此盘踞。', goal:'探索 4 次后挑战迷宫之主，击败它开启第四层。', enemies:['griffin','reddragon','lich','werewolf','ghost','cheesegolem','bone_wing'],
       weights:{ battle:52, chest:10, trap:20, merchant:5, event:13 }, fatigue:14, boss:'boss' },
   4: { name:'第四层 · 硫磺炼狱', emoji:'🔥', desc:'硫磺气息刺鼻的炙热地层，岩浆在石缝间流淌，火属性魔物成群出没，危险度陡然上升！', goal:'探索 4 次后挑战硫磺龙，击败它开启第五层。', enemies:['hellhound','scorpion','flame','reddragon','lava_slug','ash_raven'],
       weights:{ battle:55, chest:8, trap:22, merchant:4, event:11 }, fatigue:17, boss:'sulfurdragon' },
-  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', goal:'探索 4 次后挑战守锅巨像，击败它开启黄金盛宴厅。', enemies:['ghost','mimic','lich','werewolf','stew_wraith'],
+  5: { name:'第五层 · 深渊食堂', emoji:'🍽', desc:'迷宫最深处——传说中黄金锅所在的远古食堂。守锅巨像在这里沉睡了千年。', goal:'探索 5 次后挑战守锅巨像，击败它开启黄金盛宴厅。', enemies:['ghost','mimic','lich','werewolf','stew_wraith'],
       weights:{ battle:50, chest:8, trap:18, merchant:6, event:18 }, fatigue:20, boss:'potgolem' },
   6: { name:'第六层 · 黄金盛宴厅', emoji:'👑', desc:'传说中黄金锅真正的主人——饕宴王设宴的厅堂。千年的盛宴仍在继续，只是宾客们早已不是人。', goal:'探索 5 次后挑战饕宴王，击败它通关迷宫。', enemies:['goldsnail','banquetwraith','tastergolem','carvingknight','cupwisp','silver_guard','dessert_wraith'],
       weights:{ battle:55, chest:7, trap:20, merchant:3, event:15 }, fatigue:23, boss:'gluttonking' },
@@ -2817,6 +2817,7 @@ function newGame(){
     unlockMusic();
     if (hasSave()){
       $('btn-continue').style.display = 'inline-block';
+      $('btn-fresh').style.display = 'inline-block';
       loadGame();
     } else if (!document.getElementById('intro-overlay')){
       playIntro();
@@ -2847,8 +2848,9 @@ function renderParty(){
   const hp = $('party-panel');
   hp.innerHTML = PARTY.map(m=>{
     const c = charDef(m.id);
+    const ps = playerStats(m);
     const st = statusOf(m);
-    const hpPct = cap(Math.round(m.hp / c.maxHp * 100), 0, 100);
+    const hpPct = cap(Math.round(m.hp / ps.maxHp * 100), 0, 100);
     const fullPct = cap(Math.round(m.full / c.maxFull * 100), 0, 100);
     const lvl = m.lvl || 1;
     const eq = getEquip(m);
@@ -2861,7 +2863,7 @@ function renderParty(){
       + '<div class="m-skill">✦ ' + c.skill.name + '</div>'
       + '<div class="m-exp">经验 ' + (m.exp||0) + '/' + expNeed(lvl) + '</div>'
       + '<div class="bar hp"><i style="width:' + hpPct + '%"></i></div>'
-      + '<div class="bar-label"><span>HP</span><span>' + m.hp + '/' + c.maxHp + '</span></div>'
+      + '<div class="bar-label"><span>HP</span><span>' + m.hp + '/' + ps.maxHp + '</span></div>'
       + '<div class="bar full"><i style="width:' + fullPct + '%"></i></div>'
       + '<div class="bar-label"><span>饱腹</span><span>' + m.full + '/' + c.maxFull + '</span></div>'
       + '<div class="m-status ' + st.cls + '">' + st.text + '</div>'
@@ -2893,13 +2895,13 @@ function renderExplore(){
 
   const boss = $('boss-area');
   let html = '';
-  if ((S.floorProgress[3] || 0) >= floorNeed(3)){
+  if ((S.floorProgress[3] || 0) >= floorNeed(4)){
     html += bossCard('boss', '你在龙之深渊深处发现了迷宫之主的巢穴！击败它，通往更深处的大门将缓缓开启。');
   }
-  if ((S.floorProgress[4] || 0) >= floorNeed(4)){
+  if ((S.floorProgress[4] || 0) >= floorNeed(5)){
     html += bossCard('sulfurdragon', '硫磺炼狱的最深处，岩浆之心上盘踞着硫磺龙！击败它才能深入深渊食堂。');
   }
-  if ((S.floorProgress[5] || 0) >= floorNeed(5)){
+  if ((S.floorProgress[5] || 0) >= floorNeed(6)){
     if (S.defeated.includes('sulfurdragon')){
       html += bossCard('potgolem', '深渊食堂的尽头，黄金锅前的守锅巨像缓缓睁开了眼睛……击败它，通往黄金盛宴厅的大门将缓缓开启！');
     } else {
@@ -2995,7 +2997,7 @@ function renderCook(){
     S._hiddenToastShown = true;
     setTimeout(()=>{
       showModal('🌟 发现新菜谱！', '📜', '<p>你的食材包里似乎能组合出全新的料理！</p><p style="font-weight:bold; color:#a67c00;">' + found.map(f=>f.name).join('、') + '</p><p style="font-size:12px; color:var(--ink-soft);">前往菜谱列表即可烹饪——隐藏菜谱同样会消耗对应食材。</p>', [
-        { label:'去烹饪！', cls:'primary', onClick:()=>{} },
+        { label:'去烹饪！', cls:'primary', onClick:()=>{ closeModal(); switchView('cook'); } },
       ]);
     }, 400);
   }
@@ -3148,7 +3150,7 @@ function gainIng(id, qty){
 function applyEffects(eff){
   if (!eff) return;
   if (eff.hp){
-    PARTY.forEach(m=>{ if (m.hp > 0) m.hp = cap(m.hp + eff.hp, 0, charDef(m.id).maxHp); });
+    PARTY.forEach(m=>{ if (m.hp > 0) m.hp = cap(m.hp + eff.hp, 0, playerStats(m).maxHp); });
   }
   if (eff.full){
     PARTY.forEach(m=>{ m.full = cap(m.full + eff.full, 0, charDef(m.id).maxFull); });
@@ -3484,10 +3486,11 @@ function renderBattle(){
   const cs = $('char-select');
   cs.innerHTML = PARTY.map(x=>{
     const c = charDef(x.id);
+    const ps = playerStats(x);
     return '<div class="char-chip' + (x.hp<=0?' down':'') + (x.id===B.sel?' sel':'') + '" onclick="selChar(\'' + x.id + '\')">'
       + '<div class="cc-emoji">' + charAvatarHTML(x.id, 34) + '</div>'
       + '<div class="cc-name">' + c.name + '</div>'
-      + '<div class="cc-hp">HP ' + x.hp + '/' + c.maxHp + (x.cd>0?'　✨CD'+x.cd:'') + '</div>'
+      + '<div class="cc-hp">HP ' + x.hp + '/' + ps.maxHp + (x.cd>0?'　✨CD'+x.cd:'') + '</div>'
       + '</div>';
   }).join('');
 
@@ -3615,8 +3618,6 @@ function monsterTurn(){
     }
     if (boss.m.skill && Math.random() < (boss.m.skill.chance + (boss.enraged ? 0.2 : 0))){ useBossSkill(boss); }
     else { normalAttack(boss); }
-  } else if (B.enemies.length){
-    normalAttack(B.enemies[0]);
   }
   // 被召唤的小怪轮流攻击
   B.enemies.filter(e=>!e.boss).forEach(min=>normalAttack(min));
@@ -3776,7 +3777,7 @@ function partyWipe(msg){
   S.curse = false;
   PARTY.forEach(m=>{
     const c = charDef(m.id);
-    m.hp = Math.max(1, Math.round(c.maxHp * 0.3));
+    m.hp = Math.max(1, Math.round(playerStats(m).maxHp * 0.3));
     m.full = Math.round(c.maxFull * 0.5);
     m.cd = 0;
   });
@@ -3819,7 +3820,7 @@ function cook(rid){
   if (!S.cooked.includes(rid)) S.cooked.push(rid);
   S.ach_cook = (S.ach_cook||0) + 1;
   // 厨神评级：根据队伍状态
-  const hpAvg = PARTY.reduce((s,m)=>s+(m.hp/charDef(m.id).maxHp),0)/PARTY.length;
+  const hpAvg = PARTY.reduce((s,m)=>s+(m.hp/playerStats(m).maxHp),0)/PARTY.length;
   const fullAvg = PARTY.reduce((s,m)=>s+(m.full/charDef(m.id).maxFull),0)/PARTY.length;
   let grade = 'C', gradeName = '能吃';
   if (hpAvg >= 0.999 && fullAvg >= 0.7){ grade = 'S'; gradeName = '厨神之作'; }
@@ -3831,7 +3832,7 @@ function cook(rid){
   if (grade === 'S'){ S.gold += 15; gradeBonus = '　✨S级评级，获得 15 金币奖励！'; }
   setTimeout(()=>{
     showModal('🍳 烹饪完成', r.emoji, '<p>' + r.name + ' 出锅了！</p><div class="grade-stamp' + (grade === 'S' ? ' gold' : '') + '">' + grade + ' 级 · ' + gradeName + '</div>' + (gradeBonus ? '<p class="panel-tip" style="margin-top:10px;">' + gradeBonus + '</p>' : ''), [
-      { label:'开吃！', cls:'primary', onClick:()=>{} },
+      { label:'开吃！', cls:'primary', onClick:()=>{ closeModal(); eatDish(rid); } },
     ]);
     sfxCook();
   }, 300);
@@ -3859,7 +3860,7 @@ function eatDish(rid){
   PARTY.forEach(m=>{
     const c = charDef(m.id);
     if (m.hp <= 0) revived.push(c.name);
-    m.hp = cap(m.hp + hp, 0, c.maxHp);
+    m.hp = cap(m.hp + hp, 0, playerStats(m).maxHp);
     m.full = cap(m.full + full, 0, c.maxFull);
   });
   addLog('🍽 大家享用了【' + r.name + '】！(全体 HP+' + (hp>=99999?'全恢复':hp) + '，饱腹+' + (full>=99999?'全恢复':full) + ')' + (revived.length ? '　' + revived.join('、') + ' 苏醒了过来！' : ''));
@@ -3876,7 +3877,10 @@ function eatDish(rid){
   if (sp){
     sp.innerHTML = CHARACTERS.map(c=>'<div class="start-char"><div class="sc-emoji">' + charAvatarHTML(c.id, 40) + '</div><div class="sc-name">' + c.name + '</div><div class="sc-title">' + c.title + '</div></div>').join('');
   }
-  if (hasSave()) $('btn-continue').style.display = 'inline-block';
+  if (hasSave()){
+    $('btn-continue').style.display = 'inline-block';
+    $('btn-fresh').style.display = 'inline-block';
+  }
   bindVolUI();
 })();
 
@@ -3892,11 +3896,11 @@ const ACHIEVEMENTS = [
   { id:'floor5',       icon:'🌋', name:'深渊征服者', desc:'抵达第五层',                            cond:()=>S.floorProgress[5]>=1 },
   { id:'all_recipes',  icon:'📖', name:'食神图鉴',   desc:'集齐全部菜谱（含隐藏）',              cond:()=>S.cooked.filter(id=>RECIPE_MAP[id]||HIDDEN_RECIPES[id]).length>=RECIPES.length+Object.keys(HIDDEN_RECIPES).length },
   { id:'hidden_recipes',icon:'🌟', name:'秘方猎人',  desc:'发现全部隐藏菜谱',                       cond:()=>S.cooked.filter(id=>HIDDEN_RECIPES[id]).length>=Object.keys(HIDDEN_RECIPES).length },
-  { id:'s_grade',      icon:'👨‍🍳', name:'厨神出世',   desc:'获得一次S级厨神评级',                   cond:()=>(S.ach_grade||{}).s>=1 },
+  { id:'s_grade',      icon:'👨‍🍳', name:'厨神出世',   desc:'获得一次S级厨神评级',                   cond:()=>(S.ach_grade||{}).S>=1 },
   { id:'gold_1000',    icon:'💰', name:'小有积蓄',   desc:'累计获得1000金币',                       cond:()=>(S.ach_gold||0)>=1000 },
   { id:'cook_50',      icon:'🍳', name:'灶台大师',   desc:'烹饪50次',                              cond:()=>(S.ach_cook||0)>=50 },
   { id:'events_20',    icon:'🎲', name:'冒险常客',   desc:'遭遇20个随机事件',                       cond:()=>(S.ach_events||0)>=20 },
-  { id:'full_health',  icon:'❤️', name:'完美状态',   desc:'全队满血满饱腹度',                       cond:()=>PARTY.every(m=>m.hp>=charDef(m.id).maxHp && m.full>=charDef(m.id).maxFull) },
+  { id:'full_health',  icon:'❤️', name:'完美状态',   desc:'全队满血满饱腹度',                       cond:()=>PARTY.every(m=>m.hp>=playerStats(m).maxHp && m.full>=charDef(m.id).maxFull) },
   { id:'counter_10',   icon:'⚡', name:'属性大师',   desc:'属性克制击杀10次',                       cond:()=>(S.ach_counter||0)>=10 },
   { id:'crit_20',      icon:'💥', name:'暴击狂魔',   desc:'打出20次暴击',                           cond:()=>(S.ach_crit||0)>=20 },
   { id:'combo_5',      icon:'🔥', name:'连击达人',   desc:'触发5次连击',                            cond:()=>(S.ach_combo||0)>=5 },

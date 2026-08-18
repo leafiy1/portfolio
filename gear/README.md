@@ -28,6 +28,7 @@ GearPick 是一个面向 FPS 玩家的外设推荐工具（鼠标 / 键盘 / 鼠
 | `tools/enrich_images.cjs` | 官网产品图补充脚本（og:image） |
 | `price_evidence_v7.json` | 已核价型号的搜索 URL、平台、价格、标题、抓取日期证据 |
 | `image_evidence_v7.json` | 已补官网图的来源 URL 与抓取日期证据 |
+| `remaining_price_image_v7.2.csv` | v7.2 剩余缺价/缺图人工核价底稿（2093 行） |
 | `tools/embed_products.js` | 数据同步脚本（products.json → index.html 内嵌快照） |
 
 ---

@@ -26,6 +26,7 @@ const OFFSET = parseInt(arg('--offset', '0'), 10);
 const DELAY = parseInt(arg('--delay', '350'), 10);
 const WORKERS = Math.max(1, parseInt(arg('--workers', '2'), 10));
 const RETRY = arg('--retry', '0') === '1';
+const QUIET = arg('--quiet', '0') === '1';
 
 function norm(s) {
   return String(s || '')
@@ -141,7 +142,7 @@ function pickBest(product, items) {
   let best = null;
   for (const item of items) {
     if (item.ended || !item.price || !item.img || !item.mall) continue;
-    const blocked = /脚贴|脚垫|足贴|防滑贴|收纳盒|键帽|轴体|套装/.test(item.title) &&
+    const blocked = /脚贴|脚垫|足贴|防滑贴|收纳盒|收纳包|保护套|保护壳|皮套|手托|腕托|掌托|护腕|键帽|轴体|键盘膜|防尘罩|数据线|充电线|耳机线|套装/.test(item.title) &&
       !/套装/.test(product.name);
     if (blocked) continue;
     const scored = scoreMatch(product, item);
@@ -312,7 +313,7 @@ async function worker() {
             status: 'no_match',
             captured_at: CAPTURED_AT
           };
-          console.log(`SKIP ${seq}/${targets.length} ${p.id} ${p.name}`);
+          if (!QUIET) console.log(`SKIP ${seq}/${targets.length} ${p.id} ${p.name}`);
         }
       } catch (e) {
         failed++;

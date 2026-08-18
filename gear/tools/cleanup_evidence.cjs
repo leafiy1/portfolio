@@ -7,6 +7,70 @@ const ROOT = path.resolve(__dirname, '..');
 const PRODUCTS_PATH = path.join(ROOT, 'products.json');
 const EVIDENCE_PATH = path.join(ROOT, 'price_evidence_v7.json');
 
+const BRAND_ALIASES = {
+  logitech: ['logitech', '\u7f57\u6280'],
+  razer: ['razer', '\u96f7\u86c7'],
+  corsair: ['corsair', '\u6d77\u76d7\u8239', '\u7f8e\u5546\u6d77\u76d7\u8239'],
+  steelcase: ['steelcase', '\u4e16\u695e'],
+  'herman miller': ['herman miller', '\u8d6b\u66fc\u7c73\u52d2'],
+  humanscale: ['humanscale', '\u4f18\u95e8\u8bbe'],
+  ergotron: ['ergotron', '\u7231\u5347\u683c'],
+  sihoo: ['sihoo', '\u897f\u660a'],
+  aoc: ['aoc', '\u51a0\u6377'],
+  dell: ['dell', '\u6234\u5c14'],
+  alienware: ['alienware', '\u5916\u661f\u4eba'],
+  hp: ['hp', '\u60e0\u666e'],
+  omen: ['omen', 'hp', '\u60e0\u666e'],
+  hkc: ['hkc'],
+  msi: ['msi', '\u5fae\u661f'],
+  gigabyte: ['gigabyte', '\u6280\u5609'],
+  benq: ['benq', '\u660e\u57fa'],
+  mevo: ['mevo'],
+  blue: ['blue'],
+  rode: ['rode', '\u7f57\u5fb7'],
+  elgato: ['elgato'],
+  tourbox: ['tourbox'],
+  loupedeck: ['loupedeck'],
+  baseus: ['baseus', '\u500d\u601d'],
+  caldigit: ['caldigit'],
+  roost: ['roost'],
+  ugreen: ['ugreen', '\u7eff\u8054'],
+  lamicall: ['lamicall'],
+  periapt: ['periapt'],
+  'fog city audio': ['fog city audio'],
+  lunashops: ['lunashops'],
+  fifine: ['fifine', '\u98de\u98de'],
+  innogear: ['innogear'],
+  'gator frameworks': ['gator frameworks'],
+  'amazon basics': ['amazon basics'],
+  glorious: ['glorious'],
+  ducky: ['ducky'],
+  filco: ['filco'],
+  velcro: ['velcro', '\u9b54\u672f\u8d34', '\u7ef4\u53ef\u7262'],
+  branch: ['branch'],
+  frost: ['frost'],
+  viltrox: ['viltrox', '\u552f\u5353'],
+  darmoshark: ['darmoshark', '\u8fbe\u9ca8'],
+  vxe: ['vxe'],
+  skn: ['skn', '\u9752\u9f99'],
+  'atk': ['atk'],
+  vaxee: ['vaxee'],
+  pulsar: ['pulsar'],
+  lamzu: ['lamzu', '\u5170\u65cf'],
+  'endgame gear': ['endgame gear', 'xm2we', 'xm2w', 'op1'],
+  keychron: ['keychron', '\u9f99\u821f'],
+  secretlab: ['secretlab']
+};
+
+function brandPresent(p, t) {
+  const brand = String(p.brand || '').trim();
+  if (!brand) return true;
+  const title = String(t || '').toLowerCase();
+  const key = brand.toLowerCase();
+  const aliases = BRAND_ALIASES[key] || [brand.toLowerCase()];
+  return aliases.some(a => title.includes(a.toLowerCase()));
+}
+
 function findHeadProduct(head, id) {
   const groups = ['mice', 'keyboards', 'mousepads', 'headsets', 'monitors', 'chairs', 'accessories'];
   for (const g of groups) {
@@ -51,18 +115,22 @@ function reasonsFor(rec, p) {
   const t = rec.match_title || '';
   const price = rec.price;
   const reasons = [];
-  const genericBad = /手机壳|手机膜|手机贴膜|橡皮|笔记本|油烟机|自行车|T恤|牛奶|皂|座套|卧铺|卡车|货车|牛奶片|油烟|书包|文具/;
+  const genericBad = /手机壳|手机膜|手机贴膜|橡皮|油烟机|自行车|T恤|牛奶|皂|座套|卧铺|卡车|货车|牛奶片|油烟|书包|文具|固态|U盘|SSD|贝尔金|BOYA|博雅|ASICS|亚瑟士|3M|特斯拉|中控|汽车|跑鞋|运动鞋|男鞋|女鞋|球鞋|惠威|HiVi|租赁|出租|租用/;
   if (genericBad.test(t)) reasons.push('unrelated listing');
 
+  if ((id.indexOf('acc-') === 0 || id.indexOf('chr-') === 0) && !brandPresent(p, t)) {
+    reasons.push('brand mismatch');
+  }
+
   if (id.indexOf('m-') === 0 || id.indexOf('m2-') === 0) {
-    if (!/鼠标/.test(t)) reasons.push('not a mouse');
-    const acc = /贴纸|贴膜|防滑贴|止滑贴|脚贴|脚垫|足贴|防尘贴|收纳|保护套|保护贴|保护膜|保护壳|手机壳|数据线|充电线|电源线|接收器|适配器|鼠标线|伞绳|软线|编码器|声音包|收纳包|袋套|包袋|外壳|上盖|中壳|维修|耳机|键盘|麦克风|座套|壳|电池|线夹/;
+    if (!/鼠标|滑鼠/.test(t)) reasons.push('not a mouse');
+    const acc = /贴纸|贴膜|防滑贴|止滑贴|脚贴|脚垫|足贴|防尘贴|收纳|保护套|保护贴|保护膜|保护壳|手机壳|数据线|充电线|电源线|适配器|鼠标线|伞绳|软线|编码器|声音包|收纳包|袋套|包袋|外壳|上盖|中壳|维修|耳机|键盘|麦克风|座套|壳|电池|线夹|微动板|微动开关|热插拔微动|鼠标主板|pcb/;
     if (acc.test(t)) reasons.push('mouse accessory or other product');
   }
 
   if (id.indexOf('kb-') === 0 || id.indexOf('kb2-') === 0) {
     if (!/键盘/.test(t) && /鼠标|耳机|显示器|手机|油烟机|笔记本|自行车|橡皮/.test(t)) reasons.push('not a keyboard');
-    const acc = /键盘膜|防尘罩|防尘膜|防尘盖|收纳包|保护套|保护膜|保护包|保护壳|手托|掌托|腕托|护腕|声音包|轴下垫|夹心棉|底棉|键帽|增补|包袋|套盒|贴膜|数据线|充电线|适配|接收器|手机膜|橡皮|笔记本|油烟机|自行车|T恤|牛奶|皂|手机壳|支架|桌垫|鼠标垫|旋钮|维修|配件|电池|防摔/;
+    const acc = /键盘膜|防尘罩|防尘膜|防尘盖|收纳包|保护套|保护膜|保护包|保护壳|手托|掌托|腕托|护腕|声音包|轴下垫|夹心棉|底棉|键帽|增补|包袋|套盒|贴膜|数据线|充电线|适配器|手机膜|橡皮|油烟机|自行车|T恤|牛奶|皂|手机壳|维修|配件|防摔/;
     if (acc.test(t)) reasons.push('keyboard accessory or other product');
   }
 

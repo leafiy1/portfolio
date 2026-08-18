@@ -425,9 +425,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Darmoshark%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M9&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 499,
+    "match_title": "Darmoshark达摩鲨M9 超大手无线鼠标 2.4G有线蓝牙三模 轻量化PAW3950 电竞游戏办公 54L主控 8KHZ数显接收器 M9白色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/413371/14/3277/30234/69cca952F71ee2667/00833203208b6fa6.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m-022": {
     "id": "m-022",
@@ -520,9 +524,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20%E7%BD%97%E6%8A%80%20G304&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 149,
+    "match_title": "百亿补贴 罗技G304无线鼠标电竞游戏吃鸡宏csgo笔记本电脑台式外设耿鬼215 官方标配 G304无线鼠标 紫色",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/2616970884/O1CN01ND83Ls1IOvCOKWFpm_!!2616970884.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m-028": {
     "id": "m-028",
@@ -560,9 +568,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%94%AF%E5%8D%93%20OGM%20Cloud%20%E4%BA%91&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 229,
+    "match_title": "WAIZOWL唯卓OGM Cloud云 无线鼠标 3395游戏鼠标 轻量化三模蓝牙 电竞鼠标 办公游戏 无畏契约csgo中大手 Cloud雲-璎珞红+4K接收器",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/324539/40/27902/47816/68eda9f2F48b11a19/477cef0a4cd09248.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m-031": {
     "id": "m-031",
@@ -1096,9 +1108,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=VXE%20VXE%20MAD%20R%20Major&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse; mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 969,
+    "match_title": "VXE无线滑鼠 PAW3395游戏电竞滑鼠 超轻量长续航滑鼠 MAD R MAJOR 白【标配8K接收器】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/457975/24/1340/24479/6a2b7d46F13699f4d/00833203202dcae3.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m-059": {
     "id": "m-059",
@@ -1267,9 +1283,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20%E9%9B%B7%E8%9B%87%20%E6%AF%92%E8%9D%B0V3%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 894.63,
+    "match_title": "RAZER雷蛇毒蝰V3pro专业版 无线鼠标极速版 轻量化电竞游戏鼠标 自带8000Hz接收器 节日礼物",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/175707/28/54105/43768/68d90bd2Fdbe12472/fc2bd2690f0d0a60.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m-066": {
     "id": "m-066",
@@ -1347,7 +1367,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse"
+    "filtered_reason": "not a mouse; mouse accessory or other product"
   },
   "m-072": {
     "id": "m-072",
@@ -1381,9 +1401,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "抖音小店",
+    "price": 189,
+    "match_title": "英菲克IN9PRO三模鼠标无线蓝牙有线机械电竞游戏笔记本电脑3395",
+    "image": "https://p9-aio.ecombdimg.com/obj/ecom-shop-material/jpeg_m_b7a222fca5744e98adfb9c5628408ad8_sx_210473_www800-800",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m-071": {
     "id": "m-071",
@@ -1667,9 +1691,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G304&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 149,
+    "match_title": "百亿补贴 罗技G304无线鼠标电竞游戏吃鸡宏csgo笔记本电脑台式外设耿鬼215 官方标配 G304无线鼠标 紫色",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/2616970884/O1CN01ND83Ls1IOvCOKWFpm_!!2616970884.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0007": {
     "id": "m2-0007",
@@ -2091,9 +2119,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G903%20LIGHTSPEED&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 549,
+    "match_title": "罗技(G)G903 LIGHTSPEED 充电双模游戏无线鼠标升级版HERO传感器 台式笔记本通用外设鼠标 罗技G903 HERO",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/462120/19/12647/95324/6a40ec65Fe03c048e/0083320320cd3bbd.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0028": {
     "id": "m2-0028",
@@ -2127,9 +2159,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20G703%20HERO&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 450,
+    "match_title": "正品罗技g703hero电竞游戏无线鼠标吃鸡宏机械台式笔记本外设拆包",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/289270665/O1CN01lyEhLJ1GmcN3mbiC5_!!2-item_pic.png_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0033": {
     "id": "m2-0033",
@@ -2143,9 +2179,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20MX%20Master%203S&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 549,
+    "match_title": "罗技(Logitech)MX Master 3S 标准版/Master 3S菁英版(Lite版) 无线蓝牙双模鼠标 轻音人体工学设计 带接收器 【标准款】MX Master 3S 白-顺丰快递",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/346130/3/1391/71262/68bff634Fd8657d2d/49ba9c4e3a10ae7a.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0032": {
     "id": "m2-0032",
@@ -2295,9 +2335,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20%E7%BD%97%E6%8A%80%20Pop%20Mouse&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 209,
+    "match_title": "天猫旗舰店 罗技 POP Mouse 无线蓝牙双模鼠标静音办公女生笔记本ipad平板",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/428722076/O1CN01tycNMo1RCr96XkAuy_!!0-item_pic.jpg_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0041": {
     "id": "m2-0041",
@@ -2564,19 +2608,20 @@
     "id": "m2-0053",
     "name": "雷蛇 Basilisk V3 Pro",
     "brand": "雷蛇",
-    "query": "雷蛇 Basilisk V3 Pro",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20Basilisk%20V3%20Pro&c=search",
+    "query": "雷蛇 雷蛇 Basilisk V3 Pro",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Basilisk%20V3%20Pro&c=search",
     "queries": [
       {
         "query": "雷蛇 雷蛇 Basilisk V3 Pro",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20%E9%9B%B7%E8%9B%87%20Basilisk%20V3%20Pro&c=search"
-      },
-      {
-        "query": "雷蛇 Basilisk V3 Pro",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20Basilisk%20V3%20Pro&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 2096,
+    "match_title": "雷蛇(Razer)BASILISK V3 PRO 巴塞利斯蛇无线游戏鼠标 倾斜滚轮 可编程人体工学 Chroma RGB 11个可编程按钮 黑色电竞鼠标 带全底光13区色度RGB照明,2022新款",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/494816/39/12240/63640/6a83452fF6cde50c7/00833203208e1826.png",
+    "score": 80,
     "captured_at": "2026-08-19"
   },
   "m2-0054": {
@@ -3708,8 +3753,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse; mouse accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "m2-0111": {
     "id": "m2-0111",
@@ -4152,9 +4196,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Lamzu%20Lamzu%20Maya&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 669,
+    "match_title": "LAMZU兰族【七夕礼物】小玛雅/MAYA电竞无线游戏鼠标轻量化无线/有线双8K无畏契约csgo使命召唤CF3950 杏花粉【8K接收器版本】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/491227/2/5317/54595/6a6c0e48Fe7068d57/008332032073911e.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0135": {
     "id": "m2-0135",
@@ -4212,8 +4260,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse"
+    "captured_at": "2026-08-19"
   },
   "m2-0137": {
     "id": "m2-0137",
@@ -4533,9 +4580,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Pulsar%20Pulsar%20Xlite%20V4&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 799,
+    "match_title": "派世Pulsar Xlite V4 非对称轻量无线电竞游戏鼠标 最高支持8K V4 PRX 中号 自带8K接收器",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/426879/21/13143/334525/69fb381dF4886ebaa/00837d07d0c96284.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0155": {
     "id": "m2-0155",
@@ -4766,7 +4817,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse; mouse accessory or other product"
+    "filtered_reason": "mouse accessory or other product"
   },
   "m2-0166": {
     "id": "m2-0166",
@@ -5020,7 +5071,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse; mouse accessory or other product"
+    "filtered_reason": "unrelated listing; not a mouse; mouse accessory or other product"
   },
   "m2-0181": {
     "id": "m2-0181",
@@ -5057,9 +5108,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20G3&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse"
+    "status": "matched",
+    "platform": "京东",
+    "price": 160.2,
+    "match_title": "MCHOSEHOSEG3无线滑鼠电竞游戏电脑办公可充电轻量化三模蓝牙有线 G3 A 白色现货",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/472008/17/5419/42957/6a477d7bFbf5a87c3/00833203204beeae.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0180": {
     "id": "m2-0180",
@@ -5159,9 +5214,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20%E8%BF%88%E4%BB%8E%20A5&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 417.61,
+    "match_title": "迈从(MCHOSE)[正品直营]A5游戏鼠标无线蓝牙三模电竞游戏办公专用人体工学超轻量化电脑笔记本 A5 Pro Max(白色)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/324970/6/24291/38053/68d665b2F2b30171d/214383d4ad60ed1c.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0185": {
     "id": "m2-0185",
@@ -5194,9 +5253,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20%E8%BF%88%E4%BB%8E%20A5%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 380.15,
+    "match_title": "迈从(MCHOSE)[正品直营]A5游戏鼠标无线蓝牙三模电竞游戏办公专用人体工学超轻量化电脑笔记本 A5 Pro(白色)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/333112/14/17625/35520/68d665b1F940cb544/20391a4a92753958.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0188": {
     "id": "m2-0188",
@@ -5210,9 +5273,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BF%88%E4%BB%8E%20%E8%BF%88%E4%BB%8E%20A5%20Pro%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 417.61,
+    "match_title": "迈从(MCHOSE)[正品直营]A5游戏鼠标无线蓝牙三模电竞游戏办公专用人体工学超轻量化电脑笔记本 A5 Pro Max(白色)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/324970/6/24291/38053/68d665b2F2b30171d/214383d4ad60ed1c.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0189": {
     "id": "m2-0189",
@@ -5453,9 +5520,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M3%20Pro%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 379,
+    "match_title": "Darmoshark达摩鲨 M3PROMAX 三模无线鼠标 蓝牙2.4G有线 PAW3950 电竞游戏轻量化 对称中大鼠标 支持8K回报率 M3PROMAX黑色+NXP数显接收器",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/282467/14/22279/32941/68035991F4a9d7b4f/8e641d9ff54f031b.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0203": {
     "id": "m2-0203",
@@ -5489,9 +5560,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E6%91%A9%E9%B2%A8%20%E8%BE%BE%E6%91%A9%E9%B2%A8%20M5&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 399,
+    "match_title": "Darmoshark达摩鲨 M5 三模有线无线蓝牙连接人体工程学电脑笔记本台式鼠标38克轻量化小手游戏办公设计鼠标 白色RGB",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/157227/30/26949/33147/666fd571F6774ef90/eebab6e3f7d8bc2b.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0206": {
     "id": "m2-0206",
@@ -6138,9 +6213,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20V22&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 81,
+    "match_title": "雷柏V22鼠标 有线游戏电竞 吃鸡宏定义台式机笔记本发光lol滑鼠",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/1101991245/TB1cbsfX7fb_uJkSne1XXbE4XXa_!!0-item_pic.jpg_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0237": {
     "id": "m2-0237",
@@ -8335,7 +8414,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; mouse accessory or other product"
+    "filtered_reason": "mouse accessory or other product"
   },
   "m2-0351": {
     "id": "m2-0351",
@@ -8389,7 +8468,8 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19"
+    "captured_at": "2026-08-19",
+    "filtered_reason": "not a mouse"
   },
   "m2-0354": {
     "id": "m2-0354",
@@ -8615,17 +8695,25 @@
     "id": "m2-0365",
     "name": "黑爵 AJ139 Pro",
     "brand": "黑爵",
-    "query": "黑爵 黑爵 AJ139 Pro",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20AJ139%20Pro&c=search",
+    "query": "黑爵 AJ139 Pro",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJ139%20Pro&c=search",
     "queries": [
       {
         "query": "黑爵 黑爵 AJ139 Pro",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20%E9%BB%91%E7%88%B5%20AJ139%20Pro&c=search"
+      },
+      {
+        "query": "黑爵 AJ139 Pro",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJ139%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "mouse accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 248.75,
+    "match_title": "黑爵AJ139pro电竞无线鼠标带底座3395超轻高续航FPS类蛇游戏鼠标 AJ139PRO4K白色 3395 700mAh 4k回报率 1K接收器",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/2208631572625/O1CN01bOqPKg1VGIlapS45R_!!2208631572625.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0366": {
     "id": "m2-0366",
@@ -9021,7 +9109,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a mouse; mouse accessory or other product"
+    "filtered_reason": "mouse accessory or other product"
   },
   "m2-0387": {
     "id": "m2-0387",
@@ -9035,13 +9123,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20M3&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 489,
-    "match_title": "渴创M3 keychron M3 双8K三模无线鼠标 人体工学鼠标 轻量化鼠标 瑞昱电竞级芯片游戏办公自研网页驱动 M3M-A23-双8K-PAW3950-黑色",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/481872/5/1859/75364/6a54d7e6F21233878/00835dc5dcc55e2c.jpg",
-    "score": 100,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "m2-0388": {
     "id": "m2-0388",
@@ -9728,12 +9812,16 @@
     "id": "m2-0423",
     "name": "多彩 M618",
     "brand": "多彩",
-    "query": "多彩 多彩 M618",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20%E5%A4%9A%E5%BD%A9%20M618&c=search",
+    "query": "多彩 M618",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20M618&c=search",
     "queries": [
       {
         "query": "多彩 多彩 M618",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20%E5%A4%9A%E5%BD%A9%20M618&c=search"
+      },
+      {
+        "query": "多彩 M618",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E5%A4%9A%E5%BD%A9%20M618&c=search"
       }
     ],
     "status": "no_match",
@@ -9771,9 +9859,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20%E8%BE%BE%E5%B0%94%E4%BC%98%20A950%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 299,
+    "match_title": "达尔优A950PRO三模无线鼠标3395+4k回报率PBT按键快充蓝牙笔记本台式电脑学生有线游戏鼠标 白色(4K)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/8709/17/25358/80646/6694b9a7F3826fb3d/6d3e2ceeefc5cb1a.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0426": {
     "id": "m2-0426",
@@ -9787,9 +9879,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20%E8%BE%BE%E5%B0%94%E4%BC%98%20A970&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 269,
+    "match_title": "DAREU达尔优A970牧马人鼠标6代电脑电竞高阶有线cm665游戏鼠标lol",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/116570962/O1CN01Bqvdk91Iydug212X4_!!116570962.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0427": {
     "id": "m2-0427",
@@ -9815,21 +9911,21 @@
     "id": "m2-0429",
     "name": "达尔优 A980",
     "brand": "达尔优",
-    "query": "达尔优 A980",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A980&c=search",
+    "query": "达尔优 达尔优 A980",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20%E8%BE%BE%E5%B0%94%E4%BC%98%20A980&c=search",
     "queries": [
       {
         "query": "达尔优 达尔优 A980",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20%E8%BE%BE%E5%B0%94%E4%BC%98%20A980&c=search"
-      },
-      {
-        "query": "达尔优 A980",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20A980&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 199,
+    "match_title": "达尔优A980有线鼠标PMW3395+8KHZ回报率有线游戏鼠标笔记本台式平板电脑白色学生办公机械 雪豹白",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/225328/5/5502/69518/656944c6F619c0c1a/2487c3559b4afcf9.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0428": {
     "id": "m2-0428",
@@ -9882,29 +9978,33 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN6&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 82,
+    "match_title": "英菲克(INPHIC)IN6/PRO轻量化无线游戏鼠标41g有线电竞PAW3395/2.6万DPI/TTC微动无畏契约瓦csgo笔记本电脑办公 IN6新【41g轻量化+S301+240mAh】 中小手神鼠【极致轻量化+有线1K/无线1K】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/448937/30/2746/119831/6a1fe8d1F1c7a78a5/0083320320805c91.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "m2-0432": {
     "id": "m2-0432",
     "name": "英菲克 IN9",
     "brand": "英菲克",
-    "query": "英菲克 IN9",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9&c=search",
+    "query": "英菲克 英菲克 IN9",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9&c=search",
     "queries": [
       {
         "query": "英菲克 英菲克 IN9",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9&c=search"
-      },
-      {
-        "query": "英菲克 IN9",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN9&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "抖音小店",
+    "price": 129,
+    "match_title": "【英菲克】IN9三模无线鼠标有线蓝牙游戏电竞充电办公电脑笔记本",
+    "image": "https://p3-aio.ecombdimg.com/obj/ecom-shop-material/jpeg_m_f11926e18a45d2b9c65f80bad20eec30_sx_226349_www800-800",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0433": {
     "id": "m2-0433",
@@ -9922,9 +10022,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%8B%B1%E8%8F%B2%E5%85%8B%20IN10&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 272,
+    "match_title": "英菲克IN10无线鼠标蓝牙有线三模机械电竞游戏笔记本台式电脑3395 极夜黑新焕新版【推荐中小手】",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/843421904/O1CN01rO6VVc1Pw5DNTSy7Q_!!843421904.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "m2-0435": {
     "id": "m2-0435",
@@ -11357,17 +11461,20 @@
     "id": "kb-064",
     "name": "珂芝 K75",
     "brand": "珂芝 KZZI",
-    "query": "珂芝 KZZI 珂芝 K75",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20KZZI%20%E7%8F%82%E8%8A%9D%20K75&c=search",
+    "query": "珂芝 K75",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20K75&c=search",
     "queries": [
       {
         "query": "珂芝 KZZI 珂芝 K75",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20KZZI%20%E7%8F%82%E8%8A%9D%20K75&c=search"
+      },
+      {
+        "query": "珂芝 K75",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8F%82%E8%8A%9D%20K75&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb-065": {
     "id": "kb-065",
@@ -11680,8 +11787,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0013": {
     "id": "kb2-0013",
@@ -12055,7 +12161,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "filtered_reason": "keyboard accessory or other product"
   },
   "kb2-0031": {
     "id": "kb2-0031",
@@ -12421,13 +12527,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20K3%20Max&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 819,
-    "match_title": "渴创keychron K3Max 苹果专供机械键盘 无线三模键盘 QMK/VIA开源改键 客制化键盘 轻薄机身游戏办公 K3M-H3-可插拔-RGB-茶轴",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/359729/35/169/66261/6901e0cdFf251651d/a36e588d0d34d26b.jpg",
-    "score": 100,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "kb2-0049": {
     "id": "kb2-0049",
@@ -12874,8 +12976,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0070": {
     "id": "kb2-0070",
@@ -13342,8 +13443,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0096": {
     "id": "kb2-0096",
@@ -13503,16 +13603,12 @@
     "id": "kb2-0103",
     "name": "Keychron Q10 Max",
     "brand": "Keychron",
-    "query": "Keychron Q10 Max",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q10%20Max&c=search",
+    "query": "Keychron Keychron Q10 Max",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q10%20Max&c=search",
     "queries": [
       {
         "query": "Keychron Keychron Q10 Max",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20Q10%20Max&c=search"
-      },
-      {
-        "query": "Keychron Q10 Max",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Q10%20Max&c=search"
       }
     ],
     "status": "no_match",
@@ -13734,9 +13830,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20V2%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 558,
+    "match_title": "keychron渴创 V2Max 机械键盘 无线键盘 QMK/VIA改键 客制化三模键盘 Gasket结构 兼容Mac/Win系统 V2Max- 可插拔RGB茶轴 - 旋钮版",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/182095/13/43404/62684/660683a0Ff595bd65/2163b06eaa46fa97.png",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0113": {
     "id": "kb2-0113",
@@ -13769,9 +13869,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20V5%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 588,
+    "match_title": "keychron V5Max 机械键盘 无线键盘 客制化键盘三模键盘 2.4G机械全键热插拔 RGB灯效Gasket结构 旋钮键盘 可插拔RGB木星红轴 - 旋钮版",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/237391/24/15649/68893/661660faF8e400f09/69679b3fd3bdcda2.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0115": {
     "id": "kb2-0115",
@@ -13789,13 +13893,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20V3%20Max&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 14499,
-    "match_title": "京东自营 LAZBOY乐至宝新款客厅真皮电动沙发欢乐颂V3MAX躺椅床7天【专柜热销】",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/500701/32/6693/183513/6a7f3d19F919ff34c/0083320320faacad.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "kb2-0118": {
     "id": "kb2-0118",
@@ -13809,9 +13909,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20V6%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 859,
+    "match_title": "keychron V6Max 机械键盘 三模键盘 无线键盘 QMK/VIA开源改键 网页驱动编程 客制化键盘 办公游戏 黑色V6Max 可插拔 RGB 红轴 - 旋钮版",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/193686/20/44953/73586/663b3fa4F93cf736a/3cf6f719c21b8b9e.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0116": {
     "id": "kb2-0116",
@@ -13844,9 +13948,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Keychron%20Keychron%20V8%20Max&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 663,
+    "match_title": "keychron渴创 V8Max 机械键盘 无线三模键盘 客制化键盘 QMK/VIA开源改键 Alice异型键盘 支持Mac/Win系统 V8Max 可插拔 RGB红轴 - 旋钮版",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/245030/21/14641/72418/668b9969Fdeba5ba3/9ed80f974a565493.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0122": {
     "id": "kb2-0122",
@@ -13903,8 +14011,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0123": {
     "id": "kb2-0123",
@@ -14553,8 +14660,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0158": {
     "id": "kb2-0158",
@@ -14764,8 +14870,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0168": {
     "id": "kb2-0168",
@@ -14932,9 +15037,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Akko%20Akko%205108B%20Plus&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 399,
+    "match_title": "京东自营 AKKO5108B Plus 一二和布布联名款三模无线机械键盘电竞游戏专用108键全键热插拔客制化笔记本外接键盘",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/376925/33/5039/240077/693684b5Fa4e218d8/34bfcd4f913d5ce0.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0175": {
     "id": "kb2-0175",
@@ -15980,9 +16089,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20MX%20Mechanical%20Mini&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1789,
+    "match_title": "罗技(Logitech)MX Mechanical mini无线机械键盘蓝牙双模mac笔记本电脑办公 MX 全尺寸机械键盘 盒装 标配 x 是 x 104键 x 青轴",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/481586/11/9219/46432/6a6304b0F9636faa8/00833203207145f7.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0231": {
     "id": "kb2-0231",
@@ -16016,9 +16129,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20MX%20Keys%20S&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 743,
+    "match_title": "罗技(Logitech)MX keys S无线蓝牙键盘多模 高端办公键盘安静舒适背光自适应灯光多设备切换108键全尺寸键盘 MX KeysS+M720【石墨黑】+G大桌垫",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/458462/27/12819/75757/6a3b4cc9F40436cda/00833203209e0e36.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0234": {
     "id": "kb2-0234",
@@ -16063,21 +16180,21 @@
     "id": "kb2-0237",
     "name": "Logitech K380",
     "brand": "罗技",
-    "query": "Logitech K380",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20K380&c=search",
+    "query": "罗技 Logitech K380",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K380&c=search",
     "queries": [
       {
         "query": "罗技 Logitech K380",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K380&c=search"
-      },
-      {
-        "query": "Logitech K380",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20K380&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 149,
+    "match_title": "京东自营 罗技(Logitech)K380 企业级无线蓝牙键盘 办公笔记本平板IPAD电脑键盘 时尚简约 超薄便携 星暮紫【团单优惠】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/332369/14/2435/75977/68a80323F3bfe9a2f/d29d5a89850c18b2.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0235": {
     "id": "kb2-0235",
@@ -16121,17 +16238,20 @@
     "id": "kb2-0238",
     "name": "Logitech K780",
     "brand": "罗技",
-    "query": "罗技 Logitech K780",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K780&c=search",
+    "query": "Logitech K780",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20K780&c=search",
     "queries": [
       {
         "query": "罗技 Logitech K780",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K780&c=search"
+      },
+      {
+        "query": "Logitech K780",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20K780&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0239": {
     "id": "kb2-0239",
@@ -16169,9 +16289,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20K270&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 95,
+    "match_title": "京东自营 罗技(Logitech)K270【企业级】无线办公键盘 笔记本电脑键盘 薄膜全尺寸数字键盘带优联接收器 黑色【团单优惠】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/387732/30/8618/90899/6971de0bF331c376f/0083320320046000.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0240": {
     "id": "kb2-0240",
@@ -16266,9 +16390,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20MK470&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 249,
+    "match_title": "罗技(Logitech) MK470无线键盘鼠标 极简纤薄安静办公 个性键鼠 电脑笔记本家用办公游戏 玫瑰粉",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/203037/20/50200/97306/673e9ac7F45264e47/bbae4d1a48514d8a.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0245": {
     "id": "kb2-0245",
@@ -16313,17 +16441,20 @@
     "id": "kb2-0248",
     "name": "Logitech Wave Keys",
     "brand": "罗技",
-    "query": "罗技 Logitech Wave Keys",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20Wave%20Keys&c=search",
+    "query": "Logitech Wave Keys",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Wave%20Keys&c=search",
     "queries": [
       {
         "query": "罗技 Logitech Wave Keys",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%BD%97%E6%8A%80%20Logitech%20Wave%20Keys&c=search"
+      },
+      {
+        "query": "Logitech Wave Keys",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Wave%20Keys&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0247": {
     "id": "kb2-0247",
@@ -16823,9 +16954,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20Razer%20Ornata%20V3&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1769,
+    "match_title": "雷蛇(Razer)Ornata V3 无数字键盘矮版游戏键盘(美式布局)玉桂狗 超薄键盘配备Razer机械薄膜轴 RGB灯光 US 美版",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/494488/30/3550/75930/6a83488aF46ea7273/00833203202cab5e.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0273": {
     "id": "kb2-0273",
@@ -16920,9 +17055,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E8%9B%87%20Razer%20Pro%20Type%20Ultra&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 999,
+    "match_title": "雷蛇Razer Pro Type Ultra高效生产力无线机械键盘 办公键盘 黄轴",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/2789122191/O1CN01HEpqXX1S3WvfHefx0_!!4611686018427379855-0-item_pic.jpg_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0278": {
     "id": "kb2-0278",
@@ -16994,9 +17133,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%B5%9B%E7%9D%BF%20SteelSeries%20Apex%20Pro%20TKL&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1616.21,
+    "match_title": "SteelSeries赛睿Apex Pro TKL无线超磁电竞游戏键盘有线键盘OLED 屏幕2.4GHz USB-C 接口 104键 黑色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/7897/36/26315/75677/66bf0505F319b4467/2e505e001be10600.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0283": {
     "id": "kb2-0283",
@@ -17472,17 +17615,20 @@
     "id": "kb2-0308",
     "name": "Corsair K68 RGB",
     "brand": "海盗船",
-    "query": "海盗船 Corsair K68 RGB",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%B5%B7%E7%9B%97%E8%88%B9%20Corsair%20K68%20RGB&c=search",
+    "query": "Corsair K68 RGB",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20K68%20RGB&c=search",
     "queries": [
       {
         "query": "海盗船 Corsair K68 RGB",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%B5%B7%E7%9B%97%E8%88%B9%20Corsair%20K68%20RGB&c=search"
+      },
+      {
+        "query": "Corsair K68 RGB",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20K68%20RGB&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0307": {
     "id": "kb2-0307",
@@ -18498,8 +18644,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0362": {
     "id": "kb2-0362",
@@ -18639,17 +18784,20 @@
     "id": "kb2-0368",
     "name": "Leopold FC660C",
     "brand": "Leopold",
-    "query": "Leopold Leopold FC660C",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC660C&c=search",
+    "query": "Leopold FC660C",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC660C&c=search",
     "queries": [
       {
         "query": "Leopold Leopold FC660C",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC660C&c=search"
+      },
+      {
+        "query": "Leopold FC660C",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC660C&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0370": {
     "id": "kb2-0370",
@@ -18761,19 +18909,22 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0376": {
     "id": "kb2-0376",
     "name": "Leopold FC900R",
     "brand": "Leopold",
-    "query": "Leopold Leopold FC900R",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC900R&c=search",
+    "query": "Leopold FC900R",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC900R&c=search",
     "queries": [
       {
         "query": "Leopold Leopold FC900R",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC900R&c=search"
+      },
+      {
+        "query": "Leopold FC900R",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC900R&c=search"
       }
     ],
     "status": "no_match",
@@ -18803,17 +18954,20 @@
     "id": "kb2-0377",
     "name": "Leopold FC900R PD",
     "brand": "Leopold",
-    "query": "Leopold Leopold FC900R PD",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC900R%20PD&c=search",
+    "query": "Leopold FC900R PD",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC900R%20PD&c=search",
     "queries": [
       {
         "query": "Leopold Leopold FC900R PD",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20Leopold%20FC900R%20PD&c=search"
+      },
+      {
+        "query": "Leopold FC900R PD",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Leopold%20FC900R%20PD&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0378": {
     "id": "kb2-0378",
@@ -19361,17 +19515,25 @@
     "id": "kb2-0407",
     "name": "Realforce GX1",
     "brand": "Realforce",
-    "query": "Realforce Realforce GX1",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Realforce%20Realforce%20GX1&c=search",
+    "query": "Realforce GX1",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Realforce%20GX1&c=search",
     "queries": [
       {
         "query": "Realforce Realforce GX1",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Realforce%20Realforce%20GX1&c=search"
+      },
+      {
+        "query": "Realforce GX1",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Realforce%20GX1&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 2369,
+    "match_title": "Topre【日本直邮】燃风REALFORCE GX1电竞游戏键盘静电容机械键盘 X1UC23【白色】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/450633/22/14819/307880/6a6cb018Ff864fe97/0083320320111028.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0406": {
     "id": "kb2-0406",
@@ -19594,12 +19756,16 @@
     "id": "kb2-0420",
     "name": "Glorious GMMK Pro",
     "brand": "Glorious",
-    "query": "Glorious Glorious GMMK Pro",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Glorious%20Glorious%20GMMK%20Pro&c=search",
+    "query": "Glorious GMMK Pro",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Glorious%20GMMK%20Pro&c=search",
     "queries": [
       {
         "query": "Glorious Glorious GMMK Pro",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Glorious%20Glorious%20GMMK%20Pro&c=search"
+      },
+      {
+        "query": "Glorious GMMK Pro",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Glorious%20GMMK%20Pro&c=search"
       }
     ],
     "status": "no_match",
@@ -19827,9 +19993,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK61&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 175,
+    "match_title": "RK61无线蓝牙三模机械键盘RGB背光黑青红茶轴笔记本平板ipad键盘 青轴-有声段落轴,按键清脆,机械感强 RK61白色RGB-无线三模版 官方标配",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/3001082367/O1CN01mxRolZ1TM8cTS2wMT_!!3001082367.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0430": {
     "id": "kb2-0430",
@@ -19914,12 +20084,16 @@
     "id": "kb2-0436",
     "name": "RK71",
     "brand": "RK",
-    "query": "RK RK71",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK71&c=search",
+    "query": "RK71",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK71&c=search",
     "queries": [
       {
         "query": "RK RK71",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK71&c=search"
+      },
+      {
+        "query": "RK71",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=RK71&c=search"
       }
     ],
     "status": "no_match",
@@ -20001,9 +20175,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK71%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 4352,
+    "match_title": "京东自营 华凌洗碗机【H71PRO 】家用全自动 嵌入式 17套大容量 热风烘干 七星消杀【AIR17】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/504566/3/5326/91480/6a833128Fa71176af/008332032013a6d3.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0440": {
     "id": "kb2-0440",
@@ -20078,7 +20256,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; not a keyboard; keyboard accessory or other product"
+    "filtered_reason": "unrelated listing; not a keyboard"
   },
   "kb2-0444": {
     "id": "kb2-0444",
@@ -20128,29 +20306,33 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK104&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 129,
+    "match_title": "RK R104机械键盘有线电脑办公客制化热插拔104键笔记本外接打字青轴红轴茶轴人体工学 黑色-红轴-有线单模-白光",
+    "image": "https://img14.360buyimg.com/pop/jfs/t20280630/470580/40/2922/142739/6a4466a0F4f630e4c/0a02320320aeda66.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0447": {
     "id": "kb2-0447",
     "name": "RK108",
     "brand": "RK",
-    "query": "RK108",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK108&c=search",
+    "query": "RK RK108",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK108&c=search",
     "queries": [
       {
         "query": "RK RK108",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK108&c=search"
-      },
-      {
-        "query": "RK108",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=RK108&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 519,
+    "match_title": "RK108机械键盘RGB蓝牙无线2.4G有线三模热插拔游戏电竞吃鸡发光108键台式电脑笔记本平板 紫气东来(RGB)三模版 热拔轴 TTC金粉轴V2(码字推荐)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/299914/2/21716/215128/687118adF114b92f2/51064903a7356f99.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0449": {
     "id": "kb2-0449",
@@ -20164,9 +20346,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK987&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 155.2,
+    "match_title": "RK987樱桃机械键盘有线87键电脑笔记本办公电竞游戏专用 白色纯色正刻【白光-87键】有线版 樱桃cherry【茶轴】",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/478689/17/767/71153/6a4df166F35f32474/008332032061d0b1.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0451": {
     "id": "kb2-0451",
@@ -20180,9 +20366,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK%20S75&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 319,
+    "match_title": "RK S75三模机械键盘2.4G蓝牙有线RGB全键无冲81键Gask结构带旋钮0.66吋OLED屏 黑莓 碧螺轴(线性轴游戏推荐)",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/382565/12/7061/99948/694bc79bF03c6c3a3/491fecfe25050cb2.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0448": {
     "id": "kb2-0448",
@@ -20200,9 +20390,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK920&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 106,
+    "match_title": "京东自营 朝阳轮胎电动车电瓶车真空胎 80/70-10 H-920 外卖加强型真空胎",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/317817/37/12177/126005/685fb121Fec315ef6/df1fbd883ccefcdd.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "kb2-0450": {
     "id": "kb2-0450",
@@ -20236,9 +20430,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK%20S98&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 389,
+    "match_title": "RK S98客制化机械键盘三模2.4G无线蓝牙有线游戏MAC办公彩屏旋钮 白色-S98 是 RK碧螺轴【线性轴/纯净HiFi】",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/683491584/O1CN01xKjR6i1NZWRQl5pAs_!!683491584.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0453": {
     "id": "kb2-0453",
@@ -20319,26 +20517,32 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20M87&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 219,
+    "match_title": "京东自营 红龙(REDRAGON)M87磁轴键盘RT电竞游戏磁轴游戏键盘客制化键盘键盘电竞游戏新年礼物 白色 磁珀轴",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/484835/33/3120/88751/6a5e167aF91fc8827/0083320320e18961.jpg",
+    "score": 80,
     "captured_at": "2026-08-19"
   },
   "kb2-0457": {
     "id": "kb2-0457",
     "name": "RK R98",
     "brand": "RK",
-    "query": "RK R98",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20R98&c=search",
+    "query": "RK RK R98",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK%20R98&c=search",
     "queries": [
       {
         "query": "RK RK R98",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20RK%20R98&c=search"
-      },
-      {
-        "query": "RK R98",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=RK%20R98&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 249,
+    "match_title": "RKR98PROV2三模机械键盘无线电脑办公蓝牙有线电竞游戏客制化热插拔98键女生轻音打字笔记本ipad通用 R98 五十度灰-水蜜桃V3静音轴-三模",
+    "image": "https://img14.360buyimg.com/pop/jfs/t20280713/478709/23/8741/89871/6a55ee27F2213fb95/0a02320320d69c90.jpg",
+    "score": 80,
     "captured_at": "2026-08-19"
   },
   "kb2-0459": {
@@ -20562,9 +20766,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E7%8B%BC%E9%80%94%20LANGTU%20LT104&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 169,
+    "match_title": "京东自营 狼途(Langtu)LT104白冰蓝光104键机械键盘电竞游戏办公键盘有线客制化平板电脑笔记本键盘",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/473656/20/106/167892/6a44d019Ffdc9d01b/008332032073fecc.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0470": {
     "id": "kb2-0470",
@@ -20754,13 +20962,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=MonsGeek%20M1&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 89.9,
-    "match_title": "京东自营 百亿补贴 3M思高免手洗平板拖把32cm杆长130cm1布FH1家用一拖净免手洗2026",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/490824/38/12033/173150/6a7534c6F6b92de16/0083320320fbb5a5.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "kb2-0481": {
     "id": "kb2-0481",
@@ -20909,13 +21113,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=MonsGeek%20MonsGeek%20M2&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 11999,
-    "match_title": "京东自营 Nextorage 8TB SSD固态硬盘 PS5扩展硬盘M.2接口(NVMe协议PCIe4.0) 带散热片NEM-PA8TB/N",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/463087/16/7809/81642/6a3ce206F4655aee1/0083320320b6ba43.png",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "kb2-0490": {
     "id": "kb2-0490",
@@ -21045,7 +21245,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; not a keyboard; keyboard accessory or other product"
+    "filtered_reason": "not a keyboard"
   },
   "kb2-0494": {
     "id": "kb2-0494",
@@ -21633,9 +21833,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=ROG%20ROG%20Strix%20Scope%20II&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1079,
+    "match_title": "华硕(ASUS)【日本直邮 日本发货】游戏键盘 有线键盘 日语排列 RGB照明 铝框 XA11 ROG STRIX SCOPE II",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/454552/14/16948/306773/6a3a4eeaFea2aff56/0083320320d7315a.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0524": {
     "id": "kb2-0524",
@@ -21789,8 +21993,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0533": {
     "id": "kb2-0533",
@@ -21922,8 +22125,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0540": {
     "id": "kb2-0540",
@@ -22114,8 +22316,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0549": {
     "id": "kb2-0549",
@@ -22279,17 +22480,20 @@
     "id": "kb2-0559",
     "name": "AJAZZ AK980",
     "brand": "黑爵",
-    "query": "黑爵 AJAZZ AK980",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJAZZ%20AK980&c=search",
+    "query": "AJAZZ AK980",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=AJAZZ%20AK980&c=search",
     "queries": [
       {
         "query": "黑爵 AJAZZ AK980",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%BB%91%E7%88%B5%20AJAZZ%20AK980&c=search"
+      },
+      {
+        "query": "AJAZZ AK980",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=AJAZZ%20AK980&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0560": {
     "id": "kb2-0560",
@@ -22397,17 +22601,25 @@
     "id": "kb2-0564",
     "name": "Dareu A98",
     "brand": "达尔优",
-    "query": "达尔优 Dareu A98",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20Dareu%20A98&c=search",
+    "query": "Dareu A98",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Dareu%20A98&c=search",
     "queries": [
       {
         "query": "达尔优 Dareu A98",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20Dareu%20A98&c=search"
+      },
+      {
+        "query": "Dareu A98",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Dareu%20A98&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 329,
+    "match_title": "达尔优(dareu)A98专业版98配列有线/无线/蓝牙三模客制化机械键盘Gasket结构游戏办公电脑笔记本通用 长歌行 梦遇HIFI轴",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/388673/30/8588/149420/69718066F7f1afa62/00833e83e8ed742e.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0565": {
     "id": "kb2-0565",
@@ -22421,9 +22633,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E8%BE%BE%E5%B0%94%E4%BC%98%20Dareu%20A100&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing; keyboard accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 2519,
+    "match_title": "达尔优(DAREU) A100 幻彩电竞游戏键盘 炫彩背光有线机械手感键盘 台式笔记本通用 办公娱乐电脑外接键盘 粉色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/508941/33/745/106942/6a8344f4F1a1882b0/0083320320dfd3b8.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0566": {
     "id": "kb2-0566",
@@ -22617,8 +22833,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0575": {
     "id": "kb2-0575",
@@ -22637,8 +22852,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "kb2-0578": {
     "id": "kb2-0578",
@@ -23246,9 +23460,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Epomaker%20Epomaker%20TH99%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 689,
+    "match_title": "EPOMAKER TH99pro机械键盘客制化无线三模蓝牙旋钮热插拔办公游戏",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/2217655232513/O1CN01N9n7Ae1UR0QoQCBqq_!!4611686018427381761-2-item_pic.png_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0608": {
     "id": "kb2-0608",
@@ -23405,9 +23623,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Epomaker%20Galaxy100%20Lite&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "keyboard accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 590,
+    "match_title": "EPOMAKER Galaxy100Lite铝合金机械键盘旋钮三模无线蓝牙热插拔 奶黄渐变-紫藤花轴",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/2217655232513/O1CN01IrPWvM1UR0Qz56FKM_!!2217655232513.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "kb2-0615": {
     "id": "kb2-0615",
@@ -25682,8 +25904,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated product"
+    "captured_at": "2026-08-19"
   },
   "mp-008": {
     "id": "mp-008",
@@ -25935,7 +26156,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a mousepad"
+    "filtered_reason": "unrelated listing; not a mousepad"
   },
   "mp-020": {
     "id": "mp-020",
@@ -26412,8 +26633,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mousepad"
+    "captured_at": "2026-08-19"
   },
   "mp2-0001": {
     "id": "mp2-0001",
@@ -28262,8 +28482,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mousepad"
+    "captured_at": "2026-08-19"
   },
   "mp2-0100": {
     "id": "mp2-0100",
@@ -28302,8 +28521,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a mousepad"
+    "captured_at": "2026-08-19"
   },
   "mp2-0099": {
     "id": "mp2-0099",
@@ -34156,9 +34374,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G633s&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 569,
+    "match_title": "罗技G933S无线游戏耳机电竞耳麦头戴带麦克风7.1声道G633s有线RGB",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/16297961/O1CN01AVGqK728gBmCXxrmf_!!16297961.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0005": {
     "id": "hs2-0005",
@@ -34184,17 +34406,20 @@
     "id": "hs2-0006",
     "name": "Logitech G535",
     "brand": "Logitech",
-    "query": "Logitech Logitech G535",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G535&c=search",
+    "query": "Logitech G535",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20G535&c=search",
     "queries": [
       {
         "query": "Logitech Logitech G535",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G535&c=search"
+      },
+      {
+        "query": "Logitech G535",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20G535&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0008": {
     "id": "hs2-0008",
@@ -34260,9 +34485,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20G%20Pro%20X&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 649,
+    "match_title": "罗技(G)PRO X2代无线游戏耳机头戴式游戏电竞耳机蓝牙三模猫耳耳机笔记本电脑吃鸡网吧直播七夕送男友礼物 GPRO X有线耳机+耳机支架",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/478862/9/1320/107184/6a4f12d2Fbf159fdc/00833203202000fe.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0011": {
     "id": "hs2-0011",
@@ -34420,9 +34649,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20H390&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 149,
+    "match_title": "罗技(Logitech)H390有线耳机耳麦(H340升级版)USB电脑耳机头戴式立体声降噪耳麦笔记本办公 石墨黑-顺丰快递",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/331008/37/11208/43433/68bf99c5F1a64346f/23b55ff6c2121b5c.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0018": {
     "id": "hs2-0018",
@@ -35297,7 +35530,12 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Razer%20Kaira%20Pro%20HyperSpeed&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 2626,
+    "match_title": "雷蛇(Razer)Kaira Pro HyperSpeed带触觉无线蓝牙多平台游戏耳机头戴式 White & Black",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/502043/18/7517/43119/6a833ae1F0a33f371/0083320320836438.png",
+    "score": 100,
     "captured_at": "2026-08-19"
   },
   "hs2-0063": {
@@ -35488,16 +35726,12 @@
     "id": "hs2-0072",
     "name": "SteelSeries Arctis 7",
     "brand": "SteelSeries",
-    "query": "SteelSeries Arctis 7",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%207&c=search",
+    "query": "SteelSeries SteelSeries Arctis 7",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%207&c=search",
     "queries": [
       {
         "query": "SteelSeries SteelSeries Arctis 7",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%207&c=search"
-      },
-      {
-        "query": "SteelSeries Arctis 7",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%207&c=search"
       }
     ],
     "status": "no_match",
@@ -35754,12 +35988,16 @@
     "id": "hs2-0086",
     "name": "SteelSeries Arctis Nova 5",
     "brand": "SteelSeries",
-    "query": "SteelSeries SteelSeries Arctis Nova 5",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%20Nova%205&c=search",
+    "query": "SteelSeries Arctis Nova 5",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%20Nova%205&c=search",
     "queries": [
       {
         "query": "SteelSeries SteelSeries Arctis Nova 5",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20SteelSeries%20Arctis%20Nova%205&c=search"
+      },
+      {
+        "query": "SteelSeries Arctis Nova 5",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=SteelSeries%20Arctis%20Nova%205&c=search"
       }
     ],
     "status": "no_match",
@@ -36317,17 +36555,20 @@
     "id": "hs2-0115",
     "name": "HyperX Cloud Revolver",
     "brand": "HyperX",
-    "query": "HyperX HyperX Cloud Revolver",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20HyperX%20Cloud%20Revolver&c=search",
+    "query": "HyperX Cloud Revolver",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20Cloud%20Revolver&c=search",
     "queries": [
       {
         "query": "HyperX HyperX Cloud Revolver",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20HyperX%20Cloud%20Revolver&c=search"
+      },
+      {
+        "query": "HyperX Cloud Revolver",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=HyperX%20Cloud%20Revolver&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0116": {
     "id": "hs2-0116",
@@ -36504,17 +36745,20 @@
     "id": "hs2-0125",
     "name": "Corsair HS50",
     "brand": "Corsair",
-    "query": "Corsair Corsair HS50",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Corsair%20HS50&c=search",
+    "query": "Corsair HS50",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20HS50&c=search",
     "queries": [
       {
         "query": "Corsair Corsair HS50",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Corsair%20HS50&c=search"
+      },
+      {
+        "query": "Corsair HS50",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20HS50&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0126": {
     "id": "hs2-0126",
@@ -36953,17 +37197,20 @@
     "id": "hs2-0148",
     "name": "Corsair Virtuoso RGB Wireless",
     "brand": "Corsair",
-    "query": "Corsair Corsair Virtuoso RGB Wireless",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Corsair%20Virtuoso%20RGB%20Wireless&c=search",
+    "query": "Corsair Virtuoso RGB Wireless",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Virtuoso%20RGB%20Wireless&c=search",
     "queries": [
       {
         "query": "Corsair Corsair Virtuoso RGB Wireless",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Corsair%20Virtuoso%20RGB%20Wireless&c=search"
+      },
+      {
+        "query": "Corsair Virtuoso RGB Wireless",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Corsair%20Virtuoso%20RGB%20Wireless&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0149": {
     "id": "hs2-0149",
@@ -37151,9 +37398,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20WH-XB910N&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 3556,
+    "match_title": "索尼(SONY)WH-XB910N重低音降噪耳机无线蓝牙头戴式耳机 带麦克风Alexa语音控制 折叠设计 30小时续航 Black",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/499679/25/8409/40694/6a8346ebF95394998/00833203208be267.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0160": {
     "id": "hs2-0160",
@@ -37207,7 +37458,12 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20WH-XB900N&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 3259,
+    "match_title": "索尼(SONY) WH-XB900N 无线蓝牙主动降噪头戴式耳机 强劲重低音内置麦克风通话 触控操作长效续航 立体声耳麦 蓝色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/493942/28/13846/56232/6a833bccFb2e4beba/0083320320c42bb5.png",
+    "score": 100,
     "captured_at": "2026-08-19"
   },
   "hs2-0162": {
@@ -37564,9 +37820,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Sony%20Sony%20MDR-7506&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 998.75,
+    "match_title": "国行索尼/SONY MDR-7506重低音全封闭高解晰专业录音监听耳机",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/3032182280/O1CN01iKN8fDrdPSI2vH2e_!!3032182280.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0180": {
     "id": "hs2-0180",
@@ -37989,19 +38249,20 @@
     "id": "hs2-0204",
     "name": "Audeze MM-100",
     "brand": "Audeze",
-    "query": "Audeze MM-100",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20MM-100&c=search",
+    "query": "Audeze Audeze MM-100",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20Audeze%20MM-100&c=search",
     "queries": [
       {
         "query": "Audeze Audeze MM-100",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20Audeze%20MM-100&c=search"
-      },
-      {
-        "query": "Audeze MM-100",
-        "url": "https://s.manmanbuy.com/m/search/result?keyword=Audeze%20MM-100&c=search"
       }
     ],
-    "status": "no_match",
+    "status": "matched",
+    "platform": "京东",
+    "price": 3599,
+    "match_title": "奥帝兹 Audeze MM-100 监听头戴式平面磁性耳机 有线HIFI音乐耳机",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/393013/37/15301/104178/698ac98cFb2579b9b/0083320320712d64.jpg",
+    "score": 100,
     "captured_at": "2026-08-19"
   },
   "hs2-0203": {
@@ -38791,8 +39052,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0243": {
     "id": "hs2-0243",
@@ -39264,17 +39524,21 @@
     "id": "hs2-0267",
     "name": "Sennheiser Momentum 4 Wireless",
     "brand": "Sennheiser",
-    "query": "Sennheiser Sennheiser Momentum 4 Wireless",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Sennheiser%20Momentum%204%20Wireless&c=search",
+    "query": "Sennheiser Momentum 4 Wireless",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Momentum%204%20Wireless&c=search",
     "queries": [
       {
         "query": "Sennheiser Sennheiser Momentum 4 Wireless",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Sennheiser%20Momentum%204%20Wireless&c=search"
+      },
+      {
+        "query": "Sennheiser Momentum 4 Wireless",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Momentum%204%20Wireless&c=search"
       }
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "filtered_reason": "not a headset"
   },
   "hs2-0266": {
     "id": "hs2-0266",
@@ -39522,9 +39786,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Sennheiser%20Sennheiser%20GSP%20300&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1136,
+    "match_title": "森海塞尔 森海塞尔EPOS GSP 300封闭式原声游戏耳机带降噪麦克风多平台兼容 白色-GSP301",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/400813/8/14845/35419/69af9269F950e46fe/0083320320490c78.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0279": {
     "id": "hs2-0279",
@@ -40304,17 +40572,20 @@
     "id": "hs2-0321",
     "name": "Turtle Beach Stealth 500",
     "brand": "Turtle Beach",
-    "query": "Turtle Beach Turtle Beach Stealth 500",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Turtle%20Beach%20Stealth%20500&c=search",
+    "query": "Turtle Beach Stealth 500",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Stealth%20500&c=search",
     "queries": [
       {
         "query": "Turtle Beach Turtle Beach Stealth 500",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Turtle%20Beach%20Stealth%20500&c=search"
+      },
+      {
+        "query": "Turtle Beach Stealth 500",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Stealth%20500&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0320": {
     "id": "hs2-0320",
@@ -40377,12 +40648,16 @@
     "id": "hs2-0324",
     "name": "Turtle Beach Atlas Air",
     "brand": "Turtle Beach",
-    "query": "Turtle Beach Turtle Beach Atlas Air",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Turtle%20Beach%20Atlas%20Air&c=search",
+    "query": "Turtle Beach Atlas Air",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Atlas%20Air&c=search",
     "queries": [
       {
         "query": "Turtle Beach Turtle Beach Atlas Air",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Turtle%20Beach%20Atlas%20Air&c=search"
+      },
+      {
+        "query": "Turtle Beach Atlas Air",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Turtle%20Beach%20Atlas%20Air&c=search"
       }
     ],
     "status": "no_match",
@@ -40487,12 +40762,16 @@
     "id": "hs2-0331",
     "name": "JBL Quantum 200",
     "brand": "JBL",
-    "query": "JBL JBL Quantum 200",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20200&c=search",
+    "query": "JBL Quantum 200",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20Quantum%20200&c=search",
     "queries": [
       {
         "query": "JBL JBL Quantum 200",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Quantum%20200&c=search"
+      },
+      {
+        "query": "JBL Quantum 200",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20Quantum%20200&c=search"
       }
     ],
     "status": "no_match",
@@ -40713,17 +40992,20 @@
     "id": "hs2-0343",
     "name": "JBL Tune 510BT",
     "brand": "JBL",
-    "query": "JBL JBL Tune 510BT",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Tune%20510BT&c=search",
+    "query": "JBL Tune 510BT",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20Tune%20510BT&c=search",
     "queries": [
       {
         "query": "JBL JBL Tune 510BT",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Tune%20510BT&c=search"
+      },
+      {
+        "query": "JBL Tune 510BT",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20Tune%20510BT&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0342": {
     "id": "hs2-0342",
@@ -40867,9 +41149,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Tune%20Flex&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 799,
+    "match_title": "天猫超市 JBL TUNE FLEX 小晶豆无线蓝牙半入耳降噪耳机 官方标配 黑色",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/725677994/O1CN01D8Z7sm28vJEEzDrbl_!!725677994.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0350": {
     "id": "hs2-0350",
@@ -41017,9 +41303,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Live%20Beam%203&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 1699,
+    "match_title": "JBL LIVE BEAM3炫彩荚无线降噪蓝牙耳机触控屏耳麦284 官方标配 木槿紫",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/2213856588863/O1CN01NhVJji2FLJMXb2lr1_!!2213856588863.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0359": {
     "id": "hs2-0359",
@@ -41053,9 +41343,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=JBL%20JBL%20Live%20Flex%203&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1198.89,
+    "match_title": "京东自营 JBL LIVE FLEX3晶彩荚 无线蓝牙耳机 智能触屏自适应降噪半入耳式耳机 七夕礼物 黑色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/508885/30/297/99861/6a827017F78674f18/00833203207c61b8.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0361": {
     "id": "hs2-0361",
@@ -41708,8 +42002,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "captured_at": "2026-08-19"
   },
   "hs2-0395": {
     "id": "hs2-0395",
@@ -41868,8 +42161,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0403": {
     "id": "hs2-0403",
@@ -41961,9 +42253,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Philips%20Philips%20SHP9500&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 479,
+    "match_title": "飞利浦(PHILIPS)【限时补贴15%】SHP9500游戏版G6105 HiFi级游戏耳机 7.1虚拟环绕 呼吸灯 头戴式电脑电竞线控带麦",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/454234/7/13025/150963/6a6abb93F4461e96c/0083320320f543e4.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0408": {
     "id": "hs2-0408",
@@ -42009,17 +42305,25 @@
     "id": "hs2-0411",
     "name": "Philips TAH5205",
     "brand": "Philips",
-    "query": "Philips Philips TAH5205",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Philips%20Philips%20TAH5205&c=search",
+    "query": "Philips TAH5205",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Philips%20TAH5205&c=search",
     "queries": [
       {
         "query": "Philips Philips TAH5205",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Philips%20Philips%20TAH5205&c=search"
+      },
+      {
+        "query": "Philips TAH5205",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Philips%20TAH5205&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 152,
+    "match_title": "京东自营 飞利浦(PHILIPS)头戴式蓝牙耳机TAH5205无线有线双模式清晰耳麦游戏音乐运动电脑适用苹果华为手机 黑",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/485511/29/13568/169104/6a731523Fbf66018c/00833203209fee82.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0409": {
     "id": "hs2-0409",
@@ -42389,8 +42693,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0429": {
     "id": "hs2-0429",
@@ -42415,12 +42718,16 @@
     "id": "hs2-0431",
     "name": "Edifier H850",
     "brand": "Edifier",
-    "query": "Edifier Edifier H850",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20H850&c=search",
+    "query": "Edifier H850",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20H850&c=search",
     "queries": [
       {
         "query": "Edifier Edifier H850",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20H850&c=search"
+      },
+      {
+        "query": "Edifier H850",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20H850&c=search"
       }
     ],
     "status": "no_match",
@@ -42497,9 +42804,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Edifier%20Edifier%20W820NB&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 368.9,
+    "match_title": "京东自营 漫步者(EDIFIER)W820NB三金标版 头戴式主动降噪蓝牙耳机 手机电脑笔记本耳机 83小时续航 午夜灰 七夕情人节礼物",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/490947/29/8836/162773/6a705581Fc38d0fb5/0083320320a7e793.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0435": {
     "id": "hs2-0435",
@@ -42852,8 +43163,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0455": {
     "id": "hs2-0455",
@@ -43021,17 +43331,20 @@
     "id": "hs2-0463",
     "name": "漫步者 LolliPods Pro 2",
     "brand": "漫步者",
-    "query": "漫步者 漫步者 LolliPods Pro 2",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20LolliPods%20Pro%202&c=search",
+    "query": "漫步者 LolliPods Pro 2",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20LolliPods%20Pro%202&c=search",
     "queries": [
       {
         "query": "漫步者 漫步者 LolliPods Pro 2",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20LolliPods%20Pro%202&c=search"
+      },
+      {
+        "query": "漫步者 LolliPods Pro 2",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20LolliPods%20Pro%202&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0464": {
     "id": "hs2-0464",
@@ -43053,33 +43366,39 @@
     "id": "hs2-0465",
     "name": "漫步者 DreamPods 2",
     "brand": "漫步者",
-    "query": "漫步者 漫步者 DreamPods 2",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20DreamPods%202&c=search",
+    "query": "漫步者 DreamPods 2",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20DreamPods%202&c=search",
     "queries": [
       {
         "query": "漫步者 漫步者 DreamPods 2",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20DreamPods%202&c=search"
+      },
+      {
+        "query": "漫步者 DreamPods 2",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20DreamPods%202&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0466": {
     "id": "hs2-0466",
     "name": "漫步者声迈 X3",
     "brand": "漫步者",
-    "query": "漫步者 漫步者声迈 X3",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%E5%A3%B0%E8%BF%88%20X3&c=search",
+    "query": "漫步者声迈 X3",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%E5%A3%B0%E8%BF%88%20X3&c=search",
     "queries": [
       {
         "query": "漫步者 漫步者声迈 X3",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%E5%A3%B0%E8%BF%88%20X3&c=search"
+      },
+      {
+        "query": "漫步者声迈 X3",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%E5%A3%B0%E8%BF%88%20X3&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0468": {
     "id": "hs2-0468",
@@ -43152,9 +43471,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20FunBuds&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 359,
+    "match_title": "EDIFIER/漫步者 EDF200014Funbuds真无线主动降噪蓝牙耳机运动耳",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/60832863/O1CN01UqOnvV1X1IdZDyprq_!!60832863.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0471": {
     "id": "hs2-0471",
@@ -43196,12 +43519,16 @@
     "id": "hs2-0473",
     "name": "漫步者 TWS1",
     "brand": "漫步者",
-    "query": "漫步者 漫步者 TWS1",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20TWS1&c=search",
+    "query": "漫步者 TWS1",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20TWS1&c=search",
     "queries": [
       {
         "query": "漫步者 漫步者 TWS1",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20%E6%BC%AB%E6%AD%A5%E8%80%85%20TWS1&c=search"
+      },
+      {
+        "query": "漫步者 TWS1",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E6%BC%AB%E6%AD%A5%E8%80%85%20TWS1&c=search"
       }
     ],
     "status": "no_match",
@@ -43346,12 +43673,16 @@
     "id": "hs2-0482",
     "name": "雷柏 VH310",
     "brand": "雷柏",
-    "query": "雷柏 雷柏 VH310",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20VH310&c=search",
+    "query": "雷柏 VH310",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20VH310&c=search",
     "queries": [
       {
         "query": "雷柏 雷柏 VH310",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20VH310&c=search"
+      },
+      {
+        "query": "雷柏 VH310",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20VH310&c=search"
       }
     ],
     "status": "no_match",
@@ -43389,9 +43720,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20VH500&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 179,
+    "match_title": "雷柏VH500游戏耳机头戴式电脑吃鸡7.1声道电竞带麦克风台式笔记本",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/249789133/O1CN01hMzgcX2HKxv7gHkRp_!!0-item_pic.jpg_400x400.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0483": {
     "id": "hs2-0483",
@@ -43448,9 +43783,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20VH510&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "淘宝",
+    "price": 149,
+    "match_title": "雷柏VH510电脑吃鸡7.1耳机头戴式台式笔记本电竞游戏耳麦绝地求生 VH500耳机",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/4217175816/O1CN01H3D4fm1spm6Slcbcz_!!4217175816.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0488": {
     "id": "hs2-0488",
@@ -43472,17 +43811,20 @@
     "id": "hs2-0487",
     "name": "雷柏 VH600",
     "brand": "雷柏",
-    "query": "雷柏 雷柏 VH600",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20VH600&c=search",
+    "query": "雷柏 VH600",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20VH600&c=search",
     "queries": [
       {
         "query": "雷柏 雷柏 VH600",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20%E9%9B%B7%E6%9F%8F%20VH600&c=search"
+      },
+      {
+        "query": "雷柏 VH600",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=%E9%9B%B7%E6%9F%8F%20VH600&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0489": {
     "id": "hs2-0489",
@@ -43719,7 +44061,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "filtered_reason": "not a headset; headset accessory or other product"
   },
   "hs2-0503": {
     "id": "hs2-0503",
@@ -44346,17 +44688,25 @@
     "id": "hs2-0534",
     "name": "Bose QuietComfort 35 II",
     "brand": "Bose",
-    "query": "Bose Bose QuietComfort 35 II",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20Bose%20QuietComfort%2035%20II&c=search",
+    "query": "Bose QuietComfort 35 II",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20QuietComfort%2035%20II&c=search",
     "queries": [
       {
         "query": "Bose Bose QuietComfort 35 II",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20Bose%20QuietComfort%2035%20II&c=search"
+      },
+      {
+        "query": "Bose QuietComfort 35 II",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20QuietComfort%2035%20II&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1247.4,
+    "match_title": "博士BOSE Bose博士QuietComfort 35II 无线蓝牙降噪耳机耳麦 QC35二代 Bose QuietComfort 35II 银色 银色 Bose QuietComfort 35II",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/347118/39/26059/49265/6916db8dFe48282a9/c007ab0dc7fde771.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0535": {
     "id": "hs2-0535",
@@ -44389,25 +44739,32 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20Bose%20QuietComfort%20Earbuds&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a headset; headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1999,
+    "match_title": "BOSE QuietComfort Earbuds大鲨入耳式无线蓝牙耳机 主动降噪耳机 博士大鲨消噪耳塞 运动耳机 砂岩金",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/235412/12/3168/37984/6554949eFbf37c520/3c6896827e09298e.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0536": {
     "id": "hs2-0536",
     "name": "Bose QuietComfort Earbuds II",
     "brand": "Bose",
-    "query": "Bose Bose QuietComfort Earbuds II",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20Bose%20QuietComfort%20Earbuds%20II&c=search",
+    "query": "Bose QuietComfort Earbuds II",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20QuietComfort%20Earbuds%20II&c=search",
     "queries": [
       {
         "query": "Bose Bose QuietComfort Earbuds II",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20Bose%20QuietComfort%20Earbuds%20II&c=search"
+      },
+      {
+        "query": "Bose QuietComfort Earbuds II",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Bose%20QuietComfort%20Earbuds%20II&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0540": {
     "id": "hs2-0540",
@@ -44421,9 +44778,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Samsung%20Galaxy%20Buds3%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1029.19,
+    "match_title": "SAMSUNG Galaxy Buds3 Pro原装无线入耳式主动降噪蓝牙耳机 Buds3 FE【银雾灰】 套餐一版 店保一年",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/506085/10/2556/90742/6a819376F1ad3ddd2/0083320320647859.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0538": {
     "id": "hs2-0538",
@@ -44487,17 +44848,25 @@
     "id": "hs2-0543",
     "name": "Samsung Galaxy Buds FE",
     "brand": "Samsung",
-    "query": "Samsung Samsung Galaxy Buds FE",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Samsung%20Galaxy%20Buds%20FE&c=search",
+    "query": "Samsung Galaxy Buds FE",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Galaxy%20Buds%20FE&c=search",
     "queries": [
       {
         "query": "Samsung Samsung Galaxy Buds FE",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Samsung%20Galaxy%20Buds%20FE&c=search"
+      },
+      {
+        "query": "Samsung Galaxy Buds FE",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Galaxy%20Buds%20FE&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 569,
+    "match_title": "三星(SAMSUNG)Galaxy Buds FE 智能主动降噪运动无线蓝牙耳机出众音质佩戴舒适/持久续航适用安卓MT33 Buds FE 雪境白",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/277194/23/17344/51208/67fcd4aaF4cf730f7/104592d2d8691cb9.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0541": {
     "id": "hs2-0541",
@@ -44535,9 +44904,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Samsung%20Samsung%20Galaxy%20Buds2&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 325,
+    "match_title": "三星智家(SAMSUNG)三星galaxy buds2 降噪真无线蓝牙耳机R177音乐耳机无线充电 绿色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/411728/29/10622/69598/69cf3672F7f1d366d/00833203207e9ce3.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0545": {
     "id": "hs2-0545",
@@ -44591,9 +44964,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Google%20Google%20Pixel%20Buds%20Pro&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "not a headset; headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 1559,
+    "match_title": "谷歌(Google)Pixel Buds Pro真无线蓝牙耳机主动降噪耳塞耳豆 木炭色",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/207394/36/15602/16565/63ed9dd5F867b854b/aa0ddaec981c1c6b.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0549": {
     "id": "hs2-0549",
@@ -44619,17 +44996,20 @@
     "id": "hs2-0548",
     "name": "Google Pixel Buds A-Series",
     "brand": "Google",
-    "query": "Google Google Pixel Buds A-Series",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Google%20Google%20Pixel%20Buds%20A-Series&c=search",
+    "query": "Google Pixel Buds A-Series",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Google%20Pixel%20Buds%20A-Series&c=search",
     "queries": [
       {
         "query": "Google Google Pixel Buds A-Series",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Google%20Google%20Pixel%20Buds%20A-Series&c=search"
+      },
+      {
+        "query": "Google Pixel Buds A-Series",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Google%20Pixel%20Buds%20A-Series&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0550": {
     "id": "hs2-0550",
@@ -44643,9 +45023,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Nothing%20Nothing%20Ear%20(a)&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 851,
+    "match_title": "NOTHING Ear ( a ) 无线主动降噪蓝牙耳机入耳检测长续航政府补贴 黄色☆42.5小时超长续航☆自适应ANC降噪 官方标配",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/2217547594588/O1CN01AaJNYa1jlMHQyugvQ_!!2217547594588.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0552": {
     "id": "hs2-0552",
@@ -44791,9 +45175,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Soundcore%20Soundcore%20Liberty%204&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 1099,
+    "match_title": "天猫旗舰店 声阔(SoundCore)入耳式蓝牙耳机降噪舱2代Liberty 4真无线TWS",
+    "image": "https://img.alicdn.com/bao/uploaded/i4/3402329517/O1CN01m6FKCp2KAqQ0OTjeA_!!4611686018427383213-0-item_pic.jpg_400x400.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0559": {
     "id": "hs2-0559",
@@ -44809,7 +45197,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "filtered_reason": "not a headset"
   },
   "hs2-0560": {
     "id": "hs2-0560",
@@ -44887,9 +45275,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Soundcore%20Soundcore%20P40i&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 545.61,
+    "match_title": "声阔(SoundCore)P40i超能小彩蛋真无线蓝牙主动降噪耳机入耳式通话超长续航 升级款【燕麦白】3档自适应降噪 5档自设降噪 Ba",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/409810/7/13160/42289/69c8e890F0e10ba9e/00833203208e1843.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0564": {
     "id": "hs2-0564",
@@ -44968,8 +45360,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0568": {
     "id": "hs2-0568",
@@ -45121,9 +45512,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Marshall%20Marshall%20Motif%20II%20ANC&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 1599,
+    "match_title": "MARSHALL MOTIF II ANC马歇尔无线降噪蓝牙耳机入耳式七夕礼物 黑色",
+    "image": "https://img.alicdn.com/bao/uploaded/i1/2942881146/O1CN01jCoanq1KKusudGXbT_!!2942881146.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0573": {
     "id": "hs2-0573",
@@ -45176,9 +45571,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Marshall%20Marshall%20Minor%20IV&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 789,
+    "match_title": "天猫国际 【自营】马歇尔MARSHALL MINOR IV耳机真无线4代蓝牙长续航 黑色",
+    "image": "https://img.alicdn.com/bao/uploaded/i3/2549841410/O1CN01wYVSMZsPw7C1chua_!!2549841410-0-tmg_sticker.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "hs2-0579": {
     "id": "hs2-0579",
@@ -45208,17 +45607,25 @@
     "id": "hs2-0580",
     "name": "Focal Clear MG",
     "brand": "Focal",
-    "query": "Focal Focal Clear MG",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Focal%20Focal%20Clear%20MG&c=search",
+    "query": "Focal Clear MG",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Focal%20Clear%20MG&c=search",
     "queries": [
       {
         "query": "Focal Focal Clear MG",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Focal%20Focal%20Clear%20MG&c=search"
+      },
+      {
+        "query": "Focal Clear MG",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Focal%20Clear%20MG&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 10400,
+    "match_title": "FOCAL the spirit of sound【法国劲浪】ClearMG 有线耳机 镁振膜 开放式hifi发烧级头戴高保真耳机",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/454973/29/18747/111337/6a3e41beF5544e7d7/008332032092da38.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0581": {
     "id": "hs2-0581",
@@ -45659,17 +46066,20 @@
     "id": "hs2-0603",
     "name": "Grado RS1x",
     "brand": "Grado",
-    "query": "Grado Grado RS1x",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Grado%20Grado%20RS1x&c=search",
+    "query": "Grado RS1x",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Grado%20RS1x&c=search",
     "queries": [
       {
         "query": "Grado Grado RS1x",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Grado%20Grado%20RS1x&c=search"
+      },
+      {
+        "query": "Grado RS1x",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Grado%20RS1x&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "captured_at": "2026-08-19"
   },
   "hs2-0604": {
     "id": "hs2-0604",
@@ -45742,13 +46152,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Shure%20Shure%20AONIC%2050&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 70,
-    "match_title": "【耳机租赁】SHURE AONIC50舒尔无线降噪 耳机 头戴式",
-    "image": "https://gw.alicdn.com/imgextra/O1CN01b6RFfD2DfL7QEmUAM_!!21478636.jpg",
-    "score": 100,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "hs2-0607": {
     "id": "hs2-0607",
@@ -45834,9 +46240,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Shure%20Shure%20SE846&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "headset accessory or other product"
+    "status": "matched",
+    "platform": "京东",
+    "price": 385.9,
+    "match_title": "SHURE动铁耳机diy十二单元HIFI运动蓝牙入耳式ie800发烧se535 SE846琉璃色耳机头 官方标配 不含线",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/485556/6/2100/131720/6a5ccf7dFcc5ed0e1/00833203206a329c.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "hs2-0613": {
     "id": "hs2-0613",
@@ -52859,7 +53269,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair; price implausible for chair"
+    "filtered_reason": "brand mismatch; not a chair; price implausible for chair"
   },
   "chr-0033": {
     "id": "chr-0033",
@@ -53175,7 +53585,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0049": {
     "id": "chr-0049",
@@ -53252,7 +53662,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0053": {
     "id": "chr-0053",
@@ -53401,7 +53811,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair; price implausible for chair"
+    "filtered_reason": "brand mismatch; not a chair; price implausible for chair"
   },
   "chr-0060": {
     "id": "chr-0060",
@@ -53436,7 +53846,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "price implausible for chair"
+    "filtered_reason": "brand mismatch; price implausible for chair"
   },
   "chr-0062": {
     "id": "chr-0062",
@@ -53490,7 +53900,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0066": {
     "id": "chr-0066",
@@ -53506,7 +53916,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair; price implausible for chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0067": {
     "id": "chr-0067",
@@ -53522,7 +53932,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair; price implausible for chair"
+    "filtered_reason": "brand mismatch; not a chair; price implausible for chair"
   },
   "chr-0068": {
     "id": "chr-0068",
@@ -53654,13 +54064,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Branch%20Ergonomic%20Chair&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 1800,
-    "match_title": "Ergonomic chair广东人体工学椅老板椅经理椅职员椅电脑椅包邮",
-    "image": "https://img.alicdn.com/bao/uploaded/i4/92704295/O1CN01kQVofD1hb9rEchy8b_!!92704295.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch"
   },
   "chr-0075": {
     "id": "chr-0075",
@@ -53679,7 +54085,8 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19"
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0076": {
     "id": "chr-0076",
@@ -54172,7 +54579,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair; price implausible for chair"
+    "filtered_reason": "brand mismatch; not a chair; price implausible for chair"
   },
   "chr-0101": {
     "id": "chr-0101",
@@ -54207,7 +54614,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0104": {
     "id": "chr-0104",
@@ -54375,7 +54782,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "not a chair"
+    "filtered_reason": "brand mismatch; not a chair"
   },
   "chr-0113": {
     "id": "chr-0113",
@@ -54393,13 +54800,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Frost%20Ergonomic%20Chair&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 1800,
-    "match_title": "Ergonomic chair广东人体工学椅老板椅经理椅职员椅电脑椅包邮",
-    "image": "https://img.alicdn.com/bao/uploaded/i4/92704295/O1CN01kQVofD1hb9rEchy8b_!!92704295.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch"
   },
   "chr-0114": {
     "id": "chr-0114",
@@ -54856,7 +55259,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "no matching accessory category"
+    "filtered_reason": "brand mismatch; no matching accessory category"
   },
   "acc-0022": {
     "id": "acc-0022",
@@ -54891,7 +55294,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "no matching accessory category"
+    "filtered_reason": "brand mismatch; no matching accessory category"
   },
   "acc-0024": {
     "id": "acc-0024",
@@ -55000,9 +55403,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C270&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 135,
+    "match_title": "罗技(Logitech)C270高清摄像头麦克风家用考研面复试直播笔记本电脑USB外置 720P C270",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/329594/22/16197/22645/68d1057eFf26fc3c0/a71adf965efdaea9.jpg",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "acc-0029": {
     "id": "acc-0029",
@@ -55035,9 +55442,13 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C920&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 309,
+    "match_title": "罗技(Logitech)C930C/N 直播摄像头 电脑摄像头广角网课会议台式机笔记本兼容外接免驱动内置麦克风 1080P 罗技C920+多功能可伸缩支架",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/461759/10/9308/83165/6a3cd86bFd4406025/0083320320d331a8.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "acc-0031": {
     "id": "acc-0031",
@@ -55089,25 +55500,32 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C925e&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "京东",
+    "price": 499,
+    "match_title": "罗技(Logitech)C925e直播摄像头电脑电视笔记本台式桌面外接外置视频会议网络主播网课专用高清广角带麦克风 720P 【包调试】C925E",
+    "image": "https://img14.360buyimg.com/pop/jfs/t1/495050/37/570/217778/6a69ab1aF38817b4c/008332032042685f.png",
+    "score": 100,
+    "captured_at": "2026-08-19"
   },
   "acc-0034": {
     "id": "acc-0034",
     "name": "Logitech C922",
     "brand": "Logitech",
-    "query": "Logitech Logitech C922",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C922&c=search",
+    "query": "Logitech C922",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20C922&c=search",
     "queries": [
       {
         "query": "Logitech Logitech C922",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20Logitech%20C922&c=search"
+      },
+      {
+        "query": "Logitech C922",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Logitech%20C922&c=search"
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "captured_at": "2026-08-19"
   },
   "acc-0038": {
     "id": "acc-0038",
@@ -55374,7 +55792,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "filtered_reason": "brand mismatch"
   },
   "acc-0047": {
     "id": "acc-0047",
@@ -55551,13 +55969,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Fifine%20SC600&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 599,
-    "match_title": "京东自营 七彩虹(Colorful)512G固态U盘 TypeC双接口U盘 USB3.2 高端商务手机U盘 读速1000MB/s 高速U盘512GB SC600",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/168031/6/40129/108231/6787293cF03838c34/c1637a1a4b70c202.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0058": {
     "id": "acc-0058",
@@ -55577,7 +55991,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "no matching accessory category"
+    "filtered_reason": "brand mismatch; no matching accessory category"
   },
   "acc-0059": {
     "id": "acc-0059",
@@ -55591,13 +56005,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Innogear%20Innogear%20Mic%20Arm&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 374,
-    "match_title": "京东自营 BOYA博雅MIC ARM麦克风话筒支架悬臂桌面台式支架主播直播音箱2kg承重三段式折叠万向直播话筒架子",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/448969/21/8071/82011/6a277614F6c67d61c/00833203209ed685.png",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0060": {
     "id": "acc-0060",
@@ -55611,13 +56021,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Gator%20Frameworks%20Gator%20Frameworks%20Mic%20Arm&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 374,
-    "match_title": "京东自营 BOYA博雅MIC ARM麦克风话筒支架悬臂桌面台式支架主播直播音箱2kg承重三段式折叠万向直播话筒架子",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/448969/21/8071/82011/6a277614F6c67d61c/00833203209ed685.png",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0062": {
     "id": "acc-0062",
@@ -55635,13 +56041,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Amazon%20Basics%20Mic%20Arm&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 374,
-    "match_title": "京东自营 BOYA博雅MIC ARM麦克风话筒支架悬臂桌面台式支架主播直播音箱2kg承重三段式折叠万向直播话筒架子",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/448969/21/8071/82011/6a277614F6c67d61c/00833203209ed685.png",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0061": {
     "id": "acc-0061",
@@ -55909,7 +56311,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "no matching accessory category"
+    "filtered_reason": "brand mismatch; no matching accessory category"
   },
   "acc-0074": {
     "id": "acc-0074",
@@ -56138,8 +56540,7 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated cable/development accessory"
+    "captured_at": "2026-08-19"
   },
   "acc-0088": {
     "id": "acc-0088",
@@ -56197,7 +56598,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated cable/development accessory"
+    "filtered_reason": "brand mismatch; unrelated cable/development accessory"
   },
   "acc-0091": {
     "id": "acc-0091",
@@ -56291,13 +56692,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=VELCRO%20Cable%20Ties&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 38,
-    "match_title": "3M Cable Ties美国进口自锁固尼龙电工扎带Rosh UL耐高低温耐酸碱",
-    "image": "https://img.alicdn.com/bao/uploaded/i2/59179884/O1CN01xZrbLM2MsvK2KBGcu_!!0-item_pic.jpg_400x400.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0095": {
     "id": "acc-0095",
@@ -56923,12 +57320,7 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Glorious%20Wrist%20Rest&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 134,
-    "match_title": "极度未知(HYPERX)极度未知Wrist Rest键盘托鼠标手托 缓解手部压力掌托 适用于鼠标",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/292376/21/20791/75313/687f3ec2Fa294eeab/40994312cd6f259c.jpg",
-    "score": 80,
+    "status": "no_match",
     "captured_at": "2026-08-19"
   },
   "acc-0130": {
@@ -56966,12 +57358,7 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Ducky%20Wrist%20Rest&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 149,
-    "match_title": "极度未知(HYPERX)极度未知Wrist Rest键盘托鼠标手托 缓解手部压力掌托 适用于60-68键键盘",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/315713/20/18799/76570/687f3ec5Fd39251e2/cc1ad93e6d944b3a.jpg",
-    "score": 80,
+    "status": "no_match",
     "captured_at": "2026-08-19"
   },
   "acc-0129": {
@@ -57086,12 +57473,7 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Filco%20Wrist%20Rest&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 134,
-    "match_title": "极度未知(HYPERX)极度未知Wrist Rest键盘托鼠标手托 缓解手部压力掌托 适用于鼠标",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/292376/21/20791/75313/687f3ec2Fa294eeab/40994312cd6f259c.jpg",
-    "score": 80,
+    "status": "no_match",
     "captured_at": "2026-08-19"
   },
   "acc-0136": {
@@ -58338,7 +58720,8 @@
       }
     ],
     "status": "no_match",
-    "captured_at": "2026-08-19"
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch"
   },
   "acc-0202": {
     "id": "acc-0202",
@@ -58506,13 +58889,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=CalDigit%20CalDigit%20TS4&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 859.69,
-    "match_title": "贝尔金(BELKIN)适用Belkin贝尔金f4u095 Caldigit雷电3 TS3Plus TS4扩展坞电源线 氮化镓180W",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/473074/26/15648/59491/6a520cc4F94b28110/0083320320e925f9.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing"
   },
   "acc-0211": {
     "id": "acc-0211",
@@ -58546,28 +58925,31 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Satechi%20Satechi%20Hub&c=search"
       }
     ],
-    "status": "no_match",
-    "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "status": "matched",
+    "platform": "天猫",
+    "price": 468,
+    "match_title": "Satechi 7合1磁吸拓展坞Type-C扩展笔记本电脑USB3.2适用MacBook Pro/Air转换iPad平板iPhoneHUB分线器集线器",
+    "image": "https://img.alicdn.com/bao/uploaded/i2/2212234093653/O1CN017P2nX71cr7vlEZtuw_!!4611686018427380821-0-item_pic.jpg_400x400.jpg",
+    "score": 80,
+    "captured_at": "2026-08-19"
   },
   "acc-0214": {
     "id": "acc-0214",
     "name": "Baseus Hub",
     "brand": "Baseus",
-    "query": "Baseus Baseus Hub",
-    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Baseus%20Baseus%20Hub&c=search",
+    "query": "Baseus Hub",
+    "search_url": "https://s.manmanbuy.com/m/search/result?keyword=Baseus%20Hub&c=search",
     "queries": [
       {
         "query": "Baseus Baseus Hub",
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Baseus%20Baseus%20Hub&c=search"
+      },
+      {
+        "query": "Baseus Hub",
+        "url": "https://s.manmanbuy.com/m/search/result?keyword=Baseus%20Hub&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 599,
-    "match_title": "倍思(BASEUS)适用焕新版特斯拉modelY/3中控拓展坞HUB扩展YL配件充电扩展 【旗舰款】【焕新版ModelY专用】Type-C+",
-    "image": "https://img14.360buyimg.com/pop/jfs/t1/416996/21/11410/69211/69db3fb6F0d8bc7d0/00833203205db1d9.jpg",
-    "score": 80,
+    "status": "no_match",
     "captured_at": "2026-08-19"
   },
   "acc-0213": {
@@ -58588,7 +58970,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "filtered_reason": "brand mismatch"
   },
   "acc-0215": {
     "id": "acc-0215",
@@ -58680,7 +59062,7 @@
     ],
     "status": "no_match",
     "captured_at": "2026-08-19",
-    "filtered_reason": "unrelated listing"
+    "filtered_reason": "brand mismatch"
   },
   "acc-0219": {
     "id": "acc-0219",
@@ -58717,13 +59099,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Roost%20Stand&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "京东",
-    "price": 1891,
-    "match_title": "京东自营 惠威(HiVi)M Stand 发烧音箱脚架 蓝牙音箱底座音响配件",
-    "image": "https://img14.360buyimg.com/pop/jfs/t20280813/506533/32/778/111892/6a7ed098F28c1f41b/0a02320320744f95.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0222": {
     "id": "acc-0222",
@@ -58779,13 +59157,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Ugreen%20Phone%20Stand&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 16.8,
-    "match_title": "Live Broadcast Adjustable Tripod U-Shape Head Phone Stand",
-    "image": "https://img.alicdn.com/bao/uploaded/i1/2206500498248/O1CN01pQaXsM2AndqE1LnRG_!!2206500498248.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch"
   },
   "acc-0225": {
     "id": "acc-0225",
@@ -58803,13 +59177,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Lamicall%20Phone%20Stand&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "淘宝",
-    "price": 16.8,
-    "match_title": "Live Broadcast Adjustable Tripod U-Shape Head Phone Stand",
-    "image": "https://img.alicdn.com/bao/uploaded/i1/2206500498248/O1CN01pQaXsM2AndqE1LnRG_!!2206500498248.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "brand mismatch"
   },
   "acc-0226": {
     "id": "acc-0226",
@@ -59089,13 +59459,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Periapt%20Periapt%20Cable&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "天猫",
-    "price": 800,
-    "match_title": "天猫旗舰店 ASICS亚瑟士GEL-CABLE男子稳定支撑跑步鞋透气运动鞋 黑色 43.5",
-    "image": "https://img.alicdn.com/bao/uploaded/i3/661559176/O1CN01POgjB42HefM0XbhIT-661559176.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0240": {
     "id": "acc-0240",
@@ -59128,13 +59494,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Lunashops%20Lunashops%20Cable&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "天猫",
-    "price": 800,
-    "match_title": "天猫旗舰店 ASICS亚瑟士GEL-CABLE男子稳定支撑跑步鞋透气运动鞋 黑色 43.5",
-    "image": "https://img.alicdn.com/bao/uploaded/i3/661559176/O1CN01POgjB42HefM0XbhIT-661559176.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0242": {
     "id": "acc-0242",
@@ -59152,13 +59514,9 @@
         "url": "https://s.manmanbuy.com/m/search/result?keyword=Fog%20City%20Audio%20Cable&c=search"
       }
     ],
-    "status": "matched",
-    "platform": "天猫",
-    "price": 800,
-    "match_title": "天猫旗舰店 ASICS亚瑟士GEL-CABLE男子稳定支撑跑步鞋透气运动鞋",
-    "image": "https://img.alicdn.com/bao/uploaded/i2/661559176/O1CN01NvCT3M08AJF1chua-661559176.jpg",
-    "score": 80,
-    "captured_at": "2026-08-19"
+    "status": "no_match",
+    "captured_at": "2026-08-19",
+    "filtered_reason": "unrelated listing; brand mismatch"
   },
   "acc-0244": {
     "id": "acc-0244",

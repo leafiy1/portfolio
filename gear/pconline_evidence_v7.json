@@ -712,5 +712,79 @@
     "query": "VAXEE Outset AX Wireless",
     "url": "https://ks.pconline.com.cn/index.shtml?q=VAXEE%20Outset%20AX%20Wireless",
     "captured_at": "2026-08-19"
+  },
+  "mon-0001": {
+    "id": "mon-0001",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0002": {
+    "id": "mon-0002",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0004": {
+    "id": "mon-0004",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0005": {
+    "id": "mon-0005",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0003": {
+    "id": "mon-0003",
+    "status": "no_match",
+    "query": "LG UltraGear 24GQ50B",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2024GQ50B",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0006": {
+    "id": "mon-0006",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0007": {
+    "id": "mon-0007",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0008": {
+    "id": "mon-0008",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0009": {
+    "id": "mon-0009",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0010": {
+    "id": "mon-0010",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0011": {
+    "id": "mon-0011",
+    "status": "fail",
+    "reason": "HTTP 503",
+    "captured_at": "2026-08-19"
+  },
+  "mon-0012": {
+    "id": "mon-0012",
+    "status": "no_match",
+    "query": "LG UltraGear 27GS95QE",
+    "url": "https://ks.pconline.com.cn/index.shtml?q=LG%20UltraGear%2027GS95QE",
+    "captured_at": "2026-08-19"
   }
 }
